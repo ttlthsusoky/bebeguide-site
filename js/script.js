@@ -475,12 +475,138 @@ function lazyLoadImages() {
 
 // Initialize lazy loading
 lazyLoadImages();
-/* === Bebeguide: age → checklist (temp data) === */
+/* === Bebeguide: 월령별 실제 체크리스트 === */
 const CHECKLIST = {
-  0:["신생아 기저귀","속싸개 2~3장","배냇저고리","온도계","젖병세척솔"],
-  3:["턱받이","침대모빌","콧물흡입기","손싸개/발싸개","수면조끼"],
-  6:["하이체어","이유식 조리도구","흡착식판","실리콘 스푼","바닥매트"],
-  12:["보행기/걸음마카","코너보호대","빨대컵","유아식 식기","소형도서 3권"]
+  0: [
+    "신생아 기저귀 (소형, 3-5kg용)",
+    "속싸개 3-4장 (면 100%)",
+    "배냇저고리 5-6벌",
+    "체온계 (디지털 or 귀 적외선)",
+    "젖병 및 젖꼭지 (신생아용)",
+    "젖병 세척솔 및 소독용품",
+    "기저귀 발진 크림",
+    "신생아용 로션"
+  ],
+  1: [
+    "기저귀 소형 (계속 사용)",
+    "수유쿠션",
+    "신생아 손톱깎이",
+    "배앓이 완화 복대",
+    "아기띠 (신생아용)",
+    "외출용 담요",
+    "젖병 보온포트",
+    "침구 세트 (아기침대용)"
+  ],
+  2: [
+    "기저귀 중형으로 교체 고려",
+    "목 받침 쿠션",
+    "흑백 대비 카드",
+    "목욕용 베이비 바스",
+    "무향 베이비 샴푸",
+    "아기 마사지 오일",
+    "외출용 기저귀 가방",
+    "카시트 (필수 안전용품)"
+  ],
+  3: [
+    "기저귀 중형 (5-9kg용)",
+    "턱받이 여러 개",
+    "침대 모빌 (시각 발달)",
+    "콧물 흡입기",
+    "손싸개/발싸개 (긁힘 방지)",
+    "수면 조끼",
+    "딸랑이 장난감",
+    "예방접종 수첩"
+  ],
+  4: [
+    "기저귀 중형 지속 사용",
+    "범퍼침대 or 안전가드",
+    "치아발육기 (실리콘)",
+    "아기 전용 물티슈",
+    "외출용 유모차",
+    "자외선 차단 모자",
+    "소근육 발달 장난감",
+    "아기 안전 손목밴드"
+  ],
+  5: [
+    "기저귀 대형 교체 고려",
+    "아기 식탁의자 준비",
+    "이유식 준비 도구들",
+    "실리콘 수저 세트",
+    "흘림방지 턱받이",
+    "식품 알레르기 체크 노트",
+    "아기 치발기 다양하게",
+    "놀이매트 (안전한 재질)"
+  ],
+  6: [
+    "하이체어 (이유식용)",
+    "이유식 조리도구 세트",
+    "흡착식판 (미끄럼방지)",
+    "실리콘 스푼 (BPA프리)",
+    "바닥 놀이매트",
+    "이유식 냉동보관용기",
+    "아기 앞치마",
+    "소화기능 보조 유산균"
+  ],
+  7: [
+    "기저귀 대형 (7-12kg용)",
+    "셀프 이유식 도구",
+    "물컵 (흘림방지)",
+    "기어다니기 안전용품",
+    "모서리 보호대",
+    "서랍 안전잠금장치",
+    "두뇌발달 장난감",
+    "아기 운동복"
+  ],
+  8: [
+    "잡기 쉬운 장난감들",
+    "크롤링 무릎보호대",
+    "안전문 (계단, 방문)",
+    "콘센트 안전커버",
+    "아기 전용 칫솔",
+    "무불소 치약",
+    "소근육 발달 놀이용품",
+    "외출용 간식통"
+  ],
+  9: [
+    "잡고 서기 보조 용품",
+    "테이블 모서리 보호대",
+    "아기 신발 (실내용)",
+    "높이 조절 식탁의자",
+    "핑거푸드 준비용품",
+    "아기 가위 (안전형)",
+    "목욕 장난감",
+    "발달 체크 일지"
+  ],
+  10: [
+    "걸음마 보조기구",
+    "아기 실외화 (첫 신발)",
+    "무릎보호대 (걸음마용)",
+    "안전한 계단 가드",
+    "높낮이 변환 침대",
+    "소통 및 언어발달 도서",
+    "빨대컵 (무게 가벼운)",
+    "응급처치 키트"
+  ],
+  11: [
+    "걸음마 연습 공간 확보",
+    "실외 활동용 모자",
+    "선크림 (베이비 전용)",
+    "대근육 발달 놀이기구",
+    "언어 자극 장난감",
+    "그림책 (두꺼운 보드북)",
+    "유아용 식탁의자",
+    "치아 관리용품 업그레이드"
+  ],
+  12: [
+    "돌잔치 준비용품",
+    "코너 보호대 추가 설치",
+    "빨대컵 (무게 있는 것)",
+    "유아식 식기 세트",
+    "소형 도서 5-10권",
+    "블록 놀이 세트",
+    "역할놀이 장난감",
+    "성장 기록 앨범"
+  ]
 };
 
 (function initAgeChecklist(){
@@ -493,20 +619,186 @@ const CHECKLIST = {
   btnShow.addEventListener('click', ()=>{
     const m = ageSel.value;
     const list = CHECKLIST[m] || CHECKLIST[0];
-    box.innerHTML = list.map(item => `
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-check"></i></div>
+    const monthText = m == 0 ? '신생아' : `${m}개월`;
+    
+    // Add header with month info
+    let headerHTML = `
+      <div class="checklist-header">
+        <h2>${monthText} 필수 준비물 체크리스트</h2>
+        <p>${monthText} 아기에게 꼭 필요한 용품들을 정리했습니다. 안전하고 검증된 제품을 선택하세요.</p>
+      </div>
+    `;
+    
+    // Create checklist items with better descriptions and affiliate links
+    let itemsHTML = list.map((item, index) => `
+      <div class="service-card checklist-item">
+        <div class="service-icon">
+          <i class="fas fa-baby"></i>
+          <span class="item-number">${index + 1}</span>
+        </div>
         <h3>${item}</h3>
-        <p>간단 설명 · 추천/주의 포인트</p>
+        <p>${getItemDescription(item, m)}</p>
+        <div class="item-actions">
+          <a href="#" class="btn-link affiliate-link" data-item="${item}" onclick="trackAffiliateClick('${item}')">
+            <i class="fas fa-shopping-cart"></i> 쿠팡에서 보기
+          </a>
+          <span class="price-info">💰 최저가 비교 중...</span>
+        </div>
       </div>
     `).join('');
+    
+    box.innerHTML = headerHTML + itemsHTML;
     box.scrollIntoView({behavior:'smooth', block:'start'});
   });
+
+  // Helper function to provide context for items
+  function getItemDescription(item, month) {
+    if (item.includes('기저귀')) return '아기 체중에 맞는 사이즈 선택이 중요합니다. 새는 것을 방지하고 편안함을 위해 정기적으로 교체하세요.';
+    if (item.includes('체온계')) return '발열 체크용 필수품입니다. 디지털 체온계나 귀 적외선 체온계 모두 괜찮습니다.';
+    if (item.includes('카시트')) return '법적 의무사항이며 생명과 직결된 안전용품입니다. 반드시 신품 구매를 권장합니다.';
+    if (item.includes('이유식')) return '아기의 첫 고형식 도입 시기입니다. 알레르기 반응을 주의 깊게 관찰하세요.';
+    if (item.includes('안전')) return '아기가 활동 반경이 넓어지면서 꼭 필요한 안전용품입니다.';
+    if (item.includes('장난감')) return '월령에 맞는 발달 자극용 장난감입니다. 안전 인증 제품을 선택하세요.';
+    if (item.includes('걸음마')) return '아기의 대근육 발달에 도움이 되지만 과도한 사용은 피하세요.';
+    if (item.includes('치아') || item.includes('칫솔')) return '유치 관리의 시작입니다. 불소 성분 없는 제품을 사용하세요.';
+    
+    return '아기의 건강한 성장과 안전을 위한 필수 용품입니다. 제품 구매 전 안전 인증을 확인하세요.';
+  }
 
   btnPdf?.addEventListener('click', ()=>{
     alert('이메일 수집 폼으로 연결하거나, 폼 제출 시 PDF 자동 발송을 붙여주세요. (Formspark/Formspree/Google Forms → Cloudflare Email Routing)');
   });
 })();
 
+// === 제휴마케팅 링크 관리 === //
+function trackAffiliateClick(itemName) {
+  // 쿠팡 파트너스 링크 (실제 가입 후 링크로 교체 필요)
+  const coupangPartnerLink = "https://link.coupang.com/a/YOUR_AFFILIATE_ID";
+  
+  // 클릭 추적 (Google Analytics, Cloudflare Analytics 등)
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'affiliate_click', {
+      'item_name': itemName,
+      'affiliate_source': 'coupang'
+    });
+  }
+  
+  // 쿠팡 검색어로 리다이렉트 (임시)
+  const searchKeyword = encodeURIComponent(itemName.replace(/\([^)]*\)/g, '').trim());
+  window.open(`https://www.coupang.com/np/search?q=${searchKeyword}`, '_blank');
+  
+  console.log(`제휴 클릭 추적: ${itemName}`);
+}
+
+// 자동 가격 정보 업데이트 (향후 API 연동용)
+function updatePriceInfo() {
+  const priceElements = document.querySelectorAll('.price-info');
+  priceElements.forEach(element => {
+    // 임시로 랜덤 가격 표시 (실제로는 API에서 가져와야 함)
+    const randomPrice = Math.floor(Math.random() * 50000) + 5000;
+    element.textContent = `💰 ${randomPrice.toLocaleString()}원부터`;
+  });
+}
+
+// 체크리스트 표시 후 가격 정보 업데이트
+document.addEventListener('DOMContentLoaded', () => {
+  // 페이지 로드 시 가격 정보 업데이트
+  setTimeout(updatePriceInfo, 2000);
+});
+
+
+// Chatbot functionality
+(function initChatbot() {
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatMessages = document.getElementById('chatMessages');
+
+    if (!chatToggle || !chatWindow) return;
+
+    // Auto responses for basic questions
+    const autoResponses = {
+        '안녕하세요': '안녕하세요! 베베가이드입니다 😊 무엇을 도와드릴까요?',
+        '상담': '전문 육아 상담은 이메일(info@bebe-guide.com)로 문의해주세요. 24시간 내 답변드리겠습니다!',
+        '월령': '월령별 체크리스트는 메인 페이지에서 확인하실 수 있어요! 0개월부터 12개월까지 준비되어 있습니다.',
+        '이유식': '이유식 관련 정보는 곧 업데이트될 예정입니다. 이메일로 구체적인 질문 보내주시면 전문가가 답변드릴게요!',
+        '수유': '수유 가이드는 신생아부터 단계별로 준비 중입니다. 급한 질문은 이메일로 연락주세요.',
+        '수면': '수면 교육 정보도 준비 중이에요. 자세한 상담은 이메일로 문의해주시면 개인 맞춤 조언드릴게요.',
+        '연락처': '📧 이메일: info@bebe-guide.com (24시간 상담 가능)\n💬 실시간 채팅: 여기 챗봇 (기본 안내)\n🕐 전문가 상담: 이메일 접수 후 24시간 내 답변',
+        '가격': '베베가이드의 기본 정보는 무료로 제공됩니다. 개인 맞춤 상담은 이메일로 문의주세요!',
+        '제품': '제품 추천 정보는 곧 업데이트될 예정입니다. 가격/리뷰 정보도 함께 제공할 예정이에요.',
+        'default': '구체적인 질문은 이메일(info@bebe-guide.com)로 보내주시면 전문가가 24시간 내 답변드리겠습니다! 😊'
+    };
+
+    // Toggle chat window
+    chatToggle.addEventListener('click', () => {
+        chatWindow.classList.toggle('open');
+        if (chatWindow.classList.contains('open')) {
+            chatInput.focus();
+        }
+    });
+
+    // Close chat window
+    chatClose.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+    });
+
+    // Send message
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        // Add user message
+        addMessage(message, 'user');
+        chatInput.value = '';
+
+        // Generate bot response
+        setTimeout(() => {
+            const response = generateResponse(message);
+            addMessage(response, 'bot');
+        }, 500);
+    }
+
+    // Add message to chat
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${sender}-message`;
+        messageDiv.innerHTML = `<p>${text}</p>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Generate bot response
+    function generateResponse(userMessage) {
+        const lowerMessage = userMessage.toLowerCase();
+        
+        for (const keyword in autoResponses) {
+            if (lowerMessage.includes(keyword)) {
+                return autoResponses[keyword];
+            }
+        }
+        
+        return autoResponses.default;
+    }
+
+    // Send button click
+    chatSend.addEventListener('click', sendMessage);
+
+    // Enter key press
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Close chat when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!chatToggle.contains(e.target) && !chatWindow.contains(e.target)) {
+            chatWindow.classList.remove('open');
+        }
+    });
+})();
 
 console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습니다!');

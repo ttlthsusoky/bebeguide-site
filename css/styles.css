@@ -1048,4 +1048,528 @@ section {
   border: 0;
 }
 
+/* === Chatbot Widget Styles === */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.chat-toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 142, 142, 0.3);
+    transition: all 0.3s ease;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 142, 142, 0.4);
+}
+
+.chat-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 16px;
+    animation: bounce 2s infinite;
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    height: 400px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-window.open {
+    display: flex;
+    animation: slideUp 0.3s ease;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, var(--brand), var(--primary-color));
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+}
+
+.chat-message p {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bot-message p {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    color: #333;
+}
+
+.user-message {
+    text-align: right;
+}
+
+.user-message p {
+    background: linear-gradient(135deg, var(--brand), var(--primary-color));
+    color: white;
+    display: inline-block;
+}
+
+.chat-input {
+    padding: 16px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 8px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-input input:focus {
+    border-color: var(--brand);
+}
+
+.chat-input button {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--brand), var(--primary-color));
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.chat-input button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-4px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Mobile responsiveness for chatbot */
+@media (max-width: 480px) {
+    .chat-window {
+        width: calc(100vw - 40px);
+        right: -10px;
+    }
+    
+    .chat-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+/* === Lead Collection Form Styles === */
+.contact-form h3 {
+    color: var(--brand);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.contact-form > p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+}
+
+.form-group select:focus {
+    border-color: var(--brand);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 142, 142, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--brand);
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--brand);
+}
+
+.form-note {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Mobile form adjustments */
+@media (max-width: 768px) {
+    .contact-form h3 {
+        font-size: 18px;
+    }
+    
+    .checkbox-group {
+        gap: 12px;
+    }
+}
+
+/* === Checklist Display Styles === */
+.checklist-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: linear-gradient(135deg, #fdf2f8, #f3e8ff);
+    border-radius: 16px;
+    border: 2px solid var(--brand);
+}
+
+.checklist-header h2 {
+    color: var(--brand);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.checklist-header p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.checklist-item .service-icon {
+    position: relative;
+}
+
+.checklist-item .item-number {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: var(--brand);
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.checklist-item {
+    border-left: 4px solid var(--brand);
+    background: linear-gradient(135deg, #ffffff, #fefefe);
+}
+
+.checklist-item:hover {
+    border-left-color: var(--brand-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .checklist-header {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .checklist-header h2 {
+        font-size: 20px;
+    }
+    
+    .checklist-header p {
+        font-size: 14px;
+    }
+}
+
+/* === About Page - Operator & Validation Styles === */
+.operator-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.operator-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fdf2f8, #f3e8ff);
+    border-radius: 16px;
+    border: 1px solid var(--brand);
+}
+
+.operator-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.operator-details h4 {
+    color: var(--brand);
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.operator-details p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.validation-criteria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.criteria-item {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-left: 4px solid var(--brand);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.criteria-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.criteria-item h4 {
+    color: var(--brand);
+    margin-bottom: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.criteria-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile adjustments for About section */
+@media (max-width: 768px) {
+    .operator-info {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .operator-card {
+        padding: 16px;
+    }
+    
+    .operator-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .validation-criteria {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .criteria-item {
+        padding: 16px;
+    }
+}
+
+/* === Affiliate Marketing Styles === */
+.item-actions {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.btn-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.affiliate-link {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.affiliate-link:hover {
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.4);
+}
+
+.price-info {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+/* Mobile adjustments for affiliate elements */
+@media (max-width: 768px) {
+    .item-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .btn-link {
+        justify-content: center;
+        padding: 10px 16px;
+    }
+    
+    .price-info {
+        text-align: center;
+        padding: 8px 12px;
+    }
+}
+
 
