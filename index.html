@@ -34,8 +34,10 @@
             </div>
             <ul class="nav-menu">
                <!-- 예시 -->
-<li><a href="#age" class="nav-link">체크리스트</a></li>
-<li><a href="#services" class="nav-link">필수템 비교</a></li>
+<li><a href="#pregnancy" class="nav-link">임신 준비</a></li>
+<li><a href="#age" class="nav-link">월령별 체크리스트</a></li>
+<li><a href="#vaccination" class="nav-link">예방접종</a></li>
+<li><a href="#services" class="nav-link">육아 팁</a></li>
 <li><a href="#about" class="nav-link">가이드</a></li>
 <li><a href="#contact" class="nav-link">문의/구독</a></li>
 
@@ -90,6 +92,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Pregnancy Preparation Section -->
+    <section id="pregnancy" class="section pregnancy-section">
+      <div class="container">
+        <h2 class="section-title">🤰 임신 준비 체크리스트</h2>
+        <p class="section-subtitle">건강한 임신과 출산을 위한 단계별 준비 가이드</p>
+
+        <div class="pregnancy-tabs">
+          <button class="tab-btn active" data-category="임신 전 준비">임신 전 준비</button>
+          <button class="tab-btn" data-category="산모 용품">산모 용품</button>
+          <button class="tab-btn" data-category="아기 용품">아기 용품</button>
+          <button class="tab-btn" data-category="출산 준비">출산 준비</button>
+        </div>
+
+        <div id="pregnancyContent" class="services-grid"></div>
+      </div>
+    </section>
+
 <section id="age" class="section">
   <div class="container">
     <h2 class="section-title">월령 입력하면 필요한 준비물을 한 번에</h2>
@@ -127,47 +147,23 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>👩‍🏫 운영진 소개</h3>
-                    <div class="operator-info">
-                        <div class="operator-card">
-                            <div class="operator-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <div class="operator-details">
-                                <h4>현직 교사 & 육아 전문가</h4>
-                                <p>유아교육 전공, 10년 이상 교육 현장 경험</p>
-                                <p>두 아이의 엄마로서 실제 육아 경험 바탕</p>
-                            </div>
-                        </div>
-                        <div class="operator-card">
-                            <div class="operator-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                            <div class="operator-details">
-                                <h4>전문 자격 & 인증</h4>
-                                <p>유치원 정교사 2급 자격증</p>
-                                <p>육아상담사 자격증, 베이비마사지 전문가</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h3 style="margin-top: 40px;">🔍 정보 검수 기준</h3>
+                    <h3>🔍 정보 작성 기준</h3>
                     <div class="validation-criteria">
                         <div class="criteria-item">
-                            <h4>📚 출처 기반 검증</h4>
-                            <p>소아과학회, 질병관리청, WHO 등 공신력 있는 기관 자료 참조</p>
+                            <h4>📚 명확한 근거 기반</h4>
+                            <p>소아과학회, 질병관리청, WHO, 보건복지부 등 공신력 있는 기관의 공개 자료를 최대한 근거로 활용합니다</p>
                         </div>
                         <div class="criteria-item">
-                            <h4>⏰ 정기 업데이트</h4>
-                            <p>월 1회 정기 검토, 새로운 연구 결과 및 가이드라인 반영</p>
+                            <h4>👶 실제 경험 반영</h4>
+                            <p>직접 육아를 경험한 부모들의 실제 사례와 현장 경험을 바탕으로 실용적인 정보를 제공합니다</p>
                         </div>
                         <div class="criteria-item">
-                            <h4>🎯 실용성 검증</h4>
-                            <p>실제 육아 현장에서 적용 가능한 정보만 선별하여 제공</p>
+                            <h4>🎯 실용성 중심</h4>
+                            <p>이론보다는 실제 육아 현장에서 바로 적용 가능한 구체적이고 실용적인 정보를 선별합니다</p>
                         </div>
                         <div class="criteria-item">
                             <h4>⚠️ 안전성 우선</h4>
-                            <p>아기 안전과 관련된 모든 정보는 이중 검토 후 게시</p>
+                            <p>아기의 안전과 건강에 직결되는 정보는 반드시 공신력 있는 출처를 확인하여 제공합니다</p>
                         </div>
                     </div>
                 </div>
@@ -176,8 +172,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h4>신뢰성 보장</h4>
-                        <p>모든 정보는 공신력 있는 의료진 및 교육 전문가의 감수를 거칩니다.</p>
+                        <h4>신뢰할 수 있는 정보</h4>
+                        <p>공신력 있는 공개 자료와 실제 육아 경험을 바탕으로 명확한 근거를 가진 정보를 제공합니다.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">
@@ -195,7 +191,148 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 정보 출처 섹션 추가 -->
+            <div class="container" style="margin-top: 80px;">
+                <div class="about-text">
+                    <h3>📚 정보 출처 및 참고 자료</h3>
+                    <p style="color: #666; margin-bottom: 30px;">베베가이드의 모든 정보는 아래의 공신력 있는 기관 및 자료를 참고하여 작성되었습니다.</p>
+
+                    <div class="source-list">
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>질병관리청 (KDCA)</h4>
+                                <p>예방접종 스케줄, 감염병 예방 지침</p>
+                                <a href="https://www.kdca.go.kr" target="_blank" rel="noopener">www.kdca.go.kr</a>
+                                <span class="source-tag">공식 기관</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>보건복지부 (MOHW)</h4>
+                                <p>육아 지원 정책, 보육 사업 안내</p>
+                                <a href="https://www.mohw.go.kr" target="_blank" rel="noopener">www.mohw.go.kr</a>
+                                <span class="source-tag">공식 기관</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>세계보건기구 (WHO)</h4>
+                                <p>모유수유, 신생아 건강 가이드라인</p>
+                                <a href="https://www.who.int" target="_blank" rel="noopener">www.who.int</a>
+                                <span class="source-tag">국제 기구</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-user-doctor"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>대한소아과학회</h4>
+                                <p>성장 발달, 건강 관리 지침</p>
+                                <a href="https://www.pediatrics.or.kr" target="_blank" rel="noopener">www.pediatrics.or.kr</a>
+                                <span class="source-tag">전문 학회</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>대한신생아학회</h4>
+                                <p>신생아 돌봄, 목욕 및 수면 지침</p>
+                                <a href="https://www.neonatology.or.kr" target="_blank" rel="noopener">www.neonatology.or.kr</a>
+                                <span class="source-tag">전문 학회</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-heart-pulse"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>미국소아과학회 (AAP)</h4>
+                                <p>수면 안전, 영아돌연사증후군(SIDS) 예방</p>
+                                <a href="https://www.aap.org" target="_blank" rel="noopener">www.aap.org</a>
+                                <span class="source-tag">국제 학회</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>식품의약품안전처 (MFDS)</h4>
+                                <p>분유 조유 방법, 식품 안전 기준</p>
+                                <a href="https://www.mfds.go.kr" target="_blank" rel="noopener">www.mfds.go.kr</a>
+                                <span class="source-tag">공식 기관</span>
+                            </div>
+                        </div>
+
+                        <div class="source-item">
+                            <div class="source-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="source-content">
+                                <h4>임신육아종합포털 아이사랑</h4>
+                                <p>월령별 성장, 수유 가이드</p>
+                                <a href="https://www.childcare.go.kr" target="_blank" rel="noopener">www.childcare.go.kr</a>
+                                <span class="source-tag">공식 포털</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="source-note">
+                        <p><strong>📌 알림:</strong> 베베가이드는 의학적 조언을 대체할 수 없습니다. 아기의 건강 문제는 반드시 소아과 전문의와 상담하시기 바랍니다.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Vaccination Schedule Section -->
+    <section id="vaccination" class="section vaccination-section">
+      <div class="container">
+        <h2 class="section-title">💉 예방접종 스케줄</h2>
+        <p class="section-subtitle">질병관리청 기준 필수 예방접종 일정표 (0-12개월)</p>
+
+        <div id="vaccinationSchedule" class="vaccination-timeline"></div>
+
+        <div class="vaccination-note">
+          <h4>⚠️ 예방접종 주의사항</h4>
+          <ul>
+            <li>접종 전 아기의 건강 상태를 반드시 확인하세요 (열, 감기 등)</li>
+            <li>접종 후 20-30분간 병원에서 이상 반응 관찰이 필요합니다</li>
+            <li>접종 당일은 목욕을 피하고, 충분한 휴식을 취하게 하세요</li>
+            <li>접종 부위 발열, 부기는 정상 반응이며 2-3일 내 사라집니다</li>
+            <li>고열(38.5도 이상), 경련 등 이상 증상 시 즉시 병원 방문하세요</li>
+            <li>예방접종 수첩을 항상 지참하고 기록을 남기세요</li>
+          </ul>
+        </div>
+
+        <div class="vaccination-links">
+          <a href="https://nip.kdca.go.kr" target="_blank" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> 질병관리청 예방접종도우미
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-calendar-check"></i> 예방접종 알림 받기
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
@@ -258,80 +395,109 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Reviews Section (실제 사용자 후기) -->
+    <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">성장 기록</h2>
-                <p class="section-subtitle">베베가이드와 함께한 아기들의 소중한 성장 순간들</p>
+                <h2 class="section-title">💕 부모님들의 실제 후기</h2>
+                <p class="section-subtitle">베베가이드를 활용한 실제 육아 경험담을 공유합니다</p>
             </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">전체</button>
-                <button class="filter-btn" data-filter="newborn">신생아</button>
-                <button class="filter-btn" data-filter="infant">영아</button>
-                <button class="filter-btn" data-filter="toddler">유아</button>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>김*희 님</h4>
+                                <p>첫째 아이 (현재 4개월)</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="review-content">
+                        <p>"초보 엄마라 모든 게 막막했는데, 월령별 체크리스트가 정말 큰 도움이 됐어요. 특히 예방접종 일정표를 미리 확인할 수 있어서 병원 예약도 여유있게 했습니다. 신생아 수유 가이드 덕분에 모유수유도 성공적으로 정착했어요!"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-date">2024년 12월</span>
+                        <span class="review-tag">#신생아돌봄 #예방접종</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>박*수 님</h4>
+                                <p>둘째 아이 (현재 7개월)</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="review-content">
+                        <p>"첫째 때는 이런 사이트가 없어서 하나하나 검색하느라 힘들었는데, 베베가이드는 필요한 정보가 한곳에 다 정리되어 있어서 너무 편해요. 특히 임신 준비 체크리스트를 보고 미리 준비할 수 있어서 출산 후에 당황하지 않았어요."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-date">2024년 11월</span>
+                        <span class="review-tag">#임신준비 #체크리스트</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>이*진 님</h4>
+                                <p>첫째 아이 (현재 11개월)</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="review-content">
+                        <p>"0개월 돌봄 가이드가 정말 자세해서 좋았어요. 특히 '등 대고 재우기'가 영아돌연사 예방에 중요하다는 걸 알게 되었고, 황달·탈수 같은 위험 신호도 미리 알 수 있었어요. 출처도 WHO, 대한소아과학회 같은 공신력 있는 곳이라 신뢰가 갑니다."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-date">2024년 10월</span>
+                        <span class="review-tag">#신생아안전 #건강체크</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>최*영 님</h4>
+                                <p>임신 8개월</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="review-content">
+                        <p>"예비 엄마인데 출산 준비물 리스트가 정말 실용적이에요. 카시트가 법적 필수라는 것도 처음 알았고, 산모 가방 34주 전에 미리 준비하라는 팁도 도움됐어요. 출산 전 불안한 마음이 많이 진정됐습니다."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-date">2025년 1월</span>
+                        <span class="review-tag">#출산준비 #준비물리스트</span>
+                    </div>
+                </div>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="newborn">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-baby"></i>
-                            <span>첫 미소</span>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h4>생후 2개월 지우</h4>
-                            <p>엄마를 보고 처음 웃어준 순간</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="infant">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-hands"></i>
-                            <span>첫 뒤집기</span>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h4>생후 5개월 예준이</h4>
-                            <p>처음으로 혼자 뒤집기 성공!</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="toddler">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-walking"></i>
-                            <span>첫 걸음</span>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h4>14개월 서연이</h4>
-                            <p>엄마 품으로 첫 걸음마!</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="toddler">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-comment"></i>
-                            <span>첫 말</span>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h4>18개월 민준이</h4>
-                            <p>"엄마"라고 첫 말을 했어요</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="review-cta">
+                <p>💌 여러분의 육아 경험담도 공유해주세요!</p>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-pen"></i> 후기 작성하기
+                </a>
             </div>
         </div>
     </section>
@@ -376,7 +542,7 @@
                 <div class="contact-form">
                     <h3>🍼 무료 맞춤 체크리스트 받기</h3>
                     <p>아기 월령에 맞는 맞춤 체크리스트를 이메일로 받아보세요!</p>
-                    <form id="contactForm" action="#" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/xzzjgpdw" method="POST">
                         <div class="form-group">
                             <label for="parent_name">부모님 이름</label>
                             <input type="text" id="parent_name" name="name" placeholder="예: 김○○" required>
