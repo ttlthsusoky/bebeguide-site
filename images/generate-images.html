@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>베베가이드 이미지 생성기 (100% 저작권 안전)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #FF9AA2; margin-bottom: 10px; }
+        .subtitle { color: #666; margin-bottom: 30px; }
+        canvas {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: block;
+        }
+        button {
+            background: linear-gradient(135deg, #FF9AA2, #FFB7B2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover { opacity: 0.9; }
+        .success { color: #10b981; font-weight: 600; margin: 10px 0; }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 베베가이드 이미지 생성기</h1>
+        <p class="subtitle">100% 직접 제작 | 저작권 침해 없음 | 상업 이용 가능</p>
+
+        <div class="info-box">
+            <strong>📜 저작권 정보:</strong><br>
+            • 이 이미지들은 HTML Canvas API를 사용하여 코드로 직접 생성됩니다<br>
+            • 외부 이미지나 폰트를 사용하지 않으며, 순수하게 도형과 텍스트로만 구성됩니다<br>
+            • 베베가이드가 100% 소유하며 상업적 이용이 가능합니다<br>
+            • 각 이미지는 PNG 형식으로 다운로드됩니다
+        </div>
+
+        <h2>1️⃣ Favicon (512x512)</h2>
+        <canvas id="faviconCanvas" width="512" height="512"></canvas>
+        <button onclick="downloadFavicon()">💾 favicon-512.png 다운로드</button>
+        <div id="faviconStatus"></div>
+
+        <h2>2️⃣ Open Graph Image (1200x630)</h2>
+        <canvas id="ogCanvas" width="1200" height="630"></canvas>
+        <button onclick="downloadOG()">💾 og-bebeguide.png 다운로드</button>
+        <div id="ogStatus"></div>
+
+        <div class="info-box" style="margin-top: 40px;">
+            <strong>📥 설치 방법:</strong><br>
+            1. 위 버튼을 클릭하여 각 이미지 다운로드<br>
+            2. 다운로드한 파일을 <code>C:\Users\hee\website\images\</code> 폴더에 복사<br>
+            3. 기존 파일 덮어쓰기 확인 (기존 파일은 backup 폴더에 백업되어 있음)<br>
+            4. 완료!
+        </div>
+    </div>
+
+    <script>
+        // === Favicon 생성 (512x512) ===
+        function drawFavicon() {
+            const canvas = document.getElementById('faviconCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // 배경 (부드러운 크림색)
+            ctx.fillStyle = '#FFF8F0';
+            ctx.fillRect(0, 0, 512, 512);
+
+            // 메인 하트 그리기
+            ctx.fillStyle = '#FF9AA2';
+            ctx.beginPath();
+
+            // 하트 모양 (베지어 곡선 사용)
+            const x = 256, y = 180;
+            const width = 200, height = 180;
+
+            ctx.moveTo(x, y + height / 4);
+            ctx.bezierCurveTo(x, y, x - width / 2, y, x - width / 2, y + height / 4);
+            ctx.bezierCurveTo(x - width / 2, y + height / 2, x, y + (height * 3) / 4, x, y + height);
+            ctx.bezierCurveTo(x, y + (height * 3) / 4, x + width / 2, y + height / 2, x + width / 2, y + height / 4);
+            ctx.bezierCurveTo(x + width / 2, y, x, y, x, y + height / 4);
+
+            ctx.fill();
+
+            // 작은 하트 장식
+            ctx.fillStyle = '#FFD3A5';
+            ctx.globalAlpha = 0.8;
+            ctx.beginPath();
+            const sx = 380, sy = 140, sw = 40, sh = 35;
+            ctx.moveTo(sx, sy + sh / 4);
+            ctx.bezierCurveTo(sx, sy, sx - sw / 2, sy, sx - sw / 2, sy + sh / 4);
+            ctx.bezierCurveTo(sx - sw / 2, sy + sh / 2, sx, sy + (sh * 3) / 4, sx, sy + sh);
+            ctx.bezierCurveTo(sx, sy + (sh * 3) / 4, sx + sw / 2, sy + sh / 2, sx + sw / 2, sy + sh / 4);
+            ctx.bezierCurveTo(sx + sw / 2, sy, sx, sy, sx, sy + sh / 4);
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+
+            // 젖병 아이콘
+            ctx.fillStyle = '#A8E6CF';
+            ctx.globalAlpha = 0.9;
+
+            // 젖병 뚜껑
+            ctx.fillRect(150, 390, 40, 15);
+
+            // 젖병 몸체
+            ctx.beginPath();
+            ctx.roundRect(158, 400, 24, 50, 5);
+            ctx.fill();
+
+            // 하이라이트
+            ctx.fillStyle = 'white';
+            ctx.globalAlpha = 0.5;
+            ctx.beginPath();
+            ctx.arc(170, 415, 3, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+        }
+
+        // === OG Image 생성 (1200x630) ===
+        function drawOGImage() {
+            const canvas = document.getElementById('ogCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // 배경 그라디언트
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#FFF8F0');
+            gradient.addColorStop(1, '#FFE4E6');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // 장식 도트
+            ctx.globalAlpha = 0.15;
+            ctx.fillStyle = '#FF9AA2';
+            ctx.beginPath();
+            ctx.arc(100, 100, 30, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#A8E6CF';
+            ctx.beginPath();
+            ctx.arc(1100, 530, 40, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#FFD3A5';
+            ctx.beginPath();
+            ctx.arc(200, 500, 25, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#FF9AA2';
+            ctx.beginPath();
+            ctx.arc(1050, 150, 35, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+
+            // 로고 배경 원
+            ctx.fillStyle = 'white';
+            ctx.globalAlpha = 0.9;
+            ctx.beginPath();
+            ctx.arc(195, 315, 115, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+
+            // 메인 하트 로고
+            ctx.fillStyle = '#FF9AA2';
+            const hx = 195, hy = 270, hw = 150, hh = 120;
+            ctx.beginPath();
+            ctx.moveTo(hx, hy + hh / 4);
+            ctx.bezierCurveTo(hx, hy, hx - hw / 2, hy, hx - hw / 2, hy + hh / 4);
+            ctx.bezierCurveTo(hx - hw / 2, hy + hh / 2, hx, hy + (hh * 3) / 4, hx, hy + hh);
+            ctx.bezierCurveTo(hx, hy + (hh * 3) / 4, hx + hw / 2, hy + hh / 2, hx + hw / 2, hy + hh / 4);
+            ctx.bezierCurveTo(hx + hw / 2, hy, hx, hy, hx, hy + hh / 4);
+            ctx.fill();
+
+            // 텍스트 - 메인 타이틀
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 80px Arial, sans-serif';
+            ctx.fillText('베베가이드', 320, 280);
+
+            // 서브 타이틀
+            ctx.fillStyle = '#666';
+            ctx.font = '36px Arial, sans-serif';
+            ctx.fillText('신생아~12개월 월령별 체크리스트 & 필수템', 320, 350);
+
+            // 장식 라인
+            ctx.fillStyle = '#FF9AA2';
+            ctx.fillRect(320, 380, 200, 4);
+
+            // 하단 설명
+            ctx.fillStyle = '#999';
+            ctx.font = '24px Arial, sans-serif';
+            ctx.fillText('초보 부모를 위한 실용적인 육아 가이드', 320, 430);
+
+            // 우측 하단 아이콘들
+            // 젖병
+            ctx.fillStyle = '#A8E6CF';
+            ctx.fillRect(950, 450, 30, 10);
+            ctx.fillRect(955, 458, 20, 40);
+            ctx.fillStyle = 'white';
+            ctx.globalAlpha = 0.5;
+            ctx.beginPath();
+            ctx.arc(965, 470, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+
+            // 하트 아이콘
+            ctx.fillStyle = '#FF9AA2';
+            const sx = 1015, sy = 458, sw = 24, sh = 20;
+            ctx.beginPath();
+            ctx.moveTo(sx, sy + sh / 4);
+            ctx.bezierCurveTo(sx, sy, sx - sw / 2, sy, sx - sw / 2, sy + sh / 4);
+            ctx.bezierCurveTo(sx - sw / 2, sy + sh / 2, sx, sy + (sh * 3) / 4, sx, sy + sh);
+            ctx.bezierCurveTo(sx, sy + (sh * 3) / 4, sx + sw / 2, sy + sh / 2, sx + sw / 2, sy + sh / 4);
+            ctx.bezierCurveTo(sx + sw / 2, sy, sx, sy, sx, sy + sh / 4);
+            ctx.fill();
+
+            // 별 아이콘
+            ctx.fillStyle = '#FFD3A5';
+            const star = createStar(1082, 466, 5, 12, 6);
+            ctx.beginPath();
+            ctx.moveTo(star[0].x, star[0].y);
+            for(let i = 1; i < star.length; i++) {
+                ctx.lineTo(star[i].x, star[i].y);
+            }
+            ctx.closePath();
+            ctx.fill();
+
+            // 하단 URL
+            ctx.fillStyle = '#999';
+            ctx.font = '20px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('www.bebe-guide.com', 600, 600);
+        }
+
+        // 별 모양 생성 헬퍼 함수
+        function createStar(cx, cy, spikes, outerRadius, innerRadius) {
+            let points = [];
+            let angle = Math.PI / 2 * 3;
+            let step = Math.PI / spikes;
+
+            for(let i = 0; i < spikes; i++) {
+                let x = cx + Math.cos(angle) * outerRadius;
+                let y = cy + Math.sin(angle) * outerRadius;
+                points.push({x, y});
+                angle += step;
+
+                x = cx + Math.cos(angle) * innerRadius;
+                y = cy + Math.sin(angle) * innerRadius;
+                points.push({x, y});
+                angle += step;
+            }
+            return points;
+        }
+
+        // 다운로드 함수들
+        function downloadFavicon() {
+            const canvas = document.getElementById('faviconCanvas');
+            const link = document.createElement('a');
+            link.download = 'favicon-512.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            document.getElementById('faviconStatus').innerHTML = '<p class="success">✅ favicon-512.png 다운로드 완료!</p>';
+        }
+
+        function downloadOG() {
+            const canvas = document.getElementById('ogCanvas');
+            const link = document.createElement('a');
+            link.download = 'og-bebeguide.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            document.getElementById('ogStatus').innerHTML = '<p class="success">✅ og-bebeguide.png 다운로드 완료!</p>';
+        }
+
+        // 페이지 로드 시 이미지 자동 생성
+        window.onload = function() {
+            drawFavicon();
+            drawOGImage();
+        };
+    </script>
+</body>
+</html>
