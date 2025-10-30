@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="베베가이드 개인정보처리방침 - 개인정보 수집 및 이용에 대한 안내">
+    <title>개인정보처리방침 - 베베가이드</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #FF8E8E;
+        }
+        .privacy-header h1 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .privacy-header .update-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+        .privacy-section h2 {
+            font-size: 1.5rem;
+            color: #FF8E8E;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffe0e0;
+        }
+        .privacy-section h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 20px 0 10px;
+        }
+        .privacy-section p, .privacy-section li {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .privacy-section ul {
+            padding-left: 20px;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .highlight-box strong {
+            color: #856404;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .info-table th {
+            background: #FF8E8E;
+            color: white;
+            font-weight: 600;
+        }
+        .info-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .contact-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #FF8E8E;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #ff7070;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,142,142,0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">🍼 베베가이드</a>
+            <button class="mobile-menu" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">홈</a></li>
+                <li><a href="index.html#services" class="nav-link">서비스</a></li>
+                <li><a href="index.html#checklist" class="nav-link">체크리스트</a></li>
+                <li><a href="index.html#vaccination" class="nav-link">예방접종</a></li>
+                <li><a href="index.html#contact" class="nav-link">문의</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>개인정보처리방침</h1>
+            <p class="update-date">최종 수정일: 2024년 1월 1일</p>
+        </div>
+
+        <!-- 1. 총칙 -->
+        <div class="privacy-section">
+            <h2>1. 총칙</h2>
+            <p>
+                베베가이드(이하 "서비스")는 이용자의 개인정보를 중요시하며,
+                「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등
+                관련 법령을 준수하고 있습니다.
+            </p>
+            <p>
+                본 개인정보처리방침은 서비스가 제공하는 육아 정보 제공 및 체크리스트 배포 서비스 이용 과정에서
+                수집되는 개인정보의 항목, 수집 및 이용 목적, 보유 및 이용 기간, 파기 절차 등에 관한 사항을
+                안내합니다.
+            </p>
+        </div>
+
+        <!-- 2. 수집하는 개인정보 항목 -->
+        <div class="privacy-section">
+            <h2>2. 수집하는 개인정보 항목</h2>
+
+            <h3>2.1 필수 수집 항목</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>수집 항목</th>
+                        <th>수집 방법</th>
+                        <th>수집 목적</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>이메일 주소</td>
+                        <td>문의 폼 제출 시</td>
+                        <td>체크리스트 및 육아 정보 발송, 문의 응대</td>
+                    </tr>
+                    <tr>
+                        <td>이름 (부모님 성함)</td>
+                        <td>문의 폼 제출 시</td>
+                        <td>서비스 이용자 확인, 맞춤 응대</td>
+                    </tr>
+                    <tr>
+                        <td>아기 현재 월령</td>
+                        <td>문의 폼 제출 시</td>
+                        <td>월령별 맞춤 체크리스트 제공</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2.2 선택 수집 항목</h3>
+            <ul>
+                <li>문의 내용 (추가 질문 사항)</li>
+                <li>요청 유형 (PDF 체크리스트, 예방접종 리마인더 등)</li>
+            </ul>
+
+            <h3>2.3 자동 수집 항목</h3>
+            <ul>
+                <li>접속 IP 주소</li>
+                <li>쿠키 (필수 기능 구현 용도)</li>
+                <li>방문 일시</li>
+                <li>서비스 이용 기록</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>⚠️ 중요:</strong>
+                본 서비스는 만 14세 미만 아동의 개인정보를 직접 수집하지 않습니다.
+                수집되는 정보는 부모(법정대리인)의 정보이며, 아기의 개인정보(이름, 생년월일 등)는
+                수집하지 않습니다. 아기 월령은 서비스 제공 목적의 참고 정보로만 사용됩니다.
+            </div>
+        </div>
+
+        <!-- 3. 개인정보의 수집 및 이용 목적 -->
+        <div class="privacy-section">
+            <h2>3. 개인정보의 수집 및 이용 목적</h2>
+            <p>수집된 개인정보는 다음의 목적으로만 이용되며, 목적이 변경될 경우 사전 동의를 받습니다.</p>
+
+            <h3>3.1 서비스 제공</h3>
+            <ul>
+                <li>월령별 맞춤 체크리스트 이메일 발송</li>
+                <li>육아 정보 및 예방접종 일정 안내</li>
+                <li>문의 사항 응대 및 고객 지원</li>
+            </ul>
+
+            <h3>3.2 서비스 개선</h3>
+            <ul>
+                <li>이용자 맞춤형 콘텐츠 제공</li>
+                <li>서비스 이용 통계 분석 (개인 식별 불가능한 형태)</li>
+                <li>신규 서비스 개발 및 마케팅 활용</li>
+            </ul>
+
+            <h3>3.3 안전 및 보안</h3>
+            <ul>
+                <li>부정 이용 방지 및 비인가 사용 방지</li>
+                <li>서비스 안정성 확보</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>📌 의료 정보 관련 안내:</strong><br>
+                본 서비스는 <strong>의료 진단, 치료, 처방을 제공하지 않습니다.</strong>
+                제공되는 모든 정보는 일반적인 육아 참고 자료이며,
+                건강 문제는 반드시 소아청소년과 전문의와 상담하시기 바랍니다.
+            </div>
+        </div>
+
+        <!-- 4. 개인정보의 보유 및 이용 기간 -->
+        <div class="privacy-section">
+            <h2>4. 개인정보의 보유 및 이용 기간</h2>
+
+            <h3>4.1 원칙</h3>
+            <p>
+                개인정보는 수집 및 이용 목적이 달성된 후에는 지체 없이 파기합니다.
+                단, 관련 법령에 따라 보존할 필요가 있는 경우 일정 기간 보관 후 파기합니다.
+            </p>
+
+            <h3>4.2 보유 기간</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>보유 기간</th>
+                        <th>근거</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>문의 및 체크리스트 요청 정보</td>
+                        <td>목적 달성 시까지 (최대 1년)</td>
+                        <td>서비스 제공 목적</td>
+                    </tr>
+                    <tr>
+                        <td>예방접종 리마인더 구독 정보</td>
+                        <td>구독 해지 시까지</td>
+                        <td>이용자 동의</td>
+                    </tr>
+                    <tr>
+                        <td>부정 이용 기록</td>
+                        <td>5년</td>
+                        <td>전자상거래법</td>
+                    </tr>
+                    <tr>
+                        <td>접속 로그 기록</td>
+                        <td>3개월</td>
+                        <td>통신비밀보호법</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>4.3 파기 절차 및 방법</h3>
+            <ul>
+                <li><strong>파기 절차:</strong> 보유 기간 만료 시 개인정보보호책임자의 승인을 거쳐 파기</li>
+                <li><strong>파기 방법:</strong>
+                    <ul>
+                        <li>전자적 파일: 복구 불가능한 방법으로 영구 삭제</li>
+                        <li>종이 문서: 분쇄 또는 소각</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 5. 개인정보의 제3자 제공 -->
+        <div class="privacy-section">
+            <h2>5. 개인정보의 제3자 제공</h2>
+            <p>
+                <strong>본 서비스는 이용자의 개인정보를 제3자에게 제공하거나 판매하지 않습니다.</strong>
+            </p>
+            <p>
+                단, 다음의 경우에는 예외적으로 개인정보를 제공할 수 있습니다:
+            </p>
+            <ul>
+                <li>이용자가 사전에 동의한 경우</li>
+                <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라
+                    수사기관의 요구가 있는 경우</li>
+            </ul>
+        </div>
+
+        <!-- 6. 개인정보 처리 위탁 -->
+        <div class="privacy-section">
+            <h2>6. 개인정보 처리 위탁</h2>
+            <p>서비스 제공을 위해 다음과 같이 개인정보 처리 업무를 위탁하고 있습니다:</p>
+
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>수탁업체</th>
+                        <th>위탁 업무 내용</th>
+                        <th>보유 및 이용 기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cloudflare, Inc.</td>
+                        <td>서버 호스팅, 데이터 저장 및 처리</td>
+                        <td>회원 탈퇴 또는 위탁 계약 종료 시</td>
+                    </tr>
+                    <tr>
+                        <td>MailChannels / Resend</td>
+                        <td>이메일 발송 대행</td>
+                        <td>이메일 발송 완료 시</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                위탁 계약 시 개인정보 보호법 제26조에 따라 위탁업무 수행목적 외 개인정보 처리금지,
+                기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한
+                사항을 계약서 등 문서에 명시하고 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.
+            </p>
+        </div>
+
+        <!-- 7. 정보주체의 권리 -->
+        <div class="privacy-section">
+            <h2>7. 정보주체의 권리 및 행사 방법</h2>
+            <p>이용자는 언제든지 다음과 같은 개인정보 보호 관련 권리를 행사할 수 있습니다:</p>
+
+            <h3>7.1 권리 내용</h3>
+            <ul>
+                <li>개인정보 열람 요구</li>
+                <li>개인정보 정정·삭제 요구</li>
+                <li>개인정보 처리 정지 요구</li>
+                <li>동의 철회 (이메일 구독 해지 등)</li>
+            </ul>
+
+            <h3>7.2 권리 행사 방법</h3>
+            <p>아래 연락처로 서면, 이메일, 전화 등을 통해 요청할 수 있으며, 지체 없이 조치하겠습니다.</p>
+            <ul>
+                <li>이메일: <strong>privacy@bebe-guide.com</strong></li>
+                <li>대표 이메일: <strong>info@bebe-guide.com</strong></li>
+            </ul>
+
+            <p>
+                만 14세 미만 아동의 법정대리인은 아동의 개인정보에 대한 열람, 정정·삭제,
+                처리정지를 요구할 수 있습니다.
+            </p>
+        </div>
+
+        <!-- 8. 개인정보 자동 수집 장치 -->
+        <div class="privacy-section">
+            <h2>8. 개인정보 자동 수집 장치의 설치·운영 및 거부</h2>
+
+            <h3>8.1 쿠키(Cookie)의 사용 목적</h3>
+            <p>서비스는 다음의 목적을 위해 쿠키를 사용합니다:</p>
+            <ul>
+                <li>이용자 설정 저장 (월령 선택, 체크리스트 완료 상태 등)</li>
+                <li>챗봇 이용 기록 (웰컴 메시지 중복 표시 방지)</li>
+                <li>서비스 이용 통계 (개인 식별 불가)</li>
+            </ul>
+
+            <h3>8.2 쿠키 설정 거부 방법</h3>
+            <p>이용자는 웹브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다:</p>
+            <ul>
+                <li><strong>Chrome:</strong> 설정 > 개인정보 및 보안 > 쿠키 및 기타 사이트 데이터</li>
+                <li><strong>Edge:</strong> 설정 > 쿠키 및 사이트 권한 > 쿠키 및 사이트 데이터 관리</li>
+                <li><strong>Safari:</strong> 환경설정 > 개인정보 보호 > 쿠키 및 웹사이트 데이터</li>
+            </ul>
+            <p>단, 쿠키 저장을 거부할 경우 일부 서비스 이용에 어려움이 있을 수 있습니다.</p>
+        </div>
+
+        <!-- 9. 개인정보 보호책임자 -->
+        <div class="privacy-section">
+            <h2>9. 개인정보 보호책임자 및 담당자</h2>
+
+            <div class="contact-box">
+                <h3>개인정보 보호책임자</h3>
+                <ul>
+                    <li><strong>이름:</strong> 베베가이드 운영팀</li>
+                    <li><strong>이메일:</strong> privacy@bebe-guide.com</li>
+                    <li><strong>대표 문의:</strong> info@bebe-guide.com</li>
+                </ul>
+
+                <p style="margin-top: 20px;">
+                    개인정보 침해에 대한 신고나 상담이 필요하신 경우
+                    아래 기관에 문의하실 수 있습니다:
+                </p>
+                <ul>
+                    <li><strong>개인정보침해신고센터:</strong> (국번없이) 118 / privacy.kisa.or.kr</li>
+                    <li><strong>개인정보분쟁조정위원회:</strong> (국번없이) 1833-6972 / www.kopico.go.kr</li>
+                    <li><strong>대검찰청 사이버수사과:</strong> (국번없이) 1301 / www.spo.go.kr</li>
+                    <li><strong>경찰청 사이버안전국:</strong> (국번없이) 182 / cyberbureau.police.go.kr</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 10. 개인정보 처리방침 변경 -->
+        <div class="privacy-section">
+            <h2>10. 개인정보 처리방침의 변경</h2>
+            <p>
+                본 개인정보처리방침은 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는
+                변경 사항의 시행 7일 전부터 홈페이지를 통해 공지할 것입니다.
+            </p>
+            <ul>
+                <li><strong>최초 작성일:</strong> 2024년 1월 1일</li>
+                <li><strong>최종 수정일:</strong> 2024년 1월 1일</li>
+                <li><strong>시행일:</strong> 2024년 1월 1일</li>
+            </ul>
+        </div>
+
+        <!-- 11. 광고성 정보 전송 -->
+        <div class="privacy-section">
+            <h2>11. 광고성 정보 전송</h2>
+            <p>
+                본 서비스는 이용자의 명시적인 사전 동의 없이 광고성 정보를 전송하지 않습니다.
+            </p>
+            <p>
+                체크리스트 및 육아 정보 이메일에 포함된 상품 추천 링크는
+                <strong>쿠팡 파트너스 활동의 일환</strong>으로, 구매 시 일정 수수료를 제공받을 수 있습니다.
+                이는 웹사이트 및 이메일에서 명확히 고지됩니다.
+            </p>
+        </div>
+
+        <!-- Back Button -->
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">← 홈으로 돌아가기</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>베베가이드</h3>
+                    <p>초보 부모를 위한 신뢰할 수 있는 육아 가이드</p>
+                </div>
+                <div class="footer-section">
+                    <h3>바로가기</h3>
+                    <ul>
+                        <li><a href="index.html#services">서비스 소개</a></li>
+                        <li><a href="index.html#checklist">체크리스트</a></li>
+                        <li><a href="index.html#vaccination">예방접종</a></li>
+                        <li><a href="index.html#contact">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>법적 고지</h3>
+                    <ul>
+                        <li><a href="privacy.html">개인정보처리방침</a></li>
+                        <li><a href="index.html#disclaimer">의료 면책 조항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 베베가이드. All rights reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">
+                    본 사이트의 일부 링크는 쿠팡 파트너스 활동의 일환으로,
+                    이를 통해 일정액의 수수료를 제공받을 수 있습니다.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

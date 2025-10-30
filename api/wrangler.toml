@@ -1,0 +1,64 @@
+# ============================================================================
+# Cloudflare Workers 배포 설정 파일
+# ============================================================================
+# 사용법:
+# 1. Cloudflare 계정 생성 (https://dash.cloudflare.com)
+# 2. npm install -g wrangler 설치
+# 3. wrangler login 으로 로그인
+# 4. wrangler deploy 로 배포
+# ============================================================================
+
+name = "bebeguide-api"
+main = "bebeguide-worker.js"
+compatibility_date = "2024-01-01"
+
+# Workers 라우트 설정
+# 배포 후 https://bebeguide-api.YOUR-SUBDOMAIN.workers.dev 형태로 접근 가능
+# 또는 Custom Domain 연결 가능
+
+# 환경 변수 설정 (보안상 실제 값은 Cloudflare Dashboard에서 설정)
+# Dashboard > Workers > bebeguide-api > Settings > Variables 에서 설정:
+#
+# SLACK_WEBHOOK_URL (선택):
+#   - Slack Incoming Webhook URL
+#   - 예: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXX
+#
+# SENDER_EMAIL (필수):
+#   - 발신자 이메일 주소
+#   - 예: noreply@bebe-guide.com
+#   - MailChannels는 검증된 도메인에서만 발송 가능
+#
+# SENDER_NAME (선택):
+#   - 발신자 이름
+#   - 기본값: 베베가이드
+
+# KV 네임스페이스 설정
+# 리마인더 구독자 저장용 KV
+#
+# 🚀 배포 전 필수: KV 생성 후 아래 ID 교체
+#
+# PowerShell에서 실행:
+#   cd C:\Users\hee\website\api
+#   wrangler kv:namespace create "REMINDER_USERS"
+#
+# 출력된 id와 preview_id를 아래에 입력:
+kv_namespaces = [
+  { binding = "REMINDER_USERS", id = "8bfc983ed4f64b678b39c684afc614bb" }
+]
+
+# 로컬 개발 시 테스트용 변수 (실제 배포 시엔 Dashboard에서 설정)
+[vars]
+SENDER_EMAIL = "noreply@bebe-guide.com"
+SENDER_NAME = "베베가이드"
+
+# 로컬 개발 서버 설정
+[dev]
+port = 8787
+
+# 프로덕션 환경 설정
+[env.production]
+name = "bebeguide-api"
+# route = "api.bebe-guide.com/*"  # Custom Domain 사용 시 주석 해제
+
+# CORS 설정 (이미 Worker 코드에 포함)
+# 추가 보안 헤더가 필요하면 여기서 설정 가능

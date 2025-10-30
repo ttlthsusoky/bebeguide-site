@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE4E6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9AA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB7B2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 그라디언트 -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- 장식 도트 패턴 -->
+  <g opacity="0.15">
+    <circle cx="100" cy="100" r="30" fill="#FF9AA2"/>
+    <circle cx="1100" cy="530" r="40" fill="#A8E6CF"/>
+    <circle cx="200" cy="500" r="25" fill="#FFD3A5"/>
+    <circle cx="1050" cy="150" r="35" fill="#FF9AA2"/>
+  </g>
+
+  <!-- 왼쪽 로고 영역 -->
+  <g transform="translate(80, 200)">
+    <!-- 로고 배경 원 -->
+    <circle cx="115" cy="115" r="115" fill="white" opacity="0.9"/>
+
+    <!-- 메인 하트 -->
+    <path d="M 115 70
+             C 115 45, 95 30, 75 30
+             C 50 30, 30 50, 30 75
+             C 30 115, 70 145, 115 180
+             C 160 145, 200 115, 200 75
+             C 200 50, 180 30, 155 30
+             C 135 30, 115 45, 115 70 Z"
+          fill="url(#logoGradient)"/>
+
+    <!-- 작은 별 장식 -->
+    <path d="M 180 50 L 185 60 L 195 62 L 187 70 L 190 80 L 180 75 L 170 80 L 173 70 L 165 62 L 175 60 Z"
+          fill="#FFD3A5"/>
+  </g>
+
+  <!-- 텍스트 영역 -->
+  <g transform="translate(320, 200)">
+    <!-- 메인 타이틀 -->
+    <text x="0" y="80" font-family="'Noto Sans KR', sans-serif" font-size="80" font-weight="700" fill="#333">
+      베베가이드
+    </text>
+
+    <!-- 서브 타이틀 -->
+    <text x="0" y="150" font-family="'Noto Sans KR', sans-serif" font-size="36" font-weight="400" fill="#666">
+      신생아~12개월 월령별 체크리스트 &amp; 필수템
+    </text>
+
+    <!-- 장식 라인 -->
+    <rect x="0" y="180" width="200" height="4" rx="2" fill="#FF9AA2"/>
+
+    <!-- 하단 설명 -->
+    <text x="0" y="230" font-family="'Noto Sans KR', sans-serif" font-size="24" font-weight="300" fill="#999">
+      초보 부모를 위한 실용적인 육아 가이드
+    </text>
+  </g>
+
+  <!-- 우측 하단 아이콘들 -->
+  <g transform="translate(950, 450)">
+    <!-- 젖병 아이콘 -->
+    <g>
+      <rect x="0" y="0" width="30" height="10" rx="2" fill="#A8E6CF"/>
+      <rect x="5" y="8" width="20" height="40" rx="4" fill="#A8E6CF"/>
+      <circle cx="15" cy="20" r="2" fill="white" opacity="0.5"/>
+    </g>
+
+    <!-- 하트 아이콘 -->
+    <g transform="translate(60, 5)">
+      <path d="M 15 8 C 15 5, 12 3, 9 3 C 6 3, 3 6, 3 9 C 3 14, 8 18, 15 22 C 22 18, 27 14, 27 9 C 27 6, 24 3, 21 3 C 18 3, 15 5, 15 8 Z"
+            fill="#FF9AA2"/>
+    </g>
+
+    <!-- 별 아이콘 -->
+    <g transform="translate(120, 8)">
+      <path d="M 12 0 L 14.5 8 L 23 9 L 17 15 L 19 23 L 12 19 L 5 23 L 7 15 L 1 9 L 9.5 8 Z"
+            fill="#FFD3A5"/>
+    </g>
+  </g>
+
+  <!-- 하단 URL (선택사항) -->
+  <text x="600" y="600" font-family="'Noto Sans KR', sans-serif" font-size="20" font-weight="400" fill="#999" text-anchor="middle">
+    www.bebe-guide.com
+  </text>
+</svg>
