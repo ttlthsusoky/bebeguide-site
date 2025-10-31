@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4개월 아기 필수 준비물 체크리스트 | 베베가이드</title>
+    <meta name="description" content="4개월 아기에게 꼭 필요한 필수 준비물 체크리스트. 안전하고 검증된 제품을 확인하세요.">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        :root {--primary-color: #FF8E8E;--primary-light: #FFB3B3;--secondary-color: #ffd3a5;--accent-color: #a8e6cf;--dark-color: #1f2937;--gray-color: #6b7280;--light-bg: #fff8f0;--white: #ffffff;--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);}
+        body {font-family: 'Noto Sans KR', sans-serif;line-height: 1.6;color: var(--dark-color);background: linear-gradient(135deg, #fff8f0 0%, #ffe8e8 100%);min-height: 100vh;}
+        .container {max-width: 900px;margin: 0 auto;padding: 20px;}
+        header {background: var(--white);padding: 30px;border-radius: 16px;box-shadow: var(--shadow-lg);margin-bottom: 30px;text-align: center;}
+        .logo {font-size: 1.5rem;font-weight: 700;color: var(--primary-color);margin-bottom: 20px;display: flex;align-items: center;justify-content: center;gap: 10px;}
+        h1 {font-size: 2rem;color: var(--dark-color);margin-bottom: 10px;font-weight: 700;}
+        .subtitle {font-size: 1.1rem;color: var(--gray-color);margin-bottom: 20px;}
+        .info-badge {display: inline-block;background: linear-gradient(135deg, var(--primary-color), var(--primary-light));color: var(--white);padding: 8px 20px;border-radius: 20px;font-size: 0.9rem;font-weight: 500;}
+        .info-box {background: #e3f2fd;border-left: 4px solid #2196f3;padding: 15px 20px;border-radius: 8px;margin: 20px 0;font-size: 0.95rem;color: #1565c0;}
+        .checklist-section {background: var(--white);padding: 30px;border-radius: 16px;box-shadow: var(--shadow-lg);margin-bottom: 30px;}
+        .section-title {font-size: 1.5rem;font-weight: 700;color: var(--dark-color);margin-bottom: 20px;padding-bottom: 15px;border-bottom: 3px solid var(--primary-color);display: flex;align-items: center;gap: 10px;}
+        .checklist-item {display: flex;align-items: flex-start;gap: 15px;padding: 20px;margin-bottom: 15px;background: var(--light-bg);border-radius: 12px;transition: all 0.3s ease;border: 2px solid transparent;}
+        .checklist-item:hover {transform: translateX(5px);border-color: var(--primary-light);box-shadow: var(--shadow);}
+        .checklist-item.checked {opacity: 0.6;background: #f0f0f0;}
+        .checklist-item.checked .item-text {text-decoration: line-through;color: var(--gray-color);}
+        .checkbox-wrapper {flex-shrink: 0;margin-top: 2px;}
+        .checkbox-wrapper input[type="checkbox"] {width: 24px;height: 24px;cursor: pointer;accent-color: var(--primary-color);}
+        .item-content {flex: 1;}
+        .item-text {font-size: 1.1rem;font-weight: 500;color: var(--dark-color);margin-bottom: 8px;line-height: 1.5;}
+        .item-link {display: inline-flex;align-items: center;gap: 5px;color: var(--primary-color);text-decoration: none;font-size: 0.9rem;font-weight: 500;padding: 6px 12px;border-radius: 6px;background: rgba(255, 142, 142, 0.1);transition: all 0.3s ease;}
+        .item-link:hover {background: var(--primary-color);color: var(--white);transform: translateY(-2px);}
+        .vaccination-info {background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);padding: 25px;border-radius: 12px;margin-top: 30px;}
+        .vaccination-info h3 {color: #2e7d32;margin-bottom: 15px;font-size: 1.3rem;}
+        .vaccination-info ul {list-style: none;padding: 0;}
+        .vaccination-info li {padding: 10px 0;padding-left: 30px;position: relative;color: #1b5e20;font-weight: 500;}
+        .vaccination-info li::before {content: "💉";position: absolute;left: 0;}
+        .footer-note {text-align: center;padding: 20px;color: var(--gray-color);font-size: 0.9rem;}
+        .back-button {display: inline-flex;align-items: center;gap: 8px;padding: 12px 24px;background: var(--primary-color);color: var(--white);text-decoration: none;border-radius: 10px;font-weight: 500;transition: all 0.3s ease;margin-top: 20px;}
+        .back-button:hover {background: var(--primary-light);transform: translateY(-2px);box-shadow: var(--shadow);}
+        @media (max-width: 768px) {h1 {font-size: 1.5rem;}.subtitle {font-size: 1rem;}.checklist-section {padding: 20px;}.item-text {font-size: 1rem;}}
+        .progress-bar {width: 100%;height: 8px;background: #e0e0e0;border-radius: 10px;overflow: hidden;margin: 20px 0;}
+        .progress-fill {height: 100%;background: linear-gradient(90deg, var(--primary-color), var(--accent-color));width: 0%;transition: width 0.5s ease;border-radius: 10px;}
+        .progress-text {text-align: center;font-weight: 600;color: var(--primary-color);margin-top: 10px;font-size: 1.1rem;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><i class="fas fa-baby"></i> 베베가이드</div>
+            <h1>4개월 아기 필수 준비물 체크리스트</h1>
+            <p class="subtitle">4개월 아기 성장에 필요한 필수 준비물</p>
+            <span class="info-badge">👶 4개월</span>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="progress-text" id="progressText">준비 완료: 0/8 (0%)</div>
+        </header>
+
+        <div class="info-box">
+            <i class="fas fa-info-circle"></i>
+            <strong>체크박스를 클릭하면 완료 상태가 저장됩니다.</strong> 준비가 끝난 항목을 체크해보세요!
+        </div>
+
+        <div class="checklist-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-check"></i> 필수 준비물 목록</h2>
+
+            <div class="checklist-item" data-index="0">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-0"></div>
+                <div class="item-content">
+                    <div class="item-text">기저귀 중형 지속 사용</div>
+                    <a href="https://www.coupang.com/np/search?q=중형 지속 사용&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="1">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-1"></div>
+                <div class="item-content">
+                    <div class="item-text">범퍼침대 or 안전가드</div>
+                    <a href="https://www.coupang.com/np/search?q=or 안전가드&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="2">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-2"></div>
+                <div class="item-content">
+                    <div class="item-text">치아발육기 (실리콘)</div>
+                    <a href="https://www.coupang.com/np/search?q=실리콘&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="3">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-3"></div>
+                <div class="item-content">
+                    <div class="item-text">아기 전용 물티슈</div>
+                    <a href="https://www.coupang.com/np/search?q=전용 물티슈&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="4">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-4"></div>
+                <div class="item-content">
+                    <div class="item-text">외출용 유모차</div>
+                    <a href="https://www.coupang.com/np/search?q=유모차&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="5">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-5"></div>
+                <div class="item-content">
+                    <div class="item-text">자외선 차단 모자</div>
+                    <a href="https://www.coupang.com/np/search?q=차단 모자&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="6">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-6"></div>
+                <div class="item-content">
+                    <div class="item-text">소근육 발달 장난감</div>
+                    <a href="https://www.coupang.com/np/search?q=발달 장난감&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-index="7">
+                <div class="checkbox-wrapper"><input type="checkbox" id="item-7"></div>
+                <div class="item-content">
+                    <div class="item-text">아기 안전 손목밴드</div>
+                    <a href="https://www.coupang.com/np/search?q=안전 손목밴드&subid=AF8186321" class="item-link" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i> 제품 보러가기</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="vaccination-info">
+            <h3><i class="fas fa-syringe"></i> 예방접종 안내 (질병관리청 기준)</h3>
+            <ul>
+                <li><strong>DTaP</strong> - 3차</li>
+                <li><strong>IPV</strong> - 3차</li>
+                <li><strong>Hib</strong> - 3차</li>
+                <li><strong>PCV</strong> - 3차</li>
+            </ul>
+            <p style="margin-top:15px; font-size:0.9rem; color:#2e7d32;">
+                💡 4개월은 기본 백신 3차 접종 시기입니다.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://be-be-guide.com/#age" class="back-button"><i class="fas fa-home"></i> 베베가이드 홈으로</a>
+        </div>
+
+        <div class="footer-note">
+            <p>정보 기준일: 2025-10-28 업데이트</p>
+            <p style="margin-top: 10px;">이 정보는 일반적인 가이드이며, 개별 상황에 따라 달라질 수 있습니다.</p>
+            <p style="margin-top: 5px; color: var(--primary-color); font-weight: 600;">© 2024 베베가이드. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'checklist_4m';
+        const totalItems = 8;
+        function loadChecklistState() {const saved = localStorage.getItem(STORAGE_KEY);return saved ? JSON.parse(saved) : {};}
+        function saveChecklistState(index, checked) {const state = loadChecklistState();state[index] = checked;localStorage.setItem(STORAGE_KEY, JSON.stringify(state));updateProgress();}
+        function updateProgress() {const state = loadChecklistState();const checkedCount = Object.values(state).filter(v => v).length;const percentage = Math.round((checkedCount / totalItems) * 100);document.getElementById('progressFill').style.width = percentage + '%';document.getElementById('progressText').textContent = `준비 완료: ${checkedCount}/${totalItems} (${percentage}%)`;}
+        window.addEventListener('DOMContentLoaded', () => {const state = loadChecklistState();document.querySelectorAll('.checklist-item').forEach((item, index) => {const checkbox = item.querySelector('input[type="checkbox"]');const isChecked = state[index] || false;checkbox.checked = isChecked;if (isChecked) {item.classList.add('checked');}checkbox.addEventListener('change', (e) => {const checked = e.target.checked;saveChecklistState(index, checked);if (checked) {item.classList.add('checked');} else {item.classList.remove('checked');}});});updateProgress();});
+    </script>
+</body>
+</html>

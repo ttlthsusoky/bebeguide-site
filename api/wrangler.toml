@@ -48,8 +48,9 @@ kv_namespaces = [
 
 # 로컬 개발 시 테스트용 변수 (실제 배포 시엔 Dashboard에서 설정)
 [vars]
-SENDER_EMAIL = "noreply@bebe-guide.com"
+SENDER_EMAIL = "noreply@be-be-guide.com"
 SENDER_NAME = "베베가이드"
+RESEND_API_KEY = "re_Xjas3tgN_C7G6oypH3wtgbKruYvg4KBFS"
 
 # 로컬 개발 서버 설정
 [dev]

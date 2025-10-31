@@ -1,0 +1,29 @@
+{
+  "name": "bebeguide-api",
+  "version": "2.0.0",
+  "description": "베베가이드 자동 회신 API - 서버 측 PDF 생성 포함",
+  "main": "bebeguide-worker.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "wrangler dev --test-scheduled"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "bebeguide",
+    "email-automation",
+    "pdf-generation"
+  ],
+  "author": "BeBe Guide Team",
+  "license": "ISC",
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -4,8 +4,9 @@
 // 기능:
 // 1. contactForm 제출 시 POST 요청 수신
 // 2. 운영자에게 Slack 알림 전송 (선택)
-// 3. 부모에게 자동 회신 메일 발송 (MailChannels/Resend)
-// 4. 법적 안전 문구 포함 (의료 진단 아님, 응급 시 119)
+// 3. 부모에게 자동 회신 메일 발송 (Resend)
+// 4. 월령별 체크리스트 웹페이지 링크 제공
+// 5. 법적 안전 문구 포함 (의료 진단 아님, 응급 시 119)
 // ============================================================================
 
 export default {
@@ -35,19 +36,40 @@ export default {
     }
 
     try {
-      // 폼 데이터 파싱
-      const formData = await request.formData();
-      const data = {
-        email: formData.get('email'),
-        name: formData.get('name') || '고객님',
-        baby_age: formData.get('baby_age'),
-        message: formData.get('message') || '',
-        request_type: formData.get('request_type') || 'GENERAL_INQUIRY',
-        requested_month: formData.get('requested_month') || formData.get('baby_age')
-      };
+      // 폼 데이터 파싱 (JSON 또는 FormData 지원)
+      const contentType = request.headers.get('content-type') || '';
+      let data;
+      let hp_check = null;
+      let pdfFile = null;
+
+      if (contentType.includes('application/json')) {
+        // JSON 요청 처리
+        const jsonData = await request.json();
+        data = {
+          email: jsonData.email,
+          name: jsonData.name || '고객님',
+          baby_age: jsonData.baby_age,
+          message: jsonData.message || '',
+          request_type: jsonData.request_type || 'GENERAL_INQUIRY',
+          requested_month: jsonData.requested_month || jsonData.baby_age
+        };
+        hp_check = jsonData.hp_check;
+      } else {
+        // FormData 요청 처리
+        const formData = await request.formData();
+        data = {
+          email: formData.get('email'),
+          name: formData.get('name') || '고객님',
+          baby_age: formData.get('baby_age'),
+          message: formData.get('message') || '',
+          request_type: formData.get('request_type') || 'GENERAL_INQUIRY',
+          requested_month: formData.get('requested_month') || formData.get('baby_age')
+        };
+        hp_check = formData.get('hp_check');
+        pdfFile = formData.get('checklist_pdf'); // PDF 파일 (FormData만)
+      }
 
       // Honeypot 스팸 차단 (봇이 채울 가능성 높은 숨겨진 필드)
-      const hp_check = formData.get('hp_check');
       if (hp_check) {
         return new Response(JSON.stringify({
           ok: true,
@@ -110,11 +132,9 @@ export default {
         await sendSlackNotification(env.SLACK_WEBHOOK_URL, data, isEmergencyLike);
       }
 
-      // 2) PDF 첨부파일 읽기 (있는 경우만)
-      const pdfFile = formData.get('checklist_pdf'); // File 객체 또는 null
-
-      // 3) 부모에게 자동 회신 이메일 발송
-      const emailSent = await sendAutoReplyEmail(env, data, isEmergencyLike, pdfFile);
+      // 2) 부모에게 자동 회신 이메일 발송
+      // (서버 측에서 PDF 생성하므로 pdfFile 인자 제거)
+      const emailSent = await sendAutoReplyEmail(env, data, isEmergencyLike);
 
       if (!emailSent) {
         console.error('Failed to send email');
@@ -157,6 +177,14 @@ export default {
 function isValidEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
+}
+
+/**
+ * 월령별 체크리스트 웹페이지 URL 생성
+ */
+function getChecklistUrl(babyMonth) {
+  const baseUrl = "https://be-be-guide.com";
+  return `${baseUrl}/checklist/${babyMonth}m.html`;
 }
 
 /**
@@ -228,11 +256,11 @@ async function sendSlackNotification(webhookUrl, data, isEmergency = false) {
 }
 
 /**
- * 자동 회신 이메일 발송 (MailChannels 사용)
+ * 자동 회신 이메일 발송 (Resend API 사용)
  *
  * ENV 변수 필요:
- * - MAILCHANNELS_API_KEY (선택)
- * - SENDER_EMAIL (발신자 이메일, 예: noreply@bebe-guide.com)
+ * - RESEND_API_KEY (필수, Resend API 키)
+ * - SENDER_EMAIL (발신자 이메일, 예: noreply@be-be-guide.com)
  * - SENDER_NAME (발신자 이름, 예: 베베가이드)
  */
 /**
@@ -240,9 +268,9 @@ async function sendSlackNotification(webhookUrl, data, isEmergency = false) {
  * - 부모에게 맞춤 회신을 보낸다.
  * - 응급 의심 케이스면 즉시 119/응급실 안내 위주의 메일
  * - 일반 케이스면 월령별 가이드 + 면책 + 제휴 고지
- * - checklist_pdf(선택) 첨부
+ * - 서버 측에서 PDF 생성하여 첨부
  */
-async function sendAutoReplyEmail(env, data, isEmergency, pdfFile) {
+async function sendAutoReplyEmail(env, data, isEmergency) {
 
   // 0. 안전한 기본값 처리
   const toEmail = data.email;
@@ -256,6 +284,9 @@ async function sendAutoReplyEmail(env, data, isEmergency, pdfFile) {
 
   // 안내 기준일 (사이트/문서/메일 통일)
   const INFO_DATE = "정보 기준일: 2025-10-28 업데이트";
+
+  // 월령별 체크리스트 웹페이지 URL 생성
+  const checklistUrl = getChecklistUrl(requestedMonth);
 
   // 1. 응급 / 일반에 따라 제목과 본문 구분
   let subject;
@@ -365,14 +396,23 @@ ${INFO_DATE}
     `;
 
     htmlBody = `
-      <div style="font-family: 'Noto Sans KR', system-ui, sans-serif; line-height:1.6; color:#333;">
-        <h2>🍼 ${parentName}님, ${requestedMonth}개월 아기 체크리스트 도착했어요</h2>
+      <div style="font-family: 'Noto Sans KR', system-ui, sans-serif; line-height:1.6; color:#333; max-width:600px; margin:0 auto;">
+        <h2 style="color:#FF8E8E;">🍼 ${parentName}님, ${requestedMonth}개월 아기 체크리스트</h2>
         <p>
-          아래는 ${requestedMonth}개월 아기에게 특히 많이 묻는 핵심 포인트예요.<br>
-          자세한 준비물 목록, 예방접종 일정, 돌봄 주의사항은 첨부된 PDF에서 확인하실 수 있어요.
+          ${requestedMonth}개월 아기에게 특히 중요한 핵심 포인트를 정리했습니다.<br>
+          자세한 준비물 목록, 예방접종 일정, 돌봄 주의사항은 아래 링크에서 확인하세요.
         </p>
 
-        <ul style="font-size:14px;line-height:1.5;">
+        <div style="text-align:center; margin:30px 0;">
+          <a href="${checklistUrl}"
+             style="display:inline-block; background:#FF8E8E; color:white; padding:16px 32px;
+                    text-decoration:none; border-radius:8px; font-weight:bold; font-size:16px;">
+            📋 ${requestedMonth}개월 체크리스트 보기
+          </a>
+        </div>
+
+        <h3 style="color:#333; margin-top:30px;">💡 핵심 포인트</h3>
+        <ul style="font-size:14px; line-height:1.8; background:#f9f9f9; padding:20px; border-radius:8px;">
           <li><strong>수유/수면 루틴</strong>: 수유 후 충분한 트림, 아기는 반드시 등을 대고 재우기 (질식 예방)</li>
           <li><strong>예방접종</strong>: 질병관리청(KDCA) 일정에 맞춰 접종하며, 접종 후 고열·과도한 무기력은 바로 진료 권고</li>
           <li><strong>응급 신호</strong>: 숨이 빠르거나 힘들어 보임, 깨워도 늘어져 있으면 지체 없이 119 또는 응급실</li>
@@ -380,17 +420,17 @@ ${INFO_DATE}
 
         ${safetyBlockHTML}
 
-        <p style="font-size:13px;color:#555;">
-          ${INFO_DATE}<br>
+        <p style="font-size:13px;color:#555; background:#e3f2fd; padding:15px; border-radius:8px; margin-top:20px;">
+          📅 ${INFO_DATE}<br>
           ※ 최신 지침은 항상 소아청소년과 / 보건소에서 최종 확인해 주세요.
         </p>
 
         ${affiliateBlockHTML}
         ${optoutBlockHTML}
 
-        <p style="font-size:12px;color:#999;margin-top:24px;">
-          이 메일은 보호자님이 요청하신 아기 월령 자료(PDF_CHECKLIST / VACCINE_REMINDER 등)에 대한
-          자동 회신입니다. (Cloudflare Worker · MailChannels 경유)
+        <p style="font-size:12px;color:#999;margin-top:24px; text-align:center; padding-top:20px; border-top:1px solid #eee;">
+          이 메일은 보호자님이 요청하신 아기 월령 자료에 대한 자동 회신입니다.<br>
+          베베가이드 팀 | <a href="https://be-be-guide.com" style="color:#FF8E8E;">be-be-guide.com</a>
         </p>
       </div>
     `;
@@ -399,14 +439,18 @@ ${INFO_DATE}
 [베베가이드] ${requestedMonth}개월 아기 체크리스트 안내
 
 ${parentName}님,
-요청하신 월령(${requestedMonth}개월)용 기본 체크리스트와 주의사항입니다.
-자세한 준비물, 예방접종 일정, 돌봄 포인트는 첨부된 PDF 파일을 확인해 주세요.
 
+${requestedMonth}개월 아기에게 중요한 체크리스트를 준비했습니다.
+아래 링크에서 자세한 준비물, 예방접종 일정, 돌봄 주의사항을 확인하세요.
+
+🔗 체크리스트 보기: ${checklistUrl}
+
+핵심 포인트:
 - 수유/수면: 수유 후 트림 필수, 아기는 반드시 등을 대고 재우기
 - 예방접종: KDCA(질병관리청) 권장 일정에 맞춰 접종. 접종 후 고열/무기력은 바로 진료
 - 응급 신호: 숨쉬기 힘들어함, 38.5℃ 이상 고열(특히 3개월 미만), 경련, 깨워도 늘어짐 → 즉시 119 또는 응급실/소아청소년과
 
-안전 / 의료 안내:
+⚠️ 안전 / 의료 안내:
 이 메일은 일반적인 육아 정보를 제공합니다.
 의료진의 직접 진단·치료를 대체하지 않습니다.
 아기가 급해 보이면 즉시 119 또는 응급실로 가세요.
@@ -415,68 +459,57 @@ ${INFO_DATE}
 ※ 최신 지침은 항상 소아청소년과 / 보건소에서 최종 확인하세요.
 
 [제휴 고지]
-본 메일과 첨부 PDF에는 제휴 링크(쿠팡 파트너스 등)가 포함될 수 있으며,
+본 메일과 웹사이트에는 제휴 링크(쿠팡 파트너스 등)가 포함될 수 있으며,
 해당 링크를 통해 구매 시 일정 수수료를 제공받을 수 있습니다.
 보호자에게 추가 비용은 없습니다.
 
 [알림 중단 안내]
 예방접종/중요 일정 알림을 중단하고 싶으시면
 이 메일에 "중단 요청"이라고 회신해 주세요.
+
+---
+베베가이드 팀
+https://be-be-guide.com
     `.trim();
   }
 
-  // 2. 첨부 파일 준비 (선택)
-  const attachments = [];
-  if (pdfFile) {
-    const arrayBuf = await pdfFile.arrayBuffer();
-    let binary = "";
-    const bytes = new Uint8Array(arrayBuf);
-    for (let i = 0; i < bytes.length; i++) {
-      binary += String.fromCharCode(bytes[i]);
-    }
-    const base64Data = btoa(binary);
-
-    attachments.push({
-      "content": base64Data,
-      "filename": `bebeguide-${requestedMonth}m-checklist.pdf`,
-      "type": "application/pdf"
-    });
-  }
-
-  // 3. MailChannels용 payload 구성
+  // 2. Resend API용 payload 구성 (첨부 파일 없음, 웹페이지 링크만 포함)
   const mailPayload = {
-    "personalizations": [
-      {
-        "to": [{ "email": toEmail, "name": parentName }]
-      }
-    ],
-    "from": { "email": senderEmail, "name": senderName },
+    "from": `${senderName} <${senderEmail}>`,
+    "to": [toEmail],
     "subject": subject,
-    "content": [
-      { "type": "text/plain; charset=UTF-8", "value": textBody },
-      { "type": "text/html; charset=UTF-8", "value": htmlBody }
-    ],
-    ...(attachments.length > 0 ? { "attachments": attachments } : {})
+    "html": htmlBody,
+    "text": textBody
   };
 
-  // 4. 실제 전송
+  // 4. Resend API로 실제 전송
   try {
-    const resp = await fetch("https://api.mailchannels.net/tx/v1/send", {
+    const resendApiKey = env.RESEND_API_KEY;
+    if (!resendApiKey) {
+      console.error("RESEND_API_KEY is not set");
+      return false;
+    }
+
+    const resp = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Authorization": `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(mailPayload)
     });
 
     if (resp.ok) {
+      const result = await resp.json();
+      console.log("Resend email sent successfully:", result.id);
       return true;
     } else {
-      console.error("MailChannels send failed", await resp.text());
+      const errorText = await resp.text();
+      console.error("Resend send failed:", resp.status, errorText);
       return false;
     }
   } catch (err) {
-    console.error("MailChannels exception", err);
+    console.error("Resend exception:", err);
     return false;
   }
 }
