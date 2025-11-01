@@ -955,7 +955,7 @@ const CHECKLIST = {
     if (monthField)   monthField.value   = selectedMonth;
 
     // 알림
-    showNotification("요청 유형이 'PDF 전송'으로 설정됐어요. 이메일만 입력하면 보내드릴게요 💌", "success");
+    showNotification("체크리스트 링크를 이메일로 보내드립니다. 이메일 주소를 입력해 주세요 💌", "success");
   });
 })();
 
@@ -1168,8 +1168,8 @@ function openChat() {
         - "예방접종 일정"<br>
         - "분유 얼마나 줘요?"<br>
         - "체온 몇 도가 정상이에요?"<br><br>
-        📄 <b>PDF로 받아보고 싶으신가요?</b><br>
-        아래 "문의/구독" 섹션에서 이메일로 받으실 수 있어요!<br><br>
+        📧 <b>체크리스트를 이메일로 받아보고 싶으신가요?</b><br>
+        아래 "문의/구독" 섹션에서 이메일로 링크를 받으실 수 있어요!<br><br>
         궁금한 점이 있으면 언제든 물어보세요! 😊
       `;
       addMessage(welcomeMsg, "bot");
@@ -1407,26 +1407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const endpoint = contactForm.action;
     const formData = new FormData(contactForm);
 
-    // 5) PDF Blob 생성해서 formData에 첨부
-    try {
-      const selectedMonth = monthField ? monthField.value : '';
-      const parentNameField = document.getElementById('name');
-      const parentName = parentNameField ? parentNameField.value : '보호자님';
-
-      if (selectedMonth) {
-        const pdfBlob = await generateChecklistPDF(selectedMonth, parentName);
-
-        // 예: bebe-guide-6m.pdf 식 파일명
-        const filename = `bebe-guide-${selectedMonth}m.pdf`;
-
-        formData.append('checklist_pdf', pdfBlob, filename);
-      }
-    } catch (pdfErr) {
-      // PDF 생성에 실패해도 서비스 자체는 계속 진행 가능
-      console.warn('PDF 생성 실패 (첨부 없이 진행):', pdfErr);
-    }
-
-    // 6) 실제 전송
+    // 5) 실제 전송 (PDF 생성 없이 웹페이지 링크로 제공)
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -1481,152 +1462,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// === PDF 생성 함수 === //
-
-/**
- * 월령 기반 관련 예방접종 정보 추출
- */
-function getRelevantVaccinesForMonth(monthNum) {
-  const result = [];
-  const targetMonth = parseInt(monthNum, 10);
-
-  VACCINATION_SCHEDULE.forEach(block => {
-    // age 필드에서 숫자 추출 ("1개월" → 1, "12개월" → 12, "출생 직후" → 0)
-    let blockMonth = 0;
-    if (block.age.includes('출생')) {
-      blockMonth = 0;
-    } else {
-      const match = block.age.match(/(\d+)/);
-      if (match) {
-        blockMonth = parseInt(match[1], 10);
-      }
-    }
-
-    // 현재 월령 ±2개월 범위 내 예방접종만 포함
-    if (Math.abs(blockMonth - targetMonth) <= 2) {
-      result.push({
-        ageLabel: block.age,
-        vaccines: block.vaccines.map(v => v.name)
-      });
-    }
-  });
-
-  return result;
-}
-
-/**
- * 맞춤형 PDF 생성 함수 (문서 버전)
- */
-async function generateChecklistPDF(babyMonth, parentName) {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({
-    unit: 'pt',
-    format: 'a4'
-  });
-
-  const todayStr = "정보 기준일: 2025-10-28 업데이트";
-  const monthLabel = babyMonth === "0" ? "신생아(0개월)" : `${babyMonth}개월 아기`;
-  const checklistItems = CHECKLIST[babyMonth] || CHECKLIST[0];
-
-  // 1) 표지 / 소개
-  let y = 40;
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(16);
-  doc.text(`🍼 베베가이드 - ${monthLabel} 체크리스트`, 40, y);
-
-  y += 24;
-  doc.setFontSize(10);
-  doc.setFont('helvetica', 'normal');
-  doc.text(`수신자: ${parentName || "보호자님"}`, 40, y);
-  y += 16;
-  doc.text(todayStr, 40, y);
-  y += 24;
-
-  // 2) 필수 고지 블록 (제휴 / 의료 면책 / 응급 / 사용 안내)
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(11);
-  doc.text("⚠️ 제휴 마케팅 고지", 40, y);
-  doc.setFont('helvetica', 'normal');
-  y += 14;
-  doc.text("이 문서에는 제휴 링크(쿠팡 파트너스)가 포함될 수 있으며,", 40, y);
-  y += 14;
-  doc.text("해당 링크를 통해 구매 시 일정 수수료를 제공받을 수 있습니다.", 40, y);
-  y += 20;
-
-  doc.setFont('helvetica', 'bold');
-  doc.text("⚠️ 의료 면책 / 응급 안내", 40, y);
-  doc.setFont('helvetica', 'normal');
-  y += 14;
-  doc.text("이 문서는 일반적인 육아 정보를 제공합니다.", 40, y);
-  y += 14;
-  doc.text("아기가 호흡 곤란, 38.5℃ 이상의 고열(특히 생후 3개월 미만),", 40, y);
-  y += 14;
-  doc.text("경련, 의식 저하, 지속 구토/탈수 등 응급 증상이 있을 경우", 40, y);
-  y += 14;
-  doc.text("즉시 119 또는 응급실 / 소아청소년과 진료를 받으세요.", 40, y);
-  y += 20;
-
-  doc.setFont('helvetica', 'bold');
-  doc.text("📋 사용 안내", 40, y);
-  doc.setFont('helvetica', 'normal');
-  y += 14;
-  doc.text("본 자료는 요청하신 보호자에게만 제공됩니다.", 40, y);
-  y += 14;
-  doc.text("무단 배포는 금지되며 개인 사용 목적으로만 이용 가능합니다.", 40, y);
-  y += 14;
-  doc.text("예방접종 일정은 반드시 보건소/소아청소년과에서 최종 확인하세요.", 40, y);
-  y += 28;
-
-  // 3) 월령별 필수 준비물 체크리스트
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(12);
-  doc.text(`✅ ${monthLabel} 필수 준비물`, 40, y);
-  y += 20;
-
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(10);
-
-  checklistItems.forEach(item => {
-    const lines = doc.splitTextToSize("• " + item, 520);
-    lines.forEach(line => {
-      if (y > 760) {
-        doc.addPage();
-        y = 40;
-      }
-      doc.text(line, 50, y);
-      y += 14;
-    });
-    y += 4;
-  });
-
-  // 4) 간단 예방접종 안내
-  if (y > 680) { doc.addPage(); y = 40; }
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(12);
-  doc.text("💉 예방접종 참고 (질병관리청 기준)", 40, y);
-  y += 20;
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(10);
-
-  VACCINATION_SCHEDULE.forEach(block => {
-    const header = `- ${block.age}: ${block.vaccines.map(v => v.name).join(', ')}`;
-    const lines = doc.splitTextToSize(header, 520);
-    lines.forEach(line => {
-      if (y > 760) { doc.addPage(); y = 40; }
-      doc.text(line, 50, y);
-      y += 14;
-    });
-    y += 8;
-  });
-
-  if (y > 700) { doc.addPage(); y = 40; }
-  doc.setFont('helvetica', 'italic');
-  doc.text("※ 예방접종은 아기 컨디션, 병원 일정에 따라 달라질 수 있습니다.", 40, y);
-  y += 14;
-  doc.text("※ 이상반응(고열, 경련 등) 발생 시 즉시 병원으로 가세요.", 40, y);
-
-  return doc.output('blob');
-}
 
 console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습니다!');
