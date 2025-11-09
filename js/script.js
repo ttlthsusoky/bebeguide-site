@@ -2054,3 +2054,364 @@ console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습�
   updateSavedDataList();
   updateChart();
 })();
+
+// ==================== 예방접종 관리 기능 ====================
+(function initVaccinationManager() {
+  const vaccineListContainer = document.getElementById('vaccineList');
+  const filterBtns = document.querySelectorAll('.vaccine-filter-btn');
+  const clearBtn = document.getElementById('clearVaccineData');
+
+  if (!vaccineListContainer) return;
+
+  let currentFilter = 'all';
+
+  // 질병관리청 표준 예방접종 일정 (2024년 기준)
+  const VACCINES = [
+    { id: 'bcg', name: 'BCG (결핵)', schedule: '생후 4주 이내', type: 'required', dose: 1, description: '피내용 또는 경피용' },
+    { id: 'hepb1', name: 'B형간염 1차', schedule: '생후 0-1개월', type: 'required', dose: 1, description: '출생 직후 접종 권장' },
+    { id: 'hepb2', name: 'B형간염 2차', schedule: '생후 1개월', type: 'required', dose: 2, description: '1차 접종 후 1개월' },
+    { id: 'hepb3', name: 'B형간염 3차', schedule: '생후 6개월', type: 'required', dose: 3, description: '1차 접종 후 6개월' },
+
+    { id: 'dtap1', name: 'DTaP 1차', schedule: '생후 2개월', type: 'required', dose: 1, description: '디프테리아·파상풍·백일해' },
+    { id: 'dtap2', name: 'DTaP 2차', schedule: '생후 4개월', type: 'required', dose: 2, description: '1차 후 2개월 간격' },
+    { id: 'dtap3', name: 'DTaP 3차', schedule: '생후 6개월', type: 'required', dose: 3, description: '2차 후 2개월 간격' },
+    { id: 'dtap4', name: 'DTaP 4차', schedule: '15-18개월', type: 'required', dose: 4, description: '3차 후 6-12개월' },
+    { id: 'dtap5', name: 'DTaP 5차', schedule: '4-6세', type: 'required', dose: 5, description: '4차 후 만 4-6세' },
+
+    { id: 'ipv1', name: '폴리오 1차', schedule: '생후 2개월', type: 'required', dose: 1, description: '소아마비 예방' },
+    { id: 'ipv2', name: '폴리오 2차', schedule: '생후 4개월', type: 'required', dose: 2, description: '1차 후 2개월' },
+    { id: 'ipv3', name: '폴리오 3차', schedule: '생후 6개월', type: 'required', dose: 3, description: '2차 후 2개월' },
+    { id: 'ipv4', name: '폴리오 4차', schedule: '4-6세', type: 'required', dose: 4, description: '3차 후 만 4-6세' },
+
+    { id: 'hib1', name: 'Hib 1차', schedule: '생후 2개월', type: 'required', dose: 1, description: 'b형 헤모필루스 인플루엔자' },
+    { id: 'hib2', name: 'Hib 2차', schedule: '생후 4개월', type: 'required', dose: 2, description: '1차 후 2개월' },
+    { id: 'hib3', name: 'Hib 3차', schedule: '생후 6개월', type: 'required', dose: 3, description: '2차 후 2개월' },
+    { id: 'hib4', name: 'Hib 4차', schedule: '12-15개월', type: 'required', dose: 4, description: '3차 후 6개월 이상' },
+
+    { id: 'pcv1', name: '폐렴구균 1차', schedule: '생후 2개월', type: 'required', dose: 1, description: '단백결합 백신' },
+    { id: 'pcv2', name: '폐렴구균 2차', schedule: '생후 4개월', type: 'required', dose: 2, description: '1차 후 2개월' },
+    { id: 'pcv3', name: '폐렴구균 3차', schedule: '생후 6개월', type: 'required', dose: 3, description: '2차 후 2개월' },
+    { id: 'pcv4', name: '폐렴구균 4차', schedule: '12-15개월', type: 'required', dose: 4, description: '3차 후 6개월 이상' },
+
+    { id: 'mmr1', name: 'MMR 1차', schedule: '12-15개월', type: 'required', dose: 1, description: '홍역·유행성이하선염·풍진' },
+    { id: 'mmr2', name: 'MMR 2차', schedule: '4-6세', type: 'required', dose: 2, description: '1차 후 만 4-6세' },
+
+    { id: 'varicella', name: '수두', schedule: '12-15개월', type: 'required', dose: 1, description: '1회 접종' },
+
+    { id: 'hepa1', name: 'A형간염 1차', schedule: '12-23개월', type: 'required', dose: 1, description: '생후 12개월 이후' },
+    { id: 'hepa2', name: 'A형간염 2차', schedule: '18-35개월', type: 'required', dose: 2, description: '1차 후 6-12개월' },
+
+    { id: 'je1', name: '일본뇌염 1차', schedule: '12-23개월', type: 'required', dose: 1, description: '사백신 기준' },
+    { id: 'je2', name: '일본뇌염 2차', schedule: '12-23개월', type: 'required', dose: 2, description: '1차 후 1-2주' },
+    { id: 'je3', name: '일본뇌염 3차', schedule: '24-35개월', type: 'required', dose: 3, description: '2차 후 12개월' },
+    { id: 'je4', name: '일본뇌염 4차', schedule: '6세', type: 'required', dose: 4, description: '3차 후 만 6세' },
+    { id: 'je5', name: '일본뇌염 5차', schedule: '12세', type: 'required', dose: 5, description: '4차 후 만 12세' },
+
+    { id: 'flu', name: '인플루엔자 (독감)', schedule: '생후 6개월~', type: 'optional', dose: 0, description: '매년 가을 접종' },
+    { id: 'rotavirus', name: '로타바이러스', schedule: '생후 2-6개월', type: 'optional', dose: 0, description: '경구용 생백신' },
+  ];
+
+  // localStorage 관리
+  function getVaccineStatus() {
+    const data = localStorage.getItem('baby_vaccination');
+    return data ? JSON.parse(data) : {};
+  }
+
+  function saveVaccineStatus(status) {
+    localStorage.setItem('baby_vaccination', JSON.stringify(status));
+  }
+
+  function toggleVaccineStatus(vaccineId) {
+    const status = getVaccineStatus();
+    status[vaccineId] = !status[vaccineId];
+    saveVaccineStatus(status);
+  }
+
+  function clearAllVaccineData() {
+    if (confirm('모든 예방접종 기록을 초기화하시겠습니까?')) {
+      localStorage.removeItem('baby_vaccination');
+      renderVaccineList();
+      updateProgress();
+      showNotification('예방접종 기록이 초기화되었습니다', 'success');
+    }
+  }
+
+  // 진행률 업데이트
+  function updateProgress() {
+    const status = getVaccineStatus();
+    const total = VACCINES.length;
+    const completed = Object.values(status).filter(Boolean).length;
+    const remaining = total - completed;
+    const percentage = Math.round((completed / total) * 100);
+
+    document.getElementById('vaccineTotal').textContent = total;
+    document.getElementById('vaccineCompleted').textContent = completed;
+    document.getElementById('vaccineRemaining').textContent = remaining;
+    document.getElementById('vaccineProgress').textContent = percentage + '%';
+    document.getElementById('vaccineProgressBar').style.width = percentage + '%';
+  }
+
+  // 백신 목록 렌더링
+  function renderVaccineList() {
+    const status = getVaccineStatus();
+
+    let filteredVaccines = VACCINES;
+    if (currentFilter === 'required') {
+      filteredVaccines = VACCINES.filter(v => v.type === 'required');
+    } else if (currentFilter === 'optional') {
+      filteredVaccines = VACCINES.filter(v => v.type === 'optional');
+    } else if (currentFilter === 'completed') {
+      filteredVaccines = VACCINES.filter(v => status[v.id]);
+    }
+
+    vaccineListContainer.innerHTML = filteredVaccines.map(vaccine => {
+      const isCompleted = status[vaccine.id] || false;
+      const typeLabel = vaccine.type === 'required' ? '필수' : '선택';
+      const typeClass = vaccine.type === 'required' ? 'required' : 'optional';
+
+      return `
+        <div class="vaccine-card ${isCompleted ? 'completed' : ''}" data-id="${vaccine.id}">
+          <div class="vaccine-header">
+            <div class="vaccine-checkbox-wrapper">
+              <input type="checkbox"
+                     id="vaccine-${vaccine.id}"
+                     class="vaccine-checkbox"
+                     ${isCompleted ? 'checked' : ''}
+                     data-id="${vaccine.id}">
+              <label for="vaccine-${vaccine.id}" class="vaccine-checkbox-label"></label>
+            </div>
+            <div class="vaccine-info">
+              <h3 class="vaccine-name">${vaccine.name}</h3>
+              <span class="vaccine-type ${typeClass}">${typeLabel}</span>
+            </div>
+          </div>
+          <div class="vaccine-details">
+            <div class="vaccine-detail-item">
+              <i class="fas fa-calendar"></i>
+              <span>${vaccine.schedule}</span>
+            </div>
+            <div class="vaccine-detail-item">
+              <i class="fas fa-info-circle"></i>
+              <span>${vaccine.description}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // 체크박스 이벤트 리스너
+    document.querySelectorAll('.vaccine-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('change', (e) => {
+        const vaccineId = e.target.getAttribute('data-id');
+        toggleVaccineStatus(vaccineId);
+        renderVaccineList();
+        updateProgress();
+
+        const vaccine = VACCINES.find(v => v.id === vaccineId);
+        const message = e.target.checked
+          ? `${vaccine.name} 접종 완료로 표시되었습니다 ✅`
+          : `${vaccine.name} 미접종으로 변경되었습니다`;
+        showNotification(message, 'success');
+      });
+    });
+
+    updateProgress();
+  }
+
+  // 필터 버튼 이벤트
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      renderVaccineList();
+    });
+  });
+
+  // 초기화 버튼
+  clearBtn?.addEventListener('click', clearAllVaccineData);
+
+  // 초기 로드
+  renderVaccineList();
+})();
+
+// ==================== 내 아기 다이어리 기능 ====================
+(function initBabyDiary() {
+  const diaryForm = document.getElementById('diaryEntryForm');
+  const diaryList = document.getElementById('diaryEntriesList');
+  const clearBtn = document.getElementById('clearDiaryData');
+  const dateInput = document.getElementById('diary_date');
+
+  if (!diaryForm || !diaryList) return;
+
+  // 오늘 날짜를 기본값으로 설정
+  if (dateInput) {
+    dateInput.valueAsDate = new Date();
+  }
+
+  // localStorage 관리
+  function getDiaryEntries() {
+    const data = localStorage.getItem('baby_diary');
+    return data ? JSON.parse(data) : [];
+  }
+
+  function saveDiaryEntries(entries) {
+    localStorage.setItem('baby_diary', JSON.stringify(entries));
+  }
+
+  function addDiaryEntry(entry) {
+    const entries = getDiaryEntries();
+    entry.id = Date.now();
+    entry.createdAt = new Date().toISOString();
+    entries.unshift(entry); // 최신 항목을 앞에 추가
+    saveDiaryEntries(entries);
+    return entry;
+  }
+
+  function deleteDiaryEntry(id) {
+    const entries = getDiaryEntries();
+    const filtered = entries.filter(entry => entry.id !== id);
+    saveDiaryEntries(filtered);
+  }
+
+  function clearAllDiaryEntries() {
+    if (confirm('모든 다이어리 기록을 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.')) {
+      localStorage.removeItem('baby_diary');
+      renderDiaryList();
+      showNotification('모든 다이어리 기록이 삭제되었습니다', 'success');
+    }
+  }
+
+  // 날짜 포맷팅
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
+    const weekday = weekdays[date.getDay()];
+    return year + '년 ' + month + '월 ' + day + '일 (' + weekday + ')';
+  }
+
+  // 상대 시간 표시 (예: "2일 전")
+  function getRelativeTime(dateString) {
+    const now = new Date();
+    const past = new Date(dateString);
+    const diffMs = now - past;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return '오늘';
+    if (diffDays === 1) return '어제';
+    if (diffDays < 7) return diffDays + '일 전';
+    if (diffDays < 30) return Math.floor(diffDays / 7) + '주 전';
+    if (diffDays < 365) return Math.floor(diffDays / 30) + '개월 전';
+    return Math.floor(diffDays / 365) + '년 전';
+  }
+
+  // 다이어리 목록 렌더링
+  function renderDiaryList() {
+    const entries = getDiaryEntries();
+
+    if (entries.length === 0) {
+      diaryList.innerHTML = '<div class="no-diary-entries">' +
+        '<div class="no-data-icon">📝</div>' +
+        '<p>아직 기록된 다이어리가 없습니다</p>' +
+        '<p style="font-size: 0.9rem; color: #9ca3af;">아기의 특별한 순간을 기록해보세요!</p>' +
+        '</div>';
+      return;
+    }
+
+    diaryList.innerHTML = entries.map(entry => {
+      const monthText = entry.month ? entry.month + '개월' : '';
+      const weightText = entry.weight ? entry.weight + 'kg' : '';
+      const heightText = entry.height ? entry.height + 'cm' : '';
+      const statsText = [monthText, weightText, heightText].filter(Boolean).join(' · ');
+
+      let html = '<div class="diary-entry-card">';
+      html += '<div class="diary-entry-header">';
+      html += '<div class="diary-entry-date">';
+      html += '<div class="diary-date-primary">' + formatDate(entry.date) + '</div>';
+      html += '<div class="diary-date-relative">' + getRelativeTime(entry.date) + '</div>';
+      html += '</div>';
+      html += '<button class="delete-diary-btn" data-id="' + entry.id + '" title="삭제">';
+      html += '<i class="fas fa-trash-alt"></i>';
+      html += '</button>';
+      html += '</div>';
+
+      html += '<div class="diary-entry-milestone">';
+      html += '<i class="fas fa-star" style="color: #fbbf24;"></i>';
+      html += '<strong>' + entry.milestone + '</strong>';
+      html += '</div>';
+
+      if (statsText) {
+        html += '<div class="diary-entry-stats">';
+        html += '<i class="fas fa-chart-line" style="color: var(--primary-color);"></i>';
+        html += statsText;
+        html += '</div>';
+      }
+
+      if (entry.note) {
+        html += '<div class="diary-entry-note">' + entry.note + '</div>';
+      }
+
+      html += '<div class="diary-entry-footer">';
+      html += '<small><i class="fas fa-clock"></i> 작성: ' + getRelativeTime(entry.createdAt) + '</small>';
+      html += '</div>';
+      html += '</div>';
+
+      return html;
+    }).join('');
+
+    // 삭제 버튼 이벤트
+    document.querySelectorAll('.delete-diary-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.currentTarget.getAttribute('data-id'));
+        if (confirm('이 다이어리 기록을 삭제하시겠습니까?')) {
+          deleteDiaryEntry(id);
+          renderDiaryList();
+          showNotification('다이어리 기록이 삭제되었습니다', 'success');
+        }
+      });
+    });
+  }
+
+  // 폼 제출
+  diaryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const entry = {
+      date: document.getElementById('diary_date').value,
+      month: document.getElementById('diary_month').value,
+      weight: document.getElementById('diary_weight').value,
+      height: document.getElementById('diary_height').value,
+      milestone: document.getElementById('diary_milestone').value.trim(),
+      note: document.getElementById('diary_note').value.trim()
+    };
+
+    // 필수 필드 검증
+    if (!entry.date || !entry.milestone) {
+      showNotification('날짜와 특별한 순간은 필수 입력 항목입니다', 'error');
+      return;
+    }
+
+    addDiaryEntry(entry);
+    renderDiaryList();
+    diaryForm.reset();
+
+    // 날짜를 다시 오늘로 설정
+    if (dateInput) {
+      dateInput.valueAsDate = new Date();
+    }
+
+    showNotification('다이어리 기록이 저장되었습니다! 📖', 'success');
+
+    // 부드럽게 목록으로 스크롤
+    diaryList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  // 전체 삭제 버튼
+  clearBtn?.addEventListener('click', clearAllDiaryEntries);
+
+  // 초기 로드
+  renderDiaryList();
+})();

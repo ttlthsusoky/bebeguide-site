@@ -886,6 +886,184 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- 예방접종 체크리스트 Section -->
+    <section id="vaccination" class="section" style="background: #f0f9ff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💉 예방접종 일정 관리</h2>
+                <p class="section-subtitle">질병관리청 표준 예방접종 일정에 따라 우리 아기 접종 기록을 관리하세요</p>
+            </div>
+
+            <!-- 출처 표시 -->
+            <div style="background: #e0f2fe; border-left: 4px solid #0ea5e9; padding: 15px; margin-bottom: 30px; border-radius: 8px;">
+                <p><i class="fas fa-info-circle"></i> <strong>출처:</strong> 질병관리청 예방접종도우미 (2024년 기준)</p>
+                <p style="margin-top: 8px;"><i class="fas fa-external-link-alt"></i>
+                    <a href="https://nip.kdca.go.kr" target="_blank" rel="noopener" style="color: #0369a1; text-decoration: underline;">
+                        예방접종도우미 바로가기
+                    </a>
+                </p>
+            </div>
+
+            <!-- 필터 버튼 -->
+            <div class="vaccine-filters">
+                <button class="vaccine-filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> 전체
+                </button>
+                <button class="vaccine-filter-btn" data-filter="required">
+                    <i class="fas fa-star"></i> 필수
+                </button>
+                <button class="vaccine-filter-btn" data-filter="optional">
+                    <i class="fas fa-circle-plus"></i> 선택
+                </button>
+                <button class="vaccine-filter-btn" data-filter="completed">
+                    <i class="fas fa-check-circle"></i> 완료
+                </button>
+            </div>
+
+            <!-- 예방접종 목록 -->
+            <div id="vaccineList" class="vaccine-grid">
+                <!-- JavaScript로 동적 생성 -->
+            </div>
+
+            <!-- 진행률 표시 -->
+            <div class="vaccine-progress-card">
+                <h3><i class="fas fa-chart-pie"></i> 예방접종 진행률</h3>
+                <div class="progress-stats-grid">
+                    <div class="progress-stat">
+                        <div class="stat-value" id="vaccineTotal">0</div>
+                        <div class="stat-label">전체</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="stat-value" id="vaccineCompleted">0</div>
+                        <div class="stat-label">완료</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="stat-value" id="vaccineRemaining">0</div>
+                        <div class="stat-label">남은 접종</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="stat-value" id="vaccineProgress">0%</div>
+                        <div class="stat-label">진행률</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="vaccineProgressBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- 주의사항 -->
+            <div class="vaccine-notice">
+                <h3><i class="fas fa-triangle-exclamation"></i> 예방접종 주의사항</h3>
+                <ul>
+                    <li><strong>접종 전:</strong> 아기의 건강 상태를 확인하고, 열이 나거나 아플 때는 연기하세요</li>
+                    <li><strong>접종 후:</strong> 20-30분간 병원에서 관찰하고, 이상 반응 발생 시 즉시 의료진에게 알리세요</li>
+                    <li><strong>이상 반응:</strong> 접종 부위 발적/부종은 정상, 고열(38.5℃ 이상)·경련 시 즉시 병원 방문</li>
+                    <li><strong>접종 일정:</strong> 정해진 기간 내 접종을 권장하나, 놓친 경우 소아청소년과 상담 후 보완 접종 가능</li>
+                </ul>
+            </div>
+
+            <!-- 관리 버튼 -->
+            <div style="text-align: center; margin-top: 24px;">
+                <button id="clearVaccineData" class="btn btn-secondary">
+                    <i class="fas fa-rotate-left"></i> 초기화
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 내 아기 다이어리 Section -->
+    <section id="baby-diary" class="section" style="background: linear-gradient(135deg, #fff8f0, #fffbf5);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📖 우리 아기 다이어리</h2>
+                <p class="section-subtitle">아기의 특별한 순간과 성장 기록을 남겨보세요</p>
+            </div>
+
+            <!-- 다이어리 입력 카드 -->
+            <div class="diary-input-card">
+                <h3><i class="fas fa-pen-fancy"></i> 새로운 기록 추가</h3>
+                <form id="diaryEntryForm" class="diary-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="diary_date">날짜 *</label>
+                            <input type="date" id="diary_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="diary_month">월령</label>
+                            <select id="diary_month">
+                                <option value="">선택 (선택사항)</option>
+                                <option value="0">0개월 (신생아)</option>
+                                <option value="1">1개월</option>
+                                <option value="2">2개월</option>
+                                <option value="3">3개월</option>
+                                <option value="4">4개월</option>
+                                <option value="5">5개월</option>
+                                <option value="6">6개월</option>
+                                <option value="7">7개월</option>
+                                <option value="8">8개월</option>
+                                <option value="9">9개월</option>
+                                <option value="10">10개월</option>
+                                <option value="11">11개월</option>
+                                <option value="12">12개월</option>
+                                <option value="18">18개월</option>
+                                <option value="24">24개월</option>
+                                <option value="30">30개월</option>
+                                <option value="36">36개월</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="diary_weight">몸무게 (kg)</label>
+                            <input type="number" id="diary_weight" step="0.1" min="2" max="25" placeholder="예: 3.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="diary_height">키 (cm)</label>
+                            <input type="number" id="diary_height" step="0.1" min="40" max="120" placeholder="예: 50.5">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-group-full">
+                            <label for="diary_milestone">특별한 순간 / 마일스톤 *</label>
+                            <input type="text" id="diary_milestone" placeholder="예: 처음으로 뒤집기 성공! 🎉" required maxlength="100">
+                            <small style="color: #6b7280; font-size: 0.85rem;">처음 웃음, 걸음마, 말하기 등 특별한 순간을 기록해보세요</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-group-full">
+                            <label for="diary_note">상세 메모 (선택)</label>
+                            <textarea id="diary_note" rows="4" placeholder="오늘 있었던 특별한 일, 육아 팁, 아기 상태 등을 자유롭게 기록하세요..." maxlength="500"></textarea>
+                            <small style="color: #6b7280; font-size: 0.85rem;">최대 500자</small>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-save"></i> 기록 저장
+                    </button>
+                </form>
+            </div>
+
+            <!-- 저장된 다이어리 목록 -->
+            <div class="diary-list-container">
+                <div class="diary-list-header">
+                    <h3><i class="fas fa-book-open"></i> 기록된 다이어리</h3>
+                    <button id="clearDiaryData" class="btn btn-secondary btn-sm">
+                        <i class="fas fa-rotate-left"></i> 전체 삭제
+                    </button>
+                </div>
+                <div id="diaryEntriesList" class="diary-entries-grid">
+                    <!-- JavaScript로 동적 생성 -->
+                </div>
+            </div>
+
+            <!-- 안내 메시지 -->
+            <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 12px; margin-top: 32px;">
+                <p style="margin: 0; color: #92400e; font-size: 0.9rem; line-height: 1.6;">
+                    <i class="fas fa-lightbulb"></i> <strong>팁:</strong>
+                    이 기록들은 브라우저에 안전하게 저장됩니다.
+                    소중한 추억을 정기적으로 사진과 함께 백업해두세요! 📸
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 성장 그래프 Section -->
     <section id="growth-chart" class="section">
         <div class="container">
