@@ -1794,3 +1794,263 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습니다!');
+
+// ==================== 성장 그래프 기능 ====================
+(function initGrowthChart() {
+  const form = document.getElementById('growthDataForm');
+  const chartCanvas = document.getElementById('growthChart');
+  const savedDataContainer = document.getElementById('savedGrowthData');
+  const clearBtn = document.getElementById('clearGrowthData');
+  const chartTabs = document.querySelectorAll('.chart-tab');
+
+  if (!form || !chartCanvas) return;
+
+  let currentChart = null;
+  let currentChartType = 'height'; // 'height' or 'weight'
+
+  // WHO 성장 표준 데이터 (평균값, 단순화된 버전)
+  const WHO_STANDARDS = {
+    height: { // cm
+      0: 49.9, 1: 54.7, 2: 58.4, 3: 61.4, 4: 63.9, 5: 65.9, 6: 67.6,
+      7: 69.2, 8: 70.6, 9: 72.0, 10: 73.3, 11: 74.5, 12: 75.7,
+      18: 82.3, 24: 87.1, 30: 91.1, 36: 95.1
+    },
+    weight: { // kg
+      0: 3.3, 1: 4.5, 2: 5.6, 3: 6.4, 4: 7.0, 5: 7.5, 6: 7.9,
+      7: 8.3, 8: 8.6, 9: 8.9, 10: 9.2, 11: 9.4, 12: 9.6,
+      18: 11.3, 24: 12.3, 30: 13.2, 36: 14.0
+    }
+  };
+
+  // localStorage에서 데이터 가져오기
+  function getGrowthData() {
+    const data = localStorage.getItem('baby_growth_data');
+    return data ? JSON.parse(data) : [];
+  }
+
+  // localStorage에 데이터 저장
+  function saveGrowthData(data) {
+    localStorage.setItem('baby_growth_data', JSON.stringify(data));
+  }
+
+  // 데이터 추가
+  function addGrowthRecord(month, height, weight) {
+    const data = getGrowthData();
+    const record = {
+      id: Date.now(),
+      month: parseInt(month),
+      height: parseFloat(height),
+      weight: parseFloat(weight),
+      date: new Date().toLocaleDateString('ko-KR')
+    };
+    data.push(record);
+    // 월령순으로 정렬
+    data.sort((a, b) => a.month - b.month);
+    saveGrowthData(data);
+    return record;
+  }
+
+  // 데이터 삭제
+  function deleteGrowthRecord(id) {
+    let data = getGrowthData();
+    data = data.filter(record => record.id !== id);
+    saveGrowthData(data);
+  }
+
+  // 모든 데이터 삭제
+  function clearAllData() {
+    if (confirm('모든 성장 기록을 삭제하시겠습니까?')) {
+      localStorage.removeItem('baby_growth_data');
+      updateSavedDataList();
+      updateChart();
+      showNotification('모든 기록이 삭제되었습니다', 'success');
+    }
+  }
+
+  // 저장된 데이터 목록 업데이트
+  function updateSavedDataList() {
+    const data = getGrowthData();
+
+    if (data.length === 0) {
+      savedDataContainer.innerHTML = '<p class="no-data">아직 저장된 기록이 없습니다. 위에서 데이터를 추가해보세요!</p>';
+      clearBtn.style.display = 'none';
+      return;
+    }
+
+    clearBtn.style.display = 'block';
+
+    savedDataContainer.innerHTML = data.map(record => `
+      <div class="growth-record-card">
+        <div class="record-header">
+          <span class="record-month">${record.month}개월</span>
+          <button class="delete-record-btn" data-id="${record.id}" title="삭제">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="record-details">
+          <div class="record-item">
+            <i class="fas fa-ruler-vertical"></i>
+            <span>키: ${record.height}cm</span>
+          </div>
+          <div class="record-item">
+            <i class="fas fa-weight"></i>
+            <span>몸무게: ${record.weight}kg</span>
+          </div>
+        </div>
+        <div class="record-date">${record.date} 기록</div>
+      </div>
+    `).join('');
+
+    // 삭제 버튼 이벤트
+    document.querySelectorAll('.delete-record-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = parseInt(btn.getAttribute('data-id'));
+        deleteGrowthRecord(id);
+        updateSavedDataList();
+        updateChart();
+        showNotification('기록이 삭제되었습니다', 'success');
+      });
+    });
+  }
+
+  // 차트 업데이트
+  function updateChart() {
+    const data = getGrowthData();
+
+    if (currentChart) {
+      currentChart.destroy();
+    }
+
+    const months = data.map(d => d.month);
+    const values = data.map(d => currentChartType === 'height' ? d.height : d.weight);
+
+    // WHO 표준선 데이터
+    const allMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 18, 24, 30, 36];
+    const whoValues = allMonths.map(m => WHO_STANDARDS[currentChartType][m]);
+
+    const ctx = chartCanvas.getContext('2d');
+    currentChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: allMonths,
+        datasets: [
+          {
+            label: currentChartType === 'height' ? '우리 아기 키 (cm)' : '우리 아기 몸무게 (kg)',
+            data: allMonths.map(m => {
+              const record = data.find(d => d.month === m);
+              return record ? (currentChartType === 'height' ? record.height : record.weight) : null;
+            }),
+            borderColor: '#ff69b4',
+            backgroundColor: 'rgba(255, 105, 180, 0.1)',
+            borderWidth: 3,
+            pointRadius: 6,
+            pointBackgroundColor: '#ff69b4',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            tension: 0.4,
+            fill: true
+          },
+          {
+            label: 'WHO 평균 기준',
+            data: whoValues,
+            borderColor: '#a8e6cf',
+            backgroundColor: 'rgba(168, 230, 207, 0.05)',
+            borderWidth: 2,
+            borderDash: [5, 5],
+            pointRadius: 0,
+            tension: 0.4,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y + (currentChartType === 'height' ? 'cm' : 'kg');
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: '월령 (개월)',
+              font: { size: 14, weight: 'bold' }
+            },
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: currentChartType === 'height' ? '키 (cm)' : '몸무게 (kg)',
+              font: { size: 14, weight: 'bold' }
+            },
+            beginAtZero: false,
+            grid: {
+              color: 'rgba(0, 0, 0, 0.05)'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // 폼 제출 이벤트
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const month = document.getElementById('growth_month').value;
+    const height = document.getElementById('growth_height').value;
+    const weight = document.getElementById('growth_weight').value;
+
+    if (!month || !height || !weight) {
+      showNotification('모든 항목을 입력해주세요', 'error');
+      return;
+    }
+
+    addGrowthRecord(month, height, weight);
+    updateSavedDataList();
+    updateChart();
+    form.reset();
+    showNotification('성장 기록이 저장되었습니다! 📈', 'success');
+  });
+
+  // 차트 탭 전환
+  chartTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      chartTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentChartType = tab.getAttribute('data-chart');
+      updateChart();
+    });
+  });
+
+  // 모든 데이터 삭제 버튼
+  clearBtn?.addEventListener('click', clearAllData);
+
+  // 초기 로드
+  updateSavedDataList();
+  updateChart();
+})();

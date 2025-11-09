@@ -2838,3 +2838,276 @@ section {
 }
 
 
+/* ==================== 성장 그래프 스타일 ==================== */
+.growth-input-card {
+  background: linear-gradient(135deg, #fff8f0, #ffe8f0);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+  border: 2px solid var(--primary-color);
+}
+
+.growth-input-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.growth-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.growth-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.growth-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.growth-form select,
+.growth-form input[type="number"] {
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.growth-form select:focus,
+.growth-form input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.1);
+}
+
+.growth-chart-container {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.chart-tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-tab:hover {
+  color: var(--primary-color);
+  background: rgba(255, 154, 162, 0.05);
+}
+
+.chart-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: rgba(255, 154, 162, 0.1);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.chart-wrapper canvas {
+  max-height: 400px;
+}
+
+.chart-info {
+  background: #f0f9ff;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.chart-info p {
+  margin: 8px 0;
+  color: #0369a1;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.chart-info i {
+  margin-top: 2px;
+}
+
+.growth-data-list {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.growth-data-list h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.saved-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.no-data {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.growth-record-card {
+  background: linear-gradient(135deg, #fdf2f8, #f3e8ff);
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #e9d5ff;
+  transition: all 0.3s ease;
+}
+
+.growth-record-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+  border-color: #c084fc;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.record-month {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.delete-record-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.delete-record-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
+}
+
+.record-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.record-item i {
+  color: var(--primary-color);
+  width: 20px;
+}
+
+.record-date {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: right;
+  font-style: italic;
+}
+
+/* 모바일 반응형 - 성장 그래프 */
+@media (max-width: 768px) {
+  .growth-input-card {
+    padding: 16px;
+  }
+
+  .growth-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-wrapper {
+    height: 300px;
+  }
+
+  .chart-wrapper canvas {
+    max-height: 300px;
+  }
+
+  .chart-tabs {
+    flex-direction: column;
+    gap: 0;
+    border-bottom: none;
+  }
+
+  .chart-tab {
+    border-bottom: 1px solid #f3f4f6;
+    border-left: 3px solid transparent;
+    padding: 12px 16px;
+  }
+
+  .chart-tab.active {
+    border-left-color: var(--primary-color);
+    border-bottom-color: #f3f4f6;
+  }
+
+  .saved-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .growth-chart-container,
+  .growth-data-list {
+    padding: 16px;
+  }
+}
