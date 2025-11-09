@@ -867,7 +867,6 @@ const CHECKLIST = {
 (function initAgeChecklist(){
   const ageSel = document.getElementById('ageSelect');
   const btnShow = document.getElementById('showChecklist');
-  const btnPdf  = document.getElementById('getPdf');
   const box     = document.getElementById('checklistResult');
   if(!ageSel || !btnShow || !box) return;
 
@@ -1235,35 +1234,6 @@ const CHECKLIST = {
 
     return baseDesc + ' 제품 구매 전 안전 인증을 확인하세요.';
   }
-
-  // PDF 버튼: contact 섹션으로 스크롤 + prefill
-  btnPdf?.addEventListener('click', ()=>{
-    const selectedMonth = ageSel.value;
-
-    // 스크롤 이동
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({behavior: 'smooth', block: 'start'});
-    }
-
-    // 월령 select 세팅
-    const babyAgeSelect = document.querySelector('select[name="baby_age"]');
-    if (babyAgeSelect) {
-      setTimeout(() => {
-        babyAgeSelect.value = selectedMonth;
-        babyAgeSelect.dispatchEvent(new Event('change'));
-      }, 300);
-    }
-
-    // hidden 필드 자동 채움
-    const reqTypeField = document.getElementById('hidden_request_type');
-    const monthField   = document.getElementById('hidden_requested_month');
-    if (reqTypeField) reqTypeField.value = 'PDF_CHECKLIST';
-    if (monthField)   monthField.value   = selectedMonth;
-
-    // 알림
-    showNotification("체크리스트 링크를 이메일로 보내드립니다. 이메일 주소를 입력해 주세요 💌", "success");
-  });
 })();
 
 // === 제휴마케팅 링크 관리 === //
@@ -1720,38 +1690,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn      = document.getElementById('contactSubmitBtn');
   const statusBox      = document.getElementById('contactStatus');
   const reminderOptIn  = document.getElementById('reminderOptIn');
-  const reqTypeField   = document.getElementById('hidden_request_type');
-  const monthField     = document.getElementById('hidden_requested_month');
 
   if (!contactForm) return;
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // 1) baby_age 값을 읽어서 hidden_requested_month에 자동 설정
-    const babyAgeField = document.getElementById('baby_age');
-    if (babyAgeField && monthField) {
-      monthField.value = babyAgeField.value;
-    }
-
-    // 2) request_type 결정
-    // - 사용자가 리마인더 구독에 체크했다면 "VACCINE_REMINDER"
-    // - 아니면 "PDF_CHECKLIST" (기본값)
-    if (reqTypeField) {
-      if (reminderOptIn && reminderOptIn.checked) {
-        reqTypeField.value = 'VACCINE_REMINDER';
-      } else {
-        reqTypeField.value = 'PDF_CHECKLIST';
-      }
-    }
-
-    // 3) 버튼 비활성화
+    // 1) 버튼 비활성화
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = '전송 중...';
     }
 
-    // 4) 상태 초기화
+    // 2) 상태 초기화
     if (statusBox) {
       statusBox.style.color = '#555';
       statusBox.textContent = '';
@@ -1760,7 +1711,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const endpoint = contactForm.action;
     const formData = new FormData(contactForm);
 
-    // 5) 실제 전송 (PDF 생성 없이 웹페이지 링크로 제공)
+    // 3) 실제 전송
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -1779,8 +1730,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         contactForm.reset();
 
-        if (reqTypeField) reqTypeField.value = '';
-        if (monthField)   monthField.value   = '';
         if (reminderOptIn) reminderOptIn.checked = false;
 
         if (typeof showNotification === 'function') {

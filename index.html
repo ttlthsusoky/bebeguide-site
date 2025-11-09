@@ -175,9 +175,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button id="showChecklist" class="btn btn-primary">
         <i class="fas fa-magnifying-glass"></i> 체크리스트 보기
       </button>
-      <button id="getPdf" class="btn btn-secondary">
-        <i class="fas fa-envelope"></i> 이메일로 받기
-      </button>
     </form>
 
     <div id="checklistResult" class="services-grid" style="margin-top:18px"></div>
@@ -1232,10 +1229,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                          wrangler deploy 실행 후 출력된 Worker URL로 교체
                          예: https://bebeguide-api.계정명.workers.dev -->
                     <form id="contactForm" action="https://bebeguide-api.ttlthsusoky.workers.dev" method="POST">
-                        <!-- 숨은 필드: PDF 요청 시 자동 설정 -->
-                        <input type="hidden" name="request_type" id="hidden_request_type" value="">
-                        <input type="hidden" name="requested_month" id="hidden_requested_month" value="">
-
                         <!-- 부모 이름 (선택) -->
                         <div class="form-group">
                             <label for="name">부모님 성함 (선택)</label>
