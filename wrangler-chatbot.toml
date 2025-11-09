@@ -1,0 +1,6 @@
+name = "bebeguide-chatbot"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-01-01"
+
+# 환경 변수는 배포 후 Dashboard 또는 wrangler secret 명령으로 설정
+# wrangler secret put OPENAI_API_KEY --config wrangler-chatbot.toml

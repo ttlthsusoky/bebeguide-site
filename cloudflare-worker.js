@@ -3,10 +3,6 @@
  * OpenAI API를 안전하게 프록시하여 API 키를 보호합니다.
  */
 
-// 환경 변수에서 API 키를 가져옵니다 (Cloudflare Dashboard에서 설정)
-// 절대 코드에 직접 넣지 마세요!
-const OPENAI_API_KEY = '';
-
 // GPT 시스템 프롬프트 (베베가이드 육아 전문 지식 베이스)
 const SYSTEM_PROMPT = `당신은 "베베가이드"의 전문 육아 상담 AI입니다. 신생아부터 12개월 아기를 키우는 초보 부모님들을 도와주는 친절하고 정확한 상담사입니다.
 
@@ -65,11 +61,13 @@ const SYSTEM_PROMPT = `당신은 "베베가이드"의 전문 육아 상담 AI입
 
 답변을 시작하세요!`;
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});
+export default {
+  async fetch(request, env) {
+    return handleRequest(request, env);
+  }
+};
 
-async function handleRequest(request) {
+async function handleRequest(request, env) {
   // CORS 헤더 설정
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -103,6 +101,18 @@ async function handleRequest(request) {
       });
     }
 
+    // OpenAI API 키 확인
+    const OPENAI_API_KEY = env.OPENAI_API_KEY;
+    if (!OPENAI_API_KEY) {
+      return new Response(JSON.stringify({
+        error: 'OpenAI API 키가 설정되지 않았습니다.',
+        success: false
+      }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
     // OpenAI API 호출
     const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -128,7 +138,8 @@ async function handleRequest(request) {
     });
 
     if (!openaiResponse.ok) {
-      throw new Error(`OpenAI API error: ${openaiResponse.status}`);
+      const errorData = await openaiResponse.json();
+      throw new Error(`OpenAI API error: ${openaiResponse.status} - ${JSON.stringify(errorData)}`);
     }
 
     const data = await openaiResponse.json();
@@ -148,6 +159,7 @@ async function handleRequest(request) {
 
     return new Response(JSON.stringify({
       error: '챗봇 응답 생성 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
+      details: error.message,
       success: false
     }), {
       status: 500,

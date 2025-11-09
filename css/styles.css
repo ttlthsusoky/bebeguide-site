@@ -37,6 +37,23 @@ body {
     --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     --border-radius: 12px;
     --transition: all 0.3s ease;
+
+    /* 월령별 색상 테마 */
+    --age-0-6-bg: #FFF0F5;        /* 파스텔 핑크 배경 */
+    --age-0-6-border: #FFB6C1;    /* 라이트 핑크 테두리 */
+    --age-0-6-icon: #FF69B4;      /* 핫 핑크 아이콘 */
+
+    --age-7-12-bg: #E0F7FA;       /* 민트 배경 */
+    --age-7-12-border: #80DEEA;   /* 민트 테두리 */
+    --age-7-12-icon: #00BCD4;     /* 사이안 아이콘 */
+
+    --age-13-24-bg: #FFF9E6;      /* 라이트 옐로 배경 */
+    --age-13-24-border: #FFE082;  /* 옐로 테두리 */
+    --age-13-24-icon: #FFC107;    /* 앰버 아이콘 */
+
+    --age-25-36-bg: #E3F2FD;      /* 하늘색 배경 */
+    --age-25-36-border: #90CAF9;  /* 블루 테두리 */
+    --age-25-36-icon: #2196F3;    /* 블루 아이콘 */
 }
 
 /* Typography */
@@ -1356,6 +1373,73 @@ section {
     margin: 0;
 }
 
+/* 진행률 바 스타일 */
+.progress-container {
+    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.progress-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.progress-stats {
+    font-weight: 600;
+    color: var(--brand);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 32px;
+    background: #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 16px;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 40px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.progress-text {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 진행률 애니메이션 */
+@keyframes progressPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.progress-fill {
+    animation: progressPulse 2s ease-in-out infinite;
+}
+
 .checklist-item .service-icon {
     position: relative;
 }
@@ -1391,13 +1475,131 @@ section {
         padding: 16px;
         margin-bottom: 24px;
     }
-    
+
     .checklist-header h2 {
         font-size: 20px;
     }
-    
+
     .checklist-header p {
         font-size: 14px;
+    }
+
+    /* 체크리스트 카드 모바일 최적화 */
+    .checklist-item {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .checklist-item h3 {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .checklist-item p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .checklist-item .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+
+    .checklist-item .service-icon i {
+        font-size: 20px;
+    }
+
+    .checklist-item .item-number {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        bottom: -3px;
+        right: -3px;
+    }
+
+    /* 체크박스 터치 영역 확대 */
+    .checkbox-wrapper {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .checkbox-wrapper input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* 제휴 링크 버튼 모바일 최적화 */
+    .affiliate-link-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .affiliate-box {
+        padding: 14px;
+        margin-top: 14px;
+    }
+
+    .affiliate-headline {
+        font-size: 11px;
+    }
+
+    .affiliate-desc {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .affiliate-price-note {
+        font-size: 12px;
+    }
+
+    /* Info bar 모바일 최적화 */
+    .checklist-info-bar {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 480px 이하 추가 최적화 */
+@media (max-width: 480px) {
+    .checklist-header h2 {
+        font-size: 18px;
+    }
+
+    .checklist-item {
+        padding: 14px;
+    }
+
+    .checklist-item h3 {
+        font-size: 15px;
+    }
+
+    .checklist-item p {
+        font-size: 13px;
+    }
+
+    .checklist-item .service-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .checklist-item .service-icon i {
+        font-size: 18px;
+    }
+
+    .affiliate-box {
+        padding: 12px;
+    }
+
+    .affiliate-link-btn {
+        padding: 10px 16px;
+        font-size: 13px;
     }
 }
 
@@ -2251,6 +2453,387 @@ section {
   .checklist-info-bar {
     font-size: 0.85rem;
     padding: 10px;
+  }
+}
+
+/* === 월령별 테마 클래스 === */
+.age-theme-0-6 {
+  background: var(--age-0-6-bg) !important;
+  border-color: var(--age-0-6-border) !important;
+}
+
+.age-theme-0-6 .service-icon {
+  background: linear-gradient(135deg, var(--age-0-6-icon), var(--age-0-6-border)) !important;
+}
+
+.age-theme-0-6::before {
+  background: var(--age-0-6-icon) !important;
+}
+
+.age-theme-7-12 {
+  background: var(--age-7-12-bg) !important;
+  border-color: var(--age-7-12-border) !important;
+}
+
+.age-theme-7-12 .service-icon {
+  background: linear-gradient(135deg, var(--age-7-12-icon), var(--age-7-12-border)) !important;
+}
+
+.age-theme-7-12::before {
+  background: var(--age-7-12-icon) !important;
+}
+
+.age-theme-13-24 {
+  background: var(--age-13-24-bg) !important;
+  border-color: var(--age-13-24-border) !important;
+}
+
+.age-theme-13-24 .service-icon {
+  background: linear-gradient(135deg, var(--age-13-24-icon), var(--age-13-24-border)) !important;
+}
+
+.age-theme-13-24::before {
+  background: var(--age-13-24-icon) !important;
+}
+
+.age-theme-25-36 {
+  background: var(--age-25-36-bg) !important;
+  border-color: var(--age-25-36-border) !important;
+}
+
+.age-theme-25-36 .service-icon {
+  background: linear-gradient(135deg, var(--age-25-36-icon), var(--age-25-36-border)) !important;
+}
+
+.age-theme-25-36::before {
+  background: var(--age-25-36-icon) !important;
+}
+
+/* 체크리스트 헤더에도 월령별 색상 적용 */
+.checklist-header.age-theme-0-6 {
+  background: linear-gradient(135deg, var(--age-0-6-bg), var(--age-0-6-border)) !important;
+  border-color: var(--age-0-6-icon) !important;
+}
+
+.checklist-header.age-theme-7-12 {
+  background: linear-gradient(135deg, var(--age-7-12-bg), var(--age-7-12-border)) !important;
+  border-color: var(--age-7-12-icon) !important;
+}
+
+.checklist-header.age-theme-13-24 {
+  background: linear-gradient(135deg, var(--age-13-24-bg), var(--age-13-24-border)) !important;
+  border-color: var(--age-13-24-icon) !important;
+}
+
+.checklist-header.age-theme-25-36 {
+  background: linear-gradient(135deg, var(--age-25-36-bg), var(--age-25-36-border)) !important;
+  border-color: var(--age-25-36-icon) !important;
+}
+
+/* === Chatbot Loading Animation === */
+.typing-indicator {
+  display: inline-block;
+  color: #666;
+  font-style: italic;
+}
+
+.typing-indicator .dots {
+  display: inline-block;
+  animation: typing-dots 1.4s infinite;
+}
+
+@keyframes typing-dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
+
+/* 챗봇 메시지 스타일 개선 */
+.chat-messages .message {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 봇 메시지에 배경색 추가 */
+.chat-messages .message.bot {
+  background: #f5f5f5;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border-left: 3px solid #6ec6ca;
+}
+
+.chat-messages .message.user {
+  background: #e3f2fd;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border-right: 3px solid #FF8E8E;
+  text-align: right;
+}
+
+/* === 육아 팁 펼치기 스타일 === */
+.service-card.expandable h3 {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease;
+}
+
+.service-card.expandable h3:hover {
+  color: var(--primary-color);
+}
+
+.expand-icon {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+
+.service-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px dashed #e0e0e0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+.service-details h4 {
+  color: var(--dark-color);
+  margin: 20px 0 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.service-details h4:first-child {
+  margin-top: 0;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.service-details ul li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  line-height: 1.6;
+  color: #555;
+}
+
+.service-details ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.service-details ul li strong {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* === 축하 메시지 모달 스타일 === */
+.congratulations-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.congratulations-modal.show {
+  opacity: 1;
+}
+
+.congratulations-content {
+  position: relative;
+  background: linear-gradient(135deg, #fff5f7, #f8f9ff);
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  overflow: hidden;
+}
+
+.congratulations-modal.show .congratulations-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  opacity: 0;
+  animation: confetti-fall linear infinite;
+}
+
+.confetti-emoji {
+  width: auto;
+  height: auto;
+  font-size: 24px;
+  background-color: transparent !important;
+}
+
+@keyframes confetti-fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    top: 110%;
+    opacity: 0.5;
+    transform: translateX(20px) rotateZ(360deg);
+  }
+}
+
+.congratulations-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.congratulations-content h2 {
+  color: var(--primary-color);
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.congrats-message {
+  font-size: 18px;
+  color: var(--dark-color);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.congrats-message strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.congrats-sub-message {
+  font-size: 16px;
+  color: var(--gray-color);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.congrats-close-btn {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 154, 162, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.congrats-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 154, 162, 0.5);
+}
+
+.congrats-close-btn:active {
+  transform: translateY(0);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .congratulations-content {
+    padding: 32px 24px;
+    max-width: 90%;
+  }
+
+  .congratulations-icon {
+    font-size: 64px;
+  }
+
+  .congratulations-content h2 {
+    font-size: 24px;
+  }
+
+  .congrats-message {
+    font-size: 16px;
+  }
+
+  .congrats-sub-message {
+    font-size: 14px;
+  }
+
+  .congrats-close-btn {
+    padding: 14px 32px;
+    font-size: 15px;
   }
 }
 
