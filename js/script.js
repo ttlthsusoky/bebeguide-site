@@ -1870,14 +1870,23 @@ console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습�
   // 저장된 데이터 목록 업데이트
   function updateSavedDataList() {
     const data = getGrowthData();
+    const exportJSONBtn = document.getElementById('exportGrowthJSON');
+    const exportCSVBtn = document.getElementById('exportGrowthCSV');
+    const importLabel = document.querySelector('label[for="importGrowthJSON"]');
 
     if (data.length === 0) {
       savedDataContainer.innerHTML = '<p class="no-data">아직 저장된 기록이 없습니다. 위에서 데이터를 추가해보세요!</p>';
       clearBtn.style.display = 'none';
+      if (exportJSONBtn) exportJSONBtn.style.display = 'none';
+      if (exportCSVBtn) exportCSVBtn.style.display = 'none';
+      if (importLabel) importLabel.style.display = 'inline-flex'; // 복원 버튼은 항상 표시
       return;
     }
 
     clearBtn.style.display = 'block';
+    if (exportJSONBtn) exportJSONBtn.style.display = 'inline-flex';
+    if (exportCSVBtn) exportCSVBtn.style.display = 'inline-flex';
+    if (importLabel) importLabel.style.display = 'inline-flex';
 
     savedDataContainer.innerHTML = data.map(record => `
       <div class="growth-record-card">
@@ -2049,6 +2058,145 @@ console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습�
 
   // 모든 데이터 삭제 버튼
   clearBtn?.addEventListener('click', clearAllData);
+
+  // 데이터 내보내기 기능
+  const exportJSONBtn = document.getElementById('exportGrowthJSON');
+  const exportCSVBtn = document.getElementById('exportGrowthCSV');
+
+  function downloadFile(content, filename, type) {
+    const blob = new Blob([content], { type: type });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function exportGrowthToJSON() {
+    const data = getGrowthData();
+    if (data.length === 0) {
+      showNotification('내보낼 데이터가 없습니다', 'error');
+      return;
+    }
+    const dataStr = JSON.stringify(data, null, 2);
+    const today = new Date().toISOString().split('T')[0];
+    downloadFile(dataStr, `베베가이드_성장기록_${today}.json`, 'application/json');
+    showNotification('성장 기록을 JSON으로 내보냈습니다!', 'success');
+  }
+
+  function exportGrowthToCSV() {
+    const data = getGrowthData();
+    if (data.length === 0) {
+      showNotification('내보낼 데이터가 없습니다', 'error');
+      return;
+    }
+
+    // CSV 헤더
+    let csv = '월령,키(cm),몸무게(kg),기록일\n';
+
+    // CSV 데이터 행
+    data.forEach(record => {
+      const row = [
+        record.month + '개월',
+        record.height,
+        record.weight,
+        record.date
+      ];
+      csv += row.join(',') + '\n';
+    });
+
+    // BOM 추가 (엑셀 한글 깨짐 방지)
+    const BOM = '\uFEFF';
+    const today = new Date().toISOString().split('T')[0];
+    downloadFile(BOM + csv, `베베가이드_성장기록_${today}.csv`, 'text/csv;charset=utf-8');
+    showNotification('성장 기록을 CSV로 내보냈습니다!', 'success');
+  }
+
+  exportJSONBtn?.addEventListener('click', exportGrowthToJSON);
+  exportCSVBtn?.addEventListener('click', exportGrowthToCSV);
+
+  // 데이터 복원 기능
+  const importJSONInput = document.getElementById('importGrowthJSON');
+
+  function importGrowthFromJSON(file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedData = JSON.parse(e.target.result);
+
+        // 데이터 유효성 검증
+        if (!Array.isArray(importedData)) {
+          showNotification('올바른 성장 데이터 형식이 아닙니다', 'error');
+          return;
+        }
+
+        // 기본 필드 검증 (month, height, weight 필수)
+        const isValid = importedData.every(record =>
+          record.hasOwnProperty('month') &&
+          record.hasOwnProperty('height') &&
+          record.hasOwnProperty('weight')
+        );
+
+        if (!isValid) {
+          showNotification('데이터 형식이 올바르지 않습니다', 'error');
+          return;
+        }
+
+        // 기존 데이터 확인
+        const existingData = getGrowthData();
+        if (existingData.length > 0) {
+          if (!confirm('기존 데이터가 있습니다. 병합하시겠습니까?\n(취소하면 기존 데이터를 덮어씁니다)')) {
+            // 덮어쓰기
+            saveGrowthData(importedData);
+            updateSavedDataList();
+            updateChart();
+            showNotification(`${importedData.length}개의 성장 기록이 복원되었습니다`, 'success');
+            return;
+          }
+        }
+
+        // 병합 (중복 제거: ID 기준, 없으면 month 기준)
+        const mergedData = [...existingData];
+        let newCount = 0;
+        importedData.forEach(record => {
+          const exists = mergedData.find(e =>
+            (e.id && record.id && e.id === record.id) ||
+            (e.month === record.month && e.height === record.height && e.weight === record.weight)
+          );
+          if (!exists) {
+            // ID가 없으면 새로 생성
+            if (!record.id) record.id = Date.now() + newCount;
+            mergedData.push(record);
+            newCount++;
+          }
+        });
+
+        // 월령순 정렬
+        mergedData.sort((a, b) => a.month - b.month);
+
+        saveGrowthData(mergedData);
+        updateSavedDataList();
+        updateChart();
+        showNotification(`${newCount}개의 새로운 성장 기록이 추가되었습니다 (총 ${mergedData.length}개)`, 'success');
+      } catch (error) {
+        showNotification('파일을 읽는 중 오류가 발생했습니다', 'error');
+        console.error('Import error:', error);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  importJSONInput?.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      importGrowthFromJSON(file);
+      // 파일 입력 초기화
+      e.target.value = '';
+    }
+  });
 
   // 초기 로드
   updateSavedDataList();
@@ -2412,6 +2560,473 @@ console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습�
   // 전체 삭제 버튼
   clearBtn?.addEventListener('click', clearAllDiaryEntries);
 
+  // 데이터 내보내기 기능
+  const exportJSONBtn = document.getElementById('exportDiaryJSON');
+  const exportCSVBtn = document.getElementById('exportDiaryCSV');
+
+  function downloadFile(content, filename, type) {
+    const blob = new Blob([content], { type: type });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function exportToJSON() {
+    const entries = getDiaryEntries();
+    if (entries.length === 0) {
+      showNotification('내보낼 데이터가 없습니다', 'error');
+      return;
+    }
+    const dataStr = JSON.stringify(entries, null, 2);
+    const today = new Date().toISOString().split('T')[0];
+    downloadFile(dataStr, `베베가이드_다이어리_${today}.json`, 'application/json');
+    showNotification('다이어리를 JSON으로 내보냈습니다!', 'success');
+  }
+
+  function exportToCSV() {
+    const entries = getDiaryEntries();
+    if (entries.length === 0) {
+      showNotification('내보낼 데이터가 없습니다', 'error');
+      return;
+    }
+
+    // CSV 헤더
+    let csv = '날짜,월령,몸무게(kg),키(cm),특별한 순간,메모,작성일시\n';
+
+    // CSV 데이터 행
+    entries.forEach(entry => {
+      const row = [
+        entry.date || '',
+        entry.month ? entry.month + '개월' : '',
+        entry.weight || '',
+        entry.height || '',
+        '"' + (entry.milestone || '').replace(/"/g, '""') + '"',
+        '"' + (entry.note || '').replace(/"/g, '""') + '"',
+        entry.createdAt ? new Date(entry.createdAt).toLocaleString('ko-KR') : ''
+      ];
+      csv += row.join(',') + '\n';
+    });
+
+    // BOM 추가 (엑셀 한글 깨짐 방지)
+    const BOM = '\uFEFF';
+    const today = new Date().toISOString().split('T')[0];
+    downloadFile(BOM + csv, `베베가이드_다이어리_${today}.csv`, 'text/csv;charset=utf-8');
+    showNotification('다이어리를 CSV로 내보냈습니다!', 'success');
+  }
+
+  exportJSONBtn?.addEventListener('click', exportToJSON);
+  exportCSVBtn?.addEventListener('click', exportToCSV);
+
+  // 데이터 복원 기능
+  const importJSONInput = document.getElementById('importDiaryJSON');
+
+  function importFromJSON(file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedData = JSON.parse(e.target.result);
+
+        // 데이터 유효성 검증
+        if (!Array.isArray(importedData)) {
+          showNotification('올바른 다이어리 데이터 형식이 아닙니다', 'error');
+          return;
+        }
+
+        // 기존 데이터 확인
+        const existingData = getDiaryEntries();
+        if (existingData.length > 0) {
+          if (!confirm('기존 데이터가 있습니다. 병합하시겠습니까?\n(취소하면 기존 데이터를 덮어씁니다)')) {
+            // 덮어쓰기
+            saveDiaryEntries(importedData);
+            renderDiaryList();
+            showNotification(`${importedData.length}개의 다이어리가 복원되었습니다`, 'success');
+            return;
+          }
+        }
+
+        // 병합 (중복 제거: ID 기준)
+        const mergedData = [...existingData];
+        let newCount = 0;
+        importedData.forEach(entry => {
+          const exists = mergedData.find(e => e.id === entry.id);
+          if (!exists) {
+            mergedData.push(entry);
+            newCount++;
+          }
+        });
+
+        // 날짜순 정렬 (최신순)
+        mergedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        saveDiaryEntries(mergedData);
+        renderDiaryList();
+        showNotification(`${newCount}개의 새로운 다이어리가 추가되었습니다 (총 ${mergedData.length}개)`, 'success');
+      } catch (error) {
+        showNotification('파일을 읽는 중 오류가 발생했습니다', 'error');
+        console.error('Import error:', error);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  importJSONInput?.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      importFromJSON(file);
+      // 파일 입력 초기화 (같은 파일 다시 선택 가능하도록)
+      e.target.value = '';
+    }
+  });
+
   // 초기 로드
   renderDiaryList();
+})();
+
+// ============================================
+// Feeding Timer & Meal Timer System
+// ============================================
+(function() {
+  // Tab switching
+  const timerTabs = document.querySelectorAll('.timer-tab');
+  const timerContents = document.querySelectorAll('.timer-content');
+
+  timerTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.dataset.tab;
+
+      // Update active tab
+      timerTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update active content
+      timerContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === `${targetTab}-tab`) {
+          content.classList.add('active');
+        }
+      });
+
+      // Load history if history tab
+      if (targetTab === 'history') {
+        renderFeedingHistory();
+      }
+    });
+  });
+
+  // Feeding Timer
+  let feedingTimerInterval = null;
+  let feedingStartTime = null;
+  let feedingElapsedSeconds = 0;
+  let feedingPaused = false;
+
+  const feedingTimerDisplay = document.getElementById('feedingTimer');
+  const startFeedingBtn = document.getElementById('startFeedingBtn');
+  const pauseFeedingBtn = document.getElementById('pauseFeedingBtn');
+  const stopFeedingBtn = document.getElementById('stopFeedingBtn');
+  const formulaAmountDiv = document.getElementById('formulaAmount');
+  const feedingTypeInputs = document.querySelectorAll('input[name="feeding_type"]');
+
+  // Show/hide formula amount based on type
+  feedingTypeInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      if (e.target.value === 'formula') {
+        formulaAmountDiv.style.display = 'block';
+      } else {
+        formulaAmountDiv.style.display = 'none';
+      }
+    });
+  });
+
+  startFeedingBtn?.addEventListener('click', () => {
+    feedingStartTime = Date.now() - (feedingElapsedSeconds * 1000);
+    feedingPaused = false;
+
+    feedingTimerInterval = setInterval(() => {
+      if (!feedingPaused) {
+        feedingElapsedSeconds = Math.floor((Date.now() - feedingStartTime) / 1000);
+        updateTimerDisplay(feedingTimerDisplay, feedingElapsedSeconds);
+      }
+    }, 1000);
+
+    startFeedingBtn.style.display = 'none';
+    pauseFeedingBtn.style.display = 'inline-flex';
+    stopFeedingBtn.style.display = 'inline-flex';
+  });
+
+  pauseFeedingBtn?.addEventListener('click', () => {
+    feedingPaused = !feedingPaused;
+    pauseFeedingBtn.innerHTML = feedingPaused
+      ? '<i class="fas fa-play"></i> 계속'
+      : '<i class="fas fa-pause"></i> 일시정지';
+  });
+
+  stopFeedingBtn?.addEventListener('click', () => {
+    clearInterval(feedingTimerInterval);
+
+    const feedingType = document.querySelector('input[name="feeding_type"]:checked').value;
+    const formulaMl = document.getElementById('formula_ml')?.value || '';
+    const feedingNote = document.getElementById('feeding_note')?.value || '';
+
+    // Save to localStorage
+    const record = {
+      id: Date.now(),
+      type: 'feeding',
+      feedingType: feedingType === 'breast' ? '모유' : '분유',
+      duration: feedingElapsedSeconds,
+      amount: feedingType === 'formula' ? formulaMl + 'ml' : '',
+      note: feedingNote,
+      timestamp: new Date().toISOString()
+    };
+
+    saveFeedingRecord(record);
+
+    // Reset
+    feedingElapsedSeconds = 0;
+    updateTimerDisplay(feedingTimerDisplay, 0);
+    document.getElementById('formula_ml').value = '';
+    document.getElementById('feeding_note').value = '';
+
+    startFeedingBtn.style.display = 'inline-flex';
+    pauseFeedingBtn.style.display = 'none';
+    stopFeedingBtn.style.display = 'none';
+
+    showNotification('수유 기록이 저장되었습니다! 🍼', 'success');
+  });
+
+  // Meal Timer
+  let mealTimerInterval = null;
+  let mealStartTime = null;
+  let mealElapsedSeconds = 0;
+  let mealPaused = false;
+
+  const mealTimerDisplay = document.getElementById('mealTimer');
+  const startMealBtn = document.getElementById('startMealBtn');
+  const pauseMealBtn = document.getElementById('pauseMealBtn');
+  const stopMealBtn = document.getElementById('stopMealBtn');
+
+  startMealBtn?.addEventListener('click', () => {
+    mealStartTime = Date.now() - (mealElapsedSeconds * 1000);
+    mealPaused = false;
+
+    mealTimerInterval = setInterval(() => {
+      if (!mealPaused) {
+        mealElapsedSeconds = Math.floor((Date.now() - mealStartTime) / 1000);
+        updateTimerDisplay(mealTimerDisplay, mealElapsedSeconds);
+      }
+    }, 1000);
+
+    startMealBtn.style.display = 'none';
+    pauseMealBtn.style.display = 'inline-flex';
+    stopMealBtn.style.display = 'inline-flex';
+  });
+
+  pauseMealBtn?.addEventListener('click', () => {
+    mealPaused = !mealPaused;
+    pauseMealBtn.innerHTML = mealPaused
+      ? '<i class="fas fa-play"></i> 계속'
+      : '<i class="fas fa-pause"></i> 일시정지';
+  });
+
+  stopMealBtn?.addEventListener('click', () => {
+    clearInterval(mealTimerInterval);
+
+    const mealStage = document.getElementById('meal_stage')?.value || '';
+    const mealAmount = document.getElementById('meal_amount')?.value || '';
+    const mealMenu = document.getElementById('meal_menu')?.value || '';
+    const mealNote = document.getElementById('meal_note')?.value || '';
+
+    // Save to localStorage
+    const record = {
+      id: Date.now(),
+      type: 'meal',
+      stage: mealStage,
+      duration: mealElapsedSeconds,
+      amount: mealAmount + '%',
+      menu: mealMenu,
+      note: mealNote,
+      timestamp: new Date().toISOString()
+    };
+
+    saveFeedingRecord(record);
+
+    // Reset
+    mealElapsedSeconds = 0;
+    updateTimerDisplay(mealTimerDisplay, 0);
+    document.getElementById('meal_amount').value = '100';
+    document.getElementById('meal_menu').value = '';
+    document.getElementById('meal_note').value = '';
+
+    startMealBtn.style.display = 'inline-flex';
+    pauseMealBtn.style.display = 'none';
+    stopMealBtn.style.display = 'none';
+
+    showNotification('이유식 기록이 저장되었습니다! 🥄', 'success');
+  });
+
+  // Helper functions
+  function updateTimerDisplay(displayElement, seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    displayElement.textContent = `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  }
+
+  function saveFeedingRecord(record) {
+    const records = JSON.parse(localStorage.getItem('feedingRecords') || '[]');
+    records.unshift(record); // Add to beginning
+    localStorage.setItem('feedingRecords', JSON.stringify(records));
+  }
+
+  function getFeedingRecords() {
+    return JSON.parse(localStorage.getItem('feedingRecords') || '[]');
+  }
+
+  function renderFeedingHistory() {
+    const records = getFeedingRecords();
+    const historyList = document.getElementById('feedingHistoryList');
+
+    // Calculate today's stats
+    const today = new Date().toDateString();
+    const todayRecords = records.filter(r => new Date(r.timestamp).toDateString() === today);
+
+    const feedingCount = todayRecords.filter(r => r.type === 'feeding').length;
+    const mealCount = todayRecords.filter(r => r.type === 'meal').length;
+    const totalFeedingTime = todayRecords
+      .filter(r => r.type === 'feeding')
+      .reduce((sum, r) => sum + r.duration, 0);
+
+    document.getElementById('todayFeedingCount').textContent = feedingCount;
+    document.getElementById('todayMealCount').textContent = mealCount;
+    document.getElementById('totalFeedingTime').textContent = Math.floor(totalFeedingTime / 60) + '분';
+
+    if (records.length === 0) {
+      historyList.innerHTML = `
+        <div class="no-history">
+          <i class="fas fa-calendar-times"></i>
+          <p>아직 기록이 없습니다</p>
+        </div>
+      `;
+      return;
+    }
+
+    historyList.innerHTML = records.map(record => {
+      const date = new Date(record.timestamp);
+      const timeStr = date.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+      const dateStr = date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+
+      if (record.type === 'feeding') {
+        const duration = Math.floor(record.duration / 60);
+        return `
+          <div class="history-item">
+            <div class="history-item-header">
+              <div class="history-item-type">
+                <i class="fas fa-bottle"></i> ${record.feedingType}
+              </div>
+              <div class="history-item-time">${dateStr} ${timeStr}</div>
+            </div>
+            <div class="history-item-details">
+              ⏱️ ${duration}분 ${record.duration % 60}초
+              ${record.amount ? ` | 📏 ${record.amount}` : ''}
+            </div>
+            ${record.note ? `<div class="history-item-note">${record.note}</div>` : ''}
+          </div>
+        `;
+      } else {
+        const duration = Math.floor(record.duration / 60);
+        return `
+          <div class="history-item">
+            <div class="history-item-header">
+              <div class="history-item-type">
+                <i class="fas fa-utensils"></i> 이유식 (${record.stage})
+              </div>
+              <div class="history-item-time">${dateStr} ${timeStr}</div>
+            </div>
+            <div class="history-item-details">
+              ⏱️ ${duration}분 ${record.duration % 60}초 | 📊 섭취량 ${record.amount}
+              ${record.menu ? ` | 🍽️ ${record.menu}` : ''}
+            </div>
+            ${record.note ? `<div class="history-item-note">${record.note}</div>` : ''}
+          </div>
+        `;
+      }
+    }).join('');
+  }
+
+  // Clear history
+  document.getElementById('clearFeedingHistory')?.addEventListener('click', () => {
+    if (confirm('모든 수유/이유식 기록을 삭제하시겠습니까?')) {
+      localStorage.removeItem('feedingRecords');
+      renderFeedingHistory();
+      showNotification('모든 기록이 삭제되었습니다', 'success');
+    }
+  });
+
+  // Initial load
+  renderFeedingHistory();
+})();
+
+// ============================================
+// Bedtime Checklist System
+// ============================================
+(function() {
+  const checkboxes = document.querySelectorAll('.bedtime-check');
+  const progressText = document.getElementById('checklistProgress');
+  const progressBar = document.getElementById('checklistProgressBar');
+  const resetBtn = document.getElementById('resetChecklistBtn');
+
+  // Load saved state
+  function loadChecklistState() {
+    const saved = JSON.parse(localStorage.getItem('bedtimeChecklist') || '{}');
+    checkboxes.forEach(checkbox => {
+      if (saved[checkbox.id]) {
+        checkbox.checked = true;
+      }
+    });
+    updateProgress();
+  }
+
+  // Save state
+  function saveChecklistState() {
+    const state = {};
+    checkboxes.forEach(checkbox => {
+      state[checkbox.id] = checkbox.checked;
+    });
+    localStorage.setItem('bedtimeChecklist', JSON.stringify(state));
+  }
+
+  // Update progress
+  function updateProgress() {
+    const total = checkboxes.length;
+    const checked = document.querySelectorAll('.bedtime-check:checked').length;
+    const percentage = Math.round((checked / total) * 100);
+
+    progressText.textContent = `${checked}/${total}`;
+    progressBar.style.width = `${percentage}%`;
+
+    if (percentage === 100) {
+      showNotification('모든 준비 완료! 아기가 편안한 밤을 보낼 수 있어요 🌙', 'success');
+    }
+  }
+
+  // Event listeners
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      saveChecklistState();
+      updateProgress();
+    });
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+    saveChecklistState();
+    updateProgress();
+    showNotification('체크리스트가 초기화되었습니다', 'info');
+  });
+
+  // Initialize
+  loadChecklistState();
 })();
