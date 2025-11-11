@@ -36,7 +36,7 @@ body {
     --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     --border-radius: 12px;
-    --transition: all 0.3s ease;
+    --transition: var(--transition);
 
     /* 월령별 색상 테마 */
     --age-0-6-bg: #FFF0F5;        /* 파스텔 핑크 배경 */
@@ -54,6 +54,18 @@ body {
     --age-25-36-bg: #E3F2FD;      /* 하늘색 배경 */
     --age-25-36-border: #90CAF9;  /* 블루 테두리 */
     --age-25-36-icon: #2196F3;    /* 블루 아이콘 */
+
+    /* Optimized color variables */
+    --color-1: #f3f4f6;
+    --color-2: #10b981;
+    --color-rgba-3: rgba(0, 0, 0, 0.08);
+    --color-4: #e5e7eb;
+    --color-5: #6b7280;
+    --color-6: #1f2937;
+    --color-7: #fff;
+    --color-8: #9ca3af;
+    --color-9: #666;
+    --color-10: #0ea5e9;
 }
 
 /* Typography */
@@ -987,7 +999,7 @@ section {
 
 /* Portfolio filter animation */
 .portfolio-item {
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .portfolio-item.hide {
@@ -1199,7 +1211,7 @@ section {
 #chat-input {
   flex: 1;
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: 1px solid #ddd;
   outline: none;
   font-size: 0.9rem;
@@ -1213,7 +1225,7 @@ section {
   background: #6ec6ca;
   border: none;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   color: white;
   cursor: pointer;
   font-size: 0.9rem;
@@ -1294,7 +1306,7 @@ section {
     width: 100%;
     padding: 12px 16px;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-size: 14px;
     background-color: white;
     color: #333;
@@ -1733,7 +1745,7 @@ section {
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
 }
 
@@ -1803,7 +1815,7 @@ section {
   border-radius: 25px;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .tab-btn:hover {
@@ -2033,7 +2045,7 @@ section {
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   border-left: 4px solid var(--primary-color);
 }
 
@@ -2214,7 +2226,7 @@ section {
   border-radius: 12px;
   border-left: 4px solid var(--primary-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .source-item:hover {
@@ -2361,7 +2373,7 @@ section {
   text-decoration: none;
   line-height: 1.2;
   box-shadow: 0 6px 16px rgba(255,142,142,0.4);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .affiliate-link-btn:hover,
@@ -2387,7 +2399,7 @@ section {
 .checklist-info-bar {
   background: #e3f2fd;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   margin-bottom: 20px;
   font-size: 0.9rem;
   color: #1976d2;
@@ -2403,7 +2415,7 @@ section {
 
 .checklist-item {
   position: relative;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .checkbox-wrapper {
@@ -2792,7 +2804,7 @@ section {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   box-shadow: 0 4px 15px rgba(255, 154, 162, 0.4);
   display: inline-flex;
   align-items: center;
@@ -2880,9 +2892,9 @@ section {
 .growth-form input[type="number"] {
   padding: 12px;
   border: 2px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   font-family: inherit;
 }
 
@@ -2917,7 +2929,7 @@ section {
   font-weight: 600;
   cursor: pointer;
   border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2999,7 +3011,7 @@ section {
   padding: 16px;
   border-radius: 12px;
   border: 2px solid #e9d5ff;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .growth-record-card:hover {
@@ -3130,7 +3142,7 @@ section {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
 }
 
@@ -3159,7 +3171,7 @@ section {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   border: 2px solid #e5e7eb;
 }
 
@@ -3515,9 +3527,9 @@ section {
 .diary-form textarea {
   padding: 12px;
   border: 2px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   font-family: inherit;
 }
 
@@ -3596,7 +3608,7 @@ section {
   border: 2px solid #fce7f3;
   border-radius: 16px;
   padding: 20px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -3684,7 +3696,7 @@ section {
   margin-bottom: 12px;
   padding: 8px 12px;
   background: rgba(236, 72, 153, 0.05);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .diary-entry-stats i {
@@ -3698,7 +3710,7 @@ section {
   margin-bottom: 12px;
   padding: 12px;
   background: #f9fafb;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border-left: 3px solid #ec4899;
 }
 
@@ -3804,7 +3816,7 @@ section {
   font-weight: 500;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3872,7 +3884,7 @@ section {
   border: 2px solid #e5e7eb;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   font-weight: 500;
 }
 
@@ -4018,7 +4030,7 @@ section {
   border: 2px solid #e5e7eb;
   border-radius: 10px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   background: white;
 }
 
@@ -4070,7 +4082,7 @@ section {
   font-size: 0.95rem;
   font-family: inherit;
   resize: vertical;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .timer-note textarea:focus {
@@ -4120,7 +4132,7 @@ section {
   align-items: center;
   gap: 16px;
   border: 2px solid #f3f4f6;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .stat-box:hover {
@@ -4149,7 +4161,7 @@ section {
   border-radius: 12px;
   margin-bottom: 12px;
   border-left: 4px solid #10b981;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .history-item:hover {
@@ -4188,7 +4200,7 @@ section {
   margin-top: 8px;
   padding: 10px;
   background: white;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 0.9rem;
   color: #6b7280;
   font-style: italic;
@@ -4243,7 +4255,7 @@ section {
   border: 2px solid #e5e7eb;
   border-radius: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   min-height: 120px;
 }
 
@@ -4353,7 +4365,7 @@ section {
   padding: 24px;
   border-radius: 16px;
   border: 2px solid #f3e8ff;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .tip-card:hover {
@@ -4456,4 +4468,38 @@ section {
 .update-date i {
   color: #3b82f6;
   font-size: 0.9rem;
+}
+
+
+/* Utility Classes (Auto-generated) */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.shadow-hover:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.rounded {
+    border-radius: var(--border-radius);
+}
+
+.transition {
+    transition: var(--transition);
 }
