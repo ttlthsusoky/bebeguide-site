@@ -2426,12 +2426,12 @@ section {
 }
 
 .checkbox-wrapper input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   accent-color: var(--brand);
   border: 2px solid #ddd;
-  border-radius: 4px;
+  border-radius: 3px;
   transition: all 0.2s ease;
 }
 
@@ -2458,8 +2458,8 @@ section {
   }
 
   .checkbox-wrapper input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
   }
 
   .checklist-info-bar {
