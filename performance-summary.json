@@ -1,0 +1,9 @@
+{
+  "performance_score": 31,
+  "opportunities": 3,
+  "top_improvements": [
+    "Eliminate render-blocking resources",
+    "Reduce unused JavaScript",
+    "Reduce unused CSS"
+  ]
+}

@@ -194,4 +194,26 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- 블로그 콘텐츠 -->
+  <url>
+    <loc>https://be-be-guide.com/blog/newborn-essentials.html</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://be-be-guide.com/blog/1-month-baby-guide.html</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://be-be-guide.com/blog/first-baby-food-guide.html</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

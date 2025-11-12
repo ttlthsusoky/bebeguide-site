@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+  <channel>
+    <title>베베가이드 | 0~36개월 월령별 육아 가이드</title>
+    <link>https://be-be-guide.com/</link>
+    <description>아기 성장단계별 체크리스트, 예방접종 일정, 응급 대처법을 한눈에</description>
+    <language>ko</language>
+    <lastBuildDate>Sun, 12 Jan 2025 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://be-be-guide.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://be-be-guide.com/images/og-bebeguide.webp</url>
+      <title>베베가이드</title>
+      <link>https://be-be-guide.com/</link>
+    </image>
+
+    <!-- 메인 페이지 -->
+    <item>
+      <title>베베가이드 - 0~36개월 월령별 육아 가이드</title>
+      <link>https://be-be-guide.com/</link>
+      <guid>https://be-be-guide.com/</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>WHO·질병관리청 기준 월령별 체크리스트, 예방접종 일정, 수유 타이머, 성장 기록, 육아 다이어리까지 - 베베가이드에서 한 번에!</description>
+      <category>육아</category>
+      <category>신생아</category>
+      <category>체크리스트</category>
+    </item>
+
+    <!-- 월령별 체크리스트 -->
+    <item>
+      <title>생후 0개월 (신생아) 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/0m.html</link>
+      <guid>https://be-be-guide.com/checklist/0m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>신생아 필수 준비물 10가지 체크리스트. 기저귀, 물티슈, 배냇저고리, 속싸개 등 꼭 필요한 육아용품 리스트</description>
+      <category>신생아</category>
+      <category>0개월</category>
+      <category>출산준비물</category>
+    </item>
+
+    <item>
+      <title>생후 1개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/1m.html</link>
+      <guid>https://be-be-guide.com/checklist/1m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 1개월 아기 필수 용품 11가지. 수유쿠션, 유축기, 젖병소독기, 체온계 등 1개월 육아 준비물</description>
+      <category>생후1개월</category>
+      <category>신생아</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 2개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/2m.html</link>
+      <guid>https://be-be-guide.com/checklist/2m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 2개월 아기 필수템 10가지. 흑백카드, 딸랑이, 아기침대, 모빌 등 2개월 발달에 필요한 용품</description>
+      <category>생후2개월</category>
+      <category>발달완구</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 3개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/3m.html</link>
+      <guid>https://be-be-guide.com/checklist/3m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 3개월 백일 아기 필수템 12가지. 바운서, 플레이매트, 치발기, 백일상 준비물 등</description>
+      <category>생후3개월</category>
+      <category>백일</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 4개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/4m.html</link>
+      <guid>https://be-be-guide.com/checklist/4m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 4개월 아기 필수템 12가지. 이유식 준비물, 블렌더, 아기 의자, 실리콘 턱받이 등</description>
+      <category>생후4개월</category>
+      <category>이유식준비</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 5개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/5m.html</link>
+      <guid>https://be-be-guide.com/checklist/5m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 5개월 아기 필수템 10가지. 이유식 실리콘 스푼, 식판, 보행기 등 이유식 시작 준비물</description>
+      <category>생후5개월</category>
+      <category>이유식</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 6개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/6m.html</link>
+      <guid>https://be-be-guide.com/checklist/6m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 6개월 아기 필수템 12가지. 범퍼침대, 아기띠, 외출용품, 이유식 용기 등</description>
+      <category>생후6개월</category>
+      <category>이유식</category>
+      <category>외출용품</category>
+    </item>
+
+    <item>
+      <title>생후 7개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/7m.html</link>
+      <guid>https://be-be-guide.com/checklist/7m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 7개월 아기 필수템 10가지. 그림책, 촉감 놀이, 안전문, 콘센트 커버 등 안전용품</description>
+      <category>생후7개월</category>
+      <category>안전용품</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 8개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/8m.html</link>
+      <guid>https://be-be-guide.com/checklist/8m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 8개월 아기 필수템 11가지. 손가락 음식, 빨대컵, 블록 장난감, 물티슈캡 등</description>
+      <category>생후8개월</category>
+      <category>핑거푸드</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 9개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/9m.html</link>
+      <guid>https://be-be-guide.com/checklist/9m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 9개월 아기 필수템 10가지. 소근육 발달 놀이, 모양 맞추기, 공놀이, 워커 등</description>
+      <category>생후9개월</category>
+      <category>발달놀이</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 10개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/10m.html</link>
+      <guid>https://be-be-guide.com/checklist/10m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 10개월 아기 필수템 10가지. 신발, 양치 연습, 인형, 자동차 장난감 등</description>
+      <category>생후10개월</category>
+      <category>외출신발</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 11개월 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/11m.html</link>
+      <guid>https://be-be-guide.com/checklist/11m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 11개월 아기 필수템 10가지. 돌잔치 준비, 돌복, 돌상, 한복 등</description>
+      <category>생후11개월</category>
+      <category>돌잔치준비</category>
+      <category>육아용품</category>
+    </item>
+
+    <item>
+      <title>생후 12개월 (돌) 아기 체크리스트</title>
+      <link>https://be-be-guide.com/checklist/12m.html</link>
+      <guid>https://be-be-guide.com/checklist/12m.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>돌아기 필수템 12가지. 생우유 전환, 유아식 식판, 포크 스푼, 실내 놀이터, 유아 신발 등</description>
+      <category>돌</category>
+      <category>12개월</category>
+      <category>유아식</category>
+    </item>
+
+    <!-- 임신 준비 -->
+    <item>
+      <title>임신 준비 체크리스트</title>
+      <link>https://be-be-guide.com/#pregnancy</link>
+      <guid>https://be-be-guide.com/#pregnancy</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>임신 전 필수 준비사항, 산전검사, 엽산 복용, 출산 용품 준비 가이드</description>
+      <category>임신준비</category>
+      <category>출산준비</category>
+      <category>산모용품</category>
+    </item>
+
+    <!-- 예방접종 -->
+    <item>
+      <title>아기 예방접종 일정 관리</title>
+      <link>https://be-be-guide.com/#vaccination</link>
+      <guid>https://be-be-guide.com/#vaccination</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>질병관리청 기준 0~36개월 필수 예방접종 일정, 접종 후 주의사항, 진행률 관리</description>
+      <category>예방접종</category>
+      <category>백신</category>
+      <category>육아건강</category>
+    </item>
+
+    <!-- 육아 팁 -->
+    <item>
+      <title>육아 팁 - 수유/수면/이유식/놀이 가이드</title>
+      <link>https://be-be-guide.com/#services</link>
+      <guid>https://be-be-guide.com/#services</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>모유수유 가이드, 수면교육 방법, 이유식 시작 가이드, 월령별 놀이 활동 추천</description>
+      <category>육아팁</category>
+      <category>수유</category>
+      <category>수면교육</category>
+      <category>이유식</category>
+    </item>
+
+    <!-- 블로그 콘텐츠 -->
+    <item>
+      <title>신생아 준비물 완벽 가이드 | 출산 전 꼭 챙겨야 할 필수템 10가지</title>
+      <link>https://be-be-guide.com/blog/newborn-essentials.html</link>
+      <guid>https://be-be-guide.com/blog/newborn-essentials.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>출산을 앞둔 예비맘을 위한 신생아 필수 준비물 리스트. 기저귀, 물티슈, 배냇저고리부터 유축기, 수유쿠션까지 꼭 필요한 아기용품만 정리했습니다.</description>
+      <category>신생아준비물</category>
+      <category>출산준비</category>
+      <category>아기용품</category>
+    </item>
+
+    <item>
+      <title>생후 1개월 아기 발달과 육아 팁 | 수유·수면·성장 완벽 가이드</title>
+      <link>https://be-be-guide.com/blog/1-month-baby-guide.html</link>
+      <guid>https://be-be-guide.com/blog/1-month-baby-guide.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>생후 1개월 아기의 신체 발달, 수유 횟수, 수면 패턴, 예방접종까지! 초보 부모를 위한 실전 육아 꿀팁과 주의사항을 한 번에 정리했습니다.</description>
+      <category>생후1개월</category>
+      <category>아기발달</category>
+      <category>육아팁</category>
+    </item>
+
+    <item>
+      <title>첫 이유식 시작 완벽 가이드 | 시기·재료·단계별 방법</title>
+      <link>https://be-be-guide.com/blog/first-baby-food-guide.html</link>
+      <guid>https://be-be-guide.com/blog/first-baby-food-guide.html</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0900</pubDate>
+      <description>이유식 시작 시기부터 초기·중기·후기 단계별 진행 방법까지! 재료 선택, 조리법, 주의사항, 실전 레시피를 한 번에 정리했습니다.</description>
+      <category>이유식</category>
+      <category>이유식시작</category>
+      <category>이유식레시피</category>
+    </item>
+
+  </channel>
+</rss>

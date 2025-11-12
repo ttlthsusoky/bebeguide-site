@@ -1,0 +1,90 @@
+네이버 서치어드바이저 소유권 확인 가이드
+========================================
+
+[중요] 이 파일은 가이드입니다. 실제 인증 파일은 네이버에서 받아야 합니다.
+
+단계별 설정 방법:
+
+1단계: 네이버 서치어드바이저 접속
+---------------------------------
+URL: https://searchadvisor.naver.com
+네이버 계정으로 로그인
+
+
+2단계: 사이트 등록
+---------------------------------
+1. "웹마스터 도구" 클릭
+2. "사이트 등록" 클릭
+3. 사이트 URL 입력: https://be-be-guide.com
+
+
+3단계: 소유권 확인 방법 선택
+---------------------------------
+
+[방법 1] HTML 파일 업로드 (추천)
+1. 네이버에서 제공하는 HTML 파일 다운로드
+   예: naver1234567890abc.html
+2. 이 파일을 C:\Users\hee\website\ 디렉토리에 복사
+3. Git에 추가 및 배포:
+   git add naver1234567890abc.html
+   git commit -m "Add Naver verification file"
+   git push
+4. 1-2분 후 https://be-be-guide.com/naver1234567890abc.html 접속 확인
+5. 네이버 서치어드바이저에서 "소유확인" 버튼 클릭
+
+[방법 2] HTML 메타태그 (대안)
+1. 네이버에서 제공하는 메타태그 복사
+   예: <meta name="naver-site-verification" content="abc123def456"/>
+2. C:\Users\hee\website\index.html 열기
+3. <head> 섹션 안, Google Analytics 태그 아래에 추가
+4. Git에 추가 및 배포
+5. 네이버에서 "소유확인" 클릭
+
+
+4단계: 사이트맵 제출
+---------------------------------
+1. 소유권 확인 완료 후
+2. "요청" > "사이트맵 제출" 클릭
+3. 다음 URL들을 제출:
+   - https://be-be-guide.com/sitemap.xml (필수)
+   - https://be-be-guide.com/feed.xml (권장)
+
+
+5단계: URL 수집 요청 (선택, 빠른 색인)
+---------------------------------
+"요청" > "URL 수집 요청"에서 주요 페이지 URL 입력 (하루 10개 제한)
+
+추천 순서:
+1. https://be-be-guide.com/
+2. https://be-be-guide.com/checklist/0m.html
+3. https://be-be-guide.com/checklist/1m.html
+4. https://be-be-guide.com/checklist/6m.html
+5. https://be-be-guide.com/checklist/12m.html
+
+
+기대 효과:
+---------------------------------
+- 1-2주 후: 네이버 검색 노출 시작
+- 한국 검색 시장 60% 점유율
+- 월령별 체크리스트 키워드 타겟
+
+
+문제 해결:
+---------------------------------
+Q: 소유권 확인이 안 돼요
+A:
+  1. 파일이 정확히 https://be-be-guide.com/naver파일명.html로 접속되는지 확인
+  2. 배포가 완료되었는지 확인 (Vercel 배포 1-2분 소요)
+  3. 파일명이 네이버에서 제공한 것과 정확히 일치하는지 확인
+
+Q: 사이트맵이 제출되지 않아요
+A:
+  1. sitemap.xml이 정상적으로 접속되는지 확인
+  2. XML 형식이 올바른지 검증 도구로 확인
+  3. 1-2일 후 다시 시도
+
+Q: 검색 결과에 안 나와요
+A:
+  1. 등록 후 1-2주 대기 필요
+  2. "검색 반영" 탭에서 수집 상태 확인
+  3. robots.txt에서 Naver 크롤러 차단 여부 확인
