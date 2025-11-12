@@ -8,7 +8,7 @@ Sitemap: https://be-be-guide.com/sitemap.xml
 # 크롤링 지연 설정 (1초)
 Crawl-delay: 1
 
-# 허용하지 않는 경로 (개인정보, 관리자 페이지 등)
+# 허용하지 않는 경로
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.pdf$
@@ -17,8 +17,10 @@ Disallow: /api/
 # 검색엔진이 우선적으로 크롤링할 경로
 Allow: /
 Allow: /index.html
+Allow: /checklist/*.html
 Allow: /*.css
 Allow: /*.js
+Allow: /*.webp
 Allow: /*.png
 Allow: /*.jpg
 Allow: /*.jpeg
