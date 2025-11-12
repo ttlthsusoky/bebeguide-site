@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>베베가이드 육아 정보 | 신뢰할 수 있는 육아 가이드 모음</title>
+    <meta name="description" content="소아과 전문의와 WHO 권장 기준을 바탕으로 한 신뢰할 수 있는 육아 정보. 예방접종, 모유 수유, 이유식, 목욕, 수면 교육 등 전문 가이드.">
+    <meta name="keywords" content="육아 정보, 베베가이드, 예방접종, 모유 수유, 이유식, 신생아 케어, 백일">
+
+    <link rel="canonical" href="https://be-be-guide.com/blog/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f9fafb;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .category-btn {
+            padding: 10px 24px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .blog-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .blog-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: white;
+            color: #3b82f6;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .blog-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            color: #1f2937;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .blog-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-link:hover {
+            color: #2563eb;
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {font-size: 2rem;}
+            .header p {font-size: 1rem;}
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-filter {
+                gap: 8px;
+            }
+            .category-btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><i class="fas fa-book-open"></i> 베베가이드 육아 정보</h1>
+        <p>소아과 전문의와 WHO 권장 기준을 바탕으로 한 <strong>신뢰할 수 있는 육아 정보</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">전체</button>
+            <button class="category-btn" data-category="medical">의료·건강</button>
+            <button class="category-btn" data-category="feeding">수유·이유식</button>
+            <button class="category-btn" data-category="care">케어·돌봄</button>
+            <button class="category-btn" data-category="milestone">발달·기념일</button>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Post 1: 예방접종 -->
+            <article class="blog-card" data-category="medical">
+                <div class="blog-image" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                    <i class="fas fa-syringe" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                    <span class="blog-badge">필독</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 질병관리청</span>
+                    </div>
+                    <h2 class="blog-title">2025년 국가예방접종 완벽 가이드</h2>
+                    <p class="blog-description">
+                        0-36개월 필수 접종부터 선택 접종까지 완벽 정리. 접종 후 주의사항과 응급 신호 포함.
+                    </p>
+                    <a href="vaccination-schedule.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 2: 모유 수유 -->
+            <article class="blog-card" data-category="feeding">
+                <div class="blog-image" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                    <i class="fas fa-baby" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                    <span class="blog-badge">추천</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> WHO</span>
+                    </div>
+                    <h2 class="blog-title">모유 수유 완벽 가이드</h2>
+                    <p class="blog-description">
+                        올바른 수유 자세, 젖몸살 대처법, 직장맘 수유 전략까지 WHO 권장 기준으로 완벽 정리.
+                    </p>
+                    <a href="breastfeeding-guide.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 3: 6개월 이유식 -->
+            <article class="blog-card" data-category="feeding">
+                <div class="blog-image" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                    <i class="fas fa-bowl-food" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> WHO</span>
+                    </div>
+                    <h2 class="blog-title">생후 6개월 이유식 시작 가이드</h2>
+                    <p class="blog-description">
+                        WHO 권장 시작 시기와 단계별 진행법. 첫 쌀미음 레시피와 알레르기 체크 방법 포함.
+                    </p>
+                    <a href="6-month-baby-food.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 4: 신생아 목욕 -->
+            <article class="blog-card" data-category="care">
+                <div class="blog-image" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);">
+                    <i class="fas fa-bath" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 소아과</span>
+                    </div>
+                    <h2 class="blog-title">신생아 목욕 시키는 법</h2>
+                    <p class="blog-description">
+                        적정 온도, 목욕 순서, 주의사항까지. 안전하고 올바른 신생아 목욕 실전 가이드.
+                    </p>
+                    <a href="baby-bath-guide.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 5: 밤중 수유 -->
+            <article class="blog-card" data-category="feeding">
+                <div class="blog-image" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                    <i class="fas fa-moon" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 소아과</span>
+                    </div>
+                    <h2 class="blog-title">밤중 수유 줄이는 방법</h2>
+                    <p class="blog-description">
+                        월령별 수유 횟수, 단계별 줄이는 방법, 수면 루틴 만들기까지 실전 수면 교육 가이드.
+                    </p>
+                    <a href="night-feeding-reduction.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 6: 기저귀 발진 -->
+            <article class="blog-card" data-category="medical">
+                <div class="blog-image" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                    <i class="fas fa-first-aid" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 소아과</span>
+                    </div>
+                    <h2 class="blog-title">기저귀 발진 완벽 대처법</h2>
+                    <p class="blog-description">
+                        원인, 예방법, 단계별 치료 방법과 추천 크림까지. 소아과 전문의 가이드.
+                    </p>
+                    <a href="diaper-rash-guide.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 7: 백일 -->
+            <article class="blog-card" data-category="milestone">
+                <div class="blog-image" style="background: linear-gradient(135deg, #f43f5e, #fb7185);">
+                    <i class="fas fa-birthday-cake" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 전통+현대</span>
+                    </div>
+                    <h2 class="blog-title">생후 3개월 백일 준비 가이드</h2>
+                    <p class="blog-description">
+                        아기 발달부터 백일상 준비, 백일 사진, 선물 추천까지 완벽 정리. 체크리스트 포함.
+                    </p>
+                    <a href="3-month-100-days.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 8: 신생아 준비물 -->
+            <article class="blog-card" data-category="care">
+                <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    <i class="fas fa-shopping-bag" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 실전 가이드</span>
+                    </div>
+                    <h2 class="blog-title">신생아 준비물 완벽 가이드</h2>
+                    <p class="blog-description">
+                        출산 전 꼭 챙겨야 할 필수템 10가지. 기저귀부터 유축기까지 실용적인 준비물 리스트.
+                    </p>
+                    <a href="newborn-essentials.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 9: 생후 1개월 -->
+            <article class="blog-card" data-category="milestone">
+                <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                    <i class="fas fa-baby-carriage" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 발달 가이드</span>
+                    </div>
+                    <h2 class="blog-title">생후 1개월 아기 발달과 육아 팁</h2>
+                    <p class="blog-description">
+                        수유·수면·성장 완벽 가이드. 신체 발달, 수유 횟수, 예방접종까지 실전 노하우.
+                    </p>
+                    <a href="1-month-baby-guide.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Post 10: 첫 이유식 -->
+            <article class="blog-card" data-category="feeding">
+                <div class="blog-image" style="background: linear-gradient(135deg, #84cc16, #65a30d);">
+                    <i class="fas fa-utensils" style="font-size: 4.5rem; color: white; opacity: 0.9;"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 2025.01</span>
+                        <span><i class="fas fa-check-circle" style="color: #10b981;"></i> 실전 레시피</span>
+                    </div>
+                    <h2 class="blog-title">첫 이유식 시작 완벽 가이드</h2>
+                    <p class="blog-description">
+                        시기·재료·단계별 방법. 조리법, 주의사항, 실전 레시피를 한 번에 정리.
+                    </p>
+                    <a href="first-baby-food-guide.html" class="blog-link">
+                        자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="back-home">
+            <a href="../index.html" class="btn-home">
+                <i class="fas fa-home"></i> 베베가이드 홈으로 돌아가기
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                // Filter cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
