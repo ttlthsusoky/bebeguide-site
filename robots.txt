@@ -1,28 +1,11 @@
 User-agent: *
 Allow: /
 
-# 베베가이드 - 월령별 육아 가이드
-# Sitemap location
-Sitemap: https://be-be-guide.com/sitemap.xml
-
-# 크롤링 지연 설정 (1초)
-Crawl-delay: 1
-
-# 허용하지 않는 경로
+# 운영 화면과 API 경로는 검색 대상이 아닙니다.
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.pdf$
 Disallow: /api/
 
-# 검색엔진이 우선적으로 크롤링할 경로
-Allow: /
-Allow: /index.html
-Allow: /checklist/*.html
-Allow: /*.css
-Allow: /*.js
-Allow: /*.webp
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.gif
-Allow: /*.svg
+# 재검수 전 글과 과거 체크리스트는 페이지의 noindex 지시를 사용합니다.
+# 크롤러가 noindex를 읽을 수 있도록 robots.txt에서 해당 경로를 막지 않습니다.
+Sitemap: https://be-be-guide.com/sitemap.xml

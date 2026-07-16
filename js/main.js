@@ -1,36 +1,186 @@
+document.documentElement.classList.add('js');
+
 // Mobile Navigation Toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
 
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+function setMobileMenu(open) {
+    if (!mobileMenu || !navMenu) return;
+    mobileMenu.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    mobileMenu.setAttribute('aria-expanded', String(open));
+    mobileMenu.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navMenu.classList.remove('active');
+if (mobileMenu && navMenu) {
+    mobileMenu.addEventListener('click', () => {
+        setMobileMenu(!navMenu.classList.contains('active'));
     });
-});
 
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => setMobileMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            setMobileMenu(false);
+            mobileMenu.focus();
         }
     });
+}
+
+// Compact homepage navigation: keep core guidance visible and reveal one detailed tool at a time.
+const onDemandSections = Array.from(document.querySelectorAll('.on-demand-section'));
+const sectionStatus = document.getElementById('section-status');
+
+function getSectionLabel(section) {
+    const heading = section.querySelector('h2');
+    return heading ? heading.textContent.trim() : '상세 내용';
+}
+
+function updateSectionControls(openSectionId = '') {
+    document.querySelectorAll('[data-open-section]').forEach(control => {
+        control.setAttribute('aria-expanded', String(control.dataset.openSection === openSectionId));
+    });
+}
+
+function revealDetails(target) {
+    if (!target) return;
+    const details = target.matches('details') ? target : target.closest('details');
+    if (details) details.open = true;
+}
+
+function scrollToTarget(target) {
+    if (!target) return;
+    const navbar = document.querySelector('.navbar');
+    const navHeight = navbar ? navbar.offsetHeight : 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    requestAnimationFrame(() => {
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+        window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: reduceMotion ? 'auto' : 'smooth'
+        });
+    });
+}
+
+function openOnDemandSection(sectionId, target = null, updateHash = true) {
+    const section = document.getElementById(sectionId);
+    if (!section || !section.classList.contains('on-demand-section')) return false;
+
+    onDemandSections.forEach(item => item.classList.toggle('is-open', item === section));
+    updateSectionControls(sectionId);
+    revealDetails(target);
+
+    if (updateHash) {
+        const hashTarget = target && target.id ? target.id : sectionId;
+        history.pushState(null, '', `#${hashTarget}`);
+    }
+
+    if (sectionStatus) sectionStatus.textContent = `${getSectionLabel(section)} 영역을 열었습니다.`;
+    return true;
+}
+
+function closeOnDemandSections(moveToFinder = true) {
+    onDemandSections.forEach(section => section.classList.remove('is-open'));
+    updateSectionControls();
+    if (sectionStatus) sectionStatus.textContent = '상세 영역을 닫았습니다.';
+
+    if (moveToFinder) {
+        const finder = document.getElementById('quick-find');
+        history.pushState(null, '', '#quick-find');
+        if (finder) {
+            finder.focus({ preventScroll: true });
+            scrollToTarget(finder);
+        }
+    }
+}
+
+onDemandSections.forEach(section => {
+    const toolbar = document.createElement('div');
+    toolbar.className = 'panel-toolbar';
+    toolbar.innerHTML = `
+        <div class="panel-toolbar-inner">
+            <span><i class="fas fa-layer-group" aria-hidden="true"></i> 선택한 상세 영역</span>
+            <button type="button" data-close-section aria-label="${getSectionLabel(section)} 닫고 빠른 찾기로 돌아가기">
+                <i class="fas fa-xmark" aria-hidden="true"></i> 닫기
+            </button>
+        </div>
+    `;
+    section.insertBefore(toolbar, section.firstChild);
 });
+
+document.addEventListener('click', event => {
+    const opener = event.target.closest('[data-open-section]');
+    if (opener) {
+        event.preventDefault();
+        const sectionId = opener.dataset.openSection;
+        const section = document.getElementById(sectionId);
+        if (openOnDemandSection(sectionId)) scrollToTarget(section);
+        setMobileMenu(false);
+        return;
+    }
+
+    const closer = event.target.closest('[data-close-section]');
+    if (closer) {
+        event.preventDefault();
+        closeOnDemandSections(true);
+        return;
+    }
+
+    const anchor = event.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') return;
+
+    let target;
+    try {
+        target = document.getElementById(decodeURIComponent(href.slice(1)));
+    } catch (error) {
+        return;
+    }
+    if (!target) return;
+
+    event.preventDefault();
+    const section = target.classList.contains('on-demand-section')
+        ? target
+        : target.closest('.on-demand-section');
+
+    if (section) {
+        openOnDemandSection(section.id, target, false);
+    } else {
+        closeOnDemandSections(false);
+        revealDetails(target);
+    }
+
+    history.pushState(null, '', href);
+    scrollToTarget(target);
+});
+
+function openSectionFromHash() {
+    if (!window.location.hash || window.location.hash === '#') {
+        closeOnDemandSections(false);
+        return;
+    }
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (!target) return;
+    const section = target.classList.contains('on-demand-section')
+        ? target
+        : target.closest('.on-demand-section');
+
+    if (section) {
+        openOnDemandSection(section.id, target, false);
+    } else {
+        closeOnDemandSections(false);
+        revealDetails(target);
+    }
+    scrollToTarget(target);
+}
+
+window.addEventListener('hashchange', openSectionFromHash);
+window.addEventListener('popstate', openSectionFromHash);
+openSectionFromHash();
 
 // Navbar Background on Scroll
 window.addEventListener('scroll', () => {
@@ -258,14 +408,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing effect when page loads
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 50);
-    }
-});
+// 제목은 보조기술과 저속 기기에서도 즉시 읽히도록 애니메이션 없이 유지합니다.
 
 // Add smooth reveal animations for service cards
 document.addEventListener('DOMContentLoaded', () => {
@@ -375,8 +518,7 @@ function showLoadingScreen() {
     });
 }
 
-// Initialize loading screen
-showLoadingScreen();
+// 로딩 화면은 정보 접근을 지연시키므로 사용하지 않습니다.
 
 // Add custom cursor (optional)
 function createCustomCursor() {
@@ -450,17 +592,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (title && details) {
       title.style.cursor = 'pointer';
-      title.addEventListener('click', () => {
-        const isVisible = details.style.display !== 'none';
+      title.setAttribute('role', 'button');
+      title.setAttribute('tabindex', '0');
+      title.setAttribute('aria-expanded', String(details.style.display !== 'none'));
 
-        if (isVisible) {
-          // 닫기
-          details.style.display = 'none';
-          if (icon) icon.style.transform = 'rotate(0deg)';
-        } else {
-          // 열기
-          details.style.display = 'block';
-          if (icon) icon.style.transform = 'rotate(180deg)';
+      const toggleDetails = () => {
+        const isVisible = details.style.display !== 'none';
+        details.style.display = isVisible ? 'none' : 'block';
+        title.setAttribute('aria-expanded', String(!isVisible));
+        if (icon) icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+      };
+
+      title.addEventListener('click', toggleDetails);
+      title.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleDetails();
         }
       });
     }

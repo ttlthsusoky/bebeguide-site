@@ -6,10 +6,20 @@
   const box     = document.getElementById('checklistResult');
   if(!ageSel || !btnShow || !box) return;
 
+  const AGE_LABELS = {
+    0: '출생~2개월', 3: '3~5개월', 6: '6~8개월', 9: '9~11개월',
+    12: '12~17개월', 18: '18~23개월', 24: '24~29개월',
+    30: '30~35개월', 36: '36개월'
+  };
+
   // 로컬스토리지에서 체크 상태 불러오기
   function loadChecklistState(month) {
-    const saved = localStorage.getItem(`checklist_${month}`);
-    return saved ? JSON.parse(saved) : {};
+    try {
+      const saved = localStorage.getItem(`checklist_${month}`);
+      return saved ? JSON.parse(saved) : {};
+    } catch (_) {
+      return {};
+    }
   }
 
   // 로컬스토리지에 체크 상태 저장하기
@@ -22,7 +32,7 @@
   btnShow.addEventListener('click', ()=>{
     const m = ageSel.value;
     const list = CHECKLIST[m] || CHECKLIST[0];
-    const monthText = m == 0 ? '신생아' : `${m}개월`;
+    const monthText = AGE_LABELS[m] || ageSel.options[ageSel.selectedIndex].textContent;
     const savedState = loadChecklistState(m);
 
     // 월령별 테마 클래스 결정
@@ -40,10 +50,11 @@
       themeClass = 'age-theme-0-6'; // 기본값
     }
 
-    // Info bar 추가
+    // 개인정보를 전송하지 않는 로컬 저장 안내
     let infoBar = `
-      <div class="checklist-info-bar" style="background:#e3f2fd; padding:12px; border-radius:8px; margin-bottom:20px; font-size:0.9rem; color:#1976d2;">
-        <i class="fas fa-info-circle"></i> 이 체크리스트는 브라우저에 저장됩니다. 준비 완료한 항목에 체크하세요!
+      <div class="checklist-info-bar" role="note">
+        <i class="fas fa-shield-halved" aria-hidden="true"></i>
+        체크 상태는 이 브라우저에만 저장됩니다. 공용 기기라면 사용 후 <a href="#device-data">이 기기 데이터</a>에서 선택 삭제하세요.
       </div>
     `;
 
@@ -53,8 +64,12 @@
     // Add header with month info and progress bar
     let headerHTML = `
       <div class="checklist-header ${themeClass}">
-        <h2>${monthText} 필수 준비물 체크리스트</h2>
-        <p>${monthText} 아기에게 꼭 필요한 용품들을 정리했습니다. 안전하고 검증된 제품을 선택하세요.</p>
+        <h2>${monthText} 생활·안전 참고 체크리스트</h2>
+        <p>아이의 속도와 가정 환경에 따라 필요한 항목이 다릅니다. 이미 하고 있는 것부터 확인하고, 진료 일정은 공식 서비스에서 다시 확인하세요.</p>
+        <div class="checklist-basis-links">
+          <a href="https://nip.kdca.go.kr/irhp/index.html" target="_blank" rel="noopener noreferrer">예방접종도우미</a>
+          <a href="https://health.kdca.go.kr/healthinfo/biz/health/ntcnInfo/healthSourc/thtimtCntnts/thtimtCntntsView.do?thtimt_cntnts_sn=131" target="_blank" rel="noopener noreferrer">영유아 건강검진 안내</a>
+        </div>
 
         <div class="progress-container">
           <div class="progress-header">
@@ -70,61 +85,60 @@
       </div>
     `;
 
-    // Create checklist items with checkbox
+    // 구매 항목과 생활·진료 항목을 분리해 과도한 쇼핑 유도를 피합니다.
     let itemsHTML = list.map((item, index) => {
       const isChecked = savedState[index] || false;
       const doneClass = isChecked ? 'done' : '';
-
-      // 제휴 링크 생성 (실제 쿠팡 파트너스 링크로 교체 필요)
-      const searchKeyword = encodeURIComponent(item.replace(/\([^)]*\)/g, '').trim());
-      const affiliateLink = `https://www.coupang.com/np/search?q=${searchKeyword}&subid=AF8186321`;
+      const affiliateOffer = getAffiliateOffer(item);
+      const commerceHTML = affiliateOffer && affiliateOffer.enabled ? `
+        <div class="affiliate-box">
+          <span class="affiliate-headline">[광고] 상품 검색</span>
+          <span class="affiliate-desc">
+            ${affiliateOffer.disclosure}
+          </span>
+          <div class="affiliate-buttons">
+            <a class="affiliate-link-btn"
+               href="${affiliateOffer.url}"
+               target="_blank"
+               rel="sponsored nofollow noopener noreferrer"
+               referrerpolicy="strict-origin-when-cross-origin"
+               data-affiliate-link
+               data-affiliate-category="${affiliateOffer.key}"
+               data-affiliate-zone="age-checklist"
+               aria-label="[광고] ${affiliateOffer.label} 쿠팡 검색 결과를 새 창에서 보기">
+              <i class="fas fa-magnifying-glass" aria-hidden="true"></i> [광고] 쿠팡에서 검색
+            </a>
+          </div>
+          <div class="affiliate-price-note">특정 제품의 안전성·최저가·재고를 보증하지 않습니다. 가격·판매자·연령 표시·인증·리콜 여부를 직접 확인하세요. <a href="market/affiliate-policy.html">제휴 운영 원칙</a></div>
+        </div>` : affiliateOffer ? `
+        <div class="affiliate-hold-note" role="note">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          <span><strong>검증 전 상품 링크 중지</strong>${affiliateOffer.holdReason}</span>
+        </div>` : `
+        <div class="non-commerce-note">
+          <i class="fas fa-circle-check" aria-hidden="true"></i> 생활·진료 확인 항목 · 구매 링크 없음
+        </div>`;
 
       return `
-      <div class="service-card checklist-item ${themeClass} ${doneClass}" data-index="${index}">
+      <article class="service-card checklist-item ${themeClass} ${doneClass}" data-index="${index}">
         <div class="checkbox-wrapper">
           <input type="checkbox" id="check-${m}-${index}" ${isChecked ? 'checked' : ''}
                  onchange="window.toggleChecklistItem(${m}, ${index}, this.checked)">
-          <label for="check-${m}-${index}"></label>
+          <label for="check-${m}-${index}"><span class="sr-only">${item} 완료</span></label>
         </div>
-        <div class="service-icon">
+        <div class="service-icon" aria-hidden="true">
           <i class="fas ${getCategoryIcon(item)}"></i>
           <span class="item-number">${index + 1}</span>
         </div>
         <h3>${item}</h3>
-        <p>${getItemDescription(item, m)}</p>
-
-        <div class="affiliate-box">
-          <span class="affiliate-headline">[광고]</span>
-          <span class="affiliate-desc">
-            이 추천은 쿠팡 파트너스 활동의 일환으로, 해당 링크를 통해 구매 시
-            판매자로부터 일정액의 수수료를 제공받습니다.
-          </span>
-
-          <div class="affiliate-buttons">
-            <a class="affiliate-link-btn"
-               href="${affiliateLink}"
-               target="_blank"
-               rel="noopener noreferrer"
-               data-product="${item.replace(/"/g, '&quot;')}"
-               data-month="${m}"
-               onclick="trackAffiliateClick(event)">
-              <i class="fas fa-shopping-cart"></i> 쿠팡에서 보기
-            </a>
-          </div>
-
-          <div class="affiliate-price-note price-info">
-            <strong>💰 최저가 확인 중...</strong><br>
-            (가격/재고/배송비 등은 실시간으로 변동될 수 있어요)
-          </div>
-        </div>
-      </div>
+        <p>${getItemDescription(item)}</p>
+        ${commerceHTML}
+      </article>
     `}).join('');
 
     box.innerHTML = infoBar + headerHTML + itemsHTML;
     box.scrollIntoView({behavior:'smooth', block:'start'});
 
-    // 예방접종 스케줄도 해당 월령으로 업데이트 (하이라이트)
-    renderVaccinationSchedule(m);
   });
 
   // 진행률 계산 함수
@@ -169,7 +183,7 @@
 
   // 축하 메시지 모달 표시 함수
   function showCongratulationsModal(month) {
-    const monthText = month == 0 ? '신생아' : `${month}개월`;
+    const monthText = AGE_LABELS[month] || `${month}개월`;
 
     // 기존 모달이 있으면 제거
     const existingModal = document.querySelector('.congratulations-modal');
@@ -186,13 +200,13 @@
           ${generateConfetti()}
         </div>
         <div class="congratulations-icon">🎉</div>
-        <h2>축하합니다! 🎊</h2>
+        <h2 id="checklistCompleteTitle">체크를 마쳤어요</h2>
         <p class="congrats-message">
-          <strong>${monthText} 준비물을 모두 체크하셨습니다!</strong>
+          <strong>${monthText} 참고 항목을 모두 확인했습니다.</strong>
         </p>
         <p class="congrats-sub-message">
-          아기를 맞이할 준비가 완벽하게 되었네요.<br>
-          사랑스러운 육아의 시작을 응원합니다! 💕
+          체크 완료가 안전을 보장하는 것은 아닙니다.<br>
+          아이의 현재 상태와 공식 일정을 계속 확인해 주세요.
         </p>
         <button class="congrats-close-btn" onclick="closeCongratulationsModal()">
           <i class="fas fa-check"></i> 확인
@@ -214,7 +228,7 @@
     const colors = ['#ff9aa2', '#ffb7b2', '#ffdac1', '#e2f0cb', '#b5ead7', '#c7ceea'];
     const emojis = ['🎈', '🎉', '🎊', '🌟', '✨', '💕', '🍼', '👶', '❤️'];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 12; i++) {
       const isEmoji = Math.random() > 0.7;
       const content = isEmoji ? emojis[Math.floor(Math.random() * emojis.length)] : '';
       const color = colors[Math.floor(Math.random() * colors.length)];
@@ -337,153 +351,97 @@
     return 'fa-baby';
   }
 
-  // Helper function to provide context for items
-  function getItemDescription(item, month) {
-    const monthNum = parseInt(month);
+  // 제휴 링크는 중앙 설정에서 검증 상태를 통과한 범주에만 표시합니다.
+  function getAffiliateOffer(item) {
+    if (!window.BEBE_AFFILIATE || typeof window.BEBE_AFFILIATE.getOfferForText !== 'function') return null;
+    return window.BEBE_AFFILIATE.getOfferForText(item);
+  }
 
-    // 월령별 기본 설명
-    let baseDesc = '';
-    if (monthNum <= 6) {
-      baseDesc = '초기 안전/수유/수면 루틴을 정비하세요.';
-    } else if (monthNum <= 12) {
-      baseDesc = '이유식·낮잠 전환·예방접종 일정에 유의하세요.';
-    } else if (monthNum <= 24) {
-      baseDesc = '언어·사회성 발달을 돕는 놀이를 권장합니다.';
-    } else if (monthNum <= 36) {
-      baseDesc = '규칙/순서 놀이와 안전교육을 병행하세요.';
-    } else {
-      baseDesc = '발달 수준에 맞춘 놀이와 안전 환경을 유지하세요.';
-    }
-
-    // 아이템별 상세 설명
-    if (item.includes('기저귀')) return '아기 체중에 맞는 사이즈 선택이 중요합니다. 새는 것을 방지하고 편안함을 위해 정기적으로 교체하세요.';
-    if (item.includes('체온계')) return '발열 체크용 필수품입니다. 디지털 체온계나 귀 적외선 체온계 모두 괜찮습니다.';
-    if (item.includes('카시트')) return '법적 의무사항이며 생명과 직결된 안전용품입니다. 반드시 신품 구매를 권장합니다.';
-    if (item.includes('이유식')) return '아기의 첫 고형식 도입 시기입니다. 알레르기 반응을 주의 깊게 관찰하세요.';
-    if (item.includes('안전')) return '아기가 활동 반경이 넓어지면서 꼭 필요한 안전용품입니다.';
-    if (item.includes('장난감') || item.includes('놀이')) return '월령에 맞는 발달 자극용 장난감입니다. 안전 인증 제품을 선택하세요.';
-    if (item.includes('걸음마') || item.includes('신발')) return '아기의 대근육 발달에 도움이 되지만 과도한 사용은 피하세요.';
-    if (item.includes('치아') || item.includes('칫솔') || item.includes('치과')) return '유치 관리의 시작입니다. 정기 검진과 올바른 양치 습관이 중요합니다.';
-    if (item.includes('그림책') || item.includes('도서')) return '언어 발달과 정서 안정에 도움이 됩니다. 매일 일정 시간 함께 읽어주세요.';
-    if (item.includes('유치원') || item.includes('어린이집')) return '사회성 발달의 중요한 시기입니다. 아이의 준비 상태를 확인하세요.';
-    if (item.includes('퍼즐') || item.includes('블록')) return '소근육과 문제해결 능력 발달에 도움이 됩니다. 월령에 맞는 난이도를 선택하세요.';
-
-    return baseDesc + ' 제품 구매 전 안전 인증을 확인하세요.';
+  // 항목의 목적을 짧게 설명하되 진단·발달 효과·제품 보증은 하지 않습니다.
+  function getItemDescription(item) {
+    if (item.includes('예방접종')) return '접종 가능 날짜와 백신 종류는 아이의 접종 이력에 따라 달라질 수 있어 공식 기록을 기준으로 확인하세요.';
+    if (item.includes('K-DST') || item.includes('발달')) return '한 항목으로 아이를 단정하지 말고 평소 모습과 변화, 보호자의 걱정을 함께 전달하세요.';
+    if (item.includes('수면')) return '잠드는 방식보다 등을 대고 눕히기, 단단하고 평평한 바닥, 비어 있는 수면 공간을 먼저 지키세요.';
+    if (item.includes('이유식') || item.includes('식사') || item.includes('음식')) return '아이가 앉은 상태에서 보호자가 곁을 지키고, 알레르기·질식 위험 신호를 관찰하세요.';
+    if (item.includes('카시트')) return '정확한 모델의 현재 인증·리콜과 아이·차량 적합성을 확인하고 제품·차량 설명서대로 설치하세요.';
+    if (item.includes('체온계')) return '식약처 허가 모델인지 확인하고, 기기별 측정 부위·사용 연령과 설명서에 맞춰 같은 방법으로 추이를 보세요.';
+    if (item.includes('하이체어')) return '현재 안전확인·잠금 상태를 보고, 트레이와 별개로 제품 안전띠를 매번 사용하세요.';
+    if (item.includes('안전문')) return '설치 위치·문틀 치수·고정 방식·틈새를 확인하고, 계단 위에는 벽 나사 고정 방식만 사용하세요.';
+    if (item.includes('헬멧')) return '활동 용도 인증과 머리둘레가 맞아야 하며, 놀이터·등반 놀이에서는 끈 걸림을 막기 위해 벗기세요.';
+    if (item.includes('칫솔') || item.includes('치과') || item.includes('첫니')) return '치아가 난 시기와 아이의 위험 요인에 맞춘 방법을 치과 또는 공식 구강건강 안내로 확인하세요.';
+    if (item.includes('그림책') || item.includes('놀이') || item.includes('퍼즐') || item.includes('미술')) return '특정 교구의 발달 효과를 보장하지 않습니다. 아이가 즐겁게 참여하고 보호자와 상호작용하는지가 더 중요합니다.';
+    if (getAffiliateOffer(item)) return '구매 전 연령 표시, 안전기준, 리콜 여부와 아이에게 실제로 필요한지부터 확인하세요.';
+    return '가정 환경과 아이의 현재 상태에 맞게 적용하고, 걱정되는 변화가 있으면 의료·보육 전문가에게 구체적으로 상담하세요.';
   }
 })();
 
-// === 제휴마케팅 링크 관리 === //
-function trackAffiliateClick(e) {
-  try {
-    const el = e.currentTarget;
-    const product = el.getAttribute('data-product') || 'unknown';
-    const month   = el.getAttribute('data-month') || 'unknown';
 
-    // GA 이벤트 전송
-    if (typeof gtag === 'function') {
-      gtag('event', 'affiliate_click', {
-        event_category: 'commerce',
-        event_label: product,
-        value: 1,
-        baby_month: month
-      });
-    }
+// === 임신 준비 체크리스트 ===
+(function initPregnancyChecklist() {
+  const tabsWrap = document.querySelector('.pregnancy-tabs');
+  const tabs = Array.from(document.querySelectorAll('.pregnancy-tabs .tab-btn'));
+  const content = document.getElementById('pregnancyContent');
+  if (!tabsWrap || !tabs.length || !content || typeof PREGNANCY_PREP === 'undefined') return;
 
-    // 추후(선택): Worker에 로그 쌓고 싶으면 여기서 fetch('/log-click', {...})
-    // -> 그건 리마인더 저장과 유사한 방식으로 처리 가능
-  } catch (err) {
-    // 굳이 사용자에게 오류 표시할 필요는 없음
-  }
-}
+  tabsWrap.setAttribute('role', 'tablist');
+  tabsWrap.setAttribute('aria-label', '임신 준비 단계');
+  content.setAttribute('role', 'tabpanel');
+  content.setAttribute('id', 'pregnancyContent');
+  content.setAttribute('tabindex', '0');
 
-// 자동 가격 정보 업데이트 (API 연동 준비)
-async function updatePriceInfo() {
-  const priceElements = document.querySelectorAll('.price-info');
-
-  priceElements.forEach(async (element) => {
-    try {
-      // 현재: placeholder 상태
-      element.textContent = '💰 최저가 비교 중...';
-
-      // 향후 API 연결 시 활성화할 코드
-      // const itemCard = element.closest('.checklist-item');
-      // const itemName = itemCard.querySelector('h3').textContent;
-      //
-      // // 예시: 쿠팡 파트너스 또는 네이버쇼핑 API
-      // const response = await fetch(`/api/price?item=${encodeURIComponent(itemName)}`);
-      // const data = await response.json();
-      //
-      // if (data.success && data.price) {
-      //   element.textContent = `💰 최저가: ${data.price.toLocaleString()}원`;
-      // } else {
-      //   element.textContent = '💰 가격 정보 없음';
-      // }
-    } catch (error) {
-      console.error('가격 정보 업데이트 실패:', error);
-      element.textContent = '💰 가격 확인 불가';
-    }
-  });
-}
-
-// 체크리스트 표시 후 가격 정보 업데이트
-document.addEventListener('DOMContentLoaded', () => {
-  // 페이지 로드 시 가격 정보 업데이트
-  setTimeout(updatePriceInfo, 2000);
-});
-
-
-/* ===============================
-   베베가이드 미니 챗봇 (토글 + 자동응답)
-   =============================== */
-
-const chatWidget    = document.getElementById("chatWidget");
-function highlightIfMatch(month, ageText) {
-  if (!month && month !== 0) return '';
-  const monthNum = parseInt(month);
-
-  // 0개월 = 신생아 = "출생"
-  if (monthNum === 0 && ageText.includes("출생")) {
-    return 'highlight';
-  }
-
-  // 일반 월령 매칭
-  if (ageText.includes(`${monthNum}개월`)) {
-    return 'highlight';
-  }
-
-  return '';
-}
-
-function renderVaccinationSchedule(month = null) {
-  const wrap = document.getElementById('vaccinationSchedule');
-  if (!wrap) return;
-
-  wrap.innerHTML = VACCINATION_SCHEDULE.map(block => {
-    const isHighlight = highlightIfMatch(month, block.age);
-    const highlightClass = isHighlight ? 'vaccination-row highlight' : 'vaccination-row';
-
-    const items = block.vaccines.map(v => `
-      <li>
-        <strong>${v.name}</strong>
-        <span>${v.note || ''}</span>
-      </li>`).join('');
-
-    return `
-      <div class="${highlightClass}">
-        <div class="vaccine-age">${block.age}${isHighlight ? ' ⭐' : ''}</div>
-        <ul class="vaccine-list">${items}</ul>
+  function render(category) {
+    const items = PREGNANCY_PREP[category] || [];
+    content.setAttribute('aria-label', `${category} 목록`);
+    content.innerHTML = `
+      <div class="pregnancy-list-intro">
+        <strong>${category}</strong>
+        <span>체크 순서는 정답이 아닙니다. 진료 지시와 가정 상황을 먼저 따르세요.</span>
+      </div>
+      ${items.map((item, index) => `
+        <article class="pregnancy-check-item">
+          <span class="pregnancy-step" aria-hidden="true">${index + 1}</span>
+          <p>${item}</p>
+        </article>
+      `).join('')}
+      <div class="pregnancy-sources" role="note">
+        <strong>근거 확인</strong>
+        <a href="https://www.who.int/tools/elena/interventions/folate-periconceptional" target="_blank" rel="noopener noreferrer">WHO 임신 전후 엽산 권고</a>
+        <a href="https://nip.kdca.go.kr/irhp/infm/goVcntInfo.do?menuCd=1122&menuLv=1" target="_blank" rel="noopener noreferrer">질병관리청 풍진 예방접종 안내</a>
+        <span>마지막 검토 2026-07-14</span>
       </div>`;
-  }).join('') + `
-    <div class="vaccination-disclaimer">
-      ※ 실제 접종 가능 시기(일/주 단위 조정)는 소아과마다 다를 수 있습니다.
-      일정 확정 전 반드시 병원에서 확인하세요. (질병관리청 예방접종도우미 기준)
-    </div>`;
-}
+  }
 
-// 페이지 로드 시 초기 렌더링
-(function initVaccinationSchedule() {
-  renderVaccinationSchedule();
+  function activateTab(nextTab, focus = false) {
+    tabs.forEach((tab) => {
+      const selected = tab === nextTab;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', String(selected));
+      tab.setAttribute('aria-controls', 'pregnancyContent');
+      tab.setAttribute('tabindex', selected ? '0' : '-1');
+    });
+    render(nextTab.dataset.category);
+    if (focus) nextTab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.setAttribute('id', `pregnancyTab${index + 1}`);
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      let nextIndex = index;
+      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') nextIndex = 0;
+      if (event.key === 'End') nextIndex = tabs.length - 1;
+      activateTab(tabs[nextIndex], true);
+    });
+  });
+
+  activateTab(tabs.find((tab) => tab.classList.contains('active')) || tabs[0]);
 })();
+
 
 // === 0개월 상세 가이드 확장 기능 === //
 // 월령 선택 시 0개월이면 상세 돌봄 가이드도 함께 표시
@@ -550,9 +508,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm    = document.getElementById('contactForm');
   const submitBtn      = document.getElementById('contactSubmitBtn');
   const statusBox      = document.getElementById('contactStatus');
-  const reminderOptIn  = document.getElementById('reminderOptIn');
 
   if (!contactForm) return;
+  const contactEnabled = contactForm.dataset.contactEnabled === 'true';
+  const pausedNotice = document.getElementById('contactPausedNotice');
+  contactForm.querySelectorAll('input, textarea, button').forEach((control) => {
+    control.disabled = !contactEnabled;
+  });
+  if (pausedNotice) pausedNotice.hidden = contactEnabled;
+  if (contactEnabled && submitBtn) {
+    submitBtn.removeAttribute('aria-disabled');
+    submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> 문의 보내기';
+  }
+
+  if (!contactEnabled) {
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute('aria-disabled', 'true');
+      submitBtn.textContent = '문의 기능 점검 중';
+    }
+    if (statusBox) {
+      statusBox.style.color = '#7c2d12';
+      statusBox.textContent = '문의 정보의 보관·삭제 기준을 확정한 뒤 다시 열겠습니다.';
+    }
+    contactForm.addEventListener('submit', (e) => e.preventDefault());
+    return;
+  }
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -576,7 +557,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
-        body: formData
+        body: formData,
+        referrerPolicy: 'strict-origin-when-cross-origin'
       });
 
       let data = {};
@@ -586,15 +568,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (statusBox) {
           statusBox.style.color = '#10b981';
           statusBox.textContent =
-            '요청이 접수되었습니다. 이메일을 확인해 주세요! (응급 증상은 즉시 119 또는 소아청소년과 진료를 받으셔야 합니다.)';
+            '문의가 접수되었습니다. 답변이 필요한 경우 이메일로 안내드리겠습니다.';
         }
 
         contactForm.reset();
 
-        if (reminderOptIn) reminderOptIn.checked = false;
-
         if (typeof showNotification === 'function') {
-          showNotification('요청이 정상적으로 접수되었어요 💌', 'success');
+          showNotification('문의가 접수되었습니다.', 'success');
         }
       } else {
         if (statusBox) {
@@ -620,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = '보내주세요';
+        submitBtn.textContent = '문의 보내기';
       }
     }
   });

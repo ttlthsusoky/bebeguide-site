@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="아이를 평가하지 않고 다음 돌봄자에게 필요한 사실과 도움이 된 조건을 이어 주는 무료 한 장 인수인계 기록지입니다.">
+  <meta name="robots" content="index,follow">
+  <title>오늘 돌봄 한 장 무료 인쇄 | 베베가이드</title>
+  <link rel="canonical" href="https://be-be-guide.com/market/care-handoff-sample.html">
+  <link rel="stylesheet" href="../css/market.css">
+  <style>
+    .sample-hero {
+      padding: clamp(38px, 7vw, 72px) 0 30px;
+      background: linear-gradient(145deg, #edf7f4 0%, #fff9ef 100%);
+    }
+    .sample-hero h1 { max-width: 760px; margin: 8px 0 14px; font-size: clamp(2rem, 6vw, 4rem); line-height: 1.08; }
+    .sample-hero p { max-width: 720px; color: #52636a; font-size: 1.06rem; }
+    .sample-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .sample-chip { border: 1px solid #bcd8d1; border-radius: 999px; padding: 8px 12px; background: #fff; color: #23564f; font-weight: 800; }
+    .sample-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .sample-button { min-height: 48px; border: 0; border-radius: 12px; padding: 0 18px; background: #2f7568; color: #fff; font: inherit; font-weight: 900; cursor: pointer; }
+    .sample-button:focus-visible, .sample-back:focus-visible { outline: 3px solid #f2a93b; outline-offset: 3px; }
+    .sample-back { display: inline-flex; align-items: center; min-height: 48px; padding: 0 14px; color: #23564f; font-weight: 800; }
+    .sample-main { padding: 34px 0 64px; }
+    .sample-boundaries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 26px; }
+    .sample-boundary { border: 1px solid #d8e3e0; border-radius: 14px; padding: 16px; background: #fff; }
+    .sample-boundary strong { display: block; margin-bottom: 5px; color: #23564f; }
+    .print-sheet { width: min(100%, 920px); margin: 0 auto; border: 1px solid #c8d8d4; border-radius: 18px; padding: clamp(24px, 5vw, 52px); background: #fff; box-shadow: 0 18px 50px rgba(37, 67, 63, .08); }
+    .sheet-kicker { margin: 0 0 6px; color: #2f7568; font-weight: 900; letter-spacing: .02em; }
+    .print-sheet h2 { margin: 0; color: #24333a; font-size: clamp(1.75rem, 5vw, 2.7rem); }
+    .sheet-lead { margin: 8px 0 18px; color: #5d6b70; }
+    .sheet-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #c8d8d4; }
+    .sheet-field { min-height: 58px; display: grid; grid-template-columns: 116px 1fr; align-items: center; border-right: 1px solid #c8d8d4; }
+    .sheet-field:last-child { border-right: 0; }
+    .sheet-label { align-self: stretch; display: grid; place-items: center; padding: 10px; background: #eaf5f2; color: #23564f; font-weight: 900; text-align: center; }
+    .sheet-line { margin: 0 14px; border-bottom: 1px solid #8fa7a2; min-height: 28px; color: #5d6b70; }
+    .priority-box { margin-top: 18px; border: 1px solid #c8d8d4; }
+    .priority-title { padding: 12px 14px; background: #2f7568; color: #fff; font-weight: 900; }
+    .priority-row { display: grid; grid-template-columns: 62px 1fr; min-height: 60px; border-top: 1px solid #c8d8d4; }
+    .priority-number { display: grid; place-items: center; background: #f3f8f7; color: #23564f; font-weight: 900; }
+    .priority-write { margin: 16px; border-bottom: 1px solid #a8bbb7; }
+    .daily-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 18px; border: 1px solid #c8d8d4; }
+    .daily-card { min-height: 148px; padding: 16px; border-right: 1px solid #c8d8d4; border-bottom: 1px solid #c8d8d4; background: #f7f9f8; }
+    .daily-card:nth-child(2n) { border-right: 0; }
+    .daily-card:nth-child(n+3) { border-bottom: 0; }
+    .daily-card:nth-child(1), .daily-card:nth-child(4) { background: #eaf5f2; }
+    .daily-card strong { display: block; margin-bottom: 8px; color: #23564f; }
+    .daily-card span { color: #5d6b70; font-size: .93rem; }
+    .write-line { height: 28px; border-bottom: 1px solid #b2c3bf; }
+    .sheet-bottom { margin-top: 18px; border: 1px solid #c8d8d4; }
+    .bottom-row { display: grid; grid-template-columns: 176px 1fr; min-height: 56px; border-bottom: 1px solid #c8d8d4; }
+    .bottom-row:last-child { border-bottom: 0; }
+    .bottom-row strong { display: grid; place-items: center; padding: 10px; background: #eaf5f2; color: #23564f; text-align: center; }
+    .bottom-write { align-self: center; margin: 0 14px; color: #5d6b70; }
+    .sample-status { width: min(100%, 920px); margin: 22px auto 0; border-left: 4px solid #c68124; padding: 14px 16px; background: #fff8eb; color: #654510; }
+    @media (max-width: 700px) {
+      .sample-boundaries, .sheet-grid, .daily-grid { grid-template-columns: 1fr; }
+      .sheet-field, .daily-card { border-right: 0; }
+      .sheet-field:first-child, .daily-card:not(:last-child) { border-bottom: 1px solid #c8d8d4; }
+      .bottom-row { grid-template-columns: 130px 1fr; }
+    }
+    @page { size: Letter portrait; margin: .58in; }
+    @media print {
+      body { background: #fff; color: #111; }
+      .market-header, .sample-hero, .sample-boundaries, .sample-status, .market-footer { display: none !important; }
+      .sample-main { padding: 0; }
+      .market-shell { width: auto; max-width: none; margin: 0; }
+      .print-sheet { width: auto; min-height: 9.5in; margin: 0; border: 0; border-radius: 0; padding: 0; box-shadow: none; break-inside: avoid; }
+      .print-sheet h2 { font-size: 23pt; }
+      .sheet-lead, .daily-card span, .bottom-write { font-size: 9.5pt; }
+      .sample-chip, .sample-actions { display: none; }
+      .daily-card { min-height: 1.3in; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+  <header class="market-header">
+    <div class="market-shell market-header-inner">
+      <a class="market-logo" href="./">베베가이드 <span>기록지</span></a>
+      <nav class="market-nav" aria-label="주요 이동">
+        <a href="./">용품 가이드</a>
+        <a href="affiliate-policy.html">제휴 원칙</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="sample-hero">
+      <div class="market-shell">
+        <p class="market-kicker">무료 1장 미리보기</p>
+        <h1>다음 돌봄자가<br>30초 안에 보는 한 장</h1>
+        <p>아이를 평가하거나 점수 매기지 않습니다. 오늘 꼭 알아야 할 사실과 실제로 도움이 된 조건만 짧게 이어 주세요.</p>
+        <div class="sample-chips" aria-label="자료 특징">
+          <span class="sample-chip">인쇄하면 1장</span>
+          <span class="sample-chip">계정·저장·전송 없음</span>
+          <span class="sample-chip">광고·제휴 링크 없음</span>
+        </div>
+        <div class="sample-actions">
+          <button class="sample-button" type="button" onclick="window.print()">무료 한 장 인쇄</button>
+          <a class="sample-back" href="./">용품 가이드로 돌아가기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sample-main" aria-labelledby="sample-title">
+      <div class="market-shell">
+        <div class="sample-boundaries" aria-label="작성 원칙">
+          <div class="sample-boundary"><strong>평가 대신 사실</strong><span>시간·장소·실제로 한 행동을 적습니다.</span></div>
+          <div class="sample-boundary"><strong>개인정보 최소화</strong><span>아이 이름 대신 별명이나 이니셜이면 충분합니다.</span></div>
+          <div class="sample-boundary"><strong>필요 없으면 파기</strong><span>인수인계가 끝난 종이는 안전하게 정리합니다.</span></div>
+        </div>
+
+        <article class="print-sheet" id="sample" aria-labelledby="sample-title">
+          <p class="sheet-kicker">FREE SAMPLE · 매일 1장</p>
+          <h2 id="sample-title">오늘 돌봄 한 장</h2>
+          <p class="sheet-lead">다음 사람이 처음 30초에 알아야 할 내용만 적습니다.</p>
+
+          <div class="sheet-grid" aria-label="기본 정보">
+            <div class="sheet-field"><strong class="sheet-label">날짜·시간</strong><span class="sheet-line"></span></div>
+            <div class="sheet-field"><strong class="sheet-label">아이 표기</strong><span class="sheet-line">별명 또는 이니셜만</span></div>
+          </div>
+
+          <section class="priority-box" aria-labelledby="priority-title">
+            <div class="priority-title" id="priority-title">오늘 먼저 볼 3가지</div>
+            <div class="priority-row"><span class="priority-number">1</span><span class="priority-write"></span></div>
+            <div class="priority-row"><span class="priority-number">2</span><span class="priority-write"></span></div>
+            <div class="priority-row"><span class="priority-number">3</span><span class="priority-write"></span></div>
+          </section>
+
+          <div class="daily-grid" aria-label="하루 돌봄 영역">
+            <section class="daily-card"><strong>먹기·마시기</strong><span>마지막 시간·종류·양 / 불편 신호 또는 피한 것</span><div class="write-line"></div><div class="write-line"></div></section>
+            <section class="daily-card"><strong>수면·휴식</strong><span>잔 시간·쉰 시간 / 깨거나 전환할 때 도움이 된 것</span><div class="write-line"></div><div class="write-line"></div></section>
+            <section class="daily-card"><strong>배변·기저귀·화장실</strong><span>마지막 시간·횟수 / 평소와 다른 점</span><div class="write-line"></div><div class="write-line"></div></section>
+            <section class="daily-card"><strong>의사소통·조절</strong><span>아이의 신호 / 도움이 된 말·환경·휴식</span><div class="write-line"></div><div class="write-line"></div></section>
+          </div>
+
+          <div class="sheet-bottom" aria-label="인수인계 확인">
+            <div class="bottom-row"><strong>준비물·다음 행동</strong><span class="bottom-write">________________________________________________________</span></div>
+            <div class="bottom-row"><strong>인수인계 확인</strong><span class="bottom-write">전한 사람 ________　받은 사람 ________　확인 시각 ________</span></div>
+          </div>
+        </article>
+
+        <p class="sample-status"><strong>현재 상태:</strong> 무료 한 장과 6쪽 전체 기록팩 모두 시제품입니다. 실제 보호자·돌봄자 사용성 확인 전에는 만족도·효과를 말하거나 판매하지 않습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="market-footer">
+    <div class="market-shell market-footer-inner">
+      <p><strong>베베가이드</strong><br>아이의 부족함보다 도움이 된 조건을 먼저 기록합니다.</p>
+      <p><a href="../privacy-policy.html">개인정보처리방침</a> · <a href="../#contact">오류 제보</a></p>
+    </div>
+  </footer>
+</body>
+</html>

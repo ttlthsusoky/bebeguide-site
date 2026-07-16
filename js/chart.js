@@ -12,19 +12,6 @@
   let currentChart = null;
   let currentChartType = 'height'; // 'height' or 'weight'
 
-  // WHO 성장 표준 데이터 (평균값, 단순화된 버전)
-  const WHO_STANDARDS = {
-    height: { // cm
-      0: 49.9, 1: 54.7, 2: 58.4, 3: 61.4, 4: 63.9, 5: 65.9, 6: 67.6,
-      7: 69.2, 8: 70.6, 9: 72.0, 10: 73.3, 11: 74.5, 12: 75.7,
-      18: 82.3, 24: 87.1, 30: 91.1, 36: 95.1
-    },
-    weight: { // kg
-      0: 3.3, 1: 4.5, 2: 5.6, 3: 6.4, 4: 7.0, 5: 7.5, 6: 7.9,
-      7: 8.3, 8: 8.6, 9: 8.9, 10: 9.2, 11: 9.4, 12: 9.6,
-      18: 11.3, 24: 12.3, 30: 13.2, 36: 14.0
-    }
-  };
 
   // localStorage에서 데이터 가져오기
   function getGrowthData() {
@@ -134,12 +121,9 @@
       currentChart.destroy();
     }
 
-    const months = data.map(d => d.month);
-    const values = data.map(d => currentChartType === 'height' ? d.height : d.weight);
-
-    // WHO 표준선 데이터
-    const allMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 18, 24, 30, 36];
-    const whoValues = allMonths.map(m => WHO_STANDARDS[currentChartType][m]);
+    // 입력된 기록만 연결해 변화 흐름을 보여줍니다.
+    // 성별·재태주수·정확한 측정법이 없는 단순 평균선은 진단 오해를 만들 수 있어 표시하지 않습니다.
+    const allMonths = [...new Set(data.map(d => d.month))].sort((a, b) => a - b);
 
     const ctx = chartCanvas.getContext('2d');
     currentChart = new Chart(ctx, {
@@ -162,17 +146,7 @@
             pointBorderWidth: 2,
             tension: 0.4,
             fill: true
-          },
-          {
-            label: 'WHO 평균 기준',
-            data: whoValues,
-            borderColor: '#a8e6cf',
-            backgroundColor: 'rgba(168, 230, 207, 0.05)',
-            borderWidth: 2,
-            borderDash: [5, 5],
-            pointRadius: 0,
-            tension: 0.4,
-            fill: false
+          
           }
         ]
       },
