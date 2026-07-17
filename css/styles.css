@@ -671,7 +671,7 @@ section {
     flex-shrink: 0;
 }
 
-.contact-details h4 {
+.contact-details h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: var(--dark-color);
