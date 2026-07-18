@@ -1,159 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8개월 아기 준비 참고 항목 체크리스트 | 베베가이드</title>
-    <meta name="description" content="8개월 아기에게 상황에 따라 확인할 준비 참고 항목 체크리스트. 필요 여부와 안전기준을 직접 확인하세요.">
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {margin: 0;padding: 0;box-sizing: border-box;}
-        :root {--primary-color: #FF8E8E;--primary-light: #FFB3B3;--secondary-color: #ffd3a5;--accent-color: #a8e6cf;--dark-color: #1f2937;--gray-color: #6b7280;--light-bg: #fff8f0;--white: #ffffff;--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);}
-        body {font-family: 'Noto Sans KR', sans-serif;line-height: 1.6;color: var(--dark-color);background: linear-gradient(135deg, #fff8f0 0%, #ffe8e8 100%);min-height: 100vh;}
-        .container {max-width: 800px;margin: 0 auto;padding: 20px;}
-        header {background: var(--white);padding: 30px;border-radius: 16px;box-shadow: var(--shadow-lg);margin-bottom: 30px;text-align: center;}
-        .logo {font-size: 1.5rem;font-weight: 700;color: var(--primary-color);margin-bottom: 20px;display: flex;align-items: center;justify-content: center;gap: 10px;}
-        h1 {font-size: 2rem;color: var(--dark-color);margin-bottom: 10px;font-weight: 700;}
-        .subtitle {font-size: 1.1rem;color: var(--gray-color);margin-bottom: 20px;}
-        .info-badge {display: inline-block;background: linear-gradient(135deg, var(--primary-color), var(--primary-light));color: var(--white);padding: 8px 20px;border-radius: 20px;font-size: 0.9rem;font-weight: 500;}
-        .info-box {background: #e3f2fd;border-left: 4px solid #2196f3;padding: 12px 16px;border-radius: 8px;margin: 15px 0 20px 0;font-size: 0.95rem;color: #1565c0;}
-        .checklist-section {background: var(--white);padding: 30px;border-radius: 16px;box-shadow: var(--shadow-lg);margin-bottom: 30px;}
-        .section-title {font-size: 1.5rem;font-weight: 700;color: var(--dark-color);margin-bottom: 15px;padding-bottom: 15px;border-bottom: 3px solid var(--primary-color);display: flex;align-items: center;gap: 10px;}
-        .checklist-item {display: flex;align-items: flex-start;gap: 12px;padding: 12px 16px;margin-bottom: 10px;background: var(--light-bg);border-radius: 12px;transition: all 0.3s ease;border: 2px solid transparent;}
-        .checklist-item:hover {transform: translateX(5px);border-color: var(--primary-light);box-shadow: var(--shadow);}
-        .checklist-item.checked {opacity: 0.6;background: #f0f0f0;}
-        .checklist-item.checked .item-text {text-decoration: line-through;color: var(--gray-color);}
-        .checkbox-wrapper {flex-shrink: 0;margin-top: 2px;}
-        .checkbox-wrapper input[type="checkbox"] {width: 16px;height: 16px;cursor: pointer;accent-color: var(--primary-color);}
-        .item-content {flex: 1;}
-        .item-text {font-size: 1.1rem;font-weight: 500;color: var(--dark-color);margin-bottom: 8px;line-height: 1.5;}
-        .item-link {display: inline-flex;align-items: center;gap: 5px;color: var(--primary-color);text-decoration: none;font-size: 0.9rem;font-weight: 500;padding: 6px 12px;border-radius: 6px;background: rgba(255, 142, 142, 0.1);transition: all 0.3s ease;}
-        .item-link:hover {background: var(--primary-color);color: var(--white);transform: translateY(-2px);}
-        .vaccination-info {background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);padding: 25px;border-radius: 12px;margin-top: 30px;}
-        .vaccination-info h3 {color: #2e7d32;margin-bottom: 15px;font-size: 1.3rem;}
-        .vaccination-info ul {list-style: none;padding: 0;}
-        .vaccination-info li {padding: 10px 0;padding-left: 30px;position: relative;color: #1b5e20;font-weight: 500;}
-        .vaccination-info li::before {content: "💉";position: absolute;left: 0;}
-        .footer-note {text-align: center;padding: 20px;color: var(--gray-color);font-size: 0.9rem;}
-        .back-button {display: inline-flex;align-items: center;gap: 8px;padding: 12px 24px;background: var(--primary-color);color: var(--white);text-decoration: none;border-radius: 10px;font-weight: 500;transition: all 0.3s ease;margin-top: 20px;}
-        .back-button:hover {background: var(--primary-light);transform: translateY(-2px);box-shadow: var(--shadow);}
-        @media (max-width: 768px) {h1 {font-size: 1.5rem;}.subtitle {font-size: 1rem;}.checklist-section {padding: 20px;}.item-text {font-size: 1rem;}.checkbox-wrapper input[type="checkbox"] {width: 14px;height: 14px;}}
-        .progress-bar {width: 100%;height: 8px;background: #e0e0e0;border-radius: 10px;overflow: hidden;margin: 20px 0;}
-        .progress-fill {height: 100%;background: linear-gradient(90deg, var(--primary-color), var(--accent-color));width: 0%;transition: width 0.5s ease;border-radius: 10px;}
-        .progress-text {text-align: center;font-weight: 600;color: var(--primary-color);margin-top: 10px;font-size: 1.1rem;}
-        .progress-info {text-align: center;font-size: 0.85rem;color: var(--gray-color);margin-top: 8px;font-weight: 400;}
-    </style>
-    <meta name="robots" content="noindex,follow">
-    <link rel="stylesheet" href="../css/content-review.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월령별 구매 체크리스트 사용 중단 | 베베가이드</title>
+  <meta name="description" content="과거 월령별 구매 목록의 사용 중단 안내와 최신 베베가이드 생활·안전 체크리스트 연결입니다.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://be-be-guide.com/">
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon-512.png">
+  <link rel="stylesheet" href="../css/content-review.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo"><i class="fas fa-baby"></i> 베베가이드</div>
-            <h1>8개월 아기 준비 참고 항목 체크리스트</h1>
-            <p class="subtitle">8개월 아기 생활 환경을 살피는 준비 참고 항목</p>
-            <span class="info-badge">👶 8개월</span>
-            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-            <div class="progress-text" id="progressText">준비 완료: 0/8 (0%)</div>
-            <p class="progress-info"><i class="fas fa-info-circle"></i> 체크하면 브라우저에 저장됩니다</p>
-        </header>
-<div class="checklist-section">
-            <h2 class="section-title"><i class="fas fa-clipboard-check"></i> 준비 참고 항목 목록</h2>
-<div class="checklist-item" data-index="0">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-0"></div>
-                <div class="item-content">
-                    <div class="item-text">잡기 쉬운 장난감들</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="1">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-1"></div>
-                <div class="item-content">
-                    <div class="item-text">크롤링 무릎보호대</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="2">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-2"></div>
-                <div class="item-content">
-                    <div class="item-text">안전문: 설치 위치별 고정 방식·잠금·틈새 확인</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="3">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-3"></div>
-                <div class="item-content">
-                    <div class="item-text">콘센트 안전커버</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="4">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-4"></div>
-                <div class="item-content">
-                    <div class="item-text">아기 전용 칫솔</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="5">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-5"></div>
-                <div class="item-content">
-                    <div class="item-text">무불소 치약</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="6">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-6"></div>
-                <div class="item-content">
-                    <div class="item-text">소근육 발달 놀이용품</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-            <div class="checklist-item" data-index="7">
-                <div class="checkbox-wrapper"><input type="checkbox" id="item-7"></div>
-                <div class="item-content">
-                    <div class="item-text">외출용 간식통</div>
-                    <span class="item-link affiliate-disabled" aria-disabled="true"><i class="fas fa-shield-alt" aria-hidden="true"></i> 검증 전 링크 중지</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="vaccination-info">
-            <h3><i class="fas fa-syringe"></i> 예방접종 안내</h3>
-            <p style="color:#1b5e20; font-weight:500;">이 시기에는 정기 예방접종이 없습니다.</p>
-            <p style="margin-top:15px; font-size:0.9rem; color:#2e7d32;">
-                💡 8개월은 크롤링이 활발해지는 시기입니다. 안전용품을 준비하세요.
-            </p>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="https://be-be-guide.com/#age" class="back-button"><i class="fas fa-home"></i> 베베가이드 홈으로</a>
-        </div>
-
-        <div class="footer-note">
-            <p>상태: 과거 초안 · 2026 기준 재검수 전</p>
-            <p style="margin-top: 10px;">이 정보는 일반적인 가이드이며, 개별 상황에 따라 달라질 수 있습니다.</p>
-            <p style="margin-top: 5px; color: var(--primary-color); font-weight: 600;">© 2026 베베가이드. All rights reserved.</p>
-        </div>
+  <main class="bebe-review-notice is-retired" data-retired-checklist="true" aria-labelledby="retired-title">
+    <div class="bebe-review-inner">
+      <span class="bebe-review-status">과거 버전 사용 중단</span>
+      <h1 id="retired-title">이 월령별 구매 목록은 사용을 중단했습니다</h1>
+      <p>아이마다 필요한 물건과 시기가 달라 고정된 월령·수량을 일괄 적용하지 않습니다. 오래된 제품·접종·건강 문구와 확인되지 않은 추천은 모두 제거했습니다.</p>
+      <div class="bebe-review-actions">
+        <a class="bebe-review-primary" href="../index.html#age">최신 생활·안전 체크리스트 보기</a>
+        <a href="../index.html#development-guide">검수 완료 핵심 기준 보기</a>
+      </div>
+      <small>이전 주소를 찾아온 보호자를 위해 안내 페이지만 유지합니다. 진료·접종 결정은 의료기관과 국가기관의 최신 안내를 우선하세요.</small>
     </div>
-
-    <script>
-        const STORAGE_KEY = 'checklist_8m';
-        const totalItems = 8;
-        function loadChecklistState() {const saved = localStorage.getItem(STORAGE_KEY);return saved ? JSON.parse(saved) : {};}
-        function saveChecklistState(index, checked) {const state = loadChecklistState();state[index] = checked;localStorage.setItem(STORAGE_KEY, JSON.stringify(state));updateProgress();}
-        function updateProgress() {const state = loadChecklistState();const checkedCount = Object.values(state).filter(v => v).length;const percentage = Math.round((checkedCount / totalItems) * 100);document.getElementById('progressFill').style.width = percentage + '%';document.getElementById('progressText').textContent = `준비 완료: ${checkedCount}/${totalItems} (${percentage}%)`;}
-        window.addEventListener('DOMContentLoaded', () => {const state = loadChecklistState();document.querySelectorAll('.checklist-item').forEach((item, index) => {const checkbox = item.querySelector('input[type="checkbox"]');const isChecked = state[index] || false;checkbox.checked = isChecked;if (isChecked) {item.classList.add('checked');}checkbox.addEventListener('change', (e) => {const checked = e.target.checked;saveChecklistState(index, checked);if (checked) {item.classList.add('checked');} else {item.classList.remove('checked');}});});updateProgress();});
-    </script>
-    <script src="../js/content-review.js" defer></script>
+  </main>
 </body>
 </html>
