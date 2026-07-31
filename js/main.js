@@ -3,18 +3,35 @@ document.documentElement.classList.add('js');
 // Mobile Navigation Toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
+const mobileMenuQuery = window.matchMedia('(max-width: 768px)');
 
 function setMobileMenu(open) {
     if (!mobileMenu || !navMenu) return;
-    mobileMenu.classList.toggle('active', open);
-    navMenu.classList.toggle('active', open);
-    mobileMenu.setAttribute('aria-expanded', String(open));
-    mobileMenu.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    const expanded = mobileMenuQuery.matches && open;
+    mobileMenu.classList.toggle('active', expanded);
+    navMenu.classList.toggle('active', expanded);
+    mobileMenu.setAttribute('aria-expanded', String(expanded));
+    mobileMenu.setAttribute('aria-label', expanded ? '메뉴 닫기' : '메뉴 열기');
+
+    if (mobileMenuQuery.matches) {
+        navMenu.toggleAttribute('inert', !expanded);
+        navMenu.setAttribute('aria-hidden', String(!expanded));
+    } else {
+        navMenu.removeAttribute('inert');
+        navMenu.removeAttribute('aria-hidden');
+    }
 }
 
 if (mobileMenu && navMenu) {
+    setMobileMenu(false);
+
     mobileMenu.addEventListener('click', () => {
-        setMobileMenu(!navMenu.classList.contains('active'));
+        const willOpen = !navMenu.classList.contains('active');
+        setMobileMenu(willOpen);
+
+        if (willOpen) {
+            navMenu.querySelector('.nav-link')?.focus();
+        }
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -22,11 +39,13 @@ if (mobileMenu && navMenu) {
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
             setMobileMenu(false);
             mobileMenu.focus();
         }
     });
+
+    mobileMenuQuery.addEventListener('change', () => setMobileMenu(false));
 }
 
 // Compact homepage navigation: keep core guidance visible and reveal one detailed tool at a time.

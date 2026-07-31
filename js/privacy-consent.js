@@ -55,7 +55,7 @@
     var choice = readChoice();
     if (choice === 'analytics') return '현재 선택: 필수 기능 + Cloudflare 방문 분석 허용';
     if (choice === 'essential') return '현재 선택: 필수 기능만 사용';
-    return '아직 선택하지 않았습니다. 어느 쪽을 선택해도 사이트의 핵심 기능은 같습니다.';
+    return '선택 전 · 어느 쪽이든 모든 기능을 사용할 수 있습니다.';
   }
 
   function refreshPanelStatus() {
@@ -101,10 +101,10 @@
     panel.innerHTML = [
       '<div class="privacy-consent-inner">',
       '  <div class="privacy-consent-copy">',
-      '    <h2 tabindex="-1">방문 분석은 선택입니다</h2>',
-      '    <p>체크리스트와 기록 기능은 분석을 거부해도 그대로 쓸 수 있습니다. 분석을 허용하면 Cloudflare Web Analytics만 페이지 이용 흐름과 성능 정보를 처리합니다. Google Analytics는 계정 설정 확인 전까지 중지했습니다.</p>',
+      '    <h2 tabindex="-1">방문 분석 선택</h2>',
+      '    <p>거부해도 모든 기능을 사용할 수 있습니다. 허용하면 Cloudflare 방문 분석만 사용합니다.</p>',
       '    <p class="privacy-consent-status" data-privacy-status aria-live="polite"></p>',
-      '    <a href="privacy-policy.html">처리 항목과 외부 서비스 자세히 보기</a>',
+      '    <a href="privacy-policy.html">처리 항목 자세히 보기</a>',
       '  </div>',
       '  <div class="privacy-consent-actions">',
       '    <button type="button" class="privacy-choice-essential" data-privacy-choice="essential">필수만 사용</button>',

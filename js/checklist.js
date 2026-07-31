@@ -137,6 +137,7 @@
     `}).join('');
 
     box.innerHTML = infoBar + headerHTML + itemsHTML;
+    box.focus({preventScroll: true});
     box.scrollIntoView({behavior:'smooth', block:'start'});
 
   });
@@ -503,108 +504,6 @@ function getCareIcon(title) {
   };
   return icons[title] || 'fa-info-circle';
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const contactForm    = document.getElementById('contactForm');
-  const submitBtn      = document.getElementById('contactSubmitBtn');
-  const statusBox      = document.getElementById('contactStatus');
-
-  if (!contactForm) return;
-  const contactEnabled = contactForm.dataset.contactEnabled === 'true';
-  const pausedNotice = document.getElementById('contactPausedNotice');
-  contactForm.querySelectorAll('input, textarea, button').forEach((control) => {
-    control.disabled = !contactEnabled;
-  });
-  if (pausedNotice) pausedNotice.hidden = contactEnabled;
-  if (contactEnabled && submitBtn) {
-    submitBtn.removeAttribute('aria-disabled');
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> 문의 보내기';
-  }
-
-  if (!contactEnabled) {
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.setAttribute('aria-disabled', 'true');
-      submitBtn.textContent = '문의 기능 점검 중';
-    }
-    if (statusBox) {
-      statusBox.style.color = '#7c2d12';
-      statusBox.textContent = '문의 정보의 보관·삭제 기준을 확정한 뒤 다시 열겠습니다.';
-    }
-    contactForm.addEventListener('submit', (e) => e.preventDefault());
-    return;
-  }
-
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // 1) 버튼 비활성화
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = '전송 중...';
-    }
-
-    // 2) 상태 초기화
-    if (statusBox) {
-      statusBox.style.color = '#555';
-      statusBox.textContent = '';
-    }
-
-    const endpoint = contactForm.action;
-    const formData = new FormData(contactForm);
-
-    // 3) 실제 전송
-    try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        body: formData,
-        referrerPolicy: 'strict-origin-when-cross-origin'
-      });
-
-      let data = {};
-      try { data = await res.json(); } catch (_) {}
-
-      if (res.ok && data.ok) {
-        if (statusBox) {
-          statusBox.style.color = '#10b981';
-          statusBox.textContent =
-            '문의가 접수되었습니다. 답변이 필요한 경우 이메일로 안내드리겠습니다.';
-        }
-
-        contactForm.reset();
-
-        if (typeof showNotification === 'function') {
-          showNotification('문의가 접수되었습니다.', 'success');
-        }
-      } else {
-        if (statusBox) {
-          statusBox.style.color = '#ef4444';
-          statusBox.textContent =
-            '전송에 실패했습니다. 다시 시도해 주세요. (응급이면 즉시 119 또는 소아청소년과 진료를 받으셔야 합니다.)';
-        }
-
-        if (typeof showNotification === 'function') {
-          showNotification('전송에 문제가 발생했어요. 다시 시도해주세요.', 'error');
-        }
-      }
-    } catch (err) {
-      if (statusBox) {
-        statusBox.style.color = '#ef4444';
-        statusBox.textContent =
-          '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요. (응급이면 바로 119 또는 응급실로 가셔야 합니다.)';
-      }
-
-      if (typeof showNotification === 'function') {
-        showNotification('네트워크 오류가 발생했습니다.', 'error');
-      }
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = '문의 보내기';
-      }
-    }
-  });
-});
 
 // === 육아 팁 카드 펼치기 기능 === //
 
