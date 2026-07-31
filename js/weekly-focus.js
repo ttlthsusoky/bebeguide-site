@@ -131,13 +131,14 @@
       return state.checks[age];
     }
 
-    function render() {
+    function render(focusId) {
       const age = isKnownAge(state.age) ? state.age : DEFAULT_AGE;
       const items = getFocusItems(age);
       const checks = getAgeChecks(age);
       const checkedCount = items.filter(item => checks[item.index] === true).length;
 
       ageSelect.value = age;
+      if (fullAgeSelect) fullAgeSelect.value = age;
       listElement.replaceChildren();
 
       items.forEach((item, position) => {
@@ -166,7 +167,7 @@
         input.addEventListener('change', () => {
           getAgeChecks(age)[item.index] = input.checked;
           saveState();
-          render();
+          render(input.id);
         });
 
         listItem.append(input, label);
@@ -185,6 +186,10 @@
       privacyElement.textContent = storageAvailable
         ? '정확한 생년월일·이름은 받지 않습니다. 월령 범위와 체크 상태만 이 브라우저에 저장되며 매주 월요일 자동으로 초기화됩니다.'
         : '브라우저 저장을 사용할 수 없어 체크 상태가 자동 저장되지 않습니다. 이 화면을 닫기 전까지만 확인하세요.';
+
+      if (focusId) {
+        document.getElementById(focusId)?.focus({ preventScroll: true });
+      }
     }
 
     ageSelect.addEventListener('change', () => {
@@ -208,6 +213,7 @@
       saveState();
       render();
       statusElement.textContent = '이번 주 체크를 초기화했습니다.';
+      openAllButton.focus({ preventScroll: true });
     });
 
     openAllButton.addEventListener('click', () => {
