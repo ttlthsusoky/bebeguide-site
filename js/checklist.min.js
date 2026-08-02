@@ -76,7 +76,7 @@
             <span class="progress-label">준비 진행률</span>
             <span class="progress-stats">${progress.checkedCount}/${progress.totalItems} 완료 · <strong class="progress-text">${progress.percentage}%</strong></span>
           </div>
-          <div class="progress-bar" role="progressbar" aria-label="월령 체크리스트 준비 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress.percentage}">
+          <div class="progress-bar" role="progressbar" aria-label="아이 개월 수 체크 준비 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress.percentage}">
             <div class="progress-fill" style="width: ${progress.percentage}%"></div>
           </div>
         </div>

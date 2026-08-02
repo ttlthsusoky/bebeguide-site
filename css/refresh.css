@@ -2039,7 +2039,7 @@ input[type='radio'] {
 
 .site-search-fields {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 118px auto;
+  grid-template-columns: minmax(0, 1fr) minmax(176px, 0.34fr) auto;
   gap: 10px;
   align-items: end;
 }
