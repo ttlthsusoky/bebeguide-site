@@ -61,7 +61,10 @@
   function refreshPanelStatus() {
     if (!panel) return;
     var status = panel.querySelector('[data-privacy-status]');
-    if (status) status.textContent = statusText();
+    if (!status) return;
+    var choice = readChoice();
+    status.hidden = !choice;
+    status.textContent = choice ? statusText() : '';
   }
 
   function closePanel() {
@@ -101,10 +104,9 @@
     panel.innerHTML = [
       '<div class="privacy-consent-inner">',
       '  <div class="privacy-consent-copy">',
-      '    <h2 tabindex="-1">방문 분석 선택</h2>',
-      '    <p>거부해도 모든 기능을 사용할 수 있습니다. 허용하면 Cloudflare 방문 분석만 사용합니다.</p>',
-      '    <p class="privacy-consent-status" data-privacy-status aria-live="polite"></p>',
-      '    <a href="privacy-policy.html">처리 항목 자세히 보기</a>',
+      '    <h2 tabindex="-1">방문 분석</h2>',
+      '    <p>거부해도 모든 기능을 쓸 수 있습니다. 허용하면 방문 수만 확인합니다. <a href="privacy-policy.html">자세히</a></p>',
+      '    <p class="privacy-consent-status" data-privacy-status aria-live="polite" hidden></p>',
       '  </div>',
       '  <div class="privacy-consent-actions">',
       '    <button type="button" class="privacy-choice-essential" data-privacy-choice="essential">필수만 사용</button>',
