@@ -595,6 +595,14 @@ input {
   margin: 7px 0;
 }
 
+.development-play-card p + p {
+  margin-top: 10px;
+}
+
+.development-play-card strong {
+  color: var(--market-ink);
+}
+
 .trial-plan {
   display: grid;
   gap: 12px;

@@ -214,10 +214,10 @@ const SITE_SEARCH_ITEMS = [
     {
         category: '발달·언어·행동',
         title: '2~36개월 대표 발달 모습과 K-DST',
-        summary: '언어·관계·놀이·움직임을 개월 수에 따라 확인하고, 한 항목만으로 장애나 지연을 판정하지 않는 기준입니다.',
-        action: '대표 모습 확인 → 걱정 기록 → 선별검사·상담 순서',
+        summary: '언어·소리, 관계·행동, 놀이·생각, 움직임을 개월 수에 따라 확인하고 바로 해볼 놀이와 주의점도 함께 봅니다.',
+        action: '관찰할 모습 확인 → 아이 신호를 따른 놀이 → 걱정 기록·상담',
         href: 'blog/development-kdst-guide.html#milestones',
-        keywords: '발달 늦음 느림 지연 말 언어 단어 옹알이 발음 대화 이름반응 눈맞춤 가리키기 걷기 기기 앉기 뛰기 놀이 행동 자폐 장애 kdst'
+        keywords: '발달 늦음 느림 지연 말 언어 단어 옹알이 발음 대화 이름반응 눈맞춤 가리키기 걷기 기기 앉기 뛰기 놀이 행동 자폐 장애 kdst 놀이방법 발달놀이 상호작용 도와주는법 주의 유의'
     },
     {
         category: '발달·상담 준비',
@@ -294,16 +294,106 @@ const SITE_SEARCH_ITEMS = [
 ];
 
 const DEVELOPMENT_MILESTONES = [
-    { age: 2, social: '얼굴을 바라보고 말을 걸거나 웃어 주면 미소 짓습니다.', language: '울음 외의 소리를 내고 큰 소리에 반응합니다.', cognition: '움직이는 사람을 눈으로 따라봅니다.', movement: '엎드렸을 때 머리를 들어 올립니다.' },
-    { age: 4, social: '관심을 끌려고 스스로 웃거나 소리·움직임을 보입니다.', language: '아·우 같은 소리를 내고 보호자가 말하면 소리로 답합니다.', cognition: '보호자 목소리가 나는 쪽으로 고개를 돌립니다.', movement: '안고 있을 때 머리를 안정적으로 가누고 손을 입으로 가져갑니다.' },
-    { age: 6, social: '익숙한 사람을 알고 웃습니다.', language: '보호자와 번갈아 소리를 냅니다.', cognition: '원하는 장난감에 손을 뻗고 물건을 입으로 탐색합니다.', movement: '엎드린 자세에서 바로 눕거나 앉아 손으로 몸을 지지합니다.' },
-    { age: 9, social: '이름을 부르면 바라보고 낯선 사람에게 경계 반응을 보일 수 있습니다.', language: '마마마·바바바처럼 여러 음절을 이어 냅니다.', cognition: '보이지 않게 떨어진 물건을 찾고 두 물건을 서로 두드립니다.', movement: '혼자 앉고 한 손의 물건을 다른 손으로 옮깁니다.' },
-    { age: 12, social: '보호자와 짝짜꿍 같은 간단한 놀이를 합니다.', language: '손을 흔들어 인사하고 보호자를 특별한 이름으로 부르며 안 돼에 잠시 멈춥니다.', cognition: '컵에 블록을 넣거나 숨기는 것을 본 장난감을 찾습니다.', movement: '잡고 일어서며 가구를 붙잡고 걷습니다.' },
-    { age: 15, social: '좋아하는 물건을 보여 주거나 다른 아이의 놀이를 따라 합니다.', language: '엄마·아빠 외 한두 단어를 말하려 하고 도움을 요청하려 손가락으로 가리킵니다.', cognition: '물건을 용도에 맞게 써 보고 작은 물건 두 개를 쌓습니다.', movement: '혼자 몇 걸음을 걷고 손가락으로 음식을 집어 먹습니다.' },
-    { age: 18, social: '흥미로운 것을 보여 주려고 가리키고 탐색하다 보호자가 가까이 있는지 확인합니다.', language: '엄마·아빠 외 세 단어 이상을 말하려 하고 몸짓 없이 한 단계 지시를 따릅니다.', cognition: '집안일을 흉내 내고 장난감 자동차를 미는 식으로 놉니다.', movement: '붙잡지 않고 걷고 끼적이며 숟가락 사용을 시도합니다.' },
-    { age: 24, social: '다른 사람이 속상한 것을 알아차리고 새 상황에서 보호자 표정을 살핍니다.', language: '두 단어 이상을 붙여 말하고 물어보면 신체 부위를 두 곳 이상 가리킵니다.', cognition: '장난감 음식과 접시처럼 두 가지 이상을 연결해 놉니다.', movement: '달리고 공을 차며 숟가락으로 먹습니다.' },
-    { age: 30, social: '다른 아이 옆에서 놀고 때로는 함께 놀며 간단한 일과를 따릅니다.', language: '약 50개 단어를 말하고 동작 단어가 든 두 단어 이상 문장을 사용합니다.', cognition: '상상놀이를 하고 두 단계 지시를 따릅니다.', movement: '두 발로 뛰고 책장을 한 장씩 넘깁니다.' },
-    { age: 36, social: '다른 아이를 알아차리고 함께 놀이에 참여합니다.', language: '말을 두 번 이상 주고받고 누구·무엇·어디·왜 질문을 하며 이름을 말합니다.', cognition: '시범을 보여 주면 원을 그립니다.', movement: '큰 구슬 같은 물건을 끈에 꿰고, 헐렁한 옷을 일부 입으며 포크를 사용합니다.' }
+    {
+        age: 2,
+        social: '얼굴을 바라보고 말을 걸거나 웃어 주면 미소 짓습니다.',
+        language: '울음 외의 소리를 내고 큰 소리에 반응합니다.',
+        cognition: '움직이는 사람을 눈으로 따라봅니다.',
+        movement: '엎드렸을 때 머리를 들어 올립니다.',
+        play: ['얼굴을 마주 보고 아이 소리와 표정을 천천히 따라 하기', '깨어 있을 때 보호자가 지켜보며 짧게 엎드려 놀기'],
+        method: '소리나 미소에 답한 뒤 잠시 기다려 아이가 다시 반응할 시간을 주세요.',
+        caution: '고개를 돌리거나 하품·보챔이 보이면 쉬세요. 엎드려 놀이는 깨어 있고 지켜볼 때만 하며 잠은 등을 대고 재웁니다.'
+    },
+    {
+        age: 4,
+        social: '관심을 끌려고 스스로 웃거나 소리·움직임을 보입니다.',
+        language: '아·우 같은 소리를 내고 보호자가 말하면 소리로 답합니다.',
+        cognition: '보호자 목소리가 나는 쪽으로 고개를 돌립니다.',
+        movement: '안고 있을 때 머리를 안정적으로 가누고 손을 입으로 가져갑니다.',
+        play: ['아이가 낸 소리를 따라 한 뒤 차례를 기다리는 소리 놀이', '바닥에서 안전한 장난감을 보고 손 뻗고 발차기 해보기'],
+        method: '아이가 바라보는 것을 짧은 말로 알려 주고, 반응하면 같은 놀이를 한 번 더 해주세요.',
+        caution: '입으로 탐색하므로 작거나 날카롭고 뜨거운 물건은 치우세요. 의자·그네에 오래 두지 말고 안전한 바닥 놀이 시간을 주세요.'
+    },
+    {
+        age: 6,
+        social: '익숙한 사람을 알고 웃습니다.',
+        language: '보호자와 번갈아 소리를 냅니다.',
+        cognition: '원하는 장난감에 손을 뻗고 물건을 입으로 탐색합니다.',
+        movement: '엎드린 자세에서 바로 눕거나 앉아 손으로 몸을 지지합니다.',
+        play: ['그림책의 큰 그림을 함께 보며 사물 이름 말하기', '안전한 장난감을 조금 떨어뜨려 손 뻗어 보기'],
+        method: '아이가 내는 소리를 따라 하고, 관심을 보이는 물건 하나만 천천히 이름 붙여 주세요.',
+        caution: '질식할 크기의 물건과 음식은 닿지 않게 하고, 피곤하거나 몸을 피하면 멈추세요. 자세를 억지로 만들지 않습니다.'
+    },
+    {
+        age: 9,
+        social: '이름을 부르면 바라보고 낯선 사람에게 경계 반응을 보일 수 있습니다.',
+        language: '마마마·바바바처럼 여러 음절을 이어 냅니다.',
+        cognition: '보이지 않게 떨어진 물건을 찾고 두 물건을 서로 두드립니다.',
+        movement: '혼자 앉고 한 손의 물건을 다른 손으로 옮깁니다.',
+        play: ['천 뒤에 얼굴이나 장난감을 숨겼다 찾는 까꿍 놀이', '큰 물건을 안전한 통에 넣고 꺼내기'],
+        method: '아이가 보고 만지는 행동을 짧게 말해 주고, 옹알이를 따라 하며 번갈아 반응하세요.',
+        caution: '이동이 늘어나는 시기라 작은 물건·계단·가구 넘어짐 위험을 먼저 막고 가까이에서 지켜보세요. 기기나 서기를 강요하지 않습니다.'
+    },
+    {
+        age: 12,
+        social: '보호자와 짝짜꿍 같은 간단한 놀이를 합니다.',
+        language: '손을 흔들어 인사하고 보호자를 특별한 이름으로 부르며 안 돼에 잠시 멈춥니다.',
+        cognition: '컵에 블록을 넣거나 숨기는 것을 본 장난감을 찾습니다.',
+        movement: '잡고 일어서며 가구를 붙잡고 걷습니다.',
+        play: ['짝짜꿍·빠이빠이처럼 몸짓을 주고받는 놀이', '큰 블록을 통에 넣고 꺼내거나 숨긴 장난감 찾기'],
+        method: '아이가 가리키거나 바라보는 대상을 말해 주고 몇 초 기다린 뒤, 소리·몸짓으로 답하면 바로 반응하세요.',
+        caution: '안전하게 탐색할 공간을 만들고 가구를 고정하세요. 걷기나 말하기를 반복 시험하거나 손을 잡아 억지로 시키지 않습니다.'
+    },
+    {
+        age: 15,
+        social: '좋아하는 물건을 보여 주거나 다른 아이의 놀이를 따라 합니다.',
+        language: '엄마·아빠 외 한두 단어를 말하려 하고 도움을 요청하려 손가락으로 가리킵니다.',
+        cognition: '물건을 용도에 맞게 써 보고 작은 물건 두 개를 쌓습니다.',
+        movement: '혼자 몇 걸음을 걷고 손가락으로 음식을 집어 먹습니다.',
+        play: ['컵으로 마시는 흉내처럼 익숙한 물건 사용 따라 하기', '큰 블록 두세 개 쌓기와 간단한 집안일 돕기'],
+        method: '아이의 말·소리·몸짓을 먼저 인정하고 한 단어를 덧붙여 짧게 확장해 주세요.',
+        caution: '넘어져도 안전한 탐색 공간을 마련하고 작은 블록은 피하세요. 단어 수나 걷기를 또래와 겨루듯 반복 검사하지 않습니다.'
+    },
+    {
+        age: 18,
+        social: '흥미로운 것을 보여 주려고 가리키고 탐색하다 보호자가 가까이 있는지 확인합니다.',
+        language: '엄마·아빠 외 세 단어 이상을 말하려 하고 몸짓 없이 한 단계 지시를 따릅니다.',
+        cognition: '집안일을 흉내 내고 장난감 자동차를 미는 식으로 놉니다.',
+        movement: '붙잡지 않고 걷고 끼적이며 숟가락 사용을 시도합니다.',
+        play: ['인형에게 먹이 주기·재우기 같은 짧은 흉내 놀이', '공이나 자동차 굴리기와 그림책에서 익숙한 것 찾기'],
+        method: '두 가지 중 고르게 하고, 아이가 한 단어를 말하면 자연스러운 두 단어 표현으로 확장하세요.',
+        caution: '눈맞춤·말·배변을 억지로 시키지 말고 싫다는 신호와 쉬는 시간을 존중하세요. 놀잇감 크기와 파손 여부를 확인합니다.'
+    },
+    {
+        age: 24,
+        social: '다른 사람이 속상한 것을 알아차리고 새 상황에서 보호자 표정을 살핍니다.',
+        language: '두 단어 이상을 붙여 말하고 물어보면 신체 부위를 두 곳 이상 가리킵니다.',
+        cognition: '장난감 음식과 접시처럼 두 가지 이상을 연결해 놉니다.',
+        movement: '달리고 공을 차며 숟가락으로 먹습니다.',
+        play: ['공을 굴리고 차며 서로 차례 주고받기', '옷 입기·요리 흉내와 큰 블록·간단한 퍼즐 놀이'],
+        method: '아이 표현을 한두 단어 늘려 말해 주고, 또래 놀이에서는 차례와 필요한 말을 보호자가 직접 보여 주세요.',
+        caution: '또래끼리 나눔과 갈등 해결을 혼자 하리라 기대하지 말고 가까이에서 돕습니다. 영상은 사람과의 상호작용을 대신하지 않습니다.'
+    },
+    {
+        age: 30,
+        social: '다른 아이 옆에서 놀고 때로는 함께 놀며 간단한 일과를 따릅니다.',
+        language: '약 50개 단어를 말하고 동작 단어가 든 두 단어 이상 문장을 사용합니다.',
+        cognition: '상상놀이를 하고 두 단계 지시를 따릅니다.',
+        movement: '두 발로 뛰고 책장을 한 장씩 넘깁니다.',
+        play: ['상자·인형·주방도구로 아이가 이끄는 자유 상상놀이', '크레용 끼적이기·간단한 퍼즐·그림책 질문 놀이'],
+        method: '아이가 놀이를 고르게 하고 보호자는 행동을 설명한 뒤 간단한 질문 하나만 덧붙이세요.',
+        caution: '놀이 순서를 모두 지시하거나 정답을 요구하지 마세요. 구슬·미술 재료·실외 놀이는 삼킴과 추락 위험을 살피며 함께합니다.'
+    },
+    {
+        age: 36,
+        social: '다른 아이를 알아차리고 함께 놀이에 참여합니다.',
+        language: '말을 두 번 이상 주고받고 누구·무엇·어디·왜 질문을 하며 이름을 말합니다.',
+        cognition: '시범을 보여 주면 원을 그립니다.',
+        movement: '큰 구슬 같은 물건을 끈에 꿰고, 헐렁한 옷을 일부 입으며 포크를 사용합니다.',
+        play: ['아이 주도의 역할놀이와 밖에서 따라 하기 놀이', '그림·찰흙·짝 맞추기와 책을 보며 다음 장면 이야기하기'],
+        method: '아이 생각을 먼저 듣고 감정과 행동을 말로 붙여 주며, 어려움은 바로 해결하기보다 한 단계만 도와주세요.',
+        caution: '작은 부품·끈·실외 놀이를 가까이에서 감독하고 발달 효과를 보장하는 훈련처럼 사용하지 마세요. 아이의 의사소통 방식을 존중합니다.'
+    }
 ];
 
 const SEARCH_ALIAS_GROUPS = [
@@ -454,6 +544,39 @@ function renderDevelopmentTiming(query, ageInfo) {
         list.appendChild(item);
     });
 
+    const supportPanel = document.createElement('div');
+    supportPanel.className = 'development-support-panel';
+
+    const playBlock = document.createElement('div');
+    playBlock.className = 'development-support-block';
+    const playTitle = document.createElement('h4');
+    playTitle.textContent = '오늘 해볼 놀이';
+    const playList = document.createElement('ul');
+    checkpoint.play.forEach(play => {
+        const item = document.createElement('li');
+        item.textContent = play;
+        playList.appendChild(item);
+    });
+    playBlock.append(playTitle, playList);
+
+    const methodBlock = document.createElement('div');
+    methodBlock.className = 'development-support-block development-support-method';
+    const methodTitle = document.createElement('h4');
+    methodTitle.textContent = '이렇게 해주세요';
+    const methodText = document.createElement('p');
+    methodText.textContent = checkpoint.method;
+    methodBlock.append(methodTitle, methodText);
+
+    const cautionBlock = document.createElement('div');
+    cautionBlock.className = 'development-support-block development-support-caution';
+    const cautionTitle = document.createElement('h4');
+    cautionTitle.textContent = '주의·유의점';
+    const cautionText = document.createElement('p');
+    cautionText.textContent = checkpoint.caution;
+    cautionBlock.append(cautionTitle, cautionText);
+
+    supportPanel.append(playBlock, methodBlock, cautionBlock);
+
     const nextAction = document.createElement('div');
     nextAction.className = 'development-next-action';
     const actionTitle = document.createElement('strong');
@@ -465,8 +588,8 @@ function renderDevelopmentTiming(query, ageInfo) {
     const links = document.createElement('div');
     links.className = 'development-timing-links';
     const guideLink = document.createElement('a');
-    guideLink.href = 'blog/development-kdst-guide.html#milestones';
-    guideLink.textContent = '2~36개월 전체 모습 보기';
+    guideLink.href = 'blog/development-kdst-guide.html#play';
+    guideLink.textContent = '개월별 놀이·주의점 전체 보기';
     const kdcaLink = document.createElement('a');
     kdcaLink.href = 'https://kdca.go.kr/kdca/2861/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa2RjYSUyRjU1JTJGMjI3NjExJTJGYXJ0Y2xWaWV3LmRvJTNG';
     kdcaLink.target = '_blank';
@@ -474,7 +597,7 @@ function renderDevelopmentTiming(query, ageInfo) {
     kdcaLink.textContent = '질병관리청 K-DST 원문';
     links.append(guideLink, kdcaLink);
 
-    developmentTimingCard.append(head, intro, list, nextAction, links);
+    developmentTimingCard.append(head, intro, list, supportPanel, nextAction, links);
     return true;
 }
 

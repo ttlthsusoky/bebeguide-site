@@ -2224,6 +2224,52 @@ input[type='radio'] {
   color: #173f37;
 }
 
+.development-support-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.development-support-block {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #d7e6e2;
+  border-radius: 11px;
+  background: #f8fbfa;
+  color: #35534d;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.development-support-block h4 {
+  margin: 0 0 6px;
+  color: #173f37;
+  font-size: 0.86rem;
+}
+
+.development-support-block ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.development-support-block li + li {
+  margin-top: 4px;
+}
+
+.development-support-block p {
+  margin: 0;
+}
+
+.development-support-method {
+  background: #f2f8ff;
+}
+
+.development-support-caution {
+  border-color: #ead8af;
+  background: #fffaf0;
+}
+
 .development-next-action {
   padding: 12px 14px;
   border-radius: 12px;
@@ -2629,6 +2675,7 @@ input[type='radio'] {
   }
 
   .development-milestone-list,
+  .development-support-panel,
   .site-search-results {
     grid-template-columns: 1fr;
   }
