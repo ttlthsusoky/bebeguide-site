@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="stylesheet" href="css/refresh.css?v=20260803-2">
+    <link rel="stylesheet" href="css/refresh.css?v=20260803-3">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -60,7 +60,7 @@
             </div>
             <ul class="nav-menu" id="primary-navigation">
                 <li><a href="#quick-find" class="nav-link">빠른 찾기</a></li>
-                <li><a href="#age" class="nav-link">월령 체크</a></li>
+                <li><a href="#age" class="nav-link">개월별 체크</a></li>
                 <li><a href="#development-guide" class="nav-link">핵심 기준</a></li>
                 <li><a href="#quick-tools" class="nav-link">도구 모음</a></li>
                 <li><a href="#contact" class="nav-link nav-link-cta">문의</a></li>
@@ -85,7 +85,7 @@
                     <span class="gradient-text">그대로 적어보세요</span>
                 </h1>
                 <p class="hero-description">
-                    아이 월령과 걱정을 함께 쓰면 관련 기준과 지금 할 일을 바로 찾아드립니다.
+                    아이의 개월 수와 걱정을 함께 쓰면 관련 기준과 지금 할 일을 바로 찾아드립니다.
                 </p>
 
                 <div class="site-search-panel hero-site-search">
@@ -98,9 +98,9 @@
                                     aria-describedby="siteSearchPrivacy siteSearchStatus">
                             </label>
                             <label class="site-search-field site-search-age" for="siteSearchAge">
-                                <span>월령 <small>선택</small></span>
+                                <span>아이 몇 개월인가요? <small>선택</small></span>
                                 <input id="siteSearchAge" type="number" min="0" max="36" inputmode="numeric"
-                                    placeholder="예: 18" aria-label="아이 월령, 0개월부터 36개월까지 선택 입력">
+                                    placeholder="예: 18" aria-label="아이의 개월 수, 0개월부터 36개월까지 선택 입력">
                             </label>
                             <button class="site-search-submit" type="submit">
                                 <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
@@ -113,7 +113,7 @@
                             <button type="button" data-search-example="15개월인데 혼자 걷지 않아요" data-search-age="15">15개월 아직 안 걸어요</button>
                             <button type="button" data-search-example="이유식 질감을 계속 거부해요">이유식 질감 거부</button>
                         </div>
-                        <p id="siteSearchPrivacy" class="site-search-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 질문과 월령은 저장하거나 전송하지 않습니다.</p>
+                        <p id="siteSearchPrivacy" class="site-search-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 질문과 개월 수는 저장하거나 전송하지 않습니다.</p>
                     </form>
                     <p id="siteSearchStatus" class="site-search-status" aria-live="polite"></p>
                     <div id="siteSearchOutput" class="site-search-output" role="region" aria-label="사이트 검색 결과" tabindex="-1" hidden>
@@ -127,7 +127,7 @@
 
                 <div class="hero-start-links" aria-label="검색하지 않고 바로 시작">
                     <span>또는 바로 보기</span>
-                    <a href="#weekly-focus"><i class="fas fa-list-check" aria-hidden="true"></i> 월령별 이번 주 3개</a>
+                    <a href="#weekly-focus"><i class="fas fa-list-check" aria-hidden="true"></i> 개월 수로 이번 주 3개</a>
                     <a href="blog/baby-fever-cold-guide.html"><i class="fas fa-kit-medical" aria-hidden="true"></i> 열·응급 기준</a>
                 </div>
                 <p class="hero-note">로그인과 아이 이름 없이 사용합니다. 진단 대신 공식 기준과 다음 행동을 안내합니다.</p>
@@ -147,12 +147,12 @@
             <section id="weekly-focus" class="weekly-focus-card" aria-labelledby="weekly-focus-title" tabindex="-1">
                 <div class="weekly-focus-header">
                     <div>
-                        <p class="section-kicker">월령으로 시작하고 싶다면</p>
+                        <p class="section-kicker">아이 개월 수로 시작하려면</p>
                         <h2 id="weekly-focus-title">이번 주에 볼 3개</h2>
-                        <p>월령별 생활·안전 목록에서 우선 확인할 세 가지만 보여드립니다.</p>
+                        <p>아이의 개월 수에 맞춰 우선 확인할 생활·안전 세 가지만 보여드립니다.</p>
                     </div>
                     <label class="weekly-focus-age" for="weeklyAgeSelect">
-                        <span>월령 범위</span>
+                        <span>아이 몇 개월인가요?</span>
                         <select id="weeklyAgeSelect" aria-describedby="weeklyFocusPrivacy">
                             <option value="0">출생~2개월</option>
                             <option value="3">3~5개월</option>
@@ -174,7 +174,7 @@
                         <button id="weeklyFocusOpenAll" class="btn btn-secondary" type="button">전체 7개 보기</button>
                     </div>
                 </div>
-                <p id="weeklyFocusPrivacy" class="weekly-focus-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 월령 범위와 체크 상태는 이 브라우저에만 저장됩니다.</p>
+                <p id="weeklyFocusPrivacy" class="weekly-focus-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 선택한 개월 범위와 체크 상태는 이 브라우저에만 저장됩니다.</p>
                 <ul class="weekly-focus-boundaries" aria-label="서비스 이용 경계">
                     <li>공식자료로 검수</li>
                     <li>이름·생년월일 미수집</li>
@@ -202,7 +202,7 @@
                         <a class="quick-action" href="blog/baby-safe-sleep-guide.html"><span>1세 미만 안전수면</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                         <a class="quick-action" href="blog/complementary-feeding-allergy-guide.html"><span>이유식·알레르기</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                         <a class="quick-action" href="blog/development-kdst-guide.html"><span>발달 걱정·K-DST</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                        <a class="quick-action" href="#age"><span>월령 체크리스트</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+                        <a class="quick-action" href="#age"><span>개월별 체크리스트</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -237,12 +237,12 @@
 
     <section id="age" class="section">
         <div class="container">
-            <h2 class="section-title">월령 범위별 생활·안전 체크리스트</h2>
+            <h2 class="section-title">아이 개월 수에 맞춘 생활·안전 체크</h2>
             <p class="section-subtitle">아이마다 속도가 다르다는 전제에서, 지금 점검할 생활 환경과 공식 일정만 간단히 모았습니다.</p>
 
             <form id="ageForm" class="age-form" onsubmit="return false" style="display:flex;gap:10px;flex-wrap:wrap">
-                <label for="ageSelect" class="sr-only">아기 월령</label>
-                <select id="ageSelect" aria-label="아기 월령 선택"
+                <label for="ageSelect" class="sr-only">아이 몇 개월인지 선택</label>
+                <select id="ageSelect" aria-label="아이 몇 개월인지 선택"
                     style="padding:12px 14px;border:1px solid #e5e5e5;border-radius:12px">
                     <option value="0">출생~2개월</option>
                     <option value="3">3~5개월</option>
@@ -260,7 +260,7 @@
             </form>
 
             <div id="checklistResult" class="services-grid" role="region"
-                aria-label="월령별 생활·안전 체크리스트 결과" tabindex="-1" style="margin-top:18px"></div>
+                aria-label="아이 개월 수에 맞춘 생활·안전 체크 결과" tabindex="-1" style="margin-top:18px"></div>
 
             <details class="affiliate-disclosure">
                 <summary>광고·제휴 링크 안내</summary>
@@ -391,7 +391,7 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-kicker">숫자 하나보다 맥락을 먼저</p>
-                <h2 class="section-title">월령별 기준, 이렇게 읽어주세요</h2>
+                <h2 class="section-title">개월 수에 따른 기준, 이렇게 읽어주세요</h2>
                 <p class="section-subtitle">‘정상/비정상’을 단정하지 않고 공식 지침의 범위와 관찰 기준을 함께 보여드립니다.</p>
                 <div class="review-meta" aria-label="콘텐츠 검토 정보">
                     <span><i class="fas fa-calendar-check" aria-hidden="true"></i> 검토일 2026.07.15</span>
@@ -435,7 +435,7 @@
                     </summary>
                     <div class="evidence-body">
                         <ul>
-                            <li><strong>공통 출발점:</strong> 대부분 생후 6개월 무렵, 월령과 발달 준비 신호를 함께 확인합니다.</li>
+                            <li><strong>공통 출발점:</strong> 대부분 생후 6개월 무렵, 개월 수와 발달 준비 신호를 함께 확인합니다.</li>
                             <li><strong>시작 전:</strong> 지지받아 앉아 머리를 안정적으로 가누고 음식을 삼킬 수 있는지 봅니다.</li>
                             <li><strong>알레르기 식품:</strong> 달걀·땅콩 등을 안전한 형태로 하나씩 도입하고, 반응이 없으면 식단에 계속 포함합니다.</li>
                         </ul>
@@ -457,7 +457,7 @@
                         <ul>
                             <li>하던 기술을 잃었거나 보호자의 걱정이 계속되면 다음 검진일까지 기다리지 마세요.</li>
                             <li>‘양호’여도 걱정이 남으면 상담하고, ‘추적검사 요망’은 안내된 간격 뒤 다시 확인합니다.</li>
-                            <li>조산아는 출산예정일과 재태주수를 검진기관에 알리고 적용 월령을 확인하세요.</li>
+                            <li>조산아는 출산예정일과 재태주수를 검진기관에 알리고 어떤 개월 수 기준을 적용할지 확인하세요.</li>
                         </ul>
                         <div class="source-row">
                             <span class="source-level level-a">A · 2026 국가검진 기준</span>
@@ -778,7 +778,7 @@
                             <input type="date" id="diary_date" required>
                         </div>
                         <div class="form-group">
-                            <label for="diary_month">월령</label>
+                            <label for="diary_month">아이 몇 개월인가요?</label>
                             <select id="diary_month">
                                 <option value="">선택 (선택사항)</option>
                                 <option value="0">0개월 (신생아)</option>
@@ -1217,7 +1217,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">📈 우리 아기 성장 기록</h2>
-                <p class="section-subtitle">월령별 키·몸무게를 기록하고 성장 추이를 확인하세요</p>
+                <p class="section-subtitle">개월 수에 따라 키·몸무게를 기록하고 성장 추이를 확인하세요</p>
                 <p class="update-date"><i class="fas fa-clock"></i> 최종 검토: 2026-07-15</p>
             </div>
 
@@ -1227,7 +1227,7 @@
                 <form id="growthDataForm" class="growth-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="growth_month">월령 *</label>
+                            <label for="growth_month">아이 몇 개월인가요? *</label>
                             <select id="growth_month" required>
                                 <option value="">선택하세요</option>
                                 <option value="0">0개월 (신생아)</option>
@@ -1624,7 +1624,7 @@
 
     <nav class="mobile-quick-dock" aria-label="모바일 빠른 메뉴">
         <a href="#quick-find"><i class="fas fa-compass" aria-hidden="true"></i><span>찾기</span></a>
-        <a href="#age"><i class="fas fa-list-check" aria-hidden="true"></i><span>월령</span></a>
+        <a href="#age"><i class="fas fa-list-check" aria-hidden="true"></i><span>개월별</span></a>
         <button type="button" data-open-section="baby-diary" aria-controls="baby-diary" aria-expanded="false"><i class="fas fa-pen" aria-hidden="true"></i><span>기록</span></button>
         <button type="button" data-open-section="contact" aria-controls="contact" aria-expanded="false"><i class="fas fa-message" aria-hidden="true"></i><span>문의</span></button>
     </nav>
@@ -1641,7 +1641,7 @@
                 <div class="footer-section">
                     <h2>빠른 이동</h2>
                     <ul>
-                        <li><a href="#age">월령별 체크리스트</a></li>
+                        <li><a href="#age">개월별 체크리스트</a></li>
                         <li><a href="#daily-tools">오늘의 도구</a></li>
                         <li><a href="#vaccination">예방접종 확인</a></li>
                         <li><a href="market/">용품 선택 가이드</a></li>
@@ -1687,11 +1687,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="js/privacy-consent.js?v=20260803-1"></script>
     <script src="js/data.js"></script>
-    <script src="js/weekly-focus.js?v=20260731-3"></script>
+    <script src="js/weekly-focus.js?v=20260803-1"></script>
     <script src="js/device-data-manager.js"></script>
-    <script src="js/main.js?v=20260803-1"></script>
+    <script src="js/main.js?v=20260803-2"></script>
     <script src="js/affiliate-config.js"></script>
-    <script src="js/checklist.js?v=20260802-2"></script>
+    <script src="js/checklist.js?v=20260803-1"></script>
     <script src="js/checklist-print.js"></script>
     <script src="js/chart.js"></script>
     <script src="js/diary.js"></script>

@@ -214,7 +214,7 @@ const SITE_SEARCH_ITEMS = [
     {
         category: '발달·언어·행동',
         title: '2~36개월 대표 발달 모습과 K-DST',
-        summary: '언어·관계·놀이·움직임을 월령별로 확인하고, 한 항목만으로 장애나 지연을 판정하지 않는 기준입니다.',
+        summary: '언어·관계·놀이·움직임을 개월 수에 따라 확인하고, 한 항목만으로 장애나 지연을 판정하지 않는 기준입니다.',
         action: '대표 모습 확인 → 걱정 기록 → 선별검사·상담 순서',
         href: 'blog/development-kdst-guide.html#milestones',
         keywords: '발달 늦음 느림 지연 말 언어 단어 옹알이 발음 대화 이름반응 눈맞춤 가리키기 걷기 기기 앉기 뛰기 놀이 행동 자폐 장애 kdst'
@@ -261,8 +261,8 @@ const SITE_SEARCH_ITEMS = [
     },
     {
         category: '이번 주 행동',
-        title: '월령별 생활·안전 체크리스트',
-        summary: '월령 범위를 고르면 지금 확인할 생활 환경과 공식 일정 7개를 보여줍니다.',
+        title: '아이 개월 수에 맞춘 생활·안전 체크',
+        summary: '아이의 개월 범위를 고르면 지금 확인할 생활 환경과 공식 일정 7개를 보여줍니다.',
         action: '이미 하는 것부터 체크하고 이번 주 3개로 줄여 보기',
         href: '#age',
         keywords: '월령 체크리스트 오늘 이번주 할일 해야할일 중요 준비 안전 생활'
@@ -440,7 +440,7 @@ function renderDevelopmentTiming(query, ageInfo) {
     const timingText = age < 2
         ? 'CDC의 첫 발달 이정표 목록은 2개월부터 시작합니다.'
         : (age === checkpoint.age
-            ? '선택한 월령과 같은 CDC 관찰 시점입니다.'
+            ? '선택한 개월 수와 같은 CDC 관찰 시점입니다.'
             : age + '개월에 가장 가까운 이전 CDC 관찰 시점은 ' + checkpoint.age + '개월입니다.' + (nextCheckpoint ? ' 다음 목록은 ' + nextCheckpoint.age + '개월입니다.' : ''));
     intro.textContent = timingText + ' 이정표는 해당 나이 아동의 약 75% 이상이 보이는 대표 모습이며 진단선이 아닙니다.';
 
@@ -459,14 +459,14 @@ function renderDevelopmentTiming(query, ageInfo) {
     const actionTitle = document.createElement('strong');
     actionTitle.textContent = '지금 할 일';
     const actionText = document.createElement('span');
-    actionText.textContent = '해당 모습이 아직 보이지 않거나 걱정이 이어지면 더 기다려 보자로 끝내지 말고, 의료진에게 구체적인 상황을 알려 K-DST 같은 발달선별검사를 상의하세요. 하던 기술을 잃었거나 여러 영역의 걱정이 겹치면 월령과 관계없이 상담하세요.';
+    actionText.textContent = '해당 모습이 아직 보이지 않거나 걱정이 이어지면 더 기다려 보자로 끝내지 말고, 의료진에게 구체적인 상황을 알려 K-DST 같은 발달선별검사를 상의하세요. 하던 기술을 잃었거나 여러 영역의 걱정이 겹치면 개월 수와 관계없이 상담하세요.';
     nextAction.append(actionTitle, actionText);
 
     const links = document.createElement('div');
     links.className = 'development-timing-links';
     const guideLink = document.createElement('a');
     guideLink.href = 'blog/development-kdst-guide.html#milestones';
-    guideLink.textContent = '월령별 전체 모습 보기';
+    guideLink.textContent = '2~36개월 전체 모습 보기';
     const kdcaLink = document.createElement('a');
     kdcaLink.href = 'https://kdca.go.kr/kdca/2861/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa2RjYSUyRjU1JTJGMjI3NjExJTJGYXJ0Y2xWaWV3LmRvJTNG';
     kdcaLink.target = '_blank';
@@ -499,8 +499,8 @@ function runSiteSearch(query) {
 
     let status = results.length + '개의 관련 내용을 찾았습니다.';
     if (ageInfo && !ageInfo.supported) status += ' 발달 시점 안내는 현재 0~36개월까지만 제공합니다.';
-    else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 월령을 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
-    else if (timingShown) status += ' 월령별 대표 모습은 진단이나 합격선이 아닙니다.';
+    else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 아이가 몇 개월인지 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
+    else if (timingShown) status += ' 개월 수에 따른 대표 모습은 진단이나 합격선이 아닙니다.';
     siteSearchStatus.textContent = status;
     siteSearchOutput.focus({ preventScroll: true });
 }
