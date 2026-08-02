@@ -90,10 +90,7 @@
       const affiliateOffer = getAffiliateOffer(item);
       const commerceHTML = affiliateOffer && affiliateOffer.enabled ? `
         <div class="affiliate-box">
-          <span class="affiliate-headline">[광고] 상품 검색</span>
-          <span class="affiliate-desc">
-            ${affiliateOffer.disclosure}
-          </span>
+          <span class="affiliate-headline">[광고]</span>
           <div class="affiliate-buttons">
             <a class="affiliate-link-btn"
                href="${affiliateOffer.url}"
@@ -103,19 +100,12 @@
                data-affiliate-link
                data-affiliate-category="${affiliateOffer.key}"
                data-affiliate-zone="age-checklist"
+               aria-describedby="checklist-affiliate-disclosure-text"
                aria-label="[광고] ${affiliateOffer.label} 쿠팡 검색 결과를 새 창에서 보기">
-              <i class="fas fa-magnifying-glass" aria-hidden="true"></i> [광고] 쿠팡에서 검색
+              <i class="fas fa-magnifying-glass" aria-hidden="true"></i> 쿠팡 검색
             </a>
           </div>
-          <div class="affiliate-price-note">특정 제품의 안전성·최저가·재고를 보증하지 않습니다. 가격·판매자·연령 표시·인증·리콜 여부를 직접 확인하세요. <a href="market/affiliate-policy.html">제휴 운영 원칙</a></div>
-        </div>` : affiliateOffer ? `
-        <div class="affiliate-hold-note" role="note">
-          <i class="fas fa-shield-halved" aria-hidden="true"></i>
-          <span><strong>검증 전 상품 링크 중지</strong>${affiliateOffer.holdReason}</span>
-        </div>` : `
-        <div class="non-commerce-note">
-          <i class="fas fa-circle-check" aria-hidden="true"></i> 생활·진료 확인 항목 · 구매 링크 없음
-        </div>`;
+        </div>` : '';
 
       return `
       <article class="service-card checklist-item ${themeClass} ${doneClass}" data-index="${index}">
