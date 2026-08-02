@@ -320,7 +320,7 @@
     progressBar.style.width = `${percentage}%`;
 
     if (percentage === 100) {
-      showNotification('모든 준비 완료! 아기가 편안한 밤을 보낼 수 있어요 🌙', 'success');
+      showNotification('8개 참고 항목을 확인했습니다. 실제 수면 환경과 아이 상태를 계속 살펴주세요.', 'success');
     }
   }
 

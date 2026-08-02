@@ -1057,6 +1057,98 @@ details.disclosure > summary {
   font-weight: 800;
 }
 
+/* Compact, mobile-first age and meal-plan accordions. */
+.guide-accordion-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.guide-accordion {
+  overflow: clip;
+  border: 1px solid var(--market-line);
+  border-radius: 14px;
+  background: var(--market-surface);
+}
+
+.guide-accordion > summary {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 16px;
+  color: var(--market-ink);
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.guide-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-accordion > summary::after {
+  flex: 0 0 auto;
+  color: var(--market-brand-dark);
+  content: "+";
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.guide-accordion[open] > summary {
+  border-bottom: 1px solid var(--market-line);
+  background: var(--market-soft);
+}
+
+.guide-accordion[open] > summary::after {
+  content: "−";
+}
+
+.guide-accordion-body {
+  padding: 16px;
+}
+
+.guide-accordion-body > :first-child {
+  margin-top: 0;
+}
+
+.guide-accordion-body > :last-child {
+  margin-bottom: 0;
+}
+
+.milestone-examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.milestone-examples li {
+  margin: 4px 0;
+}
+
+.source-inline {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--market-brand-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.meal-plan-table th:first-child {
+  min-width: 92px;
+}
+
+@media (max-width: 620px) {
+  .milestone-examples {
+    grid-template-columns: 1fr;
+  }
+}
+
 .audit-action {
   display: inline-flex;
   min-height: 44px;
