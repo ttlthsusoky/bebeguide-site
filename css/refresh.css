@@ -92,7 +92,7 @@ button,
 .btn,
 .nav-link,
 .tool-card,
-input,
+input:not([type='checkbox']):not([type='radio']),
 select,
 textarea,
 summary {
@@ -441,13 +441,37 @@ summary {
   box-shadow: var(--shadow-md);
 }
 
-input,
+input:not([type='checkbox']):not([type='radio']),
 select,
 textarea {
   border: 1px solid #b9c9c5 !important;
   border-radius: 12px !important;
   background: #fff;
   color: var(--ink);
+}
+
+/* Native choice controls must not inherit the 44px text-field box. */
+input[type='checkbox'],
+input[type='radio'] {
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0 !important;
+  background: transparent;
+  accent-color: var(--brand);
+}
+
+input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px !important;
+}
+
+input[type='radio'] {
+  width: 22px;
+  height: 22px;
+  border-radius: 50% !important;
 }
 
 .age-form {
@@ -1551,6 +1575,11 @@ textarea {
   animation: none;
 }
 
+#checklistResult .progress-text {
+  color: inherit;
+  text-shadow: none;
+}
+
 #checklistResult .checklist-item,
 #checklistResult .checklist-item.age-theme-0-6,
 #checklistResult .checklist-item.age-theme-7-12,
@@ -1622,19 +1651,39 @@ textarea {
 }
 
 #checklistResult .checkbox-wrapper input[type='checkbox'] {
+  display: block;
   position: relative;
   z-index: 1;
   width: 24px;
   height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   margin: 0;
   accent-color: var(--brand);
   pointer-events: none;
 }
 
 #checklistResult .checkbox-wrapper label {
+  display: block;
   position: absolute;
   inset: 0;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
   cursor: pointer;
+  transform: none;
+}
+
+#checklistResult .checkbox-wrapper label:hover,
+#checklistResult .checkbox-wrapper label:focus-visible {
+  border: 0;
+  background: rgba(15, 118, 110, 0.08);
+  box-shadow: none;
+  transform: none;
 }
 
 #checklistResult .checklist-item.done {

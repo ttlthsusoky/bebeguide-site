@@ -74,12 +74,10 @@
         <div class="progress-container">
           <div class="progress-header">
             <span class="progress-label">준비 진행률</span>
-            <span class="progress-stats">${progress.checkedCount}/${progress.totalItems} 완료</span>
+            <span class="progress-stats">${progress.checkedCount}/${progress.totalItems} 완료 · <strong class="progress-text">${progress.percentage}%</strong></span>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${progress.percentage}%">
-              <span class="progress-text">${progress.percentage}%</span>
-            </div>
+          <div class="progress-bar" role="progressbar" aria-label="월령 체크리스트 준비 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress.percentage}">
+            <div class="progress-fill" style="width: ${progress.percentage}%"></div>
           </div>
         </div>
       </div>
@@ -160,12 +158,17 @@
   // 진행률 UI 업데이트 함수
   function updateProgressUI(month) {
     const progress = calculateProgress(month);
-    const progressBar = document.querySelector('.progress-fill');
-    const progressText = document.querySelector('.progress-text');
-    const progressStats = document.querySelector('.progress-stats');
+    const progressRegion = box.querySelector('.progress-bar');
+    const progressBar = box.querySelector('.progress-fill');
+    const progressText = box.querySelector('.progress-text');
+    const progressStats = box.querySelector('.progress-stats');
 
     if (progressBar) {
       progressBar.style.width = `${progress.percentage}%`;
+    }
+
+    if (progressRegion) {
+      progressRegion.setAttribute('aria-valuenow', String(progress.percentage));
     }
 
     if (progressText) {
@@ -173,7 +176,7 @@
     }
 
     if (progressStats) {
-      progressStats.textContent = `${progress.checkedCount}/${progress.totalItems} 완료`;
+      progressStats.firstChild.textContent = `${progress.checkedCount}/${progress.totalItems} 완료 · `;
     }
 
     // 100% 달성 시 축하 메시지 표시
