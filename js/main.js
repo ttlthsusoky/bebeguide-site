@@ -217,7 +217,7 @@ const SITE_SEARCH_ITEMS = [
         summary: '언어·소리, 관계·행동, 놀이·생각, 움직임을 개월 수에 따라 확인하고 바로 해볼 놀이와 주의점도 함께 봅니다.',
         action: '관찰할 모습 확인 → 아이 신호를 따른 놀이 → 걱정 기록·상담',
         href: 'blog/development-kdst-guide.html#milestones',
-        keywords: '발달 늦음 느림 지연 말 언어 단어 옹알이 발음 대화 이름반응 눈맞춤 가리키기 걷기 기기 앉기 뛰기 놀이 행동 자폐 장애 kdst 놀이방법 발달놀이 상호작용 도와주는법 주의 유의'
+        keywords: '발달 늦음 느림 지연 말 언어 단어 옹알이 발음 대화 이름반응 눈맞춤 가리키기 걷기 기기 앉기 뛰기 놀이 행동 자폐 장애 kdst 놀이방법 발달놀이 상호작용 도와주는법 주의 유의 영상 화면 유튜브 미디어 떼쓰기 물기 때리기 배변훈련 기저귀떼기'
     },
     {
         category: '발달·상담 준비',
@@ -241,7 +241,7 @@ const SITE_SEARCH_ITEMS = [
         summary: '대부분 6개월 무렵의 준비 신호, 질감 진행, 알레르기 식품 도입과 3일 유아식 구성 예시를 확인합니다.',
         action: '고정 섭취량보다 준비 신호·질감 능력·반응 확인하기',
         href: 'blog/complementary-feeding-allergy-guide.html',
-        keywords: '이유식 유아식 식단 편식 안먹어요 안 먹어요 거부 질감 토함 헛구역질 알레르기 계란 땅콩 철분 간식'
+        keywords: '이유식 유아식 식단 편식 안먹어요 안 먹어요 거부 질감 토함 헛구역질 질식 사레 알레르기 계란 땅콩 철분 간식 생우유 우유 분유 끊기'
     },
     {
         category: '발열·응급',
@@ -257,7 +257,7 @@ const SITE_SEARCH_ITEMS = [
         summary: '모든 낮잠과 밤잠에 적용할 등 자세, 별도 수면면, 빈 수면 공간과 밤중 수유 뒤 행동을 확인합니다.',
         action: '수면교육보다 자세·수면면·주변 물건부터 확인하기',
         href: 'blog/baby-safe-sleep-guide.html',
-        keywords: '잠 수면 밤잠 낮잠 안자요 자주깨요 뒤집기 엎드림 침대 범퍼 베개 이불 sids 수유'
+        keywords: '잠 수면 밤잠 낮잠 안자요 자주깨요 통잠 밤수유 밤중수유 뒤집기 엎드림 침대 범퍼 베개 이불 sids 수유'
     },
     {
         category: '예방접종',
@@ -281,7 +281,7 @@ const SITE_SEARCH_ITEMS = [
         summary: '회원가입 없이 현재 기기에만 수유와 식사, 수면 흐름과 하루 메모를 남깁니다.',
         action: '진단용 점수 대신 상담할 때 보여줄 관찰 기록 남기기',
         href: '#daily-tools',
-        keywords: '기록 수유 식사 이유식 수면 배변 일기 다이어리 타이머 패턴 병원 상담'
+        keywords: '기록 수유 수유량 분유량 수유텀 수유간격 식사 이유식 수면 배변 변비 응가 일기 다이어리 타이머 패턴 병원 상담'
     },
     {
         category: '부모 마음건강',
@@ -409,11 +409,280 @@ const SEARCH_ALIAS_GROUPS = [
     ['걷기', '걷지', '걸어요', '기기', '앉기', '뛰기', '움직임', '운동'],
     ['눈맞춤', '이름반응', '이름', '가리키기', '놀이', '행동', '자폐', '관계'],
     ['이유식', '유아식', '식단', '질감', '편식', '거부', '알레르기', '먹어요'],
+    ['수유량', '분유량', '수유텀', '수유간격', '밤수유', '밤중수유'],
+    ['생우유', '우유', '분유끊기', '분유떼기'],
+    ['헛구역질', '구역질', '질식', '사레', '기도폐쇄'],
+    ['영상', '유튜브', '티비', '스크린', '핸드폰', '휴대폰', '미디어'],
+    ['배변훈련', '기저귀떼기', '변기', '팬티', '변비', '응가'],
+    ['떼쓰기', '고집', '물기', '때리기', '공격행동'],
     ['열', '발열', '고열', '체온', '해열제', '감기', '기침', '경련'],
     ['잠', '수면', '밤잠', '낮잠', '자주깨요', '안자요', '뒤집기'],
     ['접종', '예방접종', '백신', '주사', '일정'],
     ['양치', '양치를', '칫솔', '칫솔질', '치약', '불소', '치아', '이빨', '첫니', '젖니', '잇몸', '구강', '충치', '닦기'],
     ['늦음', '늦는', '늦어요', '느림', '느려요', '지연', '못해요']
+];
+
+// Questions are selected from recurring themes in Korean parenting-community research
+// and public childcare counselling cases. Community posts identify the question only;
+// every answer below is written from the linked official or professional guidance.
+const COMMON_PARENT_ANSWERS = [
+    {
+        id: 'fever-triage',
+        match: /((열|발열|고열|체온).*(몇\s*도|병원|응급|괜찮|났|나요)|38\s*도)/,
+        title: '열은 체온 숫자와 아이 상태를 함께 보세요',
+        lead: '생후 3개월 미만에서 38℃ 이상이면 바로 의료기관의 평가를 받아야 합니다. 그보다 큰 아이도 호흡·반응·수분 섭취·경련·발진을 함께 봅니다.',
+        points: [
+            ['바로 진료', '생후 3개월 미만 38℃ 이상, 평소와 뚜렷하게 다른 처짐이나 수분 섭취 감소'],
+            ['즉시 도움', '숨쉬기 힘듦, 파랗게 보임, 깨워도 반응이 매우 약함, 5분 이상 경련은 119 또는 응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '체온을 다시 정확히 재고 아이 나이, 측정 방법, 호흡, 반응, 마신 양과 소변을 함께 기록하세요.'],
+            ['하지 않을 일', '체온 숫자만 낮추려고 약을 반복하거나, 성분과 용량을 확인하지 않고 해열제를 번갈아 먹이지 마세요.'],
+            ['진료·상담', '보호자가 위험하다고 느끼거나 아이 상태가 빠르게 달라지면 온라인 답보다 진료를 우선하세요.']
+        ],
+        links: [
+            ['발열·응급 전체 가이드', 'blog/baby-fever-cold-guide.html#urgent'],
+            ['NICE 5세 미만 발열 지침', 'https://www.nice.org.uk/guidance/ng143/chapter/Recommendations'],
+            ['질병관리청 발열 설명', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5285']
+        ]
+    },
+    {
+        id: 'wake-to-feed',
+        match: /(깨워서|깨워)\s*(먹|수유)|자는데\s*(먹|수유)|통잠.*(먹|수유)|밤중?\s*수유|밤수유/,
+        title: '자는 아기를 깨워 먹일지는 성장 상태를 먼저 봅니다',
+        lead: '모든 아기에게 같은 밤중 수유 종료일은 없습니다. 건강하게 자라고 충분히 먹는 아기는 보통 매번 깨울 필요가 없지만, 신생아 초기와 성장·황달·조산 문제가 있으면 의료진이 정한 간격이 우선입니다.',
+        points: [
+            ['깨워야 할 수 있어요', '아직 출생 체중을 회복하지 못했거나 조산·황달·수유 곤란이 있거나 의료진에게 수유 계획을 받은 경우'],
+            ['그냥 재울 수 있어요', '건강하게 체중이 늘고 잘 먹으며 소변이 평소대로인 아기는 담당 의료진과 확인한 뒤 배고픔 신호에 맞춥니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '최근 체중 변화, 24시간 수유 횟수, 젖은 기저귀와 깨웠을 때 먹는 모습을 적어 두세요.'],
+            ['하지 않을 일', '개월 수나 통잠 시간 하나만 보고 밤중 수유를 갑자기 끊거나 반대로 모든 아기를 같은 간격으로 깨우지 마세요.'],
+            ['진료·상담', '깨우기 어렵고 너무 처지거나 먹지 못하고 소변이 뚜렷하게 줄면 바로 의료진에게 문의하세요.']
+        ],
+        links: [
+            ['CDC 분유 수유량·간격', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html'],
+            ['AAP 밤중 수유·수면 안내', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Sleeping-Through-the-Night.aspx']
+        ]
+    },
+    {
+        id: 'feeding-amount',
+        match: /(수유\s*텀|수유텀|수유\s*간격|분유\s*량|분유량|수유\s*량|수유량|먹는\s*양.*(괜찮|적당|맞)|얼마나\s*먹)/,
+        title: '수유량·간격은 한 번의 숫자로 판정하지 않습니다',
+        lead: '먹는 양과 간격은 아이마다 다르고 성장하면서 달라집니다. 제품 표나 평균값보다 배고픔·포만 신호, 24시간 전체 흐름, 소변과 성장 추이를 함께 봐야 합니다.',
+        points: [
+            ['배고픔 신호', '입을 찾고 손을 입으로 가져가며 몸을 움직이는 초기 신호에 반응하고, 울 때까지 기다리지 않습니다.'],
+            ['배부름 신호', '고개를 돌리거나 입을 닫고 빨기를 멈추면 남은 양을 끝까지 먹이려고 강요하지 않습니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '하루 동안 시간·양·먹는 신호·젖은 기저귀를 간단히 기록하고 한 번이 아니라 며칠의 흐름을 보세요.'],
+            ['하지 않을 일', '분유를 더 진하거나 묽게 타지 말고 제품에 표시된 물과 분말 비율을 그대로 지키세요.'],
+            ['진료·상담', '성장이 정체되거나 먹을 때 숨이 차고 자주 사레들며, 반복 구토·통증·소변 감소가 있으면 상담하세요.']
+        ],
+        links: [
+            ['CDC 분유량·간격 원문', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html'],
+            ['CDC 분유 조제 원문', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['질병관리청 모유 수유 안내', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'night-waking',
+        match: /(통잠|밤잠|잠투정|자주\s*깨|밤에\s*깨|새벽에\s*깨|안\s*자|잠을\s*안)/,
+        title: '밤에 깨는 것만으로 수면 문제가 되지는 않습니다',
+        lead: '아기는 수면 주기가 짧아 밤에 잠깐 깨는 일이 흔하고 통잠의 같은 마감 시점은 없습니다. 먼저 통잠 훈련보다 안전한 수면 환경과 아이 상태를 확인하세요.',
+        points: [
+            ['밤에 할 일', '불빛과 말을 줄이고 배고픔·기저귀·통증·덥거나 추운지 확인한 뒤 차분하게 다시 재웁니다.'],
+            ['항상 지킬 것', '첫돌 전 모든 잠은 등을 대고, 단단하고 평평한 별도 수면면에, 베개·이불·범퍼·인형 없이 재웁니다.']
+        ],
+        blocks: [
+            ['오늘 확인', '깨는 시간보다 숨쉬기, 먹는 양, 낮 동안 반응과 안전한 잠자리부터 기록하세요.'],
+            ['하지 않을 일', '통잠을 위해 엎어 재우거나 경사진 침대, 수면 포지셔너, 푹신한 침구를 사용하지 마세요.'],
+            ['진료·상담', '호흡이 멈추거나 파랗게 보임, 깨우기 어려움, 먹지 못함, 통증·발열이 함께 있으면 의료진에게 문의하세요.']
+        ],
+        links: [
+            ['1세 미만 안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면 원문', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 아기 수면 안내', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/getting-your-baby-to-sleep.aspx']
+        ]
+    },
+    {
+        id: 'choking-gagging',
+        match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
+        title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
+        lead: '새 질감을 배우며 기침·구역질·뱉기가 나타날 수 있습니다. 하지만 소리·기침·울음·호흡이 나오지 않으면 질식 응급상황으로 봐야 합니다.',
+        points: [
+            ['구역질 가능성', '소리를 내고 기침하거나 얼굴이 붉어지며 스스로 음식을 밀어내는 모습'],
+            ['질식 가능성', '숨·울음·기침 소리가 나오지 않거나 파랗게 변하고 반응이 떨어지는 모습']
+        ],
+        blocks: [
+            ['예방', '똑바로 앉혀 먹이고 발달에 맞게 부드럽고 안전한 크기·모양으로 준비하며 식사 내내 지켜보세요.'],
+            ['하지 않을 일', '눕거나 걷거나 차·유모차가 움직일 때 먹이지 말고, 보이지 않는 음식물을 손가락으로 찾지 마세요.'],
+            ['즉시 행동', '아이가 숨을 쉬거나 울거나 기침하지 못하면 즉시 119에 연락하고 교육받은 영아·소아 기도폐쇄 응급처치를 시행하세요.']
+        ],
+        links: [
+            ['이유식 질식 예방 전체 보기', 'blog/complementary-feeding-allergy-guide.html#choking'],
+            ['CDC 질식 위험 식품', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['CDC 이유식 질감 안내', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html']
+        ]
+    },
+    {
+        id: 'allergen-introduction',
+        match: /(계란|달걀|땅콩|알레르기\s*식품).*(언제|도입|먹|시작)|알레르기.*(도입|예방|음식|먹)/,
+        title: '알레르기 식품은 무조건 늦추지 않습니다',
+        lead: '아기가 이유식을 삼킬 준비가 되고 일반 식품을 먹기 시작했다면 충분히 익힌 달걀과 안전하게 묽힌 땅콩을 한 번에 한 가지씩 소량 도입할 수 있습니다.',
+        points: [
+            ['처음 먹일 때', '아이가 건강한 낮 시간에 이미 먹던 음식과 섞어 소량 제공하고 반응을 관찰합니다.'],
+            ['문제없었다면', '몇 달씩 다시 빼지 말고 가족 식단과 아이의 삼키기 능력에 맞춰 꾸준히 포함합니다.']
+        ],
+        blocks: [
+            ['안전한 형태', '달걀은 충분히 익히고, 땅콩은 통알·덩어리 대신 매끈한 버터나 가루를 물 또는 음식에 묽게 섞으세요.'],
+            ['먼저 상담', '심한 습진, 진단된 달걀 알레르기, 이전 즉시 반응이 있으면 집에서 시험하지 말고 의료진 계획을 먼저 세우세요.'],
+            ['즉시 행동', '먹은 뒤 숨쉬기 어려움, 목소리 변화, 입술·혀 부종, 축 처짐이 나타나면 119를 이용하세요.']
+        ],
+        links: [
+            ['이유식·알레르기 전체 가이드', 'blog/complementary-feeding-allergy-guide.html#allergens'],
+            ['질병관리청 이유기보충식', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470'],
+            ['ASCIA 2026 알레르기 예방 지침', 'https://www.allergy.org.au/hp/papers/infant-feeding-and-allergy-prevention']
+        ]
+    },
+    {
+        id: 'cow-milk',
+        match: /(생우유|우유).*(언제|먹|마시|시작|바꿔)|분유.*(끊|떼|생우유)/,
+        title: '생우유를 주된 음료로 바꾸는 기준은 첫돌 이후입니다',
+        lead: '생후 12개월 전에는 모유 또는 영아용 조제유가 주된 우유 음료입니다. 살균 우유는 음식 재료나 요구르트·치즈 형태로는 더 일찍 접할 수 있지만 주된 음료로 대신하지 않습니다.',
+        points: [
+            ['12개월 전', '모유 또는 영아용 조제유를 계속하고 생우유를 주된 음료로 주지 않습니다.'],
+            ['12개월 이후', '무가당 살균 전지우유 등 적절한 음료로 한 번의 수유부터 천천히 바꿀 수 있습니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 나이와 현재 식사·수유 흐름을 확인하고 첫돌 이후라면 한 번의 수유부터 바꿔 반응을 보세요.'],
+            ['하지 않을 일', '첫돌 전 영아용 조제유를 생우유나 식물성 음료로 임의 대체하지 마세요.'],
+            ['진료·상담', '우유 알레르기, 성장 문제, 빈혈 위험, 제한식이 있으면 대체 음료를 의료진과 정하세요.']
+        ],
+        links: [
+            ['이유식·유아식 전체 가이드', 'blog/complementary-feeding-allergy-guide.html#avoid'],
+            ['CDC 12개월 우유 전환', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/cows-milk-and-milk-alternatives.html'],
+            ['CDC 이유식 시작 안내', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html']
+        ]
+    },
+    {
+        id: 'solid-start',
+        match: /(이유식|보충식).*(언제|시작|몇\s*개월|준비)|첫\s*이유식/,
+        title: '이유식은 대체로 6개월 무렵 준비 신호를 보고 시작합니다',
+        lead: '개월 수만 보지 않고 머리·목을 가누고 도움받아 앉으며, 음식을 입에서 밖으로 밀기보다 삼키고, 음식에 관심을 보이는 준비 신호를 함께 확인합니다. 4개월 전 시작은 권하지 않습니다.',
+        points: [
+            ['시작 신호', '머리·목 조절, 도움받아 앉기, 숟가락을 향해 입 열기, 음식을 삼키는 모습'],
+            ['계속할 것', '첫돌 전에는 이유식이 늘어도 모유 또는 영아용 조제유를 함께 제공합니다.']
+        ],
+        blocks: [
+            ['첫 시도', '아이가 편안하고 보호자가 여유 있는 낮 시간에 부드러운 질감과 소량으로 시작하세요.'],
+            ['하지 않을 일', '빨리 시작하면 잠을 더 잔다는 이유로 병에 곡물가루나 이유식을 넣지 마세요.'],
+            ['진료·상담', '조산, 성장 부진, 삼킴 문제, 심한 습진이나 이전 음식 반응이 있으면 개별 시작 계획을 확인하세요.']
+        ],
+        links: [
+            ['이유식 시작·식단 가이드', 'blog/complementary-feeding-allergy-guide.html#start'],
+            ['WHO 2023 보충식 지침', 'https://www.who.int/publications/i/item/9789240081864'],
+            ['CDC 이유식 시작 신호', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html']
+        ]
+    },
+    {
+        id: 'food-refusal',
+        match: /(이유식|유아식|밥|음식).*(안\s*먹|거부|입을\s*안|뱉|먹기\s*싫)|편식/,
+        title: '안 먹는 날이 있어도 억지로 정해진 양을 채우지 않습니다',
+        lead: '보호자는 무엇을·언제·어디서 줄지 정하고, 아이는 먹을지와 얼마나 먹을지를 배고픔·포만 신호로 알려 줍니다. 한 끼의 양보다 며칠의 흐름과 성장을 봅니다.',
+        points: [
+            ['먹기 쉽게', '익숙한 음식과 새 음식 하나를 함께 두고, 현재 삼킬 수 있는 질감과 작은 양으로 반복해서 제안합니다.'],
+            ['멈출 신호', '고개를 돌리거나 입을 닫고 밀어내면 그 끼니는 차분히 끝냅니다.']
+        ],
+        blocks: [
+            ['오늘 할 일', '식사 시간을 예측 가능하게 하고 화면을 끈 뒤, 보호자와 함께 앉아 아이의 배고픔·포만 신호에 맞춰 편안하게 끝내세요.'],
+            ['하지 않을 일', '쫓아다니며 먹이기, 영상을 보여 주며 무의식적으로 먹이기, 한 숟갈을 조건으로 보상하거나 겁주기를 피하세요.'],
+            ['진료·상담', '먹을 때 반복적으로 기침·질식하거나 통증이 있고, 음식 종류가 급격히 줄거나 성장·수분 섭취가 걱정되면 상담하세요.']
+        ],
+        links: [
+            ['이유식·유아식 식단 가이드', 'blog/complementary-feeding-allergy-guide.html#meal-plan'],
+            ['WHO 반응적 먹이기 지침', 'https://www.who.int/publications/i/item/9789240081864'],
+            ['WHO 보충식 핵심 안내', 'https://www.who.int/health-topics/complementary-feeding']
+        ]
+    },
+    {
+        id: 'screen-time',
+        match: /(영상|유튜브|티비|tv|스크린|핸드폰|휴대폰|미디어).*(보여|노출|봐도|시간|괜찮)|영상\s*노출/,
+        title: '두 돌 전에는 영상보다 사람과 노는 시간을 우선하세요',
+        lead: 'WHO는 1세 미만과 1세의 앉아서 보는 화면 시간을 권하지 않고, 2세는 하루 1시간 이내로 줄이며 더 적을수록 좋다고 안내합니다. 화면은 사람과의 말·놀이·수면을 대신하지 않게 합니다.',
+        points: [
+            ['1세 미만·1세', 'TV·영상·게임처럼 앉아서 보는 화면 시간을 두지 않는 방향이 권고됩니다.'],
+            ['2세·3~4세', '하루 1시간 이내이며 더 적을수록 좋고, 보호자와 함께 보고 대화하는 시간을 우선합니다.']
+        ],
+        blocks: [
+            ['대신할 것', '짧은 그림책, 노래, 얼굴 마주 보기, 바닥 놀이처럼 아이가 반응을 주고받는 활동으로 바꾸세요.'],
+            ['줄이는 방법', '식사·잠들기 전·울음을 달래는 기본 수단으로 화면을 고정하지 말고 한 상황부터 화면 없이 해보세요.'],
+            ['상담', '화면을 줄일 때 일상 유지가 매우 어렵거나 언어·놀이·수면 걱정이 함께 있으면 그 모습을 기록해 상담하세요.']
+        ],
+        links: [
+            ['개월별 놀이·주의점', 'blog/development-kdst-guide.html#play'],
+            ['WHO 5세 미만 화면·활동·수면 지침', 'https://www.who.int/publications/i/item/9789241550536'],
+            ['WHO 권고 요약', 'https://www.who.int/news-room/detail/24-04-2019-to-grow-up-healthy-children-need-to-sit-less-and-play-more']
+        ]
+    },
+    {
+        id: 'toilet-training',
+        match: /(배변\s*훈련|배변훈련|기저귀\s*(떼|빼)|팬티.*언제|변기.*(시작|훈련|앉))/,
+        title: '배변훈련은 개월 수보다 준비 신호로 시작합니다',
+        lead: '정해진 마감 나이는 없습니다. 많은 아이가 2~3세 사이 시작하지만, 두 시간가량 마른 상태를 유지하고 배변 신호를 알아차리며 간단한 지시와 옷 내리기를 도울 수 있는지를 먼저 봅니다.',
+        points: [
+            ['준비 신호', '쉬·응가 전 몸짓을 보이고 젖은 기저귀를 불편해하며 변기까지 이동하고 간단한 말을 이해합니다.'],
+            ['아직 아니라면', '거부하거나 변을 참거나 큰 생활 변화가 있으면 쉬었다가 다시 시도해도 됩니다.']
+        ],
+        blocks: [
+            ['시작 방법', '편한 변기와 발 받침을 두고 식후 잠깐 앉아 보는 것부터 시작해 결과와 상관없이 시도를 칭찬하세요.'],
+            ['하지 않을 일', '실수·야간 기저귀·늦은 시작을 혼내거나 다른 아이와 비교하지 마세요.'],
+            ['추가 지원', '발달장애나 운동·의사소통 어려움이 있어도 준비 신호는 같지만 더 늦고 단계적인 지원이 필요할 수 있습니다. 변비·통증을 먼저 해결하세요.']
+        ],
+        links: [
+            ['AAP 배변훈련 시작 기준', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/the-right-age-to-toilet-train.aspx'],
+            ['AAP 특별한 지원이 필요한 아이', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/Toilet-Training-Children-with-Special-Needs.aspx']
+        ]
+    },
+    {
+        id: 'constipation',
+        match: /(변비|며칠.*(변|응가|똥)|응가.*안|똥.*안|변.*딱딱|딱딱한\s*변)/,
+        title: '변비는 며칠 간격보다 변의 모양과 통증을 함께 봅니다',
+        lead: '배변 횟수는 아이마다 다릅니다. 딱딱하고 마른 변, 힘주기와 통증, 변을 참는 행동, 배가 붓거나 식욕이 떨어지는지를 함께 기록하세요.',
+        points: [
+            ['변비 가능성', '토끼똥처럼 단단한 변, 매우 크고 아픈 변, 변을 피하려 까치발·엉덩이 조이기·숨기'],
+            ['도움이 되는 습관', '연령에 맞는 물과 식이섬유, 움직임, 식후 짧은 변기 앉기와 발 받침을 사용합니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '며칠 동안 횟수뿐 아니라 변 모양, 통증, 피, 배가 부은 정도와 먹고 마신 것을 적으세요.'],
+            ['하지 않을 일', '아이를 혼내거나 오래 변기에 앉히지 말고, 의료진 지시 없이 영아에게 관장·변비약·분유 농도 변경을 하지 마세요.'],
+            ['진료·상담', '피가 보이거나 배가 심하게 붓고 계속 아프며 구토·체중 감소가 있거나, 출생 직후부터 문제가 있었다면 바로 진료받으세요.']
+        ],
+        links: [
+            ['미국 NIH 소아 변비 증상', 'https://www.niddk.nih.gov/health-information/digestive-diseases/constipation-children/symptoms-causes'],
+            ['질병관리청 변비 설명', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5827']
+        ]
+    },
+    {
+        id: 'tantrum-aggression',
+        match: /(떼쓰|떼를\s*쓰|고집|물어요|무는\s*행동|물기|때려|때리는|밀쳐|소리\s*질러|공격)/,
+        title: '떼쓰기는 흔하지만 때리기·물기는 바로 막아야 합니다',
+        lead: '1~3세의 떼쓰기는 감정과 말을 조절하는 능력이 자라는 과정에서 흔합니다. 감정은 받아 주되 다치게 하는 행동까지 허용하거나 무시하지는 않습니다.',
+        points: [
+            ['먼저 안전', '때리거나 물면 짧고 낮은 목소리로 멈추고 아이들을 떨어뜨려 다치지 않게 합니다.'],
+            ['가르칠 행동', '진정된 뒤 “화났구나. 때리지 않고 도와줘라고 말해”처럼 감정과 대신할 행동을 짧게 알려 줍니다.']
+        ],
+        blocks: [
+            ['예방', '배고픔·피곤함·전환 상황을 미리 살피고 가능한 선택 두 가지를 주며 잘한 행동을 바로 구체적으로 칭찬하세요.'],
+            ['하지 않을 일', '맞서 소리치거나 때리기, 긴 설교, 위험한 행동을 관심 끌기라며 그대로 두기를 피하세요.'],
+            ['상담', '공격이 심해 자주 다치거나 여러 장소에서 오래 지속되고, 이전 기술 상실·언어·놀이 걱정이 함께 있거나 가족이 감당하기 어렵다면 상담하세요.']
+        ],
+        links: [
+            ['CDC 2~4세 긍정적 양육', 'https://www.cdc.gov/parenting-toddlers/about/index.html'],
+            ['AAP 어린아이 공격 행동', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/Aggressive-Behavior.aspx'],
+            ['발달 걱정·상담 준비', 'blog/development-kdst-guide.html#act']
+        ]
+    }
 ];
 
 function normalizeSiteSearch(value) {
@@ -483,6 +752,11 @@ function isOralCareQuestion(query) {
     return /(양치|칫솔|치약|불소|치아|이빨|첫니|젖니|잇몸|구강|충치|이를\s*닦)/.test(normalized);
 }
 
+function findCommonParentAnswer(query) {
+    const normalized = normalizeSiteSearch(query);
+    return COMMON_PARENT_ANSWERS.find(answer => answer.match.test(normalized)) || null;
+}
+
 function getDevelopmentDomains(query) {
     const normalized = normalizeSiteSearch(query);
     const domains = [];
@@ -514,6 +788,73 @@ function appendSearchResult(item) {
 
     link.append(category, title, summary, action);
     siteSearchResults.appendChild(link);
+}
+
+function renderCommonParentAnswer(query, ageInfo) {
+    if (!developmentTimingCard) return null;
+    const answer = findCommonParentAnswer(query);
+    if (!answer) {
+        developmentTimingCard.hidden = true;
+        return null;
+    }
+
+    developmentTimingCard.replaceChildren();
+    developmentTimingCard.hidden = false;
+
+    const head = document.createElement('div');
+    head.className = 'development-timing-head';
+    const badge = document.createElement('span');
+    badge.textContent = Number.isInteger(ageInfo?.value)
+        ? '공식 답변 · ' + ageInfo.value + '개월'
+        : '공식 답변';
+    const title = document.createElement('h3');
+    title.id = 'developmentTimingTitle';
+    title.textContent = answer.title;
+    head.append(badge, title);
+
+    const intro = document.createElement('p');
+    intro.textContent = answer.lead;
+
+    const list = document.createElement('ul');
+    list.className = 'development-milestone-list';
+    answer.points.forEach(([label, text]) => {
+        const item = document.createElement('li');
+        const strong = document.createElement('strong');
+        strong.textContent = label + ' · ';
+        item.append(strong, document.createTextNode(text));
+        list.appendChild(item);
+    });
+
+    const supportPanel = document.createElement('div');
+    supportPanel.className = 'development-support-panel';
+    answer.blocks.forEach(([headingText, bodyText], index) => {
+        const block = document.createElement('div');
+        block.className = 'development-support-block';
+        if (index === 1) block.classList.add('development-support-method');
+        if (index === 2) block.classList.add('development-support-caution');
+        const heading = document.createElement('h4');
+        heading.textContent = headingText;
+        const body = document.createElement('p');
+        body.textContent = bodyText;
+        block.append(heading, body);
+        supportPanel.appendChild(block);
+    });
+
+    const links = document.createElement('div');
+    links.className = 'development-timing-links';
+    answer.links.forEach(([label, href]) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = label;
+        if (/^https:\/\//.test(href)) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        }
+        links.appendChild(link);
+    });
+
+    developmentTimingCard.append(head, intro, list, supportPanel, links);
+    return answer.id;
 }
 
 function renderOralCareAnswer(query, ageInfo) {
@@ -714,7 +1055,8 @@ function runSiteSearch(query) {
 
     const ageInfo = resolveSearchAge(cleanQuery);
     const oralCareShown = renderOralCareAnswer(cleanQuery, ageInfo);
-    const timingShown = oralCareShown ? false : renderDevelopmentTiming(cleanQuery, ageInfo);
+    const commonAnswerId = oralCareShown ? null : renderCommonParentAnswer(cleanQuery, ageInfo);
+    const timingShown = (oralCareShown || commonAnswerId) ? false : renderDevelopmentTiming(cleanQuery, ageInfo);
     let results = searchSiteContent(cleanQuery);
     if (!results.length) results = SITE_SEARCH_ITEMS.slice(0, 3);
 
@@ -724,6 +1066,7 @@ function runSiteSearch(query) {
 
     let status = results.length + '개의 관련 내용을 찾았습니다.';
     if (oralCareShown) status += ' 공식 구강관리 답변을 먼저 보여드렸습니다.';
+    else if (commonAnswerId) status += ' 반복해서 묻는 질문의 공식 근거 답을 먼저 보여드렸습니다.';
     else if (ageInfo && !ageInfo.supported && isDevelopmentQuestion(cleanQuery)) status += ' 발달 모습 안내는 현재 0~36개월까지만 제공합니다.';
     else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 아이가 몇 개월인지 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
     else if (timingShown) status += ' 가까운 개월 수의 대표 모습을 보여드렸습니다. 한두 가지 모습만으로 늦었다고 정하지 않습니다.';
