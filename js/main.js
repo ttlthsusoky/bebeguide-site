@@ -228,6 +228,14 @@ const SITE_SEARCH_ITEMS = [
         keywords: '발달 상담 병원 검사 선별검사 kdst 기술 상실 퇴행 기다리기 걱정 어린이집 교사'
     },
     {
+        category: '치아·양치',
+        title: '첫니 전후 양치 시작과 불소치약 사용',
+        summary: '이가 나기 전에는 젖은 거즈, 첫 치아가 난 뒤에는 작은 유아용 칫솔과 쌀알만큼의 불소치약으로 관리하는 공식 기준입니다.',
+        action: '이가 났는지 확인 → 하루 2번 보호자가 닦기 → 이상이 보이면 치과 상담',
+        href: 'market/toddler-toothbrush-guide.html#standard',
+        keywords: '양치 양치를 칫솔 칫솔질 치약 불소 불소치약 치아 이빨 첫니 젖니 잇몸 구강 충치 언제 시작 지금부터 닦기 닦아요'
+    },
+    {
         category: '이유식·유아식',
         title: '이유식 시작·질감·알레르기와 식단 구성',
         summary: '대부분 6개월 무렵의 준비 신호, 질감 진행, 알레르기 식품 도입과 3일 유아식 구성 예시를 확인합니다.',
@@ -404,6 +412,7 @@ const SEARCH_ALIAS_GROUPS = [
     ['열', '발열', '고열', '체온', '해열제', '감기', '기침', '경련'],
     ['잠', '수면', '밤잠', '낮잠', '자주깨요', '안자요', '뒤집기'],
     ['접종', '예방접종', '백신', '주사', '일정'],
+    ['양치', '양치를', '칫솔', '칫솔질', '치약', '불소', '치아', '이빨', '첫니', '젖니', '잇몸', '구강', '충치', '닦기'],
     ['늦음', '늦는', '늦어요', '느림', '느려요', '지연', '못해요']
 ];
 
@@ -469,6 +478,11 @@ function isDevelopmentQuestion(query) {
     return /(발달|말|언어|단어|옹알|발음|대화|이름|눈맞춤|가리|걷|걸|기어|앉|뛰|움직|놀이|행동|자폐|장애|늦|느리|지연|못해)/.test(normalized);
 }
 
+function isOralCareQuestion(query) {
+    const normalized = normalizeSiteSearch(query);
+    return /(양치|칫솔|치약|불소|치아|이빨|첫니|젖니|잇몸|구강|충치|이를\s*닦)/.test(normalized);
+}
+
 function getDevelopmentDomains(query) {
     const normalized = normalizeSiteSearch(query);
     const domains = [];
@@ -500,6 +514,93 @@ function appendSearchResult(item) {
 
     link.append(category, title, summary, action);
     siteSearchResults.appendChild(link);
+}
+
+function renderOralCareAnswer(query, ageInfo) {
+    if (!developmentTimingCard || !isOralCareQuestion(query)) {
+        if (developmentTimingCard) developmentTimingCard.hidden = true;
+        return false;
+    }
+
+    const age = ageInfo?.value;
+    developmentTimingCard.replaceChildren();
+    developmentTimingCard.hidden = false;
+
+    const head = document.createElement('div');
+    head.className = 'development-timing-head';
+    const badge = document.createElement('span');
+    badge.textContent = '공식 답변';
+    const title = document.createElement('h3');
+    title.id = 'developmentTimingTitle';
+    title.textContent = Number.isInteger(age)
+        ? age + '개월 양치는 이가 났는지부터 보세요'
+        : '양치는 이가 났는지부터 보세요';
+    head.append(badge, title);
+
+    const intro = document.createElement('p');
+    intro.textContent = '네, 지금부터 입안을 관리하는 시기예요. 질병관리청은 젖니가 나기 시작하는 생후 6~12개월 사이에 구강관리를 시작하도록 안내합니다. 중요한 기준은 개월 수 하나가 아니라 이가 났는지입니다.';
+
+    const list = document.createElement('ul');
+    list.className = 'development-milestone-list';
+    const beforeTooth = document.createElement('li');
+    const beforeLabel = document.createElement('strong');
+    beforeLabel.textContent = '이가 아직 없어요 · ';
+    beforeTooth.append(beforeLabel, document.createTextNode('깨끗한 물에 적신 거즈로 잇몸을 부드럽게 닦아 주세요.'));
+    const afterTooth = document.createElement('li');
+    const afterLabel = document.createElement('strong');
+    afterLabel.textContent = '이가 하나라도 났어요 · ';
+    afterTooth.append(afterLabel, document.createTextNode('작고 부드러운 유아용 칫솔로 하루 2번, 특히 자기 전에 보호자가 닦아 주세요.'));
+    list.append(beforeTooth, afterTooth);
+
+    const supportPanel = document.createElement('div');
+    supportPanel.className = 'development-support-panel';
+    const blocks = [
+        {
+            title: '불소치약은?',
+            text: '이가 났다면 1,000~1,500ppm 불소치약을 쌀알만큼만 묻혀 쓰세요. 보호자가 양을 조절하고 삼키지 않도록 지켜봅니다.',
+            className: 'development-support-block development-support-method'
+        },
+        {
+            title: '오늘 할 일',
+            text: '오늘 저녁 이가 났는지 확인하고, 이가 없으면 젖은 거즈로 잇몸을 닦고 이가 있으면 칫솔질을 시작하세요.',
+            className: 'development-support-block'
+        },
+        {
+            title: '주의할 점',
+            text: '우유·분유·주스가 든 젖병을 문 채 재우지 마세요. 통증·붓기·계속되는 피, 하얗거나 갈색·검은 부분이 보이면 치과에 문의하세요.',
+            className: 'development-support-block development-support-caution'
+        }
+    ];
+    blocks.forEach(block => {
+        const section = document.createElement('div');
+        section.className = block.className;
+        const heading = document.createElement('h4');
+        heading.textContent = block.title;
+        const text = document.createElement('p');
+        text.textContent = block.text;
+        section.append(heading, text);
+        supportPanel.appendChild(section);
+    });
+
+    const links = document.createElement('div');
+    links.className = 'development-timing-links';
+    const kdcaCareLink = document.createElement('a');
+    kdcaCareLink.href = 'https://health.kdca.go.kr/healthinfo/biz/health/ntcnInfo/healthSourc/thtimtCntnts/thtimtCntntsView.do?thtimt_cntnts_sn=131';
+    kdcaCareLink.target = '_blank';
+    kdcaCareLink.rel = 'noopener noreferrer';
+    kdcaCareLink.textContent = '질병관리청 구강관리 원문';
+    const kdcaFluorideLink = document.createElement('a');
+    kdcaFluorideLink.href = 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6572';
+    kdcaFluorideLink.target = '_blank';
+    kdcaFluorideLink.rel = 'noopener noreferrer';
+    kdcaFluorideLink.textContent = '질병관리청 불소치약 기준';
+    const guideLink = document.createElement('a');
+    guideLink.href = 'market/toddler-toothbrush-guide.html#standard';
+    guideLink.textContent = '양치·칫솔 전체 가이드';
+    links.append(kdcaCareLink, kdcaFluorideLink, guideLink);
+
+    developmentTimingCard.append(head, intro, list, supportPanel, links);
+    return true;
 }
 
 function renderDevelopmentTiming(query, ageInfo) {
@@ -612,7 +713,8 @@ function runSiteSearch(query) {
     }
 
     const ageInfo = resolveSearchAge(cleanQuery);
-    const timingShown = renderDevelopmentTiming(cleanQuery, ageInfo);
+    const oralCareShown = renderOralCareAnswer(cleanQuery, ageInfo);
+    const timingShown = oralCareShown ? false : renderDevelopmentTiming(cleanQuery, ageInfo);
     let results = searchSiteContent(cleanQuery);
     if (!results.length) results = SITE_SEARCH_ITEMS.slice(0, 3);
 
@@ -621,7 +723,8 @@ function runSiteSearch(query) {
     siteSearchOutput.hidden = false;
 
     let status = results.length + '개의 관련 내용을 찾았습니다.';
-    if (ageInfo && !ageInfo.supported) status += ' 발달 시점 안내는 현재 0~36개월까지만 제공합니다.';
+    if (oralCareShown) status += ' 공식 구강관리 답변을 먼저 보여드렸습니다.';
+    else if (ageInfo && !ageInfo.supported && isDevelopmentQuestion(cleanQuery)) status += ' 발달 모습 안내는 현재 0~36개월까지만 제공합니다.';
     else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 아이가 몇 개월인지 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
     else if (timingShown) status += ' 가까운 개월 수의 대표 모습을 보여드렸습니다. 한두 가지 모습만으로 늦었다고 정하지 않습니다.';
     siteSearchStatus.textContent = status;
