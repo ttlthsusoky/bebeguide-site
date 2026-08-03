@@ -520,19 +520,19 @@ function renderDevelopmentTiming(query, ageInfo) {
     const head = document.createElement('div');
     head.className = 'development-timing-head';
     const badge = document.createElement('span');
-    badge.textContent = '늦은지 확인';
+    badge.textContent = '발달 모습 확인';
     const title = document.createElement('h3');
     title.id = 'developmentTimingTitle';
-    title.textContent = age + '개월은 합격·마감선으로 판정하지 않습니다';
+    title.textContent = age + '개월에는 이런 모습을 살펴보세요';
     head.append(badge, title);
 
     const intro = document.createElement('p');
     const timingText = age < 2
-        ? 'CDC의 첫 발달 이정표 목록은 2개월부터 시작합니다.'
+        ? '공식 발달 목록은 2개월부터 있습니다.'
         : (age === checkpoint.age
-            ? '선택한 개월 수와 같은 CDC 관찰 시점입니다.'
-            : age + '개월에 가장 가까운 이전 CDC 관찰 시점은 ' + checkpoint.age + '개월입니다.' + (nextCheckpoint ? ' 다음 목록은 ' + nextCheckpoint.age + '개월입니다.' : ''));
-    intro.textContent = timingText + ' 이정표는 해당 나이 아동의 약 75% 이상이 보이는 대표 모습이며 진단선이 아닙니다.';
+            ? '선택한 개월 수와 같은 공식 목록입니다.'
+            : age + '개월은 ' + checkpoint.age + '개월 내용을 먼저 보고' + (nextCheckpoint ? ', 다음 ' + nextCheckpoint.age + '개월 내용도 함께 참고하세요.' : ' 참고하세요.'));
+    intro.textContent = timingText + ' 아래 내용은 아이 4명 중 3명 이상에게 보이는 흔한 모습입니다. 아이마다 나타나는 시기는 다를 수 있고, 이 내용만으로 늦었다거나 장애가 있다고 정하지 않습니다.';
 
     const list = document.createElement('ul');
     list.className = 'development-milestone-list';
@@ -582,7 +582,7 @@ function renderDevelopmentTiming(query, ageInfo) {
     const actionTitle = document.createElement('strong');
     actionTitle.textContent = '지금 할 일';
     const actionText = document.createElement('span');
-    actionText.textContent = '해당 모습이 아직 보이지 않거나 걱정이 이어지면 더 기다려 보자로 끝내지 말고, 의료진에게 구체적인 상황을 알려 K-DST 같은 발달선별검사를 상의하세요. 하던 기술을 잃었거나 여러 영역의 걱정이 겹치면 개월 수와 관계없이 상담하세요.';
+    actionText.textContent = '아직 보이지 않는 모습이 있거나 계속 걱정되면 “조금 더 기다려 보자”로 끝내지 마세요. 언제, 어떤 상황에서 걱정됐는지 의료진에게 말하고 발달을 확인하는 검사(K-DST)가 필요한지 물어보세요. 전에 하던 행동을 하지 않거나 여러 부분이 함께 걱정되면 아이 개월 수와 상관없이 상담하세요.';
     nextAction.append(actionTitle, actionText);
 
     const links = document.createElement('div');
@@ -623,7 +623,7 @@ function runSiteSearch(query) {
     let status = results.length + '개의 관련 내용을 찾았습니다.';
     if (ageInfo && !ageInfo.supported) status += ' 발달 시점 안내는 현재 0~36개월까지만 제공합니다.';
     else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 아이가 몇 개월인지 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
-    else if (timingShown) status += ' 개월 수에 따른 대표 모습은 진단이나 합격선이 아닙니다.';
+    else if (timingShown) status += ' 가까운 개월 수의 대표 모습을 보여드렸습니다. 한두 가지 모습만으로 늦었다고 정하지 않습니다.';
     siteSearchStatus.textContent = status;
     siteSearchOutput.focus({ preventScroll: true });
 }
