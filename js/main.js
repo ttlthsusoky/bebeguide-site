@@ -208,6 +208,7 @@ const siteSearchAge = document.getElementById('siteSearchAge');
 const siteSearchStatus = document.getElementById('siteSearchStatus');
 const siteSearchOutput = document.getElementById('siteSearchOutput');
 const siteSearchResults = document.getElementById('siteSearchResults');
+const siteSearchResultHeading = document.getElementById('siteSearchResultHeading');
 const developmentTimingCard = document.getElementById('developmentTimingCard');
 
 const SITE_SEARCH_ITEMS = [
@@ -790,6 +791,87 @@ function appendSearchResult(item) {
     siteSearchResults.appendChild(link);
 }
 
+function appendOfficialAnswerTrustNote(container) {
+    const note = document.createElement('p');
+    note.className = 'official-answer-trust-note';
+    note.textContent = '진단·처방이 아닙니다. 원문 링크를 열어 기준을 직접 확인하고, 위험하다고 느끼면 온라인 정보보다 진료를 우선하세요.';
+    container.appendChild(note);
+}
+
+function renderNoDirectAnswerGuide(hasKeywordResults) {
+    if (!developmentTimingCard) return false;
+
+    developmentTimingCard.replaceChildren();
+    developmentTimingCard.hidden = false;
+    developmentTimingCard.classList.add('development-timing-card--scope');
+    developmentTimingCard.classList.remove('development-timing-card--direct');
+
+    const head = document.createElement('div');
+    head.className = 'development-timing-head';
+    const badge = document.createElement('span');
+    badge.textContent = '직접 공식 답 없음';
+    const title = document.createElement('h3');
+    title.id = 'developmentTimingTitle';
+    title.textContent = '이 질문에는 아직 공식 직접 답을 만들지 않았습니다';
+    head.append(badge, title);
+
+    const intro = document.createElement('p');
+    intro.className = 'official-answer-lead';
+    intro.textContent = hasKeywordResults
+        ? '모르는 답을 지어내지 않습니다. 아래는 검수된 관련 글이며, 지금 아이 상태에 맞는 최종 판단은 의료진과 확인하세요.'
+        : '모르는 답을 지어내지 않습니다. 비슷한 주제를 찾지 못했으므로, 응급 신호부터 확인하고 필요하면 바로 진료받으세요.';
+
+    const supportPanel = document.createElement('div');
+    supportPanel.className = 'development-support-panel development-support-panel--scope';
+    const blocks = [
+        {
+            title: '지금 할 일',
+            text: hasKeywordResults
+                ? '아래 관련 글에서 적용 연령·예외·출처를 확인하세요. 아이 상태 변화(호흡·반응·수분·통증)를 함께 적어두면 진료에 도움이 됩니다.'
+                : '열·호흡·의식·수분 섭취를 먼저 살피고, 평소와 다르면 진료를 미루지 마세요. 사이트에 없는 주제는 카페·영상보다 공식 기관·의료진을 우선하세요.',
+            className: 'development-support-block development-support-now'
+        },
+        {
+            title: '급할 때',
+            text: '숨쉬기 힘듦, 파랗게 보임, 깨워도 반응이 매우 약함, 5분 이상 경련은 119 또는 응급실을 이용하세요. 생후 3개월 미만 38℃ 이상도 바로 의료기관 평가가 필요합니다.',
+            className: 'development-support-block development-support-caution'
+        },
+        {
+            title: '하지 않을 일',
+            text: '출처 없는 용량·민간요법·사진만으로 병명 단정하기, “인터넷에 없으니 괜찮다”고 미루기를 하지 마세요.',
+            className: 'development-support-block development-support-method'
+        }
+    ];
+    blocks.forEach(block => {
+        const section = document.createElement('div');
+        section.className = block.className;
+        const heading = document.createElement('h4');
+        heading.textContent = block.title;
+        const text = document.createElement('p');
+        text.textContent = block.text;
+        section.append(heading, text);
+        supportPanel.appendChild(section);
+    });
+
+    const links = document.createElement('div');
+    links.className = 'development-timing-links';
+    [
+        ['열·응급 행동 가이드', 'blog/baby-fever-cold-guide.html'],
+        ['1세 미만 안전수면', 'blog/baby-safe-sleep-guide.html'],
+        ['이유식·질식 경계', 'blog/complementary-feeding-allergy-guide.html#choking'],
+        ['오류·누락 제보 안내', '#contact']
+    ].forEach(([label, href]) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = label;
+        links.appendChild(link);
+    });
+
+    developmentTimingCard.append(head, intro, supportPanel, links);
+    appendOfficialAnswerTrustNote(developmentTimingCard);
+    return true;
+}
+
 function renderCommonParentAnswer(query, ageInfo) {
     if (!developmentTimingCard) return null;
     const answer = findCommonParentAnswer(query);
@@ -800,6 +882,8 @@ function renderCommonParentAnswer(query, ageInfo) {
 
     developmentTimingCard.replaceChildren();
     developmentTimingCard.hidden = false;
+    developmentTimingCard.classList.add('development-timing-card--direct');
+    developmentTimingCard.classList.remove('development-timing-card--scope');
 
     const head = document.createElement('div');
     head.className = 'development-timing-head';
@@ -813,6 +897,7 @@ function renderCommonParentAnswer(query, ageInfo) {
     head.append(badge, title);
 
     const intro = document.createElement('p');
+    intro.className = 'official-answer-lead';
     intro.textContent = answer.lead;
 
     const list = document.createElement('ul');
@@ -830,6 +915,7 @@ function renderCommonParentAnswer(query, ageInfo) {
     answer.blocks.forEach(([headingText, bodyText], index) => {
         const block = document.createElement('div');
         block.className = 'development-support-block';
+        if (index === 0) block.classList.add('development-support-now');
         if (index === 1) block.classList.add('development-support-method');
         if (index === 2) block.classList.add('development-support-caution');
         const heading = document.createElement('h4');
@@ -854,6 +940,7 @@ function renderCommonParentAnswer(query, ageInfo) {
     });
 
     developmentTimingCard.append(head, intro, list, supportPanel, links);
+    appendOfficialAnswerTrustNote(developmentTimingCard);
     return answer.id;
 }
 
@@ -866,6 +953,8 @@ function renderOralCareAnswer(query, ageInfo) {
     const age = ageInfo?.value;
     developmentTimingCard.replaceChildren();
     developmentTimingCard.hidden = false;
+    developmentTimingCard.classList.add('development-timing-card--direct');
+    developmentTimingCard.classList.remove('development-timing-card--scope');
 
     const head = document.createElement('div');
     head.className = 'development-timing-head';
@@ -879,6 +968,7 @@ function renderOralCareAnswer(query, ageInfo) {
     head.append(badge, title);
 
     const intro = document.createElement('p');
+    intro.className = 'official-answer-lead';
     intro.textContent = '네, 지금부터 입안을 관리하는 시기예요. 질병관리청은 젖니가 나기 시작하는 생후 6~12개월 사이에 구강관리를 시작하도록 안내합니다. 중요한 기준은 개월 수 하나가 아니라 이가 났는지입니다.';
 
     const list = document.createElement('ul');
@@ -904,7 +994,7 @@ function renderOralCareAnswer(query, ageInfo) {
         {
             title: '오늘 할 일',
             text: '오늘 저녁 이가 났는지 확인하고, 이가 없으면 젖은 거즈로 잇몸을 닦고 이가 있으면 칫솔질을 시작하세요.',
-            className: 'development-support-block'
+            className: 'development-support-block development-support-now'
         },
         {
             title: '주의할 점',
@@ -941,6 +1031,7 @@ function renderOralCareAnswer(query, ageInfo) {
     links.append(kdcaCareLink, kdcaFluorideLink, guideLink);
 
     developmentTimingCard.append(head, intro, list, supportPanel, links);
+    appendOfficialAnswerTrustNote(developmentTimingCard);
     return true;
 }
 
@@ -958,6 +1049,8 @@ function renderDevelopmentTiming(query, ageInfo) {
 
     developmentTimingCard.replaceChildren();
     developmentTimingCard.hidden = false;
+    developmentTimingCard.classList.add('development-timing-card--direct');
+    developmentTimingCard.classList.remove('development-timing-card--scope');
 
     const head = document.createElement('div');
     head.className = 'development-timing-head';
@@ -1040,6 +1133,7 @@ function renderDevelopmentTiming(query, ageInfo) {
     links.append(guideLink, kdcaLink);
 
     developmentTimingCard.append(head, intro, list, supportPanel, nextAction, links);
+    appendOfficialAnswerTrustNote(developmentTimingCard);
     return true;
 }
 
@@ -1057,19 +1151,49 @@ function runSiteSearch(query) {
     const oralCareShown = renderOralCareAnswer(cleanQuery, ageInfo);
     const commonAnswerId = oralCareShown ? null : renderCommonParentAnswer(cleanQuery, ageInfo);
     const timingShown = (oralCareShown || commonAnswerId) ? false : renderDevelopmentTiming(cleanQuery, ageInfo);
+    const hasDirectAnswer = Boolean(oralCareShown || commonAnswerId || timingShown);
+
     let results = searchSiteContent(cleanQuery);
-    if (!results.length) results = SITE_SEARCH_ITEMS.slice(0, 3);
+    const hasKeywordResults = results.length > 0;
+    let usedFallbackTopics = false;
+    if (!results.length) {
+        results = SITE_SEARCH_ITEMS.slice(0, 3);
+        usedFallbackTopics = true;
+    }
+
+    if (!hasDirectAnswer) {
+        renderNoDirectAnswerGuide(hasKeywordResults);
+    }
 
     siteSearchResults.replaceChildren();
     results.forEach(appendSearchResult);
     siteSearchOutput.hidden = false;
 
-    let status = results.length + '개의 관련 내용을 찾았습니다.';
-    if (oralCareShown) status += ' 공식 구강관리 답변을 먼저 보여드렸습니다.';
-    else if (commonAnswerId) status += ' 반복해서 묻는 질문의 공식 근거 답을 먼저 보여드렸습니다.';
-    else if (ageInfo && !ageInfo.supported && isDevelopmentQuestion(cleanQuery)) status += ' 발달 모습 안내는 현재 0~36개월까지만 제공합니다.';
-    else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) status += ' 아이가 몇 개월인지 함께 입력하면 늦은지 확인하는 기준도 보여드립니다.';
-    else if (timingShown) status += ' 가까운 개월 수의 대표 모습을 보여드렸습니다. 한두 가지 모습만으로 늦었다고 정하지 않습니다.';
+    if (siteSearchResultHeading) {
+        if (hasDirectAnswer && hasKeywordResults) {
+            siteSearchResultHeading.textContent = '이어서 볼 검수된 상세 글';
+        } else if (hasKeywordResults) {
+            siteSearchResultHeading.textContent = '검수된 관련 글 · 직접 공식 답은 아님';
+        } else {
+            siteSearchResultHeading.textContent = '먼저 확인할 수 있는 핵심 가이드';
+        }
+    }
+
+    let status = '';
+    if (oralCareShown) status = '공식 구강관리 답을 먼저 보여 드렸습니다. 아래는 이어서 볼 상세 글입니다.';
+    else if (commonAnswerId) status = '자주 묻는 질문의 공식 근거 답을 먼저 보여 드렸습니다. 원문 링크로 기준을 확인하세요.';
+    else if (timingShown) status = '가까운 개월 수의 대표 모습을 보여 드렸습니다. 한두 가지 모습만으로 늦었다고 정하지 않습니다.';
+    else if (ageInfo && !ageInfo.supported && isDevelopmentQuestion(cleanQuery)) {
+        status = '발달 모습 안내는 현재 0~36개월까지입니다. 직접 공식 답 없이 관련 경로만 안내합니다.';
+    } else if (isDevelopmentQuestion(cleanQuery) && !ageInfo) {
+        status = '직접 공식 답이 없거나 개월 수가 필요합니다. 개월 수를 넣으면 발달 모습 안내를 함께 볼 수 있습니다.';
+    } else if (hasKeywordResults) {
+        status = '이 질문의 공식 직접 답은 아직 없습니다. 검수된 관련 글 ' + results.length + '개를 연결했습니다.';
+    } else if (usedFallbackTopics) {
+        status = '비슷한 주제를 찾지 못했습니다. 답을 지어내지 않고, 급할 때 기준과 핵심 가이드만 안내합니다.';
+    } else {
+        status = results.length + '개의 관련 내용을 찾았습니다.';
+    }
     siteSearchStatus.textContent = status;
     siteSearchOutput.focus({ preventScroll: true });
 }
