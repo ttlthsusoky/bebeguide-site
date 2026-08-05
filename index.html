@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="stylesheet" href="css/refresh.css?v=20260803-4">
+    <link rel="stylesheet" href="css/refresh.css?v=20260805-1">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -85,7 +85,8 @@
                     <span class="gradient-text">그대로 적어보세요</span>
                 </h1>
                 <p class="hero-description">
-                    아이의 개월 수와 걱정을 함께 쓰면 자주 묻는 질문은 공식 답부터, 그 밖의 질문은 관련 기준과 지금 할 일을 찾아드립니다.
+                    자주 묻는 질문은 <strong>공식 답 · 지금 할 일 · 병원 신호</strong>를 먼저 보여 드립니다.
+                    근거를 확인하지 못한 주제는 답을 지어내지 않습니다.
                 </p>
 
                 <div class="site-search-panel hero-site-search">
@@ -94,7 +95,7 @@
                             <label class="site-search-field site-search-query" for="siteSearchInput">
                                 <span>무엇이 걱정되나요?</span>
                                 <input id="siteSearchInput" type="search" maxlength="120" autocomplete="off"
-                                    placeholder="예: 18개월인데 아직 말이 적어요"
+                                    placeholder="예: 열이 몇 도면 병원인가요?"
                                     aria-describedby="siteSearchPrivacy siteSearchStatus">
                             </label>
                             <label class="site-search-field site-search-age" for="siteSearchAge">
@@ -109,32 +110,42 @@
                         </div>
                         <div class="site-search-examples" role="group" aria-label="검색 예시">
                             <span>예시</span>
+                            <button type="button" data-search-example="열이 몇 도면 병원인가요?">열이 몇 도면 병원</button>
                             <button type="button" data-search-example="18개월인데 아직 말이 적어요" data-search-age="18">18개월 말이 적어요</button>
                             <button type="button" data-search-example="분유량과 수유 간격이 맞나요">분유량·수유 간격</button>
                             <button type="button" data-search-example="아기가 밤에 자주 깨요">밤에 자주 깨요</button>
                             <button type="button" data-search-example="이유식을 안 먹고 거부해요">이유식 안 먹어요</button>
+                            <button type="button" data-search-example="10개월인데 양치를 시작해도 되나요" data-search-age="10">10개월 양치</button>
                             <button type="button" data-search-example="12개월부터 생우유로 바꿔도 되나요" data-search-age="12">12개월 생우유</button>
                             <button type="button" data-search-example="두 돌 전 영상을 보여줘도 되나요">영상 보여줘도 되나요</button>
-                            <button type="button" data-search-example="30개월인데 배변훈련을 시작해야 하나요" data-search-age="30">30개월 배변훈련</button>
                         </div>
-                        <p id="siteSearchPrivacy" class="site-search-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 질문과 개월 수는 저장하거나 전송하지 않습니다.</p>
+                        <p id="siteSearchPrivacy" class="site-search-privacy"><i class="fas fa-shield-halved" aria-hidden="true"></i> 질문과 개월 수는 저장하거나 전송하지 않습니다. 진단 대신 공식 기준만 안내합니다.</p>
                     </form>
                     <p id="siteSearchStatus" class="site-search-status" aria-live="polite"></p>
                     <div id="siteSearchOutput" class="site-search-output" role="region" aria-label="사이트 검색 결과" tabindex="-1" hidden>
                         <article id="developmentTimingCard" class="development-timing-card" aria-labelledby="developmentTimingTitle" hidden></article>
                         <div class="site-search-result-group">
-                            <h2>사이트에서 찾은 내용</h2>
+                            <h2 id="siteSearchResultHeading">사이트에서 찾은 내용</h2>
                             <div id="siteSearchResults" class="site-search-results"></div>
                         </div>
                     </div>
+                </div>
+
+                <div class="hero-urgent-strip" aria-label="지금 급할 때 바로 가기">
+                    <span class="hero-urgent-label">지금 급하면</span>
+                    <a class="hero-urgent-link hero-urgent-link--alert" href="blog/baby-fever-cold-guide.html">열·응급 신호</a>
+                    <a class="hero-urgent-link" href="blog/baby-safe-sleep-guide.html">안전수면</a>
+                    <a class="hero-urgent-link" href="blog/complementary-feeding-allergy-guide.html#choking">질식 경계</a>
+                    <button type="button" class="hero-urgent-link" data-search-example="열이 몇 도면 병원인가요?">열 바로 검색</button>
                 </div>
 
                 <div class="hero-start-links" aria-label="검색하지 않고 바로 시작">
                     <span>또는 바로 보기</span>
                     <a href="#weekly-focus"><i class="fas fa-list-check" aria-hidden="true"></i> 개월 수로 이번 주 3개</a>
                     <a href="blog/baby-fever-cold-guide.html"><i class="fas fa-kit-medical" aria-hidden="true"></i> 열·응급 기준</a>
+                    <a href="blog/development-kdst-guide.html"><i class="fas fa-child" aria-hidden="true"></i> 발달·K-DST</a>
                 </div>
-                <p class="hero-note">로그인과 아이 이름 없이 사용합니다. 진단 대신 공식 기준과 다음 행동을 안내합니다.</p>
+                <p class="hero-note">로그인과 아이 이름 없이 사용합니다. 응급이면 이 사이트보다 119·진료를 우선하세요.</p>
             </div>
         </div>
     </section>
@@ -1693,7 +1704,7 @@
     <script src="js/data.js"></script>
     <script src="js/weekly-focus.js?v=20260803-1"></script>
     <script src="js/device-data-manager.js"></script>
-    <script src="js/main.js?v=20260803-6"></script>
+    <script src="js/main.js?v=20260805-1"></script>
     <script src="js/affiliate-config.js"></script>
     <script src="js/checklist.js?v=20260803-1"></script>
     <script src="js/checklist-print.js"></script>
