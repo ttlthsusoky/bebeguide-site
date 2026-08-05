@@ -487,6 +487,68 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'breastfeeding-duration',
+        match: /(모유).*(언제\s*까지|몇\s*개월|기간|지속|얼마나\s*(해|먹)|언제까지)|모유\s*수유\s*(기간|권장)|완전\s*모유|전적\s*모유|exclusive\s*breast/,
+        title: '모유는 “한 날짜에 끊기”보다 단계 권고를 봅니다',
+        lead: '특별한 금기가 없으면 생후 약 6개월까지는 모유만(완전 모유)으로 충분하다는 권고가 있고, 6개월 무렵 이유식을 시작하면서 모유를 이어 가며, 엄마와 아기가 원하면 2년 이상까지 지속해도 된다는 안내가 있습니다. 모든 가정에 같은 끊는 날은 없습니다.',
+        points: [
+            ['약 6개월까지', '물·이유식·다른 우유 없이 모유만으로 충분한 시기로 권고됩니다. 체계적 문헌고찰에서는 완전 모유 6개월이 3~4개월 혼합보다 장 감염 위험이 더 낮다는 근거가 있습니다.'],
+            ['6개월 이후', '안전한 이유기 보충식을 시작하면서 모유를 병행하고, 질병관리청은 가능하면 두 돌 전후, WHO·AAP는 2년 이상까지 상호 원할 때 지속을 지지합니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 나이·성장·현재 수유 횟수를 확인하고, 이유식을 시작했다면 모유를 갑자기 끊지 말고 병행 흐름을 유지하세요.'],
+            ['하지 않을 일', '개월 수·주변 아이 사례·영상 조회수만 보고 하루아침에 끊거나, 모유 대신 생우유를 첫돌 전에 주된 음료로 바꾸지 마세요.'],
+            ['진료·상담', '젖양이 걱정되거나, 성장 정체·심한 통증·유선염 의심, 산모 약·질환으로 수유 가능 여부가 불확실하면 의료진·수유 상담과 개별 계획을 확인하세요.']
+        ],
+        links: [
+            ['질병관리청 성공적인 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586'],
+            ['질병관리청 이유기보충식·모유 지속', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470'],
+            ['WHO 모유 수유 권고', 'https://www.who.int/health-topics/breastfeeding'],
+            ['AAP 모유 수유 정책 요약', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Where-We-Stand-Breastfeeding.aspx'],
+            ['Cochrane·WHO ELENA 완전 모유 기간 근거', 'https://www.who.int/tools/elena/review-summaries/exclusive-breastfeeding--optimal-duration-of-exclusive-breastfeeding']
+        ]
+    },
+    {
+        id: 'breastfeeding-wean',
+        match: /(모유|젖).*(끊|떼|단유|중단\s*하|끊는\s*방법|떼는\s*방법)|단유|젖\s*떼|수유\s*중단/,
+        title: '모유를 줄일 때는 하루아침에 끊지 않는 편이 안전합니다',
+        lead: '끊는 날짜는 가정마다 다릅니다. 공식 권고는 “가능하면 오래”이지만, 직장·건강·상호 의사에 따라 줄일 수 있습니다. 한 번에 모두 끊기보다 수유 횟수를 며칠~몇 주 간격으로 줄이면 엄마 유방 울혈과 아이 적응에 도움이 됩니다.',
+        points: [
+            ['줄이는 순서', '아이가 덜 집착하는 수유 한 번부터 줄이고, 대신 이유식·물(개월에 맞게)·안아 주기·놀이를 이어 갑니다.'],
+            ['첫돌 전', '모유를 줄이면 영아용 조제유 등으로 수분을·영양을 채워야 합니다. 생우유를 주된 음료로 쓰지 마세요.']
+        ],
+        blocks: [
+            ['지금 할 일', '줄일 수유 시간과 대체 식사·음료 계획을 적고, 유방이 단단하고 아프면 편안하게 될 정도만 짜 내고 한꺼번에 비우지 마세요.'],
+            ['하지 않을 일', '죄책감·비교로 갑작스러운 단유를 강행하거나, 처방 없이 젖말리기 약을 쓰지 마세요.'],
+            ['진료·상담', '고열·유방 발적·심한 통증(유선염 의심), 아이 수분 섭취 급감·성장 걱정이 있으면 의료진과 상담하세요.']
+        ],
+        links: [
+            ['질병관리청 모유 수유 안내', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586'],
+            ['CDC 12개월 우유 전환', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/cows-milk-and-milk-alternatives.html'],
+            ['LLL 단유(점진적 줄이기) 안내', 'https://llli.org/breastfeeding-info/weaning-how-to/']
+        ]
+    },
+    {
+        id: 'infant-water',
+        match: /(아기|아이|신생아|영아).*(물[을를]?\s*(줘|주|먹|마시|돼|되)|물은|물\s*언제)|물\s*(언제|얼마나).*(먹|주)|수유\s*중\s*물|모유.*(물)|완전\s*모유.*물|물을?\s*줘도/,
+        title: '생후 약 6개월 전에는 물만 따로 주지 않는 것이 원칙입니다',
+        lead: '완전 모유 또는 영아용 조제유를 먹는 기간에는 보통 물·차·주스를 추가로 주지 않습니다. 약 6개월 이후 이유식을 시작하면서 소량의 물을 컵으로 연습할 수 있고, 양은 아이·기후·식사에 따라 의료진 안내를 따릅니다.',
+        points: [
+            ['6개월 전', '모유·조제유가 수분과 영양을 함께 제공합니다. 더위만으로 물을 임의로 많이 주지 마세요.'],
+            ['6개월 이후', '이유식과 함께 소량의 물을 천천히 소개하고, 주된 음료를 물·주스로 바꾸지 마세요.']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 개월 수와 현재 수유·이유식 상태를 확인하고, 소변이 평소보다 진하거나 적으면 수유량·수분과 함께 상태를 적어두세요.'],
+            ['하지 않을 일', '생후 초기 아기에게 다량의 물을 먹이거나(수분중독 위험), 설탕·꿀이 든 음료를 주지 마세요.'],
+            ['진료·상담', '구토·설사·발열과 함께 소변 감소, 처짐이 있으면 탈수 평가를 위해 진료받으세요.']
+        ],
+        links: [
+            ['WHO 완전 모유·보충식', 'https://www.who.int/health-topics/breastfeeding'],
+            ['질병관리청 이유기보충식', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470'],
+            ['CDC 이유식·음료 안내', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html']
+        ]
+    },
+    {
         id: 'night-waking',
         match: /(통잠|밤잠|잠투정|자주\s*깨|밤에\s*깨|새벽에\s*깨|안\s*자|잠을\s*안)/,
         title: '밤에 깨는 것만으로 수면 문제가 되지는 않습니다',
@@ -682,6 +744,49 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 2~4세 긍정적 양육', 'https://www.cdc.gov/parenting-toddlers/about/index.html'],
             ['AAP 어린아이 공격 행동', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/Aggressive-Behavior.aspx'],
             ['발달 걱정·상담 준비', 'blog/development-kdst-guide.html#act']
+        ]
+    },
+    {
+        id: 'diaper-rash',
+        match: /(기저귀\s*발진|기저귀\s*(빨|짓무|헐)|엉덩이\s*(빨개|발진|짓)|사타구니\s*(발진|빨)|기저귀\s*피부)/,
+        title: '기저귀 발진은 자주 갈아 주고 보습·보호막을 먼저 봅니다',
+        lead: '많은 아기에게 한 번 이상 생깁니다. 특정 기저귀 브랜드가 “발진 예방 최고”라는 근거는 없습니다. 깨끗이 닦고 말린 뒤 산화아연·바셀린 계열 보호막을 두껍게 바르는 가정 관리가 먼저이고, 2~3일 안 호전·고름·발열이면 진료합니다.',
+        points: [
+            ['가정에서 할 일', '대소변 후 부드럽게 닦고 완전히 말리며, 공기 쐬기 시간을 두고 보호 연고를 두껍게 바릅니다.'],
+            ['더 볼 신호', '가장자리에 좁쌀·고름, 통증으로 울음이 심함, 열, 2~3일 관리에도 악화']
+        ],
+        blocks: [
+            ['지금 할 일', '교체 횟수를 늘리고 알코올·강한 향 물티슈를 줄이며, 연고를 매번 완전히 닦아내지 말고 덧바르는 방식을 시도하세요.'],
+            ['하지 않을 일', '스테로이드·항생·항진균 연고를 처방 없이 임의로 바르거나, “카페 추천 크림”만 믿고 진료를 미루지 마세요.'],
+            ['진료·상담', '물집·고름·열·처짐이 있거나 가정 관리 2~3일에도 나빠지면 의료진이 칸디다 등 여부를 판단합니다.']
+        ],
+        links: [
+            ['AAP 기저귀 발진 안내', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx'],
+            ['NHS 기저귀 발진', 'https://www.nhs.uk/baby/caring-for-a-newborn/nappy-rash/'],
+            ['발열·응급이 함께 있을 때', 'blog/baby-fever-cold-guide.html#urgent']
+        ]
+    },
+    {
+        id: 'skin-rash-triage',
+        match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
+        title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
+        lead: '손가락 사이·손·발의 빨간 발진도 여러 원인이 있어 사이트에서 한 병명으로 단정하지 않습니다. 열·입안 물집·호흡·수분 섭취·전신 상태를 함께 보고, 의심되면 의료기관에서 직접 확인하세요.',
+        points: [
+            ['함께 보면 진료가 급한 신호', '숨쉬기 힘듦, 입술·혀 부종, 깨워도 반응이 매우 약함, 고열과 처짐, 피부에 퍼지는 보라·점상 출혈 느낌의 반점'],
+            ['손·발·입과 열이 함께 있을 때', '손·발·입안의 수포성 발진과 발열은 수족구병 등 가능성을 의료진이 판단합니다. 질병관리청은 의심 시 진료·손 씻기·등원 자제를 안내합니다.'],
+            ['손가락 사이만 빨개 보일 때', '습한 피부 주름 자극(간찰진)·곰팡이·세균·아토피·접촉 피부염 등 여러 가능성이 있어 사진만으로 구별하지 않습니다. 진물·통증·열이면 진료를 미루지 마세요.']
+        ],
+        blocks: [
+            ['지금 할 일', '발진 위치(손가락 사이·손바닥·발·입·기저귀 부위), 물집·진물·가려움, 열·식욕·소변·언제부터인지를 적고 진료 때 설명하세요. 주름은 부드럽게 닦고 말리세요.'],
+            ['하지 않을 일', '인터넷 사진과 맞춰 병명을 단정하거나, 처방 없이 스테로이드·항생·항진균 연고를 임의로 바르거나, “곧 나을 것”이라며 수분 섭취 감소를 방치하지 마세요.'],
+            ['진료·상담', '생후 3개월 미만 발열, 숨·의식 이상, 마시지 못함·소변 감소, 발진이 빠르게 퍼지거나 고름·심한 통증, 7~10일이 지나도 호전이 없으면 진료받으세요.']
+        ],
+        links: [
+            ['발열·응급 행동 가이드', 'blog/baby-fever-cold-guide.html#urgent'],
+            ['질병관리청 엔테로바이러스·발진 안내', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5843'],
+            ['NHS 수족구병(손·발·입) 안내', 'https://www.nhs.uk/conditions/hand-foot-mouth-disease/'],
+            ['AAFP 간찰진(피부 주름 염증) 개요', 'https://www.aafp.org/pubs/afp/issues/2014/0401/p569.html'],
+            ['AAP 기저귀 발진·언제 의사에게', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx']
         ]
     }
 ];
