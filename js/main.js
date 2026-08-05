@@ -469,6 +469,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'febrile-seizure',
+        match: /(열성\s*경련|열\s*경련|발열\s*경련|경련.*(열|발열)|열이?\s*나.*경련|경련.*병원)/,
+        title: '열성경련이 의심되면 안전·호흡을 먼저 보고, 용량·진단은 현장에서 정하지 않습니다',
+        lead: '열이 나면서 몸을 떨거나 의식을 잃는 듯 보이면 보호자는 아이를 안전하게 눕히고 주변을 치운 뒤 호흡·입술 색·지속 시간을 봅니다. 경련 중에는 입에 손가락·물건을 넣지 마세요. 해열제·항경련제 용량을 사이트·댓글로 정하지 않으며, 첫 경련·5분 이상·호흡 곤란·처짐이 있으면 119 또는 응급실을 우선합니다.',
+        points: [
+            ['당장', '평평한 곳에 옆으로 또는 안전하게 눕히기, 시계로 시간 확인, 입 안에 아무것도 넣지 않기'],
+            ['바로 도움', '5분 이상 지속, 호흡이 이상함, 파랗게 보임, 경련 후 깨우기 어려움, 생후 어린 아기, 첫 경련']
+        ],
+        blocks: [
+            ['지금 할 일', '시작·종료 시각, 체온(가능하면), 전신/부분 경련 여부, 최근 병을 기록하세요.'],
+            ['하지 않을 일', '경련 중 물·약을 억지로 먹이거나, 해열제 ml를 인터넷에서 맞춰 반복하지 마세요.'],
+            ['진료', '끝난 뒤에도 처지거나 열이 계속되면 의료진 평가를 받으세요. 이 안내는 진단이 아닙니다.']
+        ],
+        links: [
+            ['NHS 열성경련', 'https://www.nhs.uk/conditions/febrile-seizures/'],
+            ['AAP 열성경련 안내', 'https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Febrile-Seizures.aspx'],
+            ['발열·응급 가이드', 'blog/baby-fever-cold-guide.html#urgent']
+        ]
+    },
+    {
         id: 'fever-triage',
         match: /((열|발열|고열|체온).*(몇\s*도|병원|응급|괜찮|났|나요)|38\s*도)/,
         title: '열은 체온 숫자와 아이 상태를 함께 보세요',
@@ -805,6 +825,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['미국 NIH 소아 변비 증상', 'https://www.niddk.nih.gov/health-information/digestive-diseases/constipation-children/symptoms-causes'],
             ['질병관리청 변비 설명', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5827']
+        ]
+    },
+    {
+        id: 'grandparent-discipline',
+        match: /(조부모|시부모|시댁|친정|할머니|할아버지).*(훈육|때|체벌|혼내|양육)|체벌|때려서\s*키|손찌검|체벌\s*금지/,
+        title: '훈육은 체벌 없이, 조부모와는 아이 앞 갈등보다 공통 규칙을 맞춥니다',
+        lead: '아이를 때리거나 모욕하는 체벌은 권하지 않습니다. 조부모·다른 보호자와 양육 방식이 다를 때는 아이 앞에서 큰 소리로 다투기보다, 때리지 않기·위험 행동만 막기 같은 최소 공통 규칙을 먼저 합의하세요. 사이트에서 가정 처방·관계 치료 진단을 하지 않습니다.',
+        points: [
+            ['원칙', '신체 체벌·모욕 금지, 위험(도로·열·낙하)만 즉시 제지'],
+            ['대화', '아이 없는 자리에서 짧게, “때리지 않기·안전”을 공통 선으로']
+        ],
+        blocks: [
+            ['지금 할 일', '가정에서 절대 하지 않을 행동 2~3가지를 적어 공유하세요.'],
+            ['하지 않을 일', '아이 앞에서 보호자끼리 큰 싸움을 하거나, 체벌을 “사랑의 매”로 정당화하지 마세요.'],
+            ['도움', '가정 폭력·지속 갈등이 있으면 전문 상담·지역 서비스를 연결하세요.']
+        ],
+        links: [
+            ['AAP 체벌에 대한 입장', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Where-We-Stand-Spanking.aspx'],
+            ['CDC 긍정적 양육', 'https://www.cdc.gov/parenting-toddlers/discipline/index.html'],
+            ['부모 마음건강 안내', '#home']
         ]
     },
     {
@@ -2299,6 +2339,203 @@ const COMMON_PARENT_ANSWERS = [
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
             ['AAP 잠 습관', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/getting-your-baby-to-sleep.aspx']
+        ]
+    },
+    {
+        id: 'sibling-jealousy',
+        match: /(형제\s*질투|동생\s*질투|첫째\s*질투|둘째\s*준비|동생\s*생|형제\s*싸움|형\s*질투|누나\s*질투)/,
+        title: '형제 질투·둘째 준비는 애정 빼앗김이 아니라 적응 과정으로 봅니다',
+        lead: '동생이 생기거나 관심을 나눠 쓰면 큰아이가 퇴행·보챔·공격성을 보일 수 있습니다. 특별한 “합격 기간”은 없습니다. 큰아이에게 일대일 짧은 시간을 주고, 때리기·물기는 즉시 막되 감정을 무시하지 마세요. 심한 폭력·자해가 있으면 상담·진료를 연결합니다.',
+        points: [
+            ['도움', '하루 10분이라도 큰아이만의 놀이, 역할(수건 가져오기 등) 주기'],
+            ['경계', '때리기·물기·위험한 장난은 즉시 멈추게 하고 짧게 설명']
+        ],
+        blocks: [
+            ['지금 할 일', '큰아이가 좋아하는 활동 한 가지를 일정에 넣으세요.'],
+            ['하지 않을 일', '“너는 형이니까 참아”만 반복하거나, 체벌로 질투를 억누르지 마세요.'],
+            ['상담', '지속되는 공격·수면·식사 붕괴가 있으면 의료·상담 기관과 상의하세요.']
+        ],
+        links: [
+            ['AAP 형제 관계', 'https://www.healthychildren.org/English/family-life/family-dynamics/Pages/Sibling-Rivalry.aspx'],
+            ['CDC 유아 훈육', 'https://www.cdc.gov/parenting-toddlers/discipline/index.html'],
+            ['떼쓰기 안내', '#home']
+        ]
+    },
+    {
+        id: 'nail-biting',
+        match: /(손톱\s*물어|손톱\s*깨물|손톱\s*뜯|네일\s*바이팅|nail\s*bit)/,
+        title: '손톱 물어뜯기는 흔하고, 상처·감염·심한 불안이면 도움을 봅니다',
+        lead: '어린이에게 손톱 물어뜯기는 흔할 수 있습니다. 꾸짖기만으로는 잘 줄지 않고, 손에 할 일(놀이·점토)을 주거나 손톱을 짧게 유지하는 편이 낫습니다. 살을 파고 피가 나거나, 다른 강박·불안이 크면 의료·상담과 상의하세요. 자폐 여부 단정은 하지 않습니다.',
+        points: [
+            ['가정', '짧게 깎기, 손 바쁘게 하기, 야단보다 대체 행동'],
+            ['진료', '감염 징후, 피부 손상, 일상 방해 수준의 반복']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 물어뜯는지(긴장·심심·영상)를 하루 관찰해 보세요.'],
+            ['하지 않을 일', '손을 때리거나 “장애”로 낙인찍지 마세요.'],
+            ['상담', '또래보다 심하고 조절이 안 되면 소아·정신건강 상담을 고려하세요.']
+        ],
+        links: [
+            ['AAP 습관 행동 안내', 'https://www.healthychildren.org/English/healthy-living/emotional-wellness/Pages/default.aspx'],
+            ['CDC 아동 정신건강', 'https://www.cdc.gov/children-mental-health/'],
+            ['부모 마음건강', '#home']
+        ]
+    },
+    {
+        id: 'thumb-sucking',
+        match: /(손가락\s*빨|엄지\s*빨|썸\s*서킹|thumb\s*suck)/,
+        title: '손가락 빨기는 어릴 때 흔하고, 치아·지속 여부는 성장과 함께 봅니다',
+        lead: '영유아의 손가락 빨기는 안정 행동으로 흔합니다. 많은 아이는 스스로 줄입니다. 치아 맞물림·지속 여부가 걱정되면 소아치과·의료진과 상의하세요. 갑자기 강제로 묶거나 수치심을 주는 방식은 피합니다. 쪽쪽이 줄이기와는 별도로 봅니다.',
+        points: [
+            ['영아', '흔함, 위생·상처만 확인'],
+            ['연장', '치아·발음 걱정 시 전문가와 상담, 처벌 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '낮에 손이 바쁜 놀이를 늘려 보세요.'],
+            ['하지 않을 일', '손에 매운 것·테이프로 벌주지 마세요.'],
+            ['상담', '지속·치아 변화가 보이면 소아치과에 문의하세요.']
+        ],
+        links: [
+            ['AAP 손가락 빨기', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Pacifiers-and-Thumb-Sucking.aspx'],
+            ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+    {
+        id: 'nosebleed-care',
+        match: /(코피|코\s*피|비출혈|nose\s*bleed|epistaxis)/,
+        title: '코피는 앉혀 앞으로 숙이고 콧날을 누르며, 눕혀 고개를 젖히지 마세요',
+        lead: '어린이 코피는 건조·감기·코 후비기로 흔할 수 있습니다. 앉아 상체를 앞으로 살짝 숙인 채 콧날 부드러운 부분을 10분 정도 눌러 주세요. 고개를 뒤로 젖히거나 눕히면 피가 목으로 넘어갈 수 있습니다. 멈추지 않거나 잦고 양이 많으면 진료합니다.',
+        points: [
+            ['응급 처치', '앉기, 앞으로 숙이기, 콧날 압박, 차분히 호흡'],
+            ['진료', '20분 이상 지속, 외상·이물질, 잦은 대량 출혈, 멍·다른 출혈']
+        ],
+        blocks: [
+            ['지금 할 일', '압박 시간을 지키고 삼킨 피가 토로 나올 수 있음을 알려 주세요.'],
+            ['하지 않을 일', '휴지를 깊게 쑤시거나 아스피린 계열을 임의로 주지 마세요.'],
+            ['예방', '실내 건조 시 가습·코 후비기 줄이기(용량 연고 추천 없음)']
+        ],
+        links: [
+            ['AAP 코피', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/Nosebleeds.aspx'],
+            ['NHS 코피', 'https://www.nhs.uk/conditions/nosebleed/']
+        ]
+    },
+    {
+        id: 'burn-scald-care',
+        match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
+        title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
+        lead: '뜨거운 액체·표면 화상은 즉시 흐르는 미지근하거나 찬물로 해당 부위를 20분 정도 식히는 안내가 많습니다. 얼음으로 문지르거나 치약·간장·민간 연고를 바르지 마세요. 물집을 터뜨리지 말고, 넓은 면적·얼굴·손·관절·호흡기 의심·아이 전신이면 바로 의료기관을 찾으세요. 약 용량·브랜드 연고 순위는 하지 않습니다.',
+        points: [
+            ['즉시', '흐르는 물로 식히기, 젖은 옷은 들러붙지 않으면 제거'],
+            ['병원', '넓은 면적, 깊은 화상, 얼굴·기도, 화학·전기, 심한 통증·물집']
+        ],
+        blocks: [
+            ['지금 할 일', '식힌 뒤 깨끗한 거즈로 덮고 진료 여부를 판단하세요.'],
+            ['하지 않을 일', '치약·된장·얼음 직접 문지르기, 물집 터뜨리기 금지'],
+            ['예방', '뜨거운 음료·냄비 손잡이·욕조 온도를 아이 손이 닿지 않게']
+        ],
+        links: [
+            ['CDC 화상 안전', 'https://www.cdc.gov/burn-prevention/'],
+            ['NHS 화상·열탕', 'https://www.nhs.uk/conditions/burns-and-scalds/'],
+            ['집 안 안전 안내', '#home']
+        ]
+    },
+    {
+        id: 'water-drowning-safety',
+        match: /(익사|물에\s*빠|욕조.*혼자|목욕.*자리\s*비|물놀이\s*안전|수영장\s*아기|튜브만\s*믿)/,
+        title: '목욕·물놀이는 팔 뻗으면 닿는 거리에서, 잠깐도 혼자 두지 마세요',
+        lead: '영아는 얕은 물·욕조에서도 익사 위험이 있습니다. 목욕 중 전화·문 때문에 자리를 비우지 말고, 물놀이에서도 보호자가 팔이 닿는 거리에서 지켜보세요. 튜브·암밴드만 믿고 감독을 줄이지 마세요. 특정 수영 용품 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['목욕', '물 받기 전 준비 끝, 한 손·시선 유지, 끝낸 뒤 물 빼기'],
+            ['야외', '보호자 감시, 구명장비는 보조일 뿐']
+        ],
+        blocks: [
+            ['지금 할 일', '욕조 물을 받아 둔 채 두지 않는지 점검하세요.'],
+            ['하지 않을 일', '“형아가 봐”에 맡기거나 기기만 보고 있지 마세요.'],
+            ['응급', '물에 빠진 뒤 기침·처짐·호흡 이상이 있으면 119·진료']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['신생아 목욕 안내', '#home']
+        ]
+    },
+    {
+        id: 'button-battery-danger',
+        match: /(단추\s*전지|버튼\s*배터리|수은\s*전지|코인\s*전지|자석\s*장난감|네오디뮴\s*자석|삼킨\s*전지|전지\s*삼)/,
+        title: '단추전지·강한 자석은 삼키면 응급입니다. 장난감·리모컨을 잠그세요',
+        lead: '단추전지(코인 전지)를 삼키면 식도에서 수 시간 안에 심각한 조직 손상이 날 수 있습니다. 강한 자석 여러 개를 삼키면 장 압박 괴사 위험이 있습니다. 의심되면 집에서 경과를 보지 말고 즉시 응급실·독극물 상담 체계를 이용하세요. 리모컨·장난감 전지 덮개를 고정하세요.',
+        points: [
+            ['예방', '전지 덮개 나사 고정, 여분 전지 아이 손 밖, 작은 자석 분리 보관'],
+            ['의심 시', '즉시 의료기관, 토하게 하려 손가락을 넣지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '집 안 리모컨·저울·장난감 전지 덮개를 점검하세요.'],
+            ['하지 않을 일', '“두고 보자”며 기다리지 마세요.'],
+            ['관련', '작은 물건 질식·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 단추전지', 'https://www.cdc.gov/battery-safety/'],
+            ['AAP 이물질 삼킴', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Button-Battery-Injuries-in-Children.aspx'],
+            ['집 안 안전', '#home']
+        ]
+    },
+    {
+        id: 'insect-bite-boundary',
+        match: /(모기\s*물|벌레\s*물|벌\s*쏘|벌침|진드기\s*물|벌레\s*물림)/,
+        title: '벌레 물림은 가려움 관리와 알레르기·감염 신호를 구분합니다',
+        lead: '모기 물림은 시원하게 두고 긁지 않게 돕는 것이 우선입니다. 얼굴·입술·혀가 붓거나 호흡 곤란·전신 두드러기면 응급입니다. 진드기는 무리하게 짜지 말고 의료 안내대로 제거·관찰합니다. 기피제 브랜드 순위·농도를 사이트에서 정하지 않으며, 영아 사용은 제품 표시·의료진을 따릅니다.',
+        points: [
+            ['가정', '시원·보습, 긁기 방지, 부은 정도 관찰'],
+            ['응급', '호흡 곤란, 목·혀 부종, 어지럼, 광범위 발진, 고열·처짐']
+        ],
+        blocks: [
+            ['지금 할 일', '물린 시각·부위·퍼짐 여부를 글로 기록하세요.'],
+            ['하지 않을 일', '민간 요법으로 태우거나, 처방 없이 강한 스테로이드를 바르지 마세요.'],
+            ['예방', '긴 옷·그늘, 고인 물 제거. 기피제는 연령 표시 확인']
+        ],
+        links: [
+            ['CDC 모기 물림', 'https://www.cdc.gov/mosquitoes/mosquito-bites/'],
+            ['CDC 진드기', 'https://www.cdc.gov/ticks/'],
+            ['발진 경계 안내', '#home']
+        ]
+    },
+    {
+        id: 'stuttering-boundary',
+        match: /(말더듬|더듬|말을\s*반복|말\s*막힘|stutter)/,
+        title: '말더듬·더듬는 시기는 있을 수 있고, 야단·재촉보다 경청이 먼저입니다',
+        lead: '말을 배우며 음을 반복하거나 막히는 시기가 있을 수 있습니다. “천천히 해”를 반복해 다그치고 웃기거나 말끝을 가로채지 마세요. 보호자는 천천히 듣고, 눈 맞춤·여유 있는 대화를 합니다. 오래 지속되거나 몸 긴장·회피가 심하면 언어치료·의료진과 상의하세요. 이 안내만으로 장애를 진단하지 않습니다.',
+        points: [
+            ['가정', '끼어들지 않기, 여유 있는 말 속도, 내용에 반응'],
+            ['상담', '수개월 지속, 악화, 아이 스트레스가 큼']
+        ],
+        blocks: [
+            ['지금 할 일', '하루 중 편한 대화 시간을 짧게라도 만드세요.'],
+            ['하지 않을 일', '말더듬을 흉내 내거나 벌을 주지 마세요.'],
+            ['관련', '언어 발달 걱정은 개월 수 관찰·K-DST 안내도 참고하세요.']
+        ],
+        links: [
+            ['AAP 말더듬', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/Stuttering.aspx'],
+            ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones'],
+            ['CDC 언어 발달', 'https://www.cdc.gov/ncbddd/actearly/milestones/index.html']
+        ]
+    },
+    {
+        id: 'night-terror-boundary',
+        match: /(야경증|밤공포|자다가\s*비명|자다가\s*소리\s*지|나이트\s*테러|night\s*terror|야경)/,
+        title: '야경증은 악몽과 다를 수 있고, 억지로 깨우기보다 안전을 봅니다',
+        lead: '자다가 갑자기 울고 공포를 보이는 일은 일부 아이에게 있습니다. 악몽과 달리 다음날 기억하지 못하는 경우도 있습니다. 억지로 깨워 설명하기보다 부딪히지 않게 지키고, 에피소드가 지나면 다시 재웁니다. 잦거나, 낮 증상·경련·호흡 이상이 겹치면 진료하세요. 수면제 용량은 정하지 않습니다.',
+        points: [
+            ['대응', '안전 확보, 차분히 곁에, 무리한 각성·설명 금지'],
+            ['진료', '매우 잦음, 낮 행동 변화, 경련 의심, 수면무호흡 의심']
+        ],
+        blocks: [
+            ['지금 할 일', '시작 시각·지속·전후 열·코골이를 기록하세요.'],
+            ['하지 않을 일', '소리 지른다고 혼내거나 영상으로 재우지 마세요.'],
+            ['관련', '안전수면·수면교육 경계를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면 문제', 'https://www.healthychildren.org/English/ages-stages/preschool/Pages/Nightmares-and-Night-Terrors.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
         ]
     }
 ];
