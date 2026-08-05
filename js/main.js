@@ -551,7 +551,7 @@ const COMMON_PARENT_ANSWERS = [
     },
     {
         id: 'breastfeeding-wean',
-        match: /(모유|젖).*(끊|떼|단유|중단\s*하|끊는\s*방법|떼는\s*방법)|단유|젖\s*떼|수유\s*중단/,
+        match: /(모유).*(끊|떼|단유|중단\s*하|끊는\s*방법|떼는\s*방법)|단유|젖\s*떼|젖\s*끊(?!\s*병)|수유\s*중단/,
         title: '모유를 줄일 때는 하루아침에 끊지 않는 편이 안전합니다',
         lead: '끊는 날짜는 가정마다 다릅니다. 공식 권고는 “가능하면 오래”이지만, 직장·건강·상호 의사에 따라 줄일 수 있습니다. 한 번에 모두 끊기보다 수유 횟수를 며칠~몇 주 간격으로 줄이면 엄마 유방 울혈과 아이 적응에 도움이 됩니다.',
         points: [
@@ -730,6 +730,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'screen-meals-sleep',
+        match: /(식사|밥|이유식|수유|재우|잠들|울음|달래).{0,10}(영상|유튜브|티비|tv|핸드폰|휴대폰)|(영상|유튜브|티비|핸드폰|휴대폰).{0,10}(재우|달래|밥|식사|잠)/,
+        title: '식사·재우기·울음 달래기에 영상을 기본값으로 두지 마세요',
+        lead: 'WHO 등은 영유아의 앉아서 보는 화면 시간을 제한하라고 안내합니다. 특히 식사 중·잠들기 전·울음을 달래는 기본 수단으로 영상·유튜브를 고정하면 수면·언어 상호작용이 줄어들 수 있습니다. 한 상황부터 화면 없이 바꿔 보세요.',
+        points: [
+            ['피하기', '밥 먹이며 영상, 잠들 때 유튜브, 울 때마다 핸드폰'],
+            ['대신', '말 걸기, 짧은 책, 안고 진정, 규칙적인 취침 루틴']
+        ],
+        blocks: [
+            ['지금 할 일', '하루 중 영상이 끼는 상황 한 가지를 골라 화면 없이 해보세요.'],
+            ['하지 않을 일', '조회 수 높은 “재우는 영상”을 안전 수면 도구처럼 쓰지 마세요.'],
+            ['관련', '전체 화면 시간 권고·안전수면 안내를 함께 보세요.']
+        ],
+        links: [
+            ['WHO 5세 미만 화면·활동', 'https://www.who.int/publications/i/item/9789241550536'],
+            ['발달 놀이 안내', 'blog/development-kdst-guide.html#play'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'screen-time',
         match: /(영상|유튜브|티비|tv|스크린|핸드폰|휴대폰|미디어).*(보여|노출|봐도|시간|괜찮)|영상\s*노출/,
         title: '두 돌 전에는 영상보다 사람과 노는 시간을 우선하세요',
@@ -871,8 +891,27 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'forceful-vomiting',
+        match: /(분수\s*토|분수토|사출\s*토|사출성\s*구토|힘주어\s*토|계속\s*구토|구토만|토만\s*해요|분출성\s*구토)/,
+        title: '힘주어 뿜는 구토·지속 구토는 트림과 구분하고 진료를 봅니다',
+        lead: '수유 후 소량 게움과 달리, 분수처럼 힘주어 토하거나 매 수유마다 많은 양을 토하면 유문부 협착 등 평가가 필요할 수 있습니다. 피·초록 토물, 처짐, 소변 감소, 체중 정체가 있으면 미루지 마세요. 사이트에서 병명을 단정하지 않습니다.',
+        points: [
+            ['기록', '언제·얼마나·색·수유와의 관계·체중'],
+            ['응급', '탈수, 호흡 이상, 혈성·담즙성 토물, 깨우기 어려움']
+        ],
+        blocks: [
+            ['지금 할 일', '토한 양상과 기저귀를 적어 진료에 가져가세요.'],
+            ['하지 않을 일', '성인 위약·민간 요법을 임의로 쓰지 마세요.'],
+            ['관련', '일반 토함·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 토함', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Why-Babies-Spit-Up.aspx'],
+            ['발열·응급', 'blog/baby-fever-cold-guide.html#urgent']
+        ]
+    },
+    {
         id: 'spit-up-reflux',
-        match: /(토함|토해|게워|역류|뿜|사출성\s*구토|분수토|spit)/,
+        match: /(토함|토해|게워|역류|뿜|spit)/,
         title: '토함은 흔하지만 힘주어 뿜거나 성장이 안 되면 진료합니다',
         lead: '많은 아기가 수유 뒤 소량을 게웁니다. 잘 자라고 쾌활하면 흔히 역류·미성숙 식도로 설명됩니다. 분수처럼 힘주어 토하거나, 피·초록 토물, 체중 정체, 숨 곤란이 있으면 바로 의료진을 찾으세요.',
         points: [
@@ -964,6 +1003,26 @@ const COMMON_PARENT_ANSWERS = [
             ['베베가이드 부모 마음건강', '#parent-health'],
             ['질병관리청 우울감 안내', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6788'],
             ['보건복지부 109 안내', 'https://www.mohw.go.kr/board.es?act=view&bid=0027&list_no=1479607&mid=a10503010300']
+        ]
+    },
+    {
+        id: 'soft-stool-vs-diarrhea',
+        match: /(무른\s*변|묽은\s*변|물기\s*많은\s*변).*(괜찮|정상|이유식|모유|걱정|자주)|이유식.*무른\s*변|모유.*무른\s*변|변\s*무른데\s*괜찮/,
+        title: '무른 변은 식단·시기에 흔할 수 있고, 탈수·피가 있으면 설사로 봅니다',
+        lead: '모유 변은 무르고 노랗거나 초록일 수 있으며, 이유식 시작 후에도 물기가 많을 수 있습니다. “무르다”만으로 병이라고 단정하지 않습니다. 횟수가 급증하고 수분 섭취·소변이 줄며 처지면 설사·탈수 쪽으로 진료합니다. 흰·혈·검은 변은 바로 진료입니다.',
+        points: [
+            ['관찰', '평소와 비교한 횟수·냄새·피, 수유·수분, 활력·소변'],
+            ['진료', '탈수 징후, 혈변, 고열·심한 복통, 생후 초기 이상 변']
+        ],
+        blocks: [
+            ['지금 할 일', '변 양상과 기저귀·먹은 양을 며칠 기록하세요.'],
+            ['하지 않을 일', '인터넷 사진으로 병명을 맞추거나 성인 지사제를 쓰지 마세요.'],
+            ['관련', '변 색깔·설사·탈수 안내를 함께 보세요.']
+        ],
+        links: [
+            ['설사·수분 안내', '#home'],
+            ['변 색깔 안내', '#home'],
+            ['발열·응급', 'blog/baby-fever-cold-guide.html']
         ]
     },
     {
@@ -1082,8 +1141,28 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sleep-inclined-devices',
+        match: /(수면\s*포지셔너|경사\s*(침대|쿠션|매트|수면)|웨지\s*쿠션|수면\s*벨트|인클라인|inclined|경사\s*재우)/,
+        title: '수면 포지셔너·경사진 수면 장치는 쓰지 않는 것이 안전합니다',
+        lead: '통잠·역류 완화를 내세운 수면 포지셔너, 경사 쿠션, 벨트형 고정 장치는 질식·끼임 위험으로 권고되지 않습니다. 잠은 평평하고 단단한 별도 수면면에 등을 대고 재웁니다. 제품 브랜드 순위는 안내하지 않습니다.',
+        points: [
+            ['권고', '평평·단단·빈 공간·등 자세'],
+            ['피하기', '경사 수면면, 옆·엎드림 고정 쿠션, 느슨한 이불·범퍼']
+        ],
+        blocks: [
+            ['지금 할 일', '요람·침대에 쿠션·벨트가 있으면 치우세요.'],
+            ['하지 않을 일', '카시트·흔들 의자에 오래 재우지 마세요.'],
+            ['관련', '안전수면·뒤집기 후 재우기 안내를 보세요.']
+        ],
+        links: [
+            ['1세 미만 안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면 요약', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'safe-sleep-position',
-        match: /(등\s*재우|안전\s*수면|엎어\s*재우|SIDS|영아돌연|동일\s*침구|범퍼|수면\s*포지셔너)/,
+        match: /(등\s*재우|안전\s*수면|엎어\s*재우|SIDS|영아돌연|동일\s*침구|범퍼)/,
         title: '1세 미만 잠은 등·별도 수면면·빈 공간이 기본입니다',
         lead: '모든 잠(낮잠·밤잠)을 등을 대고, 단단하고 평평한 별도 수면면에, 베개·이불·범퍼·인형·경사진 포지셔너 없이 재웁니다. 통잠을 위해 엎어 재우지 마세요.',
         points: [
@@ -1268,6 +1347,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['1세 미만 안전수면', 'blog/baby-safe-sleep-guide.html'],
             ['AAP 안전수면 안내', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'pacifier-wean',
+        match: /(쪽쪽이|공갈\s*젖|노리개\s*젖|pacifier).*(끊|떼|줄이|그만|졸업|중독)|쪽쪽이\s*(끊|떼)/,
+        title: '쪽쪽이 줄이기는 서서히, 치아·수면·안전 끈을 함께 봅니다',
+        lead: '끊는 시기는 가정마다 다릅니다. 낮에 덜 쓰는 시간부터 줄이고, 잠들 때만 남긴 뒤 천천히 떼는 방식이 흔합니다. 끈·클립을 목에 걸거나 단것을 묻혀 달래지 마세요. 치아 맞물림 걱정이 있으면 소아치과·의료진과 상의합니다.',
+        points: [
+            ['줄이기', '낮 사용부터 줄이기, 칭찬·다른 안정 수단(안아 주기·책)'],
+            ['안전', '파손 쪽쪽이 교체, 목에 거는 끈 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '하루 중 쪽쪽이 쓰는 상황을 적어 한 구간부터 줄여 보세요.'],
+            ['하지 않을 일', '갑작스러운 처벌·비교로 강요하지 마세요.'],
+            ['관련', '쪽쪽이 수면 사용·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 안전수면·쪽쪽이', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
         ]
     },
@@ -2063,6 +2161,144 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 분유 조제', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586'],
             ['젖양 신호 안내', '#home']
+        ]
+    },
+    {
+        id: 'family-food-transition',
+        match: /(완식|밥상\s*올|가족\s*식사|어른\s*밥|돌\s*이후\s*식사|이유식\s*끝내|고형식\s*전환)/,
+        title: '완식은 “한 날짜 졸업”보다 질감·다양성·질식 안전을 봅니다',
+        lead: '첫돌 전후 가족 식사에 참여하는 흐름을 완식이라고 부르기도 하지만, 모든 아기가 같은 날에 이유식을 끝내는 것은 아닙니다. 질감을 단계적으로 올리고, 둥근 덩어리·딱딱한 음식 등 질식 위험을 피하며, 첫돌 전 생우유를 주된 음료로 쓰지 마세요. 돌 전후에도 모유·영아 식이는 가정·성장에 따라 이어질 수 있습니다.',
+        points: [
+            ['원칙', '앉아서 먹기, 보호자 감시, 연령에 맞는 크기·질감, 다양성'],
+            ['음료', '돌 전 주된 음료는 모유·조제유. 돌 이후 생우유 전환은 별도 안내']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 질감과 가족이 먹는 음식 중 안전한 것부터 맞추세요.'],
+            ['하지 않을 일', '카페 “완식 표”만 보고 한 끼 분량을 강요하지 마세요.'],
+            ['관련', '질식·철분·생우유·소금·설탕 안내를 참고하세요.']
+        ],
+        links: [
+            ['이유식·질식 가이드', 'blog/complementary-feeding-allergy-guide.html'],
+            ['CDC 이유식·음료', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html'],
+            ['WHO 보충식', 'https://www.who.int/health-topics/complementary-feeding']
+        ]
+    },
+    {
+        id: 'car-seat-principles',
+        match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
+        title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
+        lead: '이동 중 아기는 연령·체격에 맞는 카시트에, 사용 설명서와 차량 안내대로 설치합니다. 가능한 한 오래 후방 장착을 유지하라는 안전 안내가 많습니다. 사이트에서 브랜드 추천·제휴 링크·“국민템” 순위를 하지 않습니다. 설치가 불확실하면 공인 점검·설명서를 이용하세요.',
+        points: [
+            ['원칙', '체격에 맞는 단계, 단단히 고정, 안전띠 위치, 두꺼운 외투 아래 벨트 금지 등 설명서 준수'],
+            ['전환', '법·제품 라벨의 키·몸무게 한도를 보고, 서두른 전방 전환을 피합니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 시트 라벨의 키·몸무게 한도와 차량 장착 방법을 다시 확인하세요.'],
+            ['하지 않을 일', '중고 시트 이력 불명·사고 이력을 무시하거나, 카페 추천만으로 고르지 마세요.'],
+            ['관련', '고위험 용품은 추천 0·직접 제휴 0 원칙을 유지합니다.']
+        ],
+        links: [
+            ['도로교통공단 어린이 안전', 'https://www.koroad.or.kr/'],
+            ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 카시트 안내', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx']
+        ]
+    },
+    {
+        id: 'flat-head-position',
+        match: /(머리\s*납작|사두|두상|뒷머리\s*납작|플래지오|plagio|머리\s*모양|비대칭\s*머리)/,
+        title: '뒷머리 납작함은 자세·터미타임으로 줄이고, 심하면 진료합니다',
+        lead: '등을 대고 자는 안전수면 때문에 한쪽으로 머리가 납작해 보일 수 있습니다. 깨어 있을 때 엎드려 놀기(터미타임), 안는 팔·수유 방향을 바꾸는 것이 도움이 될 수 있습니다. 안전수면을 포기하고 엎어 재우지 마세요. 심한 비대칭·발달 걱정은 의료진과 상의합니다.',
+        points: [
+            ['낮', '지도된 터미타임, 고개 돌리는 방향 바꾸기'],
+            ['잠', '등 재우기·빈 수면면 유지 (납작함 때문에 엎어 재우기 금지)']
+        ],
+        blocks: [
+            ['지금 할 일', '깨어 있을 때 짧은 터미타임을 하루 여러 번 시도하세요.'],
+            ['하지 않을 일', '헬멧·교정 제품을 자가 판단으로 구매해 쓰지 말고 진료와 상의하세요.'],
+            ['관련', '터미타임·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['터미타임 안내', '#home'],
+            ['AAP 머리 모양·자세', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Positional-Skull-Deformities-and-Tummy-Time.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'bottle-wean',
+        match: /(젖병).*(끊|떼|줄이|졸업|중독)|보틀\s*(웨닝|끊)|bottle\s*wean|젖병\s*끊/,
+        title: '젖병 줄이기는 컵 연습과 함께, 첫돌 전후를 목표로 서서히',
+        lead: '많은 안내가 첫돌 전후부터 열린 컵·작은 컵으로 옮기기를 권합니다. 한 번에 모두 빼기보다 낮 수유부터 컵으로 바꾸고 밤 젖병을 나중에 줄이는 방식이 흔합니다. 젖병에 주스·생우유를 넣어 재우지 마세요(치아).',
+        points: [
+            ['순서', '낮 한 회부터 컵, 취침 전 젖병은 천천히'],
+            ['음료', '돌 전 주된 음료는 모유·조제유. 주스 습관화 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '컵 연습과 현재 젖병 횟수를 적어 보세요.'],
+            ['하지 않을 일', '누운 채 젖병을 물리거나 달콤한 음료를 넣지 마세요.'],
+            ['관련', '컵 마시기·생우유·양치 안내를 참고하세요.']
+        ],
+        links: [
+            ['컵 마시기 안내', '#home'],
+            ['AAP 음료·컵', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Recommended-Drinks-for-Young-Children-Ages-0-5.aspx'],
+            ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+    {
+        id: 'fall-from-surface',
+        match: /(낙상|떨어져|떨어질|침대\s*에서\s*떨|소파\s*에서\s*떨|기저귀\s*갈.*떨|아기\s*추락)/,
+        title: '높은 면·침대·소파·기저귀 갈이대에서 아기를 혼자 두지 마세요',
+        lead: '짧은 순간에도 뒤집기·밀기로 떨어질 수 있습니다. 갈이대·침대·소파·테이블 위에 두었다가 고개만 돌리는 사이 사고가 납니다. 한 손은 항상 아기에게, 가능하면 바닥에서 갈아 주세요.',
+        points: [
+            ['예방', '높은 면에 혼자 두지 않기, 난간·가드 과신 금지'],
+            ['사고 후', '의식·구토·처짐·경련이 있으면 바로 진료·119']
+        ],
+        blocks: [
+            ['지금 할 일', '갈이·옷 입히기를 바닥 매트에서 할 수 있는지 점검하세요.'],
+            ['하지 않을 일', '“잠깐만” 두고 자리를 비우지 마세요.'],
+            ['관련', '집 안 안전·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 아동 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'home-safety-basics',
+        match: /(집\s*안\s*안전|아기\s*안전|베이비\s*프루프|안전사고\s*예방|콘센트\s*막|모서리\s*보호|약품\s*보관).*(아기|아이)?|아이\s*손\s*닿/,
+        title: '집 안 안전은 약품·작은 물건·창·뜨거운 것부터 치웁니다',
+        lead: '아기가 뒤집고 기기 시작하면 바닥에 있는 모든 것이 입에 갈 수 있습니다. 의약품·세제·전지·작은 부품을 잠그는 수납에 두고, 창·스토브·뜨거운 음료를 관리합니다. 특정 안전문·잠금장치 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['우선', '약·세제·전지·비닐·작은 장난감 치우기, 뜨거운 액체'],
+            ['이동', '계단·창·가구 고정은 가정 환경에 맞게']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 눈높이에서 방을 한 바퀴 살펴보세요.'],
+            ['하지 않을 일', '제품 광고만 믿고 감독을 줄이지 마세요.'],
+            ['관련', '질식 위험 식품·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html']
+        ]
+    },
+    {
+        id: 'white-noise-boundary',
+        match: /(백색\s*소음|백색소음|화이트\s*노이즈|white\s*noise|수면\s*기계|수면\s*스피커)/,
+        title: '백색소음은 너무 크거나 가깝게 두지 말고, 안전수면을 대체하지 않습니다',
+        lead: '일부 가정에서 수면 환경 소음으로 쓰지만, 볼륨이 크거나 아기 귀에 너무 가까우면 청력에 부담이 될 수 있다는 우려가 있습니다. 기기 유무보다 등 자세·빈 수면면·과열 방지가 우선입니다. 특정 기기 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['사용 시', '적당한 거리·낮은 볼륨, 밤새 최대 음량 금지'],
+            ['우선', '안전수면 환경, 일정 루틴']
+        ],
+        blocks: [
+            ['지금 할 일', '스피커가 침대 안·바로 옆에 있지 않은지 확인하세요.'],
+            ['하지 않을 일', '통잠을 위해 엎어 재우거나 이불을 덮지 마세요.'],
+            ['관련', '안전수면·수면교육 경계를 참고하세요.']
+        ],
+        links: [
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 잠 습관', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/getting-your-baby-to-sleep.aspx']
         ]
     }
 ];
