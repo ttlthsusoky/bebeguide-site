@@ -490,7 +490,7 @@ const COMMON_PARENT_ANSWERS = [
     },
     {
         id: 'wake-to-feed',
-        match: /(깨워서|깨워)\s*(먹|수유)|자는데\s*(먹|수유)|통잠.*(먹|수유)|밤중?\s*수유|밤수유/,
+        match: /(깨워서|깨워)\s*(먹|수유)|자는데\s*(먹|수유)|통잠.*(먹|수유)|((밤중?\s*수유|밤수유).*(해야|하나요|깨|먹이|간격|몇\s*시간))/,
         title: '자는 아기를 깨워 먹일지는 성장 상태를 먼저 봅니다',
         lead: '모든 아기에게 같은 밤중 수유 종료일은 없습니다. 건강하게 자라고 충분히 먹는 아기는 보통 매번 깨울 필요가 없지만, 신생아 초기와 성장·황달·조산 문제가 있으면 의료진이 정한 간격이 우선입니다.',
         points: [
@@ -670,6 +670,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'constipation-solids',
+        match: /(이유식|분유|고형식|미음|쌀미음).{0,20}(변비|딱딱한\s*변|응가\s*안)|변비.{0,20}(이유식|분유|시작\s*후|바꾼)/,
+        title: '이유식·분유 뒤 변비는 수분·섬유·농도 변경 금지를 함께 봅니다',
+        lead: '이유식을 시작하거나 분유를 바꾼 뒤 변이 딱딱해질 수 있습니다. 횟수보다 변 모양·통증·식욕·배가 부은 정도를 보고, 제품 농도·관장·민간 허브를 임의로 바꾸지 마세요. 일반 변비 안내와 겹치면 통증·피가 있으면 진료가 우선입니다.',
+        points: [
+            ['이유식 맥락', '철 강화 곡물·바나나만 치우치지 말고, 연령에 맞는 물·과일·채소 섬유를 다양하게. 돌 전 생우유를 주된 음료로 쓰지 마세요.'],
+            ['분유 맥락', '농도를 진하게 타지 말고 표시 비율을 유지합니다. 분유 종류 변경은 의료진·수유 상담과 상의합니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '최근 식단·분유 제품·수분·변 모양·통증을 며칠 기록하세요.'],
+            ['하지 않을 일', '관장·성인 변비약·분유 진하게 타기·검증 안 된 민간 요법을 쓰지 마세요.'],
+            ['진료·상담', '혈변, 심한 복부 팽만·구토, 체중 감소, 생후 초기부터 변을 못 보면 바로 진료받으세요.']
+        ],
+        links: [
+            ['미국 NIH 소아 변비', 'https://www.niddk.nih.gov/health-information/digestive-diseases/constipation-children/symptoms-causes'],
+            ['질병관리청 변비 설명', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5827'],
+            ['CDC 분유 조제(농도 유지)', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html']
+        ]
+    },
+    {
         id: 'solid-start',
         match: /(이유식|보충식).*(언제|시작|몇\s*개월|준비)|첫\s*이유식/,
         title: '이유식은 대체로 6개월 무렵 준비 신호를 보고 시작합니다',
@@ -805,6 +825,26 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 기저귀 발진 안내', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx'],
             ['NHS 기저귀 발진', 'https://www.nhs.uk/baby/caring-for-a-newborn/nappy-rash/'],
             ['발열·응급이 함께 있을 때', 'blog/baby-fever-cold-guide.html#urgent']
+        ]
+    },
+    {
+        id: 'allergy-reaction-boundary',
+        match: /(알레르기).*(반응|증상|즉시|지연|두드러기|부종|아나필)|아나필락|즉시\s*반응|전신\s*두드러기|먹은\s*뒤\s*(두드러기|부어|숨)/,
+        title: '알레르기 즉시 반응과 지연 불편을 구분하고, 호흡·부종은 응급입니다',
+        lead: '식품을 먹은 직후 두드러기·구토·기침·숨 힘듦·입술·혀 부종·축 처짐은 즉시 반응 쪽으로 보고 응급 조치를 우선합니다. 수 시간~수일 뒤 발진·복통만으로는 원인 식품을 사진·문장으로 단정하지 않습니다. 사이트에서 병명·에피펜 용량·브랜드를 정하지 않습니다.',
+        points: [
+            ['즉시 쪽', '수분~2시간 안 두드러기·구토·호흡 이상·부종·처짐 → 119·응급실'],
+            ['지연·모호', '며칠 뒤 가벼운 발진만 있으면 기록을 남기고 의료진과 재도입·검사를 상의']
+        ],
+        blocks: [
+            ['지금 할 일', '먹은 음식·시각·증상 순서를 적고, 심한 습진·이전 즉시 반응이 있으면 집에서 시험 도입하지 마세요.'],
+            ['하지 않을 일', '사진으로 병명을 단정하거나, 처방 없이 강한 연고·항히스타민 용량을 댓글로 정하지 마세요.'],
+            ['관련', '알레르기 식품 도입·질식 구분 안내를 함께 보세요.']
+        ],
+        links: [
+            ['이유식·알레르기 가이드', 'blog/complementary-feeding-allergy-guide.html#allergens'],
+            ['ASCIA 영아 알레르기 예방', 'https://www.allergy.org.au/hp/papers/infant-feeding-and-allergy-prevention'],
+            ['발열·응급 신호', 'blog/baby-fever-cold-guide.html#urgent']
         ]
     },
     {
@@ -1000,6 +1040,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['개월별 놀이·주의', 'blog/development-kdst-guide.html#play'],
             ['CDC 안전수면(수면은 등)', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'tooth-eruption-timing',
+        match: /(이\s*나는\s*시기|치아\s*맹출\s*시기|첫\s*니\s*언제|언제\s*이\s*나|이\s*몇\s*개월|유치\s*나는\s*순|치아\s*순서)/,
+        title: '첫니는 보통 생후 수개월대에 나지만, 개인차가 큽니다',
+        lead: '많은 아기가 생후 4~7개월 무렵 아래 앞니부터 나기 시작하지만, 더 이르거나 첫돌 전후에 나기도 합니다. “○개월에 꼭” 표를 합격선처럼 쓰지 마세요. 이가 나면 양치(거즈→칫솔·불소)를 시작하고, 심한 고열·처짐은 이앓이만으로 설명하지 않습니다.',
+        points: [
+            ['범위', '시기·순서는 개인차. 18개월이 지나도 이가 하나도 없으면 진료에서 확인'],
+            ['이가 난 뒤', '보호자 칫솔질, 쌀알만큼 불소치약(해당 기준), 젖병 물고 자기 줄이기']
+        ],
+        blocks: [
+            ['지금 할 일', '잇몸·이가 보이는지 확인하고 양치 기준을 보세요.'],
+            ['하지 않을 일', '호박 목걸이 등 질식 위험 제품을 쓰지 마세요.'],
+            ['관련', '이앓이 완화·양치 공식 답을 참고하세요.']
+        ],
+        links: [
+            ['양치 시작 공식 기준', 'market/toddler-toothbrush-guide.html#standard'],
+            ['AAP 티딩·치아 관리', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/Teething-Pain.aspx'],
+            ['질병관리청 구강 건강', 'https://health.kdca.go.kr/']
         ]
     },
     {
@@ -1823,6 +1883,186 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'newborn-bath',
+        match: /(신생아|탯줄).*(목욕|씻)|목욕.*(신생아|탯줄|배꼽)|아기\s*목욕\s*(언제|자주|방법|해도)|목욕\s*빈도|스펀지\s*목욕/,
+        title: '신생아 목욕은 짧게·따뜻하게, 탯줄이 젖은 채로 두지 않습니다',
+        lead: '탯줄이 떨어지기 전에는 스펀지 목욕으로 몸을 닦고 배꼽은 건조하게 두는 안내가 흔합니다. 떨어진 뒤에도 미지근한 물에 짧게, 미끄러지지 않게 잡고, 끝낸 뒤 바로 말리고 따뜻하게 합니다. 물 온도·횟수는 가정·계절에 따라 다르며 사이트에서 “매일 ○분”을 단정하지 않습니다.',
+        points: [
+            ['안전', '한 손으로 머리를 지지하고, 물을 미리 받아 두며, 아기를 물속에 혼자 두지 않습니다.'],
+            ['배꼽', '씻은 뒤 잘 말리고, 고름·발적·열이 있으면 목욕 방법보다 진료가 먼저입니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '목욕 전 수건·옷을 준비하고, 실내가 너무 춥지 않게 하세요.'],
+            ['하지 않을 일', '뜨거운 물, 성인 향 비누·로션 과다, 배꼽에 민간 가루를 바르지 마세요.'],
+            ['관련', '탯줄·황달·과열 안내를 함께 보세요.']
+        ],
+        links: [
+            ['AAP 신생아 목욕·피부', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['NHS 아기 목욕', 'https://www.nhs.uk/baby/caring-for-a-newborn/washing-and-bathing-your-baby/'],
+            ['탯줄 관리 안내', '#home']
+        ]
+    },
+    {
+        id: 'bottle-hygiene',
+        match: /(젖병|젖\s*병|유축기|유축\s*기|보틀).*(소독|위생|세척|삶|스팀|살균)|소독.*(젖병|유축)|병\s*소독|펌프\s*소독/,
+        title: '젖병·유축기는 씻고 말리며, 영아 초기는 소독 안내를 따릅니다',
+        lead: 'CDC 등은 분유·모유를 담는 병·꼭지·유축 부품을 사용 후 씻고, 특히 2개월 미만·미숙아·면역이 약한 아기는 소독(삶기·스팀 등)을 권하는 흐름이 있습니다. 브랜드 제품 순위는 안내하지 않으며, 설명서와 공식 조유·기구 위생 절차를 따릅니다.',
+        points: [
+            ['기본', '손 씻기 → 분리 → 뜨거운 물·세제로 세척 → 깨끗이 헹굼 → 완전 건조'],
+            ['소독', '생후 초기·고위험 아기는 사용 전 소독. 건강한 큰 아기는 세척·건조만으로 충분한 경우도 있어 의료진·제품 안내를 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '사용 중인 병·유축기 설명서의 세척·소독 단계를 다시 확인하세요.'],
+            ['하지 않을 일', '덜 마른 병·곰팡이 난 호스를 그대로 쓰지 마세요. 분유 농도를 바꾸지 마세요.'],
+            ['관련', '분유 조유·모유 보관 안내를 함께 보세요.']
+        ],
+        links: [
+            ['CDC 분유 기구 세척·소독', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['CDC 모유 취급·기구', 'https://www.cdc.gov/breastfeeding/php/guidelines-recommendations/handling-breastmilk.html'],
+            ['분유 조유 안내', '#home']
+        ]
+    },
+    {
+        id: 'vaccine-when-sick',
+        match: /(접종|백신|예방접종).*(연기|미뤄|미루|미룰|아픈\s*날|열\s*날|감기\s*때|아파서)|아픈데\s*(접종|예방접종)|열\s*있는데\s*접종|감기.*접종\s*(돼|되|가능)/,
+        title: '가벼운 감기는 접종이 가능한 경우가 많고, 중등도 이상 아픔·고열은 예진에서 정합니다',
+        lead: '가벼운 콧물·기침만으로 모든 접종을 미룰 필요는 없다는 안내가 많습니다. 중등도 이상 급성 질환, 고열, 이전에 심한 이상반응이 있으면 접종 기관 예진에서 연기 여부를 정합니다. 카페 표로 일정을 임의 변경하지 말고 예방접종도우미·의료진을 따릅니다. 해열제 용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['예진이 우선', '당일 체온·증상·약 복용·이전 반응을 접종 기관에 알리세요.'],
+            ['미루는 예', '중등도 이상 급성 병, 고열, 의료진이 정한 금기·주의']
+        ],
+        blocks: [
+            ['지금 할 일', '도우미에서 다음 일정을 확인하고, 아픈 날은 접종 전 의료진에게 상태를 말하세요.'],
+            ['하지 않을 일', '열이 난다고 임의로 여러 달을 미루거나, 남은 해열제로 “예방 복용”하지 마세요.'],
+            ['관련', '접종 일정 확인·접종 후 반응 안내를 참고하세요.']
+        ],
+        links: [
+            ['예방접종도우미', 'https://nip.kdca.go.kr/'],
+            ['예방접종 일정 확인 가이드', 'blog/vaccination-schedule.html'],
+            ['CDC 접종 금기·주의 개요', 'https://www.cdc.gov/vaccines/hcp/imz-best-practices/contraindications-precautions.html']
+        ]
+    },
+    {
+        id: 'night-feeding-reduce',
+        match: /(야간|밤중?|밤)\s*수유.*(줄|끊|종료|떼|그만|줄이)|수유.*(줄|끊|종료).*(밤|야간|밤중)|밤수유\s*(끊|줄|종료)|밤중\s*수유\s*(끊|줄)/,
+        title: '야간 수유를 줄일 때는 성장·소변·의료 계획을 먼저 봅니다',
+        lead: '모든 아기에게 같은 “끊는 개월”은 없습니다. 건강하게 자라고 낮에 충분히 먹으며 소변이 평소대로면 담당 의료진과 상의한 뒤 밤 수유 간격을 천천히 늘릴 수 있습니다. 신생아 초기·조산·황달·체중 미회복이면 깨워 먹이기 계획이 우선입니다.',
+        points: [
+            ['줄이기 전', '최근 체중, 24시간 수유·젖은 기저귀, 의료진 수유 지시 여부'],
+            ['줄이는 방식', '한 번에 전부 끊기보다 간격·양을 며칠 단위로 조정. 첫돌 전 생우유로 대체하지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '낮 수유가 충분한지 기록하고, 줄이기 계획을 의료진과 확인하세요.'],
+            ['하지 않을 일', '통잠을 위해 엎어 재우거나, 물·주스만으로 밤 수유를 대체하지 마세요.'],
+            ['관련', '깨워 먹이기·안전수면·단유 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 밤중 수유·수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Sleeping-Through-the-Night.aspx'],
+            ['CDC 수유량·간격', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'solo-sleep-boundary',
+        match: /(분리\s*수면|혼자\s*재우|독방\s*재우|아기\s*방\s*분리|언제\s*혼자\s*자|자기\s*방에서\s*자)/,
+        title: '혼자 재우기는 안전수면·같은 방 권고와 구분해서 봅니다',
+        lead: '생후 최소 6개월(가능하면 더)은 같은 방에서 아기 전용 수면면에 등을 대고 재우라는 안내가 있습니다. “분리수면·독방”을 서두르는 유료 교육보다 안전 환경이 먼저입니다. 통잠을 위해 엎어 재우거나 성인 이불 속 동침으로 바꾸지 마세요.',
+        points: [
+            ['먼저', '등·별도 단단한 면·빈 공간·과열·연기 없음'],
+            ['방 분리', '가정·수면 습관에 따라 다르며, 사이트가 특정 주를 단정하지 않습니다.']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 잠자리가 같은 방·별도 요람인지 확인하세요.'],
+            ['하지 않을 일', '울음을 이유로 소파·경사진 베개·이불 속에서 재우지 마세요.'],
+            ['관련', '같은 방 수면·동침·수면교육 경계를 함께 보세요.']
+        ],
+        links: [
+            ['1세 미만 안전수면', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['같은 방 수면 안내', '#home']
+        ]
+    },
+    {
+        id: 'rollover-sleep',
+        match: /(뒤집|뒤집기).*(재우|수면|잠)|뒤집어서\s*자|혼자\s*뒤집.*재우|복와위\s*수면/,
+        title: '재울 때는 등으로, 스스로 뒤집으면 다시 억지로 엎어 두지 않습니다',
+        lead: '잠들 때는 항상 등을 대고 눕힙니다. 아기가 스스로 뒤집을 수 있게 되면, 재울 때는 등으로 두고 잠든 뒤 뒤집힌 상태를 매번 강제로 되돌리지 말라는 안내가 있습니다. 속싸개·수면 포지셔너는 뒤집기 시작 후 질식 위험이 커질 수 있어 중단합니다.',
+        points: [
+            ['재울 때', '등 자세, 별도 단단한 면, 빈 공간'],
+            ['뒤집기 후', '속싸개 중단, 이불·인형·범퍼 없이, 터미타임은 깨어 있을 때만']
+        ],
+        blocks: [
+            ['지금 할 일', '속싸개 사용 여부와 수면면이 비어 있는지 점검하세요.'],
+            ['하지 않을 일', '통잠을 위해 처음부터 엎어 재우지 마세요.'],
+            ['관련', '안전수면·속싸개 안내를 함께 보세요.']
+        ],
+        links: [
+            ['1세 미만 안전수면', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면 요약', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
+        id: 'cup-drinking',
+        match: /(컵\s*(으로|으로\s*)?(마시|먹|연습|시작)|빨대\s*컵|오픈\s*컵|sippy|시피\s*컵|젖병\s*끊.*컵|컵\s*훈련)/,
+        title: '이유식 시기부터 열린 컵·작은 컵 연습을 권하는 안내가 많습니다',
+        lead: '생후 약 6개월 전후 이유식과 함께 소량의 물을 컵으로 연습할 수 있습니다. 젖병을 오래 물고 자는 습관은 치아에 불리할 수 있어, 첫돌 전후에 컵으로 옮기라는 안내가 흔합니다. 주스·가당 음료를 컵에 담아 습관화하지 마세요.',
+        points: [
+            ['연습', '보호자가 잡아 주는 작은 컵, 소량, 앉은 자세'],
+            ['피하기', '돌 전 주스, 젖병 속 생우유를 주된 음료로']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 개월과 이유식 여부를 보고 물 연습부터 시작하세요.'],
+            ['하지 않을 일', '걷거나 누운 채 먹이지 마세요.'],
+            ['관련', '물·주스·생우유 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 이유식·음료', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html'],
+            ['AAP 컵·음료 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Recommended-Drinks-for-Young-Children-Ages-0-5.aspx'],
+            ['생우유 전환 안내', '#home']
+        ]
+    },
+    {
+        id: 'infant-sun-shade',
+        match: /(자외선|선크림|썬크림|햇볕|직사광선|야외.*아기|아기.*햇빛|일광\s*욕).*(아기|신생아|영아|아이)|아기.*(선크림|햇볕|자외선)/,
+        title: '6개월 미만은 그늘·옷·모자가 우선이고, 선크림은 의료진 안내를 따릅니다',
+        lead: '영아는 피부가 약해 직사광선·한낮 야외를 피하는 것이 우선입니다. 그늘, 긴 옷, 모자, 유모차 덮개(환기 유지)를 쓰고, 생후 6개월 미만 선크림 사용은 제품·상황마다 의료진·제품 표시를 확인합니다. 브랜드 순위는 안내하지 않습니다.',
+        points: [
+            ['우선', '그늘, 옷, 모자, 한낮(대략 10~16시) 강한 햇볕 피하기'],
+            ['열·탈수', '더운 날 처짐·소변 감소·고열이 있으면 그늘·수분·진료']
+        ],
+        blocks: [
+            ['지금 할 일', '외출 전 그늘·옷차림을 계획하세요.'],
+            ['하지 않을 일', '밀폐된 차 안·유모차에 아기를 혼자 두지 마세요.'],
+            ['관련', '과열 수면·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 햇빛·선크림(영아)', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Sun-Safety.aspx'],
+            ['CDC 자외선 보호', 'https://www.cdc.gov/cancer/skin/basic_info/sun-safety.htm'],
+            ['과열·탈수 안내', '#home']
+        ]
+    },
+    {
+        id: 'mixed-feeding-basics',
+        match: /(혼합\s*수유|모유.*분유\s*같이|분유.*모유\s*같이|모유\s*부족.*분유|병행\s*수유)/,
+        title: '혼합 수유는 비율 공식보다 성장·기저귀·의료 계획을 따릅니다',
+        lead: '모유와 분유를 함께 쓰는 가정은 많습니다. 사이트에서 “○cc씩 몇 대 몇” 비율을 정하지 않습니다. 낮·밤 리듬, 젖양 유지 희망 여부, 체중·소변을 보고 의료진·수유 상담과 계획을 세우세요. 분유는 표시 농도를 지키고 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['원칙', '아기의 배고픔 신호, 24시간 총 섭취·기저귀·성장'],
+            ['모유 유지 시', '직접 수유·유축 빈도를 유지하는 편이 도움이 될 수 있음']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 모유·분유 횟수와 기저귀·체중을 기록하세요.'],
+            ['하지 않을 일', '카페 비율표를 고정 처방전처럼 쓰지 마세요.'],
+            ['관련', '젖양·조유·수유량 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유 조제', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586'],
+            ['젖양 신호 안내', '#home']
         ]
     }
 ];
