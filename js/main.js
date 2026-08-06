@@ -1552,6 +1552,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'molluscum-boundary',
+        match: /(전염\s*연속종|물사마귀|molluscum|물\s*사마귀|전염성\s*연속종)/,
+        title: '물사마귀(전염연속종) 의심은 사진으로 단정하지 말고, 번짐·자극 시 진료를 검토하세요',
+        lead: '작고 반짝이는 돌기처럼 보이는 피부 병변이 전염연속종일 수 있으나, 사마귀·다른 발진과 구분은 의료진이 합니다. 억지로 짜거나 민간 산으로 태우지 마세요. 수영장·수건 공유 안내는 시설·의료진을 따릅니다. 약 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관리', '긁지 않기, 수건 따로, 상처 나면 덮기'],
+            ['진료', '눈 주위, 감염 징후, 면역 저하, 심한 번짐']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 생겼는지·번지는지 기록하세요.'],
+            ['하지 않을 일', '바늘로 짜내거나 검증 안 된 제거 키트를 쓰지 마세요.'],
+            ['관련', '사마귀·발진 진료 시점 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC molluscum', 'https://www.cdc.gov/poxvirus/molluscum-contagiosum/'],
+            ['AAP 피부 감염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -2080,6 +2099,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'intoeing-pigeon-toe-boundary',
+        match: /(안짱다리|안짱\s*걸음|발끝\s*안쪽|intoeing|pigeon\s*toe|발가락\s*안쪽\s*걷|발\s*안쪽으로\s*걷)/,
+        title: '발끝이 안쪽으로 향하는 걸음은 어릴 때 흔할 수 있으나, 통증·심한 비대칭은 진료하세요',
+        lead: '걸음마 전후 안짱걸음(발끝이 안쪽)은 성장하며 좋아지는 경우가 많습니다. 통증, 자주 넘어짐, 한쪽만 심함, 점점 악화면 의료진과 상의하세요. “교정 신발 필수” 브랜드 추천·합격 나이는 단정하지 않습니다.',
+        points: [
+            ['관찰', '좌우 차이, 통증, 활동 제한, 가족력'],
+            ['상담', '심한 절뚝, 3세 이후에도 뚜렷 악화']
+        ],
+        blocks: [
+            ['지금 할 일', '맨발 걷는 모습을 짧게 영상으로 남겨 두세요.'],
+            ['하지 않을 일', '광고 교정 용품을 임의로 오래 신기지 마세요.'],
+            ['관련', '오다리·신발·발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 정형·발 모양 개요', 'https://www.healthychildren.org/English/health-issues/conditions/orthopedic/Pages/default.aspx'],
+            ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
+        id: 'flat-foot-toddler-boundary',
+        match: /(평발|플랫\s*풋|flat\s*foot|발\s*아치\s*없|아기\s*평발|유연\s*평발)/,
+        title: '어린이 평발은 유연한 경우가 많고, 통증·보행 문제가 있을 때 진료를 검토하세요',
+        lead: '영·유아는 발 안쪽 아치가 덜 도드라져 보이는 경우가 흔합니다. 통증 없이 잘 뛰면 경과 관찰인 경우가 많고, 통증·피로·심한 안짱·가족력 걱정은 의료진과 상의하세요. 특수 깔창 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['관찰', '통증, 오래 걷지 못함, 신발 한쪽만 닳음'],
+            ['상담', '강직 평발, 신경·근육 증상 동반']
+        ],
+        blocks: [
+            ['지금 할 일', '맨발·신발 신을 때 통증을 말하는지 확인하세요.'],
+            ['하지 않을 일', '통증 없는 아이에게 고가 교정 신발을 강요하지 마세요.'],
+            ['관련', '오다리·안짱걸음·첫 신발 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 발·평발 개요', 'https://www.healthychildren.org/English/health-issues/conditions/orthopedic/Pages/default.aspx'],
+            ['첫 신발 안내', '#home']
+        ]
+    },
+    {
         id: 'bow-legs-toddler-boundary',
         match: /(오다리|휜\s*다리|내반슬|bow\s*leg|다리가\s*휘|안짱\s*아님\s*오다리|toddler\s*bow)/,
         title: '걸음마 전후 다리가 휘어 보여도 흔한 경우가 있으나, 심한 비대칭·통증은 진료하세요',
@@ -2410,6 +2467,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
+        id: 'heating-pad-infant-boundary',
+        match: /(핫팩\s*아기|온열\s*패드\s*아기|heating\s*pad|전기\s*찜질\s*아기|손난로\s*아기|핫팩\s*화상)/,
+        title: '핫팩·온열 패드를 영아 피부나 침대에 직접 대지 마세요',
+        lead: '핫팩·온열 패드는 저온 화상을 일으킬 수 있고, 영아 수면 공간에 두지 않는 편이 안전합니다. 배앓이·감기 시에도 의료진 안내 없이 뜨겁게 찜질하지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['위험', '저온 화상, 과열, 질식·이불 속 방치'],
+            ['대안', '얇은 옷, 방 온도, 안아 달래기']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 침대·유모차에 핫팩이 있는지 확인하세요.'],
+            ['하지 않을 일', '옷 속에 손난로를 넣고 재우지 마세요.'],
+            ['관련', '전기장판·화상·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
         ]
     },
@@ -4218,6 +4294,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'atv-child-boundary',
+        match: /(atv|사륜\s*바이크|네\s*발\s*바이크|all[-\s]?terrain\s*vehicle|어린이\s*atv|쿼드\s*바이크|에이티비|사륜차\s*아이)/,
+        title: '어린이 ATV·사륜 바이크 탑승은 심각한 부상 위험이 있어 권하지 않습니다',
+        lead: 'ATV는 전복·충돌 위험이 커 소아 안전 기관이 어린이 탑승에 강하게 주의합니다. “아이용 소형”이라도 안전이 보장되지 않습니다. 헬멧만으로 충분하지 않습니다. 브랜드·연령 마케팅을 그대로 따르지 마세요.',
+        points: [
+            ['원칙', '어린이 ATV 탑승 자제, 성인 레저에 태우지 않기'],
+            ['위험', '전복, 머리·목 손상, 도로·경사']
+        ],
+        blocks: [
+            ['지금 할 일', '농장·캠핑장 ATV 규칙을 아이 기준으로 다시 보세요.'],
+            ['하지 않을 일', '무릎에 태워 “한 바퀴만” 태우지 마세요.'],
+            ['관련', '헬멧·오토바이·놀이 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP ATV 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/ATV-Safety.aspx'],
+            ['CDC ATV 손상 개요', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'motorcycle-child-boundary',
+        match: /(오토바이\s*아이|오토바이\s*동승|motorcycle\s*child|스쿠터\s*아이\s*태|오토바이\s*카시트|이륜차\s*아이)/,
+        title: '어린이를 오토바이·스쿠터 동승으로 태우는 것은 권하지 않습니다',
+        lead: '오토바이·스쿠터는 보호 차체가 없어 충돌 시 아이 부상 위험이 큽니다. 많은 소아 안전 안내는 어린이 동승을 권하지 않습니다. 카시트·헬멧으로 대체할 수 있는 이동이 아닙니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['원칙', '아이는 자동차·카시트로 이동'],
+            ['위험', '낙상, 충돌, 도로 마찰, 헬멧만으로 부족']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 이동은 좌석벨트·카시트가 있는 차로 계획하세요.'],
+            ['하지 않을 일', '무릎 위에 태우거나 “잠깐” 동승하지 마세요.'],
+            ['관련', '카시트·헬멧·전동킥보드 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이동 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 아동 승차 안전', 'https://www.cdc.gov/transportationsafety/child_passenger_safety/']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -4745,6 +4859,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'fireplace-hearth-safety',
+        match: /(벽난로|난로\s*가드|fireplace|벽난로\s*화상|난로\s*울타리|벽난로\s*재)/,
+        title: '벽난로·난로는 가드·거리·재 관리를 하고, 불 켠 채 아이만 두지 마세요',
+        lead: '벽난로·장작 난로는 화상·연기·불씨 위험이 있습니다. 단단한 가드를 쓰고, 재·성냥을 치우며, 불 옆에서 뛰어놀지 않게 하세요. 특정 가드 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '가드, 이격, 재 식히기, 성냥·라이터 잠금'],
+            ['연기', '환기, CO 경보, 굴뚝 점검']
+        ],
+        blocks: [
+            ['지금 할 일', '난로 주변 러그·장난감을 치우세요.'],
+            ['하지 않을 일', '불 켠 채 자리를 비우지 마세요.'],
+            ['관련', '화상·CO 경보·난로 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 화재·화상 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'air-fryer-burn-safety',
+        match: /(에어프라이어\s*화상|에어\s*프라이어\s*안전|air\s*fryer|에어프라이어\s*아이|에어프라이어\s*증기)/,
+        title: '에어프라이어는 본체·바구니·증기가 뜨거우니 아이 손 닿지 않게 두세요',
+        lead: '에어프라이어 겉면·바스켓·빠져나오는 증기에 화상 위험이 있습니다. 가장자리 깊은 선반에 두고, 식기 전 아이를 가까이 두지 마세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '높은 위치, 코드 정리, 식힌 뒤 세척'],
+            ['화상', '흐르는 물로 식히기, 민간 연고 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '에어프라이어 주변 발판·의자를 치우세요.'],
+            ['하지 않을 일', '작동 중 문을 아이 눈높이에 두지 마세요.'],
+            ['관련', '화상·주방 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['CPSC 주방 가전 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -5213,6 +5365,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 보행·차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
             ['CDC 교통 안전', 'https://www.cdc.gov/transportationsafety/']
+        ]
+    },
+    {
+        id: 'power-window-car-safety',
+        match: /(자동\s*창문|파워\s*윈도|power\s*window|차\s*창문\s*끼|창문\s*손가락\s*끼|전동\s*윈도)/,
+        title: '차 전동 창문에 목·손가락이 끼지 않게 잠금·감독을 하세요',
+        lead: '전동 창문은 목·손가락 끼임 사고가 날 수 있습니다. 아이가 스위치에 닿지 않게 하고, 창문 잠금 기능을 쓰세요. 창문을 올린 채 고개를 내밀게 두지 마세요. 특정 차량 기능 순위는 하지 않습니다.',
+        points: [
+            ['예방', '윈도 락, 뒷좌석 스위치 잠금, 감독'],
+            ['응급', '끼임 시 즉시 창을 내리고 119·진료']
+        ],
+        blocks: [
+            ['지금 할 일', '뒷좌석 윈도 락이 켜지는지 확인하세요.'],
+            ['하지 않을 일', '아이만 차 안에 두고 시동·전원을 켜 두지 마세요.'],
+            ['관련', '차 안 방치·카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 창문 끼임 안전(영)', 'https://www.nhtsa.gov/'],
+            ['AAP 차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
         ]
     },
     {
@@ -5716,6 +5887,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'yo-yo-ball-strangulation-boundary',
+        match: /(요요\s*볼|yo[-\s]?yo\s*ball|탄성\s*줄\s*공|고무\s*줄\s*공\s*목|요요공)/,
+        title: '고무 줄이 긴 요요 볼 종류는 목에 감길 수 있어 어린이에게 주지 마세요',
+        lead: '긴 탄성 줄이 달린 공·요요 볼은 목에 감겨 질식 위험이 보고된 바 있습니다. 어린이 장난감으로 두지 말고, 유사 제품도 줄 길이와 고정 여부를 확인하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['위험', '목 감김, 질식, 눈 부상'],
+            ['조치', '집에 있으면 폐기·회수, 리콜 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '긴 고무 줄 장난감을 치우세요.'],
+            ['하지 않을 일', '줄에 목을 걸거나 돌리는 놀이를 하지 마세요.'],
+            ['관련', '리콜·옷 끈·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 장난감 줄·질식 위험', 'https://www.cpsc.gov/'],
+            ['AAP 장난감 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'drawstring-clothing-danger',
         match: /(옷\s*끈|모자\s*끈|드로우\s*스트링|drawstring|목\s*끈\s*옷|후드\s*끈\s*아기|옷\s*모자\s*끈)/,
         title: '모자·옷 목 끈(드로우스트링)은 질식·걸림 위험이 있어 어린 아이 옷에서 빼 주세요',
@@ -5903,6 +6093,44 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['CPSC 세제 포드 안전', 'https://www.cpsc.gov/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'bleach-ingestion-boundary',
+        match: /(락스\s*먹|표백제\s*먹|bleach\s*(먹|ingest|poison)|염소\s*표백\s*삼킴|락스\s*중독)/,
+        title: '락스·표백제를 삼켰거나 섞어 쓴 가스에 노출되면 토하게 하지 말고 상담·응급실을 우선하세요',
+        lead: '가정용 락스·표백제는 입·식도 자극이 심할 수 있고, 산성 세제와 섞으면 위험한 가스가 납니다. 삼켰을 때 억지로 토하게 하지 말고 제품명·추정량을 확인한 뒤 중독 상담·응급실을 이용하세요. 용량·해독제 단정은 하지 않습니다.',
+        points: [
+            ['금지', '세제 혼합, 토하게 강제, 우유·민간 해독 단정'],
+            ['응급', '호흡 곤란, 심한 구토, 입 안 화상 → 119']
+        ],
+        blocks: [
+            ['지금 할 일', '락스·표백제를 잠금 수납으로 옮기세요.'],
+            ['하지 않을 일', '화장실 청소제를 한 통에 섞지 마세요.'],
+            ['관련', '중독·세제 포드 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'antifreeze-poison-boundary',
+        match: /(부동액\s*먹|antifreeze|에틸렌\s*글리콜|워셔액\s*먹|냉각수\s*먹|부동액\s*중독)/,
+        title: '부동액·일부 워셔액은 달콤한 맛이 나 위험합니다. 삼켰으면 즉시 응급실·중독 상담을 하세요',
+        lead: '부동액(에틸렌글리콜 등)은 소량이라도 아이에게 치명적일 수 있습니다. 토하게 강제하지 말고 남은 용기와 함께 응급실·중독 상담을 이용하세요. 차고·베란다에 방치하지 마세요. 해독·용량은 의료진이 정합니다.',
+        points: [
+            ['예방', '뚜껑 잠금, 흘린 액 즉시 닦기, 펫·아이 접근 차단'],
+            ['응급', '삼킴 의심만으로도 즉시 의료 평가']
+        ],
+        blocks: [
+            ['지금 할 일', '차고·베란다 부동액 용기를 점검하세요.'],
+            ['하지 않을 일', '빈 음료수병에 옮겨 담지 마세요.'],
+            ['관련', '중독·약장 잠금 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 에틸렌글리콜·중독 개요', 'https://www.cdc.gov/niosh/'],
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
         ]
     },
