@@ -923,6 +923,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'shellfish-when-boundary',
+        match: /(조개\s*언제|새우\s*언제|갑각류\s*이유식|shellfish\s*baby|해산물\s*알레르기\s*도입|게\s*이유식)/,
+        title: '조개·새우 등 갑각류는 알레르기 주의 식품으로, 도입 시기·방법은 진료·공식 안내를 따르세요',
+        lead: '해산물·갑각류는 알레르기 위험이 있을 수 있어 한꺼번에 많이 주지 말고, 다른 식품과 구분해 관찰하는 편이 안전합니다. “몇 개월 필수” 마감선·민간 순서를 단정하지 않습니다. 과거 즉시 반응이 있으면 재시도 전 의료진과 상의하세요.',
+        points: [
+            ['도입', '소량, 낮 시간, 한 번에 한 종류, 증상 관찰'],
+            ['응급', '두드러기·부종·호흡 이상 → 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '가족 알레르기 병력과 첫 시도 날짜를 기록하세요.'],
+            ['하지 않을 일', '숨긴 채 많은 양을 먹이지 마세요.'],
+            ['관련', '알레르기 도입·즉시 반응 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 식품 알레르기 도입 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
+            ['이유식·알레르기 가이드', 'blog/complementary-feeding-allergy-guide.html']
+        ]
+    },
+    {
         id: 'allergen-introduction',
         match: /(계란|달걀|땅콩|알레르기\s*식품).*(언제|도입|먹|시작)|알레르기.*(도입|예방|음식|먹)/,
         title: '알레르기 식품은 무조건 늦추지 않습니다',
@@ -998,6 +1017,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 우유·음료 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
             ['CDC 유아 영양', 'https://www.cdc.gov/infant-toddler-nutrition/']
+        ]
+    },
+    {
+        id: 'cmpa-boundary',
+        match: /(우유\s*단백\s*알레르기|cmpa|CMPI|분유\s*알레르기|우유\s*알레르기\s*아기|소\s*우유\s*알레르기)/,
+        title: '우유 단백 알레르기 의심은 증상·성장으로 의료진이 판단하며, 임의 제한·특수분유를 단정하지 마세요',
+        lead: '구토·혈변·발진·호흡 이상 등이 우유 단백과 관련될 수 있으나 원인 단정은 진료가 필요합니다. 보호자 임의로 장기간 제한하거나 특수분유를 광고만 보고 고르지 마세요. 아나필락시스 의심 시 응급입니다. 브랜드 순위·용량은 하지 않습니다.',
+        points: [
+            ['신호', '혈변, 심한 구토, 두드러기·부종, 호흡 이상, 성장 부진'],
+            ['상담', '수유·분유 변경은 의료진·영양 상담과']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시점과 섭취 식품을 기록하세요.'],
+            ['하지 않을 일', '카페 후기만 보고 분유를 바꾸지 마세요.'],
+            ['관련', '알레르기 즉시 반응·분유·생우유 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 식품 알레르기 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Food-Allergies-in-Children.aspx'],
+            ['CDC 식품 알레르기', 'https://www.cdc.gov/food-allergies/']
         ]
     },
     {
@@ -1571,6 +1609,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'wart-boundary',
+        match: /(사마귀\s*아이|보통\s*사마귀|wart\s*child|발\s*사마귀|바이러스\s*사마귀)/,
+        title: '사마귀 의심은 사진으로 단정하지 말고, 통증·번짐·얼굴이면 진료를 검토하세요',
+        lead: '사마귀는 바이러스성 돌기일 수 있으나 티눈·다른 발진과 구분은 의료진이 합니다. 억지로 깎거나 검증 안 된 산·민간 요법으로 태우지 마세요. 약 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관리', '긁지 않기, 수건·발 도구 공유 줄이기'],
+            ['진료', '통증, 출혈, 얼굴·생식기, 면역 저하']
+        ],
+        blocks: [
+            ['지금 할 일', '생긴 위치와 변화를 기록하세요.'],
+            ['하지 않을 일', '면도칼·바늘로 제거하지 마세요.'],
+            ['관련', '물사마귀·발진 진료 시점 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 사마귀·HPV 개요', 'https://www.cdc.gov/hpv/'],
+            ['AAP 피부 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1764,6 +1821,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 분유 준비', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
             ['CDC 모유 보관·데우기', 'https://www.cdc.gov/breastfeeding/php/guidelines-recommendations/handling-breastmilk.html']
+        ]
+    },
+    {
+        id: 'deli-meat-listeria-boundary',
+        match: /(햄\s*아기|소시지\s*아기|델리\s*미트|deli\s*meat|가공\s*육\s*아기|리스테리아\s*햄|비살균\s*치즈\s*아기)/,
+        title: '가공육·델리 미트·일부 연성 치즈는 리스테리아 등 위험이 있어 영아·임신부는 주의하세요',
+        lead: '가열하지 않은 델리 미트·일부 연성 치즈 등은 식중독균 위험이 논의됩니다. 영아·임신부에게는 충분히 가열하거나 피하라는 공식 안내가 있습니다. 브랜드 순위·“한 장만” 단정은 하지 않으며, 발열·심한 구토는 진료하세요.',
+        points: [
+            ['주의', '가열 없이 준 햄·소시지·연성 치즈'],
+            ['실천', '충분히 데치기, 유통기한·냉장']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 간식이 가공육인지 확인하세요.'],
+            ['하지 않을 일', '상온에 오래 둔 샌드위치 햄을 주지 마세요.'],
+            ['관련', '식중독·비살균 유제품 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 리스테리아', 'https://www.cdc.gov/listeria/'],
+            ['AAP 식품 안전 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx']
         ]
     },
     {
@@ -2621,6 +2697,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 배앓이 개요', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/default.aspx'],
             ['CDC 영아 영양·안전 개요', 'https://www.cdc.gov/infant-toddler-nutrition/']
+        ]
+    },
+    {
+        id: 'probiotic-infant-boundary',
+        match: /(프로바이오틱\s*아기|유산균\s*아기|probiotic\s*infant|영아\s*유산균|아기\s*유산균|유아\s*유산균)/,
+        title: '영아 유산균·프로바이오틱은 “필수”로 단정하지 말고, 필요 여부는 의료진과 상의하세요',
+        lead: '배앓이·변비·설사에 유산균을 찾는 질문이 많지만, 모든 아기에게 필수는 아니며 제품·균주·용량이 다릅니다. 효과 보장·브랜드 순위·용량을 사이트에서 정하지 않습니다. 미숙아·면역 저하·심한 증상은 진료가 우선입니다.',
+        points: [
+            ['경계', '광고 “국민템”, 성인 제품 임의 소분'],
+            ['우선', '수유·수분·위험 신호 확인, 의료진 상담']
+        ],
+        blocks: [
+            ['지금 할 일', '지금 주는 제품의 월령·균주 표시를 확인하세요.'],
+            ['하지 않을 일', '여러 유산균을 한꺼번에 섞어 주지 마세요.'],
+            ['관련', '배앓이·설사·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배앓이·장 건강 개요', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/default.aspx'],
+            ['CDC 영아 영양 개요', 'https://www.cdc.gov/infant-toddler-nutrition/']
         ]
     },
     {
@@ -4897,6 +4992,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bbq-grill-safety',
+        match: /(바비큐|BBQ|그릴\s*안전|숯불\s*아이|가스\s*그릴\s*아이|barbeque|barbecue\s*child)/,
+        title: '바비큐·그릴은 아이 접근을 막고, 재·그릴을 식히기 전까지 방치하지 마세요',
+        lead: '숯불·가스 그릴은 화상·연기·일산화탄소·재 속 불씨 위험이 있습니다. 아이는 그릴 반대편에 두고, 점화·요리·식힘 내내 감독하세요. 실내·텐트에서 숯불을 피우지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '이격, 도구 손잡이, 재 완전 소화'],
+            ['금지', '실내 숯불, 그릴 위 장난, 라이터 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '그릴 주변에 아이 놀이 공간을 겹치지 않게 하세요.'],
+            ['하지 않을 일', '뜨거운 그릴망을 잔디에 엎어 두고 떠나지 마세요.'],
+            ['관련', '화상·CO·라이터 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['CDC 일산화탄소', 'https://www.cdc.gov/carbon-monoxide/'],
+            ['AAP 야외 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -4929,6 +5044,25 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '물놀이 때 “튜브 있으니 괜찮다”는 생각을 버리세요.'],
             ['하지 않을 일', '팔 튜브만 끼운 채 아이만 물에 두지 마세요.'],
             ['관련', '익사 예방·구명조끼·수영 교육 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
+        id: 'boat-child-safety',
+        match: /(배\s*타\s*아이|보트\s*아이|선상\s*아이|boat\s*child|요트\s*아기|카약\s*아이|구명조끼\s*배)/,
+        title: '배·보트에서는 아이에게 맞는 구명조끼를 입히고, 갑판에서 손을 놓지 마세요',
+        lead: '수상 레저는 익사 위험이 큽니다. 아이 체중·체형에 맞는 공인 구명조끼를 입히고, 팔 튜브로 대체하지 마세요. 날씨·파도·음주 운항을 피하고, 갑판에서 뛰어다니지 않게 하세요. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '체중 맞는 구명조끼, 잠금 확인, 플로티 대체 금지'],
+            ['감시', '팔 닿는 거리, 난간, 승하선 시 손잡기']
+        ],
+        blocks: [
+            ['지금 할 일', '출항 전 구명조끼 착용을 고정 루틴으로 만드세요.'],
+            ['하지 않을 일', '조끼 없이 “잠깐만” 갑판에 두지 마세요.'],
+            ['관련', '구명조끼·플로티·익사 예방 안내를 참고하세요.']
         ],
         links: [
             ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
@@ -6135,6 +6269,63 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'pesticide-poison-boundary',
+        match: /(살충제\s*먹|농약\s*먹|pesticide|살충\s*스프레이\s*아이|모기약\s*먹|해충\s*약\s*삼킴)/,
+        title: '살충제·농약을 삼키거나 강하게 흡입하면 토하게 하지 말고 바로 상담·응급실을 이용하세요',
+        lead: '가정용 살충제·모기약·농약은 성분마다 위험이 다릅니다. 삼켰을 때 억지로 토하게 하지 말고 제품명·추정량을 확인한 뒤 중독 상담·응급실을 이용하세요. 아이 있는 방에 뿌린 뒤 환기 없이 두지 마세요. 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '잠금 수납, 사용 중 아이 격리, 환기'],
+            ['응급', '구토·처짐·경련·호흡 이상 → 119']
+        ],
+        blocks: [
+            ['지금 할 일', '베란다·싱크 아래 살충제 위치를 점검하세요.'],
+            ['하지 않을 일', '음식이 있는 식탁 위에 뿌리지 마세요.'],
+            ['관련', '중독·벌레 물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 살충제·중독 개요', 'https://www.cdc.gov/pesticides/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'super-glue-skin-boundary',
+        match: /(순간\s*접착제|슈퍼\s*글루|super\s*glue|본드\s*손가락|접착제\s*눈|순간접착\s*붙)/,
+        title: '순간접착제가 피부·눈에 묻으면 억지로 뜯지 말고 세척·진료 여부를 보세요',
+        lead: '순간접착제는 피부끼리 붙거나 눈·입 주위 자극을 일으킬 수 있습니다. 억지로 뜯지 말고 미지근한 물·제품 안내에 따라 부드럽게 분리하세요. 눈·입 안·호흡기 자극은 진료를 우선합니다. 제거제 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['피부', '억지 분리 금지, 물·오일류는 제품·의료 안내'],
+            ['눈·입', '헹구기, 비비지 않기, 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '접착제를 아이 손 닿지 않는 곳에 두세요.'],
+            ['하지 않을 일', '아세톤을 영아 피부에 함부로 바르지 마세요.'],
+            ['관련', '중독·눈 이물 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독·가정 화학물질 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'crayon-ingestion-boundary',
+        match: /(크레용\s*먹|크레파스\s*먹|crayon\s*eat|색연필\s*먹|왁스\s*크레용\s*삼킴)/,
+        title: '크레용·크레파스를 조금 씹은 경우에도 양·증상을 보고, 많은 양·이물질 느낌이면 상담하세요',
+        lead: '일반 아동용 크레용은 소량 섭취 시 큰 독성은 드물다는 안내가 많지만, 포장·성분·이물질(뚜껑·조각)에 따라 다릅니다. 토하게 강제하지 말고, 호흡·복통·많은 양이 걱정되면 중독 상담·진료를 이용하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '호흡, 침 흘림, 복통, 변에 왁스'],
+            ['예방', '비아동용·산업용 마킹 도구 치우기']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥에 떨어진 크레용 조각을 치우세요.'],
+            ['하지 않을 일', '성인용 유성 마카를 미술 재료로 주지 마세요.'],
+            ['관련', '중독·작은 물건 질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'laundry-pod-poison',
         match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
         title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
@@ -6444,6 +6635,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'elevator-stroller-safety',
+        match: /(엘리베이터\s*유모차|승강기\s*유모차|elevator\s*stroller|엘리베이터\s*끼|승강기\s*문\s*끼)/,
+        title: '엘리베이터에서는 유모차를 문 쪽에 두지 말고, 문이 닫힐 때 손을 살피세요',
+        lead: '승강기 문·틈에 손·발이 끼거나 유모차가 문에 걸릴 수 있습니다. 유모차는 문에서 떨어뜨려 세우고, 아이들이 문 센서를 장난으로 막지 않게 하세요. 만원이면 다음 대를 기다립니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['위치', '문 반대쪽, 브레이크 잠금, 손 잡기'],
+            ['주의', '문 틈, 과적, 뛰어내리기']
+        ],
+        blocks: [
+            ['지금 할 일', '탑승 전 브레이크를 잠그고 아이 손을 잡으세요.'],
+            ['하지 않을 일', '닫히는 문에 유모차를 억지로 끼워 넣지 마세요.'],
+            ['관련', '에스컬레이터·유모차 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출·유모차 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['유모차 안전 안내', '#home']
+        ]
+    },
+    {
         id: 'escalator-stroller-safety',
         match: /(에스컬레이터|에스컬|자동\s*계단).{0,16}(유모차|아기|아이)|유모차.{0,12}에스컬|escalator/,
         title: '에스컬레이터에는 유모차를 올리지 말고 엘리베이터를 이용하세요',
@@ -6632,6 +6842,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 버섯 중독 개요', 'https://www.cdc.gov/poisonprevention/'],
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'outdoor-berry-poison-boundary',
+        match: /(야생\s*열매|산\s*열매\s*먹|빨간\s*열매\s*중독|wild\s*berry|주워\s*온\s*열매|길거리\s*열매\s*먹)/,
+        title: '야생·정체 불명 열매는 먹이지 마세요. 삼켰으면 남은 조각을 가지고 상담하세요',
+        lead: '색깔이 예뻐도 독성 열매일 수 있고, 사진만으로 식용을 단정하기 어렵습니다. 삼켰으면 억지로 토하게 하지 말고 남은 열매·토사물을 챙겨 중독 상담·진료를 이용하세요. 채집 추천은 하지 않습니다.',
+        points: [
+            ['예방', '산책 중 줍기 금지, 마당 열매 식물 파악'],
+            ['노출', '구토·처짐·입 주위 자극 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 손이 닿는 울타리 열매를 치우거나 가리세요.'],
+            ['하지 않을 일', '인터넷 사진과 비교해 “먹어도 된다”고 단정하지 마세요.'],
+            ['관련', '독버섯·화분 식물·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
         ]
     },
     {
