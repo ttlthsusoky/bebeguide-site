@@ -1533,6 +1533,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'hemangioma-when-check-boundary',
+        match: /(혈관종|딸기\s*반점|hemangioma|빨간\s*점\s*커져|혈관\s*종양\s*아기|유아\s*혈관종)/,
+        title: '자라는 빨간 반점·혈관종 의심은 사진으로 단정하지 말고 진료 시점을 상의하세요',
+        lead: '영아 혈관종은 생후 초기에 커졌다가 줄어드는 경우가 있으나, 위치·크기·궤양·시야·호흡에 영향을 주면 평가가 필요합니다. 민간 냉동·연고로 없애려 하지 마세요. 진단·치료 여부는 의료진이 정합니다.',
+        points: [
+            ['관찰', '크기 변화, 궤양, 출혈, 눈·입·기저귀 부위'],
+            ['상담', '빠르게 커짐, 여러 개, 기능 부위']
+        ],
+        blocks: [
+            ['지금 할 일', '시작 시점과 크기 변화를 사진·날짜로 기록하세요.'],
+            ['하지 않을 일', '가정에서 뽑거나 얼리거나 강한 약을 바르지 마세요.'],
+            ['관련', '발진·모반 진료 경계 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 혈관종·모반 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx'],
+            ['발진 진료 시점', '#home']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -2061,6 +2080,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bow-legs-toddler-boundary',
+        match: /(오다리|휜\s*다리|내반슬|bow\s*leg|다리가\s*휘|안짱\s*아님\s*오다리|toddler\s*bow)/,
+        title: '걸음마 전후 다리가 휘어 보여도 흔한 경우가 있으나, 심한 비대칭·통증은 진료하세요',
+        lead: '걸음마 전후 다리가 바깥으로 휘어 보이는 모습은 성장 과정에서 흔할 수 있습니다. 한쪽에만 심하거나, 통증·절뚝·키 성장 걱정이 있으면 의료진과 상의하세요. “교정 신발 필수” 브랜드 추천·합격 마감선은 하지 않습니다.',
+        points: [
+            ['관찰', '좌우 차이, 통증, 걷기 회피, 가족력'],
+            ['상담', '점점 심해짐, 3세 이후에도 뚜렷, 다른 기형 동반']
+        ],
+        blocks: [
+            ['지금 할 일', '맨발·신발 착용 시 걷는 모습을 짧게 기록하세요.'],
+            ['하지 않을 일', '교정 기구를 광고만 보고 임의 구매하지 마세요.'],
+            ['관련', '발달·신발·평발 걱정 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 다리·발 모양 개요', 'https://www.healthychildren.org/English/health-issues/conditions/orthopedic/Pages/default.aspx'],
+            ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
         id: 'tummy-time',
         match: /(엎드|터미\s*타임|tummy|배\s*밀이|목가누).*(시간|언제|방법|해요)|터미타임|엎드려\s*놀/,
         title: '엎드려 놀기는 깨어 있고 보호자가 볼 때만 합니다',
@@ -2376,6 +2414,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'electric-blanket-infant-boundary',
+        match: /(전기\s*장판\s*아기|전기\s*담요\s*아기|electric\s*blanket|온열\s*매트\s*아기|온수\s*매트\s*영아|전기요\s*아기)/,
+        title: '영아 침대에 전기장판·전기담요를 깔고 재우지 마세요',
+        lead: '전기장판·온열 매트는 과열·화상·감전·끼임 위험이 있어 영아 안전수면에 맞지 않습니다. 방 온도를 조절하고, 아기는 평평한 매트리스에 등을 대고 재우세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['원칙', '단단한 바닥, 등 재우기, 전열 기구 치우기'],
+            ['위험', '과열, 화상, 코드·감전']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 침대·요람 아래 전열 매트를 제거하세요.'],
+            ['하지 않을 일', '성인용 전기요를 아이 이불 대신 쓰지 마세요.'],
+            ['관련', '안전수면·과열 수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'sleep-sack-blanket-boundary',
         match: /(수면\s*조끼|슬립\s*색|슬립삭|sleep\s*sack|아기\s*침낭|이불\s*덮고\s*재우|담요\s*재우|느슨한\s*이불)/,
         title: '1세 미만은 느슨한 이불보다 맞는 수면조끼·얇은 옷이 안전한 경우가 많습니다',
@@ -2640,6 +2697,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수유 빈도·양', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'energy-drink-child-boundary',
+        match: /(에너지\s*음료\s*아이|에너지드링크\s*아이|energy\s*drink\s*child|카페인\s*음료\s*아이|고카페인\s*아이)/,
+        title: '에너지 음료는 어린이·청소년에게 권하지 않으며, 카페인 과다 위험이 있습니다',
+        lead: '에너지 음료는 카페인·다른 자극 성분이 많아 어린이에게 권장되지 않습니다. 심장 두근거림·불면·초조·탈수 등이 나타날 수 있습니다. “공부·운동 필수” 광고를 따르지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['원칙', '어린이·청소년 에너지 음료 피하기, 물·우유 우선'],
+            ['상담', '많이 마신 뒤 가슴 두근거림·구토·탈수']
+        ],
+        blocks: [
+            ['지금 할 일', '집·차 안 에너지 음료를 아이 손이 닿지 않게 치우세요.'],
+            ['하지 않을 일', '운동 전 “각성” 목적으로 주지 마세요.'],
+            ['관련', '카페인 수유·스포츠음료 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 에너지 음료·카페인', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 카페인·청소년 개요', 'https://www.cdc.gov/nutrition/']
         ]
     },
     {
@@ -5005,6 +5081,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'nightmare-boundary',
+        match: /(악몽|무서운\s*꿈|nightmare|꿈\s*꿔서\s*울|자다가\s*무서워\s*깨)/,
+        title: '악몽 뒤에는 안심시키고, 낮 스트레스·미디어를 점검하세요. 수면제는 임의로 주지 마세요',
+        lead: '악몽은 잠에서 깨어 내용을 기억하며 위로를 구하는 경우가 많습니다. 야경증과 다를 수 있습니다. 잠들기 전 무서운 영상·이야기를 줄이고, 일정한 취침 루틴이 도움이 될 수 있습니다. 잦고 낮 생활이 힘들면 상담하세요. 수면제 용량은 정하지 않습니다.',
+        points: [
+            ['대응', '부드럽게 안심, 불 밝히기, 다시 재우기'],
+            ['환경', '취침 전 스크린, 갈등·스트레스, 발열·통증']
+        ],
+        blocks: [
+            ['지금 할 일', '잠들기 1시간 전 영상·자극 게임을 줄여 보세요.'],
+            ['하지 않을 일', '혼내거나 무시하며 “허상”이라고만 몰아붙이지 마세요.'],
+            ['관련', '야경증·수면 보행·수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면·악몽 개요', 'https://www.healthychildren.org/English/ages-stages/preschool/Pages/default.aspx'],
+            ['CDC 수면 건강', 'https://www.cdc.gov/sleep/']
+        ]
+    },
+    {
         id: 'night-terror-boundary',
         match: /(야경증|밤공포|자다가\s*비명|자다가\s*소리\s*지|나이트\s*테러|night\s*terror|야경)/,
         title: '야경증은 악몽과 다를 수 있고, 억지로 깨우기보다 안전을 봅니다',
@@ -5352,6 +5447,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'frostbite-cold-weather-boundary',
+        match: /(동상|추위\s*화상|frostbite|손가락\s*하얘|발가락\s*얼|귀\s*동상|심한\s*추위\s*외출)/,
+        title: '심한 추위 노출 후 창백·감각 이상이 있으면 따뜻하게 하고 진료를 검토하세요',
+        lead: '동상은 손가락·발가락·귀·코 등에 잘 생깁니다. 젖은 옷·바람을 피하고 겹겹이 입히며, 언 부위를 불로 직접 녹이거나 문지르지 마세요. 수포·색 변화·감각 소실이 있으면 진료합니다. 민간 연고 추천은 하지 않습니다.',
+        points: [
+            ['예방', '겹옷, 방수·방풍, 젖으면 갈아입히기, 그늘·바람 줄이기'],
+            ['응급', '창백·단단함·수포·심한 통증 → 따뜻하게·진료']
+        ],
+        blocks: [
+            ['지금 할 일', '외출 전 장갑·모자·양말 상태를 확인하세요.'],
+            ['하지 않을 일', '눈·얼음으로 언 피부를 세게 문지르지 마세요.'],
+            ['관련', '열 질환·외출 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 동상·한랭 손상', 'https://www.cdc.gov/winter-weather/prevention/'],
+            ['AAP 겨울 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'heat-illness-child',
         match: /(열사병|일사병|더위\s*먹|폭염|고온\s*야외|더워서\s*처지|heat\s*stroke|heat\s*exhaust)/,
         title: '더위·열사병 의심이면 시원한 곳으로 옮기고 응급 신호를 봅니다',
@@ -5506,6 +5620,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'firearm-safe-storage-boundary',
+        match: /(총기|총\s*보관|총\s*안전|firearm|gun\s*safe|총\s*아이|권총\s*집|총알\s*보관)/,
+        title: '총기·탄약은 잠금 장치에 따로 보관하고, 아이 손 닿지 않게 하세요',
+        lead: '가정 내 총기 사고는 호기심으로도 날 수 있습니다. 장전하지 않은 상태로 잠그고, 탄약은 별도 잠금 수납에 두며, 아이 앞에서 장난·과시하지 마세요. 특정 금고 브랜드 순위는 하지 않습니다. 지역 법·보관 규정은 관할 안내를 따릅니다.',
+        points: [
+            ['보관', '잠금, 장전 금지, 탄약 분리, 키·비밀번호 관리'],
+            ['교육', '총을 보면 만지지 말고 어른에게 알리기']
+        ],
+        blocks: [
+            ['지금 할 일', '집·친척 집 총기 유무와 보관 상태를 확인하세요.'],
+            ['하지 않을 일', '장난감 총과 실총을 혼동하게 두지 마세요.'],
+            ['관련', '약장 잠금·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 총기 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Gun-Safety-Keeping-Children-Safe.aspx'],
+            ['CDC 총기 손상 예방 개요', 'https://www.cdc.gov/firearm-violence/']
+        ]
+    },
+    {
         id: 'medicine-cabinet-lock',
         match: /(약\s*보관|약\s*잠금|약품\s*수납|아이\s*약\s*손|영양제\s*삼킴|감기약\s*삼킴)/,
         title: '약·영양제·철분제는 잠그는 수납에 두고, 사탕처럼 보이지 않게 하세요',
@@ -5541,6 +5674,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
             ['CDC 아동 손상 예방 개요', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'mouthwash-alcohol-poison-boundary',
+        match: /(가글\s*먹|구강\s*청결제\s*먹|마우스워시\s*먹|mouthwash|가글액\s*삼킴|구강세정제\s*아이)/,
+        title: '가글·구강청결제를 아이가 마셨으면 알코올·불소 함량을 확인하고 상담하세요',
+        lead: '일부 구강청결제에는 알코올·불소 등이 들어 있어 소량이라도 아이 체중 대비 부담이 될 수 있습니다. 토하게 강제하지 말고 제품명·추정량을 확인한 뒤 중독 상담·진료를 검토하세요. 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '뚜껑 잠금, 세면대 아래 치우기, 성인용 제품 분리'],
+            ['노출', '졸림·비틀거림·구토 시 응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '세면대의 가글·세정제를 아이 손 닿지 않게 옮기세요.'],
+            ['하지 않을 일', '물을 억지로 많이 먹여 희석하려 하지 마세요. 상담을 우선하세요.'],
+            ['관련', '손소독제·약장 잠금 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
         ]
     },
     {
@@ -5736,6 +5888,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'dishwasher-pod-poison-boundary',
+        match: /(식기세척기\s*세제|dishwasher\s*(pod|detergent)|식세기\s*포드|식기\s*세제\s*먹|식기세척\s*캡슐)/,
+        title: '식기세척기 세제·캡슐을 삼키거나 눈에 넣으면 입·눈을 헹구고 바로 상담하세요',
+        lead: '식기세척기 전용 세제·포드도 세탁 포드처럼 강하게 자극할 수 있습니다. 삼키면 토하게 강제하지 말고, 눈에 들어갔으면 흐르는 물로 씻은 뒤 중독 상담·응급실을 이용하세요. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['위험', '입·식도 자극, 눈 손상, 호흡 이상'],
+            ['예방', '잠금 수납, 문을 연 채 세제 방치 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '식세기 세제 위치를 아이 손이 닿지 않게 바꾸세요.'],
+            ['하지 않을 일', '예쁘게 보이는 캡슐을 장난감처럼 두지 마세요.'],
+            ['관련', '세탁 포드·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 세제 포드 안전', 'https://www.cpsc.gov/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
         id: 'laundry-pod-poison',
         match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
         title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
@@ -5810,6 +5981,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 설소대·수유', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Tongue-Tie.aspx'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'lazy-eye-amblyopia-boundary',
+        match: /(약시|게으른\s*눈|lazy\s*eye|amblyopia|한쪽\s*눈\s*잘\s*안|가림\s*치료)/,
+        title: '한쪽 시력이 약한 약시 의심은 조기 시력 평가가 중요하고, 온라인으로 단정하지 마세요',
+        lead: '약시는 한쪽 눈의 시력 발달이 약해질 수 있는 상태이며, 일찍 발견하면 치료 여지가 커질 수 있습니다. 사진·가정 테스트만으로 진단하지 마세요. 가림 치료·안경 여부는 안과·의료진이 정합니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['신호', '한쪽으로만 봄, 사시, 고개 기울임, 가족력'],
+            ['행동', '정기 시력·사시 검진, 이상 시 의뢰']
+        ],
+        blocks: [
+            ['지금 할 일', '눈이 몰리는지·빛 반사가 대칭인지 관찰하세요.'],
+            ['하지 않을 일', 'SNS 처방으로 가림 시간을 정하지 마세요.'],
+            ['관련', '사시·시력 걱정 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 시력·약시 개요', 'https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/default.aspx'],
+            ['CDC 시력 건강 개요', 'https://www.cdc.gov/vision-health/']
         ]
     },
     {
@@ -6141,6 +6331,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'generator-indoor-co-boundary',
+        match: /(발전기\s*실내|generator\s*indoor|휴대용\s*발전기|정전\s*발전기|캠핑\s*발전기\s*텐트|발전기\s*일산화)/,
+        title: '휴대용 발전기는 실내·차고·텐트에서 돌리지 마세요. 일산화탄소 위험이 큽니다',
+        lead: '발전기는 실외 먼 곳에서만 사용하고, 창문·문 근처도 위험할 수 있습니다. 일산화탄소는 냄새·색이 없어 가족 여러 명이 두통·구토·처짐을 보이면 대피 후 구조를 요청하세요. 경보기 설치를 권합니다. 제품 순위는 하지 않습니다.',
+        points: [
+            ['금지', '실내, 차고, 지하, 텐트, 창가 바로 앞'],
+            ['응급', '여러 명 동시 증상 → 밖으로·119']
+        ],
+        blocks: [
+            ['지금 할 일', '정전 대비 발전기 위치를 실외로 계획하세요.'],
+            ['하지 않을 일', '문 열어 둔 차고 안에서 돌리지 마세요.'],
+            ['관련', '일산화탄소 경보·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 발전기·일산화탄소', 'https://www.cdc.gov/carbon-monoxide/'],
+            ['CPSC 발전기 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'carbon-monoxide-alarm',
         match: /(일산화\s*탄소|CO\s*경보|일산화탄소\s*경보|가스\s*중독|연탄|보일러\s*가스|스모크\s*알람|화재\s*경보기)/,
         title: '일산화탄소·화재 경보기는 설치·점검하고, 두통·구토·처짐이 여러 명이면 대피하세요',
@@ -6176,6 +6385,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 신발', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Baby-Shoes.aspx'],
             ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
+        id: 'wild-mushroom-poison-boundary',
+        match: /(독버섯|야생\s*버섯|mushroom\s*poison|산에서\s*버섯|주워\s*온\s*버섯|버섯\s*중독\s*아이)/,
+        title: '야생·주워 온 버섯은 먹이지 마세요. 삼켰으면 조각을 남기고 바로 상담·응급실로 가세요',
+        lead: '독버섯은 생김만으로 구별하기 어렵고, 늦게 증상이 나타나기도 합니다. 민간 “해독”을 하지 말고, 남은 버섯을 가져가 중독 상담·응급실을 이용하세요. 채집 버섯 요리 추천은 하지 않습니다.',
+        points: [
+            ['예방', '야생 버섯 채집·섭취 금지, 마당 버섯 치우기'],
+            ['노출', '구토·설사·처짐·황달 의심 시 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '마당·산책로에서 버섯을 따지 않게 하세요.'],
+            ['하지 않을 일', '인터넷 사진과 비교해 “식용”으로 단정하지 마세요.'],
+            ['관련', '중독·화분 식물 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 버섯 중독 개요', 'https://www.cdc.gov/poisonprevention/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
         ]
     },
     {
