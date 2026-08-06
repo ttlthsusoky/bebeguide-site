@@ -1731,6 +1731,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sibling-biting-daycare-boundary',
+        match: /(어린이집\s*물림|동생\s*물어|형제\s*깨물|daycare\s*biting|친구\s*깨물|물기\s*습관)/,
+        title: '물기·깨물기는 흔할 수 있으나, 상처·반복이면 대응 방법을 시설·의료진과 상의하세요',
+        lead: '언어가 부족한 시기에 물기가 나타날 수 있습니다. 즉시 중단·짧게 설명·관심을 물기로 보상하지 않기. 피부 상처는 세척 후 감염 징후를 봅니다. “특효 훈육템” 추천은 하지 않습니다.',
+        points: [
+            ['즉시', '분리, 짧은 말, 상처 세척'],
+            ['예방', '피곤·배고픔 신호, 대체 표현']
+        ],
+        blocks: [
+            ['지금 할 일', '물린 시간을 기록하고 시설에 알리세요.'],
+            ['하지 않을 일', '맞물어 “가르치지” 마세요.'],
+            ['관련', '떼쓰기·물기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물기·공격 행동 개요', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/default.aspx'],
+            ['CDC 아동 발달', 'https://www.cdc.gov/ncbddd/childdevelopment/']
+        ]
+    },
+    {
         id: 'tantrum-aggression',
         match: /(떼쓰|떼를\s*쓰|고집|물어요|무는\s*행동|물기|때려|때리는|밀쳐|소리\s*질러|공격)/,
         title: '떼쓰기는 흔하지만 때리기·물기는 바로 막아야 합니다',
@@ -4097,6 +4116,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'grandparent-candy-boundary',
+        match: /(조부모\s*사탕|할머니\s*과자|할머니\s*사탕|grandpa\s*candy|할아버지\s*간식|할아버지\s*사탕|친정\s*과자)/,
+        title: '조부모가 간식을 많이 줄 때는 건강·치아 이유로 경계를 정하고, 아이 앞에서 다투지 마세요',
+        lead: '사랑의 표현이 단 간식으로 나타날 수 있습니다. 미리 양·종류 규칙을 정하고, 물·과일 대안을 제안하세요. 아이 앞에서 큰 싸움은 피합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['규칙', '간식 시간, 양, 식사 전 금지'],
+            ['소통', '감사 + 이유(치아·배부름) 짧게']
+        ],
+        blocks: [
+            ['지금 할 일', '조부모와 “하루에 한 번” 같은 합의를 해보세요.'],
+            ['하지 않을 일', '아이 앞에서 간식을 뺏으며 소리 지르지 마세요.'],
+            ['관련', '첨가당·주스·양치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 설탕·영양 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 첨가당', 'https://www.cdc.gov/nutrition/data-statistics/added-sugars.html']
+        ]
+    },
+    {
         id: 'salt-sugar-baby-food',
         match: /(이유식|아기\s*음식|유아식).*(소금|설탕|간|단맛)|소금.*(이유식|아기)|설탕.*(이유식|아기)|저염\s*이유식/,
         title: '이유식에 소금·설탕을 따로 넣지 않는 편이 좋습니다',
@@ -5176,6 +5214,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 이유식·음료', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html'],
             ['AAP 컵·음료 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Recommended-Drinks-for-Young-Children-Ages-0-5.aspx'],
             ['생우유 전환 안내', '#home']
+        ]
+    },
+    {
+        id: 'school-mask-when-boundary',
+        match: /(학교\s*마스크|어린이집\s*마스크|마스크\s*언제\s*써|mask\s*school|아이\s*마스크\s*필수)/,
+        title: '마스크 착용은 연령·호흡·시설·보건 안내를 따르고, 영아에게 억지로 씌우지 마세요',
+        lead: '어린 영아는 마스크가 호흡에 부담이 될 수 있어 권고가 제한적인 경우가 많습니다. 학교·지역 지침과 의료진 안내를 우선하세요. 브랜드·“필수 국민템” 순위는 하지 않습니다.',
+        points: [
+            ['연령', '영아 강제 착용 자제, 시설 규정 확인'],
+            ['사용', '호흡 편한 착용, 더러워지면 교체']
+        ],
+        blocks: [
+            ['지금 할 일', '학교·어린이집 최신 마스크 안내를 확인하세요.'],
+            ['하지 않을 일', '숨이 찬 아이에게 두꺼운 마스크를 겹쳐 씌우지 마세요.'],
+            ['관련', '미세먼지·손 씻기·호흡기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 마스크 개요', 'https://www.cdc.gov/mask/'],
+            ['질병관리청', 'https://www.kdca.go.kr/'],
+            ['AAP 감염 예방 개요', 'https://www.healthychildren.org/English/health-issues/conditions/prevention/Pages/default.aspx']
         ]
     },
     {
@@ -6557,6 +6615,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sprinkler-play-safety',
+        match: /(스프링클러\s*물놀이|sprinkler\s*play|잔디\s*스프링클러\s*아이|호스\s*분수\s*놀이)/,
+        title: '스프링클러 물놀이는 미끄럼·넘어짐을 보고, 고인 물·전기 선을 치우세요',
+        lead: '잔디 물놀이도 미끄러져 다칠 수 있습니다. 젖은 보도블록·전선·공구를 치우고 감독하세요. 물을 마실 호스 물은 권하지 않습니다.',
+        points: [
+            ['안전', '평평한 잔디, 장애물 제거, 감독'],
+            ['위생', '호스 물 마시기 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '놀이 구역의 돌·장난감을 치우세요.'],
+            ['하지 않을 일', '전기 연장선 위에서 물놀이를 하지 마세요.'],
+            ['관련', '호스 물·익사·열 질환 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 여름 놀이 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'water-drowning-safety',
         match: /(익사|물에\s*빠|욕조.*혼자|목욕.*자리\s*비|물놀이\s*안전|수영장\s*아기|튜브만\s*믿)/,
         title: '목욕·물놀이는 팔 뻗으면 닿는 거리에서, 잠깐도 혼자 두지 마세요',
@@ -7368,6 +7445,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sledding-winter-safety',
+        match: /(썰매\s*타기|sledding|눈썰매\s*안전|비탈\s*썰매|튜브\s*썰매\s*아이)/,
+        title: '썰매는 헬멧을 쓰고, 차도·나무·얼음 강으로 향하지 않는 비탈을 고르세요',
+        lead: '썰매 사고는 머리·목 부상이 날 수 있습니다. 안전한 비탈, 한 명씩, 끝에서 비키기, 야간 자제가 중요합니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['장소', '차도·호수 얼음 피하기, 장애물 없는 비탈'],
+            ['장비', '헬멧, 장갑, 따뜻한 옷']
+        ],
+        blocks: [
+            ['지금 할 일', '비탈 끝에 도로·나무가 있는지 확인하세요.'],
+            ['하지 않을 일', '여러 명이 한 썰매에 겹쳐 타지 마세요.'],
+            ['관련', '동상·헬멧 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 겨울 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CDC 동상·한랭', 'https://www.cdc.gov/winter-weather/prevention/']
+        ]
+    },
+    {
         id: 'frostbite-cold-weather-boundary',
         match: /(동상|추위\s*화상|frostbite|손가락\s*하얘|발가락\s*얼|귀\s*동상|심한\s*추위\s*외출)/,
         title: '심한 추위 노출 후 창백·감각 이상이 있으면 따뜻하게 하고 진료를 검토하세요',
@@ -7403,6 +7499,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 아동 더위', 'https://www.cdc.gov/extreme-heat/prevention/index.html'],
             ['AAP 더위 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Protecting-Children-from-Extreme-Heat-Information-for-Parents.aspx']
+        ]
+    },
+    {
+        id: 'concussion-return-boundary',
+        match: /(뇌진탕\s*복귀|concussion\s*return|머리\s*다친\s*뒤\s*운동|스포츠\s*뇌진탕|경기\s*복귀\s*머리)/,
+        title: '머리 충격 후 어지럼·구토·의식 변화가 있으면 운동 복귀를 서두르지 말고 진료를 받으세요',
+        lead: '뇌진탕 의심 시 당일 경기로 바로 복귀하지 않는 것이 중요합니다. 증상 평가와 단계적 복귀는 의료진 안내를 따르세요. 사이트에서 복귀 일수를 단정하지 않습니다.',
+        points: [
+            ['즉시', '경기 중단, 관찰, 악화 시 응급실'],
+            ['복귀', '의료진 허가, 단계적 활동']
+        ],
+        blocks: [
+            ['지금 할 일', '증상(두통·구토·혼란)을 기록하세요.'],
+            ['하지 않을 일', '“괜찮다”며 바로 다시 뛰게 하지 마세요.'],
+            ['관련', '머리 부딪힘·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 뇌진탕', 'https://www.cdc.gov/heads-up/'],
+            ['AAP 스포츠 부상 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/default.aspx']
         ]
     },
     {
@@ -7483,25 +7598,6 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
-        id: 'e-scooter-child-safety',
-        match: /(전동\s*킥보드|전기\s*킥보드|전동\s*스쿠터|아이\s*킥보드\s*도로|e-?\s*scooter)/,
-        title: '어린이 전동 킥보드·도로 주행은 헬멧·보호 장비와 교통 규칙을 지키고, 어린 영아와 함께 타지 마세요',
-        lead: '전동 킥보드는 속도·낙상 위험이 큽니다. 연령 제한·헬멧·야간 장비·보도 주행 금지 등 지역 규칙을 따르세요. 유아를 앞에 태우거나 안은 채 타는 것은 위험합니다. 제품 브랜드 순위는 하지 않습니다.',
-        points: [
-            ['장비', '헬멧, 보호대, 브레이크 상태'],
-            ['환경', '도로·보도 규정, 어두운 곳·빗길 주의']
-        ],
-        blocks: [
-            ['지금 할 일', '지역 연령·주행 규칙을 확인하세요.'],
-            ['하지 않을 일', '헬멧 없이·유아를 태운 채 타지 마세요.'],
-            ['관련', '헬멧·머리 부상 안내를 참고하세요.']
-        ],
-        links: [
-            ['NHTSA 이륜·스쿠터 안전 개요', 'https://www.nhtsa.gov/'],
-            ['AAP 바퀴 달린 놀이기구·헬멧', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Helmets-What-Every-Parent-Should-Know.aspx']
-        ]
-    },
-    {
         id: 'bike-trailer-child-safety',
         match: /(자전거\s*트레일러|바이크\s*트레일러|bike\s*trailer|자전거\s*뒤\s*유모차|자전거\s*연결\s*시트)/,
         title: '자전거 트레일러·연결 시트는 헬멧·벨트·교통 규칙을 지키고, 도로 상황에 맞게 쓰세요',
@@ -7533,6 +7629,101 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '헬멧이 눈썹 위 두 손가락 위치인지 확인하세요.'],
             ['하지 않을 일', '내리막·차도에서 타게 두지 마세요.'],
             ['관련', '헬멧·자전거 트레일러 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 자전거 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Safety-Making-Sure-Your-Child-is-Ready.aspx'],
+            ['CDC 자전거 안전', 'https://www.cdc.gov/transportationsafety/bicycle/']
+        ]
+    },
+    {
+        id: 'e-scooter-child-safety',
+        match: /(전동\s*킥보드|전기\s*킥보드|전동\s*스쿠터|아이\s*킥보드\s*도로|e-?\s*scooter)/,
+        title: '어린이 전동 킥보드·도로 주행은 헬멧·보호 장비와 교통 규칙을 지키고, 어린 영아와 함께 타지 마세요',
+        lead: '전동 킥보드는 속도·낙상 위험이 큽니다. 연령 제한·헬멧·야간 장비·보도 주행 금지 등 지역 규칙을 따르세요. 유아를 앞에 태우거나 안은 채 타는 것은 위험합니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 보호대, 브레이크 상태'],
+            ['환경', '도로·보도 규정, 어두운 곳·빗길 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '지역 연령·주행 규칙을 확인하세요.'],
+            ['하지 않을 일', '헬멧 없이·유아를 태운 채 타지 마세요.'],
+            ['관련', '헬멧·머리 부상 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 이륜·스쿠터 안전 개요', 'https://www.nhtsa.gov/'],
+            ['AAP 바퀴 달린 놀이기구·헬멧', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Helmets-What-Every-Parent-Should-Know.aspx']
+        ]
+    },
+    {
+        id: 'kick-scooter-child-safety',
+        match: /(발\s*킥보드|킥\s*스쿠터|kick\s*scooter|발이\s*미는\s*스쿠터|수동\s*킥보드)/,
+        title: '발 킥보드는 헬멧을 쓰고, 차도·내리막·야간을 피하세요',
+        lead: '전동 킥보드와 달리 발로 미는 킥보드도 넘어짐·충돌이 납니다. 헬멧, 닫힌 신발, 평평한 인도가 기본입니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 맞는 손잡이 높이'],
+            ['환경', '인도, 차도 금지, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '헬멧 착용 습관을 고정하세요.'],
+            ['하지 않을 일', '차도·주차장에서 타게 두지 마세요.'],
+            ['관련', '전동킥보드·헬멧 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'skateboard-child-safety',
+        match: /(스케이트보드\s*아이|skateboard\s*kid|보드\s*타기\s*아이|스케이드\s*보드\s*어린이)/,
+        title: '스케이트보드는 헬멧·보호구를 쓰고, 차도·급경사를 피하세요',
+        lead: '넘어짐·머리 부상 위험이 큽니다. 헬멧, 닫힌 신발, 평평한 공원 등에서 감독 아래 타게 하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 손목·무릎 보호(선택), 맞는 보드'],
+            ['환경', '차도 금지, 야간 자제, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '헬멧이 흔들리지 않는지 조이세요.'],
+            ['하지 않을 일', '차도·주차장에서 타게 두지 마세요.'],
+            ['관련', '헬멧·킥보드·자전거 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이·스포츠 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CDC 자전거·휠 스포츠 안전', 'https://www.cdc.gov/transportationsafety/bicycle/']
+        ]
+    },
+    {
+        id: 'roller-inline-skate-safety',
+        match: /(인라인\s*스케이트|롤러블레이드|roller\s*blade|인라인\s*아이|롤러\s*스케이트\s*아이)/,
+        title: '인라인·롤러 스케이트는 헬멧과 보호구를 쓰고, 평지에서 배우세요',
+        lead: '넘어져 손목·머리 부상이 흔합니다. 헬멧·손목 보호를 권하고, 차도·가파른 내리막을 피하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 손목·무릎·팔꿈치 보호'],
+            ['장소', '평지, 차도 금지, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '보호구 착용 후 잔디·평지에서 연습하세요.'],
+            ['하지 않을 일', '내리막에서 속도를 이기지 못한 채 타지 마세요.'],
+            ['관련', '헬멧·킥보드 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'training-wheels-bike-boundary',
+        match: /(보조\s*바퀴|트레이닝\s*휠|training\s*wheels|보조바퀴\s*자전거|네\s*발\s*자전거\s*아이)/,
+        title: '보조 바퀴 자전거도 헬멧이 필요하고, 차도·가파른 내리막을 피하세요',
+        lead: '보조 바퀴가 있어도 넘어질 수 있습니다. 헬멧, 맞는 안장 높이, 평지 연습이 우선입니다. 밸런스 바이크와 선택은 아이 발달·관심에 맡기고 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 안장·핸들 높이, 브레이크'],
+            ['환경', '평지, 차도 금지, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '헬멧과 타이어 공기압을 점검하세요.'],
+            ['하지 않을 일', '차도에서 “잠깐” 타게 두지 마세요.'],
+            ['관련', '헬멧·밸런스 바이크 안내를 참고하세요.']
         ],
         links: [
             ['AAP 자전거 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Safety-Making-Sure-Your-Child-is-Ready.aspx'],
@@ -8132,6 +8323,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'makeup-play-boundary',
+        match: /(화장\s*놀이|메이크업\s*놀이|kids\s*makeup|어린이\s*화장품|분장\s*놀이\s*아기)/,
+        title: '화장 놀이는 눈·입에 들어가지 않게 하고, 성인 화장품을 그대로 쓰지 마세요',
+        lead: '놀이 화장품도 자극·알레르기가 날 수 있습니다. 성인 제품·유통기한 지난 제품은 피하고, 놀이 후 세안하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['선택', '아이용 표시, 향 약한 것, 소량'],
+            ['금지', '눈·입 속, 공유 브러시 비위생']
+        ],
+        blocks: [
+            ['지금 할 일', '성인 화장품을 아이 손 닿지 않게 치우세요.'],
+            ['하지 않을 일', '글리터를 눈에 가까이 바르지 마세요.'],
+            ['관련', '화장품 섭취·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 피부·자극 개요', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'perfume-makeup-ingestion-boundary',
         match: /(향수\s*먹|화장품\s*먹|perfume\s*ingest|립스틱\s*먹|메이크업\s*삼킴|향수\s*마심)/,
         title: '향수·화장품을 마시거나 눈에 넣으면 입·눈을 헹구고 성분·양을 확인해 상담하세요',
@@ -8494,6 +8704,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CPSC 워터비즈 경고', 'https://www.cpsc.gov/'],
             ['AAP 이물질 삼킴 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'nail-salon-chemicals-boundary',
+        match: /(네일숍\s*아기|네일\s*살롱\s*아이|nail\s*salon\s*baby|매니큐어\s*샵\s*아이|네일\s*냄새\s*아기)/,
+        title: '네일숍의 강한 냄새·용제는 환기가 중요하고, 영아를 오래 데려가지 않는 편이 낫습니다',
+        lead: '네일 리무버·아크릴 등 화학 냄새는 자극이 될 수 있습니다. 가능하면 아이를 동반하지 않거나, 짧게·환기되는 자리를 선택하세요. 제품·샵 순위는 하지 않습니다.',
+        points: [
+            ['예방', '환기, 짧은 체류, 제품 방치 금지'],
+            ['노출', '눈·호흡 자극 시 밖으로']
+        ],
+        blocks: [
+            ['지금 할 일', '집 네일 용품을 잠가 두세요.'],
+            ['하지 않을 일', '리무버를 아이 옆 탁자에 열어 두지 마세요.'],
+            ['관련', '매니큐어 중독·에센셜 오일 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 실내 공기·자극 개요', 'https://www.cdc.gov/niosh/topics/indoorenv/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
         ]
     },
     {
