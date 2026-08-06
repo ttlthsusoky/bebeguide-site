@@ -429,6 +429,46 @@ const SEARCH_ALIAS_GROUPS = [
 // every answer below is written from the linked official or professional guidance.
 const COMMON_PARENT_ANSWERS = [
     {
+        id: 'measles-exposure-boundary',
+        match: /(홍역|measles|홍역\s*노출|홍역\s*의심|홍역\s*발진)/,
+        title: '홍역이 의심되거나 노출됐으면 사진 진단 없이 보건·의료 안내를 따르세요',
+        lead: '홍역은 전염력이 큰 바이러스 질환입니다. 고열·기침·콧물·결막 증상 뒤 발진 등이 나타날 수 있으나 사이트·사진으로 병명을 단정하지 않습니다. 의심·노출 시 미리 연락 후 의료기관·보건소 안내를 따르고, 접종 기록은 예방접종도우미 등에서 확인하세요. 치료 약 용량은 정하지 않습니다.',
+        points: [
+            ['노출·의심', '사전 연락 후 진료, 다중 이용 시설 자제 안내 따르기'],
+            ['예방', '연령별 MMR 등 접종 일정은 공식 도우미·의료진 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '접종 기록과 증상 시작 시각을 확인하세요.'],
+            ['하지 않을 일', '사진 SNS로 “홍역 아니다”고 단정하지 마세요.'],
+            ['관련', '발열·접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['질병관리청 홍역', 'https://www.kdca.go.kr/'],
+            ['CDC 홍역', 'https://www.cdc.gov/measles/'],
+            ['예방접종 일정 확인', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
+        id: 'pertussis-boundary',
+        match: /(백일해|pertussis|whooping\s*cough|백일\s*해|경련성\s*기침\s*아기|흡기\s*성\s*훅)/,
+        title: '백일해가 의심되면 기침 소리만으로 단정하지 말고 진료·접종 기록을 확인하세요',
+        lead: '백일해는 심한 기침 발작으로 이어질 수 있으며 영아에게 특히 위험할 수 있습니다. “훅” 소리·무호흡·청색증·수유 곤란이 있으면 바로 의료 평가가 필요합니다. 사진·영상 댓글로 진단하지 말고, 가족 접종·예방은 공식 일정을 따릅니다. 항생제 여부는 의료진이 정합니다.',
+        points: [
+            ['위험 신호', '영아 무호흡·청색증·처짐, 수유 중단, 기침 후 구토'],
+            ['예방', '연령별 접종, 임신·가족 접종은 의료진 안내']
+        ],
+        blocks: [
+            ['지금 할 일', '기침 양상·호흡·수유를 기록하고 진료 연락을 하세요.'],
+            ['하지 않을 일', '기침 억제 민간요법에만 의존하지 마세요.'],
+            ['관련', 'RSV·호흡·접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 백일해', 'https://www.cdc.gov/pertussis/'],
+            ['질병관리청 백일해', 'https://www.kdca.go.kr/'],
+            ['예방접종 일정', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
         id: 'flu-when-to-care',
         match: /(독감|인플루엔자|\bflu\b).*(병원|열|증상|아이|아기|의심)|아이.*독감|아기.*독감|독감\s*의심/,
         title: '독감 의심은 나이·호흡·수분·응급 신호를 보고 진료합니다',
@@ -1121,6 +1161,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'roseola-boundary',
+        match: /(돌발진|돌\s*발진|장미진|roseola|sixth\s*disease|열\s*내린\s*뒤\s*발진|고열\s*후\s*발진)/,
+        title: '고열 뒤 발진은 돌발진 등 여러 가능성이 있어 사진·문장으로 병명을 정하지 않습니다',
+        lead: '며칠 고열 뒤 몸·목에 분홍 발진이 나는 패턴은 돌발진(소아 장미진)으로 설명되기도 하지만, 비슷한 경과가 다른 감염에서도 나타날 수 있습니다. 사진 앱·댓글로 병명을 단정하지 말고, 처짐·호흡·수분·경련·발진 모양을 의료진이 봅니다. 해열제 용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['관찰', '열 기간, 발진 시작 시점, 수분·활력, 경련 여부'],
+            ['진료', '3개월 미만 발열, 깨우기 어려움, 호흡 곤란, 점상출혈성 발진, 탈수']
+        ],
+        blocks: [
+            ['지금 할 일', '열 시작·최고 체온·발진 시각·소변을 기록하세요.'],
+            ['하지 않을 일', '사진만 보고 “돌발진이니 괜찮다”고 단정하지 마세요.'],
+            ['관련', '발열·발진 경계 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 돌발진(roseola) 개요', 'https://www.cdc.gov/roseola/about/index.html'],
+            ['NHS 돌발진', 'https://www.nhs.uk/conditions/roseola/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1314,6 +1374,26 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 분유·수유 일반', 'https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/default.aspx'],
             ['CDC 분유 준비', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'formula-overdilute-boundary',
+        match: /(분유).{0,16}(묽게|물\s*많|과희석|너무\s*묽|물만\s*많)|과다\s*수분|물\s*중독\s*아기|formula\s*dilut|분유\s*물을?\s*많이/,
+        title: '분유를 임의로 묽게 타면 위험할 수 있습니다. 표시 비율을 지키세요',
+        lead: '“더 먹이려고” 물을 많이 넣어 묽게 타면 전해질 불균형·물 중독 위험이 생길 수 있습니다. 진하게 타기도 신장·탈수 부담이 됩니다. 제품 스쿱·물 비율을 그대로 지키고, 특수 조유는 의료진 지시만 따릅니다.',
+        points: [
+            ['원칙', '설명서 물·분말 비율, 스쿱 기준 유지'],
+            ['위험', '임의 희석·농축, 성인 눈대중']
+        ],
+        blocks: [
+            ['지금 할 일', '사용 중인 제품 조유표를 다시 확인하세요.'],
+            ['하지 않을 일', '배고프다고 물을 더 넣어 묽게 타지 마세요.'],
+            ['관련', '분유 조유·수유량 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유 준비(비율 유지)', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['AAP 분유 수유', 'https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/default.aspx'],
+            ['분유 조유 안내', '#home']
         ]
     },
     {
@@ -1729,6 +1809,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sleep-sack-blanket-boundary',
+        match: /(수면\s*조끼|슬립\s*색|슬립삭|sleep\s*sack|아기\s*침낭|이불\s*덮고\s*재우|담요\s*재우|느슨한\s*이불)/,
+        title: '1세 미만은 느슨한 이불보다 맞는 수면조끼·얇은 옷이 안전한 경우가 많습니다',
+        lead: '얼굴·몸을 덮는 느슨한 이불·담요는 질식 위험이 있어 권고되지 않는 경우가 많습니다. 적정 두께의 수면조끼(슬립색)나 얇은 옷으로 체온을 조절하고, 모자·두꺼운 이불로 과열되지 않게 합니다. 특정 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['우선', '등 자세, 빈 수면면, 과열 방지'],
+            ['피하기', '느슨한 이불·베개·인형·범퍼']
+        ],
+        blocks: [
+            ['지금 할 일', '침대 안 이불·쿠션을 치우고 옷·수면조끼 두께를 점검하세요.'],
+            ['하지 않을 일', '이불을 턱까지 덮거나 얼굴을 가리지 마세요.'],
+            ['관련', '안전수면·과열 안내를 참고하세요.']
+        ],
+        links: [
+            ['1세 미만 안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'safe-sleep-position',
         match: /(등\s*재우|안전\s*수면|엎어\s*재우|SIDS|영아돌연|동일\s*침구|범퍼)/,
         title: '1세 미만 잠은 등·별도 수면면·빈 공간이 기본입니다',
@@ -2055,6 +2155,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'nicotine-liquid-poison',
+        match: /(액상\s*니코틴|니코틴\s*액|전자\s*담배\s*액|베이프\s*액|vape\s*juice|니코틴\s*삼|액상\s*삼킴)/,
+        title: '전자담배 액상·니코틴 액을 삼키거나 피부에 많이 묻히면 응급입니다',
+        lead: '농축 니코틴 액상은 소량만 삼켜도 어린이에게 위험할 수 있습니다. 토하게 하지 말고 중독 상담·응급실 안내를 따르세요. 액상·기기·카트리지는 잠금 수납하고, 간접 노출 안내와 별개로 삼킴·접촉은 즉시 대응합니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '액상·기기 아이 손 밖, 원래 용기·잠금'],
+            ['노출 시', '토하게 강제 금지, 양·제품명 확인, 바로 상담·응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '집·가방에 액상이 열려 있지 않은지 확인하세요.'],
+            ['하지 않을 일', '물·민간 해독제로 시간을 끌지 마세요.'],
+            ['관련', '전자담배 간접 노출·약 잠금 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 니코틴 중독·전자담배', 'https://www.cdc.gov/tobacco/basic_information/e-cigarettes/'],
+            ['AAP 전자담배·니코틴', 'https://www.healthychildren.org/English/health-issues/conditions/tobacco/Pages/default.aspx'],
+            ['중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'secondhand-vape',
         match: /(전자\s*담배|액상\s*담배|베이핑|vape|간접\s*전자\s*담배|아이\s*앞에서\s*전자)/,
         title: '전자 담배 연기·에어로졸도 아이 주변에서 피하세요',
@@ -2152,6 +2272,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'milia-newborn-boundary',
+        match: /(밀리아|하얀\s*좁쌀|코\s*좁쌀|신생아\s*좁쌀|아기\s*얼굴\s*흰\s*점|milia)/,
+        title: '신생아 얼굴의 하얀 좁쌀(밀리아)은 흔한 편이며, 짜지 마세요',
+        lead: '코·볼 등에 작고 하얀 점이 생기는 밀리아는 많은 신생아에게 나타나며 대개 시간이 지나며 줄어듭니다. 짜거나 강한 스크럽·성인 여드름 약을 쓰지 마세요. 빨갛게 퍼지고 고름·발열·처짐이 있으면 다른 원인을 진료로 확인합니다. 사진만으로 병명을 단정하지 않습니다.',
+        points: [
+            ['관리', '순한 세정, 짜지 않기, 자극 화장품 금지'],
+            ['진료', '염증·고름·발열·급격한 악화']
+        ],
+        blocks: [
+            ['지금 할 일', '세안·보습은 순하게, 손을 대지 마세요.'],
+            ['하지 않을 일', '바늘로 짜거나 성인 여드름 약을 바르지 마세요.'],
+            ['관련', '땀띠·발진 경계 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신생아 피부', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['NHS 밀리아', 'https://www.nhs.uk/conditions/milia/']
+        ]
+    },
+    {
         id: 'heat-rash',
         match: /(땀띠|열꽃|좁쌀\s*발진|빨개진\s*좁쌀|더위\s*발진)/,
         title: '땀띠는 시원·건조하게, 고열·퍼짐·고름이면 진료합니다',
@@ -2246,6 +2385,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['토함·역류 안내', '#home'],
             ['AAP 토함 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Why-Babies-Spit-Up.aspx']
+        ]
+    },
+    {
+        id: 'newborn-pseudo-menses',
+        match: /(가성\s*월경|여아\s*출혈|여아\s*피|신생아\s*질|기저귀\s*피\s*여|아기\s*여아\s*피|질\s*분비\s*신생아|신생아\s*피\s*비침)/,
+        title: '신생아 여아의 약간의 피·분비는 호르몬 영향일 수 있고, 양·냄새·전신과 함께 봅니다',
+        lead: '출생 후 며칠 사이 여아 기저귀에 옅은 피·흰 분비가 보일 수 있으며, 모체 호르몬 영향으로 설명되는 경우가 있습니다. 양이 많거나 냄새가 심하고, 발열·처짐·배뇨 이상이 있으면 진료하세요. 사진만으로 정상·이상을 단정하지 않습니다.',
+        points: [
+            ['관찰', '양·색깔·냄새, 발열·처짐, 소변 줄기'],
+            ['진료', '지속·다량 출혈, 고름성 분비, 전신 증상']
+        ],
+        blocks: [
+            ['지금 할 일', '기저귀 사진을 남기기보다 양상과 시간을 글로 기록하세요.'],
+            ['하지 않을 일', '질 안을 면봉으로 깊게 닦지 마세요.'],
+            ['관련', '탯줄·발진 경계를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신생아 외음·기저귀 관찰', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Babys-First-Days-Bowel-Movements-and-Urination.aspx'],
+            ['NHS 신생아 돌봄', 'https://www.nhs.uk/baby/caring-for-a-newborn/']
         ]
     },
     {
@@ -3399,6 +3557,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'water-heater-scald-boundary',
+        match: /(온수기|보일러\s*온수|수온\s*조절|뜨거운\s*수돗물|욕조\s*물\s*온도|온수\s*화상\s*예방|탭\s*워터\s*화상)/,
+        title: '수돗물·욕조 온도를 미리 확인하고, 온수기는 너무 뜨겁지 않게 관리하세요',
+        lead: '뜨거운 수돗물은 수 초 만에 화상을 입을 수 있습니다. 목욕 전 팔꿈치로 온도를 확인하고, 아기를 물속에 혼자 두지 마세요. 가정 온수기 설정은 제조·배관 안내와 화상 예방 권고를 참고합니다. 특정 온도 숫자만으로 모든 집을 단정하지 않으며, 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['목욕', '미리 받기, 손·팔꿈치로 확인, 혼자 두지 않기'],
+            ['가정', '온수기·수도 온도 점검, 뜨거운 음료 멀리']
+        ],
+        blocks: [
+            ['지금 할 일', '욕조·세면대 물을 받기 전 온도를 확인하는 습관을 만드세요.'],
+            ['하지 않을 일', '아기를 받아 둔 뜨거운 물 근처에 혼자 두지 마세요.'],
+            ['관련', '화상 응급·목욕 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 화상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Preventing-Burns-at-Home.aspx'],
+            ['화상 응급 안내', '#home']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -3614,6 +3792,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 캠퍼 중독 주의', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Camphor-Products-Dangerous-for-Children.aspx'],
             ['CDC 감기 돌보기', 'https://www.cdc.gov/antibiotic-use/colds.html']
+        ]
+    },
+    {
+        id: 'aspirin-reye-boundary',
+        match: /(아스피린|aspirin|아세틸살리실|라이\s*증후군|Reye|어린이\s*아스피린|해열.*아스피린)/,
+        title: '발열·바이러스 의심 때 어린이에게 아스피린을 임의로 주지 마세요',
+        lead: '일부 바이러스 감염 중 아스피린(살리실산) 사용은 라이 증후군과 관련해 어린이에게 권고되지 않는 경우가 많습니다. 해열·진통이 필요하면 의료진이 연령에 맞는 성분을 정합니다. 용량·브랜드를 사이트·댓글로 정하지 않습니다.',
+        points: [
+            ['피하기', '감기·발열 때 아스피린·살리실산 함유 약 임의 사용'],
+            ['진료', '해열이 필요하거나 기존 처방 약이 있으면 의료진·약사 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있는 해열·진통 약 성분명(아세트아미노펜 등)을 확인하세요.'],
+            ['하지 않을 일', '성인 아스피린을 쪼개 주지 마세요.'],
+            ['관련', '발열·영아 감기약 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 라이 증후군·아스피린', 'https://www.cdc.gov/reye-syndrome/'],
+            ['AAP 해열·약 일반', 'https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/default.aspx'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
         ]
     },
     {
@@ -3941,6 +4139,45 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
             ['CDC 아동 손상 예방 개요', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'hand-sanitizer-ingestion',
+        match: /(손\s*소독제\s*먹|손소독제\s*삼|손\s*세정제\s*먹|알코올\s*젤\s*먹|sanitizer\s*ingest|손소독\s*마셨)/,
+        title: '손소독제·알코올 젤을 삼켰으면 토하게 하지 말고 중독 상담·진료를 하세요',
+        lead: '손소독제의 알코올 등은 소량이라도 어린이에게 위험할 수 있습니다. 삼킨 양·제품명을 확인하고 토하게 강제하지 마세요. 평소 손소독제는 아이 손 닿지 않게 두고, 손을 씻을 수 있으면 비누·물을 우선합니다. 용량·해독 처방을 사이트에서 하지 않습니다.',
+        points: [
+            ['예방', '펌프·뚜껑 잠금, 가방·낮은 선반 치우기'],
+            ['노출', '양·시간 기록, 토하게 금지, 상담·응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '제품 라벨을 챙기고 중독 상담·의료 안내를 따르세요.'],
+            ['하지 않을 일', '물·우유를 억지로 많이 먹여 “희석”하려 하지 마세요.'],
+            ['관련', '약·세제 잠금 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['손 씻기 안내', '#home']
+        ]
+    },
+    {
+        id: 'drawstring-clothing-danger',
+        match: /(옷\s*끈|모자\s*끈|드로우\s*스트링|drawstring|목\s*끈\s*옷|후드\s*끈\s*아기|옷\s*모자\s*끈)/,
+        title: '모자·옷 목 끈(드로우스트링)은 질식·걸림 위험이 있어 어린 아이 옷에서 빼 주세요',
+        lead: '목·후드 주변 끈은 놀이기구·가구에 걸리거나 목을 조일 수 있습니다. 어린 아이 겉옷에서는 끈을 제거하거나 끈 없는 디자인을 쓰는 안내가 있습니다. 특정 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['점검', '모자·후드·목 주변 끈, 허리 끈 길이'],
+            ['조치', '자르거나 빼기, 놀이터·버스에서 특히 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '외투·모자 끈을 확인하고 필요하면 제거하세요.'],
+            ['하지 않을 일', '긴 끈이 달린 옷을 입은 채 미끄럼틀에 혼자 두지 마세요.'],
+            ['관련', '질식·놀이터 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 아동 옷 끈 위험', 'https://www.cpsc.gov/'],
+            ['AAP 질식·걸림 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Choking-Prevention.aspx']
         ]
     },
     {
