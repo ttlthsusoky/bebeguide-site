@@ -827,6 +827,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'background-tv-boundary',
+        match: /(배경\s*티비|티비\s*틀어\s*놓고|백그라운드\s*TV|TV\s*소음|유튜브\s*틀어\s*놓고\s*놀)/,
+        title: '배경으로 계속 틀어 두는 영상·TV는 어린 아이 놀이와 말에 방해가 될 수 있습니다',
+        lead: '화면을 “배경 음악”처럼 하루 종일 켜 두면 보호자·아이의 말 주고받기가 줄어들 수 있다는 우려가 있습니다. 두 돌 전은 영상보다 사람과의 놀이가 우선입니다. 켜 둘 때도 내용·시간을 의식하세요. 특정 채널 추천은 하지 않습니다.',
+        points: [
+            ['우선', '대화·놀이, 화면 끄기 구간'],
+            ['경계', '식사·재우기 기본값으로 영상 쓰지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '하루 중 TV가 켜져 있는 시간을 한 번 적어 보세요.'],
+            ['하지 않을 일', '울 때마다 자동으로 영상을 틀지 마세요.'],
+            ['관련', '화면 시간·식사 중 영상 안내를 참고하세요.']
+        ],
+        links: [
+            ['WHO 화면·신체활동', 'https://www.who.int/publications/i/item/9789240015128'],
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
+            ['화면 시간 안내', '#home']
+        ]
+    },
+    {
         id: 'screen-time',
         match: /(영상|유튜브|티비|tv|스크린|핸드폰|휴대폰|미디어).*(보여|노출|봐도|시간|괜찮)|영상\s*노출/,
         title: '두 돌 전에는 영상보다 사람과 노는 시간을 우선하세요',
@@ -1045,6 +1065,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'honey-cough-over-one',
+        match: /(돌\s*이후\s*꿀|1세\s*이후\s*꿀|꿀\s*기침|기침\s*꿀|꿀차\s*아이)/,
+        title: '돌이 지난 뒤에는 기침에 꿀을 쓰는 논의가 있으나, 돌 전에는 절대 금지입니다',
+        lead: '돌 전 꿀은 보툴리눔 위험으로 주지 않습니다. 돌이 지난 아이의 기침에 꿀이 도움될 수 있다는 연구가 있으나, 모든 기침·모든 아이에게 필수는 아닙니다. 용량·상표 추천은 하지 않으며, 호흡 곤란·고열·처짐이면 진료가 우선입니다.',
+        points: [
+            ['돌 전', '꿀 금지'],
+            ['돌 후', '의료 상황 우선, 임의 다량 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 개월 수를 확인하고 돌 전이면 꿀을 치우세요.'],
+            ['하지 않을 일', '영아 분유·차에 꿀을 넣지 마세요.'],
+            ['관련', '돌 전 꿀 금지·감기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 꿀·보툴리눔', 'https://www.cdc.gov/botulism'],
+            ['AAP 기침·감기', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/Coughs-and-Colds-Medicines-or-Home-Remedies.aspx'],
+            ['돌 전 꿀 안내', '#home']
+        ]
+    },
+    {
         id: 'honey-under-one',
         match: /(꿀).*(먹|주|바|넣)|한\s*살\s*(전|미만).*꿀|돌\s*전.*꿀|영아.*꿀|벌꿀/,
         title: '돌 전에는 꿀을 주지 않습니다',
@@ -1216,6 +1256,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['발열·응급 가이드', 'blog/baby-fever-cold-guide.html'],
             ['NICE 발열 평가(동반 증상)', 'https://www.nice.org.uk/guidance/ng143/chapter/Recommendations']
+        ]
+    },
+    {
+        id: 'hip-dysplasia-swaddle-check',
+        match: /(고관절\s*탈구|엉덩이\s*탈구|발달성\s*고관절|속싸개\s*다리|다리\s*쭉\s*속싸개|hip\s*dysplasia)/,
+        title: '속싸개할 때 다리를 억지로 모으거나 펴지 말고, 엉덩이 움직임 여유를 주세요',
+        lead: '속싸개는 팔을 감싸도 다리가 굽히고 벌릴 여유가 있어야 한다는 안내가 있습니다. 다리를 일자로 고정하는 방식은 고관절에 부담이 될 수 있습니다. 뒤집기 시작하면 속싸개를 중단합니다. 진단·보조기 여부는 의료진이 정합니다.',
+        points: [
+            ['속싸개', '다리 여유, 엉덩이 굴곡·벌림 가능'],
+            ['진료', '다리 길이 차이, 움직임 비대칭, 가족력 걱정']
+        ],
+        blocks: [
+            ['지금 할 일', '속싸개 제품이 다리를 너무 조이는지 확인하세요.'],
+            ['하지 않을 일', '뒤집기 시작한 아기를 속싸개로 재우지 마세요.'],
+            ['관련', '속싸개·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 속싸개·고관절', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Swaddling-Is-it-Safe.aspx'],
+            ['국제 고관절 기구 안내(영)', 'https://hipdysplasia.org/'],
+            ['속싸개 안내', '#home']
         ]
     },
     {
@@ -1429,6 +1489,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 콜릭·울음 안내', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Colic.aspx'],
             ['부모 마음건강 연결', '#parent-health']
+        ]
+    },
+    {
+        id: 'umbilical-hernia-boundary',
+        match: /(배꼽\s*탈장|제대\s*탈장|배꼽\s*볼록|울\s*때\s*배꼽|umbilical\s*hernia)/,
+        title: '배꼽이 볼록해 보이는 탈장은 흔한 편이며, 끼임·통증·색 변화가 있으면 진료합니다',
+        lead: '영아 배꼽 탈장은 울 때 더 볼록해 보일 수 있고 많은 경우 경과를 봅니다. 테이프·동전으로 누르는 민간 요법은 권하지 않습니다. 단단히 끼인 듯 아프고, 토하고, 색이 변하면 응급 평가가 필요합니다. 수술 시점은 의료진이 정합니다.',
+        points: [
+            ['관찰', '크기 변화, 통증, 환원 여부'],
+            ['바로 진료', '끼임 의심, 구토, 처짐, 보라·검은 색']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 볼록해지는지·아픈지 기록하세요.'],
+            ['하지 않을 일', '배꼽을 동전·테이프로 누르지 마세요.'],
+            ['관련', '탯줄 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배꼽 탈장', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Umbilical-Cord-Care-and-Umbilical-Hernia.aspx'],
+            ['탯줄 안내', '#home']
         ]
     },
     {
@@ -1986,6 +2065,26 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['발진 진료 경계', '#home']
+        ]
+    },
+    {
+        id: 'ors-dehydration-boundary',
+        match: /(경구\s*수액|ORS|탈수\s*이온|수액\s*팩\s*아이|경구\s*수분\s*보충|페디아\s*라이트)/,
+        title: '탈수가 걱정되면 경구 수분 보충을 의료 안내로 하고, 스포츠 음료로 대체하지 마세요',
+        lead: '설사·구토 때 경구 수액(ORS)이 도움이 될 수 있다는 공식 안내가 있습니다. 스포츠·이온 음료·주스가 항상 같은 역할은 아닙니다. 처짐·소변 감소·피 묻은 설사·담즙성 구토면 진료가 우선입니다. 제품 브랜드·정확한 ml 처방은 사이트에서 하지 않습니다.',
+        points: [
+            ['신호', '소변 감소, 입 마름, 처짐, 눈물 감소'],
+            ['경계', '스포츠 음료 일상 대체, 임의 성인 수액']
+        ],
+        blocks: [
+            ['지금 할 일', '소변 횟수·구토·설사 횟수를 기록하세요.'],
+            ['하지 않을 일', '처진 아이에게 억지로 많은 양을 한 번에 먹이지 마세요.'],
+            ['관련', '탈수·설사·스포츠 음료 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 설사·수분', 'https://www.cdc.gov/diarrhea/'],
+            ['WHO 경구 수액 개요', 'https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease'],
+            ['탈수 안내', '#home']
         ]
     },
     {
@@ -2910,7 +3009,26 @@ const COMMON_PARENT_ANSWERS = [
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
         ]
     },
-{
+    {
+        id: 'camphor-menthol-rub-infant',
+        match: /(캠퍼|멘톨\s*연고|가슴\s*문지|기침\s*연고|비ックス|Vicks|캠포\s*로션|아로마\s*연고\s*아기)/,
+        title: '영아에게 캠퍼·멘톨 계열 가슴 연고를 함부로 바르지 마세요',
+        lead: '일부 기침·코막힘 연고에는 캠퍼·멘톨이 들어 있어 어린 아이에게 자극·중독 위험이 거론됩니다. 영아 얼굴·코 밑에 바르거나 코에 넣는 민간 요법을 피하세요. 필요 시 의료진·약사와 연령 적합 여부를 확인합니다. 브랜드 추천·용량은 하지 않습니다.',
+        points: [
+            ['경계', '영아 코 밑·가슴 도포, 먹이기, 밀폐 흡입'],
+            ['우선', '수분·코 세척 안내, 호흡·발열 관찰, 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있는 연고 성분표를 확인하세요.'],
+            ['하지 않을 일', '성인 기침 연고를 아기 발바닥에 바르는 민간 요법을 따라 하지 마세요.'],
+            ['관련', '감기약·에센셜 오일 경계를 참고하세요.']
+        ],
+        links: [
+            ['AAP 캠퍼 중독 주의', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Camphor-Products-Dangerous-for-Children.aspx'],
+            ['CDC 감기 돌보기', 'https://www.cdc.gov/antibiotic-use/colds.html']
+        ]
+    },
+    {
         id: 'cold-medicine-under-two',
         match: /(감기\s*약|종합\s*감기|코\s*막힘\s*약|기침\s*약|해열제\s*말고\s*감기|영아\s*감기\s*약|2세\s*미만\s*감기|돌\s*전\s*감기\s*약)/,
         title: '어린 아이에게 일반 감기약은 함부로 주지 않습니다',
@@ -2967,6 +3085,25 @@ const COMMON_PARENT_ANSWERS = [
             ['NHTSA 차 안 열·아동', 'https://www.nhtsa.gov/summer-heat-child-safety'],
             ['AAP 차 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Prevent-Child-Deaths-in-Hot-Cars.aspx'],
             ['카시트 원칙', '#home']
+        ]
+    },
+    {
+        id: 'jumper-exersaucer-boundary',
+        match: /(도어\s*점퍼|점퍼\s*아기|엑서\s*사우저|액티비티\s*센터|baby\s*jumper|exersaucer|점프\s*의자)/,
+        title: '문틀 점퍼·오래 태우는 활동 의자는 낙상·자세 부담이 있어 시간을 짧게 하세요',
+        lead: '문틀에 매다는 점퍼, 오래 앉혀 두는 활동 센터는 낙상·과도한 사용 우려가 있습니다. 보행기처럼 “빨리 걷게” 해 주지 않으며, 깨어 놀 때도 보호자 감시와 짧은 사용이 안전합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['사용', '짧은 시간, 설명서 연령·체중, 문틀 고정 확인'],
+            ['우선', '바닥 놀이, 터미타임, 안아서 놀기']
+        ],
+        blocks: [
+            ['지금 할 일', '점퍼·활동 의자에 하루 얼마나 두는지 점검하세요.'],
+            ['하지 않을 일', '문틀 점퍼에 태운 채 자리를 비우지 마세요.'],
+            ['관련', '보행기·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 보행기·유사 제품 경계', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Baby-Walkers-A-Dangerous-Choice.aspx'],
+            ['CDC 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
         ]
     },
     {
@@ -3159,6 +3296,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['NHTSA 자전거 안전', 'https://www.nhtsa.gov/bicycle-safety'],
             ['AAP 헬멧', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Helmets-What-Every-Parent-Should-Know.aspx']
+        ]
+    },
+    {
+        id: 'medicine-cabinet-lock',
+        match: /(약\s*보관|약\s*잠금|약품\s*수납|아이\s*약\s*손|영양제\s*삼킴|감기약\s*삼킴)/,
+        title: '약·영양제·철분제는 잠그는 수납에 두고, 사탕처럼 보이지 않게 하세요',
+        lead: '알록달록한 약·젤리 영양제·철분제는 아이가 과량 삼키기 쉽습니다. 원래 용기에 잠금 수납하고, 방문객 가방도 주의하세요. 삼켰으면 토하게 하지 말고 중독 상담·응급실 안내를 따릅니다. 용량·해독 처방을 사이트에서 하지 않습니다.',
+        points: [
+            ['예방', '높은 잠금, 뚜껑, 주스·사탕과 분리'],
+            ['노출', '약 이름·개수 기록, 바로 상담']
+        ],
+        blocks: [
+            ['지금 할 일', '싱크대 아래·가방 속 약을 점검하세요.'],
+            ['하지 않을 일', '약 뚜껑을 열린 채 소파에 두지 마세요.'],
+            ['관련', '세제 포드·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/'],
+            ['AAP 약 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/medication-safety/Pages/default.aspx']
         ]
     },
     {
@@ -3467,6 +3623,82 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가습기', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Humidifiers-and-Vaporizers.aspx'],
             ['EPA 가습기 안내(영)', 'https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers']
+        ]
+    },
+    {
+        id: 'hair-tourniquet',
+        match: /(머리카락\s*감|헤어\s*토너|발가락\s*실\s*감|손가락\s*실\s*감|머리카락\s*조이|hair\s*tourniquet)/,
+        title: '발가락·손가락·성기에 머리카락·실이 감기면 빨리 확인하고 진료를 보세요',
+        lead: '가느다란 머리카락·실이 발가락·손가락 등에 감겨 붓고 아플 수 있습니다. 억지로 깊게 파내지 말고, 보이는 실은 조심히 풀거나 의료진에게 맡기세요. 심하게 붓고 색이 변하면 응급으로 봅니다.',
+        points: [
+            ['발견', '이유 없는 울음, 한 발가락만 붓고 빨개짐'],
+            ['대응', '확대경·밝은 빛으로 확인, 무리한 절단 금지, 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '양말·수면 가운 실밥·긴 머리카락을 정리하세요.'],
+            ['하지 않을 일', '보이지 않는 실을 바늘로 깊게 쑤시지 마세요.'],
+            ['관련', '집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 헤어 토너케 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx'],
+            ['NHS 손가락·발가락 감김(영)', 'https://www.nhs.uk/conditions/']
+        ]
+    },
+    {
+        id: 'carbon-monoxide-alarm',
+        match: /(일산화\s*탄소|CO\s*경보|일산화탄소\s*경보|가스\s*중독|연탄|보일러\s*가스|스모크\s*알람|화재\s*경보기)/,
+        title: '일산화탄소·화재 경보기는 설치·점검하고, 두통·구토·처짐이 여러 명이면 대피하세요',
+        lead: '보일러·난로·밀폐 연소는 일산화탄소 위험이 있습니다. 경보기를 두고 배터리를 점검하세요. 가족 여러 명이 동시에 두통·메스꺼움·처짐을 보이면 창을 열고 밖으로 나가 구조를 요청합니다. 특정 경보기 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '연소 기구 환기, CO·화재 경보기, 정기 점검'],
+            ['응급', '여러 명 동시 증상, 의식 저하 → 대피·119']
+        ],
+        blocks: [
+            ['지금 할 일', '경보기 위치와 배터리 상태를 확인하세요.'],
+            ['하지 않을 일', '밀폐된 실내에서 발전기·숯불을 쓰지 마세요.'],
+            ['관련', '집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 일산화탄소', 'https://www.cdc.gov/carbon-monoxide/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'first-walking-shoes',
+        match: /(첫\s*신발|아기\s*신발|걸음마\s*신발|맨발\s*걷기|소프트\s*슈즈|walking\s*shoes\s*baby)/,
+        title: '실내 걸음마는 맨발·미끄럼 없는 양말이 편할 수 있고, 바깥은 발에 맞는 신발을 신기세요',
+        lead: '걷기 시작 시 실내에서는 맨발이나 미끄럼 방지 양말로 바닥을 느끼는 편이 낫다는 안내가 많습니다. 바깥·울퉁불퉁한 곳에서는 발에 맞고 미끄럽지 않은 신발이 도움이 됩니다. “최고 브랜드·교정 신발” 순위는 하지 않으며, 발 변형 걱정은 의료진과 상의합니다.',
+        points: [
+            ['실내', '맨발·미끄럼 방지, 너무 두꺼운 바닥 피하기'],
+            ['실외', '발 길이·폭에 맞는 신발, 끈·벨크로 고정']
+        ],
+        blocks: [
+            ['지금 할 일', '신발이 발가락을 누르지 않는지 확인하세요.'],
+            ['하지 않을 일', '큰 신발을 “여유”로 오래 신기지 마세요.'],
+            ['관련', '보행기·발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신발', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Baby-Shoes.aspx'],
+            ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
+        id: 'houseplant-poison-boundary',
+        match: /(관엽\s*식물|독성\s*식물|식물\s*중독|화분.{0,12}(먹|중독)|식물.{0,12}(먹|중독|잎)|디펜바키아|화분\s*먹고)/,
+        title: '화분·잎을 입에 넣는 아기가 있으면 독성 식물을 치우고, 삼켰으면 상담하세요',
+        lead: '일부 관엽 식물은 자극·독성이 있습니다. 식물 이름·양을 확인하고 중독 상담·진료 경로를 이용하세요. 민간으로 토하게 하지 마세요. 특정 식물 판매 추천은 하지 않습니다.',
+        points: [
+            ['예방', '잎·열매 손 닿지 않게, 이름표 유지'],
+            ['노출', '입 헹구기, 토하게 강제 금지, 상담·응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥 가까운 화분을 높은 곳으로 옮기세요.'],
+            ['하지 않을 일', '어떤 식물인지 모른 채 민간 해독제를 쓰지 마세요.'],
+            ['관련', '중독·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
         ]
     }
 
