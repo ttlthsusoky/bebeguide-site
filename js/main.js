@@ -706,6 +706,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'plastic-bag-suffocation',
+        match: /(비닐봉지|비닐\s*봉투|플라스틱\s*백|드라이\s*클리닝\s*비닐|옷\s*비닐|머리\s*비닐|plastic\s*bag\s*suffocation)/,
+        title: '비닐봉지·옷 커버 비닐은 아이 손 닿지 않게 치우세요. 질식 위험이 있습니다',
+        lead: '얇은 비닐이 얼굴·머리를 덮으면 질식할 수 있습니다. 쇼핑 비닐, 드라이클리닝 커버, 포장 비닐을 바닥에 두지 말고 묶어서 버리거나 높은 곳에 보관하세요. 장난으로 머리에 씌우지 않습니다.',
+        points: [
+            ['예방', '사용 직후 묶기·버리기, 침대·놀이 공간에 두지 않기'],
+            ['응급', '호흡이 이상하면 즉시 119·응급처치']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥·유모차 아래 비닐을 모아 버리세요.'],
+            ['하지 않을 일', '비닐을 이불·장난감처럼 놀이에 쓰지 마세요.'],
+            ['관련', '질식·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 질식·가정 안전', 'https://www.cpsc.gov/'],
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html']
+        ]
+    },
+    {
         id: 'choking-gagging',
         match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
         title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
@@ -743,6 +763,26 @@ const COMMON_PARENT_ANSWERS = [
             ['이유식·알레르기 전체 가이드', 'blog/complementary-feeding-allergy-guide.html#allergens'],
             ['질병관리청 이유기보충식', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470'],
             ['ASCIA 2026 알레르기 예방 지침', 'https://www.allergy.org.au/hp/papers/infant-feeding-and-allergy-prevention']
+        ]
+    },
+    {
+        id: 'raw-milk-boundary',
+        match: /(비살균\s*우유|살균\s*안\s*된\s*우유|raw\s*milk|생우유\s*비살균|저온\s*살균\s*안|비살균\s*유제품)/,
+        title: '비살균(생) 우유·유제품은 영유아에게 주지 마세요',
+        lead: '살균하지 않은 우유·치즈·유제품은 세균 감염 위험이 있어 어린이·임산부에게 특히 위험할 수 있습니다. “자연·목장 직송”이라도 비살균이면 안전하지 않습니다. 시판 살균 우유·영아용 조제유 안내와 별개로, 비살균 제품은 피하세요.',
+        points: [
+            ['피하기', '비살균 우유·연성 치즈 등 안내된 고위험 유제품'],
+            ['대안', '살균 표시 제품, 돌 전 주된 음료는 모유·조제유']
+        ],
+        blocks: [
+            ['지금 할 일', '유제품 라벨에 살균·pasteurized 표시가 있는지 확인하세요.'],
+            ['하지 않을 일', '비살균 우유를 “영양이 더 좋다”며 주지 마세요.'],
+            ['관련', '생우유 전환·분유 조유 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 비살균 우유 위험', 'https://www.cdc.gov/foodsafety/rawmilk/raw-milk-index.html'],
+            ['FDA 비살균 유제품(영)', 'https://www.fda.gov/food/buy-store-serve-safe-food/raw-milk-misconceptions-and-danger-raw-milk'],
+            ['생우유 전환 안내', '#home']
         ]
     },
     {
@@ -1257,6 +1297,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'cereal-in-bottle-boundary',
+        match: /(젖병|분유|보틀).{0,12}(미음|시리얼|쌀가루|곡물)|미음.{0,12}(젖병|분유)|시리얼.{0,12}(분유|젖병)|cereal\s*in\s*bottle|분유에\s*미음/,
+        title: '의료진 지시 없이 젖병·분유에 미음·시리얼을 섞지 마세요',
+        lead: '통잠·역류를 위해 분유에 곡물을 넣는 방법은 권고되지 않는 경우가 많습니다. 질식·과잉 칼로리·농도 변화 위험이 있고, 필요 시 의료진이 따로 안내합니다. 제품 표시 비율을 지키는 조유가 기본입니다.',
+        points: [
+            ['기본', '분유는 표시 비율, 이유식은 숟가락·안전한 형태'],
+            ['예외', '의료진이 농축·특수 조유를 지시한 경우만']
+        ],
+        blocks: [
+            ['지금 할 일', '젖병에 곡물을 넣고 있다면 중단 여부를 의료진과 상의하세요.'],
+            ['하지 않을 일', '통잠을 위해 임의로 진하게 타거나 미음을 섞지 마세요.'],
+            ['관련', '분유 조유·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 분유·수유 일반', 'https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/default.aspx'],
+            ['CDC 분유 준비', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'formula-prep',
         match: /(분유).*(타|조유|끓|물\s*온도|소독|농도|진하게|묽)|조유|분유\s*물|분유\s*타/,
         title: '분유는 제품 표시 비율과 위생을 그대로 지킵니다',
@@ -1451,6 +1511,46 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'first-dental-visit',
+        match: /(첫\s*치과|소아치과\s*언제|치과\s*처음|치과\s*검진\s*언제|1살\s*치과|돌\s*치과|first\s*dental)/,
+        title: '첫 치과 검진은 첫 치아 뒤 또는 첫돌 전후를 목표로 잡는 안내가 많습니다',
+        lead: '이가 나기 시작하거나 첫돌 무렵 소아치과·치과에서 입안·습관을 점검하라는 안내가 흔합니다. “이가 다 난 뒤”까지 미룰 필요는 없습니다. 통증·외상·감염 의심이 있으면 일정과 관계없이 진료하세요. 특정 병원·시술 순위는 하지 않습니다.',
+        points: [
+            ['시기', '첫 치아 후 또는 12개월 전후 목표(개인·의료 안내)'],
+            ['준비', '수유·간식·양치 습관, 불소·병 물고 자기 여부']
+        ],
+        blocks: [
+            ['지금 할 일', '이가 났다면 보호자 양치부터 시작하고 가까운 소아치과 일정을 알아보세요.'],
+            ['하지 않을 일', '아플 때만 가겠다고 외상·감염 신호를 미루지 마세요.'],
+            ['관련', '양치·이앓이 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 첫 치과 방문', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/Baby\'s-First-Dental-Visit.aspx'],
+            ['CDC 어린이 구강 건강', 'https://www.cdc.gov/oral-health/prevention/oraph-childrens-oral-health.html'],
+            ['양치 시작 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+    {
+        id: 'night-bottle-caries-boundary',
+        match: /(젖병\s*물고\s*자|재우며\s*젖병|밤에\s*젖병|젖병\s*재우|우유\s*병\s*물고|분유\s*병\s*물고\s*자|bottle\s*in\s*bed)/,
+        title: '우유·분유·주스가 든 젖병을 문 채 재우지 마세요',
+        lead: '잠들며 젖병을 오래 물리면 치아에 당분이 오래 남아 이른 충치 위험이 커질 수 있습니다. 잠들기 전 수유 후 양치·거즈 닦기를 하고, 물만 든 병 외에는 침대에 두지 않는 편이 안전합니다. 하얗거나 갈색 반점이 보이면 치과에 문의하세요.',
+        points: [
+            ['습관', '재우기 전 수유 끝내기, 병 물고 잠 줄이기'],
+            ['관리', '이가 나면 보호자 양치, 이상 부위는 치과']
+        ],
+        blocks: [
+            ['지금 할 일', '밤 젖병을 물·끝내기 루틴으로 바꿔 갈 계획을 세우세요.'],
+            ['하지 않을 일', '주스·단 음료를 젖병에 넣어 재우지 마세요.'],
+            ['관련', '양치·컵 마시기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 어린이 구강·병 충치 예방', 'https://www.cdc.gov/oral-health/prevention/oraph-childrens-oral-health.html'],
+            ['AAP 치아 관리', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/default.aspx'],
+            ['양치 시작 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+    {
         id: 'tooth-eruption-timing',
         match: /(이\s*나는\s*시기|치아\s*맹출\s*시기|첫\s*니\s*언제|언제\s*이\s*나|이\s*몇\s*개월|유치\s*나는\s*순|치아\s*순서)/,
         title: '첫니는 보통 생후 수개월대에 나지만, 개인차가 큽니다',
@@ -1527,6 +1627,26 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 티딩', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/default.aspx'],
             ['발열 가이드', 'blog/baby-fever-cold-guide.html'],
             ['이 날 때 안내', '#home']
+        ]
+    },
+    {
+        id: 'benzocaine-teething-boundary',
+        match: /(벤조카인|benzocaine|오라젤|이앓이\s*젤|티딩\s*젤|치아\s*겔|잇몸\s*마취\s*젤|마취\s*연고\s*이앓)/,
+        title: '벤조카인 등 이앓이 마취 젤은 영아에게 쓰지 않는 것이 안전합니다',
+        lead: '벤조카인이 든 이앓이 젤·액체는 심각한 혈액 산소 문제(메트헤모글로빈혈증) 위험으로 어린 아이에게 권고되지 않습니다. 잇몸 마사지·차갑게 한 발육기 등 비약물 방법을 우선하고, 약은 의료진과 상의하세요. 브랜드 순위·용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['피하기', '벤조카인 표시 이앓이 젤·액체, 검증 안 된 마취 연고'],
+            ['우선', '잇몸 마사지, 차갑게 한 발육기, 필요 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있는 이앓이 젤 성분표를 확인하세요.'],
+            ['하지 않을 일', '성인용 구강 마취제를 아기 잇몸에 바르지 마세요.'],
+            ['관련', '이앓이 완화·양치 안내를 참고하세요.']
+        ],
+        links: [
+            ['FDA 벤조카인 이앓이 제품 경고', 'https://www.fda.gov/drugs/drug-safety-and-availability/risk-serious-and-potentially-fatal-blood-disorder-prompts-fda-action-oral-over-counter-benzocaine'],
+            ['AAP 티딩 통증', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/Teething-Pain.aspx'],
+            ['양치 시작 기준', 'market/toddler-toothbrush-guide.html#standard']
         ]
     },
     {
@@ -1701,6 +1821,45 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 배꼽 탈장', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Umbilical-Cord-Care-and-Umbilical-Hernia.aspx'],
             ['탯줄 안내', '#home']
+        ]
+    },
+    {
+        id: 'fontanelle-soft-spot',
+        match: /(천문|숨구멍|대천문|솟은\s*숨|들어간\s*숨|숨\s*구멍|fontanelle|소프트\s*스팟)/,
+        title: '천문(숨구멍)은 평소 부드럽게 느껴질 수 있고, 볼록·오목과 전신을 함께 봅니다',
+        lead: '아기 머리 천문은 아직 뼈가 닫히기 전 부드러운 부분입니다. 평소 약간 맥동하거나 부드럽게 만져질 수 있습니다. 심하게 볼록하고 처지거나, 깊게 들어가며 수분 섭취가 나쁘면 탈수·다른 문제 가능으로 진료를 우선합니다. 만지며 진단하거나 민간으로 “닫히게” 누르지 마세요.',
+        points: [
+            ['관찰', '평소 모습과 비교, 열·구토·처짐·소변량'],
+            ['진료', '갑자기 크게 볼록, 깊게 오목+탈수 신호, 경련·깨우기 어려움']
+        ],
+        blocks: [
+            ['지금 할 일', '수유·소변·열·보챔을 함께 기록하세요.'],
+            ['하지 않을 일', '천문을 세게 누르거나 민간 약으로 “닫히게” 하지 마세요.'],
+            ['관련', '탈수·발열 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHS 천문(숨구멍)', 'https://www.nhs.uk/conditions/baby/babys-development/babys-appearance/the-soft-spot-on-your-babys-head-fontanelle/'],
+            ['AAP 아기 머리·천문 개요', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx'],
+            ['탈수 신호 안내', '#home']
+        ]
+    },
+    {
+        id: 'foreskin-care-boundary',
+        match: /(포피|귀두\s*껍질|포피\s*벗|포피\s*뒤집|포피\s*끼|포피\s*관리|foreskin|억지로\s*포피)/,
+        title: '포피는 억지로 젖히지 말고, 겉만 부드럽게 씻습니다',
+        lead: '자연 상태의 포피는 어릴 때 귀두와 붙어 있는 경우가 많고, 억지로 젖히면 통증·균열·감염이 날 수 있습니다. 목욕 때 겉을 부드럽게 씻고, 빨개짐·부종·소변 이상·고름이 있으면 진료하세요. 수술·약 처방은 의료진이 정합니다.',
+        points: [
+            ['관리', '겉 세척, 억지 견인 금지, 기저귀 청결'],
+            ['진료', '부종·통증·소변 줄기 이상·발열']
+        ],
+        blocks: [
+            ['지금 할 일', '씻을 때 힘주지 않고 물로만 겉을 헹구세요.'],
+            ['하지 않을 일', '매일 포피를 강제로 뒤집지 마세요.'],
+            ['관련', '목욕·기저귀 발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 포피 관리', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Care-for-an-Uncircumcised-Penis.aspx'],
+            ['NHS 포피 위생(영)', 'https://www.nhs.uk/conditions/phimosis/']
         ]
     },
     {
@@ -2028,6 +2187,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수유량·성장 맥락', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html'],
             ['발달 걱정이 함께일 때', 'blog/development-kdst-guide.html']
+        ]
+    },
+    {
+        id: 'fish-mercury-boundary',
+        match: /(생선\s*수은|수은\s*생선|참치.{0,8}(아기|아이|수은)|아기\s*참치|임산부\s*생선|수은\s*중독\s*생선|mercury\s*fish)/,
+        title: '생선은 영양에 도움이 될 수 있으나 수은이 높은 종류는 제한합니다',
+        lead: '생선은 단백질·오메가3 공급원이 될 수 있지만, 일부 대형어는 수은이 높아 어린이·임산부 섭취 제한 안내가 있습니다. 종류·양을 공식 안내 범위에서 고르고, 브랜드·횟수 순위를 사이트에서 단정하지 않습니다. 알레르기·질식 형태도 함께 보세요.',
+        points: [
+            ['선택', '수은이 낮은 편으로 안내된 생선 위주, 다양하게'],
+            ['제한', '상어·황새치 등 고수은 어종, 과도한 특정 참치']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 자주 쓰는 생선 종류를 FDA·국내 안내와 맞춰 보세요.'],
+            ['하지 않을 일', '날생선·가시·둥근 덩어리 질식 위험을 무시하지 마세요.'],
+            ['관련', '이유식·알레르기 도입 안내를 참고하세요.']
+        ],
+        links: [
+            ['FDA·EPA 생선 수은 안내', 'https://www.fda.gov/food/consumers/advice-about-eating-fish'],
+            ['CDC 수은과 건강', 'https://www.cdc.gov/mercury/'],
+            ['이유식 가이드', 'blog/complementary-feeding-allergy-guide.html']
         ]
     },
     {
@@ -2473,6 +2652,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'brick-dust-urine',
+        match: /(주황\s*가루|분홍\s*가루|요산\s*결정|brick\s*dust|주황\s*점\s*기저귀|기저귀\s*주황|분홍\s*얼룩\s*기저귀|주황\s*얼룩\s*소변)/,
+        title: '신생아 기저귀의 주황·분홍 가루 얼룩은 요산 결정일 수 있고, 횟수·처짐과 함께 봅니다',
+        lead: '생후 초기에 기저귀에 주황·분홍빛 가루 같은 얼룩이 보일 수 있으며, 요산 결정으로 설명되는 경우가 있습니다. 그 자체만으로 병이라고 단정하지 않되, 젖은 기저귀가 거의 없고 처지며 수유가 안 되면 탈수·다른 문제로 진료하세요. 사진만으로 혈뇨·병명을 정하지 않습니다.',
+        points: [
+            ['흔함', '생후 며칠, 수유 정착 전 요산 얼룩 가능'],
+            ['진료', '소변 거의 없음, 처짐, 진짜 핏빛 지속, 발열']
+        ],
+        blocks: [
+            ['지금 할 일', '24시간 젖은 기저귀·수유 횟수를 적으세요.'],
+            ['하지 않을 일', '사진 앱으로 “혈뇨”라고 단정하지 마세요.'],
+            ['관련', '젖은 기저귀·황달·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신생아 소변·기저귀 관찰', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Babys-First-Days-Bowel-Movements-and-Urination.aspx'],
+            ['NHS 신생아 기저귀(영)', 'https://www.nhs.uk/baby/caring-for-a-newborn/nappies/'],
+            ['탈수 안내', '#home']
+        ]
+    },
+    {
         id: 'wet-diapers-count',
         match: /(젖은\s*기저귀|기저귀\s*횟수|소변\s*횟수|오줌\s*횟|하루\s*몇\s*번\s*기저귀)/,
         title: '젖은 기저귀는 수유 충분·탈수를 가늠하는 단서입니다',
@@ -2586,6 +2785,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'nail-trimming-infant',
+        match: /(손톱\s*자르|발톱\s*자르|손톱\s*깎|발톱\s*깎|손톱\s*정리|아기\s*손톱|신생아\s*손톱|nail\s*trim)/,
+        title: '아기 손톱은 짧게 유지하되, 살을 깊게 파지 말고 안전한 도구로 자르세요',
+        lead: '손톱이 길면 얼굴을 긁을 수 있어 짧게 다듬는 것이 도움이 됩니다. 밝을 때·아기가 잠든 뒤 등 안전한 순간에, 아기용 가위·줄로 살 쪽에서 멀리 자릅니다. 깊이 패이거나 출혈·감염이 있으면 진료하세요. 특정 용품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['방법', '밝은 빛, 한 손가락씩, 둥글게 다듬기'],
+            ['주의', '살이 접힌 채로 깊게 자르기, 이빨로 물어 뜯기 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '얼굴 긁힘이 보이면 손톱 길이를 확인하세요.'],
+            ['하지 않을 일', '어른 손톱깎이로 살을 집지 마세요.'],
+            ['관련', '목욕·피부 관리 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 손톱 관리', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['NHS 아기 손톱(영)', 'https://www.nhs.uk/baby/caring-for-a-newborn/how-to-cut-your-babys-nails/']
         ]
     },
     {
@@ -2983,6 +3201,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CPSC 가전 감금 위험', 'https://www.cpsc.gov/'],
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'stair-gate-boundary',
+        match: /(안전문|계단\s*게이트|베이비\s*게이트|baby\s*gate|계단\s*차단|난간\s*안전문|계단\s*안전)/,
+        title: '계단·위험한 방 입구는 안전문으로 막고, 설치·고정 상태를 점검하세요',
+        lead: '기기 시작하는 아기에게 계단·주방·욕실은 낙상·화상 위험이 큽니다. 압력식·나사 고정 등 설치 방식과 문턱 높이는 제품 설명서를 따르고, 잘못된 설치는 오히려 위험할 수 있습니다. 특정 브랜드 순위·“필수 국민템” 추천은 하지 않습니다.',
+        points: [
+            ['사용', '계단 위·아래, 위험한 방, 설명서대로 고정'],
+            ['주의', '낡은 문·느슨한 고정, 아이 혼자 문에 매달리기']
+        ],
+        blocks: [
+            ['지금 할 일', '계단 입구와 문 고정 나사를 점검하세요.'],
+            ['하지 않을 일', '안전문만 믿고 높은 곳에서 감독을 끊지 마세요.'],
+            ['관련', '낙상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 아기 안전문·가정 안전', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['낙상 안내', '#home']
         ]
     },
     {
