@@ -884,6 +884,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'hard-candy-choking',
+        match: /(단단한\s*사탕|하드\s*캔디|막대\s*사탕|lollipop|hard\s*candy|사탕\s*질식|사탕\s*목|젤리\s*컵\s*질식)/,
+        title: '단단한 사탕·막대 사탕은 어린 아이 질식 위험이 커서 주지 않는 편이 안전합니다',
+        lead: '둥글고 단단한 사탕·일부 젤리는 기도에 막히기 쉽습니다. 어린 아이에게는 주지 않고, 나이가 되어도 앉아서·한 번에 하나만·감독 아래 먹이세요. 질식 시 등 두드리기·하임리히 등 응급처치는 공인 교육을 따릅니다.',
+        points: [
+            ['위험', '하드 캔디, 미니 컵 젤리, 둥근 사탕'],
+            ['예방', '연령 부적합 간식 치우기, 뛰어다니며 먹지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '거실·가방 속 사탕을 아이 손 닿지 않게 치우세요.'],
+            ['하지 않을 일', '울거나 뛰는 중에 사탕을 물리지 마세요.'],
+            ['관련', '질식 식품·구슬·견과 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/'],
+            ['AAP 질식 위험 식품', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
         id: 'choking-gagging',
         match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
         title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
@@ -1494,6 +1513,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'hand-foot-mouth-boundary',
+        match: /(수족구|손발입|hand\s*foot\s*mouth|hfmd|HFMD|손\s*발\s*입\s*병)/,
+        title: '손·발·입 발진과 열이 있으면 수족구 등 가능성이 있어 진료·손 씻기를 우선하세요',
+        lead: '손·발·입안 수포성 발진과 발열이 함께 있으면 수족구병 등을 의료진이 판단합니다. 사진만으로 병명을 단정하지 마세요. 수분 섭취·처짐을 보고, 탈수·호흡 이상·생후 어린 영아는 진료가 급합니다. 등원·등원 자제는 시설·공중보건 안내를 따릅니다. 약 용량·연고 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '열, 입안 통증, 수분·소변, 처짐'],
+            ['예방', '손 씻기, 침·장난감 공유 줄이기, 아픈 아이 등원 자제(안내 따름)']
+        ],
+        blocks: [
+            ['지금 할 일', '수분 섭취와 소변 횟수를 기록하세요.'],
+            ['하지 않을 일', '카페 사진과 비교해 병명을 단정하지 마세요.'],
+            ['관련', '탈수·발열·발진 진료 시점 안내를 참고하세요.']
+        ],
+        links: [
+            ['질병관리청 수족구', 'https://www.kdca.go.kr/'],
+            ['CDC Hand, Foot, and Mouth', 'https://www.cdc.gov/hand-foot-mouth/'],
+            ['NHS 수족구', 'https://www.nhs.uk/conditions/hand-foot-mouth-disease/']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1746,6 +1785,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 분유 준비(비율 유지)', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
             ['AAP 분유 수유', 'https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/default.aspx'],
             ['분유 조유 안내', '#home']
+        ]
+    },
+    {
+        id: 'well-water-nitrate-formula',
+        match: /(우물물\s*분유|지하수\s*분유|질산염\s*분유|well\s*water\s*formula|우물\s*물\s*아기|지하수\s*조유)/,
+        title: '우물·지하수로 분유를 탈 때는 질산염 등 수질 검사를 확인하세요',
+        lead: '일부 우물물은 질산염 등이 높아 영아 분유 조유에 부적합할 수 있습니다. 상수도가 아니면 공인 검사·보건 안내를 확인하세요. 끓인다고 질산염이 모두 없어지지 않을 수 있습니다. 수질·제품 추천은 하지 않습니다.',
+        points: [
+            ['확인', '수질 검사, 영아 조유 적합 여부'],
+            ['대안', '안전한 상수도·안내용 물(의료·보건 안내)']
+        ],
+        blocks: [
+            ['지금 할 일', '조유에 쓰는 물 출처를 확인하세요.'],
+            ['하지 않을 일', '검사 안 된 우물물을 임의로 쓰지 마세요.'],
+            ['관련', '분유 조유·과희석 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유·물 안전', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/'],
+            ['EPA 질산염·음용수(영)', 'https://www.epa.gov/ground-water-and-drinking-water']
         ]
     },
     {
@@ -4065,6 +4123,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'back-seat-under-13-boundary',
+        match: /(앞좌석\s*아이|조수석\s*아이|13세\s*앞좌석|뒷좌석\s*타|back\s*seat\s*until|에어백\s*앞좌석\s*아이|몇\s*살\s*앞좌석)/,
+        title: '어린이는 가능하면 뒷좌석에 태우고, 앞좌석은 에어백·키·체중 기준을 확인하세요',
+        lead: '많은 안전 안내는 13세 전후까지 뒷좌석을 권합니다. 앞좌석 에어백은 작은 아이에게 위험할 수 있습니다. 카시트·부스터 전환은 연령만이 아니라 키·체중·시트 라벨을 따릅니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['우선', '뒷좌석, 연령·키·체중·설명서'],
+            ['주의', '앞좌석 에어백, 시트벨트만으로 부적합한 키']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 키·체중과 시트 라벨을 대조하세요.'],
+            ['하지 않을 일', '에어백 켠 조수석에 영아 카시트를 두지 마세요.'],
+            ['관련', '카시트·부스터·에어백 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트·좌석 위치', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['CDC 아동 승차 안전', 'https://www.cdc.gov/transportationsafety/child_passenger_safety/']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -4181,6 +4258,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 아동 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'garage-door-safety',
+        match: /(차고\s*문|개러지\s*도어|garage\s*door|자동\s*문\s*끼|차고\s*자동문)/,
+        title: '자동 차고 문은 반전·센서·원격키를 점검하고, 아이 놀이터가 되지 않게 하세요',
+        lead: '차고 자동문은 끼임·압궤 위험이 있습니다. 센서가 가려지지 않게 하고, 원격·벽 스위치는 아이 손 닿지 않게 두세요. 문 아래에서 장난하거나 매달리게 하지 마세요. 특정 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['점검', '장애물 센서, 자동 반전, 비상 해제'],
+            ['습관', '문이 완전히 닫힐 때까지 확인, 키 보관']
+        ],
+        blocks: [
+            ['지금 할 일', '센서 앞 장난감·상자를 치우고 반전 기능을 시험하세요.'],
+            ['하지 않을 일', '문이 움직이는 동안 아이만 두지 마세요.'],
+            ['관련', '가전 끼임·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 차고 문 안전', 'https://www.cpsc.gov/'],
+            ['AAP 가정 부상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
         ]
     },
     {
@@ -4554,6 +4650,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'clothing-iron-burn-safety',
+        match: /(다리미\s*화상|アイロン|clothing\s*iron|헤어\s*아이론|고데기\s*화상|스트레이트기\s*화상|다리미\s*식히)/,
+        title: '다리미·고데기는 사용한 뒤에도 뜨거우니 아이 손 닿지 않는 곳에 두세요',
+        lead: '다리미·헤어 아이론은 전원을 끈 뒤에도 한동안 뜨겁습니다. 코드에 걸려 넘어질 수 있으니 높은 안정된 곳에 두고, 식기 전 아이 손을 막으세요. 화상 시 흐르는 물로 식히고 민간 연고를 바르지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '사용 후 격리, 코드 정리, 아이 접근 차단'],
+            ['화상', '흐르는 시원한 물, 물집 터뜨리기 금지, 진료 여부']
+        ],
+        blocks: [
+            ['지금 할 일', '다리미 보관 위치와 코드 길이를 점검하세요.'],
+            ['하지 않을 일', '침대·바닥에서 다리미를 식히지 마세요.'],
+            ['관련', '화상·뜨거운 음료 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 화상 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Burns.aspx']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -4649,6 +4764,45 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CPSC 목욕 의자 위험', 'https://www.cpsc.gov/'],
             ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
+        id: 'hot-tub-spa-infant-boundary',
+        match: /(온탕|스파\s*아기|hot\s*tub|자쿠지\s*아기|온수\s*풀\s*아기|스파\s*욕조)/,
+        title: '영·유아를 뜨거운 온탕·스파에 넣지 말고, 물가에서는 팔 닿는 감시를 하세요',
+        lead: '온탕·스파는 수온이 높아 과열·탈수 위험이 있고, 익사 위험도 있습니다. 영아는 일반적으로 권장되지 않으며, 나이·건강 상태에 따라 의료진 안내를 따르세요. 성인 혼자 감시 없이 두지 마세요. 시설 추천은 하지 않습니다.',
+        points: [
+            ['위험', '과열, 익사, 미끄러움, 흡입·흡인'],
+            ['원칙', '팔 닿는 거리, 수온·시간, 혼자 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '온탕 커버·잠금이 아이 손 닿지 않게 확인하세요.'],
+            ['하지 않을 일', '아기를 성인 무릎에만 맡긴 채 긴 시간 담그지 마세요.'],
+            ['관련', '익사 예방·열 질환 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
+        id: 'pool-fence-barrier-boundary',
+        match: /(수영장\s*울타리|풀\s*펜스|pool\s*fence|수영장\s*담장|풀장\s*안전\s*문|수영장\s*잠금)/,
+        title: '집 수영장은 사면 울타리·자동 잠금 문 등 다중 장벽과 감시를 함께 쓰세요',
+        lead: '집·마당 수영장은 어린이 익사 위험이 큽니다. 울타리·문은 아이를 물에서 분리하는 장벽이고, 알람·커버만으로 감시를 대체하지 마세요. 문·게이트는 자동으로 닫히고 잠기는지 확인합니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장벽', '사면 울타리, 문이 집 쪽으로 열리지 않게, 자동 잠금'],
+            ['감시', '물놀이 중 팔 닿는 거리, 장난감 물 위 방치 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '게이트가 혼자 닫히고 잠기는지 시험하세요.'],
+            ['하지 않을 일', '울타리만 믿고 아이를 마당에 혼자 두지 마세요.'],
+            ['관련', '익사 예방·구명조끼·플로티 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['CPSC 수영장 안전', 'https://www.cpsc.gov/'],
             ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
         ]
     },
@@ -4829,6 +4983,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 소아 코골이·수면 호흡', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
             ['CDC 수면 건강 개요', 'https://www.cdc.gov/sleep/']
+        ]
+    },
+    {
+        id: 'sleepwalking-boundary',
+        match: /(몽유병|잠\s*걸어|수면\s*보행|sleep\s*walk|자다가\s*걸어|잠결에\s*걸어)/,
+        title: '자다가 걸어 다니는 수면 보행은 안전을 먼저 보고, 잦으면 진료를 검토하세요',
+        lead: '일부 아이는 잠든 상태에서 일어나 걷거나 말할 수 있습니다. 억지로 세게 흔들어 깨우기보다 다치지 않게 막고, 계단·문·창을 안전하게 하세요. 잦거나 자해·주간 증상이 있으면 의료진과 상의합니다. 수면제 용량은 정하지 않습니다.',
+        points: [
+            ['당시', '부드럽게 침대로 안내, 위험물 치우기'],
+            ['환경', '계단 문, 창 잠금, 날카로운 물건']
+        ],
+        blocks: [
+            ['지금 할 일', '밤에 문을 잠그고 바닥 장애물을 치우세요.'],
+            ['하지 않을 일', '공포를 주며 혼내지 마세요. 기억하지 못할 수 있습니다.'],
+            ['관련', '야경증·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면 문제 개요', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CDC 수면 건강', 'https://www.cdc.gov/sleep/']
         ]
     },
     {
@@ -5525,6 +5698,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'glow-stick-ingestion-boundary',
+        match: /(야광봉|글로우\s*스틱|glow\s*stick|형광\s*스틱|야광\s*팔찌\s*먹|야광액)/,
+        title: '야광봉 액체를 먹거나 눈에 넣으면 입을 헹구고 증상을 본 뒤 상담하세요',
+        lead: '야광봉·야광 팔찌 액체는 대개 소량이면 큰 독성은 드물다는 안내가 있으나, 자극·구역·눈 통증을 일으킬 수 있습니다. 삼켰으면 입 안을 물로 헹구고, 눈에 들어갔으면 흐르는 물로 씻은 뒤 상담·진료를 검토하세요. 토하게 강제하지 마세요.',
+        points: [
+            ['노출', '입 헹구기, 눈 세척, 포장 확인'],
+            ['진료', '호흡 이상, 심한 구토, 눈 통증 지속']
+        ],
+        blocks: [
+            ['지금 할 일', '축제·할로윈 야광 용품을 씹지 않게 하세요.'],
+            ['하지 않을 일', '터진 야광액을 피부에 문지르지 마세요.'],
+            ['관련', '중독·이물질 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'pet-food-ingestion-boundary',
+        match: /(강아지\s*사료\s*먹|고양이\s*사료\s*먹|펫\s*푸드\s*아기|pet\s*food\s*(먹|삼킴)|동물\s*사료\s*아이|개\s*밥\s*먹)/,
+        title: '반려동물 사료·간식을 아이가 먹었으면 양·성분을 확인하고 상담하세요',
+        lead: '반려동물 사료는 사람 식품 기준과 다르고, 일부 성분·첨가물이 아이에게 맞지 않을 수 있습니다. 소량이라도 삼켰으면 제품명·추정량을 확인하고 중독 상담·진료를 검토하세요. 토하게 강제하지 마세요. 사료 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '사료 봉지를 잠그고 바닥에 두지 않기'],
+            ['노출', '포장 확인, 구토·처짐·호흡 이상 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '사료·간식을 아이 손이 닿지 않는 곳에 두세요.'],
+            ['하지 않을 일', '“동물이 먹으니 괜찮다”며 방치하지 마세요.'],
+            ['관련', '중독·이물질 삼킴 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'laundry-pod-poison',
         match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
         title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
@@ -5561,6 +5772,25 @@ const COMMON_PARENT_ANSWERS = [
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'lip-tie-boundary',
+        match: /(입술\s*유착|윗입술\s*유착|립\s*타이|lip\s*tie|상순\s*소대|입술\s*소대)/,
+        title: '입술 유착(립 타이) 여부와 가위 시술은 수유·성장 평가 후 의료진이 판단합니다',
+        lead: '윗입술 소대가 짧아 보이면 수유 통증·젖물림과 관련해 상담하기도 합니다. 사진만으로 “무조건 잘라야 한다”고 단정하지 마세요. 수유 상담·체중 증가·통증 평가가 우선이고, 시술 필요성은 의료진이 정합니다.',
+        points: [
+            ['관찰', '젖물림, 통증, 체중, 클릭음, 유두 손상'],
+            ['경계', 'SNS 전후 사진만으로 시술 결정 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '수유 일지와 체중 기록을 챙겨 상담하세요.'],
+            ['하지 않을 일', '가정에서 실·가위로 소대를 건드리지 마세요.'],
+            ['관련', '설소대·젖물림·체중 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수유·구강 구조 개요', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/default.aspx'],
+            ['설소대 안내', '#home']
         ]
     },
     {
