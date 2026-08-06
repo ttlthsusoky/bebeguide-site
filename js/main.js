@@ -1007,6 +1007,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'microwave-bottle-boundary',
+        match: /(전자\s*레인지.*분유|전자\s*레인지.*모유|분유.*전자\s*레인지|병\s*데우.*전자|전자렌지\s*분유)/,
+        title: '분유·모유를 전자레인지로 데우지 않는 것이 안전합니다',
+        lead: '전자레인지는 부분이 과열되어 입안 화상을 일으킬 수 있고, 열이 고르지 않습니다. 중탕·온수 등으로 데우고, 먹이기 전 손목 안쪽에 온도를 확인하세요. 제품별 조유 표시를 따릅니다.',
+        points: [
+            ['방법', '중탕·온수, 잘 섞기, 온도 확인'],
+            ['금지', '전자레인지 과열, 뜨거운 상태로 바로 수유']
+        ],
+        blocks: [
+            ['지금 할 일', '데운 뒤 병 전체를 굴리거나 섞어 온도를 고르게 하세요.'],
+            ['하지 않을 일', '전자레인지에 돌린 직후 아이 입에 넣지 마세요.'],
+            ['관련', '분유 조유·모유 보관 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유 준비', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['CDC 모유 보관·데우기', 'https://www.cdc.gov/breastfeeding/php/guidelines-recommendations/handling-breastmilk.html']
+        ]
+    },
+    {
         id: 'formula-prep',
         match: /(분유).*(타|조유|끓|물\s*온도|소독|농도|진하게|묽)|조유|분유\s*물|분유\s*타/,
         title: '분유는 제품 표시 비율과 위생을 그대로 지킵니다',
@@ -1467,6 +1486,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bloody-stool-boundary',
+        match: /(혈변|피\s*섞인\s*변|변에\s*피|빨간\s*변|검은\s*변|선혈\s*변)/,
+        title: '변에 피·검은 변은 식단 색소와 구분하고, 많거나 아이 상태가 나쁘면 진료합니다',
+        lead: '빨간 반점·점액·검은 변은 원인이 여러 가지일 수 있습니다. 인터넷 사진으로 병명을 정하지 마세요. 피가 많거나, 보챔·발열·구토·처짐·배가 불러 보이면 바로 진료합니다. 신생아·어린 영아는 특히 의료진 평가를 우선하세요.',
+        points: [
+            ['기록', '양·색·점액·발열·수유·최근 음식(비트 등)'],
+            ['바로 진료', '다량 출혈, 검은 변, 처짐, 탈수, 심한 통증']
+        ],
+        blocks: [
+            ['지금 할 일', '기저귀 사진보다 양·색·전신 상태를 메모하세요.'],
+            ['하지 않을 일', '임의 지혈제·민간 약초를 먹이지 마세요.'],
+            ['관련', '변 색깔·설사·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHS 혈변(어린이)', 'https://www.nhs.uk/conditions/blood-in-poo-children/'],
+            ['변 색깔 안내', '#home'],
+            ['설사·탈수 안내', '#home']
+        ]
+    },
+    {
         id: 'stool-color',
         match: /(초록\s*변|녹색\s*변|변\s*색깔|똥\s*색|흰\s*변|회색\s*변|혈변|피\s*섞인\s*변|검은\s*변)/,
         title: '변 색깔은 식단·시기에 따라 달라지고, 흰·혈·검은 변은 진료합니다',
@@ -1602,6 +1641,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'plugged-duct-boundary',
+        match: /(유방\s*멍울|막힌\s*관|유관\s*막|젖\s*멍울|유방\s*덩어리|plugged\s*duct)/,
+        title: '유방 멍울은 수유·휴식과 함께 보고, 열·발적이 있으면 유선염을 의심합니다',
+        lead: '수유부의 국소 멍울은 유관이 일시적으로 막힌 경우일 수 있습니다. 자주 수유·유축하고 편한 자세를 시도합니다. 열·오한·넓게 붉고 아프면 유선염 가능성을 보고 빨리 진료하세요. 약 용량·마사지 기구 순위는 정하지 않습니다.',
+        points: [
+            ['가정', '수유 빈도, 자세, 편안한 압박 완화(통증 유발 강한 마사지 주의)'],
+            ['진료', '열, 발적 확산, 심한 통증, 유즙 고름']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시작·체온·어느 부위인지 기록하세요.'],
+            ['하지 않을 일', '아픈데 참으며 수유를 오래 참지 마세요.'],
+            ['관련', '유선염·젖몸살 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 유선염·수유 문제', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Mastitis.aspx'],
+            ['CDC 수유 문제 개요', 'https://www.cdc.gov/breastfeeding/'],
+            ['유선염 안내', '#home']
+        ]
+    },
+    {
         id: 'mastitis-signs',
         match: /(유선염|유방\s*(빨개|발적|열감)|가슴이\s*빨|수유.*유방.*아프|유방.*독감|유방.*고열)/,
         title: '유선염 의심이면 열·발적·통증을 보고 빨리 진료합니다',
@@ -1677,6 +1736,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['기저귀 발진 안내', '#home'],
             ['수유 통증·유선염 경계', '#home']
+        ]
+    },
+    {
+        id: 'medicine-breastfeeding-boundary',
+        match: /(수유|모유).*(약|처방|타이레놀|해열|감기약|먹어도)|(약|처방).*(수유|모유|짠\s*후)|수유\s*중\s*약/,
+        title: '수유 중 약은 임의로 정하지 말고 약사·의사·공식 상담 경로를 이용하세요',
+        lead: '수유 중에도 필요한 약은 있을 수 있지만, 약마다 모유 이행·금기가 다릅니다. 사이트·댓글에서 약 이름과 용량을 정하지 않습니다. 처방·약국·의료진에게 수유 중임을 알리고, 공식 상담 자료가 있으면 함께 확인하세요. 자가 판단으로 수유를 갑자기 끊지 마세요.',
+        points: [
+            ['원칙', '수유 사실을 알린 뒤 처방·복약 지도, 임의 성인 약 금지'],
+            ['금지', '인터넷 용량·“짠 뒤 바로 괜찮다” 단정']
+        ],
+        blocks: [
+            ['지금 할 일', '약 성분·복용 시각·아이 월령을 적고 약사·의료진에게 문의하세요.'],
+            ['하지 않을 일', '성인 감기약·한약을 임의로 함께 먹지 마세요.'],
+            ['관련', '수유 중 카페인·음주 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 수유와 약·물질', 'https://www.cdc.gov/breastfeeding/breastfeeding-special-circumstances/vaccinations-medications-drugs/'],
+            ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
         ]
     },
     {
@@ -2770,6 +2848,159 @@ const COMMON_PARENT_ANSWERS = [
             ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
         ]
     },
+    {
+        id: 'trampoline-danger',
+        match: /(트램폴린|방방\s*이|트램폴린\s*안전|가정용\s*트램폴린)/,
+        title: '어린이 트램폴린은 골절·머리 부상 위험이 커서 권하지 않는 안내가 많습니다',
+        lead: '가정·놀이 트램폴린은 낙상·충돌·스프링 끼임으로 부상이 잦다는 안전 안내가 있습니다. 여러 명이 동시에 뛰거나 어린 아이를 올리는 것도 위험합니다. 안전망만으로 충분하지 않습니다. 제품 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['위험', '여러 명 동시, 어린 영아, 공중제비, 보호자 부재'],
+            ['대안', '바닥 놀이·연령 맞는 야외 활동, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있으면 사용 규칙·감독을 엄격히 하거나 치우세요.'],
+            ['하지 않을 일', '아기를 성인과 함께 트램폴린에 올리지 마세요.'],
+            ['응급', '머리·목 통증, 의식, 팔다리 움직임 이상은 119·진료']
+        ],
+        links: [
+            ['AAP 트램폴린', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Trampolines-What-You-Need-to-Know.aspx'],
+            ['CDC 아동 부상 예방 개요', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'bike-helmet-safety',
+        match: /(헬멧|자전거\s*헬멧|킥보드\s*헬멧|스케이\s*헬멧|머리\s*보호구).*(아이|아기|어린이)?|(아이|아기).*(자전거|킥보드).*(헬멧|안전)/,
+        title: '자전거·킥보드 등에서는 헬멧을 쓰고, 맞음새와 교체를 확인하세요',
+        lead: '바퀴 달린 놀이기구는 머리 부상 위험이 있습니다. 연령·머리 크기에 맞는 헬멧을 바르게 쓰고, 사고가 난 헬멧은 교체하는 안내가 많습니다. 브랜드 순위는 하지 않습니다. 도로는 보호자 감독이 우선입니다.',
+        points: [
+            ['착용', '이마를 덮고 수평, 턱끈 고정, 흔들림 적게'],
+            ['교체', '강한 충격 후·균열 시 교체']
+        ],
+        blocks: [
+            ['지금 할 일', '헬멧이 눈을 가리거나 뒤로 밀리지 않는지 확인하세요.'],
+            ['하지 않을 일', '헬멧 없이 경사진 길·도로에서 타게 하지 마세요.'],
+            ['관련', '머리 부딪힘·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 자전거 안전', 'https://www.nhtsa.gov/bicycle-safety'],
+            ['AAP 헬멧', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Helmets-What-Every-Parent-Should-Know.aspx']
+        ]
+    },
+    {
+        id: 'laundry-pod-poison',
+        match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
+        title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
+        lead: '알록달록한 세제 포드·액체 세제·약은 삼키면 위험합니다. 원래 용기에 잠그는 수납에 두고, 다른 병에 옮겨 담지 마세요. 삼키거나 눈에 들어가면 집에서 토하게 하지 말고 응급·중독 상담 안내를 따르세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '높은 잠금 수납, 즉시 뚜껑, 바닥 방치 금지'],
+            ['노출 시', '입 안 닦기, 토하게 강제 금지, 바로 상담·응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '싱크대 아래·세탁실 세제를 아이 눈높이에서 치우세요.'],
+            ['하지 않을 일', '물약처럼 보이는 용기에 세제를 옮기지 마세요.'],
+            ['관련', '집 안 안전·단추전지 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방 개요', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'sleep-regression-boundary',
+        match: /(수면\s*퇴행|수면퇴행|sleep\s*regression|4개월\s*수면|돌연\s*밤잠|자던\s*아기가\s*깨)/,
+        title: '수면이 갑자기 흔들려도 “몇 개월 퇴행 표”만으로 단정하지 않습니다',
+        lead: '성장·이 남·분리불안·질병·일정 변화로 잠이 흔들릴 수 있습니다. 몇 개월에 꼭 온다는 인터넷 표만 따르지 마세요. 안전수면(등·빈 수면면)을 유지하고, 낮잠·수유·아픈 기운을 함께 봅니다. 신생아에게 강압적 수면교육을 하지 않습니다.',
+        points: [
+            ['우선', '안전수면, 일정 루틴, 아픈지·이 나는지 확인'],
+            ['경계', '고정 “퇴행 주간” 단정, 울려 재우기 강요']
+        ],
+        blocks: [
+            ['지금 할 일', '최근 낮잠·수유·여행·발열 여부를 짧게 적어 보세요.'],
+            ['하지 않을 일', '포지셔너·경사 쿠션으로 통잠을 만들지 마세요.'],
+            ['관련', '안전수면·수면교육 경계·야경증 안내를 참고하세요.']
+        ],
+        links: [
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'tongue-tie-boundary',
+        match: /(설소대|혀\s*짧은|tongue\s*tie|모유\s*유두\s*통증.*혀|수유\s*잠금.*혀)/,
+        title: '설소대·혀 모양은 사진만으로 수술 여부를 정하지 않습니다',
+        lead: '수유 통증·잠금·체중 증가 걱정이 있을 때 설소대를 이야기하는 경우가 있습니다. 입안 사진·인터넷 진단으로 수술 필요를 단정하지 마세요. 수유 상담·소아·이비인후 등 의료진이 수유·성장과 함께 평가합니다. 사이트에서 시술 권유·병원 순위는 하지 않습니다.',
+        points: [
+            ['볼 것', '수유 통증, 젖양·체중, 잠금, 다른 원인'],
+            ['하지 말 것', 'SNS 사진 비교로 수술 결정']
+        ],
+        blocks: [
+            ['지금 할 일', '수유 시각·통증·기저귀·체중 기록을 진료에 가져가세요.'],
+            ['하지 않을 일', '민간 절개·집에서 혀를 자르려 하지 마세요.'],
+            ['관련', '유두 통증·젖양 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 설소대·수유', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Tongue-Tie.aspx'],
+            ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'strabismus-eye-check',
+        match: /(사시|눈이\s*몰|눈\s*떨|간헐\s*사시|한눈\s*안\s*봄|눈이\s*바깥|백색\s*동공|눈동자\s*흰)/,
+        title: '눈 몰림·백색 동공 의심은 사진 판정이 아니라 진료로 확인합니다',
+        lead: '신생아는 잠깐 눈이 어긋되어 보일 수 있지만, 지속되거나 한 눈만 안 쓰거나, 동공이 하얗게 보이면 의료진 평가가 필요합니다. 휴대폰 사진·필터로 병명을 정하지 마세요. 시력·안과 검사는 의사 안내를 따릅니다.',
+        points: [
+            ['관찰', '지속 시간, 양쪽 대칭, 빛에 대한 반응, 백색 동공'],
+            ['진료', '지속 사시, 눈 떨림, 백색 동공, 시력 걱정']
+        ],
+        blocks: [
+            ['지금 할 일', '언제부터·얼마나 자주인지 기록하세요.'],
+            ['하지 않을 일', '안대·민간 교정 기구를 자가로 쓰지 마세요.'],
+            ['관련', '눈곱·발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 사시', 'https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/Strabismus.aspx'],
+            ['CDC 아동 시력', 'https://www.cdc.gov/vision-health/']
+        ]
+    },
+    {
+        id: 'hearing-concern-boundary',
+        match: /(청력|귀\s*안\s*들|소리\s*반응\s*없|난청|보청|이름\s*불러도\s*모름|청각\s*검사)/,
+        title: '소리 반응이 걱정되면 기다리지 말고 청력 확인 경로를 밟으세요',
+        lead: '이름에 반응하지 않거나, 큰 소리에도 반응이 약하거나, 언어가 또래보다 많이 걱정되면 청력·발달을 의료진과 상의하세요. “남자아이라 늦다”로 미루지 않는 편이 안전합니다. 이 안내만으로 난청을 진단하지 않습니다.',
+        points: [
+            ['신호', '소리 반응 약함, 언어 지연 걱정, 한쪽만 듣는 듯'],
+            ['행동', '검진·이비인후·소아 상담, 필요 시 청력 검사']
+        ],
+        blocks: [
+            ['지금 할 일', '걱정되는 상황을 구체적으로 적어 진료에 가져가세요.'],
+            ['하지 않을 일', '큰 TV 소리로 “들리게” 보상하려 하지 마세요.'],
+            ['관련', '언어 발달·중이염 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 아동 청력', 'https://www.cdc.gov/hearing-loss-children/'],
+            ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
+        id: 'sick-return-daycare',
+        match: /(어린이집\s*등원|어린이집\s*복귀|열이\s*떨어져\s*등원|아파서\s*못\s*가|등원\s*기준|어린이집\s*며칠)/,
+        title: '아픈 뒤 등원은 열·전신 상태와 시설 안내를 함께 보고, 같은 “무조건 ○시간”만 따르지 않습니다',
+        lead: '열이 내린 뒤에도 처지거나 심하게 보채면 쉬는 편이 나을 수 있습니다. 많은 시설이 자체 등원 기준을 두므로 안내문을 확인하세요. 항생제·해열제 용량으로 등원 가능 여부를 사이트에서 정하지 않습니다. 전염이 걱정되면 시설·의료진과 상의하세요.',
+        points: [
+            ['볼 것', '24시간 흐름의 열·활력·식사·호흡, 시설 규정'],
+            ['쉬기', '처짐, 호흡 이상, 설사·구토 심함, 의료진 격리 권고']
+        ],
+        blocks: [
+            ['지금 할 일', '시설 등원 기준과 오늘 아이 상태를 대조하세요.'],
+            ['하지 않을 일', '해열제로 열만 내린 직후 무리하게 보내지 마세요.'],
+            ['관련', '발열·손 씻기·접종 후 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 손위생·돌봄 환경', 'https://www.cdc.gov/hygiene/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    }
 
 ];
 
