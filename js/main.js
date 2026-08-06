@@ -649,6 +649,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'popcorn-nuts-choking',
+        match: /(팝콘\s*질식|팝콘\s*아이|견과\s*통째|땅콩\s*통째|호두\s*통째|씨앗\s*통째|하드\s*캔디|사탕\s*질식)/,
+        title: '팝콘·통 견과·단단한 사탕은 어린 아이에게 질식 위험이 큽니다',
+        lead: '팝콘, 통째 견과, 단단한 사탕·젤리 일부는 어린 아이 질식 위험 식품으로 자주 꼽힙니다. 연령·씹기 능력에 맞게 피하거나 안전하게 바꾸고, 앉아서 먹이며 뛰어다니며 주지 마세요. “몇 살부터 가능” 한 줄만으로 단정하지 말고 아이 상태를 봅니다.',
+        points: [
+            ['주의 식품', '팝콘, 통 견과, 단단한 사탕, 큼직한 덩어리'],
+            ['환경', '앉아서, 보호자 감시, 누워서 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '간식 목록에서 통 견과·팝콘이 있는지 점검하세요.'],
+            ['하지 않을 일', '차 뒷좌석에서 통 견과를 혼자 먹게 하지 마세요.'],
+            ['관련', '둥근 음식 자르기·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 질식 위험 식품', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['이유식·질식 가이드', 'blog/complementary-feeding-allergy-guide.html']
+        ]
+    },
+    {
         id: 'round-food-choking-cut',
         match: /(포도|소시지|핫도그|방울\s*토마토).{0,16}(자르|질식|통째)|둥근\s*음식\s*질식|콩\s*통째|포도\s*자르|소시지\s*자르/,
         title: '포도·소시지·방울토마토 등 둥근 음식은 길이로 자르고 통째로 주지 마세요',
@@ -906,6 +925,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'baby-powder-boundary',
+        match: /(베이비\s*파우더|탈크|파우더\s*엉덩|옥수수\s*전분\s*파우더|분말\s*파우더\s*아기)/,
+        title: '아기 엉덩이·피부에 파우더를 뿌리는 것은 흡입 위험이 있어 권하지 않습니다',
+        lead: '탈크·분말 파우더는 공기 중으로 퍼져 아기가 들이마실 수 있습니다. 기저귀 발진에는 자주 갈아 주기·통풍·보습·보호막이 우선이고, 파우더 사용을 기본으로 두지 마세요. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['우선', '자주 갈아 주기, 건조, 자극 줄이기'],
+            ['위험', '분말 흡입, 밀폐된 곳에서 뿌리기']
+        ],
+        blocks: [
+            ['지금 할 일', '파우더 대신 청결·건조·보습 루틴을 점검하세요.'],
+            ['하지 않을 일', '아이 얼굴 가까이에서 파우더를 뿌리지 마세요.'],
+            ['관련', '기저귀 발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 기저귀 발진·파우더', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx'],
+            ['기저귀 발진 안내', '#home']
+        ]
+    },
+    {
         id: 'diaper-rash',
         match: /(기저귀\s*발진|기저귀\s*(빨|짓무|헐)|엉덩이\s*(빨개|발진|짓)|사타구니\s*(발진|빨)|기저귀\s*피부)/,
         title: '기저귀 발진은 자주 갈아 주고 보습·보호막을 먼저 봅니다',
@@ -1142,6 +1180,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'antibiotic-virus-boundary',
+        match: /(항생제\s*감기|감기\s*항생|바이러스\s*항생|항생제\s*먹여|꼭\s*항생제)/,
+        title: '감기·많은 바이러스 감염에 항생제가 항상 필요하지는 않습니다',
+        lead: '항생제는 세균에 쓰는 약이고, 감기·많은 상기도 바이러스에는 도움이 되지 않는 경우가 많습니다. 불필요한 사용은 부작용·내성 위험이 있습니다. 필요 여부는 의료진이 진찰 후 정하며, 사이트에서 처방·용량을 정하지 않습니다.',
+        points: [
+            ['구분', '바이러스 vs 세균은 진찰·검사가 필요할 수 있음'],
+            ['주의', '남은 항생제 임의 복용 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '증상·기간·호흡·수분을 기록해 진료에 가져가세요.'],
+            ['하지 않을 일', '집에 남은 항생제를 임의로 먹이지 마세요.'],
+            ['관련', '감기·발열·중이염 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 항생제·감기', 'https://www.cdc.gov/antibiotic-use/colds.html'],
+            ['CDC 항생제 내성 개요', 'https://www.cdc.gov/antibiotic-use/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'cold-congestion',
         match: /(감기|코막힘|콧물|기침).*(병원|괜찮|심|밤|수유|숨|호흡|가빠)|코가\s*막|숨\s*(헐떡|가빠)|가래|코\s*막/,
         title: '감기 증상은 호흡·수분·월령을 함께 보고 병원을 정합니다',
@@ -1275,6 +1333,26 @@ const COMMON_PARENT_ANSWERS = [
             ['1세 미만 안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
             ['AAP 안전수면 요약', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
+        id: 'crib-bumper-boundary',
+        match: /(범퍼\s*가드|침대\s*범퍼|crib\s*bumper|메쉬\s*범퍼|아기\s*침대\s*가드|침대\s*가드\s*쿠션)/,
+        title: '아기 침대 범퍼·가드 쿠션은 질식 위험이 있어 쓰지 않는 것이 안전합니다',
+        lead: '1세 미만 안전수면 안내는 딱딱하고 평평한 빈 수면면을 권합니다. 소프트 범퍼·가드 쿠션·두꺼운 패딩은 질식·끼임 위험이 있어 권하지 않는 안내가 많습니다. 메쉬 제품도 “안전 보장”으로 단정하지 마세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['기본', '등 재우기, 별도 수면면, 이불·인형·범퍼 없이'],
+            ['경계', '예쁜 세트·카페 추천만으로 범퍼를 추가하지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '침대 안에 부드러운 가드·쿠션이 있으면 빼 두세요.'],
+            ['하지 않을 일', '낙상 방지 이유로 소프트 범퍼를 끼우지 마세요.'],
+            ['관련', '안전수면·포지셔너 금지 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
         ]
     },
     {
@@ -1504,6 +1582,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 안전수면·쪽쪽이', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'pacifier-cord-danger',
+        match: /(쪽쪽이\s*끈|공갈\s*젖꼭지\s*끈|쪽쪽이\s*클립|pacifier\s*clip|쪽쪽이\s*목\s*줄)/,
+        title: '쪽쪽이 끈·긴 클립은 감김 위험이 있어 재울 때·혼자 둘 때 빼 두세요',
+        lead: '쪽쪽이 자체는 재울 때 도움이 될 수 있지만, 목에 두르는 끈·긴 줄·장식 클립은 감김 위험이 있습니다. 재우거나 혼자 둘 때는 끈을 제거하고, 짧은 클립도 설명서를 지키세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['사용', '감독 아래, 재울 때 끈 제거'],
+            ['금지', '긴 목걸이형, 여러 장식 알이 달린 줄']
+        ],
+        blocks: [
+            ['지금 할 일', '침대·카시트에 쪽쪽이 끈이 걸쳐 있지 않은지 확인하세요.'],
+            ['하지 않을 일', '끈 달린 채 재우지 마세요.'],
+            ['관련', '쪽쪽이·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 쪽쪽이', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Pacifiers-and-Thumb-Sucking.aspx'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['쪽쪽이 안내', '#home']
         ]
     },
     {
@@ -2615,6 +2713,45 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'tablecloth-pull-burn',
+        match: /(식탁보\s*당|테이블보\s*당|식탁\s*잡아\s*당|뜨거운\s*국\s*엎|냄비\s*손잡이\s*아이)/,
+        title: '식탁보를 잡아당기면 뜨거운 음식이 쏟아질 수 있어 치우거나 고정하세요',
+        lead: '아기가 식탁보·전선·냄비 손잡이를 잡아당기면 화상·머리 충격이 납니다. 긴 식탁보를 줄이고, 손잡이는 안쪽으로, 뜨거운 음료는 아이 손 밖에 두세요. 화상 시 흐르는 물로 식히고 민간 연고는 피합니다.',
+        points: [
+            ['예방', '식탁보 최소화, 손잡이 안쪽, 뜨거운 것 가장자리 금지'],
+            ['사고', '흐르는 물 식히기, 넓은 면적이면 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '식탁 가장자리에 당길 수 있는 것이 있는지 보세요.'],
+            ['하지 않을 일', '뜨거운 국을 테이블 끝에 두지 마세요.'],
+            ['관련', '화상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['화상 안내', '#home']
+        ]
+    },
+    {
+        id: 'vaporizer-steam-burn',
+        match: /(가습기\s*화상|스팀\s*가습기|증기\s*가습기|핫\s*미스트|vaporizer|뜨거운\s*가습)/,
+        title: '뜨거운 증기 가습기는 화상 위험이 있어 아이 손 닿지 않게, 가능하면 시원한 방식을 검토하세요',
+        lead: '뜨거운 증기(핫 미스트) 가습기는 넘어지거나 만지면 화상 위험이 있습니다. 아이 손이 닿지 않는 위치·안정된 받침대가 필요합니다. 기기 청결·물때·곰팡이도 함께 봅니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['위치', '아이·펫 손 밖, 전선 정리, 안정된 면'],
+            ['관리', '물 교체·세척 안내 준수']
+        ],
+        blocks: [
+            ['지금 할 일', '가습기가 침대·놀이 공간에 너무 가까운지 확인하세요.'],
+            ['하지 않을 일', '뜨거운 증기 출구를 아이 얼굴 쪽에 두지 마세요.'],
+            ['관련', '화상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가습기·실내 공기 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Humidifiers-and-Vaporizers.aspx'],
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -2632,6 +2769,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 화상 안전', 'https://www.cdc.gov/burn-prevention/'],
             ['NHS 화상·열탕', 'https://www.nhs.uk/conditions/burns-and-scalds/'],
             ['집 안 안전 안내', '#home']
+        ]
+    },
+    {
+        id: 'life-jacket-water',
+        match: /(구명\s*조끼|라이프\s*재킷|구명조끼|life\s*jacket|튜브만|암\s*밴드\s*수영)/,
+        title: '물놀이에서는 연령·체중에 맞는 구명조끼와 보호자 감시가 함께입니다',
+        lead: '튜브·암밴드만 믿고 감독을 줄이지 마세요. 체중·연령에 맞는 구명조끼를 바르게 입고, 팔이 닿는 거리에서 지켜봅니다. 영아는 얕은 물·욕조에서도 위험이 있습니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '체중 표시 확인, 바른 착용, 보조일 뿐'],
+            ['감시', '팔 닿는 거리, 음주 감독 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '물놀이 전 조끼 체중 라벨을 확인하세요.'],
+            ['하지 않을 일', '튜브만 채운 채 자리를 비우지 마세요.'],
+            ['관련', '익사 예방·목욕 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['익사 예방 안내', '#home']
         ]
     },
     {
@@ -2672,6 +2829,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 단추전지', 'https://www.cdc.gov/battery-safety/'],
             ['AAP 이물질 삼킴', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Button-Battery-Injuries-in-Children.aspx'],
             ['집 안 안전', '#home']
+        ]
+    },
+    {
+        id: 'tick-removal-boundary',
+        match: /(진드기\s*제거|진드기\s*뽑|진드기\s*물|풀숲\s*진드기|참진드기|tick\s*remov)/,
+        title: '진드기는 무리하게 짜지 말고, 핀셋으로 가까이 집어 천천히 빼는 안내를 따릅니다',
+        lead: '풀숲·산 활동 뒤 피부에 진드기가 붙을 수 있습니다. 불·기름·손으로 비틀어 짜지 마세요. 깨끗 한 핀셋으로 피부 가까이 집어 천천히 위로 빼는 방식이 흔히 안내됩니다. 열·발진·처짐이 있으면 진료하세요. 기피제 브랜드·농도 순위는 하지 않습니다.',
+        points: [
+            ['제거', '피부 가까이 집기, 천천히, 남은 부위 관찰'],
+            ['이후', '씻기, 날짜 기록, 이상 증상 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '산에서 돌아온 뒤 머리·겨드랑·사타구니를 살펴보세요.'],
+            ['하지 않을 일', '성냥불·석유로 떼려 하지 마세요.'],
+            ['관련', '벌레 물림·발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 진드기 제거', 'https://www.cdc.gov/ticks/removal/'],
+            ['CDC 진드기', 'https://www.cdc.gov/ticks/'],
+            ['벌레 물림 안내', '#home']
         ]
     },
     {
@@ -3233,6 +3410,63 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 목욕 안전', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['신생아 목욕 안내', '#home']
+        ]
+    },
+    {
+        id: 'stroller-safety-basics',
+        match: /(유모차\s*안전|유모차\s*벨트|유모차\s*접|스트롤러|stroller|유모차\s*기울)/,
+        title: '유모차는 벨트를 매고, 접이식 틈·기울어진 채 재우기를 조심하세요',
+        lead: '유모차에서는 안전벨트를 항상 매고, 접는 부위에 손가락이 끼지 않게 합니다. 경사지게 둔 채 오래 재우거나 카시트·침대 대용으로 방치하지 마세요. 무거운 가방을 핸들에만 걸면 전복될 수 있습니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['사용', '벨트, 잠금 바퀴, 평지에서 손 잡기'],
+            ['수면', '유모차 안 장시간 수면·기울임 방치 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '벨트 길이와 접이식 잠금이 되는지 확인하세요.'],
+            ['하지 않을 일', '핸들에 장바구니를 잔뜩 걸고 밀지 마세요.'],
+            ['관련', '안전수면·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 유모차 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Stroller-Safety.aspx'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'high-chair-safety',
+        match: /(하이\s*체어|아기\s*식탁\s*의자|유아\s*식탁\s*의자|하이체어|high\s*chair)/,
+        title: '하이체어는 벨트·안정된 바닥에, 식탁 가장자리에 발을 걸치게 두지 마세요',
+        lead: '하이체어 추락은 흔합니다. 안전벨트를 매고, 평평하고 안정된 바닥에 두며, 식탁에 바짝 붙여 아이가 발로 밀지 못하게 합니다. 혼자 두지 마세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['고정', '5점·허리 벨트, 바퀴 잠금, 평평한 바닥'],
+            ['감시', '벨트를 푼 채 두지 않기, 식탁 끝 밀기 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '벨트 버클과 의자 안정성을 점검하세요.'],
+            ['하지 않을 일', '소파·침대 옆 불안정한 곳에 두지 마세요.'],
+            ['관련', '낙상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 하이체어 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/High-Chair-Safety.aspx'],
+            ['CDC 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'humidifier-clean-boundary',
+        match: /(가습기\s*세척|가습기\s*청소|가습기\s*곰팡이|가습기\s*물때|가습기\s*필터)/,
+        title: '가습기는 물때·세균이 생기지 않게 자주 비우고 씻는 것이 중요합니다',
+        lead: '물이 고인 가습기는 미생물이 자랄 수 있습니다. 사용 후 물을 비우고, 제품 안내대로 세척·건조하세요. “한 번 넣고 며칠” 방식은 피합니다. 소독제·세정 용량을 사이트에서 정하지 않으며, 호흡 자극이 있으면 사용을 줄이고 상담하세요.',
+        points: [
+            ['루틴', '매일 물 비우기·건조, 정기 세척'],
+            ['물', '제품이 안내하는 물 종류 따르기']
+        ],
+        blocks: [
+            ['지금 할 일', '물통과 필터 상태를 점검하세요.'],
+            ['하지 않을 일', '탁한 물을 며칠째 그대로 두지 마세요.'],
+            ['관련', '가습기 화상·호흡 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가습기', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Humidifiers-and-Vaporizers.aspx'],
+            ['EPA 가습기 안내(영)', 'https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers']
         ]
     }
 
