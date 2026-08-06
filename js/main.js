@@ -903,6 +903,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'gum-swallowing-boundary',
+        match: /(껌\s*삼킴|껌\s*먹|chewing\s*gum\s*swallow|아기\s*껌|껌\s*목\s*걸)/,
+        title: '어린아이에게 껌을 주지 않는 편이 안전하고, 삼켰을 때는 호흡을 보세요',
+        lead: '껌은 질식 위험이 있고 어린아이에게 권장되지 않습니다. 삼킨 뒤 대개 소화되지 않고 배출되는 경우가 많다는 안내가 있으나, 호흡 곤란·침 흘림·가슴 통증이 있으면 응급입니다. 억지로 토하게 하지 마세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '껌·풍선껌 치우기, 형제가 물려 주지 않기'],
+            ['응급', '호흡 이상, 청색증, 침 많이 흘림']
+        ],
+        blocks: [
+            ['지금 할 일', '집·차 안 껌을 아이 손 닿지 않게 치우세요.'],
+            ['하지 않을 일', '“삼키면 7년” 같은 말로 겁만 주지 말고 호흡을 보세요.'],
+            ['관련', '사탕·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
+        ]
+    },
+    {
         id: 'hard-candy-choking',
         match: /(단단한\s*사탕|하드\s*캔디|막대\s*사탕|lollipop|hard\s*candy|사탕\s*질식|사탕\s*목|젤리\s*컵\s*질식)/,
         title: '단단한 사탕·막대 사탕은 어린 아이 질식 위험이 커서 주지 않는 편이 안전합니다',
@@ -1074,6 +1093,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 식품 알레르기 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Food-Allergies-in-Children.aspx'],
             ['CDC 식품 알레르기', 'https://www.cdc.gov/food-allergies/']
+        ]
+    },
+    {
+        id: 'lactose-intolerance-boundary',
+        match: /(유당\s*불내|lactose\s*intol|락토스\s*불내|우유\s*마시면\s*설사|유당\s*분해\s*효소)/,
+        title: '유당 불내증과 우유 알레르기는 다르며, 원인·식단은 의료진과 상의하세요',
+        lead: '우유를 마신 뒤 가스·설사·복통이 있으면 유당 불내 등 가능성이 있으나, 알레르기·감염과 구분은 진료가 필요합니다. 임의로 모든 유제품을 장기간 끊거나 효소제 용량을 정하지 마세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['구분', '알레르기(면역) vs 불내(소화) — 의료진 판단'],
+            ['상담', '성장·영양, 대체 식품, 검사 필요 여부']
+        ],
+        blocks: [
+            ['지금 할 일', '증상과 섭취 시각을 기록하세요.'],
+            ['하지 않을 일', '카페 후기만 보고 분유·우유를 바꾸지 마세요.'],
+            ['관련', '우유 단백 알레르기·생우유·설사 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 유당 불내증', 'https://www.cdc.gov/nutrition/'],
+            ['AAP 우유·유제품 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx']
         ]
     },
     {
@@ -1705,6 +1743,44 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 멀미', 'https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Motion-Sickness.aspx'],
             ['CDC 여행 건강 개요', 'https://wwwnc.cdc.gov/travel/']
+        ]
+    },
+    {
+        id: 'intussusception-boundary',
+        match: /(장중첩|intussusception|간헐\s*복통\s*다리\s*당|주기\s*복통\s*구토\s*혈변|포도\s*젤리\s*변)/,
+        title: '간헐적 심한 복통·구토·혈변이 겹치면 장 응급 가능성이 있어 즉시 진료하세요',
+        lead: '장중첩증 등은 의료진이 진단합니다. 주기적으로 다리를 당기며 울고, 구토·혈변·처짐이 있으면 응급실을 우선하세요. 사진·증상만으로 병명을 단정하지 않으며, 민간으로 기다리게 두지 마세요.',
+        points: [
+            ['신호', '간헐 심한 통증, 구토, 혈변·점액변, 처짐'],
+            ['행동', '금식 유지 여부는 의료진, 즉시 병원']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시작 시각과 변 상태를 기록하세요.'],
+            ['하지 않을 일', '진통제를 임의로 먹이며 시간을 끌지 마세요.'],
+            ['관련', '힘주어 토함·혈변·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 복통·응급 개요', 'https://www.healthychildren.org/English/health-issues/conditions/abdominal/Pages/default.aspx'],
+            ['CDC 로타·장 건강 개요', 'https://www.cdc.gov/rotavirus/']
+        ]
+    },
+    {
+        id: 'pyloric-stenosis-boundary',
+        match: /(유문\s*협착|pyloric\s*stenosis|분수토\s*신생아|생후\s*3\s*주\s*분수\s*토|계속\s*분수\s*토\s*체중)/,
+        title: '신생아가 계속 힘주어 분수처럼 토하고 체중이 늘지 않으면 진료를 미루지 마세요',
+        lead: '유문협착 등은 의료진이 진찰·영상으로 판단합니다. 생후 수 주경 분수토·공복 후에도 토함·탈수·체중 정체가 있으면 응급실·소아과를 우선하세요. 사이트에서 병명을 단정하지 않습니다.',
+        points: [
+            ['신호', '반복 분수토, 배고픔 후 또 토함, 탈수, 체중 정체'],
+            ['행동', '수유량·체중 기록, 즉시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '토하는 양·횟수·기저귀·체중을 기록하세요.'],
+            ['하지 않을 일', '“토 습관”이라며 며칠을 그냥 두지 마세요.'],
+            ['관련', '힘주어 토함·탈수·황달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 구토·유문 개요', 'https://www.healthychildren.org/English/health-issues/conditions/abdominal/Pages/default.aspx'],
+            ['탈수 안내', '#home']
         ]
     },
     {
@@ -2738,6 +2814,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'oven-door-climb-burn',
+        match: /(오븐\s*문\s*올라|오븐\s*손잡이\s*잡고|oven\s*door\s*climb|오븐\s*화상\s*아이|오븐\s*앞에\s*서)/,
+        title: '오븐 문·손잡이에 올라타거나 기대지 않게 하고, 사용 중·직후 접근을 막으세요',
+        lead: '오븐 문은 뜨겁고, 문을 열고 올라타면 전복·화상 위험이 있습니다. 사용 중에는 아이 접근을 막고, 식기 전까지 문을 만지지 않게 하세요. 스토브 손잡이 커버와 함께 주방을 관리합니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '주방 문 차단, 오븐 사용 중 감독, 식힘 확인'],
+            ['위험', '화상, 문 전복, 뜨거운 트레이']
+        ],
+        blocks: [
+            ['지금 할 일', '오븐 앞에 발판·의자가 있는지 치우세요.'],
+            ['하지 않을 일', '뜨거운 오븐 문을 장난감 선반처럼 쓰지 마세요.'],
+            ['관련', '가스레인지·화상·주방 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'stove-knob-safety',
         match: /(가스레인지\s*손잡이|레인지\s*노브|stove\s*knob|가스\s*불\s*아이|주방\s*불\s*잠금|쿡탑\s*손잡이)/,
         title: '가스레인지·쿡탑 손잡이는 아이 손이 닿지 않게 하고, 손잡이 커버를 검토하세요',
@@ -3530,6 +3625,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'labial-adhesion-boundary',
+        match: /(음순\s*유착|소음순\s*유착|labial\s*adhesion|여자\s*아기\s*음부\s*붙|외음\s*유착)/,
+        title: '여아 음순이 붙어 보이면 억지로 벌리지 말고 소아과 진료를 상의하세요',
+        lead: '일부 여아에서 음순이 얇게 유착되는 경우가 있습니다. 억지로 벌리거나 민간 연고를 바르지 마세요. 배뇨 문제·발적·통증이 있으면 진료가 필요합니다. 치료·약 용량은 의료진이 정합니다. 사진 진단은 하지 않습니다.',
+        points: [
+            ['관리', '부드러운 세척, 자극 비누 자제, 억지 분리 금지'],
+            ['진료', '배뇨 이상, 출혈, 감염 징후']
+        ],
+        blocks: [
+            ['지금 할 일', '기저귀 갈 때 자극·발진이 있는지 관찰하세요.'],
+            ['하지 않을 일', '손으로 유착을 떼려 하지 마세요.'],
+            ['관련', '신생아 위생·발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 소아 비뇨·생식기 개요', 'https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/default.aspx'],
+            ['신생아 케어 안내', '#home']
+        ]
+    },
+    {
         id: 'newborn-pseudo-menses',
         match: /(가성\s*월경|여아\s*출혈|여아\s*피|신생아\s*질|기저귀\s*피\s*여|아기\s*여아\s*피|질\s*분비\s*신생아|신생아\s*피\s*비침)/,
         title: '신생아 여아의 약간의 피·분비는 호르몬 영향일 수 있고, 양·냄새·전신과 함께 봅니다',
@@ -3890,6 +4004,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['변비 안내', '#home'],
             ['질병관리청 변비', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5827']
+        ]
+    },
+    {
+        id: 'swimmer-ear-boundary',
+        match: /(외이도염|수영자\s*귀|swimmer.?s?\s*ear|물놀이\s*후\s*귀|귀\s*가려\s*물놀이|수영\s*후\s*귀|swimmers\s*ear)/,
+        title: '물놀이 후 귀 통증·가려움은 외이도 문제일 수 있어 면봉 깊게 금지·진료를 검토하세요',
+        lead: '수영 후 귀가 아프거나 가렵고 진물이 나면 외이도염 등 가능성이 있으나 사진·증상만으로 단정하지 않습니다. 면봉을 깊게 넣지 말고, 통증·발열·청력 변화가 있으면 진료하세요. 약 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관리', '물기 가볍게 닦기, 면봉 깊게 금지'],
+            ['진료', '통증, 붓기, 진물, 발열, 청력 저하']
+        ],
+        blocks: [
+            ['지금 할 일', '물놀이 후 귀를 옆으로 기울여 물기를 빼 보세요.'],
+            ['하지 않을 일', '알코올·민간 오일을 임의로 넣지 마세요.'],
+            ['관련', '중이염·귀지·물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 외이도염(수영자 귀)', 'https://www.cdc.gov/swimmers-ear/'],
+            ['AAP 귀 건강 개요', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx']
         ]
     },
     {
@@ -5183,6 +5316,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'campfire-safety',
+        match: /(캠프파이어|모닥불\s*아이|campfire|장작불\s*안전|캠핑\s*불\s*아이|불멍\s*아이)/,
+        title: '캠프파이어·모닥불은 아이 접근을 막고, 재가 식을 때까지 방치하지 마세요',
+        lead: '야외 불은 화상·연기·불씨 위험이 큽니다. 아이 손이 닿지 않는 거리를 두고, 불이 완전히 꺼지고 재가 식었는지 확인하세요. 텐트 안·밀폐 공간에서 불을 피우지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '이격, 바람 방향, 물·모래로 완전 소화'],
+            ['금지', '불 위 뛰어넘기, 라이터 장난, 텐트 안 화기']
+        ],
+        blocks: [
+            ['지금 할 일', '불 주변에 아이 의자·담요를 겹치지 않게 두세요.'],
+            ['하지 않을 일', '재 속에 불이 남은 채 자리를 비우지 마세요.'],
+            ['관련', '바비큐·화상·CO 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 야외 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'burn-scald-care',
         match: /(화상|데였|뜨거운\s*물|끓는\s*물|스팀\s*화상|화상\s*응급)/,
         title: '화상·뜨거운 물은 흐르는 찬물로 식히고, 민간 연고·얼음 문지르기는 피합니다',
@@ -5673,6 +5825,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'parking-lot-pedestrian-safety',
+        match: /(주차장\s*아이|parking\s*lot|마트\s*주차장|차\s*사이\s*뛰어|주차장\s*손\s*잡)/,
+        title: '주차장에서는 아이 손을 잡고, 차 사이·후진 차량 사이를 뛰지 않게 하세요',
+        lead: '주차장은 운전자 시야가 가려진 채 차가 움직입니다. 아이 손을 잡고 보행 구역을 이용하고, 카트·유모차와 함께 차 뒤를 지나갈 때 특히 주의하세요. 특정 앱·장비 추천은 하지 않습니다.',
+        points: [
+            ['습관', '손 잡기, 차 사이에서 놀지 않기, 눈 맞춤'],
+            ['유모차', '운전자 눈에 잘 띄게, 급정거 대비']
+        ],
+        blocks: [
+            ['지금 할 일', '하차 후 즉시 아이 손을 잡는 루틴을 만드세요.'],
+            ['하지 않을 일', '차 키만 들고 아이보다 먼저 멀리 가지 마세요.'],
+            ['관련', '후진 사고·카시트·차 안 방치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 보행·차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 교통 안전', 'https://www.cdc.gov/transportationsafety/']
+        ]
+    },
+    {
         id: 'driveway-backover-prevention',
         match: /(드라이브웨이|후진\s*사고|차에\s*치|마당\s*후진|backover|후방\s*카메라\s*아이|주차\s*아이\s*치)/,
         title: '집 앞·주차장 후진 전 아이 위치를 직접 확인하세요',
@@ -5707,6 +5878,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['NHTSA 창문 끼임 안전(영)', 'https://www.nhtsa.gov/'],
+            ['AAP 차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'trunk-entrapment-boundary',
+        match: /(트렁크\s*가둠|트렁크\s*갇|trunk\s*entrap|트렁크\s*놀이|차\s*트렁크\s*숨|트렁크\s*질식|트렁크\s*숨|트렁크\s*숨바꼭질)/,
+        title: '트렁크·짐칸에서 숨바꼭질하지 않게 하고, 비상 탈출 레버를 확인하세요',
+        lead: '트렁크에 들어가면 질식·열사병·탈출 지연 위험이 있습니다. 열쇠·리모컨을 아이 손에 두지 말고, 트렁크 안에서 놀지 않게 하세요. 차량 비상 탈출 레버 위치를 어른이 알아 두세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '키 보관, 트렁크 장난 금지, 하차 후 확인'],
+            ['응급', '갇힘 의심 시 즉시 열고 119']
+        ],
+        blocks: [
+            ['지금 할 일', '차 키를 아이 손이 닿지 않는 곳에 두세요.'],
+            ['하지 않을 일', '트렁크를 “비밀 기지” 놀이로 쓰지 마세요.'],
+            ['관련', '차 안 방치·주차장 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 트렁크 가둠 예방(영)', 'https://www.nhtsa.gov/'],
             ['AAP 차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
         ]
     },
@@ -6547,6 +6737,44 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '바닥에 떨어진 점토 조각을 치우세요.'],
             ['하지 않을 일', '산업용 점토·석고를 놀이 재료로 주지 마세요.'],
             ['관련', '중독·슬라임·크레용 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'fabric-softener-poison-boundary',
+        match: /(섬유유연제\s*먹|유연제\s*먹|fabric\s*softener|섬유유연\s*시트\s*먹|다우니\s*먹)/,
+        title: '섬유유연제·유연 시트를 삼키거나 눈에 넣으면 입·눈을 헹구고 상담하세요',
+        lead: '섬유유연제 액체·시트는 자극·구역을 일으킬 수 있습니다. 삼켰을 때 토하게 강제하지 말고 제품명·추정량을 확인한 뒤 중독 상담·진료를 검토하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '잠금 수납, 세탁기 위에 방치 금지'],
+            ['노출', '입 헹구기, 눈 세척, 호흡·구토 심하면 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '유연제 병을 아이 손 닿지 않게 옮기세요.'],
+            ['하지 않을 일', '시트를 스티커 놀이처럼 주지 마세요.'],
+            ['관련', '세제 포드·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'dryer-sheet-ingestion-boundary',
+        match: /(건조기\s*시트\s*먹|드라이\s*시트|dryer\s*sheet|건조기\s*방향제\s*시트\s*삼킴)/,
+        title: '건조기 시트를 씹거나 삼켰으면 이물질·자극을 보고 상담하세요',
+        lead: '건조기 시트는 섬유·화학 성분이 있어 삼키면 구역·자극이 날 수 있습니다. 토하게 강제하지 말고 양과 증상을 본 뒤 중독 상담·진료를 검토하세요. 세탁물 옆에 두지 마세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '시트 보관함 잠금, 바닥에 떨어뜨리지 않기'],
+            ['노출', '침 흘림·복통·호흡 이상 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '건조기 옆 시트를 높은 곳으로 옮기세요.'],
+            ['하지 않을 일', '사용한 시트를 장난감처럼 주지 마세요.'],
+            ['관련', '섬유유연제·중독 안내를 참고하세요.']
         ],
         links: [
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
