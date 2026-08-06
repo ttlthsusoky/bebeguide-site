@@ -1161,6 +1161,65 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'impetigo-boundary',
+        match: /(농가진|impetigo|꿀\s*딱지|노란\s*딱지\s*피부|피부\s*고름\s*물집)/,
+        title: '노란 딱지·물집이 보이면 농가진 등 가능성이 있어 사진 진단 없이 진료를 검토하세요',
+        lead: '피부에 물집·노란 딱지가 생기는 모습은 농가진 등 세균 피부 감염으로 설명되기도 하지만, 사진·댓글만으로 병명을 정하지 않습니다. 긁지 않게 하고, 연고·항생제 여부는 의료진이 정합니다. 열이 나거나 빠르게 퍼지면 빨리 진료하세요.',
+        points: [
+            ['가정', '손 씻기, 수건·침구 구분, 병변 만지지 않기'],
+            ['진료', '퍼짐, 발열, 통증, 눈 주위 침범']
+        ],
+        blocks: [
+            ['지금 할 일', '병변 시작 시기와 퍼진 범위를 기록하세요.'],
+            ['하지 않을 일', '성인 항생 연고를 임의로 바르지 마세요.'],
+            ['관련', '발진 경계·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 농가진', 'https://www.cdc.gov/group-a-strep/about/impetigo.html'],
+            ['NHS 농가진', 'https://www.nhs.uk/conditions/impetigo/'],
+            ['발진 경계 안내', '#home']
+        ]
+    },
+    {
+        id: 'scabies-boundary',
+        match: /(옴\s*진드기|옴\s*감염|옴\s*의심|scabies|야간\s*가려움\s*전신|손가락\s*사이\s*가려움\s*밤|전신\s*가려움\s*밤)/,
+        title: '심한 가려움·밤에 더하면 옴 등이 의심될 수 있어 자가 약 용량을 정하지 마세요',
+        lead: '밤에 심해지는 가려움과 특정 부위의 발진은 옴 등 여러 원인일 수 있습니다. 사진으로 단정하지 말고, 치료제·가족 동시 치료는 의료진·약사 안내를 따릅니다. “국민 연고” 추천은 하지 않습니다.',
+        points: [
+            ['의심 시', '진료·약국 상담, 가족·동거인 증상 확인'],
+            ['위생', '옷·침구 세탁·건조, 불필요한 살충 남용 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '가려움 시간대와 가족 여부를 적으세요.'],
+            ['하지 않을 일', '성인 약을 아이 몸무게 감으로 바르지 마세요.'],
+            ['관련', '발진·머릿니 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 옴', 'https://www.cdc.gov/scabies/'],
+            ['NHS 옴', 'https://www.nhs.uk/conditions/scabies/']
+        ]
+    },
+    {
+        id: 'chickenpox-boundary',
+        match: /(수두|chickenpox|varicella|수두\s*접종|수두\s*물집|가려운\s*물집\s*열)/,
+        title: '수두 의심은 물집·열을 사진으로 단정하지 말고, 접종·등원은 공식·시설 안내를 따르세요',
+        lead: '가려운 물집과 열이 함께 있으면 수두 등 가능성이 있으나 사이트에서 병명을 확정하지 않습니다. 임산부·신생아·면역 저하자 접촉 시 특히 빨리 의료 상담이 필요합니다. 등원·격리 기간은 시설·보건 안내를 확인하고, 아스피린은 주지 마세요(라이 증후군 관련).',
+        points: [
+            ['돌봄', '긁힘 최소화, 수분, 해열은 의료 안내 성분'],
+            ['주의', '임산부·신생아 접촉, 호흡 곤란·처짐·고열 지속']
+        ],
+        blocks: [
+            ['지금 할 일', '접종 기록과 증상 시작일을 확인하세요.'],
+            ['하지 않을 일', '아스피린·검증 안 된 민간 목욕제를 쓰지 마세요.'],
+            ['관련', '발열·아스피린 경계·접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 수두', 'https://www.cdc.gov/chickenpox/'],
+            ['질병관리청 수두', 'https://www.kdca.go.kr/'],
+            ['예방접종 일정', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
         id: 'roseola-boundary',
         match: /(돌발진|돌\s*발진|장미진|roseola|sixth\s*disease|열\s*내린\s*뒤\s*발진|고열\s*후\s*발진)/,
         title: '고열 뒤 발진은 돌발진 등 여러 가능성이 있어 사진·문장으로 병명을 정하지 않습니다',
@@ -1475,6 +1534,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'norovirus-gastro-boundary',
+        match: /(노로|norovirus|장염|바이러스성\s*장염|식중독\s*설사|토\s*설사\s*유행)/,
+        title: '장염·노로 의심은 수분·처짐을 보고, 사진·댓글로 균 이름을 정하지 않습니다',
+        lead: '구토·설사가 갑자기 퍼지면 노로바이러스 등 장염 가능성이 있으나, 사이트에서 원인균을 단정하지 않습니다. 탈수 신호(소변 감소·처짐·입 마름)를 보고, 토하게 강제하거나 지사제를 임의로 쓰지 마세요. 손 씻기·표면 청소가 전파 줄이기에 도움이 됩니다. 약 용량은 의료진이 정합니다.',
+        points: [
+            ['돌봄', '소량씩 수분, 손 씻기, 오염 옷·표면 청소'],
+            ['진료', '탈수 신호, 혈변, 고열·처짐, 생후 어린 영아']
+        ],
+        blocks: [
+            ['지금 할 일', '소변·구토 횟수·마신 양을 기록하세요.'],
+            ['하지 않을 일', '성인 지사제·항생제를 임의로 주지 마세요.'],
+            ['관련', '설사·탈수·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 노로바이러스', 'https://www.cdc.gov/norovirus/'],
+            ['질병관리청 감염병 정보', 'https://www.kdca.go.kr/'],
+            ['설사·탈수 안내', '#home']
+        ]
+    },
+    {
         id: 'diarrhea-dehydration',
         match: /(설사|묽은\s*변|물똥|토하고\s*설사)/,
         title: '설사는 횟수보다 수분·소변·처짐을 함께 봅니다',
@@ -1511,6 +1590,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 항생제·감기', 'https://www.cdc.gov/antibiotic-use/colds.html'],
             ['CDC 항생제 내성 개요', 'https://www.cdc.gov/antibiotic-use/'],
             ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'saline-nose-suction-boundary',
+        match: /(콧물\s*흡인|코\s*석션|식염수\s*코|코\s*세척\s*아기|코딱지\s*빼|노즈\s*클리너|saline\s*nose|bulb\s*syringe)/,
+        title: '식염수·흡인은 과하게 하지 말고, 호흡이 힘들면 진료를 우선하세요',
+        lead: '코막힘으로 수유가 어려울 때 생리식염수 몇 방울과 부드러운 흡인이 도움이 될 수 있다는 안내가 있습니다. 깊이·세게 반복하면 코 점막을 자극할 수 있습니다. 특정 석션 기기 브랜드 순위·사용 횟수 단정은 하지 않으며, 호흡 곤란·처짐·수유 불가는 진료가 먼저입니다.',
+        points: [
+            ['방법', '손 씻기, 소량 식염수, 부드럽게, 과도 반복 금지'],
+            ['진료', '빠른 호흡, 입술 파람, 수유 거부, 고열·어린 영아']
+        ],
+        blocks: [
+            ['지금 할 일', '수유 전 코 상태를 보고 필요 시에만 가볍게 하세요.'],
+            ['하지 않을 일', '면봉을 코 깊숙이 넣지 마세요.'],
+            ['관련', '감기·RSV 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 코·귀·목 일반', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx'],
+            ['CDC RSV 영아', 'https://www.cdc.gov/rsv/infants-young-children/index.html'],
+            ['감기 안내', '#home']
         ]
     },
     {
@@ -1766,6 +1865,26 @@ const COMMON_PARENT_ANSWERS = [
             ['1세 미만 안전수면 가이드', 'blog/baby-safe-sleep-guide.html'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
             ['AAP 안전수면 요약', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
+        id: 'crib-drop-side-boundary',
+        match: /(드롭\s*사이드|드롭사이드|옆판\s*내려|이동식\s*옆판|drop[\s-]?side\s*crib|옆판\s*카시트)/,
+        title: '옆판이 내려가는 드롭사이드 아기 침대는 쓰지 마세요',
+        lead: '드롭사이드(옆판 이동) 아기 침대는 끼임·이탈 사고로 판매·사용이 제한·금지된 흐름이 있습니다. 중고로 물려받아도 쓰지 않는 편이 안전합니다. 고정 옆판·현재 안전 기준을 만족하는 침대를 안내 기준으로 보고, 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['피하기', '옆판이 위아래로 움직이는 구형 침대'],
+            ['대안', '고정 옆판, 설명서·리콜 여부 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '사용 중 침대 모델·리콜 여부를 확인하세요.'],
+            ['하지 않을 일', '중고 드롭사이드를 “아직 튼튼하다”며 쓰지 마세요.'],
+            ['관련', '안전수면·범퍼 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 아기 침대 안전', 'https://www.cpsc.gov/'],
+            ['AAP 안전수면·침대', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
         ]
     },
     {
@@ -2250,6 +2369,25 @@ const COMMON_PARENT_ANSWERS = [
             ['변비 안내', '#home'],
             ['설사·수분', '#home'],
             ['발열·응급', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'earwax-cleaning-boundary',
+        match: /(귀지|귀\s*이개|귀\s*파|earwax|면봉\s*귀|귀\s*청소|귀지\s*제거)/,
+        title: '귀지는 면봉으로 깊게 파지 말고, 바깥만 닦으세요',
+        lead: '귀지는 귀를 보호하는 역할도 있어 면봉을 안쪽으로 넣으면 더 밀어 넣거나 고막을 다칠 수 있습니다. 바깥 입구만 부드러운 천으로 닦고, 통증·분비·청력 걱정·냄새가 있으면 진료하세요. 시중 “귀 청소” 도구 추천·순위는 하지 않습니다.',
+        points: [
+            ['가정', '바깥만 닦기, 면봉·이개 깊이 금지'],
+            ['진료', '통증, 분비물, 청력 변화, 이물감 지속']
+        ],
+        blocks: [
+            ['지금 할 일', '면봉을 쓰지 않는 쪽으로 습관을 바꾸세요.'],
+            ['하지 않을 일', '초·민간 도구로 귀 안을 파지 마세요.'],
+            ['관련', '귀 만짐·중이염 경계를 참고하세요.']
+        ],
+        links: [
+            ['NHS 귀지', 'https://www.nhs.uk/conditions/earwax-build-up/'],
+            ['AAP 귀 관리 개요', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx']
         ]
     },
     {
@@ -3244,6 +3382,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'airbag-front-seat-carseat',
+        match: /(조수석\s*카시트|에어백\s*카시트|앞좌석\s*아기|에어백\s*앞|전면\s*에어백\s*아이|infant\s*front\s*seat)/,
+        title: '에어백이 있는 앞좌석에 아기를 태우지 않는 것이 안전합니다',
+        lead: '전면 에어백은 충돌 시 카시트·아기에게 위험할 수 있어, 영아는 뒷좌석 카시트가 권고됩니다. 불가피한 예외는 차량·시트 설명서와 안전 전문가 안내를 따르세요. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['원칙', '뒷좌석 설치, 에어백 경고 라벨 확인'],
+            ['피하기', '조수석에 후향·전향 영아 시트 + 에어백 ON']
+        ],
+        blocks: [
+            ['지금 할 일', '차량 설명서의 에어백·카시트 주의 문구를 확인하세요.'],
+            ['하지 않을 일', '앞좌석에 “잠깐만” 아기를 두지 마세요.'],
+            ['관련', '카시트 원칙·택시 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트·에어백', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['카시트 원칙 안내', '#home']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -3261,6 +3419,26 @@ const COMMON_PARENT_ANSWERS = [
             ['도로교통공단 어린이 안전', 'https://www.koroad.or.kr/'],
             ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
             ['AAP 카시트 안내', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx']
+        ]
+    },
+    {
+        id: 'torticollis-boundary',
+        match: /(사경|torticollis|고개\s*기울|목이\s*기울|한쪽으로만\s*고개|목\s*근육\s*짧|기운\s*목)/,
+        title: '고개가 한쪽으로만 기울면 사경·자세 문제 가능성을 진료에서 확인하세요',
+        lead: '한쪽만 보는 습관·목 기울임은 자세성 사경 등과 관련될 수 있고, 두상 비대칭과 함께 오기도 합니다. 사이트에서 운동 처방·도수 치료를 단정하지 않습니다. 터미타임·양방향 자극을 시도하되, 지속되면 소아청소년과·재활 상담을 검토하세요.',
+        points: [
+            ['가정', '양쪽으로 안기, 깨어 있을 때 엎드려 놀이, 장난감 위치 바꾸기'],
+            ['진료', '움직임 비대칭 지속, 통증, 발달 걱정']
+        ],
+        blocks: [
+            ['지금 할 일', '어느 쪽으로 고개를 돌리는지 며칠 관찰하세요.'],
+            ['하지 않을 일', '목을 억지로 세게 돌리지 마세요.'],
+            ['관련', '납작 머리·터미타임 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 사경·두상', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Your-Babys-Head-Shape-Positional-Skull-Deformities.aspx'],
+            ['터미타임 안내', '#home'],
+            ['발달 가이드', 'blog/development-kdst-guide.html']
         ]
     },
     {
@@ -4104,6 +4282,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'iron-gummy-poison-boundary',
+        match: /(철분제\s*삼|철분\s*과량|젤리\s*비타민\s*삼|영양제\s*많이\s*먹|아이\s*철분|iron\s*poison|gummy\s*vitamin\s*eat)/,
+        title: '철분제·젤리 비타민을 많이 삼켰으면 토하게 하지 말고 중독 상담·응급실을 이용하세요',
+        lead: '철분 과량은 어린이에게 위험할 수 있고, 알록달록한 젤리 영양제도 과량 섭취가 쉽습니다. 원래 용기에 잠가 두고, 삼켰으면 양·제품명을 확인한 뒤 토하게 강제하지 마세요. 해독·용량 처방은 사이트에서 하지 않습니다.',
+        points: [
+            ['예방', '잠금 수납, 사탕과 분리, 방문객 가방 주의'],
+            ['노출', '토하게 금지, 상담·응급실, 용기 가져가기']
+        ],
+        blocks: [
+            ['지금 할 일', '삼킨 대략 개수와 제품명을 적으세요.'],
+            ['하지 않을 일', '우유를 억지로 먹여 “중화”하려 하지 마세요.'],
+            ['관련', '약 잠금·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['약 잠금 안내', '#home']
+        ]
+    },
+    {
         id: 'medicine-cabinet-lock',
         match: /(약\s*보관|약\s*잠금|약품\s*수납|아이\s*약\s*손|영양제\s*삼킴|감기약\s*삼킴)/,
         title: '약·영양제·철분제는 잠그는 수납에 두고, 사탕처럼 보이지 않게 하세요',
@@ -4429,6 +4627,45 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 목욕 안전', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['신생아 목욕 안내', '#home']
+        ]
+    },
+    {
+        id: 'escalator-stroller-safety',
+        match: /(에스컬레이터|에스컬|자동\s*계단).{0,16}(유모차|아기|아이)|유모차.{0,12}에스컬|escalator/,
+        title: '에스컬레이터에는 유모차를 올리지 말고 엘리베이터를 이용하세요',
+        lead: '에스컬레이터에서 유모차가 뒤집히거나 바퀴·발이 끼는 사고가 날 수 있습니다. 가능하면 엘리베이터를 쓰고, 유모차를 접어 들고 오를 때도 한 손 아기·한 손 짐 상태를 피하세요. 쇼핑몰·지하철 안내를 따릅니다.',
+        points: [
+            ['선택', '엘리베이터 우선, 직원 도움 요청'],
+            ['위험', '유모차 바퀴 끼임, 전복, 손 끼임']
+        ],
+        blocks: [
+            ['지금 할 일', '목적지 엘리베이터 위치를 미리 확인하세요.'],
+            ['하지 않을 일', '움직이는 에스컬레이터에 유모차를 밀어 올리지 마세요.'],
+            ['관련', '유모차·쇼핑 카트 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출·유모차 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['유모차 안전 안내', '#home']
+        ]
+    },
+    {
+        id: 'lead-exposure-boundary',
+        match: /(납\s*중독|납\s*노출|lead\s*poison|납\s*페인트|오래된\s*페인트|납\s*장난감|납\s*검사)/,
+        title: '납 노출이 걱정되면 환경·장난감을 점검하고, 검사는 의료진과 상의하세요',
+        lead: '오래된 페인트·먼지·일부 수입 장난감·도자기 등에서 납 노출이 문제될 수 있습니다. 증상을 사이트에서 단정하지 않으며, 혈중 납 검사·치료는 의료진이 판단합니다. “해독 주스·민간 요법”으로 대체하지 마세요.',
+        points: [
+            ['예방', '벗겨진 페인트 먼지, 손 씻기, 신뢰할 수 있는 장난감·식기'],
+            ['상담', '집 수리·오래된 주택, 발달 걱정 시 의료진']
+        ],
+        blocks: [
+            ['지금 할 일', '집 안 벗겨진 페인트·먼지가 많은 곳을 점검하세요.'],
+            ['하지 않을 일', '검증 안 된 해독 제품을 주지 마세요.'],
+            ['관련', '집 안 안전·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 납 중독 예방', 'https://www.cdc.gov/lead-prevention/'],
+            ['EPA 납 정보', 'https://www.epa.gov/lead'],
+            ['AAP 환경 건강 개요', 'https://www.healthychildren.org/English/safety-prevention/all-around/Pages/default.aspx']
         ]
     },
     {
