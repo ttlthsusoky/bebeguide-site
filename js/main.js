@@ -630,6 +630,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'balloon-choking',
+        match: /(풍선\s*질식|풍선\s*조각|라텍스\s*풍선|풍선\s*터진|풍선\s*삼)/,
+        title: '라텍스 풍선 조각은 질식 위험이 커서 어린 아이 주변에 두지 마세요',
+        lead: '터진 풍선 조각·미처 불어지지 않은 풍선은 기도에 달라붙어 질식을 일으킬 수 있다는 안전 안내가 많습니다. 어린 아이 파티에서는 보호자가 조각을 바로 치우고, 혼자 풍선을 물지 못하게 하세요. 헬륨 가스 흡입 장난도 위험합니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['위험', '터진 조각, 불지 않은 풍선, 감독 없는 놀이'],
+            ['응급', '숨을 못 쉼·청색증·소리 없는 질식은 응급처치·119']
+        ],
+        blocks: [
+            ['지금 할 일', '집·차 안에 풍선 조각이 남아 있지 않은지 치우세요.'],
+            ['하지 않을 일', '영아에게 풍선을 물고 놀게 하지 마세요.'],
+            ['관련', '질식·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html']
+        ]
+    },
+    {
         id: 'choking-gagging',
         match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
         title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
@@ -2537,7 +2556,221 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 수면 문제', 'https://www.healthychildren.org/English/ages-stages/preschool/Pages/Nightmares-and-Night-Terrors.aspx'],
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
         ]
-    }
+    },
+{
+        id: 'cold-medicine-under-two',
+        match: /(감기\s*약|종합\s*감기|코\s*막힘\s*약|기침\s*약|해열제\s*말고\s*감기|영아\s*감기\s*약|2세\s*미만\s*감기|돌\s*전\s*감기\s*약)/,
+        title: '어린 아이에게 일반 감기약은 함부로 주지 않습니다',
+        lead: '많은 공식 안내가 영아·어린 유아에게 일반의약품 기침·감기약을 일상적으로 쓰지 말라고 합니다. 특히 아주 어린 아이에서는 이득보다 위험이 클 수 있습니다. 해열·수분·호흡 관찰이 우선이고, 약 이름·용량을 사이트·댓글로 정하지 않습니다. 처방·예진은 의료진에게 맡기세요.',
+        points: [
+            ['우선', '수분, 코 흡인·생리식염(안내된 방법), 실내 습도, 호흡·처짐 관찰'],
+            ['약', '일반 감기약 임의 복용 금지에 가깝게 보고, 필요 시 진료·약사·의사 지시만']
+        ],
+        blocks: [
+            ['지금 할 일', '나이, 체온, 호흡, 먹은 양·소변을 적고 진료 여부를 판단하세요.'],
+            ['하지 않을 일', '성인 감기약을 나눠 주거나, ml를 인터넷에서 맞춰 주지 마세요.'],
+            ['관련', '발열·코막힘·RSV 호흡 안내를 참고하세요.']
+        ],
+        links: [
+            ['FDA 어린이 감기약', 'https://www.fda.gov/drugs/special-features/use-caution-when-giving-cough-and-cold-products-kids'],
+            ['CDC 감기 돌보기', 'https://www.cdc.gov/antibiotic-use/colds.html'],
+            ['발열·응급 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'alcohol-breastfeeding',
+        match: /(수유|모유).*(술|맥주|와인|소주|음주)|(술|맥주|와인|소주).*(수유|모유|짠\s*후)/,
+        title: '수유 중 음주는 피하거나 최소화하고, “짜내면 된다”에 기대지 마세요',
+        lead: '수유부가 술을 마시면 알코올이 모유로 전달될 수 있습니다. 가능하면 수유 중 음주를 피하고, 마셨다면 아이 수유 시점과 간격을 의료 안내·공식 자료를 기준으로 신중히 정하세요. “한 잔 공식”이나 펌핑으로 알코올을 완전히 뺀다는 식으로 단정하지 않습니다. 과음·의존이 걱정되면 도움을 연결하세요.',
+        points: [
+            ['원칙', '수유 중 금주 또는 최소화, 아이 안전을 우선'],
+            ['오해', '유축해 버리면 모유 속 알코올이 바로 없어진다고 보지 말 것']
+        ],
+        blocks: [
+            ['지금 할 일', '마실 계획이 있으면 미리 수유·유축 일정을 의료 안내와 맞춰 보세요.'],
+            ['하지 않을 일', '만취 상태에서 아기를 안고 재우거나 함께 자지 마세요.'],
+            ['상담', '약·질환·의존이 있으면 의료진·중독 상담 경로를 이용하세요.']
+        ],
+        links: [
+            ['CDC 수유와 알코올', 'https://www.cdc.gov/breastfeeding/breastfeeding-special-circumstances/vaccinations-medications-drugs/alcohol.html'],
+            ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'never-leave-in-car',
+        match: /(차\s*안\s*방치|차량\s*방치|카시트에\s*두고|차에서\s*잠|더운\s*차|차\s*안\s*온도|아기\s*차\s*두고)/,
+        title: '아기를 차 안에 혼자 두지 마세요. 짧은 시간도 위험합니다',
+        lead: '차 안 온도는 바깥보다 빠르게 오를 수 있고, 아기를 카시트에 둔 채 자리를 비우는 일은 열사병·질식·유괴 위험이 있습니다. “잠깐 마트”도 예외가 아닙니다. 도착 후 뒷좌석을 확인하는 습관, 동승자에게 알리기를 권합니다. 특정 알림 기기 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['금지', '잠든 아이·짧은 볼일 이유로 차 안 단독 방치'],
+            ['습관', '뒷좌석 확인, 가방을 뒷좌석에 두기 등 개인 점검 루틴']
+        ],
+        blocks: [
+            ['지금 할 일', '하차 시 뒷좌석을 보는 동작을 고정하세요.'],
+            ['하지 않을 일', '시동·에어컨만 켜 두고 아이를 혼자 두지 마세요.'],
+            ['응급', '차 안 아이를 발견하면 즉시 구조를 요청하고 의료 평가를 받으세요.']
+        ],
+        links: [
+            ['NHTSA 차 안 열·아동', 'https://www.nhtsa.gov/summer-heat-child-safety'],
+            ['AAP 차 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Prevent-Child-Deaths-in-Hot-Cars.aspx'],
+            ['카시트 원칙', '#home']
+        ]
+    },
+    {
+        id: 'baby-walker-danger',
+        match: /(보행기|아기\s*보행기|워크어|baby\s*walker|걸음마\s*보조\s*차)/,
+        title: '앉아서 미는 보행기는 권하지 않는 안내가 많습니다',
+        lead: '바퀴 달린 앉는 보행기는 낙상·계단 추락·화상·손 끼임 사고와 관련해 많은 전문 단체가 사용을 권하지 않습니다. 걷기 연습을 빠르게 해 주지 않으며, 오히려 위험할 수 있습니다. 고정 활동 센터·바닥 놀이·보호자 손을 잡는 방식이 더 안전합니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['위험', '계단·문턱·핫플레이트 접근, 전복'],
+            ['대안', '바닥 놀이, 밀기 장난감(보호자 감시), 손잡고 걷기']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 보행기가 있으면 계단·난간 환경을 점검하고 사용을 줄이세요.'],
+            ['하지 않을 일', '보행기에 태운 채 자리를 비우지 마세요.'],
+            ['관련', '집 안 안전·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 보행기', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Baby-Walkers-A-Dangerous-Choice.aspx'],
+            ['CDC 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'furniture-tipover',
+        match: /(가구\s*전도|서랍장\s*넘어|티비\s*넘어|TV\s*넘어|옷장\s*넘어|가구\s*고정|앵커\s*고정|팁오버)/,
+        title: '서랍장·TV 등 가구는 벽에 고정하고, 아이 오르기 놀이를 막으세요',
+        lead: '아이들이 서랍을 밟고 올라가거나 TV를 당기다가 가구가 넘어지는 사고가 납니다. 무거운 가구·TV는 안내된 방식으로 벽·스터드에 고정하고, 위에 유인물을 두지 마세요. 특정 고정 장치 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '벽 고정, 서랍 잠금, TV 낮은 가구·고정'],
+            ['행동', '가구 오르기 금지, 바로 제지']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 방에 높은 서랍장·불안정 TV가 있는지 확인하세요.'],
+            ['하지 않을 일', '위에 장난감·리모컨을 올려 유인하지 마세요.'],
+            ['응급', '깔리거나 머리 충격이 있으면 의식·구토·처짐을 보고 119·진료']
+        ],
+        links: [
+            ['CPSC 가구 전도', 'https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Tipover-Information-Center'],
+            ['AAP 가구 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Furniture-And-TV-Tip-Overs-A-Hidden-Hazard-in-Your-Home.aspx']
+        ]
+    },
+    {
+        id: 'window-fall-prevention',
+        match: /(창\s*추락|창문\s*추락|창틀\s*앉아|난간\s*넘어|베란다\s*추락|창문\s*방충|윈도우\s*가드)/,
+        title: '창문·베란다에서는 방충망만 믿지 말고, 가구를 창 아래에서 치우세요',
+        lead: '방충망은 추락 방지 장치가 아닙니다. 창 아래 침대·서랍을 두지 말고, 잠금·제한 장치를 사용 설명서대로 쓰세요. 특정 안전망 브랜드 순위는 하지 않습니다. 추락 사고가 있으면 머리·목 손상을 가정하고 함부로 움직이지 말고 구조를 요청하세요.',
+        points: [
+            ['예방', '창 아래 오를 가구 제거, 잠금, 성인 감시'],
+            ['오해', '방충망 = 안전망 아님']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 손 닿는 창·베란다를 한 바퀴 점검하세요.'],
+            ['하지 않을 일', '창틀에 앉히거나 방충망에 기대게 하지 마세요.'],
+            ['응급', '떨어진 뒤 의식·구토·마비 의심이면 119']
+        ],
+        links: [
+            ['AAP 창 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Window-Safety.aspx'],
+            ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'pet-bite-safety',
+        match: /(개\s*물|강아지\s*물|고양이\s*할퀴|반려동물\s*물|애완견|물린\s*상처|동물\s*교상)/,
+        title: '반려동물 물림·할퀴는 상처 세척과 진료 여부를 함께 봅니다',
+        lead: '아기와 반려동물은 항상 보호자 감시 아래 두고, 먹이·잠자리·장난감을 빼앗기지 않게 합니다. 물리면 흐르는 물과 비누로 씻고, 깊거나 얼굴·손·감염 징후·예방접종 불명이면 진료하세요. 파상풍·광견병 판단은 의료진이 합니다. 품종 순위·훈련 업체 광고는 하지 않습니다.',
+        points: [
+            ['예방', '감시, 아이 얼굴 핥기·혼자 두기 금지, 신호(으르렁) 존중'],
+            ['상처', '세척, 출혈 압박, 감염·깊으면 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '물린 시각·동물 예방접종 가능 정보를 적으세요.'],
+            ['하지 않을 일', '민간 약초만 바르고 방치하지 마세요.'],
+            ['관련', '손 씻기·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 개 물림', 'https://www.cdc.gov/healthy-pets/dog-bites/'],
+            ['AAP 반려동물 안전', 'https://www.healthychildren.org/English/health-issues/conditions/from-insects-animals/Pages/Pets-and-Children.aspx']
+        ]
+    },
+    {
+        id: 'foreign-body-nose-ear',
+        match: /(코\s*이물질|귀\s*이물질|귀에\s*이물질|(코|귀).{0,12}(넣|이물질|구슬|콩)|구슬\s*(코|귀)|배터리\s*코|이물질\s*제거)/,
+        title: '코·귀 이물질은 억지로 쑤시지 말고, 특히 전지는 응급입니다',
+        lead: '콩·구슬·휴지 등을 코·귀에 넣는 일이 있습니다. 집에서 집게로 깊게 찌르지 마세요. 단추전지가 코에 있으면 조직 손상이 빨라 응급입니다. 호흡 곤란·심한 통증·출혈이 있으면 바로 의료기관을 찾으세요.',
+        points: [
+            ['하지 말 것', '면봉·집게로 깊게 밀어 넣기, 약 액체 함부로 붓기'],
+            ['바로 진료', '전지·자석, 호흡 불편, 한쪽 콧물·악취 지속, 심한 통증']
+        ],
+        blocks: [
+            ['지금 할 일', '무엇을 넣었는지·시각을 기록하고 진료 경로를 잡으세요.'],
+            ['하지 않을 일', '반대쪽 코를 막고 세게 불어 무리하게 빼려 하지 마세요(상황별 상이, 의료 지시 우선).'],
+            ['관련', '단추전지·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이물질', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Insect-Stings-and-Bites.aspx'],
+            ['NHS 코 이물질', 'https://www.nhs.uk/conditions/foreign-body-in-the-nose/'],
+            ['단추전지 안내', '#home']
+        ]
+    },
+    {
+        id: 'heat-illness-child',
+        match: /(열사병|일사병|더위\s*먹|폭염|고온\s*야외|더워서\s*처지|heat\s*stroke|heat\s*exhaust)/,
+        title: '더위·열사병 의심이면 시원한 곳으로 옮기고 응급 신호를 봅니다',
+        lead: '아이들은 더위에 취약할 수 있습니다. 그늘·수분·얇은 옷·차 안 방치 금지가 기본입니다. 심하게 처지거나, 토하거나, 의식이 이상하거나, 몸이 매우 뜨겁고 땀이 없거나 혼란스러우면 응급으로 봅니다. 해열제 용량으로 열사병을 집에서 치료하지 마세요.',
+        points: [
+            ['예방', '한낮 야외 줄이기, 그늘, 물, 차 안 금지'],
+            ['응급', '의식 저하, 경련, 빠른 호흡, 피부 뜨거움, 소변 감소·처짐']
+        ],
+        blocks: [
+            ['지금 할 일', '시원한 곳으로 옮기고 옷을 느슨히 하며 수분을 시도하세요(의식이 있을 때).'],
+            ['하지 않을 일', '차 안·밀폐 공간에 두지 말고, 약 용량을 댓글로 정하지 마세요.'],
+            ['관련', '차 안 방치·과열 수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 아동 더위', 'https://www.cdc.gov/extreme-heat/prevention/index.html'],
+            ['AAP 더위 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Protecting-Children-from-Extreme-Heat-Information-for-Parents.aspx']
+        ]
+    },
+    {
+        id: 'head-bump-after-fall',
+        match: /(머리\s*부딪|머리\s*다쳤|머리\s*충격|충격\s*후\s*머리|넘어져\s*머리|후두부\s*부딪|두피\s*혹)/,
+        title: '머리를 부딪힌 뒤에는 의식·구토·처짐을 보고 관찰합니다',
+        lead: '가벼운 부딪힘 후에도 혹·울음은 흔할 수 있지만, 의식 소실·반복 구토·경련·한쪽 마비·계속되는 처짐·심한 두통(표현 가능한 아이)이 있으면 바로 진료·119입니다. 자를 먹이거나 흔들어 깨우기 같은 민간 대응은 피하세요. 영아는 증상이 애매할 수 있어 보호자 직감이 위험하면 진료를 우선합니다.',
+        points: [
+            ['관찰', '2–24시간 반응·구토·보챔·수면 양상(억지 각성 X, 평소와 다른 깨우기 어려움 주의)'],
+            ['즉시', '의식 없음, 경련, 귀·코 피·맑은 액, 동공 이상, 심한 처짐']
+        ],
+        blocks: [
+            ['지금 할 일', '넘어진 높이·바닥·의식 여부·구토 횟수를 기록하세요.'],
+            ['하지 않을 일', '진통제 용량을 댓글로 맞추거나, 증상을 술로 깨우려 하지 마세요.'],
+            ['관련', '낙상 예방·열성경련 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 뇌진탕·머리 부상', 'https://www.cdc.gov/heads-up/'],
+            ['NHS 머리 부상', 'https://www.nhs.uk/conditions/head-injury-and-concussion/'],
+            ['낙상 예방', '#home']
+        ]
+    },
+    {
+        id: 'tooth-injury',
+        match: /(치아\s*부러|이\s*부러|이\s*빠|젖니\s*외상|치아\s*외상|부딪.*이\s*깨|이빨\s*깨)/,
+        title: '치아 외상은 빠르게 치과·의료 연락을 하고, 빠진 치아 처리는 연령에 따릅니다',
+        lead: '부딪혀 이가 금가거나 빠지면 지혈·통증·호흡을 먼저 보고 소아치과·응급실 안내를 따르세요. 영구치와 젖니의 재식 가능 여부가 다릅니다. 사이트에서 자가 재식 절차를 단정하거나 약 용량을 정하지 않습니다. 파상풍·감염 여부는 의료진이 봅니다.',
+        points: [
+            ['당장', '출혈 압박, 숨·의식 확인, 조각·치아 보관 방법 문의'],
+            ['진료', '빠짐·흔들림·잇몸 열상·턱 통증은 당일 상담']
+        ],
+        blocks: [
+            ['지금 할 일', '사고 시각과 어느 치아인지 사진보다 글로 남기고 치과에 연락하세요.'],
+            ['하지 않을 일', '빠진 치아를 비누로 문질러 닦지 말고, 임의 항생제를 주지 마세요.'],
+            ['관련', '양치·낙상 예방 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 치과 응급', 'https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Tooth+Injury'],
+            ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+
 ];
 
 function normalizeSiteSearch(value) {
@@ -3160,8 +3393,6 @@ filterButtons.forEach(button => {
     });
 });
 
-
-
 // Notification System
 function showNotification(message, type = 'info') {
     // Remove existing notifications
@@ -3500,6 +3731,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('🍼 베베가이드 사이트가 성공적으로 로드되었습니다!');
-
 
 console.log("🍼 베베가이드 main.js 로드 완료");
