@@ -747,6 +747,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'fluoride-water-infant-boundary',
+        match: /(불소\s*수돗물|수돗물\s*불소|fluoride\s*water|불소\s*물\s*아기|수돗물\s*분유\s*불소)/,
+        title: '수돗물 불소는 지역마다 다르며, 분유·치약 불소와 합쳐 과도하지 않게 의료·치과 안내를 따르세요',
+        lead: '일부 지역 수돗물에는 불소가 들어 있습니다. 분유를 수돗물로 탈 때·치약 사용과 겹치면 반점치 위험이 논의됩니다. 지역 수질·치과 안내를 확인하고, 사이트에서 불소 용량·브랜드를 정하지 않습니다.',
+        points: [
+            ['확인', '거주 지역 수돗물 불소, 분유 조유 물'],
+            ['치아', '치약 완두콩·쌀알 크기 등 연령 안내, 삼킴 줄이기']
+        ],
+        blocks: [
+            ['지금 할 일', '지자체·수도 사업 불소 정보를 확인하세요.'],
+            ['하지 않을 일', '성인 고불소 제품을 영아에게 쓰지 마세요.'],
+            ['관련', '분유 조유·양치·물 주기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 불소·구강 건강', 'https://www.cdc.gov/fluoridation/'],
+            ['AAP 불소·치아 개요', 'https://www.healthychildren.org/English/healthy-living/oral-health/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'infant-water',
         match: /(아기|아이|신생아|영아).*(물[을를]?\s*(줘|주|먹|마시|돼|되)|물은|물\s*언제)|물\s*(언제|얼마나).*(먹|주)|수유\s*중\s*물|모유.*(물)|완전\s*모유.*물|물을?\s*줘도/,
         title: '생후 약 6개월 전에는 물만 따로 주지 않는 것이 원칙입니다',
@@ -1232,6 +1251,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'food-throwing-mealtime-boundary',
+        match: /(음식\s*던지기|밥\s*집어\s*던|food\s*throw|식사\s*던지|이유식\s*투척|밥상\s*뒤집)/,
+        title: '식사 중 음식 던지기는 관심을 과하게 주기보다, 짧게 멈추고 환경을 단순하게 하세요',
+        lead: '던지기 놀이가 식사에 섞이기도 합니다. 화를 크게 내기보다 짧게 “식사는 접시에”라고 하고, 계속되면 식사를 종료하는 일관성이 도움이 될 수 있습니다. 강압·협박 수유는 피하세요. “특효 훈육템” 추천은 하지 않습니다.',
+        points: [
+            ['환경', '작은 양, 흘림 매트, 차분한 반응'],
+            ['경계', '음식 보상·처벌 과잉, 스크린으로 달래기 과다']
+        ],
+        blocks: [
+            ['지금 할 일', '한 번에 소량만 접시에 주세요.'],
+            ['하지 않을 일', '던질 때마다 크게 웃거나 쫓아다니며 반응하지 마세요.'],
+            ['관련', '편식·떼쓰기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 식사·행동 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['편식 안내', '#home']
+        ]
+    },
+    {
         id: 'food-refusal',
         match: /(이유식|유아식|밥|음식).*(안\s*먹|거부|입을\s*안|뱉|먹기\s*싫)|편식/,
         title: '안 먹는 날이 있어도 억지로 정해진 양을 채우지 않습니다',
@@ -1366,6 +1404,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 배변훈련 시작 기준', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/the-right-age-to-toilet-train.aspx'],
             ['AAP 특별한 지원이 필요한 아이', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/Toilet-Training-Children-with-Special-Needs.aspx']
+        ]
+    },
+    {
+        id: 'stool-withholding-boundary',
+        match: /(변\s*참|대변\s*참|stool\s*withhold|응가\s*참|변기\s*공포\s*변|변비\s*참아서)/,
+        title: '변을 참는 행동은 통증이 악순환될 수 있어, 압박 대신 진료·배변 습관을 상의하세요',
+        lead: '아픈 배변 경험 후 변을 참으면 변비가 더 심해질 수 있습니다. 혼내거나 오래 앉혀 두지 말고, 수분·식이·배변 신호를 살피며 필요하면 소아과와 상의하세요. 약 용량·관장 방법은 사이트에서 정하지 않습니다.',
+        points: [
+            ['신호', '발끝 들기, 다리 꼬기, 숨기기, 단단한 변'],
+            ['접근', '처벌 금지, 여유 있는 배변, 의료 상담']
+        ],
+        blocks: [
+            ['지금 할 일', '배변 통증·횟수를 기록하세요.'],
+            ['하지 않을 일', '변기에서 장시간 혼내며 강요하지 마세요.'],
+            ['관련', '변비·배변훈련 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 변비 개요', 'https://www.healthychildren.org/English/health-issues/conditions/abdominal/Pages/Constipation.aspx'],
+            ['배변훈련 안내', '#home']
         ]
     },
     {
@@ -3351,6 +3408,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'pacifier-cleaning-hygiene',
+        match: /(쪽쪽이\s*소독|노리개\s*소독|pacifier\s*clean|쪽쪽이\s*씻|쪽쪽이\s*끓|노리개\s*위생)/,
+        title: '쪽쪽이는 자주 씻고, 어른 입으로 빨아 닦지 않는 편이 낫습니다',
+        lead: '쪽쪽이는 떨어지면 흐르는 물로 씻고, 제품 안내에 따라 소독하세요. 어른이 입으로 빨아 “깨끗이” 하는 습관은 세균을 옮길 수 있습니다. 손상·변색되면 교체합니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['위생', '흐르는 물, 정기 점검, 분실·더러워지면 교체'],
+            ['경계', '입에 넣어 닦기, 단 음료에 찍어 주기']
+        ],
+        blocks: [
+            ['지금 할 일', '금 가거나 끈적한 쪽쪽이가 있으면 버리세요.'],
+            ['하지 않을 일', '꿀·잼을 발라 물리지 마세요.'],
+            ['관련', '쪽쪽이 수면·끊기·꿀 금지 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 쪽쪽이 개요', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx'],
+            ['CDC 손 씻기·위생', 'https://www.cdc.gov/handwashing/']
+        ]
+    },
+    {
         id: 'pacifier-sleep',
         match: /(쪽쪽이|공갈\s*젖|노리개\s*젖|pacifier|고무\s*젖꼭지).*(재우|잠|언제|써|사용)|잠.*쪽쪽이/,
         title: '쪽쪽이는 재울 때 도움이 될 수 있고, 모유는 자리 잡은 뒤 시작합니다',
@@ -3638,6 +3714,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['토함·역류 안내', '#home'],
             ['AAP 토함 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Why-Babies-Spit-Up.aspx']
+        ]
+    },
+    {
+        id: 'cord-blood-banking-boundary',
+        match: /(제대혈\s*은행|Cord\s*blood|탯줄\s*피\s*보관|제대혈\s*보관|탯줄혈\s*광고)/,
+        title: '제대혈 보관은 의학적 필요·비용·한계를 따져 결정하고, 광고만으로 필수로 보지 마세요',
+        lead: '제대혈은 일부 질환 치료에 쓰일 수 있으나, 모든 가족에게 필수 보장은 아닙니다. 공여·자가 보관의 차이, 비용, 사용 가능성을 의료진과 상의하세요. 특정 은행 순위·성공률 광고를 그대로 따르지 않습니다.',
+        points: [
+            ['판단', '가족 병력, 공여 옵션, 비용, 보관 기간'],
+            ['경계', '“만능 치료·보험” 식 마케팅']
+        ],
+        blocks: [
+            ['지금 할 일', '산전과 소아과에 질문 목록을 만들어 두세요.'],
+            ['하지 않을 일', '출산 당일 압박 계약에 급하게 서명하지 마세요.'],
+            ['관련', '신생아 선별검사·접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 제대혈 개요', 'https://www.healthychildren.org/English/ages-stages/prenatal/decisions-to-make/Pages/default.aspx'],
+            ['FDA 제대혈 정보(영)', 'https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/cord-blood']
         ]
     },
     {
@@ -4807,6 +4902,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'car-seat-expiry-boundary',
+        match: /(카시트\s*유효\s*기간|카시트\s*유통\s*기한|car\s*seat\s*expir|카시트\s*몇\s*년|카시트\s*폐기|중고\s*카시트\s*기한)/,
+        title: '카시트는 제조일·만료·사고 이력을 확인하고, 만료·사고 이력이 있으면 쓰지 마세요',
+        lead: '카시트는 재질 노화·기준 변경으로 사용 기한이 있습니다. 라벨의 제조일·만료를 보고, 중고는 사고·리콜·설명서 여부를 확인하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['확인', '만료일, 사고 유무, 리콜, 부품 누락'],
+            ['금지', '만료·사고 시트, 출처 불명 중고']
+        ],
+        blocks: [
+            ['지금 할 일', '시트 하단·옆 라벨 날짜를 확인하세요.'],
+            ['하지 않을 일', '기한이 지난 시트를 “잠깐” 쓰지 마세요.'],
+            ['관련', '중고 카시트·설치 원칙 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트 개요(영)', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats'],
+            ['AAP 카시트 정보', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -5096,6 +5210,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
             ['CDC 낙상·부상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'snowblower-child-safety',
+        match: /(제설기|스노우\s*블로어|snow\s*blower|눈\s*치우기\s*기계|제설\s*기계\s*아이)/,
+        title: '제설기 가동 중에는 아이를 멀리 두고, 막힌 눈을 손으로 빼지 마세요',
+        lead: '제설기는 칼날·투척구 부상 위험이 큽니다. 가동 중 아이·반려동물을 가까이 두지 말고, 막힌 눈은 전원을 끄고 도구로 치우세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['거리', '가동 중 접근 금지, 보호 장비'],
+            ['금지', '투척구에 손, 아이 무릎에 태우기']
+        ],
+        blocks: [
+            ['지금 할 일', '제설 전 아이 놀이 구역을 분리하세요.'],
+            ['하지 않을 일', '기계가 돌아갈 때 아이와 같이 있지 마세요.'],
+            ['관련', '잔디깎이·동상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 제설·야외 장비', 'https://www.cpsc.gov/'],
+            ['AAP 겨울·야외 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
         ]
     },
     {
@@ -5663,6 +5796,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'pool-chemical-safety',
+        match: /(수영장\s*염소|풀\s*화학\s*약품|pool\s*chemical|염소\s*충격|수영장\s*소독약\s*아이|염소\s*중독)/,
+        title: '수영장 염소·소독 약품은 잠가 두고, 섞지 말며, 아이 손 닿지 않게 하세요',
+        lead: '수영장 화학 약품은 호흡 자극·화상·중독 위험이 있습니다. 산성·염소 제품을 섞지 말고, 보관은 잠금·환기가 되는 곳에 두세요. 냄새가 강하면 입수를 미루세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['보관', '원액 잠금, 아이 격리, 혼합 금지'],
+            ['노출', '눈·피부 헹구기, 호흡 이상 시 대피·진료']
+        ],
+        blocks: [
+            ['지금 할 일', '약품 통과 계량 스푼을 아이 손이 닿지 않게 옮기세요.'],
+            ['하지 않을 일', '서로 다른 소독약을 한 통에 섞지 마세요.'],
+            ['관련', '익사·중독·락스 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 수영장 화학·건강 수영', 'https://www.cdc.gov/healthy-swimming/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
         id: 'water-drowning-safety',
         match: /(익사|물에\s*빠|욕조.*혼자|목욕.*자리\s*비|물놀이\s*안전|수영장\s*아기|튜브만\s*믿)/,
         title: '목욕·물놀이는 팔 뻗으면 닿는 거리에서, 잠깐도 혼자 두지 마세요',
@@ -5861,6 +6013,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'mouth-breathing-boundary',
+        match: /(구강\s*호흡|입으로만\s*숨|mouth\s*breathing|항상\s*입\s*벌리고|코로\s*숨\s*못\s*쉬|입호흡)/,
+        title: '낮에도 계속 입으로만 숨 쉬면 코 막힘·알레르기·편도 등을 진료로 확인하세요',
+        lead: '일시적 코 막힘과 달리 만성 구강 호흡은 원인 평가가 필요할 수 있습니다. 사진만으로 턱·치아 문제를 단정하지 마세요. 수면 무호흡 신호(코골이·무호흡)가 있으면 진료를 우선합니다. 장치·교정 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '코 막힘, 코골이, 낮 보챔, 입 마름'],
+            ['상담', '이비인후과·소아과, 알레르기·편도']
+        ],
+        blocks: [
+            ['지금 할 일', '코로 숨 쉴 수 있는지, 잠잘 때 소리를 기록하세요.'],
+            ['하지 않을 일', '입을 테이프로 막는 유행 처치를 하지 마세요.'],
+            ['관련', '코골이·감기 코막힘 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 코·수면 호흡 개요', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx'],
+            ['CDC 수면 건강', 'https://www.cdc.gov/sleep/']
+        ]
+    },
+    {
         id: 'snoring-sleep-breathing-boundary',
         match: /(코골\s*아이|아이\s*코골|수면\s*무호흡|잠\s*숨\s*멈|mouth\s*breathing\s*sleep|코로\s*숨\s*못|편도\s*코골)/,
         title: '아이 코골이·잠 중 숨 멈춤이 반복되면 수면 호흡 문제로 진료를 검토하세요',
@@ -5915,6 +6086,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 수면·악몽 개요', 'https://www.healthychildren.org/English/ages-stages/preschool/Pages/default.aspx'],
             ['CDC 수면 건강', 'https://www.cdc.gov/sleep/']
+        ]
+    },
+    {
+        id: 'head-banging-boundary',
+        match: /(머리\s*박기|헤드\s*뱅잉|head\s*bang|머리를\s*바닥에\s*쿵|리듬\s*머리\s*박)/,
+        title: '잠들 때 머리 박기는 흔할 수 있으나, 낮 손상·발달 걱정이 있으면 진료를 검토하세요',
+        lead: '일부 유아는 잠들며 리듬 있게 머리를 박기도 합니다. 환경을 부드럽게 하고 다치지 않게 지키세요. 낮에도 심하거나, 발달 퇴행·경련·부상이 있으면 의료진과 상의합니다. 억제·처벌로 단정 짓지 마세요.',
+        points: [
+            ['환경', '침대 안전, 날카로운 모서리 제거'],
+            ['상담', '낮 증상, 자해성, 발달 걱정, 부상']
+        ],
+        blocks: [
+            ['지금 할 일', '침대 주변 딱딱한 물건을 치우세요.'],
+            ['하지 않을 일', '머리를 잡고 흔들며 멈추게 강요하지 마세요.'],
+            ['관련', '야경증·안전수면·발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면 행동 개요', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
         ]
     },
     {
@@ -6012,6 +6202,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수유와 알코올', 'https://www.cdc.gov/breastfeeding/breastfeeding-special-circumstances/vaccinations-medications-drugs/alcohol.html'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'crosswalk-child-safety',
+        match: /(횡단보도\s*아이|crosswalk|건널목\s*아이|신호등\s*손\s*잡|길\s*건널\s*때\s*아이)/,
+        title: '길을 건널 때는 아이 손을 잡고, 신호가 초록이어도 차를 직접 확인하세요',
+        lead: '횡단보도에서도 차량이 멈춘다고 단정하지 마세요. 손을 잡고 좌우를 보고, 스마트폰을 보며 건너지 마세요. 유모차는 운전자 눈에 잘 띄게 합니다. 특정 앱 추천은 하지 않습니다.',
+        points: [
+            ['습관', '손 잡기, 멈추고 보기, 뛰어 건너지 않기'],
+            ['유모차', '먼저 나가기 전 시야 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '건널 때 “같이 본다”를 말로 연습하세요.'],
+            ['하지 않을 일', '아이만 먼저 보내 건너게 하지 마세요.'],
+            ['관련', '주차장·후진 사고 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 보행 안전', 'https://www.cdc.gov/transportationsafety/pedestrian/'],
+            ['AAP 보행·외출 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
         ]
     },
     {
@@ -6988,6 +7197,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
             ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'sand-ingestion-boundary',
+        match: /(모래\s*먹|모래\s*삼킴|sand\s*eat|모래놀이\s*먹|흙\s*먹\s*아기|샌드박스\s*먹)/,
+        title: '모래·흙을 자주 먹이면 위생·이물질·기생충 위험이 있어 감독하고, 많으면 상담하세요',
+        lead: '모래놀이 중 소량을 입에 넣는 일은 흔할 수 있으나, 많은 양·유리·동물 분변이 섞인 모래는 위험할 수 있습니다. 토하게 강제하지 말고, 복통·구토·변 이상이 있으면 진료하세요. 모래장 위생을 점검합니다.',
+        points: [
+            ['예방', '손 씻기, 덮개, 동물 출입 제한, 감독'],
+            ['상담', '많은 양, 날카로운 이물, 지속 증상']
+        ],
+        blocks: [
+            ['지금 할 일', '놀이 후 손·얼굴을 씻기세요.'],
+            ['하지 않을 일', '고양이 화장실 근처 모래를 놀이용으로 쓰지 마세요.'],
+            ['관련', '중독·기생충·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독·이물 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 손 씻기', 'https://www.cdc.gov/handwashing/']
         ]
     },
     {
