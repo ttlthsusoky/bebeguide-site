@@ -429,6 +429,46 @@ const SEARCH_ALIAS_GROUPS = [
 // every answer below is written from the linked official or professional guidance.
 const COMMON_PARENT_ANSWERS = [
     {
+        id: 'mumps-boundary',
+        match: /(볼거리|유행성\s*이하선염|mumps|귀밑\s*부음\s*열|턱밑\s*부음\s*열)/,
+        title: '볼거리 의심은 턱·귀밑 부음과 열을 사진으로 단정하지 말고 진료·접종 기록을 확인하세요',
+        lead: '한쪽 또는 양쪽 턱·귀밑이 붓고 열이 나면 볼거리 등 가능성이 있으나 사이트에서 병명을 확정하지 않습니다. 접종 기록(MMR 등)을 확인하고, 고환·복부 통증·두통·처짐이 있으면 빨리 진료하세요. 등원·격리는 시설·보건 안내를 따릅니다.',
+        points: [
+            ['관찰', '부은 위치, 열, 통증, 수분 섭취'],
+            ['진료', '심한 통증, 구토·두통, 고환 통증, 깨우기 어려움']
+        ],
+        blocks: [
+            ['지금 할 일', '접종 기록과 증상 시작일을 확인하세요.'],
+            ['하지 않을 일', '부은 곳을 세게 누르거나 민간 찜질로 미루지 마세요.'],
+            ['관련', '홍역·접종 일정 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 볼거리', 'https://www.cdc.gov/mumps/'],
+            ['질병관리청 감염병', 'https://www.kdca.go.kr/'],
+            ['예방접종 일정', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
+        id: 'scarlet-fever-boundary',
+        match: /(성홍열|scarlet\s*fever|성홍|모래\s*종이\s*발진|딸기\s*혀|인후통\s*발진\s*열)/,
+        title: '목 아픔·열 뒤 모래 같은 발진은 성홍열 등 가능성이 있어 사진으로 단정하지 마세요',
+        lead: '인후통·고열 후 몸통에 거친 발진, 딸기 혀 등이 나타날 수 있으나 비슷한 질환이 많습니다. 항생제 필요 여부는 의료진이 진찰 후 정합니다. 사진 앱·댓글 진단·임의 항생제는 하지 않습니다.',
+        points: [
+            ['의심 시', '진료, 호흡·수분·처짐 확인'],
+            ['가정', '손 씻기, 식기·수건 구분, 해열은 의료 안내 성분']
+        ],
+        blocks: [
+            ['지금 할 일', '열·발진 시작 시각과 목 통증을 기록하세요.'],
+            ['하지 않을 일', '남은 항생제를 임의로 주지 마세요.'],
+            ['관련', '발열·발진 경계 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 성홍열(A군 연쇄구균)', 'https://www.cdc.gov/group-a-strep/about/scarlet-fever.html'],
+            ['NHS 성홍열', 'https://www.nhs.uk/conditions/scarlet-fever/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'measles-exposure-boundary',
         match: /(홍역|measles|홍역\s*노출|홍역\s*의심|홍역\s*발진)/,
         title: '홍역이 의심되거나 노출됐으면 사진 진단 없이 보건·의료 안내를 따르세요',
@@ -466,6 +506,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 백일해', 'https://www.cdc.gov/pertussis/'],
             ['질병관리청 백일해', 'https://www.kdca.go.kr/'],
             ['예방접종 일정', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
+        id: 'flu-vaccine-child-boundary',
+        match: /(독감\s*접종|독감\s*백신|인플루엔자\s*접종|flu\s*shot|flu\s*vaccine|독감\s*예방접종)/,
+        title: '생후 6개월 이상 독감 예방접종 가능 여부는 접종 기관·일정으로 확인하세요',
+        lead: '많은 안내가 생후 6개월 이상 어린이 독감 예방접종을 권합니다. 처음 접종 시 두 번이 필요한 연령대가 있을 수 있어 의료진·예방접종도우미 기록을 따릅니다. 접종 후 이상반응 경계는 별도 안내를 보고, 사이트에서 접종 “필수/불필요”를 개인에게 단정하지 않습니다.',
+        points: [
+            ['확인', '월령, 과거 접종, 알레르기·발열 여부 예진'],
+            ['시기', '유행 전 접종 권고가 흔함, 지역·시즌 안내 따름']
+        ],
+        blocks: [
+            ['지금 할 일', '예방접종도우미·수첩에서 독감 접종 기록을 확인하세요.'],
+            ['하지 않을 일', '고열·중등도 이상 아플 때 임의로 맞히지 말고 예진을 받으세요.'],
+            ['관련', '독감 증상·접종 후 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 어린이 독감 백신', 'https://www.cdc.gov/flu/highrisk/children.html'],
+            ['예방접종도우미', 'https://nip.kdca.go.kr/'],
+            ['접종 일정 글', 'blog/vaccination-schedule.html']
         ]
     },
     {
@@ -1260,6 +1320,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'cold-sore-herpes-infant',
+        match: /(구순\s*포진|입술\s*헤르페스|cold\s*sore|헤르페스\s*아기|입술\s*물집\s*열|HSV\s*아기)/,
+        title: '입술 물집·구순포진 의심 시 영아에게 키스·침 공유를 피하고 진료를 검토하세요',
+        lead: '성인 구순포진 바이러스가 신생아·영아에게 전파되면 위험할 수 있습니다. 물집이 있을 때 아기에게 키스하지 말고, 컵·수건을 따로 쓰세요. 아기 입안·몸에 물집·고열·처짐이 있으면 사진 진단 없이 진료하세요. 항바이러스 용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['예방', '물집 있을 때 키스 금지, 손 씻기, 침 공유 금지'],
+            ['진료', '영아 고열·처짐·수유 거부·광범위 물집']
+        ],
+        blocks: [
+            ['지금 할 일', '가족 중 입술 물집이 있으면 아기 접촉을 줄이세요.'],
+            ['하지 않을 일', '입술 물집을 터뜨리거나 민간 약을 아기에게 바르지 마세요.'],
+            ['관련', '발진·발열 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 헤르페스·구순포진 개요', 'https://www.cdc.gov/herpes/'],
+            ['AAP 구순포진·아기', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/Herpes-Simplex-Virus-Cold-Sores.aspx'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1395,6 +1475,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 영아 보툴리눔·꿀', 'https://www.cdc.gov/botulism/prevention/index.html'],
             ['이유식·알레르기 가이드', 'blog/complementary-feeding-allergy-guide.html']
+        ]
+    },
+    {
+        id: 'microwave-baby-food-boundary',
+        match: /(전자\s*레인지.*이유식|이유식.*전자\s*레인지|전자렌지\s*데우|전자\s*레인지\s*음식\s*아기|microwave\s*baby\s*food)/,
+        title: '이유식·유아식을 전자레인지로 데우면 부분이 과열될 수 있어 고루 저어 온도를 확인하세요',
+        lead: '전자레인지는 음식이 고르게 데워지지 않을 수 있습니다. 데운 뒤 충분히 저어 손목 안쪽으로 온도를 확인하고, 뜨거우면 식혀 주세요. 분유·모유 병은 별도 안내(전자레인지 비권고)를 따릅니다. 특정 용기 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['방법', '저어서 온도 확인, 가운데·가장자리 모두'],
+            ['주의', '과열 스팟, 밀폐 뚜껑 폭발 위험']
+        ],
+        blocks: [
+            ['지금 할 일', '데운 음식을 아이 입에 넣기 전 본인이 확인하세요.'],
+            ['하지 않을 일', '뜨겁게 데운 채 바로 먹이지 마세요.'],
+            ['관련', '분유 전자레인지·화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 식품 안전·데우기 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
+            ['CDC 식품 안전', 'https://www.cdc.gov/foodsafety/'],
+            ['분유 데우기 안내', '#home']
         ]
     },
     {
@@ -2602,6 +2702,46 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['토함·역류 안내', '#home'],
             ['AAP 토함 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Why-Babies-Spit-Up.aspx']
+        ]
+    },
+    {
+        id: 'newborn-screening-boundary',
+        match: /(신생아\s*선별|신생아\s*검사|발뒤꿈치\s*피|선천성\s*대사|newborn\s*screen|힐\s*스틱|신생아\s*청력\s*검사)/,
+        title: '신생아 선별검사(발뒤꿈치·청력 등)는 병원에서 안내한 일정·재검을 따르세요',
+        lead: '선천성 대사 이상·청력 등 선별검사는 조기 발견을 위한 공중보건 절차입니다. 결과가 “재검”이어도 바로 진단은 아닐 수 있어 안내된 재검·상담을 미루지 마세요. 사이트에서 개별 수치를 해석하거나 진단을 내리지 않습니다.',
+        points: [
+            ['절차', '출생 기관 안내, 재검 문자·전화 확인'],
+            ['상담', '이상·재검은 담당 의료진·보건 안내']
+        ],
+        blocks: [
+            ['지금 할 일', '선별검사 결과지·안내 문자를 찾아 두세요.'],
+            ['하지 않을 일', '인터넷으로 수치만 보고 병을 단정하지 마세요.'],
+            ['관련', '비타민 K·황달 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 신생아 선별', 'https://www.cdc.gov/newborn-screening/'],
+            ['질병관리청·희귀질환 관련 안내', 'https://www.kdca.go.kr/'],
+            ['황달 안내', '#home']
+        ]
+    },
+    {
+        id: 'uti-infant-boundary',
+        match: /(요로\s*감염|방광염\s*아기|소변\s*이상\s*열|UTI|소변\s*검사\s*아기|영아\s*발열\s*소변)/,
+        title: '영아 발열·소변 이상은 요로감염 가능성이 있어 소변 검사·진료를 미루지 마세요',
+        lead: '특히 어린 영아 고열의 원인 중 하나로 요로감염이 평가되기도 합니다. 사이트에서 소변 색·냄새만으로 진단하지 않습니다. 해열제 용량을 정하지 않으며, 항생제 여부는 검사가 필요할 수 있어 의료진이 정합니다.',
+        points: [
+            ['의심 단서', '원인 불명 발열, 보챔, 소변 냄새·탁함(단정 금지)'],
+            ['진료', '3개월 미만 발열, 처짐, 수유 감소']
+        ],
+        blocks: [
+            ['지금 할 일', '열 시작·최고 체온·소변 양상을 기록하세요.'],
+            ['하지 않을 일', '항생제를 임의로 먹이거나 “감기약”만으로 미루지 마세요.'],
+            ['관련', '발열·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 요로감염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/Urinary-Tract-Infections-in-Teens.aspx'],
+            ['NHS UTI 어린이', 'https://www.nhs.uk/conditions/urinary-tract-infections-utis/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
         ]
     },
     {
@@ -3992,6 +4132,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'coin-swallow-boundary',
+        match: /(동전\s*삼|동전\s*먹|coin\s*swallow|동전\s*삼킴|백원\s*삼|동전\s*삼켰)/,
+        title: '동전을 삼켰으면 호흡·침 흘림을 보고, 임의로 빼내려 하지 마세요',
+        lead: '동전 등 이물질을 삼킨 뒤 숨이 차고 침을 못 삼키면 응급입니다. 토하게 하거나 손가락으로 목 안을 후비지 마세요. 삼킨 시각·종류를 기록하고 응급실·의료 안내를 따릅니다. 단추전지와 구분해, 전지 의심이면 전지 응급 안내를 우선합니다.',
+        points: [
+            ['응급', '호흡 곤란, 침 과다, 통증, 청색증'],
+            ['행동', '토하게 금지, 물·음식 억지 금지, 바로 의료']
+        ],
+        blocks: [
+            ['지금 할 일', '무엇을 언제 삼켰는지 적고 진료 경로로 가세요.'],
+            ['하지 않을 일', '하임리히를 영상만 보고 임의 시행하지 마세요(교육 받은 경우·응급 지침 따름).'],
+            ['관련', '단추전지·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이물질 삼킴 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx'],
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['단추전지 안내', '#home']
+        ]
+    },
+    {
         id: 'button-battery-danger',
         match: /(단추\s*전지|버튼\s*배터리|수은\s*전지|코인\s*전지|자석\s*장난감|네오디뮴\s*자석|삼킨\s*전지|전지\s*삼)/,
         title: '단추전지·강한 자석은 삼키면 응급입니다. 장난감·리모컨을 잠그세요',
@@ -4323,6 +4483,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'railing-gap-boundary',
+        match: /(난간\s*간격|난간\s*사이|세로대\s*간격|발코니\s*난간|난간\s*끼|baluster|railing\s*gap|난간\s*사이\s*머리)/,
+        title: '난간·세로대 간격이 넓으면 끼임·추락 위험이 있어 점검하세요',
+        lead: '난간 사이가 넓거나 가로대가 사다리처럼 되어 있으면 아이가 오르거나 끼일 수 있습니다. 가구를 난간 옆에 두지 말고, 수리·가드는 가정 환경에 맞게 검토하세요. 특정 제품 순위는 하지 않습니다.',
+        points: [
+            ['점검', '세로대 간격, 가로대 오르기, 흔들림'],
+            ['예방', '난간 옆 소파·상자 치우기, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 머리·몸이 빠질 틈이 있는지 살펴보세요.'],
+            ['하지 않을 일', '난간을 놀이 기구처럼 타게 두지 마세요.'],
+            ['관련', '창 추락·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 가정 안전', 'https://www.cpsc.gov/'],
+            ['AAP 추락 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['창 추락 안내', '#home']
+        ]
+    },
+    {
         id: 'window-fall-prevention',
         match: /(창\s*추락|창문\s*추락|창틀\s*앉아|난간\s*넘어|베란다\s*추락|창문\s*방충|윈도우\s*가드)/,
         title: '창문·베란다에서는 방충망만 믿지 말고, 가구를 창 아래에서 치우세요',
@@ -4590,6 +4770,64 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CPSC 아동 옷 끈 위험', 'https://www.cpsc.gov/'],
             ['AAP 질식·걸림 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'slime-borax-boundary',
+        match: /(슬라임|slime|보락스|borax|슬라임\s*만들|액체\s*괴물)/,
+        title: '슬라임·보락스 재료는 삼키거나 눈에 들어가지 않게 하고, 어린 아이 혼자 만들게 두지 마세요',
+        lead: '슬라임에 쓰이는 일부 재료는 자극·삼킴 위험이 있을 수 있습니다. 어린 아이는 보호자와 함께, 재료 표시를 읽고 눈에·입에 넣지 않게 하세요. 삼켰거나 눈 자극이 심하면 중독 상담·진료를 따릅니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['사용', '환기, 손 씻기, 어린 영아 멀리'],
+            ['노출', '삼킴·눈 접촉 시 상담·헹굼 안내 따름']
+        ],
+        blocks: [
+            ['지금 할 일', '재료 라벨의 연령·주의 문구를 확인하세요.'],
+            ['하지 않을 일', '보락스 가루를 식품처럼 다루지 마세요.'],
+            ['관련', '중독·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/'],
+            ['CPSC 장난감·공예 재료 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'product-recall-boundary',
+        match: /(리콜|리\s*콜|recall|제품\s*회수|리콜\s*확인|유모차\s*리콜|카시트\s*리콜\s*확인|장난감\s*리콜)/,
+        title: '유모차·카시트·장난감 등은 리콜 여부를 확인하고, 해당되면 사용을 중단하세요',
+        lead: '안전 문제로 리콜된 제품은 수선·반납 안내를 따르고 계속 쓰지 않는 것이 안전합니다. 제조사·시리얼 번호·구매 시기를 확인하세요. 사이트에서 특정 브랜드 순위를 하지 않으며, 리콜 목록은 공식 기관·제조사 공지를 봅니다.',
+        points: [
+            ['확인', '모델·시리얼, 제조사 공지, 공식 리콜 검색'],
+            ['조치', '사용 중단, 안내된 수리·반납']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있는 대형 육아용품 모델명을 적어 검색하세요.'],
+            ['하지 않을 일', '리콜 통지를 무시하고 쓰지 마세요.'],
+            ['관련', '카시트·유모차·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 리콜', 'https://www.cpsc.gov/Recalls'],
+            ['NHTSA 리콜(차량·카시트)', 'https://www.nhtsa.gov/recalls'],
+            ['고위험 용품 원칙', '#about']
+        ]
+    },
+    {
+        id: 'scissors-toddler-boundary',
+        match: /(가위\s*아이|유아\s*가위|scissors\s*toddler|가위\s*안전|바느질\s*바늘\s*아이|바늘\s*삼킴)/,
+        title: '가위·바늘은 아이 손 닿지 않게 두고, 유아용 가위도 감독 아래 쓰세요',
+        lead: '날카로운 가위·바늘·핀은 찔림·열상 위험이 있습니다. 잠금 수납에 두고, 공예 시에는 끝이 둥근 유아용 도구와 보호자 감독이 필요합니다. 바늘을 삼켰으면 호흡을 보고 의료 안내를 따르세요.',
+        points: [
+            ['보관', '높은 곳·잠금, 바느질 도구 정리'],
+            ['사용', '감독, 연령 맞는 도구']
+        ],
+        blocks: [
+            ['지금 할 일', '책상·서랍의 가위·바늘을 치우세요.'],
+            ['하지 않을 일', '뛰면서 가위를 들고 다니게 두지 마세요.'],
+            ['관련', '중독·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
         ]
     },
     {
