@@ -867,6 +867,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bedwetting-boundary',
+        match: /(야뇨|오줌\s*싸|밤에\s*오줌|이불\s*오줌|bed\s*wet|야뇨증)/,
+        title: '야뇨는 어린 나이에는 흔하고, 혼내지 않으며 낮 증상·통증이 있으면 진료합니다',
+        lead: '밤에 오줌을 싸는 일은 발달·수면 깊이와 관련해 흔할 수 있습니다. 수치심을 주거나 체벌하지 마세요. 낮에도 새거나, 통증이 있거나, 갑자기 시작된 뒤 갈증·체중 변화가 크면 의료진과 상의합니다. 약 용량·장비 순위는 하지 않습니다.',
+        points: [
+            ['가정', '방수 패드, 저녁 수분 과다 주의(강제 제한 금지), 혼내지 않기'],
+            ['진료', '낮 실수·통증·갈증·체중 감소·갑작스런 시작']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 시작했는지·낮 증상 여부를 적어 보세요.'],
+            ['하지 않을 일', '아이를 창피하게 하거나 물 자체를 금지하지 마세요.'],
+            ['관련', '배변훈련·부모 마음건강 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 야뇨', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/Bedwetting.aspx'],
+            ['NIDDK 야뇨(영)', 'https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems-bedwetting-children']
+        ]
+    },
+    {
         id: 'toilet-training',
         match: /(배변\s*훈련|배변훈련|기저귀\s*(떼|빼)|팬티.*언제|변기.*(시작|훈련|앉))/,
         title: '배변훈련은 개월 수보다 준비 신호로 시작합니다',
@@ -1001,6 +1020,26 @@ const COMMON_PARENT_ANSWERS = [
             ['이유식·알레르기 가이드', 'blog/complementary-feeding-allergy-guide.html#allergens'],
             ['ASCIA 영아 알레르기 예방', 'https://www.allergy.org.au/hp/papers/infant-feeding-and-allergy-prevention'],
             ['발열·응급 신호', 'blog/baby-fever-cold-guide.html#urgent']
+        ]
+    },
+    {
+        id: 'eczema-care-boundary',
+        match: /(아토피|습진|eczema|가려운\s*피부|건조\s*피부\s*아기|태열)/,
+        title: '건조·가려운 피부는 보습·자극 줄이기가 기본이고, 사진으로 병명을 단정하지 않습니다',
+        lead: '아토피·습진으로 불리는 건조·가려움은 보습, 짧은 미온 목욕, 자극 적은 세제·옷이 기본 관리로 자주 안내됩니다. 사진·댓글로 병명·스테로이드 강도를 정하지 마세요. 감염 징후·수면 방해·번짐이 심하면 진료합니다. 연고 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['가정', '보습, 손톱 짧게, 긁기 줄이기, 자극 피하기'],
+            ['진료', '진물·노란 딱지·발열, 눈 주위, 일상 크게 방해']
+        ],
+        blocks: [
+            ['지금 할 일', '목욕 시간과 보습 시점을 점검하세요.'],
+            ['하지 않을 일', '인터넷 사진과 맞춰 약을 사지 마세요.'],
+            ['관련', '발진 경계·기저귀 발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 습진', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/Eczema.aspx'],
+            ['질병관리청 아토피 개요', 'https://health.kdca.go.kr/'],
+            ['발진 경계 안내', '#home']
         ]
     },
     {
@@ -1354,6 +1393,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 티딩 목걸이 위험', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Teething-Necklaces-and-Beads-A-Caution-for-Parents.aspx'],
             ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
             ['이 날 때 안내', '#home']
+        ]
+    },
+    {
+        id: 'teeth-grinding-sleep',
+        match: /(이갈이|이를\s*갈|bruxism|자면서\s*이\s*갈|밤\s*이갈)/,
+        title: '자면서 이를 가는 일은 아이들에게 있을 수 있고, 치아 손상·통증이 있으면 진료합니다',
+        lead: '수면 중 이갈이는 어린이에게 나타날 수 있습니다. 일시적이면 관찰하고, 치아 마모·턱 통증·수면 방해가 크면 소아치과·의료진과 상의하세요. 성인용 장치·약 용량을 사이트에서 정하지 않습니다.',
+        points: [
+            ['관찰', '소리, 아침 턱 불편, 치아 상태'],
+            ['진료', '심한 마모, 통증, 코골이·무호흡 의심과 동반']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 소리가 나는지 짧게 기록하세요.'],
+            ['하지 않을 일', '입을 테이프로 막지 마세요.'],
+            ['관련', '양치·수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이갈이', 'https://www.healthychildren.org/English/healthy-living/oral-health/Pages/Bruxism-Teeth-Grinding.aspx'],
+            ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
         ]
     },
     {
@@ -2616,6 +2674,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'used-car-seat-boundary',
+        match: /(중고\s*카시트|카시트\s*중고|카시트\s*만료|카시트\s*사고|카시트\s*유통\s*기한|car\s*seat\s*expire)/,
+        title: '중고 카시트는 사고 이력·만료·리콜을 모른 채 쓰지 않는 편이 안전합니다',
+        lead: '사고 이력이 있거나 만료·리콜·부품 누락된 카시트는 성능이 떨어질 수 있습니다. 이력이 불명확한 중고 제품은 피하라는 안내가 많습니다. 설치는 설명서·차량 안내를 따르고, 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['확인', '제조일·만료, 리콜, 라벨, 부품 완비, 사고 이력'],
+            ['설치', '설명서, 흔들림 최소화, 겨울 패딩 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '시트 라벨의 날짜·모델명을 확인하세요.'],
+            ['하지 않을 일', '사고 난 시트나 유통 기한 지난 시트를 쓰지 마세요.'],
+            ['관련', '카시트 원칙·패딩 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['카시트 원칙', '#home']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -2691,6 +2769,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['CDC 아동 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'appliance-entrapment',
+        match: /(세탁기\s*숨|건조기\s*숨|냉장고\s*숨|폐가전|아이\s*가전\s*안|entrapment|드럼\s*세탁기\s*들어가)/,
+        title: '세탁기·건조기·냉장고 등 가전 안에 들어가지 못하게 문을 닫고 폐가전을 방치하지 마세요',
+        lead: '아이들이 가전 안에 들어가 문이 닫히면 질식 위험이 있습니다. 사용 후 문을 닫고, 버려진 냉장고 등은 문을 제거하라는 안전 안내가 있습니다. 브랜드와 무관한 기본 안전입니다.',
+        points: [
+            ['예방', '문 닫기, 폐가전 문 제거, 감독'],
+            ['금지', '숨바꼭질 장소로 가전 쓰기']
+        ],
+        blocks: [
+            ['지금 할 일', '세탁실·창고 가전 문이 열려 있지 않은지 확인하세요.'],
+            ['하지 않을 일', '폐냉장고를 마당에 문 달린 채 두지 마세요.'],
+            ['관련', '집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 가전 감금 위험', 'https://www.cpsc.gov/'],
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
         ]
     },
@@ -2891,6 +2988,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'swimming-lesson-age-boundary',
+        match: /(수영\s*강습|수영\s*수업|아기\s*수영|몇\s*살\s*수영|수영\s*배우기|swim\s*lesson)/,
+        title: '수영 강습은 도움이 될 수 있어도 “몇 살 합격선”이나 익사 면제권은 아닙니다',
+        lead: '연령에 맞는 물 적응·강습이 있을 수 있으나, 강습만으로 익사가 예방되지는 않습니다. 보호자 감시와 구명 장비·울타리가 우선입니다. 모든 아기가 같은 시작 나이는 없습니다. 학원 광고 순위는 하지 않습니다.',
+        points: [
+            ['우선', '팔 닿는 감시, 구명조끼·울타리, 욕조 혼자 금지'],
+            ['강습', '강제 잠수·공포 유발 방식 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '물놀이 전 감시 역할을 정하세요.'],
+            ['하지 않을 일', '“강습 끝났으니 괜찮다”며 자리를 비우지 마세요.'],
+            ['관련', '익사 예방·구명조끼 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수영 강습', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['익사 예방 안내', '#home']
+        ]
+    },
+    {
         id: 'water-drowning-safety',
         match: /(익사|물에\s*빠|욕조.*혼자|목욕.*자리\s*비|물놀이\s*안전|수영장\s*아기|튜브만\s*믿)/,
         title: '목욕·물놀이는 팔 뻗으면 닿는 거리에서, 잠깐도 혼자 두지 마세요',
@@ -2947,6 +3064,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 진드기 제거', 'https://www.cdc.gov/ticks/removal/'],
             ['CDC 진드기', 'https://www.cdc.gov/ticks/'],
+            ['벌레 물림 안내', '#home']
+        ]
+    },
+    {
+        id: 'insect-repellent-boundary',
+        match: /(모기\s*기피|벌레\s*기피|해충\s*기피|DEET|디트|기피제\s*아기|모기\s*팔찌)/,
+        title: '기피제는 연령·표시를 확인하고, 영아·얼굴·상처에는 특히 조심하세요',
+        lead: '야외에서 모기·진드기 예방에 기피제가 쓰이기도 합니다. 제품 표시의 연령·사용법을 지키고, 눈·입·손·상처에 바르지 않으며 실내·수면 중 과다 사용을 피하세요. 농도·브랜드 순위·“국민템” 추천은 하지 않습니다. 모기장·긴 옷도 함께 고려합니다.',
+        points: [
+            ['사용', '표시 연령, 최소량, 돌아와 씻기'],
+            ['보조', '긴 옷, 고인 물 제거, 모기장']
+        ],
+        blocks: [
+            ['지금 할 일', '제품 라벨의 개월·나이 제한을 확인하세요.'],
+            ['하지 않을 일', '영아 얼굴에 스프레이를 직접 뿌리지 마세요.'],
+            ['관련', '벌레 물림·진드기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 모기 물림 예방', 'https://www.cdc.gov/mosquitoes/mosquito-bites/prevent-mosquito-bites.html'],
+            ['EPA 기피제 찾기(영)', 'https://www.epa.gov/insect-repellents'],
             ['벌레 물림 안내', '#home']
         ]
     },
@@ -3315,6 +3452,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/'],
             ['AAP 약 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/medication-safety/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'knife-drawer-safety',
+        match: /(칼\s*서랍|칼\s*보관|주방\s*칼\s*아이|식기세척기\s*칼|날카로운\s*도구)/,
+        title: '칼·가위는 잠그거나 높은 곳에 두고, 식기세척기 문 열린 채 날을 방치하지 마세요',
+        lead: '주방 칼·가위·식품 가공 날은 아이 손이 닿지 않게 보관합니다. 식기세척기를 열어 두면 날카로운 쪽이 노출될 수 있습니다. 조리 중에도 손잡이·전선을 안쪽으로 두세요.',
+        points: [
+            ['보관', '잠금 서랍, 칼집, 높은 수납'],
+            ['사용 중', '세척기 문·도마 위 방치 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '칼 서랍에 잠금이 가능한지 점검하세요.'],
+            ['하지 않을 일', '싱크대에 칼을 담가 둔 채 자리를 비우지 마세요.'],
+            ['관련', '집 안 안전·화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 아동 손상 예방 개요', 'https://www.cdc.gov/injury/']
         ]
     },
     {
@@ -3699,6 +3855,83 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
             ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'head-lice-boundary',
+        match: /(머릿니|머리\s*이|이\s*서식|이\s*알|헤드\s*라이스|head\s*lice|이\s*샴푸)/,
+        title: '머릿니는 위생 실패가 아니고, 확인 후 의료·약국 안내로 관리합니다',
+        lead: '머릿니는 가까운 머리 접촉으로 퍼질 수 있으며 “더러워서”만의 문제는 아닙니다. 약용 샴푸·빗질 등은 연령·제품 표시·의료진 안내를 따르고, 용량·브랜드 순위는 사이트에서 정하지 않습니다. 학교 규정은 시설 안내를 확인하세요.',
+        points: [
+            ['확인', '귀 뒤·목덜미 가려움, 이·서캐 관찰'],
+            ['관리', '표시 연령 준수, 침구·빗 청소, 불필요한 삭발 강요 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '가족 머리를 밝은 빛에서 살펴보세요.'],
+            ['하지 않을 일', '성인 약을 영아에게 임의로 쓰지 마세요.'],
+            ['관련', '손 씻기·발진 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 머릿니', 'https://www.cdc.gov/lice/about/head-lice.html'],
+            ['AAP 머릿니', 'https://www.healthychildren.org/English/health-issues/conditions/from-insects-animals/Pages/Head-Lice.aspx']
+        ]
+    },
+    {
+        id: 'airplane-ear-pressure',
+        match: /(비행기|항공).{0,16}(귀|이착륙|울음|압력)|이착륙.{0,12}(울음|귀)|귀\s*압력|ear\s*pressure\s*flight/,
+        title: '이착륙 때 귀 압력은 삼키기·수유로 도움이 될 수 있고, 아픈 귀는 미리 상담하세요',
+        lead: '비행기 이착륙 시 압력 변화로 보챌 수 있습니다. 수유·젖병·노리개로 삼키기를 돕는 방법이 흔히 안내됩니다. 중이염 등으로 귀가 아플 때는 여행 전 의료진과 상의하세요. 진정제 용량을 사이트에서 정하지 않습니다.',
+        points: [
+            ['이착륙', '삼키기, 수유 타이밍, 코 막힘 완화(의료 안내)'],
+            ['상담', '귀 통증·수술 직후·심한 코막힘']
+        ],
+        blocks: [
+            ['지금 할 일', '이착륙 시간에 맞춰 수유·간식을 계획해 보세요.'],
+            ['하지 않을 일', '술을 바른 무균 솜 등 민간 귀 처치를 하지 마세요.'],
+            ['관련', '중이염·수유 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 비행기 여행', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Flying-with-Baby.aspx'],
+            ['중이염 안내', '#home']
+        ]
+    },
+    {
+        id: 'candle-heater-fire',
+        match: /(양초\s*화재|캔들\s*아기|전기\s*난로|히터\s*전도|난로\s*안전|공간\s*히터)/,
+        title: '양초·전기 난로는 아이 손 닿지 않게 두고, 켜 둔 채 잠들거나 자리를 비우지 마세요',
+        lead: '열린 불꽃과 뜨거운 난로는 화상·화재 원인입니다. 양초는 가능하면 쓰지 않거나 완전히 감시하고, 난로는 전도 방지·과열 차단·이격 거리를 지킵니다. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['양초', '감시, 끄고 자기, 커튼 멀리'],
+            ['난로', '전도 안전, 화상 방지 가드, 전원 점검']
+        ],
+        blocks: [
+            ['지금 할 일', '난로·양초 주변에 끌릴 천·장난감이 있는지 치우세요.'],
+            ['하지 않을 일', '켜 둔 난로 옆에서 아이만 두지 마세요.'],
+            ['관련', '화상·CO 경보 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['CPSC 난로 안전', 'https://www.cpsc.gov/'],
+            ['화상 안내', '#home']
+        ]
+    },
+    {
+        id: 'pinworm-boundary',
+        match: /(요충|항문\s*가려|핀웜|pinworm|항문\s*가려움\s*밤)/,
+        title: '항문 가려움으로 요충이 의심되면 자가 진단·약 용량을 정하지 말고 진료·약국 상담을 하세요',
+        lead: '요충은 어린이에게 비교적 흔할 수 있으며 밤 항문 가려움으로 의심하기도 합니다. 가족 위생·손 씻기가 중요하고, 치료약 여부와 용량은 의료진·약사가 정합니다. 사진 진단·댓글 처방은 하지 않습니다.',
+        points: [
+            ['위생', '손 씻기, 손톱 짧게, 속옷·침구 위생'],
+            ['진료', '가려움 지속, 수면 방해, 약 필요 여부']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시간대와 가족 여부를 기록하세요.'],
+            ['하지 않을 일', '성인 구충제를 임의 용량으로 나눠 주지 마세요.'],
+            ['관련', '손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 요충', 'https://www.cdc.gov/pinworm/'],
+            ['AAP 요충', 'https://www.healthychildren.org/English/health-issues/conditions/abdominal/Pages/Pinworms.aspx']
         ]
     }
 
