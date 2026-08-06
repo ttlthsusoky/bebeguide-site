@@ -489,6 +489,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'thermometer-method-boundary',
+        match: /(체온\s*재|체온계|항문\s*체온|귀\s*체온|이마\s*체온|온도계\s*아기|thermometer)/,
+        title: '체온은 측정 부위·방법에 따라 숫자가 달라질 수 있어, 숫자만으로 판단하지 마세요',
+        lead: '영아는 올바른 방법으로 측정하는 것이 중요하고, 이마·귀·겨드랑이 값은 상황에 따라 다를 수 있습니다. 제품 설명서를 따르고, 열 여부는 나이·아이 상태와 함께 봅니다. 해열제 용량을 사이트에서 정하지 않습니다.',
+        points: [
+            ['측정', '설명서 부위, 움직임을 줄인 상태, 반복 확인'],
+            ['판단', '숫자+호흡·처짐·수분, 어린 영아 고열은 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 있는 체온계 설명서의 권장 부위를 확인하세요.'],
+            ['하지 않을 일', '손등만으로 “열 없다”고 단정하지 마세요.'],
+            ['관련', '발열 가이드를 참고하세요.']
+        ],
+        links: [
+            ['AAP 체온 재기', 'https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/How-to-Take-a-Childs-Temperature.aspx'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'fever-triage',
         match: /((열|발열|고열|체온).*(몇\s*도|병원|응급|괜찮|났|나요)|38\s*도)/,
         title: '열은 체온 숫자와 아이 상태를 함께 보세요',
@@ -944,6 +963,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'timeout-discipline-boundary',
+        match: /(타임\s*아웃|시간\s*제한\s*훈육|구석\s*서\s*있기|timeout|타임아웃\s*몇\s*분)/,
+        title: '타임아웃은 짧게·일관되게, 체벌·모욕 없이, 위험한 행동은 즉시 막습니다',
+        lead: '일부 훈육 안내에서 짧은 타임아웃이 쓰이지만, 모든 나이·모든 상황에 맞지는 않습니다. 아이를 밀치거나 가두지 말고, 설명은 짧게, 끝난 뒤 관계 회복이 중요합니다. 때리기·모욕은 권하지 않습니다. “나이×1분” 공식을 절대 규칙처럼 단정하지 않습니다.',
+        points: [
+            ['방법', '안전 공간, 짧은 시간, 차분한 목소리, 위험 행동 즉시 제지'],
+            ['금지', '체벌, 장시간 감금, 공포 조성']
+        ],
+        blocks: [
+            ['지금 할 일', '가정에서 안 되는 행동 2~3가지를 미리 합의하세요.'],
+            ['하지 않을 일', '화난 김에 오래 방 안에 가두지 마세요.'],
+            ['관련', '떼쓰기·조부모 훈육·체벌 금지 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 긍정적 양육', 'https://www.cdc.gov/parenting-toddlers/discipline/index.html'],
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Disciplining-Your-Child.aspx']
+        ]
+    },
+    {
         id: 'tantrum-aggression',
         match: /(떼쓰|떼를\s*쓰|고집|물어요|무는\s*행동|물기|때려|때리는|밀쳐|소리\s*질러|공격)/,
         title: '떼쓰기는 흔하지만 때리기·물기는 바로 막아야 합니다',
@@ -1066,6 +1104,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'motion-sickness-boundary',
+        match: /(멀미|차\s*멀미|배\s*멀미|어지러워\s*토|motion\s*sickness)/,
+        title: '멀미는 환기·전방 보기·가벼운 식사로 줄여 보고, 약 용량은 의료진과 정합니다',
+        lead: '차·배에서 창밖을 보거나 환기, 급출발을 줄이는 것이 도움이 될 수 있습니다. 어린이 멀미약 사용 여부와 용량은 나이·체중·제품에 따라 달라 사이트에서 정하지 않습니다. 심한 구토·두통·의식 변화가 있으면 진료하세요.',
+        points: [
+            ['비약물', '전방·수평선 보기, 환기, 읽기 줄이기, 급커브 주의'],
+            ['약', '의료진·약사와 연령 확인, 임의 성인 약 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '어느 상황에서 심한지 기록하세요.'],
+            ['하지 않을 일', '성인 멀미약을 나눠 주지 마세요.'],
+            ['관련', '구토·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 멀미', 'https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Motion-Sickness.aspx'],
+            ['CDC 여행 건강 개요', 'https://wwwnc.cdc.gov/travel/']
+        ]
+    },
+    {
         id: 'forceful-vomiting',
         match: /(분수\s*토|분수토|사출\s*토|사출성\s*구토|힘주어\s*토|계속\s*구토|구토만|토만\s*해요|분출성\s*구토)/,
         title: '힘주어 뿜는 구토·지속 구토는 트림과 구분하고 진료를 봅니다',
@@ -1124,6 +1181,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'raw-egg-cookie-dough',
+        match: /(날\s*계란|생계란|쿠키\s*반죽|날\s*반죽|raw\s*cookie|생쿠키|날\s*밀가루)/,
+        title: '날계란·날 반죽·날 밀가루는 식중독 위험이 있어 아이에게 주지 마세요',
+        lead: '익히지 않은 계란·밀가루 반죽은 살모넬라 등 위험이 있습니다. 베이킹 전 반죽을 맛보거나 생쿠키를 주지 마세요. 완전 가열한 뒤 주세요. 식중독 증상(고열·혈변·처짐)이면 진료합니다.',
+        points: [
+            ['금지', '날 반죽, 생계란 음료, 덜 익은 반숙을 영아에게 습관적으로'],
+            ['안전', '충분히 익히기, 손·도마 위생']
+        ],
+        blocks: [
+            ['지금 할 일', '아이와 베이킹할 때 반죽 맛보기를 그만두세요.'],
+            ['하지 않을 일', '“조금은 괜찮다”며 생쿠키를 주지 마세요.'],
+            ['관련', '손 씻기·설사 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 날계란·반죽', 'https://www.cdc.gov/foodsafety/communication/no-raw-dough.html'],
+            ['CDC 살모넬라 개요', 'https://www.cdc.gov/salmonella/']
+        ]
+    },
+    {
         id: 'honey-under-one',
         match: /(꿀).*(먹|주|바|넣)|한\s*살\s*(전|미만).*꿀|돌\s*전.*꿀|영아.*꿀|벌꿀/,
         title: '돌 전에는 꿀을 주지 않습니다',
@@ -1159,6 +1235,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 분유 준비', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
             ['CDC 모유 보관·데우기', 'https://www.cdc.gov/breastfeeding/php/guidelines-recommendations/handling-breastmilk.html']
+        ]
+    },
+    {
+        id: 'left-out-food-safety',
+        match: /(이유식\s*실온|분유\s*방치|음식\s*오래\s*실온|2시간\s*방치|식중독\s*실온|남긴\s*분유)/,
+        title: '분유·이유식은 오래 실온에 두지 말고, 남긴 것은 다시 먹이지 않는 편이 안전합니다',
+        lead: '데우거나 조제한 분유·이유식은 시간이 지나면 세균이 증식할 수 있습니다. 제품·공식 안내의 보관 시간을 따르고, 아이가 먹다 남긴 것은 버리지 다시 먹이지 않는 것이 일반적입니다. “몇 시간까지 OK”를 사이트에서 단정하지 않고 공식 조유·보관 안내를 우선합니다.',
+        points: [
+            ['원칙', '만들고 곧 먹이기, 남기면 버리기, 재가열 반복 금지'],
+            ['보관', '냉장·해동 안내는 모유·분유 각각 공식 자료']
+        ],
+        blocks: [
+            ['지금 할 일', '조유·이유식 후 시계를 보고 보관 여부를 정하세요.'],
+            ['하지 않을 일', '실온에 반나절 둔 우유를 다시 데워 주지 마세요.'],
+            ['관련', '분유 조유·모유 보관 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유 준비·보관', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['CDC 모유 보관', 'https://www.cdc.gov/breastfeeding/php/guidelines-recommendations/handling-breastmilk.html']
         ]
     },
     {
@@ -1415,6 +1510,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'teething-fever-myth',
+        match: /(이\s*나\s*면서\s*고열|이\s*날\s*때\s*열|티딩\s*열|teething\s*fever|이\s*나서\s*38)/,
+        title: '이가 난다고 고열·심한 병을 설명하지 마세요. 열은 감염 등 다른 원인을 봅니다',
+        lead: '이 날 때 보챔·침·미열처럼 느껴질 수는 있어도, 높은 열·처짐·호흡 이상·발진을 “이 때문”으로만 돌리지 마세요. 열 평가 기준(나이·상태)을 따르고 필요하면 진료합니다. 이 날 때 진통제 용량은 의료진과 정합니다.',
+        points: [
+            ['이 날 때', '침, 보챔, 잇몸 마사지·차갑게 하기'],
+            ['열', '나이·호흡·수분·처짐을 함께, 고열은 다른 원인 검토']
+        ],
+        blocks: [
+            ['지금 할 일', '체온·시작 시각·다른 증상을 기록하세요.'],
+            ['하지 않을 일', '고열을 무시하고 “이 나면 가라앉겠지”로 두지 마세요.'],
+            ['관련', '발열·이 날 때 보챔 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 티딩', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/default.aspx'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html'],
+            ['이 날 때 안내', '#home']
+        ]
+    },
+    {
         id: 'teething-comfort',
         match: /(이앓|이\s*나|치아\s*나|젖니|티딩|teething|잇몸\s*붓|치아\s*맹출)/,
         title: '이 날 때 보챔은 잇몸 마사지·차갑게 하기부터, 약은 의료진과',
@@ -1466,6 +1581,26 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '침대 안에 부드러운 가드·쿠션이 있으면 빼 두세요.'],
             ['하지 않을 일', '낙상 방지 이유로 소프트 범퍼를 끼우지 마세요.'],
             ['관련', '안전수면·포지셔너 금지 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'travel-crib-hotel',
+        match: /(여행용\s*침대|휴대용\s*침대|팩앤플레이|pack\s*n\s*play|호텔\s*아기\s*침대|접이식\s*아기\s*침대)/,
+        title: '여행용·호텔 침대도 빈 수면면·등 자세가 우선이고, 부드러운 침구를 넣지 마세요',
+        lead: '집 밖에서도 1세 미만은 등·평평하고 빈 수면면이 기본입니다. 호텔 침대·성인 침대 가드·베개·이불을 아기 잠자리에 넣지 마세요. 휴대용 침대는 설명서대로 조립하고 파손·리콜을 확인합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['수면', '등, 빈 공간, 과열 방지, 같은 방 가능'],
+            ['점검', '조립 잠금, 그물·바닥 상태, 설명서']
+        ],
+        blocks: [
+            ['지금 할 일', '여행 전 휴대 침대 부품이 완전한지 확인하세요.'],
+            ['하지 않을 일', '소파·성인 침대에 베개 울타리로 재우지 마세요.'],
+            ['관련', '안전수면·범퍼 금지 안내를 참고하세요.']
         ],
         links: [
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
@@ -2694,6 +2829,45 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'booster-seat-when',
+        match: /(부스터\s*시트|보조\s*시트|카시트\s*졸업|성인\s*벨트\s*아이|부스터\s*언제)/,
+        title: '부스터는 키·몸무게·벨트 위치가 맞을 때만, “나이만”으로 졸업하지 마세요',
+        lead: '어린이 보호장치는 단계(후방·전방·부스터·성인 벨트)가 있고, 나이 하나보다 키·몸무게·벨트 경로가 중요합니다. 어깨 벨트가 목에 걸치거나 무릎 벨트가 배에 올라오면 아직 이릅니다. 법·제품 라벨을 확인하고 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['전환', '라벨의 키·몸무게, 벨트 위치, 등받이 유무'],
+            ['금지', '성인 벨트만으로 조기 졸업, 두꺼운 패딩 아래 벨트']
+        ],
+        blocks: [
+            ['지금 할 일', '현재 시트 라벨과 벨트 위치를 다시 확인하세요.'],
+            ['하지 않을 일', '또래가 부스터 탄다고 바로 바꾸지 마세요.'],
+            ['관련', '카시트 원칙·중고 시트·패딩 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트·부스터', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['카시트 원칙', '#home']
+        ]
+    },
+    {
+        id: 'rideshare-taxi-carseat',
+        match: /(택시\s*카시트|라이드\s*셰어\s*카시트|우버\s*아기|택시\s*아기\s*벨트|카시트\s*없이\s*택시)/,
+        title: '택시·라이드셰어에서도 연령에 맞는 카시트가 원칙이고, 짧은 거리라도 예외로 보지 마세요',
+        lead: '차량 종류와 관계없이 어린이는 맞는 보호장치를 쓰는 것이 안전합니다. 택시에 시트가 없으면 휴대용·자신의 시트를 준비하거나 다른 이동 수단을 검토하세요. 무릎에만 안고 가는 방식은 충돌 시 위험합니다. 특정 앱·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['원칙', '연령·체격에 맞는 시트, 올바르게 설치'],
+            ['대안', '사전 예약·렌탈·자기 시트 지참 검토']
+        ],
+        blocks: [
+            ['지금 할 일', '외출 전 이동 구간의 시트 계획을 세우세요.'],
+            ['하지 않을 일', '성인 벨트에 아이만 매고 “잠깐”이라 넘기지 마세요.'],
+            ['관련', '카시트·부스터 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 이동 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -2751,6 +2925,26 @@ const COMMON_PARENT_ANSWERS = [
             ['컵 마시기 안내', '#home'],
             ['AAP 음료·컵', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Recommended-Drinks-for-Young-Children-Ages-0-5.aspx'],
             ['양치 기준', 'market/toddler-toothbrush-guide.html#standard']
+        ]
+    },
+    {
+        id: 'playground-safety-basics',
+        match: /(놀이터\s*안전|미끄럼틀\s*안전|놀이터\s*낙상|그네\s*안전|playground)/,
+        title: '놀이터에서는 나이 맞는 구역·바닥 상태·보호자 감시가 기본입니다',
+        lead: '높은 장비·단단한 바닥은 낙상 위험을 키웁니다. 연령 표지, 파손·녹, 뜨거운 금속 표면을 확인하고 보호자가 곁에 있습니다. 줄·목걸이·헬멧을 그네·미끄럼에 쓴 채 놀지 마세요(감김). 특정 놀이터 순위는 하지 않습니다.',
+        points: [
+            ['점검', '바닥 충격 흡수, 파손, 더운 날 금속 표면'],
+            ['복장', '끈·목걸이 제거, 신발 고정']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 연령 구역인지 표지를 확인하세요.'],
+            ['하지 않을 일', '높은 곳에서 전화를 보며 감시하지 마세요.'],
+            ['관련', '낙상·머리 부딪힘 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 놀이터 안전', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['CPSC 놀이터 안내', 'https://www.cpsc.gov/Safety-Education/Safety-Guides/Sports-and-Recreation/Playground-Safety'],
+            ['AAP 놀이터', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Playground-Safety.aspx']
         ]
     },
     {
@@ -2945,6 +3139,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가습기·실내 공기 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Humidifiers-and-Vaporizers.aspx'],
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/']
+        ]
+    },
+    {
+        id: 'fireworks-safety',
+        match: /(폭죽|불꽃놀이\s*안전|폭죽\s*사고|불꽃\s*놀이\s*아이|fireworks)/,
+        title: '어린이 손 폭죽·근접 불꽃은 화상·눈 손상 위험이 커서 전문 행사 관람이 더 안전합니다',
+        lead: '폭죽은 화상·실명·절단 위험이 있습니다. 어린이에게 폭죽을 만지게 하지 말고, 가능하면 공인 불꽃놀이만 멀리서 보세요. 비상 시 흐르는 물로 식히고 눈 손상은 비비지 말고 진료합니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '어린이 손 폭죽 금지, 거리 두기, 보호자 감시'],
+            ['사고', '화상 식히기, 눈·손 손상 시 즉시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '명절·축제 전 가족 규칙을 정하세요.'],
+            ['하지 않을 일', '다 탄 폭죽을 주워 다시 붙이지 마세요.'],
+            ['관련', '화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 폭죽 안전', 'https://www.cdc.gov/nceh/features/fireworks-safety/'],
+            ['AAP 폭죽', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Fireworks-Safety.aspx']
         ]
     },
     {
@@ -3414,6 +3627,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 트램폴린', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Trampolines-What-You-Need-to-Know.aspx'],
             ['CDC 아동 부상 예방 개요', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'e-scooter-child-safety',
+        match: /(전동\s*킥보드|전기\s*킥보드|전동\s*스쿠터|아이\s*킥보드\s*도로|e-?\s*scooter)/,
+        title: '어린이 전동 킥보드·도로 주행은 헬멧·보호 장비와 교통 규칙을 지키고, 어린 영아와 함께 타지 마세요',
+        lead: '전동 킥보드는 속도·낙상 위험이 큽니다. 연령 제한·헬멧·야간 장비·보도 주행 금지 등 지역 규칙을 따르세요. 유아를 앞에 태우거나 안은 채 타는 것은 위험합니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 보호대, 브레이크 상태'],
+            ['환경', '도로·보도 규정, 어두운 곳·빗길 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '지역 연령·주행 규칙을 확인하세요.'],
+            ['하지 않을 일', '헬멧 없이·유아를 태운 채 타지 마세요.'],
+            ['관련', '헬멧·머리 부상 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 이륜·스쿠터 안전 개요', 'https://www.nhtsa.gov/'],
+            ['AAP 바퀴 달린 놀이기구·헬멧', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Helmets-What-Every-Parent-Should-Know.aspx']
         ]
     },
     {
