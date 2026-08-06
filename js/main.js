@@ -826,6 +826,45 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'fish-bone-safety',
+        match: /(생선\s*가시|가시\s*목에|fish\s*bone|뼈\s*가시\s*목|닭\s*뼈\s*목|가시\s*걸)/,
+        title: '생선·닭 가시가 목에 걸리면 억지로 밥으로 넘기지 말고 호흡을 보세요',
+        lead: '가시가 걸린 듯하면 억지로 빵·밥을 삼키게 하지 마세요. 침을 못 삼키고 호흡이 힘들면 응급입니다. 작은 가시 의심이어도 통증이 지속되면 진료하세요. 어린 아이 생선은 가시를 완전히 바르고 줍니다.',
+        points: [
+            ['예방', '가시 제거, 작은 조각, 식사 감독'],
+            ['응급', '호흡 곤란, 침 과다, 통증·출혈']
+        ],
+        blocks: [
+            ['지금 할 일', '호흡·침 흘림·통증 위치를 확인하세요.'],
+            ['하지 않을 일', '손가락으로 목 안을 후비거나 밥을 억지로 넘기지 마세요.'],
+            ['관련', '질식·둥근 음식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이물질·응급 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx'],
+            ['CDC 질식 위험 식품', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html']
+        ]
+    },
+    {
+        id: 'small-toy-choking-marble',
+        match: /(구슬\s*삼|마블\s*삼|구슬\s*먹|작은\s*구슬|헤어\s*비즈\s*삼|머리\s*비즈|marble\s*chok|작은\s*장난감\s*삼)/,
+        title: '구슬·작은 비즈는 질식 위험이 커서 어린 아이 손에 두지 마세요',
+        lead: '구슬·헤어 비즈·작은 부품은 기도에 막힐 수 있습니다. 연령 표시보다 실제 크기·감독이 중요하고, 삼킨 뒤 호흡이 이상하면 즉시 119입니다. 단추전지·자석과 구분해 해당 응급 안내를 우선하세요.',
+        points: [
+            ['예방', '작은 부품 치우기, 연령 미달 장난감 분리'],
+            ['응급', '숨·울음 없음, 파란 입술 → 119·교육받은 처치']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥·소파 아래 작은 구슬·비즈를 치우세요.'],
+            ['하지 않을 일', '영아 옆에서 비즈 공예 재료를 펼치지 마세요.'],
+            ['관련', '질식·단추전지 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['CPSC 작은 부품', 'https://www.cpsc.gov/'],
+            ['질식 안내', '#home']
+        ]
+    },
+    {
         id: 'choking-gagging',
         match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
         title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
@@ -1320,6 +1359,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'herpangina-mouth-sores-boundary',
+        match: /(헤르판지나|herpangina|구내염\s*아기|입안\s*물집\s*열|입\s*안\s*궤양\s*열|목\s*안\s*물집)/,
+        title: '입안 물집·발열은 헤르판지나 등 여러 원인이 있어 사진으로 병명을 정하지 마세요',
+        lead: '열과 함께 입안·목 안 궤양·물집이 있으면 헤르판지나·수족구 등 가능성이 있으나 사이트에서 단정하지 않습니다. 수분 섭취와 처짐을 보고, 탈수·호흡 곤란·생후 어린 영아는 진료를 우선합니다. 약 용량·브랜드 연고 추천은 하지 않습니다.',
+        points: [
+            ['돌봄', '소량씩 수분, 자극 적은 음식, 손 씻기'],
+            ['진료', '탈수, 침만 흘림, 고열·처짐, 3개월 미만']
+        ],
+        blocks: [
+            ['지금 할 일', '소변량·마신 양·열을 기록하세요.'],
+            ['하지 않을 일', '성인 구내염 약을 아기에게 바르지 마세요.'],
+            ['관련', '수족구·탈수·발열 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 엔테로바이러스 개요', 'https://www.cdc.gov/non-polio-enterovirus/'],
+            ['NHS 구내염·입 궤양(영)', 'https://www.nhs.uk/conditions/mouth-ulcers/'],
+            ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'cold-sore-herpes-infant',
         match: /(구순\s*포진|입술\s*헤르페스|cold\s*sore|헤르페스\s*아기|입술\s*물집\s*열|HSV\s*아기)/,
         title: '입술 물집·구순포진 의심 시 영아에게 키스·침 공유를 피하고 진료를 검토하세요',
@@ -1495,6 +1554,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 식품 안전·데우기 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
             ['CDC 식품 안전', 'https://www.cdc.gov/foodsafety/'],
             ['분유 데우기 안내', '#home']
+        ]
+    },
+    {
+        id: 'formula-warmer-boundary',
+        match: /(분유\s*워머|보틀\s*워머|병\s*워머|formula\s*warmer|bottle\s*warmer|분유\s*중탕)/,
+        title: '분유·모유 워머는 설명서 온도와 위생을 지키고, 전자레인지 대신 고른 온도를 확인하세요',
+        lead: '병 워머·중탕은 고른 데우기에 쓰이지만, 과열·세균 번식을 막으려면 제품 안내 시간과 세척이 중요합니다. 데운 뒤 손목으로 온도를 확인하고, 남은 분유를 다시 데워 쓰지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['사용', '설명서 시간·물 높이, 흔들어 온도 확인'],
+            ['위생', '부품 세척·건조, 남긴 분유 재사용 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '워머 설명서의 권장 시간과 세척법을 확인하세요.'],
+            ['하지 않을 일', '전자레인지로 병을 데우거나 뜨겁게 먹이지 마세요.'],
+            ['관련', '분유 조유·전자레인지 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 분유 준비·보관', 'https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html'],
+            ['AAP 분유 수유', 'https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/default.aspx']
         ]
     },
     {
@@ -3520,6 +3598,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'fine-dust-mask-infant',
+        match: /(미세\s*먼지|황사|초미세|air\s*quality|대기\s*질).{0,16}(아기|아이|마스크)|아기\s*마스크|영아\s*마스크|마스크\s*아기/,
+        title: '영아 마스크는 숨쉬기·밀착이 어려워 무리하지 말고, 실내 공기·외출 시간을 조절하세요',
+        lead: '아주 어린 아이에게 성인형 마스크를 강제하면 숨쉬기가 불편할 수 있습니다. 많은 안내가 연령·밀착·감독을 강조합니다. 황사·미세먼지가 나쁠 때는 외출을 줄이고 실내 환기·공기 관리를 우선하세요. 마스크 브랜드 순위·착용 “필수 개월” 단정은 하지 않습니다.',
+        points: [
+            ['우선', '외출 시간 조절, 그늘·실내, 창문 환기 타이밍'],
+            ['마스크', '연령·제품 표시, 강제 착용·혼자 두지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '당일 대기 질 예보와 외출 계획을 맞춰 보세요.'],
+            ['하지 않을 일', '영아에게 성인 마스크를 테이프로 고정하지 마세요.'],
+            ['관련', '자외선·호흡 증상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 공기 질·아이 건강 개요', 'https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Air-Pollution.aspx'],
+            ['질병관리청·대기 관련 건강 안내', 'https://www.kdca.go.kr/'],
+            ['자외선·그늘 안내', '#home']
+        ]
+    },
+    {
         id: 'infant-sun-shade',
         match: /(자외선|선크림|썬크림|햇볕|직사광선|야외.*아기|아기.*햇빛|일광\s*욕).*(아기|신생아|영아|아이)|아기.*(선크림|햇볕|자외선)/,
         title: '6개월 미만은 그늘·옷·모자가 우선이고, 선크림은 의료진 안내를 따릅니다',
@@ -3857,6 +3955,83 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'outlet-cord-safety',
+        match: /(콘센트|outlet|멀티탭|전선\s*씹|코드\s*씹|전기\s*코드\s*아기|콘센트\s*덮|전원\s*플러그)/,
+        title: '콘센트·전선은 덮개·정리로 막고, 코드를 물거나 당기지 못하게 하세요',
+        lead: '콘센트에 물건을 넣거나 전선을 씹으면 감전·화상 위험이 있습니다. 사용하지 않는 콘센트 덮개, 전선 정리, 멀티탭 고정이 도움이 됩니다. 특정 덮개 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '덮개, 전선 정리, 멀티탭 가림, 충전기 방치 금지'],
+            ['응급', '감전·화상 의심 시 전원 차단 후 119·진료']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥 높이 콘센트와 늘어진 충전 케이블을 점검하세요.'],
+            ['하지 않을 일', '젖은 손으로 플러그를 만지게 두지 마세요.'],
+            ['관련', '집 안 안전·화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 전기 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CPSC 가정 전기', 'https://www.cpsc.gov/'],
+            ['화상 안내', '#home']
+        ]
+    },
+    {
+        id: 'door-pinch-safety',
+        match: /(문\s*끼|손가락\s*끼|서랍\s*끼|문틈\s*손|도어\s*핀치|door\s*pinch|손가락\s*찍)/,
+        title: '문·서랍 틈에 손가락이 끼지 않게 스토퍼·손잡이 습관을 만드세요',
+        lead: '문·서랍이 닫힐 때 손가락 압궤 사고가 납니다. 문 스토퍼, 천천히 닫기, 아이 손이 문틀에 없는지 확인하세요. 심하게 부으면 진료합니다. 특정 스토퍼 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '문 스토퍼, 서랍 잠금, 닫기 전 확인'],
+            ['다친 뒤', '차갑게(직접 얼음 X), 부종·변형·출혈 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '자주 닫히는 방문·화장실 문에 손을 두는지 관찰하세요.'],
+            ['하지 않을 일', '문을 세게 닫는 장난을 하지 마세요.'],
+            ['관련', '집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 부상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'toilet-lid-lock-boundary',
+        match: /(변기\s*잠금|변기\s*뚜껑|toilet\s*lock|변기\s*빠|변기\s*익사|화장실\s*문\s*잠)/,
+        title: '변기 뚜껑·화장실 문은 닫아 두고, 영아는 변기 물 놀이를 막으세요',
+        lead: '변기 물에 머리가 빠지면 익사 위험이 있습니다. 뚜껑을 닫고 잠금장치를 쓰며, 화장실 문을 닫아 두세요. 목욕·물놀이와 별개로 변기 주변 감독이 필요합니다. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '뚜껑 닫기·잠금, 화장실 문 닫기, 혼자 두지 않기'],
+            ['응급', '물에 빠진 뒤 호흡 이상 → 119·응급처치']
+        ],
+        blocks: [
+            ['지금 할 일', '변기 뚜껑과 화장실 문 습관을 점검하세요.'],
+            ['하지 않을 일', '영아만 화장실에 두지 마세요.'],
+            ['관련', '익사·욕조 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
+        id: 'glass-corner-furniture-safety',
+        match: /(유리\s*테이블|유리\s*탁자|모서리\s*보호|코너\s*가드|가구\s*모서리|glass\s*table|sharp\s*corner)/,
+        title: '유리·날카로운 모서리는 가드·배치로 막고, 뛰는 공간과 분리하세요',
+        lead: '유리 테이블·날카로운 모서리에 부딪히면 열상·머리 부상이 날 수 있습니다. 모서리 보호대, 미끄럼 방지, 가구 배치 변경이 도움이 됩니다. 특정 가드 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '모서리 가드, 유리 가장자리, 뛰어다니는 동선'],
+            ['다친 뒤', '출혈 압박, 머리 부딪힘·의식 변화는 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 눈높이에서 날카로운 모서리를 둘러보세요.'],
+            ['하지 않을 일', '미끄러운 바닥에서 유리 가구 주변을 뛰게 두지 마세요.'],
+            ['관련', '머리 부딪힘·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 낙상·부상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
         id: 'home-safety-basics',
         match: /(집\s*안\s*안전|아기\s*안전|베이비\s*프루프|안전사고\s*예방|콘센트\s*막|모서리\s*보호|약품\s*보관).*(아기|아이)?|아이\s*손\s*닿/,
         title: '집 안 안전은 약품·작은 물건·창·뜨거운 것부터 치웁니다',
@@ -4049,6 +4224,46 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['AAP 가정 화상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Preventing-Burns-at-Home.aspx'],
             ['화상 응급 안내', '#home']
+        ]
+    },
+    {
+        id: 'tetanus-wound-boundary',
+        match: /(파상풍|tetanus|녹슨\s*못|상처\s*파상풍|파상풍\s*접종|외상\s*접종)/,
+        title: '더러운 상처·녹슨 물건 외상 후에는 세척과 파상풍 접종 여부를 의료진과 확인하세요',
+        lead: '파상풍은 상처로 균이 들어가 생길 수 있는 질환입니다. 상처를 깨끗이 씻고, 깊거나 오염된 상처는 진료에서 접종·처치를 정합니다. 사이트에서 접종 “맞아야 한다/안 맞아도 된다”를 개인 상처에 단정하거나 약 용량을 정하지 않습니다.',
+        points: [
+            ['당장', '흐르는 물·비누 세척, 깨끗한 거즈'],
+            ['진료', '깊은 상처, 오염, 접종 기록 불명, 감염 징후']
+        ],
+        blocks: [
+            ['지금 할 일', '상처 경위와 마지막 파상풍 접종 시기를 확인하세요.'],
+            ['하지 않을 일', '흙·녹을 민간 약으로만 덮어 두지 마세요.'],
+            ['관련', '접종 일정·화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 파상풍', 'https://www.cdc.gov/tetanus/'],
+            ['예방접종도우미', 'https://nip.kdca.go.kr/'],
+            ['접종 일정 글', 'blog/vaccination-schedule.html']
+        ]
+    },
+    {
+        id: 'cpr-class-boundary',
+        match: /(cpr|심폐\s*소생|하임리히|하임리히법|영아\s*응급\s*처치|응급\s*처치\s*교육|first\s*aid\s*class|영아\s*cpr)/,
+        title: '영아·소아 심폐소생·기도폐쇄 처치는 공인 교육으로 익히고, 영상만으로 단정하지 마세요',
+        lead: '위급 시 119와 교육받은 응급처치가 중요합니다. 사이트 문장만으로 CPR·하임리히 손기술을 가르치지 않으며, 대한적십자·공인 기관 교육을 권합니다. 호흡이 없거나 반응이 없으면 즉시 119에 연락하세요.',
+        points: [
+            ['지금', '119, 주변 도움 요청, 교육받은 처치'],
+            ['준비', '보호자 대상 영아·소아 응급처치 교육']
+        ],
+        blocks: [
+            ['지금 할 일', '가까운 영아 응급처치 교육 일정을 알아보세요.'],
+            ['하지 않을 일', '검증 안 된 숏폼 영상만 보고 기술을 외우지 마세요.'],
+            ['관련', '질식·호흡 응급 안내를 참고하세요.']
+        ],
+        links: [
+            ['대한적십자사 응급처치 교육', 'https://www.redcross.or.kr/'],
+            ['AAP 질식·응급 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx'],
+            ['질식 안내', '#home']
         ]
     },
     {
@@ -4519,6 +4734,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 창 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Window-Safety.aspx'],
             ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'cat-scratch-boundary',
+        match: /(고양이\s*할퀴|고양이\s*스크래치|캣\s*스크래치|cat\s*scratch|고양이\s*물림|고양이\s*상처)/,
+        title: '고양이 할퀴·물림은 세척 후 감염 징후를 보고, 열·부종이 있으면 진료하세요',
+        lead: '고양이 할퀴 뒤 드물게 감염(캣스크래치 등)이 문제될 수 있습니다. 상처를 비누와 물로 씻고, 빨개짐·부종·발열·림프절 부음이 있으면 진료하세요. 항생제 여부는 의료진이 정합니다. 사진으로 병명을 단정하지 않습니다.',
+        points: [
+            ['당장', '비누·물 세척, 출혈 압박'],
+            ['진료', '열, 심한 부종, 고름, 무기력']
+        ],
+        blocks: [
+            ['지금 할 일', '할퀸 시각과 부위·고양이 예방접종 여부를 기록하세요.'],
+            ['하지 않을 일', '상처를 입으로 빨거나 민간 약만 바르지 마세요.'],
+            ['관련', '반려동물 물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 캣스크래치 병', 'https://www.cdc.gov/bartonella/about/about-cat-scratch-disease.html'],
+            ['AAP 동물 물림', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Animal-Bites.aspx']
         ]
     },
     {
