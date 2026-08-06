@@ -944,6 +944,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'toddler-milk-drink-boundary',
+        match: /(토들러\s*밀크|토들러\s*분유|성장\s*분유|다음에\s*단계\s*분유|toddler\s*milk|toddler\s*formula|1\+\s*분유|12개월\s*이후\s*분유)/,
+        title: '돌 이후 “성장 분유·토들러 밀크”는 필수가 아니며, 일반 식품·우유 상담을 우선하세요',
+        lead: '많은 공식 안내는 돌이 지난 뒤 특수한 경우가 아니면 일반 식품과 (적응되면) 일반 우유로 충분할 수 있다고 설명합니다. “두뇌 발달 필수” 광고만으로 고를 필요는 없습니다. 알레르기·성장 걱정·비건 식단은 의료진과 상의하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['원칙', '돌 전후 이유식·가족식, 생우유 시점은 별도 안내'],
+            ['경계', '마케팅 문구·해외 직구 성분 단정 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '아이가 다양한 고형식을 먹는지부터 점검하세요.'],
+            ['하지 않을 일', '분유를 달게 타 “간식 음료”처럼 주지 마세요.'],
+            ['관련', '생우유·분유·이유식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 돌 이후 영양 개요', 'https://www.healthychildren.org/English/ages-stages/toddler/nutrition/Pages/default.aspx'],
+            ['CDC 유아 영양', 'https://www.cdc.gov/infant-toddler-nutrition/']
+        ]
+    },
+    {
+        id: 'plant-milk-under-two-boundary',
+        match: /(두유\s*아기|아몬드\s*우유\s*아기|귀리\s*우유|식물성\s*우유|plant[-\s]?based\s*milk|대체\s*우유\s*아기|코코넛\s*밀크\s*아기)/,
+        title: '돌 전후 식물성 음료를 주식 우유 대신 쓰기 전에 영양·상담을 확인하세요',
+        lead: '두유·아몬드·귀리 등 식물성 음료는 단백질·지방·칼슘·비타민이 제품마다 크게 다릅니다. 영·유아 주식으로 임의 교체하면 영양 부족 위험이 있을 수 있습니다. 알레르기·비건 가정은 의료진·영양 상담을 우선하고, 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['주의', '돌 전 생우유·대체유 단정 금지, 성분 표기 확인'],
+            ['상담', '알레르기, 성장 부진, 특수 식단']
+        ],
+        blocks: [
+            ['지금 할 일', '지금 주는 음료의 월령 표시·영양 성분을 확인하세요.'],
+            ['하지 않을 일', '성인용 저열량 대체유를 아기 주식으로 주지 마세요.'],
+            ['관련', '생우유·토들러 밀크·알레르기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 우유·음료 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 유아 영양', 'https://www.cdc.gov/infant-toddler-nutrition/']
+        ]
+    },
+    {
         id: 'cow-milk',
         match: /(생우유|우유).*(언제|먹|마시|시작|바꿔)|분유.*(끊|떼|생우유)/,
         title: '생우유를 주된 음료로 바꾸는 기준은 첫돌 이후입니다',
@@ -1437,6 +1475,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'poison-ivy-boundary',
+        match: /(독담쟁이|포이즌\s*아이비|poison\s*ivy|옻\s*올|식물\s*접촉\s*피부염|덩굴\s*옻)/,
+        title: '독성 식물 접촉 후 가려운 발진은 씻어 내고, 심한 부종·호흡 이상은 진료하세요',
+        lead: '독담쟁이 등 접촉 피부염은 붉은 선·수포·가려움으로 나타날 수 있습니다. 노출 부위는 비누와 물로 씻고, 옷·도구도 닦으세요. 사진만으로 병명을 단정하지 않으며, 눈·입·숨 이상·넓은 수포는 진료합니다. 연고 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['즉시', '피부·손 씻기, 옷 분리 세탁'],
+            ['진료', '얼굴·생식기, 심한 부종, 감염 징후, 호흡 이상']
+        ],
+        blocks: [
+            ['지금 할 일', '야외 활동 후 노출 가능 피부를 씻으세요.'],
+            ['하지 않을 일', '수포를 억지로 짜거나 민간 태워 없애기를 하지 마세요.'],
+            ['관련', '발진 진료 시점·벌레 물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 독성 식물', 'https://www.cdc.gov/niosh/topics/plants/'],
+            ['AAP 접촉 피부염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1829,6 +1886,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'strep-throat-boundary',
+        match: /(연쇄구균|스트렙|strep\s*throat|편도\s*세균|목\s*아픔\s*세균|인후염\s*세균|신속\s*항원\s*목)/,
+        title: '목 아픔이 스트렙(연쇄구균)인지 여부는 검사·진료로 확인하고, 남은 항생제를 쓰지 마세요',
+        lead: '바이러스 인후통과 연쇄구균 인두는 증상만으로 구분이 어렵습니다. 고열·목 통증·삼킴 어려움·발진 등이 있으면 진료·검사가 필요할 수 있습니다. 항생제 필요 여부와 용량은 의료진이 정합니다. 사진 진단은 하지 않습니다.',
+        points: [
+            ['관찰', '열, 침 흘림, 호흡, 수분 섭취, 발진'],
+            ['경계', '가족 남은 항생제 나눠 먹기 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시작 시점과 수분·소변을 기록하세요.'],
+            ['하지 않을 일', '목 사진을 올려 병명을 단정하지 마세요.'],
+            ['관련', '감기·항생제·발열 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 연쇄구균 인두염', 'https://www.cdc.gov/group-a-strep/about/strep-throat.html'],
+            ['AAP 목 아픔 개요', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'antibiotic-virus-boundary',
         match: /(항생제\s*감기|감기\s*항생|바이러스\s*항생|항생제\s*먹여|꼭\s*항생제)/,
         title: '감기·많은 바이러스 감염에 항생제가 항상 필요하지는 않습니다',
@@ -2120,6 +2196,26 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['양치 시작 공식 기준', 'market/toddler-toothbrush-guide.html#standard'],
             ['AAP 티딩 안내', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/Teething-Pain.aspx']
+        ]
+    },
+    {
+        id: 'infant-swing-sleep-boundary',
+        match: /(스윙.{0,12}(재우|재워|잠)|바운서.{0,12}(재우|재워|잠)|흔들\s*침대.{0,10}(재우|재워)|infant\s*swing\s*sleep|카시트.{0,12}(재우|재워|잠)|스윙\s*바운서)/,
+        title: '스윙·바운서·카시트에 잠든 아기는 가능하면 평평한 안전 수면 공간으로 옮기세요',
+        lead: '스윙·바운서·카시트 등 기울어진 제품에서 장시간 재우면 기도·질식 위험이 커질 수 있습니다. 이동 중 카시트는 이동 목적에 쓰고, 도착 후 잠든 아기는 등을 대고 평평한 바닥에 눕히는 편이 안전합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['수면', '평평·단단한 바닥, 등 재우기, 부드러운 물건 치우기'],
+            ['이동', '카시트는 이동용, 집 안 침대 대용 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '스윙·바운서에서 깊이 잠들면 안전 침대로 옮기세요.'],
+            ['하지 않을 일', '스윙을 밤 재우기 장소로 쓰지 마세요.'],
+            ['관련', '안전수면·경사 수면 제품 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx'],
+            ['CPSC 유아 수면 제품', 'https://www.cpsc.gov/']
         ]
     },
     {
@@ -3089,6 +3185,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['NHS 유선염 안내', 'https://www.nhs.uk/conditions/mastitis/'],
             ['LLL 유선염 정보', 'https://llli.org/breastfeeding-info/mastitis/']
+        ]
+    },
+    {
+        id: 'wheeze-breathing-care-boundary',
+        match: /(쌕쌕|휘징|wheeze|천명|숨소리\s*이상|가슴\s*들썩|천식\s*의심\s*아기)/,
+        title: '쌕쌕거림·숨이 가쁜 증상은 원인을 사이트에서 단정하지 말고 호흡 상태를 보고 진료하세요',
+        lead: '쌕쌕·가슴 들썩임·빠른 호흡은 감염·알레르기·이물 등 여러 원인일 수 있습니다. “천식” 병명·흡입약 용량을 온라인에서 정하지 마세요. 입술 파래짐·처짐·수유 불가·무호흡은 응급입니다.',
+        points: [
+            ['응급', '청색증, 처짐, 무호흡, 늑간 함몰 심함 → 119'],
+            ['진료', '첫 쌕쌕, 수유·수면 방해, 열 동반']
+        ],
+        blocks: [
+            ['지금 할 일', '호흡 수·가슴 움직임·수유량을 기록하세요.'],
+            ['하지 않을 일', '성인 흡입약을 임의로 쓰지 마세요.'],
+            ['관련', 'RSV·크룹·이물 흡인 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC RSV·호흡기', 'https://www.cdc.gov/rsv/'],
+            ['AAP 호흡 곤란 개요', 'https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/default.aspx']
         ]
     },
     {
@@ -4518,6 +4633,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bath-seat-danger',
+        match: /(목욕\s*의자|욕조\s*시트|배스\s*시트|bath\s*seat|목욕\s*링|아기\s*목욕\s*의자)/,
+        title: '목욕 의자·욕조 시트는 익사 예방 장비가 아니며, 아이를 혼자 두지 마세요',
+        lead: '목욕용 의자·흡착 시트는 넘어지거나 빠져 익사 사고가 날 수 있어 안전장치로 보지 않습니다. 물은 얕아도 위험하고, 벨이 울려도 자리를 비우지 마세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['원칙', '팔 닿는 거리 감독, 물 받기 전 준비물 챙기기'],
+            ['금지', '목욕 의자에만 맡기고 자리 비우기']
+        ],
+        blocks: [
+            ['지금 할 일', '목욕 중 휴대폰·초인종에 자리를 비우는 습관을 끊으세요.'],
+            ['하지 않을 일', '흡착 시트가 붙었다고 안심하지 마세요.'],
+            ['관련', '익사 예방·신생아 목욕 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 목욕 의자 위험', 'https://www.cpsc.gov/'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
         id: 'water-drowning-safety',
         match: /(익사|물에\s*빠|욕조.*혼자|목욕.*자리\s*비|물놀이\s*안전|수영장\s*아기|튜브만\s*믿)/,
         title: '목욕·물놀이는 팔 뻗으면 닿는 거리에서, 잠깐도 혼자 두지 마세요',
@@ -4675,6 +4810,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 말더듬', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/Stuttering.aspx'],
             ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones'],
             ['CDC 언어 발달', 'https://www.cdc.gov/ncbddd/actearly/milestones/index.html']
+        ]
+    },
+    {
+        id: 'snoring-sleep-breathing-boundary',
+        match: /(코골\s*아이|아이\s*코골|수면\s*무호흡|잠\s*숨\s*멈|mouth\s*breathing\s*sleep|코로\s*숨\s*못|편도\s*코골)/,
+        title: '아이 코골이·잠 중 숨 멈춤이 반복되면 수면 호흡 문제로 진료를 검토하세요',
+        lead: '가끔 가벼운 코골이와 달리, 크게 코골며 숨을 멈추거나 헐떡이며 깨고 낮에 매우 보채는 경우 의료 평가가 필요할 수 있습니다. 진단·수술·장치 여부는 의료진이 정합니다. 코골이 “치료 베개” 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '무호흡, 가슴 들썩, 땀, 자세, 낮 졸림·보챔'],
+            ['상담', '성장·편도·알레르기 병력과 함께 소아과·이비인후과']
+        ],
+        blocks: [
+            ['지금 할 일', '코골이·무호흡이 들리는 짧은 영상을 남겨 두세요.'],
+            ['하지 않을 일', '성인용 코골이 약을 주지 마세요.'],
+            ['관련', '안전수면·감기 코막힘 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 소아 코골이·수면 호흡', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CDC 수면 건강 개요', 'https://www.cdc.gov/sleep/']
         ]
     },
     {
@@ -5083,6 +5237,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bounce-house-inflatable-safety',
+        match: /(에어\s*바운스|바운스\s*하우스|에어\s*점프|inflatable\s*bounce|풍선\s*성|에어\s*놀이매트\s*점프|바운시\s*캐슬)/,
+        title: '에어바운스·바운스 하우스는 인원·바람·감독 규칙을 지키고, 성인 감독 없이 두지 마세요',
+        lead: '풍선 놀이기구는 충돌·낙하·뒤집힘·질식 사고가 날 수 있습니다. 권장 인원·키 제한을 지키고, 고정·바람 경보를 확인하세요. 작은 아이와 큰 아이를 섞지 않는 편이 안전합니다. 특정 업체 추천은 하지 않습니다.',
+        points: [
+            ['운영', '감독, 인원 제한, 신발·안경 제거, 고정'],
+            ['위험', '강풍, 과밀, 목 감기 놀이기구 겹침']
+        ],
+        blocks: [
+            ['지금 할 일', '이용 전 안전 수칙과 연령 표시를 확인하세요.'],
+            ['하지 않을 일', '뒤집힌 채 위에 올라타거나 밀치는 놀이를 하지 마세요.'],
+            ['관련', '트램폴린·놀이터 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 팽창 놀이기구 안전', 'https://www.cpsc.gov/'],
+            ['AAP 놀이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'trampoline-danger',
         match: /(트램폴린|방방\s*이|트램폴린\s*안전|가정용\s*트램폴린)/,
         title: '어린이 트램폴린은 골절·머리 부상 위험이 커서 권하지 않는 안내가 많습니다',
@@ -5292,6 +5465,63 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
             ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'cannabis-edible-child-poison',
+        match: /(대마|마리화나|칸나비스|THC|에디블|대마\s*젤리|대마\s*쿠키|cannabis|marijuana|edible).{0,20}(먹|삼킴|중독|아이|아기)|아이.{0,12}(대마|THC|에디블)/,
+        title: '대마·THC 함유 젤리·쿠키를 아이가 먹었으면 중독 상담·응급실을 우선하세요',
+        lead: '대마 성분 식품(에디블)은 사탕·젤리처럼 보여 아이들이 삼키기 쉽고, 늦게 증상이 나타날 수 있습니다. 임의로 토하게 하지 말고, 제품명·추정량을 확인한 뒤 중독 상담·응급실 경로를 이용하세요. 치료·용량을 사이트에서 정하지 않습니다.',
+        points: [
+            ['위험', '졸림·비틀거림·구토·호흡 이상, 늦게 나타나는 증상'],
+            ['대응', '남은 포장 보관, 토하게 강제 금지, 119·중독 상담·응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '대마 식품·오일은 아이 손 닿지 않는 잠금 수납에 두세요.'],
+            ['하지 않을 일', '“조금이니 자라면 괜찮다”며 지켜만 보지 마세요.'],
+            ['관련', '약·세제 중독·약장 잠금 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 대마·소아 노출 개요', 'https://www.cdc.gov/cannabis/'],
+            ['AAP 중독·응급 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'silica-gel-desiccant-boundary',
+        match: /(실리카\s*겔|방습제|제습제\s*봉투|습기\s*제거제\s*먹|silica\s*gel|건조제\s*삼킴)/,
+        title: '방습제(실리카겔)를 삼켰으면 양·증상을 보고 중독 상담·진료를 하세요',
+        lead: '옷·김·약 포장의 방습제는 보통 삼켜도 대부분 흡수되지 않지만, 양·첨가 성분·질식·포장지 조각에 따라 위험이 달라질 수 있습니다. 토하게 강제하지 말고 상담하세요. “무해” 단정은 하지 않습니다.',
+        points: [
+            ['확인', '실리카겔 표기, 산소흡수제(철 성분)와 구분'],
+            ['대응', '호흡·침 흘림·복통 시 응급실, 중독 상담']
+        ],
+        blocks: [
+            ['지금 할 일', '신발·김·가방 속 방습제를 아이 손에 두지 마세요.'],
+            ['하지 않을 일', '포장째 장난감처럼 주지 마세요.'],
+            ['관련', '중독·작은 물건 질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'mothball-poison-boundary',
+        match: /(나프탈렌|모스볼|좀약| mothball| moth\s*ball|장뇌\s*좀약|옷장\s*좀약\s*먹)/,
+        title: '좀약(나프탈렌 등)을 삼켰거나 냄새를 오래 맡으면 중독 위험이 있어 상담하세요',
+        lead: '좀약 성분은 제품마다 다르며 혈구·신경 등에 영향을 줄 수 있습니다. 아이가 먹거나 빨았으면 남은 조각을 치우고 중독 상담·진료를 하세요. 토하게 강제하지 마세요. 옷장에 둔 채 아이 손에 두지 않습니다.',
+        points: [
+            ['예방', '밀폐·높은 곳, 아이 손 닿지 않게'],
+            ['노출', '구토·처짐·호흡 이상 → 응급실']
+        ],
+        blocks: [
+            ['지금 할 일', '서랍·옷장 좀약 위치를 점검하세요.'],
+            ['하지 않을 일', '좀약을 방향제로 아이 방에 두지 마세요.'],
+            ['관련', '중독·캠퍼 문지름 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 나프탈렌·좀약 개요', 'https://www.cdc.gov/niosh/'],
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
         ]
     },
     {
