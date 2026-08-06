@@ -864,6 +864,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'ornament-choking-holiday',
+        match: /(크리스마스\s*장식|오너먼트\s*질식|트리\s*장식\s*삼킴|christmas\s*ornament|성탄\s*장식\s*아기|트리\s*전구\s*아기)/,
+        title: '트리·명절 장식품은 작은 부품·깨진 조각을 치우고, 아이 손 닿지 않게 하세요',
+        lead: '오너먼트·리본·건전지·전구는 질식·열상·감전 위험이 있습니다. 낮은 가지 장식을 줄이고, 깨진 유리는 바로 치우세요. 트리 물을 마시지 않게 하세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['위험', '작은 장식, 깨진 유리, 전지, 전선'],
+            ['예방', '높은 곳 배치, 매일 바닥 점검']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 손 높이 장식을 치우거나 바꾸세요.'],
+            ['하지 않을 일', '작은 장식품을 놀이 소품으로 주지 마세요.'],
+            ['관련', '질식·전지·전선 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 명절 장식 안전', 'https://www.cpsc.gov/'],
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
         id: 'small-toy-choking-marble',
         match: /(구슬\s*삼|마블\s*삼|구슬\s*먹|작은\s*구슬|헤어\s*비즈\s*삼|머리\s*비즈|marble\s*chok|작은\s*장난감\s*삼)/,
         title: '구슬·작은 비즈는 질식 위험이 커서 어린 아이 손에 두지 마세요',
@@ -900,6 +919,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/'],
             ['AAP 질식 위험 식품', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'puffs-snack-choking-boundary',
+        match: /(핑거푸드\s*퍼프|쌀\s*퍼프|baby\s*puffs|녹는\s*과자\s*질식|아기\s*과자\s*목|옥수수\s*퍼프|퍼프\s*질식|아기\s*퍼프|퍼프\s*과자)/,
+        title: '녹는 아기 과자·퍼프도 한꺼번에 많이 넣으면 질식 위험이 있습니다',
+        lead: '입에서 녹는 스낵도 건조하거나 많이 넣으면 기도에 걸릴 수 있습니다. 앉아서 한 번에 조금씩, 뛰어다니며 먹지 않게 하세요. “녹으니 안전”만 믿지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['방법', '앉은 자세, 소량, 감독'],
+            ['위험', '달리기·울면서 먹기, 큰 덩어리']
+        ],
+        blocks: [
+            ['지금 할 일', '스낵을 테이블에 소량만 덜어 주세요.'],
+            ['하지 않을 일', '유모차·카시트에서 잔뜩 손에 쥐여 두지 마세요.'],
+            ['관련', '질식 식품·원형 식품 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
         ]
     },
     {
@@ -1728,6 +1766,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sushi-raw-fish-infant-boundary',
+        match: /(회\s*아기|스시\s*아기|생선회\s*아이|raw\s*fish\s*baby|사시미\s*아기|날생선\s*이유식)/,
+        title: '영·유아에게 생선회·날생선 스시는 식중독·기생충 위험이 있어 권하지 않습니다',
+        lead: '날생선·일부 해산물은 세균·기생충 위험이 있어 어린 아이에게는 충분히 익힌 생선을 우선하는 안내가 많습니다. “한 점만”도 예외로 단정하지 마세요. 수은이 높은 생선은 별도 안내를 참고하세요. 식당 추천은 하지 않습니다.',
+        points: [
+            ['원칙', '익힌 생선 우선, 날것 피하기'],
+            ['주의', '임신부·면역 저하 가족도 동일 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '외식 때 아이 메뉴가 익힌 것인지 확인하세요.'],
+            ['하지 않을 일', '어른 회를 그대로 주지 마세요.'],
+            ['관련', '수은·생선·식중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['FDA 수산물·임신부·어린이 안내(영)', 'https://www.fda.gov/food/consumers/advice-about-eating-fish'],
+            ['AAP 식품 안전 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'raw-egg-cookie-dough',
         match: /(날\s*계란|생계란|쿠키\s*반죽|날\s*반죽|raw\s*cookie|생쿠키|날\s*밀가루)/,
         title: '날계란·날 반죽·날 밀가루는 식중독 위험이 있어 아이에게 주지 마세요',
@@ -2094,6 +2151,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 항생제·감기', 'https://www.cdc.gov/antibiotic-use/colds.html'],
             ['CDC 항생제 내성 개요', 'https://www.cdc.gov/antibiotic-use/'],
             ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'neti-pot-infant-boundary',
+        match: /(네티\s*팟|neti\s*pot|코\s*세척\s*주전자|비강\s*세척\s*아기|식염수\s*주전자\s*영아)/,
+        title: '영아에게 성인용 네티팟·코 주전자 세척을 임의로 하지 마세요',
+        lead: '비강 세척 기구는 연령·방법·물 위생이 중요합니다. 영아에게 성인용 네티팟을 그대로 쓰는 것은 권하지 않으며, 수돗물을 끓이지 않고 쓰면 감염 위험이 있습니다. 방법·기구는 의료진 안내를 따르세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['경계', '성인 기구 그대로, 불안전한 물, 강한 압력'],
+            ['대안', '의료진이 안내한 식염수·흡인 방법']
+        ],
+        blocks: [
+            ['지금 할 일', '코 막힘에 쓰는 기구의 월령 표시를 확인하세요.'],
+            ['하지 않을 일', '센 물줄기로 영아 코를 밀어 넣지 마세요.'],
+            ['관련', '식염수·콧물 흡인·감기 안내를 참고하세요.']
+        ],
+        links: [
+            ['FDA 네티팟·비강 세척 안전(영)', 'https://www.fda.gov/consumers/consumer-updates/rinsing-your-sinuses-neti-pots-safe'],
+            ['AAP 코막힘 개요', 'https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/default.aspx']
         ]
     },
     {
@@ -2678,6 +2754,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['AAP 가정 화상', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Preventing-Burns-at-Home.aspx']
+        ]
+    },
+    {
+        id: 'herbal-tea-infant-boundary',
+        match: /(허브\s*티\s*아기|허브차\s*영아|캐모마일\s*아기|chamomile\s*baby|한방차\s*아기|약초\s*차\s*영아)/,
+        title: '영아에게 허브차·민간 약초 음료를 치료 목적으로 임의로 주지 마세요',
+        lead: '캐모마일 등 허브차는 성분·오염·알레르기·보툴리눔(꿀 혼합) 위험이 있을 수 있습니다. “배가 아파서” 민간으로 먹이지 말고, 필요하면 의료진과 상의하세요. 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['경계', '검증 안 된 약초, 꿀 혼합, 성인 차 소분'],
+            ['우선', '수유·수분·위험 신호 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '먹이려던 차 성분표를 확인하세요.'],
+            ['하지 않을 일', '해외 직구 약초 분말을 임의로 타 주지 마세요.'],
+            ['관련', '꿀 금지·그라이프 워터·배앓이 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영아 음료·안전 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
+            ['CDC 영아 영양', 'https://www.cdc.gov/infant-toddler-nutrition/']
         ]
     },
     {
@@ -3375,6 +3470,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 비타민 K 결핍 출혈', 'https://www.cdc.gov/vitamin-k-deficiency/about/index.html'],
             ['AAP 비타민 K', 'https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/Where-We-Stand-Administration-of-Vitamin-K.aspx'],
             ['신생아 돌봄', '#home']
+        ]
+    },
+    {
+        id: 'undescended-testis-boundary',
+        match: /(잠복\s*고환|정류\s*고환|undescended\s*test|고환이\s*안\s*만져|고환\s*한쪽\s*없|고환\s*내려)/,
+        title: '고환이 음낭에서 만져지지 않으면 시기를 미루지 말고 소아과·비뇨기 진료를 상의하세요',
+        lead: '잠복고환은 생후 경과를 보며 평가·치료 시점을 의료진이 정합니다. 사진·만져보기만으로 가정에서 진단·마사지 치료를 단정하지 마세요. 통증·부종·색 변화는 응급일 수 있습니다. 수술·약 용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['상담', '신생아 검진, 추적 일정, 전문과 의뢰'],
+            ['응급', '갑작스러운 통증·부종·구토']
+        ],
+        blocks: [
+            ['지금 할 일', '목욕 때 양쪽 음낭이 대칭인지 기록하세요.'],
+            ['하지 않을 일', '억지로 고환을 밀어 내리려 하지 마세요.'],
+            ['관련', '히드로셀·신생아 검진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 잠복고환 개요', 'https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/default.aspx'],
+            ['CDC 아동 건강 검진 개요', 'https://www.cdc.gov/ncbddd/']
         ]
     },
     {
@@ -4662,6 +4776,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sliding-door-safety',
+        match: /(미닫이\s*문|슬라이딩\s*도어|sliding\s*door|베란다\s*유리문|통유리\s*문\s*부딪|유리문\s*쾅)/,
+        title: '미닫이·통유리 문은 손 끼임·부딪힘을 막고, 닫힘 속도와 잠금을 확인하세요',
+        lead: '베란다·거실 유리 미닫이문은 손가락 끼임·세게 닫힘·유리 충돌 사고가 납니다. 스토퍼·손잡이 습관, 스티커로 유리를 보이게 하기, 아이 손이 문틀에 없는지 확인하세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '손가락 위치 확인, 세게 닫지 않기, 유리 표시'],
+            ['다친 뒤', '출혈·부종·머리 부딪힘 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 눈높이에서 유리문이 잘 보이는지 확인하세요.'],
+            ['하지 않을 일', '문을 밀치며 숨바꼭질하지 마세요.'],
+            ['관련', '문 끼임·유리 모서리 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 부상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 부상 예방', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
         id: 'glass-corner-furniture-safety',
         match: /(유리\s*테이블|유리\s*탁자|모서리\s*보호|코너\s*가드|가구\s*모서리|glass\s*table|sharp\s*corner)/,
         title: '유리·날카로운 모서리는 가드·배치로 막고, 뛰는 공간과 분리하세요',
@@ -4856,6 +4989,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'halloween-pumpkin-costume-safety',
+        match: /(할로윈|호박\s*조각|pumpkin\s*carv|코스튬\s*안전|가면\s*질식|할로윈\s*사탕|costume\s*safety)/,
+        title: '할로윈은 시야·불꽃·사탕 질식을 챙기고, 호박 조각칼은 아이 손에 주지 마세요',
+        lead: '가면은 시야를 가릴 수 있어 얼굴 페인트·모자 대안을 검토하세요. 어두운 옷에는 반사·조명을 더하고, 작은 사탕·딱딱한 캔디는 질식 위험이 있습니다. 호박 조각은 성인이 하고 촛불 대신 전등을 권하는 안내가 많습니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['외출', '시야, 반사, 어른 동행, 도로 안전'],
+            ['간식', '질식 위험 사탕 치우기, 포장 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '코스튬 길이·신발이 걸려 넘어지지 않는지 확인하세요.'],
+            ['하지 않을 일', '아이에게 날카로운 조각칼을 주지 마세요.'],
+            ['관련', '사탕 질식·불꽃놀이·야간 외출 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 할로윈 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Halloween-Safety-Tips.aspx'],
+            ['CPSC 코스튬·불꽃 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'fireworks-safety',
         match: /(폭죽|불꽃놀이\s*안전|폭죽\s*사고|불꽃\s*놀이\s*아이|fireworks)/,
         title: '어린이 손 폭죽·근접 불꽃은 화상·눈 손상 위험이 커서 전문 행사 관람이 더 안전합니다',
@@ -5009,6 +5161,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['CDC 일산화탄소', 'https://www.cdc.gov/carbon-monoxide/'],
             ['AAP 야외 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'pressure-cooker-steam-burn',
+        match: /(압력솥|압력\s*냄비|pressure\s*cooker|인스턴트\s*팟|instant\s*pot|압력솥\s*증기|압력솥\s*화상)/,
+        title: '압력솥·전기 압력냄비는 증기와 뚜껑을 조심하고, 아이 손 닿지 않게 두세요',
+        lead: '압력솥은 뚜껑·증기·내용물이 매우 뜨겁습니다. 압력 해제 전 억지로 열지 말고, 증기 배출구 앞에 아이를 두지 마세요. 조리 중·직후 카운터 가장자리를 비우세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['위험', '증기 화상, 뚜껑 분출, 뜨거운 국물'],
+            ['예방', '높은 위치, 아이 접근 차단, 설명서대로 감압']
+        ],
+        blocks: [
+            ['지금 할 일', '압력솥 주변에 발판·의자가 있는지 치우세요.'],
+            ['하지 않을 일', '증기가 나오는 쪽으로 얼굴을 들이밀게 하지 마세요.'],
+            ['관련', '화상·에어프라이어·주방 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['CPSC 주방 가전 안전', 'https://www.cpsc.gov/']
         ]
     },
     {
@@ -5286,6 +5457,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 모기 물림 예방', 'https://www.cdc.gov/mosquitoes/mosquito-bites/prevent-mosquito-bites.html'],
             ['EPA 기피제 찾기(영)', 'https://www.epa.gov/insect-repellents'],
             ['벌레 물림 안내', '#home']
+        ]
+    },
+    {
+        id: 'bee-sting-anaphylaxis-boundary',
+        match: /(벌\s*알레르기|벌침\s*아나필|bee\s*sting|말벌\s*쇼크|벌\s*쏘.{0,12}(숨|부어|전신|두드러기|아나필)|말벌\s*쏘)/,
+        title: '벌에 쏘인 뒤 전신 두드러기·호흡 곤란·처짐이 있으면 응급으로 보세요',
+        lead: '국소 부기와 달리 전신 증상·호흡 이상·목소리 변화·처짐은 중증 알레르기일 수 있습니다. 침이 보이면 긁지 말고 카드로 밀고, 응급이면 119를 우선하세요. 에피펜 등 처방·용량은 의료진이 정합니다. 사진 진단·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['응급', '호흡 곤란, 입술·혀 부종, 전신 두드러기, 구토·처짐'],
+            ['국소', '냉찜질, 더러워지지 않게, 커지면 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '야외 활동 시 벌집 위치를 피하고 맨발 보행을 줄이세요.'],
+            ['하지 않을 일', '침을 집게로 짜듯이 집지 마세요.'],
+            ['관련', '벌레 물림·알레르기 즉시 반응 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 벌·침 쏘임', 'https://www.cdc.gov/niosh/topics/insects/'],
+            ['AAP 벌 쏘임·알레르기 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx']
         ]
     },
     {
@@ -5886,6 +6076,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'bike-trailer-child-safety',
+        match: /(자전거\s*트레일러|바이크\s*트레일러|bike\s*trailer|자전거\s*뒤\s*유모차|자전거\s*연결\s*시트)/,
+        title: '자전거 트레일러·연결 시트는 헬멧·벨트·교통 규칙을 지키고, 도로 상황에 맞게 쓰세요',
+        lead: '자전거에 아이를 태우는 트레일러·시트는 전복·충돌 위험이 있습니다. 연령·체중 제한, 안전벨트, 아이 헬멧(제품·지역 안내), 밝은 주간·안전한 경로를 지키세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '벨트, 헬멧, 깃발·라이트, 체중 제한'],
+            ['환경', '혼잡 도로 피하기, 음주·한손 운전 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '벨트·바퀴·연결 부속을 점검하세요.'],
+            ['하지 않을 일', '헬멧 없이 차로에 태워 달리지 마세요.'],
+            ['관련', '헬멧·유모차·카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 자전거 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Safety-Making-Sure-Your-Child-is-Ready.aspx'],
+            ['CDC 자전거 안전', 'https://www.cdc.gov/transportationsafety/bicycle/']
+        ]
+    },
+    {
         id: 'bike-helmet-safety',
         match: /(헬멧|자전거\s*헬멧|킥보드\s*헬멧|스케이\s*헬멧|머리\s*보호구).*(아이|아기|어린이)?|(아이|아기).*(자전거|킥보드).*(헬멧|안전)/,
         title: '자전거·킥보드 등에서는 헬멧을 쓰고, 맞음새와 교체를 확인하세요',
@@ -6319,6 +6528,25 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '바닥에 떨어진 크레용 조각을 치우세요.'],
             ['하지 않을 일', '성인용 유성 마카를 미술 재료로 주지 마세요.'],
             ['관련', '중독·작은 물건 질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'play-dough-ingestion-boundary',
+        match: /(점토\s*먹|플레이도우\s*먹|play\s*dough|밀가루\s*점토\s*삼킴|슬라임\s*아닌\s*점토\s*먹|칼라\s*점토\s*먹)/,
+        title: '플레이도우·점토를 삼켰으면 양·성분을 확인하고, 소금 많은 수제 점토는 특히 주의하세요',
+        lead: '시판 아동용 점토는 소량 섭취 시 대개 큰 독성은 드물다는 안내가 있으나, 수제 점토의 많은 소금·첨가물·이물질은 위험할 수 있습니다. 토하게 강제하지 말고 상담하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '구토·처짐·심한 갈증(고염), 기도 이물'],
+            ['예방', '놀이에 감독, 수제 레시피 소금량 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '바닥에 떨어진 점토 조각을 치우세요.'],
+            ['하지 않을 일', '산업용 점토·석고를 놀이 재료로 주지 마세요.'],
+            ['관련', '중독·슬라임·크레용 안내를 참고하세요.']
         ],
         links: [
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
