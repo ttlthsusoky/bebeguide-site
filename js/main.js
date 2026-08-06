@@ -1270,6 +1270,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'pressure-feeding-boundary',
+        match: /(억지로\s*먹|강압\s*수유|pressure\s*feed|한\s*숟갈\s*더\s*강요|입을\s*벌려\s*억지|밥\s*협박)/,
+        title: '억지로 먹이기·협박 수유는 피하고, 규칙적인 식사 환경과 아이 배고픔 신호를 존중하세요',
+        lead: '강압 수유는 식사 갈등을 키울 수 있습니다. 보호자는 무엇을·언제 제공할지, 아이는 얼마나 먹을지 나누는 방식이 흔히 권장됩니다. 성장 걱정은 체중 곡선·의료진과 상의하세요. “특효 훈육” 추천은 하지 않습니다.',
+        points: [
+            ['환경', '정해진 식사 시간, 산만함 줄이기, 소량 제공'],
+            ['금지', '협박, 처벌, 입에 억지로 넣기']
+        ],
+        blocks: [
+            ['지금 할 일', '한 끼 양을 줄이고 차분히 끝내 보세요.'],
+            ['하지 않을 일', '“다 먹어야 놀이”로 협박하지 마세요.'],
+            ['관련', '편식·음식 던지기·성장 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 식사·육아 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['편식 안내', '#home']
+        ]
+    },
+    {
         id: 'food-refusal',
         match: /(이유식|유아식|밥|음식).*(안\s*먹|거부|입을\s*안|뱉|먹기\s*싫)|편식/,
         title: '안 먹는 날이 있어도 억지로 정해진 양을 채우지 않습니다',
@@ -1366,6 +1385,25 @@ const COMMON_PARENT_ANSWERS = [
             ['개월별 놀이·주의점', 'blog/development-kdst-guide.html#play'],
             ['WHO 5세 미만 화면·활동·수면 지침', 'https://www.who.int/publications/i/item/9789241550536'],
             ['WHO 권고 요약', 'https://www.who.int/news-room/detail/24-04-2019-to-grow-up-healthy-children-need-to-sit-less-and-play-more']
+        ]
+    },
+    {
+        id: 'daytime-wetting-boundary',
+        match: /(낮\s*소변\s*실수|주간\s*유뇨|daytime\s*wetting|낮에\s*오줌\s*싸|배변훈련\s*후\s*낮\s*실수)/,
+        title: '낮 소변 실수가 반복되면 변비를 포함한 원인 평가를 위해 진료를 검토하세요',
+        lead: '배변훈련 직후 가끔 실수는 있을 수 있으나, 낮에도 자주 싸거나 급히 못 참고, 이전에 잘하다가 다시 시작하면 의료 평가가 필요할 수 있습니다. 처벌하지 마세요. 약·알람 제품 추천은 하지 않습니다.',
+        points: [
+            ['관찰', '횟수, 급뇨, 변비, 음료, 감염 증상'],
+            ['대응', '혼내지 않기, 쉬운 옷, 정기 배뇨 권유, 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '낮 실수·배변 기록을 며칠 적어 보세요.'],
+            ['하지 않을 일', '공개적으로 창피를 주거나 물 Restrict를 하지 마세요.'],
+            ['관련', '야뇨·변비·배변훈련 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배뇨·유뇨 개요', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/default.aspx'],
+            ['CDC 아동 발달 개요', 'https://www.cdc.gov/ncbddd/childdevelopment/']
         ]
     },
     {
@@ -2889,6 +2927,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'security-blanket-lovey-boundary',
+        match: /(애착\s*이불|애착\s*인형|security\s*blanket|러비|lovey|담요\s*애착|애착\s*수건)/,
+        title: '애착 담요·인형은 질식 위험을 보고, 영아 안전수면 공간에는 넣지 마세요',
+        lead: '토들러의 애착 물건은 흔할 수 있으나, 1세 미만 침대에 부드러운 담요·인형을 넣으면 질식 위험이 있습니다. 낮 시간에 짧게 쓰는 것과 수면 공간을 구분하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['영아', '침대는 비우기, 등 재우기'],
+            ['유아', '작은·헐거운 부품 없는 물건, 청결']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 침대에 애착 인형이 있으면 치우세요.'],
+            ['하지 않을 일', '줄·단추 달린 인형을 재울 때 두지 마세요.'],
+            ['관련', '안전수면·이불·쪽쪽이 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'sleep-sack-blanket-boundary',
         match: /(수면\s*조끼|슬립\s*색|슬립삭|sleep\s*sack|아기\s*침낭|이불\s*덮고\s*재우|담요\s*재우|느슨한\s*이불)/,
         title: '1세 미만은 느슨한 이불보다 맞는 수면조끼·얇은 옷이 안전한 경우가 많습니다',
@@ -4178,6 +4235,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'nipple-shield-boundary',
+        match: /(유두\s*보호기|니플\s*실드|nipple\s*shield|수유\s*보호기|유두\s*쉴드)/,
+        title: '유두 보호기는 모든 수유에 필수는 아니며, 사용·중단은 수유 상담·의료진과 상의하세요',
+        lead: '유두 보호기는 일시적으로 도움이 될 수 있으나 젖 이동·위생·의존 문제가 있을 수 있습니다. 통증·유착·조산 등 이유에 따라 전문가 평가 후 쓰세요. 브랜드 순위·“무조건 필수” 광고는 따르지 않습니다.',
+        points: [
+            ['사용', '올바른 크기, 세척, 수유량·체중 관찰'],
+            ['상담', '통증 지속, 체중 정체, 끊는 방법']
+        ],
+        blocks: [
+            ['지금 할 일', '보호기 없이/있을 때 젖물림 차이를 기록하세요.'],
+            ['하지 않을 일', '맞지 않는 크기를 억지로 쓰지 마세요.'],
+            ['관련', '젖물림 통증·유선염 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 모유 수유 개요', 'https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/default.aspx'],
+            ['CDC 모유 수유', 'https://www.cdc.gov/breastfeeding/']
+        ]
+    },
+    {
         id: 'nipple-pain-latch',
         match: /(유두.{0,6}(통증|아픔|상처|헐|아프|아파)|젖꼭지.{0,6}(헐|아프|통증|아파)|수유\s*아픔|물림이\s*안|젖\s*물리)/,
         title: '수유 통증이 심하면 물림·감염을 점검하고 참지 마세요',
@@ -4626,6 +4702,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'straw-cup-when-boundary',
+        match: /(빨대\s*컵|스트로\s*컵|straw\s*cup|빨대\s*언제|빨대\s*연습)/,
+        title: '빨대 컵은 앉아서 연습할 수 있을 때 돕고, 단 음료를 하루 종일 물리지 마세요',
+        lead: '오픈 컵·빨대 연습 시기는 아이마다 다릅니다. 앉은 자세에서 소량으로 연습하고, 주스·단 음료를 빨대에 담아 오래 물리면 치아에 나쁠 수 있습니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['연습', '앉기, 소량, 흘림 허용, 감독'],
+            ['치아', '단 음료 제한, 잠들며 빨대 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '물로 먼저 빨대 연습을 해 보세요.'],
+            ['하지 않을 일', '주스 빨대를 하루 종일 물리지 마세요.'],
+            ['관련', '컵 마시기·주스·충치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 컵·음료 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
+            ['CDC 구강 건강', 'https://www.cdc.gov/oral-health/']
+        ]
+    },
+    {
         id: 'cup-drinking',
         match: /(컵\s*(으로|으로\s*)?(마시|먹|연습|시작)|빨대\s*컵|오픈\s*컵|sippy|시피\s*컵|젖병\s*끊.*컵|컵\s*훈련)/,
         title: '이유식 시기부터 열린 컵·작은 컵 연습을 권하는 안내가 많습니다',
@@ -4917,6 +5012,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['NHTSA 카시트 개요(영)', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats'],
+            ['AAP 카시트 정보', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx']
+        ]
+    },
+    {
+        id: 'latch-isofix-check-boundary',
+        match: /(latch\s*카시트|isofix|아이소픽스|하부\s*고정\s*장치|카시트\s*래치|래치\s*앵커)/,
+        title: 'LATCH·ISOFIX는 체중·차량 제한을 확인하고, 설명서대로 설치·점검을 하세요',
+        lead: '하부 고정 장치(LATCH/ISOFIX)는 편리하지만 차량·시트마다 체중 한도와 위치가 다릅니다. 한도를 넘기면 안전벨트 설치로 전환해야 할 수 있습니다. 설치 후 흔들림을 점검하세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['확인', '차량 매뉴얼, 시트 라벨, 체중 합산 한도'],
+            ['점검', '좌우 2.5cm 이하 움직임, 리클라인 각도']
+        ],
+        blocks: [
+            ['지금 할 일', '시트·차량 설명서의 LATCH 한도를 읽어 보세요.'],
+            ['하지 않을 일', '한도를 넘긴 채 하부 고정만 쓰지 마세요.'],
+            ['관련', '카시트 원칙·만료·중고 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트 설치(영)', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats'],
             ['AAP 카시트 정보', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx']
         ]
     },
@@ -5289,6 +5403,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sound-machine-volume-boundary',
+        match: /(백색\s*소음\s*볼륨|사운드\s*머신\s*크기|white\s*noise\s*volume|백색소음\s*너무\s*커|수면\s*스피커\s*음량)/,
+        title: '백색 소음·사운드 머신은 너무 크거나 오래 가까이 두지 마세요',
+        lead: '수면에 도움이 될 수 있으나 과도한 음량은 청력 자극 우려가 있습니다. 스피커를 아기 머리 바로 옆에 두지 말고, 대화 소리보다 크지 않게 조절하세요. 브랜드·“수면 보장” 광고는 따르지 않습니다.',
+        points: [
+            ['사용', '거리 두기, 낮은 음량, 필요 시 타이머'],
+            ['경계', '귀 옆 밀착, 하루 종일 최대 볼륨']
+        ],
+        blocks: [
+            ['지금 할 일', '기계 위치를 침대에서 조금 멀리 옮기세요.'],
+            ['하지 않을 일', '최대 볼륨으로 밤새 틀어 두지 마세요.'],
+            ['관련', '백색소음·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면 환경 개요', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CDC 소음·청력 개요', 'https://www.cdc.gov/nceh/hearing_loss/']
+        ]
+    },
+    {
         id: 'white-noise-boundary',
         match: /(백색\s*소음|백색소음|화이트\s*노이즈|white\s*noise|수면\s*기계|수면\s*스피커)/,
         title: '백색소음은 너무 크거나 가깝게 두지 말고, 안전수면을 대체하지 않습니다',
@@ -5326,6 +5459,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 형제 관계', 'https://www.healthychildren.org/English/family-life/family-dynamics/Pages/Sibling-Rivalry.aspx'],
             ['CDC 유아 훈육', 'https://www.cdc.gov/parenting-toddlers/discipline/index.html'],
             ['떼쓰기 안내', '#home']
+        ]
+    },
+    {
+        id: 'hair-pulling-boundary',
+        match: /(머리\s*뽑|머리카락\s*뜯|머리카락\s*뽑|hair\s*pull|모발\s*뽑|트리코틸로|자기\s*머리\s*뽑)/,
+        title: '머리카락을 반복해 뽑으면 피부 손상·스트레스 신호일 수 있어 비난보다 상담을 검토하세요',
+        lead: '습관적으로 머리카락을 뽑는 행동은 불안·감각 추구 등과 관련될 수 있습니다. 혼내거나 묶어 두기만 하지 말고, 빈도·탈모 반·다른 행동을 관찰해 소아과·정신건강 상담을 상의하세요. 진단명 단정·약 용량은 하지 않습니다.',
+        points: [
+            ['관찰', '언제 뽑는지, 탈모 부위, 속눈썹·눈썹'],
+            ['대응', '부드럽게 대체 행동, 처벌 과잉 금지, 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '뽑는 상황(TV·긴장)을 짧게 기록하세요.'],
+            ['하지 않을 일', '머리를 세게 때리거나 공개 망신을 주지 마세요.'],
+            ['관련', '손톱 물어뜯기·감각 예민 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 습관·행동 개요', 'https://www.healthychildren.org/English/healthy-living/emotional-wellness/Pages/default.aspx'],
+            ['발달 가이드', 'blog/development-kdst-guide.html#milestones']
         ]
     },
     {
@@ -6896,6 +7048,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'power-tool-child-safety',
+        match: /(전동\s*공구|드릴\s*아이|power\s*tool|전기\s*톱|그라인더\s*아이|공구\s*창고\s*아이)/,
+        title: '전동 공구 사용 중에는 아이를 멀리 두고, 공구·날은 잠가 보관하세요',
+        lead: '드릴·톱·그라인더는 심한 열상·안구 부상 위험이 있습니다. 작업 중 아이 접근을 막고, 사용 후 전원을 분리·보관하세요. 장난감 공구와 실물을 섞어 두지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['작업', '격리, 보호 장비, 전원 차단'],
+            ['보관', '잠금 수납, 날·비트 분리']
+        ],
+        blocks: [
+            ['지금 할 일', '차고·베란다 공구가 바닥에 있는지 치우세요.'],
+            ['하지 않을 일', '아이를 무릎에 앉히고 공구를 켜지 마세요.'],
+            ['관련', '가위·칼·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 공구·가정 안전', 'https://www.cpsc.gov/'],
+            ['AAP 가정 부상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'scissors-toddler-boundary',
         match: /(가위\s*아이|유아\s*가위|scissors\s*toddler|가위\s*안전|바느질\s*바늘\s*아이|바늘\s*삼킴)/,
         title: '가위·바늘은 아이 손 닿지 않게 두고, 유아용 가위도 감독 아래 쓰세요',
@@ -7219,6 +7390,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'liquid-detergent-poison-boundary',
+        match: /(액체\s*세제\s*먹|세제\s*원액\s*먹|liquid\s*detergent|세탁\s*세제\s*마심|세제\s*병\s*빨)/,
+        title: '액체 세탁 세제를 마시거나 눈에 넣으면 입·눈을 헹구고 중독 상담·진료를 하세요',
+        lead: '포드가 아니어도 액체 세제는 자극·구역·거품 흡인 위험이 있습니다. 토하게 강제하지 말고 제품명·추정량을 확인하세요. 뚜껑을 잠그고 바닥 보관하지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '잠금 뚜껑, 높은 곳, 다른 용기에 옮겨 담지 않기'],
+            ['노출', '입 헹구기, 눈 세척, 호흡 이상 시 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '세제 병이 싱크 아래 열려 있는지 확인하세요.'],
+            ['하지 않을 일', '음료수병처럼 생긴 용기에 담아 두지 마세요.'],
+            ['관련', '세제 포드·섬유유연제 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'laundry-pod-poison',
         match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
         title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
@@ -7312,6 +7502,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 시력·약시 개요', 'https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/default.aspx'],
             ['CDC 시력 건강 개요', 'https://www.cdc.gov/vision-health/']
+        ]
+    },
+    {
+        id: 'color-blind-screening-boundary',
+        match: /(색맹|색각\s*이상|color\s*blind|색깔\s*구분\s*못|색약\s*아이|색\s*이름\s*틀)/,
+        title: '색 구분이 어렵다고 느껴도 온라인 테스트로 단정하지 말고, 시력 검진에서 확인하세요',
+        lead: '색각 이상은 남아에게 더 흔할 수 있으나 가정 앱·그림 테스트만으로 진단하지 마세요. 학교·일상에서 어려움이 있으면 시력·색각 검사를 의료진과 상의합니다. “고치는 안경” 광고 순위는 하지 않습니다.',
+        points: [
+            ['관찰', '빨강·초록 혼동, 색 이름 어려움, 가족력'],
+            ['상담', '시력 검진, 학습·안전(신호등) 도움']
+        ],
+        blocks: [
+            ['지금 할 일', '일상에서 어떤 색을 헷갈리는지 적어 두세요.'],
+            ['하지 않을 일', '인터넷 색맹 테스트 결과로 단정하지 마세요.'],
+            ['관련', '사시·약시·시력 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 시력·눈 건강 개요', 'https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/default.aspx'],
+            ['CDC 시력 건강', 'https://www.cdc.gov/vision-health/']
         ]
     },
     {
@@ -7697,6 +7906,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 발전기·일산화탄소', 'https://www.cdc.gov/carbon-monoxide/'],
             ['CPSC 발전기 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'fire-escape-plan-family',
+        match: /(화재\s*대피|불\s*나면\s*대피|fire\s*escape|가정\s*화재\s*연습|연기\s*경보\s*울리면|대피\s*계획\s*아이)/,
+        title: '가정 화재 대피 경로를 정해 두고, 연기 경보가 울리면 낮게 이동해 밖으로 나가세요',
+        lead: '경보가 울리면 물건을 챙기기보다 대피가 우선입니다. 두 가지 탈출 경로, 바깥 만남 장소, 문 손잡이 열기 연습을 아이 눈높이에 맞게 하세요. 특정 경보기 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['준비', '경보 설치·배터리, 두 경로, 만남 장소'],
+            ['행동', '기어 나가기, 엘리베이터 금지, 119']
+        ],
+        blocks: [
+            ['지금 할 일', '경보를 시험하고 대피 경로를 아이와 걸어 보세요.'],
+            ['하지 않을 일', '연기가 찬 곳으로 장난감·가방을 찾으러 돌아가지 마세요.'],
+            ['관련', 'CO 경보·화상·난로 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화재 안전', 'https://www.cdc.gov/fire-prevention/'],
+            ['AAP 가정 화재 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
         ]
     },
     {
