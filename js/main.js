@@ -1425,6 +1425,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'nanny-cam-privacy-boundary',
+        match: /(맘카|nanny\s*cam|홈캠\s*아이|아기\s*감시\s*카메라|돌봄\s*카메라|홈\s*캠\s*보안)/,
+        title: '홈캠·맘카는 비밀번호·펌웨어를 지키고, 돌봄 근로자에게는 녹화를 알리는 것이 좋습니다',
+        lead: '카메라는 안전 확인에 쓰이지만 해킹·무단 공유 위험이 있습니다. 기본 비밀번호를 바꾸고, 필요 시 암호화·접근 권한을 관리하세요. 법적·근로 관계는 지역 규정을 따릅니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['보안', '강한 비밀번호, 업데이트, 공유기 보안'],
+            ['관계', '돌봄 제공자 고지, 사적 공간 경계']
+        ],
+        blocks: [
+            ['지금 할 일', '카메라 기본 비밀번호를 바꿨는지 확인하세요.'],
+            ['하지 않을 일', '영상을 SNS에 올리지 마세요.'],
+            ['관련', '베이비 모니터 줄·개인정보 안내를 참고하세요.']
+        ],
+        links: [
+            ['FTC 스마트 기기 보안 개요(영)', 'https://www.ftc.gov/'],
+            ['AAP 미디어·가정 개요', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'screen-time',
         match: /(영상|유튜브|티비|tv|스크린|핸드폰|휴대폰|미디어).*(보여|노출|봐도|시간|괜찮)|영상\s*노출/,
         title: '두 돌 전에는 영상보다 사람과 노는 시간을 우선하세요',
@@ -1521,6 +1540,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'public-potty-accident-boundary',
+        match: /(밖에서\s*소변\s*실수|공공장소\s*배변\s*실수|mall\s*potty\s*accident|마트에서\s*오줌|외출\s*배변\s*사고)/,
+        title: '외출 중 배변·소변 실수는 창피 주기보다 옷 갈아입기·짧은 루틴으로 다루세요',
+        lead: '외출 실수는 흔합니다. 여분 옷·물티슈를 준비하고, 혼내지 않으며 담담히 처리하세요. 반복되면 배변 간격·변비·불안을 살핍니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['준비', '여분 옷, 지퍼백, 쉬운 옷'],
+            ['대응', '짧은 말, 수치심 최소화, 손 씻기']
+        ],
+        blocks: [
+            ['지금 할 일', '외출 가방에 여분 하의·속옷을 넣으세요.'],
+            ['하지 않을 일', '사람들 앞에서 크게 혼내지 마세요.'],
+            ['관련', '배변훈련·낮 실수·퇴행 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배변훈련 개요', 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/default.aspx'],
+            ['CDC 손 씻기', 'https://www.cdc.gov/handwashing/']
+        ]
+    },
+    {
         id: 'toilet-training',
         match: /(배변\s*훈련|배변훈련|기저귀\s*(떼|빼)|팬티.*언제|변기.*(시작|훈련|앉))/,
         title: '배변훈련은 개월 수보다 준비 신호로 시작합니다',
@@ -1595,6 +1633,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 체벌에 대한 입장', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Where-We-Stand-Spanking.aspx'],
             ['CDC 긍정적 양육', 'https://www.cdc.gov/parenting-toddlers/discipline/index.html'],
             ['부모 마음건강 안내', '#home']
+        ]
+    },
+    {
+        id: 'reward-chart-boundary',
+        match: /(보상\s*차트|스티커\s*차트|reward\s*chart|칭찬\s*도장\s*판|행동\s*보상\s*표)/,
+        title: '스티커·보상 차트는 짧게·구체적으로 쓰고, 보상만으로 관계를 대체하지 마세요',
+        lead: '작은 목표에 대한 즉각적 피드백은 도움이 될 수 있으나, 과도한 물질 보상은 효과가 떨어질 수 있습니다. 행동 자체를 구체적으로 칭찬하세요. “특효 차트 템플릿” 판매 순위는 하지 않습니다.',
+        points: [
+            ['방법', '작은 목표, 즉시 칭찬, 짧게 운영'],
+            ['경계', '과한 사탕·돈 보상, 처벌 위주 표']
+        ],
+        blocks: [
+            ['지금 할 일', '오늘 칭찬할 행동 한 가지를 정해 보세요.'],
+            ['하지 않을 일', '차트 실패를 창피 주기로 쓰지 마세요.'],
+            ['관련', '타임아웃·떼쓰기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 훈육·의사소통 개요', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['CDC 긍정적 양육 개요', 'https://www.cdc.gov/parenting/']
         ]
     },
     {
@@ -1691,6 +1748,44 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 기저귀 발진 개요', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/default.aspx'],
             ['CDC 피부 위생 개요', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
+        id: 'petroleum-jelly-boundary',
+        match: /(바셀린\s*아기|페트롤리움\s*젤리|petroleum\s*jelly|바세린\s*발진|바셀린\s*기저귀)/,
+        title: '바셀린·페트롤리움 젤리는 건조·마찰 완화에 쓰이기도 하나, 감염 발진은 진료가 우선입니다',
+        lead: '깨끗한 피부에 소량 바르는 용도로 안내되는 경우가 있으나, 감염·심한 발진을 치료한다고 단정하지 마세요. 코에 두껍게 바르거나 호흡을 막는 사용은 피합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['사용', '깨끗한 피부, 소량, 표시 용법'],
+            ['진료', '고름, 열, 번짐, 통증']
+        ],
+        blocks: [
+            ['지금 할 일', '제품 표시 연령과 용법을 확인하세요.'],
+            ['하지 않을 일', '코·입에 잔뜩 바르지 마세요.'],
+            ['관련', '기저귀 발진·산화아연 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 피부·기저귀 개요', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/default.aspx'],
+            ['AAP 목욕·피부', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'sensitive-wipes-boundary',
+        match: /(물티슈\s*자극|민감\s*물티슈|baby\s*wipes\s*rash|물티슈\s*발진|물티슈\s*알레르기)/,
+        title: '물티슈로 피부가 따갑면 미지근한 물·부드러운 천을 쓰고, 향·알코올 제품을 줄여 보세요',
+        lead: '일부 아이는 물티슈 성분에 자극을 받습니다. 가능하면 물로 닦고 잘 말리세요. “무자극 1등” 브랜드 순위는 하지 않으며, 심한 발진·감염 징후는 진료합니다.',
+        points: [
+            ['대안', '미지근한 물, 부드러운 천, 완전 건조'],
+            ['피하기', '강한 향, 알코올, 과도한 문지름']
+        ],
+        blocks: [
+            ['지금 할 일', '물티슈 대신 물 세안을 하루 시도해 보세요.'],
+            ['하지 않을 일', '빨간 피부를 세게 문지르지 마세요.'],
+            ['관련', '기저귀 발진·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 기저귀·피부 개요', 'https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/default.aspx'],
+            ['CDC 위생 개요', 'https://www.cdc.gov/hygiene/']
         ]
     },
     {
@@ -3175,6 +3270,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'imaginary-friend-boundary',
+        match: /(상상\s*친구|허구\s*친구|imaginary\s*friend|가상\s*친구|없는\s*친구와\s*대화)/,
+        title: '상상 친구는 흔한 놀이일 수 있으며, 일상 기능이 괜찮다면 대개 걱정만으로 단정하지 않습니다',
+        lead: '많은 아이가 상상 친구와 놉니다. 강제로 “없다”고 부수기보다 놀이를 인정하되, 현실 규칙(안전·예절)은 지키게 하세요. 환청·공포·일상 붕괴가 의심되면 진료를 검토합니다. 진단 단정은 하지 않습니다.',
+        points: [
+            ['관찰', '즐거움 vs 공포, 낮 기능, 수면'],
+            ['대응', '놀이 인정, 안전 규칙, 과한 조롱 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '상상 친구 이야기를 짧게 들어 보세요.'],
+            ['하지 않을 일', '“미쳤다”며 비웃지 마세요.'],
+            ['관련', '분리불안·어둠 공포 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이·상상 개요', 'https://www.healthychildren.org/English/ages-stages/toddler/Pages/default.aspx'],
+            ['CDC 아동 발달', 'https://www.cdc.gov/ncbddd/childdevelopment/']
+        ]
+    },
+    {
         id: 'separation-anxiety',
         match: /(분리\s*불안|어린이집|유치원).*(적응|울|떼|거부)|엄마\s*떨어|헤어질\s*때\s*울|등원\s*거부/,
         title: '분리 불안·등원 울음은 흔하고, 같은 마감 기간은 없습니다',
@@ -4482,6 +4596,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'swim-goggles-ear-plugs-boundary',
+        match: /(수경\s*아이|물안경\s*아기|swim\s*goggles|귀마개\s*수영|ear\s*plugs\s*swim|수영\s*귀마개)/,
+        title: '수경·수영 귀마개는 맞을 때만 쓰고, 아프거나 맞지 않으면 억지로 끼우지 마세요',
+        lead: '수경은 눈 자극을 줄이는 데 도움이 될 수 있고, 귀마개는 일부 상황에서 쓰입니다. 너무 조이면 통증·압박이 납니다. 외이도염·고막 문제는 의료진 안내를 따르세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['수경', '크기 맞추기, 너무 세게 조이지 않기'],
+            ['귀', '통증 시 중단, 면봉 깊게 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '수경 밴드가 너무 조이는지 확인하세요.'],
+            ['하지 않을 일', '아픈 귀에 귀마개를 억지로 넣지 마세요.'],
+            ['관련', '수영자 귀·물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 건강한 수영', 'https://www.cdc.gov/healthy-swimming/'],
+            ['AAP 물놀이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
         id: 'swimmer-ear-boundary',
         match: /(외이도염|수영자\s*귀|swimmer.?s?\s*ear|물놀이\s*후\s*귀|귀\s*가려\s*물놀이|수영\s*후\s*귀|swimmers\s*ear)/,
         title: '물놀이 후 귀 통증·가려움은 외이도 문제일 수 있어 면봉 깊게 금지·진료를 검토하세요',
@@ -4967,6 +5100,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 공기 질·아이 건강 개요', 'https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Air-Pollution.aspx'],
             ['질병관리청·대기 관련 건강 안내', 'https://www.kdca.go.kr/'],
             ['자외선·그늘 안내', '#home']
+        ]
+    },
+    {
+        id: 'car-window-sunshade-boundary',
+        match: /(차\s*햇빛\s*가리개|카\s*선쉐이드|car\s*sun\s*shade|자동차\s*블라인드\s*아기|차\s*창문\s*가리개)/,
+        title: '차 햇빛 가리개는 시야를 가리지 않게 붙이고, 카시트·환기와 함께 쓰세요',
+        lead: '옆 창문 가리개는 자외선·눈부심 완화에 도움이 될 수 있으나, 운전자 시야를 가리면 위험합니다. 앞유리에 불법·시야 방해 부착을 피하고, 차 안 과열·카시트 원칙을 함께 봅니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['부착', '옆 유리, 시야 확보, 떨어지지 않게'],
+            ['안전', '카시트 벨트, 차 안 방치 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '가리개가 백미러·사이드 미러를 가리는지 확인하세요.'],
+            ['하지 않을 일', '아이를 차 안에 두고 시동을 끄지 마세요.'],
+            ['관련', '햇볕·차 안 방치·카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 차량·햇볕 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 열·차량 안전', 'https://www.cdc.gov/heat-health/']
         ]
     },
     {
@@ -6176,6 +6328,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'green-pool-algae-boundary',
+        match: /(초록\s*수영장|녹조\s*풀|green\s*pool|수영장\s*이끼|탁한\s*수영장\s*물|수영장\s*물\s*더러)/,
+        title: '탁하고 초록빛 수영장 물은 시야·위생이 나쁠 수 있어 입수를 미루세요',
+        lead: '물이 탁하면 익수자를 보기 어렵고, 관리되지 않은 물은 자극·감염 위험이 커질 수 있습니다. 가정 풀은 소독·여과 상태를 확인하고, 공공 시설은 안내를 따르세요. 약품 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['판단', '바닥이 보이는지, 냄새·자극, 관리 기록'],
+            ['행동', '입수 보류, 관리 후 재확인']
+        ],
+        blocks: [
+            ['지금 할 일', '물이 맑아질 때까지 아이 입수를 미루세요.'],
+            ['하지 않을 일', '약품을 과량으로 섞어 “급하게” 해결하려 하지 마세요.'],
+            ['관련', '수영장 약품·익사 예방 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 건강한 수영', 'https://www.cdc.gov/healthy-swimming/'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
         id: 'pool-chemical-safety',
         match: /(수영장\s*염소|풀\s*화학\s*약품|pool\s*chemical|염소\s*충격|수영장\s*소독약\s*아이|염소\s*중독)/,
         title: '수영장 염소·소독 약품은 잠가 두고, 섞지 말며, 아이 손 닿지 않게 하세요',
@@ -6945,6 +7116,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 캣스크래치 병', 'https://www.cdc.gov/bartonella/about/about-cat-scratch-disease.html'],
             ['AAP 동물 물림', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Animal-Bites.aspx']
+        ]
+    },
+    {
+        id: 'dog-walking-child-safety',
+        match: /(강아지\s*산책\s*아이|반려견\s*산책\s*아기|dog\s*walk\s*child|개\s*줄\s*아이|유모차\s*개\s*산책)/,
+        title: '아이와 반려견 산책 때는 줄을 짧게 잡고, 개가 갑자기 달려도 유모차·아이 손이 끌리지 않게 하세요',
+        lead: '개가 다른 개·사람을 보고 튀면 유모차가 뒤집히거나 아이가 넘어질 수 있습니다. 한 손에 개 줄·한 손에 아이만 있는 상태를 피하고, 교통량이 적은 길을 선택하세요. 훈련·용품 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['통제', '짧은 줄, 두 보호자 분담, 유모차 브레이크'],
+            ['위험', '줄 걸림, 전복, 물림']
+        ],
+        blocks: [
+            ['지금 할 일', '산책 동선을 아이 기준으로 다시 짜 보세요.'],
+            ['하지 않을 일', '아이에게 개 줄을 맡기지 마세요.'],
+            ['관련', '반려동물 물림·유모차 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 반려동물·아이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 건강한 반려동물', 'https://www.cdc.gov/healthy-pets/']
         ]
     },
     {
@@ -7725,6 +7915,44 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '세제 병이 싱크 아래 열려 있는지 확인하세요.'],
             ['하지 않을 일', '음료수병처럼 생긴 용기에 담아 두지 마세요.'],
             ['관련', '세제 포드·섬유유연제 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'perfume-makeup-ingestion-boundary',
+        match: /(향수\s*먹|화장품\s*먹|perfume\s*ingest|립스틱\s*먹|메이크업\s*삼킴|향수\s*마심)/,
+        title: '향수·화장품을 마시거나 눈에 넣으면 입·눈을 헹구고 성분·양을 확인해 상담하세요',
+        lead: '향수·네일·메이크업은 알코올·다른 화학 성분이 있을 수 있습니다. 토하게 강제하지 말고 중독 상담·진료를 검토하세요. 화장대를 아이 손 닿지 않게 둡니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '잠금 수납, 가방 속 화장품 정리'],
+            ['노출', '입 헹구기, 눈 세척, 호흡 이상 시 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '낮은 화장대·파우치 위치를 바꾸세요.'],
+            ['하지 않을 일', '아이 얼굴에 성인 화장품을 놀이로 바르지 마세요.'],
+            ['관련', '중독·손소독제 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'nail-polish-ingestion-boundary',
+        match: /(매니큐어\s*먹|네일\s*폴리시\s*먹|nail\s*polish\s*ingest|매니큐어\s*냄새\s*중독|네일\s*리무버\s*먹)/,
+        title: '매니큐어·리무버를 삼키거나 강하게 흡입하면 상담·환기를 우선하세요',
+        lead: '네일 제품은 용제 성분이 있을 수 있습니다. 삼켰을 때 토하게 강제하지 말고, 환기·중독 상담·진료를 검토하세요. 아이 앞에서 네일 작업을 할 때는 뚜껑을 잠그세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '작업 후 즉시 치우기, 잠금 보관'],
+            ['노출', '환기, 입 헹구기, 처짐·호흡 이상 시 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '네일 용품을 높은 잠금 수납으로 옮기세요.'],
+            ['하지 않을 일', '리무버를 열린 채 바닥에 두지 마세요.'],
+            ['관련', '중독·화장품 안내를 참고하세요.']
         ],
         links: [
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
