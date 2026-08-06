@@ -649,6 +649,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'round-food-choking-cut',
+        match: /(포도|소시지|핫도그|방울\s*토마토).{0,16}(자르|질식|통째)|둥근\s*음식\s*질식|콩\s*통째|포도\s*자르|소시지\s*자르/,
+        title: '포도·소시지·방울토마토 등 둥근 음식은 길이로 자르고 통째로 주지 마세요',
+        lead: '둥글고 미끄러운 음식은 기도에 맞기 쉽습니다. 포도는 세로로 자르고, 소시지·핫도그는 길이 방향으로 가른 뒤 작게 합니다. 돌 전후 질식 위험 식품 목록을 참고하고, 먹을 때는 앉아서 보호자가 봅니다. “한 가지 자르기 유행만 따르면 된다” 같은 한 가지 유행만 따르지 마세요.',
+        points: [
+            ['자르기', '둥근 것 반으로·세로로, 통째 금지'],
+            ['환경', '앉아서, 뛰어다니며 먹기 금지, 견과 통째 주의']
+        ],
+        blocks: [
+            ['지금 할 일', '오늘 간식 중 둥근 것이 있으면 자르기부터 하세요.'],
+            ['하지 않을 일', '누운 채·차 안에서 둥근 간식을 주지 마세요.'],
+            ['관련', '질식·이유식 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 질식 위험 식품', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['이유식·질식 가이드', 'blog/complementary-feeding-allergy-guide.html']
+        ]
+    },
+    {
         id: 'choking-gagging',
         match: /(헛구역질|구역질|질식|목에\s*걸|사레|컥컥|기도\s*폐쇄)/,
         title: '소리 나는 구역질과 숨을 못 쉬는 질식은 다릅니다',
@@ -1200,6 +1219,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'teething-necklace-danger',
+        match: /(호박\s*목걸이|티딩\s*목걸이|이\s*날\s*목걸이|티딩\s*팔찌|teething\s*necklace|호박\s*팔찌)/,
+        title: '이 날 때 호박·티딩 목걸이는 질식·줄 감김 위험이 있어 권하지 않습니다',
+        lead: '목에 거는 티딩 목걸이·호박 알은 줄이 조이거나 알이 떨어져 질식 위험이 있다는 안전 안내가 많습니다. 이가 날 때는 차갑게 한 치발기·잇몸 마사지 등 감독 가능한 방법을 쓰고, 약은 의료진과 상의하세요. 제품 추천 순위는 하지 않습니다.',
+        points: [
+            ['위험', '줄 감김, 알 분리 삼킴, 감독 중에도 사고'],
+            ['대안', '감독 아래 치발기, 잇몸 마사지, 안전수면 유지']
+        ],
+        blocks: [
+            ['지금 할 일', '목·손목에 걸린 티딩 장신구가 있으면 재우기·혼자 둘 때는 빼 두세요.'],
+            ['하지 않을 일', '재울 때 목걸이를 한 채로 두지 마세요.'],
+            ['관련', '이 날 때 보챔·양치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 티딩 목걸이 위험', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Teething-Necklaces-and-Beads-A-Caution-for-Parents.aspx'],
+            ['CDC 질식 위험', 'https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html'],
+            ['이 날 때 안내', '#home']
+        ]
+    },
+    {
         id: 'teething-comfort',
         match: /(이앓|이\s*나|치아\s*나|젖니|티딩|teething|잇몸\s*붓|치아\s*맹출)/,
         title: '이 날 때 보챔은 잇몸 마사지·차갑게 하기부터, 약은 의료진과',
@@ -1390,6 +1429,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'sports-drink-toddler',
+        match: /(스포츠\s*음료|이온\s*음료|에너지\s*음료|어린이\s*이온|게토\s*레|포카리)/,
+        title: '평소 갈증에는 물·우유(연령에 맞게)를 우선하고, 스포츠·에너지 음료를 일상화하지 마세요',
+        lead: '건강한 아이에게 일상적으로 스포츠 음료·에너지 음료를 주는 것은 권하지 않는 안내가 많습니다. 당·카페인·불필요한 전해질 섭취가 될 수 있습니다. 심한 설사·구토 등 의료 상황이 아니면 “이온 음료가 필수”라고 단정하지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['일상', '물, 연령에 맞는 우유·모유·조제유'],
+            ['예외', '의료진이 탈수·운동 후 안내한 경우']
+        ],
+        blocks: [
+            ['지금 할 일', '간식으로 스포츠 음료가 습관인지 점검하세요.'],
+            ['하지 않을 일', '에너지 음료를 어린이에게 주지 마세요.'],
+            ['관련', '주스·탈수·생우유 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 음료 안내', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Choose-Water.aspx'],
+            ['CDC 어린이 음료', 'https://www.cdc.gov/nutrition/data-statistics/sugar-sweetened-beverages-intake.html'],
+            ['과일 주스 안내', '#home']
+        ]
+    },
+    {
         id: 'fruit-juice',
         match: /(주스|과일\s*즙|과즙).*(먹|주|언제|괜찮)|아기\s*주스|유아\s*주스/,
         title: '돌 전에는 과일 주스를 주지 않는 것이 권고입니다',
@@ -1464,6 +1523,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 안전수면·쪽쪽이', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/']
+        ]
+    },
+    {
+        id: 'secondhand-vape',
+        match: /(전자\s*담배|액상\s*담배|베이핑|vape|간접\s*전자\s*담배|아이\s*앞에서\s*전자)/,
+        title: '전자 담배 연기·에어로졸도 아이 주변에서 피하세요',
+        lead: '연소식 담배뿐 아니라 전자 담배의 에어로졸도 실내·차 안 아이 주변에서 피하라는 안내가 있습니다. “냄새만 덜하다”고 안전하다고 보지 마세요. 금연·금베이프 환경이 우선이고, 니코틴 중독·액체 니코틴 삼킴은 응급입니다. 브랜드·기기 추천은 하지 않습니다.',
+        points: [
+            ['환경', '집·차 안 완전 금연·금베이프, 환기만으로 부족할 수 있음'],
+            ['응급', '액상 니코틴 삼킴·피부 다량 접촉은 바로 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 있는 공간의 흡연·베이프 규칙을 가족·손님과 맞추세요.'],
+            ['하지 않을 일', '아이 옆에서 “창밖 한 모금”을 반복하지 마세요.'],
+            ['관련', '간접흡연 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 전자담배·2차 노출', 'https://www.cdc.gov/tobacco/e-cigarettes/'],
+            ['간접흡연 안내', '#home']
         ]
     },
     {
@@ -2321,6 +2399,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'car-seat-winter-coat',
+        match: /(카시트.*패딩|카시트.*두꺼운\s*옷|패딩.*카시트|코트.*카시트|외투.*벨트|겨울.*카시트)/,
+        title: '카시트에서는 두꺼운 패딩·외투를 벨트 아래에 끼우지 마세요',
+        lead: '두꺼운 외투는 벨트가 몸에서 뜨게 만들어 충돌 시 고정이 약해질 수 있습니다. 아기를 얇게 앉힌 뒤 벨트를 조이고, 담요·외투는 벨트 위에 덮는 방식이 안전 안내로 흔합니다. 제품·패딩 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['착용', '두꺼운 옷 제거 후 벨트, 어깨 클립·골반 벨트 위치 확인'],
+            ['보온', '벨트 고정 후 담요·외투를 위에']
+        ],
+        blocks: [
+            ['지금 할 일', '겨울 외출 전 벨트 두께를 한 번 점검하세요.'],
+            ['하지 않을 일', '패딩 입은 채 벨트를 대충 조이지 마세요.'],
+            ['관련', '카시트 원칙 안내를 참고하세요.']
+        ],
+        links: [
+            ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['AAP 카시트·겨울', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Winter-Car-Seat-Safety-Tips.aspx'],
+            ['카시트 원칙', '#home']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -2999,6 +3097,142 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 손위생·돌봄 환경', 'https://www.cdc.gov/hygiene/'],
             ['발열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'sensory-sensitivity-boundary',
+        match: /(감각\s*예민|감각\s*과민|촉각\s*예민|소리\s*예민|옷\s*태그|양말\s*싫어|감각\s*통합|sensory)/,
+        title: '감각이 예민해 보여도 장애 여부를 검색으로 단정하지 않습니다',
+        lead: '소리·옷감·촉감에 예민한 모습은 아이마다 다를 수 있습니다. 인터넷 체크리스트로 자폐·장애를 단정하지 마세요. 일상·수면·먹기가 크게 방해되거나 보호자 걱정이 계속되면 소아·발달 상담을 연결합니다. 특정 치료·교구 순위는 하지 않습니다.',
+        points: [
+            ['가정', '갑자기 강한 자극 줄이기, 미리 알리기, 편한 옷·환경 시도'],
+            ['상담', '일상 방해가 크거나 발달 걱정이 함께 있을 때']
+        ],
+        blocks: [
+            ['지금 할 일', '어떤 상황에서 힘든지 구체적으로 적어 보세요.'],
+            ['하지 않을 일', '예민함을 “버릇”으로만 혼내거나 SNS로 진단하지 마세요.'],
+            ['관련', '떼쓰기·발달·청력 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 아동 발달 관찰', 'https://www.cdc.gov/ncbddd/actearly/milestones/index.html'],
+            ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones'],
+            ['AAP 아동 행동 개요', 'https://www.healthychildren.org/English/healthy-living/emotional-wellness/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'babywearing-sling-safety',
+        match: /(아기띠|슬링|힙시트|베이비웨어|baby\s*wearing|포대기\s*안전)/,
+        title: '아기띠·슬링은 얼굴이 보이고 숨길이 열린 자세가 우선입니다',
+        lead: '안기 도구는 편리하지만, 얼굴이 가리거나 턱이 가슴에 눌리면 호흡이 위험할 수 있습니다. 입·코가 보이고, 가깝고 높이, 무릎이 높고 등이 둥근 자세 등 안전 안내를 따르세요. 재우기용으로 기대어 재우거나 카시트 대신 쓰지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['확인', '입·코 보임, 고개 처짐 없음, 보호자가 수시로 확인'],
+            ['금지', '얼굴 덮기, 굽은 자세로 오래 두기, 수면 표면 대체']
+        ],
+        blocks: [
+            ['지금 할 일', '착용 후 거울로 아이 얼굴·호흡을 확인하세요.'],
+            ['하지 않을 일', '요리·뜨거운 음료 들 때 아기를 앞으로만 기대지 마세요.'],
+            ['관련', '안전수면·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 아기띠 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Baby-Carriers-Backpacks-and-Slings.aspx'],
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'blind-cord-strangulation',
+        match: /(블라인드\s*줄|커튼\s*줄|코드\s*감김|블라인드\s*안전|창문\s*줄|코드리스)/,
+        title: '블라인드·커튼 줄은 감김 질식 위험이 있어 아이 손이 닿지 않게 하세요',
+        lead: '긴 줄·루프 형태 코드는 목에 감길 수 있습니다. 코드를 묶어 올리거나 코드리스 제품을 쓰는 등 안내를 따르고, 아기 침대·소파 옆에 줄이 늘어지지 않게 하세요. 특정 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '줄 정리·고정, 침대 옆 금지, 루프 제거'],
+            ['점검', '이사·계절 커튼 교체 때 다시 확인']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 방에 늘어진 블라인드 줄이 있는지 살펴보세요.'],
+            ['하지 않을 일', '줄 있는 창가에 아기 침대를 붙이지 마세요.'],
+            ['관련', '집 안 안전·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 창문 덮개 줄 안전', 'https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Window-Covering'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'shopping-cart-fall',
+        match: /(쇼핑\s*카트|카트\s*추락|카트에\s*앉|장바구니\s*카트|카트\s*낙상)/,
+        title: '쇼핑 카트에서는 아기를 세우거나 바구니에 앉히지 말고, 벨트 좌석을 쓰세요',
+        lead: '카트 추락은 머리 부상의 흔한 원인 중 하나로 알려져 있습니다. 가능하면 카트 전용 벨트 좌석을 쓰고, 바구니·아래칸에 태우거나 카트 옆을 걷게 하지 마세요. 카트를 남겨 둔 채 자리를 비우지 마세요.',
+        points: [
+            ['안전', '벨트 좌석, 보호자 손 잡기, 바구니 탑승 금지'],
+            ['대안', '캐리어·유모차 병행']
+        ],
+        blocks: [
+            ['지금 할 일', '마트에서 카트 벨트 사용 가능 여부를 확인하세요.'],
+            ['하지 않을 일', '카트에 아이를 세운 채 밀지 마세요.'],
+            ['관련', '낙상·머리 부딪힘 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 쇼핑 카트 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Shopping-Cart-Safety.aspx'],
+            ['CDC 낙상 예방', 'https://www.cdc.gov/heights-and-falls/prevention/index.html']
+        ]
+    },
+    {
+        id: 'water-beads-danger',
+        match: /(워터비즈|워터\s*비즈|오르비|물\s*구슬|워터볼|water\s*bead)/,
+        title: '워터비즈(물 구슬)는 삼키면 장 폐색 위험이 있어 어린 아이 주변에 두지 마세요',
+        lead: '물을 머금고 커지는 비즈는 삼키면 커져 장에 문제를 일으킬 수 있다는 안전 경고가 있습니다. 장난감·감각 놀이로도 어린 아이·장애 아동 주변에서는 특히 주의합니다. 삼킨 것이 의심되면 경과를 집에서만 보지 말고 진료하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '영유아 손 닿지 않게, 바닥에 흩어진 알 즉시 치우기'],
+            ['의심 시', '복통·구토·처짐이면 바로 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '집에 워터비즈가 있으면 아이 방에 두지 마세요.'],
+            ['하지 않을 일', '“감각 놀이”라며 영아에게 맡기지 마세요.'],
+            ['관련', '단추전지·질식·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 워터비즈 경고', 'https://www.cpsc.gov/'],
+            ['AAP 이물질 삼킴 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'essential-oils-infant-boundary',
+        match: /(에센셜\s*오일|아로마\s*오일|티트리\s*오일|페퍼민트\s*오일|영아\s*아로마|디퓨저\s*아기)/,
+        title: '영아에게 에센셜 오일을 바르거나 진하게 흡입시키는 것은 권하지 않습니다',
+        lead: '향유·디퓨저는 “천연”이어도 자극·중독·호흡 자극 위험이 있을 수 있습니다. 특히 어린 영아 피부에 원액을 바르거나 밀폐 공간에서 강하게 틀지 마세요. 치료 효과·용량을 사이트에서 정하지 않으며, 피부·호흡 이상이 있으면 사용을 멈추고 진료하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['경계', '원액 도포, 먹이기, 영아 얼굴 근처 강한 디퓨저'],
+            ['우선', '환기, 의료진 상담 없는 치료 목적 사용 자제']
+        ],
+        blocks: [
+            ['지금 할 일', '아이 방에 디퓨저가 가까이 있으면 거리·시간을 줄이세요.'],
+            ['하지 않을 일', '발진·콧물에 오일을 민간 치료로 바르지 마세요.'],
+            ['관련', '발진·호흡·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 화학·중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 실내 공기·자극 개요', 'https://www.cdc.gov/niosh/topics/indoorenv/']
+        ]
+    },
+    {
+        id: 'bath-water-temperature',
+        match: /(목욕\s*물\s*온도|욕조\s*온도|뜨거\s*운\s*물\s*목욕|목욕\s*몇\s*도|수온\s*목욕)/,
+        title: '목욕물은 미지근하게, 받기 전 손목·팔꿈치로 온도를 확인하세요',
+        lead: '너무 뜨거운 물은 화상의 원인이 됩니다. 물을 받은 뒤 손을 넣어 확인하고, 아이를 넣기 전 다시 봅니다. 수도 온도를 낮추는 가정도 있습니다. 정확한 “한 온도 숫자”만으로 모든 집을 단정하지 않으며, 화상 시 흐르는 물로 식히고 진료 여부를 봅니다.',
+        points: [
+            ['확인', '미지근, 한곳만 뜨겁지 않게, 아이 혼자 두지 않기'],
+            ['화상', '흐르는 물로 식히기, 민간 연고 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '목욕 전 온도 확인 습관을 고정하세요.'],
+            ['하지 않을 일', '받고 있는 뜨거운 물 아래에 아이를 두지 마세요.'],
+            ['관련', '신생아 목욕·화상·익사 예방 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 목욕 안전', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['신생아 목욕 안내', '#home']
         ]
     }
 
