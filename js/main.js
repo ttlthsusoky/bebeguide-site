@@ -569,6 +569,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'breath-holding-spell-boundary',
+        match: /(호흡\s*정지\s*발작|숨\s*참고\s*울|숨을\s*참고\s*울|breath[-\s]?holding|울다\s*파래|울다\s*기절|울다가\s*(파래|기절|창백))/,
+        title: '울다 숨을 참고 파래지거나 기절처럼 보이면 기록 후 진료로 원인을 확인하세요',
+        lead: '일부 유아는 심하게 운 뒤 잠시 숨을 참고 얼굴이 창백·파래지거나 짧게 의식을 잃는 듯 보일 수 있습니다. 경련·심장·다른 원인과 구분은 의료진이 합니다. 발작 중 입으로 물건을 넣거나 흔들지 마세요. 진단명 단정은 하지 않습니다.',
+        points: [
+            ['당시', '옆으로 안전하게, 입 안 이물 확인, 시간 기록'],
+            ['진료', '첫 발생, 길어짐, 열·외상 동반, 회복 느림']
+        ],
+        blocks: [
+            ['지금 할 일', '영상(가능하면)과 유발 상황(울음·통증)을 적어 두세요.'],
+            ['하지 않을 일', '흔들거나 물을 먹이려 억지로 입을 벌리지 마세요.'],
+            ['관련', '열성경련·머리 부딪힘 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 호흡 정지 발작 개요', 'https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/default.aspx'],
+            ['NHS breath-holding (영)', 'https://www.nhs.uk/conditions/breath-holding-in-babies-and-children/']
+        ]
+    },
+    {
         id: 'febrile-seizure',
         match: /(열성\s*경련|열\s*경련|발열\s*경련|경련.*(열|발열)|열이?\s*나.*경련|경련.*병원)/,
         title: '열성경련이 의심되면 안전·호흡을 먼저 보고, 용량·진단은 현장에서 정하지 않습니다',
@@ -1319,6 +1338,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'fifth-disease-boundary',
+        match: /(제5병|파이브스|슬랩트\s*치크|slapped\s*cheek|파르보\s*바이러스|parvovirus\s*b19|홍반\s*감염)/,
+        title: '양볼이 빨개 보이는 발진은 여러 원인이 있어 사진으로 제5병을 단정하지 마세요',
+        lead: '파르보바이러스 B19(제5병)는 볼이 맞은 듯 빨개 보이거나 그물 모양 발진이 나타날 수 있으나, 알레르기·다른 감염과 구분은 진료가 필요합니다. 임신부가 노출되면 산과 상담이 중요합니다. 약 용량·사진 진단은 하지 않습니다.',
+        points: [
+            ['관찰', '열, 발진 순서, 전신 상태, 임신 가족 노출'],
+            ['상담', '호흡 곤란·처짐·임신 중 노출은 의료진']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시작 시점과 접촉자를 기록하세요.'],
+            ['하지 않을 일', '카페 사진과 비교해 병명을 단정하지 마세요.'],
+            ['관련', '발진·돌발진·수두 경계 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 파르보바이러스 B19', 'https://www.cdc.gov/parvovirusb19/'],
+            ['AAP 발진·감염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'roseola-boundary',
         match: /(돌발진|돌\s*발진|장미진|roseola|sixth\s*disease|열\s*내린\s*뒤\s*발진|고열\s*후\s*발진)/,
         title: '고열 뒤 발진은 돌발진 등 여러 가능성이 있어 사진·문장으로 병명을 정하지 않습니다',
@@ -1928,6 +1966,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'propped-bottle-danger',
+        match: /(젖병\s*괴|젖병\s*고정|프로핑|bottle\s*prop|젖병\s*베개|혼자\s*젖병|젖병\s*물려\s*두)/,
+        title: '젖병을 베개·받침으로 괴어 두고 혼자 먹이지 마세요',
+        lead: '젖병을 고정해 두고 아기가 혼자 빨게 하면 질식·중이염·치아 우식 위험이 커질 수 있습니다. 수유 중에는 안고 살펴보고, 잠든 뒤 입에서 젖병을 빼 주세요. 특정 거치대 추천은 하지 않습니다.',
+        points: [
+            ['위험', '질식, 중이 압력, 밤에 당분 노출'],
+            ['대안', '안아서 수유, 잠들면 병 제거, 돌 이후 컵 연습']
+        ],
+        blocks: [
+            ['지금 할 일', '젖병 거치·베개로 괴는 습관이 있으면 멈추세요.'],
+            ['하지 않을 일', '아기를 혼자 둔 채 젖병을 물려 두지 마세요.'],
+            ['관련', '밤 젖병·충치·수유 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 젖병 수유 안전 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
+            ['CDC 수유·치아', 'https://www.cdc.gov/oral-health/prevention/index.html']
+        ]
+    },
+    {
         id: 'night-bottle-caries-boundary',
         match: /(젖병\s*물고\s*자|재우며\s*젖병|밤에\s*젖병|젖병\s*재우|우유\s*병\s*물고|분유\s*병\s*물고\s*자|bottle\s*in\s*bed)/,
         title: '우유·분유·주스가 든 젖병을 문 채 재우지 마세요',
@@ -2146,6 +2203,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'weighted-sleep-product-boundary',
+        match: /(무게\s*수면|웨이트\s*블랭킷|무게\s*이불|가중\s*수면조끼|weighted\s*(blanket|sleep)|무게\s*조끼\s*아기)/,
+        title: '영아에게 무게 이불·가중 수면 제품은 권하지 않습니다',
+        lead: '가중 담요·무게 수면조끼 등은 영아 안전수면에 맞지 않을 수 있어 공식 안내에서는 사용을 권하지 않는 경우가 많습니다. 평평하고 단단한 바닥, 부드러운 물건 없이, 등을 대고 재우기를 우선하세요. 특정 제품 추천·순위는 하지 않습니다.',
+        points: [
+            ['원칙', '단단한 바닥, 등 재우기, 이불·인형·무게 제품 치우기'],
+            ['경계', '“숙면 효과” 광고만 보고 영아에게 쓰지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 침대에 무게 이불·두꺼운 패딩이 있으면 치우세요.'],
+            ['하지 않을 일', '성인용 무게 이불을 아이용으로 덮지 마세요.'],
+            ['관련', '안전수면·수면조끼 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'sleep-sack-blanket-boundary',
         match: /(수면\s*조끼|슬립\s*색|슬립삭|sleep\s*sack|아기\s*침낭|이불\s*덮고\s*재우|담요\s*재우|느슨한\s*이불)/,
         title: '1세 미만은 느슨한 이불보다 맞는 수면조끼·얇은 옷이 안전한 경우가 많습니다',
@@ -2239,6 +2315,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
             ['AAP 가정 화상', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Preventing-Burns-at-Home.aspx']
+        ]
+    },
+    {
+        id: 'gripe-water-boundary',
+        match: /(그라이프\s*워터|그라이프워터|gripe\s*water|배앓이\s*물|콜릭\s*물약)/,
+        title: '그라이프 워터 등은 배앓이 치료제로 단정하지 말고, 성분·연령을 의료진과 확인하세요',
+        lead: '배앓이·가스에 쓰는 시판 “그라이프 워터”류는 성분·알코올·허브가 제품마다 다르고, 효과가 확실하지 않거나 해로울 수 있습니다. 용량·브랜드 추천은 하지 않으며, 심한 울음·탈수·발열은 진료가 우선입니다.',
+        points: [
+            ['경계', '민간·수입 제품 성분 불명, 치료 단정 금지'],
+            ['우선', '수유·트림·안고 달래기, 위험 신호 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '먹이려던 제품 성분표와 월령 표시를 확인하세요.'],
+            ['하지 않을 일', '성인·해외 후기만 보고 임의 용량을 주지 마세요.'],
+            ['관련', '배앓이·트림·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배앓이 개요', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/default.aspx'],
+            ['CDC 영아 영양·안전 개요', 'https://www.cdc.gov/infant-toddler-nutrition/']
         ]
     },
     {
@@ -2453,6 +2548,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'in-bed-sleeper-boundary',
+        match: /(인베드\s*슬리퍼|침대\s*위\s*아기\s*침대|인\s*베드\s*슬리퍼|in[-\s]?bed\s*sleeper|bedside\s*sleeper|침대\s*부착\s*아기침대)/,
+        title: '부모 침대 위·사이 넣는 인베드 슬리퍼는 질식·끼임 위험이 있어 권하지 않는 경우가 많습니다',
+        lead: '침대 매트리스 위에 올리거나 성인 침대 사이에 끼우는 수면 제품은 기울어짐·끼임·부드러운 표면 위험이 보고된 바 있습니다. 아기는 별도 안전 기준을 충족한 요람·침대에서 등을 대고 재우는 편이 안전합니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['우선', '바닥이 평평·단단한 단독 수면 공간'],
+            ['주의', '성인 이불·베개·틈새, 기울어진 포켓형 제품']
+        ],
+        blocks: [
+            ['지금 할 일', '아기 수면 공간이 평평하고 비어 있는지 확인하세요.'],
+            ['하지 않을 일', '성인 침대 한가운데 패딩 제품에만 맡기고 잠들지 마세요.'],
+            ['관련', '안전수면·같은 방 자기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['CPSC 유아 수면 제품', 'https://www.cpsc.gov/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'bed-sharing',
         match: /(같이\s*자|같은\s*침대|동일\s*침|한\s*침대|침대에서\s*자|배드\s*셰어|bed\s*shar|동침|부모\s*침대)/,
         title: '같은 침대에서 자기보다 같은 방·별도 수면면이 권고입니다',
@@ -2664,6 +2779,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['발열·응급 가이드', 'blog/baby-fever-cold-guide.html'],
             ['CDC 중이염 개요', 'https://www.cdc.gov/ear-infection/about/index.html']
+        ]
+    },
+    {
+        id: 'baby-acne-boundary',
+        match: /(신생아\s*여드름|아기\s*여드름|neonatal\s*acne|baby\s*acne|신생아\s*뾰루지|얼굴\s*좁쌀\s*여드름)/,
+        title: '신생아 얼굴 뾰루지는 흔할 수 있으나, 사진만으로 병명을 정하지 마세요',
+        lead: '생후 초기에 볼·이마에 좁쌀·빨간 발진이 생기는 경우가 있습니다. 세게 짜거나 성인 여드름 약을 바르지 마세요. 고름·열·번짐·가려움이 심하면 진료합니다. 병명 단정·연고 추천은 하지 않습니다.',
+        points: [
+            ['관리', '순한 물 세안, 오일·자극 화장품 자제'],
+            ['진료', '열, 심한 분비, 몸 전체 번짐, 수유 저하']
+        ],
+        blocks: [
+            ['지금 할 일', '짜지 말고, 언제 생겼는지 기록하세요.'],
+            ['하지 않을 일', '성인 여드름 약·스테로이드를 임의로 바르지 마세요.'],
+            ['관련', '밀리아·발진 진료 시점 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신생아 피부', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/default.aspx'],
+            ['발진 진료 시점', '#home']
         ]
     },
     {
@@ -3052,6 +3186,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수유 중 음식·음료 개요', 'https://www.cdc.gov/breastfeeding/breastfeeding-special-circumstances/diet-and-micronutrients/maternal-diet.html'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'pink-eye-conjunctivitis-boundary',
+        match: /(결막염|핑크\s*아이|pink\s*eye|눈\s*충혈\s*눈곱|전염\s*눈병|유행성\s*눈병)/,
+        title: '눈 충혈·눈곱은 결막염 등 여러 원인 가능해 병명·안약을 단정하지 마세요',
+        lead: '바이러스·세균·알레르기 등으로 눈이 빨개지고 눈곱이 낄 수 있습니다. 손 씻기·수건 공유 금지·렌즈(해당 시) 중단이 도움이 되고, 심한 통증·빛 공포·시야 문제·신생아 눈 증상은 진료가 급합니다. 항생제 안약 처방 여부는 의료진이 정합니다.',
+        points: [
+            ['위생', '손 씻기, 베개·수건 따로, 눈 비비지 않기'],
+            ['진료', '신생아, 심한 통증, 빛 민감, 시야 흐림, 외상']
+        ],
+        blocks: [
+            ['지금 할 일', '손을 씻고 가족이 수건을 같이 쓰지 않게 하세요.'],
+            ['하지 않을 일', '남은 안약을 임의로 넣지 마세요.'],
+            ['관련', '눈곱·신생아 눈 증상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 결막염(핑크아이)', 'https://www.cdc.gov/conjunctivitis/'],
+            ['AAP 눈 충혈·감염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/default.aspx']
         ]
     },
     {
@@ -4032,6 +4185,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'lawn-mower-child-safety',
+        match: /(잔디\s*깎|잔디깎|론\s*모어|lawn\s*mower|예초기\s*아이|잔디\s*기계)/,
+        title: '잔디깎이·예초기 가동 중에는 아이를 멀리 두고, 타게 하지 마세요',
+        lead: '잔디깎이·예초기는 돌·파편·칼날 부상 위험이 큽니다. 가동 중 아이는 실내나 충분히 먼 곳에 두고, 무릎·탑승석에 태우지 마세요. 잔디를 깎기 전 장난감·돌을 치웁니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['거리', '가동 중 아이·반려견 접근 금지'],
+            ['금지', '무릎에 태우기, 아이 손 닿는 키 보관']
+        ],
+        blocks: [
+            ['지금 할 일', '잔디 작업 전 마당에서 아이 장난감을 치우세요.'],
+            ['하지 않을 일', '기계가 돌아갈 때 아이와 같이 있지 마세요.'],
+            ['관련', '집 밖·놀이 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 잔디깎이 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Lawnmower-Safety.aspx'],
+            ['CPSC 잔디 장비', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'home-safety-basics',
         match: /(집\s*안\s*안전|아기\s*안전|베이비\s*프루프|안전사고\s*예방|콘센트\s*막|모서리\s*보호|약품\s*보관).*(아기|아이)?|아이\s*손\s*닿/,
         title: '집 안 안전은 약품·작은 물건·창·뜨거운 것부터 치웁니다',
@@ -4287,6 +4459,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'water-wings-floaties-boundary',
+        match: /(팔\s*튜브|워터\s*윙|물에\s*뜨는\s*팔|floaties|water\s*wings|수영\s*보조\s*팔)/,
+        title: '팔 튜브·풀로티는 생명을 지켜 주는 장비가 아닙니다',
+        lead: '팔에 끼우는 튜브·일부 수영 보조 용품은 뒤집히거나 공기가 빠질 수 있어 구명장비 대용이 아닙니다. 수영장·바다에서는 성인 팔 길이 안 감독과, 필요 시 공인 구명조끼를 우선하세요. 특정 제품 추천은 하지 않습니다.',
+        points: [
+            ['사실', '플로티 ≠ 구명조끼, 감독 대체 불가'],
+            ['우선', '팔 닿는 거리, 울타리·문, 구명조끼(상황별)']
+        ],
+        blocks: [
+            ['지금 할 일', '물놀이 때 “튜브 있으니 괜찮다”는 생각을 버리세요.'],
+            ['하지 않을 일', '팔 튜브만 끼운 채 아이만 물에 두지 마세요.'],
+            ['관련', '익사 예방·구명조끼·수영 교육 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
         id: 'life-jacket-water',
         match: /(구명\s*조끼|라이프\s*재킷|구명조끼|life\s*jacket|튜브만|암\s*밴드\s*수영)/,
         title: '물놀이에서는 연령·체중에 맞는 구명조끼와 보호자 감시가 함께입니다',
@@ -4344,6 +4535,26 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
             ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
             ['신생아 목욕 안내', '#home']
+        ]
+    },
+    {
+        id: 'magnet-ingestion-danger',
+        match: /(자석\s*삼킴|네오디뮴\s*자석|강력\s*자석|매그넷\s*볼|버키볼|자석\s*장난감\s*삼킴|high\s*powered\s*magnet|magnet\s*ingest)/,
+        title: '작은 강력 자석을 삼키면 장이 막히거나 뚫릴 수 있어 응급으로 봅니다',
+        lead: '여러 개의 작은 자석(또는 자석과 금속)을 삼키면 장벽 사이에서 달라붙어 괴사·천공 위험이 있습니다. 호흡·침 흘림·복통·구토가 있으면 바로 응급실로 가고, 임의로 토하게 하거나 기다리지 마세요. 자석 장난감은 어린 아이 손에 두지 않습니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['위험', '여러 개 자석, 자석+금속, 복통·구토·처짐'],
+            ['대응', '삼킨 시각·개수 기록, 응급실·영상 검사 여부 의료진 판단']
+        ],
+        blocks: [
+            ['지금 할 일', '자석 세트·분리된 작은 자석을 아이 손 닿지 않게 치우세요.'],
+            ['하지 않을 일', '“한 개만 삼킨 것 같다”며 민간으로 기다리게 두지 마세요. 개수를 확신하기 어렵습니다.'],
+            ['관련', '동전·버튼 전지 삼킴 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 자석 안전', 'https://www.cpsc.gov/'],
+            ['AAP 이물질 삼킴 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx'],
+            ['CDC 중독·응급 개요', 'https://www.cdc.gov/poisonprevention/']
         ]
     },
     {
@@ -4561,6 +4772,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수유와 알코올', 'https://www.cdc.gov/breastfeeding/breastfeeding-special-circumstances/vaccinations-medications-drugs/alcohol.html'],
             ['질병관리청 모유 수유', 'https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6586']
+        ]
+    },
+    {
+        id: 'driveway-backover-prevention',
+        match: /(드라이브웨이|후진\s*사고|차에\s*치|마당\s*후진|backover|후방\s*카메라\s*아이|주차\s*아이\s*치)/,
+        title: '집 앞·주차장 후진 전 아이 위치를 직접 확인하세요',
+        lead: '집 마당·아파트 주차장에서 차가 천천히 후진해도 아이를 볼 수 없는 사각이 있습니다. 출발 전 아이 손을 잡고, 차를 움직이기 전에 주변을 걷듯이 확인하세요. 카메라·센서만 믿지 마세요.',
+        points: [
+            ['습관', '아이·반려동물을 차 뒤에 두지 않기, 출발 전 수 확인'],
+            ['환경', '장난감·공을 차도·차로에 두지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '주차·출발 루틴에 “아이 손 잡기”를 넣으세요.'],
+            ['하지 않을 일', '차 시동 켠 채 아이만 마당에 두지 마세요.'],
+            ['관련', '카시트·차 안 방치 금지 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 보행·차량 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 교통 안전', 'https://www.cdc.gov/transportationsafety/']
         ]
     },
     {
