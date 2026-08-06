@@ -627,6 +627,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'kawasaki-when-care-boundary',
+        match: /(가와사키|가와사끼|kawasaki|五日熱|닷새\s*이상\s*열\s*발진\s*눈|열\s*5일\s*이상\s*눈\s*빨개)/,
+        title: '고열이 며칠 가고 눈 충혈·발진·입술 갈라짐 등이 겹치면 가와사키 등 평가를 위해 진료하세요',
+        lead: '가와사키병은 의료진이 진단 기준과 검사로 판단합니다. 사진만으로 단정하지 마세요. 고열이 지속되고 눈·입술·손발·목 림프절 변화가 있으면 소아과·응급실을 미루지 마세요. 치료·약 용량은 사이트에서 정하지 않습니다.',
+        points: [
+            ['관찰', '열 지속 일수, 눈 충혈, 발진, 입술·혀, 손발 부기'],
+            ['행동', '기록 후 진료, 해열제만으로 안심하지 않기']
+        ],
+        blocks: [
+            ['지금 할 일', '열 시작 시각과 동반 증상을 적어 두세요.'],
+            ['하지 않을 일', '카페 사진과 비교해 병명을 단정하지 마세요.'],
+            ['관련', '발열 진료 시점·발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가와사키·발열 개요', 'https://www.healthychildren.org/English/health-issues/conditions/heart/Pages/default.aspx'],
+            ['CDC 가와사키 개요', 'https://www.cdc.gov/kawasaki/']
+        ]
+    },
+    {
         id: 'fever-triage',
         match: /((열|발열|고열|체온).*(몇\s*도|병원|응급|괜찮|났|나요)|38\s*도)/,
         title: '열은 체온 숫자와 아이 상태를 함께 보세요',
@@ -806,6 +825,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'string-cheese-choking-boundary',
+        match: /(스트링\s*치즈|치즈\s*스틱\s*질식|string\s*cheese|치즈\s*막대\s*통째|치즈\s*스틱\s*한\s*입)/,
+        title: '치즈 스틱·스트링 치즈는 길게 찢거나 작게 잘라 주세요',
+        lead: '통째로 물고 뜯는 치즈 스틱은 덩어리가 되어 질식 위험이 있습니다. 세로로 찢거나 작은 조각으로 주고, 앉아서 먹이세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['자르기', '세로 찢기, 작은 조각, 앉은 자세'],
+            ['금지', '뛰어다니며 먹기, 큰 덩어리']
+        ],
+        blocks: [
+            ['지금 할 일', '간식 치즈를 미리 찢어 접시에 담으세요.'],
+            ['하지 않을 일', '유모차에서 통째로 물려 두지 마세요.'],
+            ['관련', '원형 식품·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
+        ]
+    },
+    {
         id: 'round-food-choking-cut',
         match: /(포도|소시지|핫도그|방울\s*토마토).{0,16}(자르|질식|통째)|둥근\s*음식\s*질식|콩\s*통째|포도\s*자르|소시지\s*자르/,
         title: '포도·소시지·방울토마토 등 둥근 음식은 길이로 자르고 통째로 주지 마세요',
@@ -956,6 +994,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
+        ]
+    },
+    {
+        id: 'teething-biscuit-choking-boundary',
+        match: /(이앓이\s*비스킷|티딩\s*비스킷|teething\s*biscuit|이\s*나는\s*과자\s*질식|쌀과자\s*이앓이)/,
+        title: '이앓이 비스킷·딱딱한 이 과자는 녹이다 부스러져 질식 위험이 있을 수 있습니다',
+        lead: '단단한 이앓이 과자는 깨지며 날카롭거나 큰 조각이 될 수 있습니다. 감독 없이 물리지 말고, 너무 단단하면 피하세요. 호박 목걸이 등 위험 제품과 함께 “이앓이 용품” 과신을 경계합니다. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['사용', '앉아서, 감독, 부스러기 확인'],
+            ['대안', '차갑게 한 치발기(안전 기준), 잇몸 마사지']
+        ],
+        blocks: [
+            ['지금 할 일', '비스킷이 너무 단단하거나 갈라지는지 확인하세요.'],
+            ['하지 않을 일', '누운 채 과자를 물려 두지 마세요.'],
+            ['관련', '이앓이·질식·호박 목걸이 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 이앓이·질식 개요', 'https://www.healthychildren.org/English/ages-stages/baby/teething-tooth-care/Pages/default.aspx'],
             ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
         ]
     },
@@ -1232,6 +1289,25 @@ const COMMON_PARENT_ANSWERS = [
             ['WHO 화면·신체활동', 'https://www.who.int/publications/i/item/9789240015128'],
             ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
             ['화면 시간 안내', '#home']
+        ]
+    },
+    {
+        id: 'wifi-radiation-myth-boundary',
+        match: /(와이파이\s*전자파|wifi\s*radiation|공유기\s*전자파\s*아기|전자파\s*공유기|무선\s*공유기\s*유해)/,
+        title: '가정 와이파이 전자파를 이유로 육아를 과도히 제한하기 전에, 근거 있는 수면·사고 예방을 우선하세요',
+        lead: '가정용 와이파이 전자파에 대한 불안이 많지만, 알려진 생활 위험과 비교해 공식 안내는 수면·질식·감염·사고 예방을 더 강조하는 경우가 많습니다. “공유기 끄면 발달이 보장된다”는 식으로 단정하지 않습니다. 불안이 크면 의료진과 상의하세요. 제품 차폐 광고 순위는 하지 않습니다.',
+        points: [
+            ['우선', '안전수면, 카시트, 손 씻기, 검증된 접종·검진'],
+            ['경계', '고가 차폐 제품 과신, 근거 없는 공포 마케팅']
+        ],
+        blocks: [
+            ['지금 할 일', '침실에서는 수면 환경(온도·이불·자세)을 먼저 점검하세요.'],
+            ['하지 않을 일', '전자파만 걱정하며 응급 신호를 미루지 마세요.'],
+            ['관련', '스크린·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['WHO 전자기장 개요(영)', 'https://www.who.int/health-topics/electromagnetic-fields'],
+            ['AAP 미디어·건강 개요', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx']
         ]
     },
     {
@@ -2699,6 +2775,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'disposable-hand-warmer-boundary',
+        match: /(일회용\s*핫팩|손난로\s*일회용|hand\s*warmer|포켓\s*핫팩|붙이는\s*핫팩\s*아기|핫팩\s*옷\s*속)/,
+        title: '일회용 손난로·붙이는 핫팩을 영아 피부나 옷 속에 직접 붙이지 마세요',
+        lead: '일회용 핫팩은 저온 화상을 일으킬 수 있고, 옷 속에 넣어 재우면 과열 위험이 있습니다. 영아 수면 공간·유모차 안 방치를 피하세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['위험', '저온 화상, 과열, 질식 우려 있는 방치'],
+            ['대안', '겹옷, 방 온도, 담요는 안전수면 원칙 준수']
+        ],
+        blocks: [
+            ['지금 할 일', '유모차·아기띠 안 핫팩을 제거하세요.'],
+            ['하지 않을 일', '피부에 바로 붙이거나 이불 속에 넣고 재우지 마세요.'],
+            ['관련', '핫팩·전기장판·화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
+        ]
+    },
+    {
         id: 'heating-pad-infant-boundary',
         match: /(핫팩\s*아기|온열\s*패드\s*아기|heating\s*pad|전기\s*찜질\s*아기|손난로\s*아기|핫팩\s*화상)/,
         title: '핫팩·온열 패드를 영아 피부나 침대에 직접 대지 마세요',
@@ -2833,6 +2928,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'dishwasher-door-climb-safety',
+        match: /(식기세척기\s*문\s*올라|dishwasher\s*door|식세기\s*문\s*타|식기세척기\s*열고\s*올라)/,
+        title: '식기세척기 열린 문에 올라가거나 매달리지 않게 하세요',
+        lead: '열린 식기세척기 문은 디딤대가 되어 추락·끼임·화상(뜨거운 식기) 위험이 있습니다. 사용 후 문을 닫고, 아이들이 열고 올라타지 않게 하세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '문 닫기, 주방 감독, 세제는 잠금'],
+            ['위험', '추락, 문 끼임, 뜨거운 식기']
+        ],
+        blocks: [
+            ['지금 할 일', '식세기 문이 열린 채 방치되지 않는지 확인하세요.'],
+            ['하지 않을 일', '열린 문을 발판 삼아 싱크대에 올라가게 두지 마세요.'],
+            ['관련', '오븐 문·세제·주방 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 부상 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CPSC 주방 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'stove-knob-safety',
         match: /(가스레인지\s*손잡이|레인지\s*노브|stove\s*knob|가스\s*불\s*아이|주방\s*불\s*잠금|쿡탑\s*손잡이)/,
         title: '가스레인지·쿡탑 손잡이는 아이 손이 닿지 않게 하고, 손잡이 커버를 검토하세요',
@@ -2868,6 +2982,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 영아 음료·안전 개요', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/default.aspx'],
             ['CDC 영아 영양', 'https://www.cdc.gov/infant-toddler-nutrition/']
+        ]
+    },
+    {
+        id: 'simethicone-gas-drops-boundary',
+        match: /(시메티콘|가스\s*드롭|simethicone|배앓이\s*방울|가스\s*약\s*아기|풍\s*약\s*영아)/,
+        title: '가스 드롭(시메티콘 등)은 효과를 보장하지 않으며, 용량·제품은 의료진·표시를 따르세요',
+        lead: '배앓이에 가스 방울약을 찾는 질문이 많지만, 모든 아기에게 필수는 아니고 효과가 개인마다 다릅니다. 용량·브랜드 순위·“먹으면 바로 낫는다” 단정은 하지 않습니다. 심한 울음·탈수·발열은 진료가 우선입니다.',
+        points: [
+            ['경계', '성인 약 소분, 표시 연령 무시'],
+            ['우선', '트림·안고 달래기, 위험 신호 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '제품 표시 월령과 용법을 확인하세요.'],
+            ['하지 않을 일', '여러 가스약을 한꺼번에 섞어 주지 마세요.'],
+            ['관련', '배앓이·그라이프 워터·탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 배앓이 개요', 'https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/default.aspx'],
+            ['CDC 영아 영양·케어 개요', 'https://www.cdc.gov/infant-toddler-nutrition/']
         ]
     },
     {
@@ -4812,6 +4945,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'freezer-entrapment-boundary',
+        match: /(냉동고\s*가둠|freezer\s*entrap|냉장고\s*숨|김치냉장고\s*들어가|냉장고\s*안\s*숨바꼭질)/,
+        title: '냉장고·냉동고·김치냉장고 안에서 숨바꼭질하지 않게 하세요',
+        lead: '가전 안에 들어가면 질식·저체온 위험이 있습니다. 문을 완전히 닫히게 두고, 버려진 냉장고는 문을 제거하세요. 키·손잡이 놀이를 막습니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['예방', '문 닫힘 확인, 폐기 가전 문 제거, 감독'],
+            ['응급', '갇힘 의심 시 즉시 열고 119']
+        ],
+        blocks: [
+            ['지금 할 일', '창고·베란다 미사용 냉장고 문을 점검하세요.'],
+            ['하지 않을 일', '가전 안을 “비밀 기지”로 두지 마세요.'],
+            ['관련', '가전 끼임·트렁크 가둠 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 가전·가둠 안전', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'appliance-entrapment',
         match: /(세탁기\s*숨|건조기\s*숨|냉장고\s*숨|폐가전|아이\s*가전\s*안|entrapment|드럼\s*세탁기\s*들어가)/,
         title: '세탁기·건조기·냉장고 등 가전 안에 들어가지 못하게 문을 닫고 폐가전을 방치하지 마세요',
@@ -4963,6 +5115,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 잔디깎이 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Lawnmower-Safety.aspx'],
             ['CPSC 잔디 장비', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'beach-safety-basics',
+        match: /(해변|바다\s*아기|beach\s*safety|해수욕\s*아이|파도\s*아이|갯벌\s*아기|바닷가\s*아기)/,
+        title: '해변에서는 파도·조류·햇볕·익사를 함께 보고, 팔 닿는 감시를 하세요',
+        lead: '바다는 얕아 보여도 파도와 조류가 위험합니다. 구명조끼·팔 닿는 감시, 그늘·수분, 깨진 유리·낚시 바늘을 살피세요. 플로티만 믿지 마세요. 특정 해변·용품 추천은 하지 않습니다.',
+        points: [
+            ['물', '구명조끼, 파도 방향, 혼자 금지'],
+            ['환경', '그늘, 수분, 발 보호, 쓰레기·바늘']
+        ],
+        blocks: [
+            ['지금 할 일', '입수 전 구명조끼와 만조·파도 정보를 확인하세요.'],
+            ['하지 않을 일', '등을 돌린 채 사진만 찍지 마세요.'],
+            ['관련', '익사·구명조끼·햇볕 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
         ]
     },
     {
@@ -5628,6 +5799,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 벌·침 쏘임', 'https://www.cdc.gov/niosh/topics/insects/'],
             ['AAP 벌 쏘임·알레르기 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'jellyfish-sting-boundary',
+        match: /(해파리\s*쏘|jellyfish|해파리\s*화상|해파리\s*독|해파리\s*물)/,
+        title: '해파리에 쏘이면 남은 촉수를 조심히 제거하고, 심한 통증·호흡 이상은 진료하세요',
+        lead: '해파리 쏘임은 종에 따라 다릅니다. 맨손으로 촉수를 집지 말고, 바닷물로 헹구는 등 지역·공식 응급 안내를 따르세요. 소변을 바르는 민간 요법은 권하지 않는 경우가 많습니다. 호흡 곤란·넓은 쏘임은 응급입니다. 약 용량·브랜드 추천은 하지 않습니다.',
+        points: [
+            ['즉시', '물에서 나오기, 촉수 제거(도구), 통증 평가'],
+            ['응급', '호흡 이상, 넓은 부위, 알레르기 증상']
+        ],
+        blocks: [
+            ['지금 할 일', '해변 깃발·주의 안내를 확인하세요.'],
+            ['하지 않을 일', '맨손으로 촉수를 문지르지 마세요.'],
+            ['관련', '벌 쏘임·화상·해변 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 해파리·해양 쏘임 개요', 'https://www.cdc.gov/healthy-swimming/'],
+            ['AAP 야외 부상 개요', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/default.aspx']
         ]
     },
     {
@@ -6782,6 +6972,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'marker-ingestion-boundary',
+        match: /(마카\s*먹|마커\s*먹|유성\s*매직\s*먹|permanent\s*marker|보드마카\s*먹|매직\s*잉크\s*삼킴)/,
+        title: '유성 매직·보드마카 잉크를 삼켰거나 입에 묻히면 성분·양을 확인하고 상담하세요',
+        lead: '아동용 수성 마카와 유성 매직은 위험이 다릅니다. 삼켰으면 토하게 강제하지 말고 제품명·추정량을 확인한 뒤 중독 상담·진료를 검토하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['예방', '유성 매직 분리 보관, 뚜껑 닫기'],
+            ['노출', '입 헹구기, 호흡·구토 심하면 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '서랍 속 유성 매직을 아이 손 닿지 않게 치우세요.'],
+            ['하지 않을 일', '피부·입술에 매직으로 그림을 그리지 마세요.'],
+            ['관련', '중독·크레용·점토 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독 예방', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'laundry-pod-poison',
         match: /(세제\s*포드|세탁\s*포드|캡슐\s*세제|액체\s*세제\s*삼|세제\s*먹|중독\s*상담|독극물)/,
         title: '세제 포드·약품은 아이 손이 닿지 않게 잠그고, 삼켰으면 응급 상담을 하세요',
@@ -6992,6 +7201,25 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 아기띠 안전', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Baby-Carriers-Backpacks-and-Slings.aspx'],
             ['CDC 안전수면', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'baby-monitor-cord-safety',
+        match: /(베이비\s*모니터\s*줄|baby\s*monitor\s*cord|감시\s*카메라\s*전선|모니터\s*코드\s*목|적외선\s*카메라\s*줄)/,
+        title: '베이비 모니터·카메라 전선은 아기 손에 닿지 않게 벽에 고정하세요',
+        lead: '모니터 전원 코드·카메라 줄이 침대 안으로 늘어지면 목 감김 위험이 있습니다. 코드를 짧게 정리하고 아기 팔 닿지 않는 곳에 두세요. 특정 모니터 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['설치', '코드 고정, 침대 난간 밖, 여유 줄 최소화'],
+            ['수면', '모니터가 있어도 안전수면 원칙은 그대로']
+        ],
+        blocks: [
+            ['지금 할 일', '카메라·모니터 줄이 침대 안으로 드리워졌는지 확인하세요.'],
+            ['하지 않을 일', '아기 얼굴 바로 위에 장치를 매달지 마세요.'],
+            ['관련', '블라인드 줄·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 코드·질식 위험', 'https://www.cpsc.gov/'],
+            ['AAP 안전수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx']
         ]
     },
     {
