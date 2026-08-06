@@ -1240,6 +1240,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'ringworm-boundary',
+        match: /(백선|ringworm|피부\s*백선|원형\s*탈모\s*백선|곰팡이\s*피부|두부\s*백선|몸\s*백선)/,
+        title: '둥근 발진·가려움은 백선 등 여러 원인일 수 있어 사진으로 병명을 정하지 마세요',
+        lead: '테두리 있는 둥근 발진은 백선(피부 진균)으로 설명되기도 하지만, 습진·다른 발진과 구분이 필요합니다. 연고·항진균제 종류·기간은 의료진·약사가 정하고, 가족·반려동물 전파 가능성도 상담합니다. 브랜드 순위·사진 진단은 하지 않습니다.',
+        points: [
+            ['가정', '손 씻기, 수건 구분, 병변 긁지 않기'],
+            ['진료', '퍼짐, 통증·고름, 두피 침범, 열이 날 때']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 시작했는지·퍼진 부위를 기록하세요.'],
+            ['하지 않을 일', '성인 항진균 연고를 임의 용량으로 바르지 마세요.'],
+            ['관련', '발진·농가진 경계를 참고하세요.']
+        ],
+        links: [
+            ['CDC 백선', 'https://www.cdc.gov/ringworm/'],
+            ['NHS 백선', 'https://www.nhs.uk/conditions/ringworm/'],
+            ['발진 경계 안내', '#home']
+        ]
+    },
+    {
         id: 'skin-rash-triage',
         match: /(발진|수족구|두드러기|물집.*(손|발|입|혀)|손가락\s*사이|발가락\s*사이|(손|발).*(빨간|빨개|발진|물집)|(피부|몸).*(빨간\s*점|빨간\s*반|발진)|피부에\s*빨간)/,
         title: '발진은 사진·문장만으로 병명을 정하지 않습니다',
@@ -1531,6 +1551,26 @@ const COMMON_PARENT_ANSWERS = [
             ['설사·수분 안내', '#home'],
             ['변 색깔 안내', '#home'],
             ['발열·응급', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
+        id: 'rotavirus-boundary',
+        match: /(로타\s*바이러스|로타바이러스|rotavirus|로타\s*접종|로타\s*설사)/,
+        title: '로타바이러스 설사 의심은 탈수를 보고, 접종 기록은 공식 일정으로 확인하세요',
+        lead: '영아 심한 물 설사·구토의 원인 중 하나가 로타바이러스일 수 있으나 사이트에서 균을 단정하지 않습니다. 수분·소변·처짐을 보고, 경구 백신 일정은 예방접종도우미·의료진 안내를 따릅니다. 지사제·항생제 임의 사용은 피하세요.',
+        points: [
+            ['돌봄', '소량씩 수분, 손 씻기, 기저귀 위생'],
+            ['진료', '탈수 신호, 혈변, 고열·처짐, 어린 영아']
+        ],
+        blocks: [
+            ['지금 할 일', '접종 기록과 설사·구토 횟수를 확인하세요.'],
+            ['하지 않을 일', '성인 지사제를 주지 마세요.'],
+            ['관련', '설사·노로·접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 로타바이러스', 'https://www.cdc.gov/rotavirus/'],
+            ['질병관리청 예방접종', 'https://nip.kdca.go.kr/'],
+            ['설사 안내', '#home']
         ]
     },
     {
@@ -2005,8 +2045,27 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'stove-knob-safety',
+        match: /(가스레인지\s*손잡이|레인지\s*노브|stove\s*knob|가스\s*불\s*아이|주방\s*불\s*잠금|쿡탑\s*손잡이)/,
+        title: '가스레인지·쿡탑 손잡이는 아이 손이 닿지 않게 하고, 손잡이 커버를 검토하세요',
+        lead: '아이들이 손잡이를 돌려 불을 켜거나 화상을 입을 수 있습니다. 요리 중 아이를 주방에 두지 말고, 손잡이 잠금·커버·뒤쪽 화구 사용 등 가정에 맞는 방법을 쓰세요. 특정 커버 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['예방', '손잡이 잠금, 냄비 손잡이 안쪽, 아이 주방 출입 제한'],
+            ['비상', '화상 시 흐르는 찬물, 심한 화상은 응급']
+        ],
+        blocks: [
+            ['지금 할 일', '손잡이 높이와 아이 손이 닿는지 확인하세요.'],
+            ['하지 않을 일', '불을 켠 채 주방을 비우지 마세요.'],
+            ['관련', '화상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 화상', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Preventing-Burns-at-Home.aspx']
+        ]
+    },
+    {
         id: 'gas-colic-comfort',
-        match: /(배앓이|가스|방귀|콜릭|colic|저녁마다\s*울|한없이\s*울|보챔.*저녁)/,
+        match: /(배앓이|배에\s*가스|가스\s*차|장\s*가스|방귀|콜릭|colic|저녁마다\s*울|한없이\s*울|보챔.*저녁)/,
         title: '오래 우는 배앓이형 울음은 원인 하나가 아니고 달래기와 진료 경계를 봅니다',
         lead: '생후 초기 몇 개월 저녁에 오래 우는 일이 있을 수 있습니다. “특효 제품”은 없습니다. 배고픔·트림·더위·피곤·통증을 살피고, 달래기 루틴을 쓰되 열이 있거나 토·혈변·처짐이 있으면 진료합니다.',
         points: [
@@ -2174,6 +2233,26 @@ const COMMON_PARENT_ANSWERS = [
             ['AAP 음료 안내', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Choose-Water.aspx'],
             ['CDC 어린이 음료', 'https://www.cdc.gov/nutrition/data-statistics/sugar-sweetened-beverages-intake.html'],
             ['과일 주스 안내', '#home']
+        ]
+    },
+    {
+        id: 'unpasteurized-juice-boundary',
+        match: /(비살균\s*주스|살균\s*안\s*된\s*주스|생\s*주스\s*아기|unpasteurized\s*juice|착즙\s*생주스|목장\s*생주스)/,
+        title: '비살균 주스·착즙 생주스는 영유아에게 주지 마세요',
+        lead: '살균하지 않은 과일·채소 주스는 세균 감염 위험이 있어 어린이·임산부에게 특히 위험할 수 있습니다. “신선·착즙”이라도 비살균이면 피하고, 시판 살균 표시를 확인하세요. 돌 전 주스 자체도 권고되지 않는 경우가 많습니다.',
+        points: [
+            ['피하기', '비살균·pasteurized 미표시 주스'],
+            ['대안', '과일은 연령에 맞게 잘라 먹이기, 돌 전 주스 제한']
+        ],
+        blocks: [
+            ['지금 할 일', '주스 라벨의 살균 여부를 확인하세요.'],
+            ['하지 않을 일', '길거리 생착즙을 아기 물병으로 주지 마세요.'],
+            ['관련', '주스·비살균 우유 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 비살균 주스 위험', 'https://www.cdc.gov/foodsafety/communication/juice.html'],
+            ['FDA 주스 안전', 'https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety'],
+            ['주스 안내', '#home']
         ]
     },
     {
@@ -2523,6 +2602,64 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['토함·역류 안내', '#home'],
             ['AAP 토함 안내', 'https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Why-Babies-Spit-Up.aspx']
+        ]
+    },
+    {
+        id: 'vitamin-k-newborn-boundary',
+        match: /(비타민\s*k|비타민K|vitamin\s*k|신생아\s*출혈|VKDB|비타민\s*케이\s*주사)/,
+        title: '신생아 비타민 K는 출혈 예방을 위해 의료진 안내 접종·투여를 따릅니다',
+        lead: '출생 직후 비타민 K는 드문 출혈성 질환 예방에 쓰입니다. 주사·경구 방식과 일정은 의료기관 지침을 따르고, 사이트에서 “맞아도 된다/안 맞아도 된다”를 단정하거나 용량을 정하지 않습니다. 거부·대체 요법은 의료진과 상의하세요.',
+        points: [
+            ['목적', '비타민 K 결핍 출혈 예방'],
+            ['상담', '일정·방식·이상반응은 담당 의료진']
+        ],
+        blocks: [
+            ['지금 할 일', '출생 기관에서 안내한 비타민 K 기록을 확인하세요.'],
+            ['하지 않을 일', '검증 안 된 식품·영양제로 주사를 대체하지 마세요.'],
+            ['관련', '황달·신생아 돌봄 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 비타민 K 결핍 출혈', 'https://www.cdc.gov/vitamin-k-deficiency/about/index.html'],
+            ['AAP 비타민 K', 'https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/Where-We-Stand-Administration-of-Vitamin-K.aspx'],
+            ['신생아 돌봄', '#home']
+        ]
+    },
+    {
+        id: 'hydrocele-boundary',
+        match: /(음낭\s*물집|음낭\s*부음|고환\s*물|고환\s*부음|히드로실|hydrocele|물\s*고환)/,
+        title: '음낭이 부어 보이면 물혹(히드로셀) 등 가능성이 있어 통증·색 변화를 진료로 확인하세요',
+        lead: '신생아·영아 음낭 부음은 히드로셀로 설명되는 경우가 있으나, 탈장·고환 염전 등과 구분이 필요합니다. 사진으로 진단하지 말고, 단단히 아프고 색이 변하거나 토·처짐이 있으면 응급 평가를 받으세요. 수술 시점은 의료진이 정합니다.',
+        points: [
+            ['관찰', '크기 변화, 통증, 환원 여부, 발열'],
+            ['바로 진료', '급격한 통증·부종, 색 변화, 구토·처짐']
+        ],
+        blocks: [
+            ['지금 할 일', '언제 커졌는지·아픈지 기록하세요.'],
+            ['하지 않을 일', '손으로 세게 짜거나 민간 연고를 바르지 마세요.'],
+            ['관련', '배꼽 탈장·포피 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 음낭·고환 문제 개요', 'https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/default.aspx'],
+            ['NHS 히드로셀', 'https://www.nhs.uk/conditions/hydrocele/']
+        ]
+    },
+    {
+        id: 'circumcision-care-boundary',
+        match: /(포경\s*수술|할례|포피\s*수술|circumcision|포경\s*후\s*관리|수술\s*후\s*귀두)/,
+        title: '포경 수술 후 관리는 의료진 안내를 따르고, 출혈·고름·발열이면 연락하세요',
+        lead: '포경 수술 여부는 가정·의료 결정이며 사이트에서 권하거나 말리지 않습니다. 수술한 경우 세척·거즈·연고는 담당 의료진 설명을 그대로 따르세요. 지속 출혈, 심한 부종, 고름, 발열, 소변 곤란이 있으면 바로 연락합니다. 약 용량·브랜드를 정하지 않습니다.',
+        points: [
+            ['관리', '안내된 세척·건조, 기저귀 마찰 줄이기'],
+            ['연락', '출혈 지속, 감염 의심, 소변 이상']
+        ],
+        blocks: [
+            ['지금 할 일', '퇴원·시술 안내 문서를 다시 읽으세요.'],
+            ['하지 않을 일', '딱지를 억지로 떼거나 검증 안 된 민간 약을 바르지 마세요.'],
+            ['관련', '포피 관리(비수술)·목욕 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 포경 수술 후 관리', 'https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Caring-for-a-Circumcised-Penis.aspx'],
+            ['AAP 포경 정책 요약', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/where-we-stand-circumcision.aspx']
         ]
     },
     {
@@ -3402,6 +3539,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'rear-facing-longer-boundary',
+        match: /(후향\s*카시트|후방\s*카시트|뒤로\s*보는\s*카시트|rear[\s-]?facing|후향\s*오래|최대한\s*후향|전향\s*빨리)/,
+        title: '가능하면 키·몸무게 한도까지 후향(뒤로 보기)을 유지하라는 안내가 많습니다',
+        lead: '많은 안전 안내가 법·제품 한도 안에서 가능한 한 오래 후향 장착을 권합니다. “○개월에 무조건 전향” 같은 카페 단정은 따르지 말고, 아이 신장·체중과 시트 라벨·설명서를 기준으로 하세요. 제품 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['기준', '시트 표시 키·몸무게, 차량 설명서, 올바른 설치'],
+            ['피하기', '또래 비교만으로 이른 전향']
+        ],
+        blocks: [
+            ['지금 할 일', '시트 라벨의 후향 한도를 확인하세요.'],
+            ['하지 않을 일', '다리가 닿는다고 바로 전향하지 마세요(많은 안내가 후향 유지를 우선).'],
+            ['관련', '카시트 원칙·부스터 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트 방향', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['NHTSA 카시트', 'https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats'],
+            ['카시트 원칙', '#home']
+        ]
+    },
+    {
         id: 'car-seat-principles',
         match: /(카시트|카\s*시트|유아용\s*시트|아동용\s*보호장치).*(방향|전환|후방|전방|언제|기준|설치)|후방\s*장착|전방\s*전환/,
         title: '카시트는 나이·키·몸무게 기준과 올바른 설치가 우선이고, 제품 순위는 하지 않습니다',
@@ -4090,6 +4247,63 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'lighter-matches-boundary',
+        match: /(라이터|성냥|lighter|matches|불장난|라이터\s*아이|성냥\s*아이)/,
+        title: '라이터·성냥은 아이 손 닿지 않는 곳에 두고, 불장난은 바로 말리세요',
+        lead: '라이터와 성냥은 화재·화상 원인입니다. 높은 잠금 수납에 두고, 아이가 만지면 즉시 빼앗고 위험함을 짧게 알려 주세요. “재미”로 불을 보여 주지 마세요. 제품 추천은 하지 않습니다.',
+        points: [
+            ['보관', '잠금·높은 곳, 가방 안 라이터도 점검'],
+            ['교육', '짧은 금지, 처벌보다 즉시 제지']
+        ],
+        blocks: [
+            ['지금 할 일', '거실·주방·가방의 라이터를 모아 두세요.'],
+            ['하지 않을 일', '아이 앞에서 라이터를 장난으로 켜지 마세요.'],
+            ['관련', '화상·CO·양초 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화재·화상 예방', 'https://www.cdc.gov/burn-prevention/'],
+            ['CPSC 화재 안전', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'bunk-bed-child-safety',
+        match: /(이층\s*침대|2층\s*침대|벙크\s*침대|bunk\s*bed|위층\s*침대\s*아이)/,
+        title: '이층 침대는 연령·난간·사다리를 지키고, 어린 아이는 아래층을 쓰세요',
+        lead: '위층은 낙상 위험이 커서 어린 연령에는 권하지 않는 안내가 많습니다. 난간·사다리 고정, 위층에 어린 아이를 두지 않기 등을 지키세요. 제품 기준·연령 표시를 확인하고 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['연령', '위층은 제품·안전 안내 연령 이상'],
+            ['구조', '난간, 사다리 고정, 침대 옆 가구 치우기']
+        ],
+        blocks: [
+            ['지금 할 일', '난간 높이와 나사 풀림을 점검하세요.'],
+            ['하지 않을 일', '위층에서 뛰어놀거나 난간을 빼지 마세요.'],
+            ['관련', '낙상·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 이층 침대 안전', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'toddler-bed-rail-boundary',
+        match: /(침대\s*가드|베드\s*레일|bed\s*rail|유아\s*침대\s*난간|떨어지는\s*침대\s*막|침대\s*펜스)/,
+        title: '유아 침대 가드·레일은 끼임 위험을 보고, 설명서대로만 설치하세요',
+        lead: '성인 침대에 붙이는 가드는 틈 끼임·이탈 사고가 보고된 적 있습니다. 연령·매트리스에 맞는 제품을 설명서대로 설치하고, 느슨하면 사용을 중단하세요. 영아용 안전수면(빈 공간·등 자세)과 혼동하지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['사용', '표시 연령, 틈 없이 밀착, 정기 점검'],
+            ['중단', '흔들림, 매트리스와 큰 틈, 영아에게 부적합']
+        ],
+        blocks: [
+            ['지금 할 일', '가드와 매트리스 사이 틈을 확인하세요.'],
+            ['하지 않을 일', '영아 침대에 성인 침대 가드를 쓰지 마세요.'],
+            ['관련', '안전수면·낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 침대 레일·끼임', 'https://www.cpsc.gov/'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'furniture-tipover',
         match: /(가구\s*전도|서랍장\s*넘어|티비\s*넘어|TV\s*넘어|옷장\s*넘어|가구\s*고정|앵커\s*고정|팁오버)/,
         title: '서랍장·TV 등 가구는 벽에 고정하고, 아이 오르기 놀이를 막으세요',
@@ -4511,6 +4725,26 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 아동 발달 관찰', 'https://www.cdc.gov/ncbddd/actearly/milestones/index.html'],
             ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones'],
             ['AAP 아동 행동 개요', 'https://www.healthychildren.org/English/healthy-living/emotional-wellness/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'facing-out-carrier-boundary',
+        match: /(앞보기\s*아기띠|바깥\s*보기\s*아기띠|전방\s*아기띠|facing\s*out\s*carrier|앞으로\s*보는\s*캐리어|아기띠\s*앞보기)/,
+        title: '아주 어린 아기는 안보기(보호자 쪽) 자세가 우선이고, 앞보기는 발달·제품 한도 후입니다',
+        lead: '목·몸통 지지가 충분하지 않은 시기에 바깥을 보는 앞보기 착용은 권고되지 않는 경우가 많습니다. 얼굴이 보이고 숨길이 열린 안보기 자세를 먼저 쓰고, 앞보기는 제품 최소 월령·체중과 의료·제품 안내를 따르세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['우선', '안보기, 기도 개방, T.I.C.K.S. 등 안전 자세'],
+            ['앞보기', '제품 한도·목 가눔 이후, 장시간 지양']
+        ],
+        blocks: [
+            ['지금 할 일', '사용 중인 아기띠 설명서의 앞보기 허용 월령을 확인하세요.'],
+            ['하지 않을 일', '신생아에게 앞보기로 오래 태우지 마세요.'],
+            ['관련', '아기띠·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 아기띠 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Baby-Carriers-Backpacks-and-Slings.aspx'],
+            ['CDC 안전수면(재우기≠캐리어)', 'https://www.cdc.gov/sudden-infant-death/sleep-safely/'],
+            ['아기띠 안내', '#home']
         ]
     },
     {
