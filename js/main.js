@@ -806,6 +806,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'helium-balloon-safety',
+        match: /(헬륨\s*풍선|helium\s*balloon|헬륨\s*흡입|풍선\s*가스\s*마심|헬륨\s*마시고)/,
+        title: '헬륨을 들이마시게 하지 말고, 터진 풍선 조각도 치우세요',
+        lead: '헬륨을 들이마시면 산소 부족으로 위험할 수 있습니다. 파티 장난으로 흡입하지 마세요. 터진 풍선 조각은 질식 위험이 있어 바로 치웁니다. 라텍스 알레르기도 고려하세요.',
+        points: [
+            ['금지', '헬륨 흡입, 조각 방치'],
+            ['관리', '사용한 풍선 정리, 영아 손 닿지 않게']
+        ],
+        blocks: [
+            ['지금 할 일', '파티 후 풍선 조각을 모두 치우세요.'],
+            ['하지 않을 일', '헬륨을 마시고 목소리 장난을 시키지 마세요.'],
+            ['관련', '풍선 질식·파티 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 풍선 안전', 'https://www.cpsc.gov/'],
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
         id: 'balloon-choking',
         match: /(풍선\s*질식|풍선\s*조각|라텍스\s*풍선|풍선\s*터진|풍선\s*삼)/,
         title: '라텍스 풍선 조각은 질식 위험이 커서 어린 아이 주변에 두지 마세요',
@@ -1052,6 +1071,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
             ['CDC 질식 예방', 'https://www.cdc.gov/justrun/choking/']
+        ]
+    },
+    {
+        id: 'birthday-party-choking-safety',
+        match: /(생일\s*파티|생일\s*초\s*질식|party\s*favor|생일\s*사탕|파티\s*간식\s*질식|피냐타|답례품\s*사탕)/,
+        title: '생일 파티에서는 작은 사탕·동전 초콜릿·풍선 조각을 치우고, 뛰어다니며 먹지 않게 하세요',
+        lead: '파티 간식·답례품은 질식 위험이 큰 것이 많습니다. 앉아서 먹이기, 연령 부적합 장난감 답례품 피하기, 풍선 조각 정리가 중요합니다. 업체 추천은 하지 않습니다.',
+        points: [
+            ['음식', '앉기, 작은 딱딱한 사탕 주의, 견과 통째 금지'],
+            ['장난감', '작은 부품, 자석, 풍선']
+        ],
+        blocks: [
+            ['지금 할 일', '답례품 봉지에 작은 부품이 있는지 확인하세요.'],
+            ['하지 않을 일', '달리며 사탕을 먹게 두지 마세요.'],
+            ['관련', '사탕·풍선·질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식 예방', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CPSC 장난감 안전', 'https://www.cpsc.gov/']
         ]
     },
     {
@@ -2668,6 +2706,26 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'covid-when-to-care-boundary',
+        match: /(코로나\s*아이|covid\s*child|covid-19\s*아기|신종\s*코로나\s*열|코로나\s*언제\s*병원)/,
+        title: '코로나19 의심 증상은 호흡·수분·연령을 보고, 검사·격리는 보건·의료 안내를 따르세요',
+        lead: '발열·기침·호흡 곤란 등은 여러 호흡기 감염과 겹칩니다. 병명을 사진·검색으로 단정하지 말고, 호흡 이상·처짐·탈수·어린 영아는 진료를 우선하세요. 약 용량·치료제 처방은 의료진이 정합니다. 최신 방역 수칙은 공식 기관을 확인하세요.',
+        points: [
+            ['응급', '호흡 곤란, 청색증, 처짐, 의식 변화'],
+            ['일상', '손 씻기, 아플 때 등원 자제, 검사 안내 따르기']
+        ],
+        blocks: [
+            ['지금 할 일', '증상 시작과 호흡·수분 상태를 기록하세요.'],
+            ['하지 않을 일', '성인 약을 임의 용량으로 주지 마세요.'],
+            ['관련', '발열·RSV·등원 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC COVID-19', 'https://www.cdc.gov/covid/'],
+            ['질병관리청', 'https://www.kdca.go.kr/'],
+            ['AAP 호흡기 감염 개요', 'https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'cold-congestion',
         match: /(감기|코막힘|콧물|기침).*(병원|괜찮|심|밤|수유|숨|호흡|가빠)|코가\s*막|숨\s*(헐떡|가빠)|가래|코\s*막/,
         title: '감기 증상은 호흡·수분·월령을 함께 보고 병원을 정합니다',
@@ -3649,6 +3707,25 @@ const COMMON_PARENT_ANSWERS = [
             ['CDC 비살균 주스 위험', 'https://www.cdc.gov/foodsafety/communication/juice.html'],
             ['FDA 주스 안전', 'https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-juice-safety'],
             ['주스 안내', '#home']
+        ]
+    },
+    {
+        id: 'sugar-sweet-limit-boundary',
+        match: /(설탕\s*줄이|단\s*간식\s*제한|added\s*sugar|당분\s*섭취\s*아이|과자\s*얼마나|사탕\s*얼마나)/,
+        title: '첨가당이 많은 음료·간식은 줄이고, “하루 몇 개” 광고 숫자만 따르지 마세요',
+        lead: '어린이 식단에서 첨가당을 줄이는 것이 권장되는 경우가 많습니다. 물·우유·과일을 우선하고, 주스·탄산·단 간식을 습관화하지 마세요. 정확한 g 제한은 연령·지침·의료진 상담에 맡기며 사이트에서 용량을 정하지 않습니다.',
+        points: [
+            ['우선', '물, 우유(연령 맞을 때), 과일 원형'],
+            ['줄이기', '가당 음료, 하루 종일 단 간식']
+        ],
+        blocks: [
+            ['지금 할 일', '냉장고 속 가당 음료를 물로 바꿔 보세요.'],
+            ['하지 않을 일', '울 때마다 사탕으로 달래지 마세요.'],
+            ['관련', '주스·소금·설탕 이유식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 설탕·음료 개요', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 첨가당', 'https://www.cdc.gov/nutrition/data-statistics/added-sugars.html']
         ]
     },
     {
@@ -4905,6 +4982,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'first-haircut-boundary',
+        match: /(첫\s*이발|첫\s*미용실|first\s*haircut|아기\s*이발|신생아\s*머리\s*자르)/,
+        title: '첫 이발은 위생·가위 안전이 우선이고, “운세·특정 날짜”를 필수로 단정하지 마세요',
+        lead: '머리카락이 눈을 가리거나 관리가 필요할 때 자를 수 있습니다. 가정에서는 가위 끝을 조심하고, 미용실에서는 아이 고정·위생을 확인하세요. 민간 금기 날짜만으로 미룰 필요는 없습니다. 브랜드·샵 순위는 하지 않습니다.',
+        points: [
+            ['안전', '가위 방향, 아이 고정, 머리카락 흡입 주의'],
+            ['위생', '도구 소독, 피부 상처 시 진료']
+        ],
+        blocks: [
+            ['지금 할 일', '앞머리가 눈을 찌르는지 확인하세요.'],
+            ['하지 않을 일', '움직이는 아이에게 큰 가위를 들이대지 마세요.'],
+            ['관련', '손톱 자르기·집 안 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 신생아·유아 케어 개요', 'https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx'],
+            ['CDC 위생 개요', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
         id: 'nail-trimming-infant',
         match: /(손톱\s*자르|발톱\s*자르|손톱\s*깎|발톱\s*깎|손톱\s*정리|아기\s*손톱|신생아\s*손톱|nail\s*trim)/,
         title: '아기 손톱은 짧게 유지하되, 살을 깊게 파지 말고 안전한 도구로 자르세요',
@@ -5803,6 +5899,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'new-sibling-prep-boundary',
+        match: /(동생\s*생김|동생\s*태어|둘째\s*태어|new\s*sibling|동생\s*질투\s*준비|형이\s*되는\s*준비|언니\s*되는\s*준비|둘째\s*생길)/,
+        title: '동생이 생길 때는 첫째 루틴을 지키고, 퇴행·질투를 혼내지 말고 역할을 나눠 주세요',
+        lead: '새 동생은 큰 변화입니다. 첫째의 수면·놀이 시간을 지키고, 아기를 돌보는 “도우미” 역할을 작게 주세요. 퇴행(배변·말)은 흔할 수 있습니다. 책·영상 “특효” 추천은 하지 않습니다.',
+        points: [
+            ['준비', '병원·방문 규칙, 혼자 시간, 일관된 양육자'],
+            ['대응', '질투 인정, 안전 감독, 비교 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '첫째만의 짧은 특별 시간을 정해 보세요.'],
+            ['하지 않을 일', '“이제 형/언니니까”로 감정을 누르지 마세요.'],
+            ['관련', '형제 질투·배변 퇴행 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 새 동생 개요', 'https://www.healthychildren.org/English/family-life/family-dynamics/Pages/default.aspx'],
+            ['CDC 아동 발달·관계', 'https://www.cdc.gov/ncbddd/childdevelopment/']
+        ]
+    },
+    {
         id: 'sibling-jealousy',
         match: /(형제\s*질투|동생\s*질투|첫째\s*질투|둘째\s*준비|동생\s*생|형제\s*싸움|형\s*질투|누나\s*질투)/,
         title: '형제 질투·둘째 준비는 애정 빼앗김이 아니라 적응 과정으로 봅니다',
@@ -6363,6 +6478,82 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 수영장 화학·건강 수영', 'https://www.cdc.gov/healthy-swimming/'],
             ['AAP 중독 예방', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'kiddie-pool-wading-safety',
+        match: /(유아용\s*풀|키디\s*풀|kiddie\s*pool|간이\s*수영장|베란다\s*풀|작은\s*풀장\s*아기)/,
+        title: '유아용 풀도 익사 위험이 있어 물을 빼 두고, 사용 중에는 팔 닿는 감시를 하세요',
+        lead: '얕아 보여도 얼굴이 잠기면 위험합니다. 사용 후 물을 비우고, 커버만 믿지 마세요. 플로티로 감독을 대체하지 않습니다. 제품 추천은 하지 않습니다.',
+        points: [
+            ['사용', '팔 닿는 감시, 혼자 금지, 미끄럼 주의'],
+            ['후', '물 비우기, 뒤집기, 고인 물 제거']
+        ],
+        blocks: [
+            ['지금 할 일', '놀이 후 풀 물을 완전히 비우세요.'],
+            ['하지 않을 일', '고인 물을 그대로 두고 자리를 비우지 마세요.'],
+            ['관련', '익사·수영장 울타리·플로티 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html'],
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx']
+        ]
+    },
+    {
+        id: 'water-table-splash-pad-safety',
+        match: /(워터\s*테이블|water\s*table|물놀이\s*테이블|스프래시\s*패드|splash\s*pad|물놀이터)/,
+        title: '워터테이블·물놀이터에서도 미끄럼·세균·익수를 보고, 고인 물은 자주 갈아 주세요',
+        lead: '서 있는 물놀이도 넘어짐·얼굴 침수가 날 수 있습니다. 물을 자주 갈고, 미끄러운 바닥을 정리하며, 설사 등 아플 때는 공용 물놀이를 피하세요. 시설 추천은 하지 않습니다.',
+        points: [
+            ['위생', '물 교체, 손 씻기, 아플 때 이용 자제'],
+            ['안전', '감독, 미끄럼, 너무 깊은 고인 물']
+        ],
+        blocks: [
+            ['지금 할 일', '워터테이블 물을 비우고 말리세요.'],
+            ['하지 않을 일', '여러 날이 지난 물을 그대로 두지 마세요.'],
+            ['관련', '익사·수영장 약품·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 건강한 수영·물놀이', 'https://www.cdc.gov/healthy-swimming/'],
+            ['CDC 익사 예방', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
+        id: 'garden-hose-water-safety',
+        match: /(호스\s*물\s*마셨|정원\s*호스\s*물|garden\s*hose\s*drink|호스\s*물\s*아기|호스로\s*얼굴)/,
+        title: '정원 호스 물은 마시지 않게 하고, 강한 물줄기를 얼굴에 쏘지 마세요',
+        lead: '호스에 고인 물은 더럽거나 뜨거울 수 있고, 강한 수압은 눈·귀 자극이 날 수 있습니다. 마실 물은 정수·수돗물 안내를 따르세요. 장난으로 호스를 입에 물리지 마세요.',
+        points: [
+            ['금지', '호스 물 마시기, 얼굴 직사 물줄기'],
+            ['대안', '컵 물, 그늘, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '호스를 사용 후 아이 손이 닿지 않게 감으세요.'],
+            ['하지 않을 일', '더운 날 호스 안 물을 그냥 마시게 하지 마세요.'],
+            ['관련', '물 주기·열 질환·중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 음용수·위생 개요', 'https://www.cdc.gov/healthywater/'],
+            ['AAP 여름 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'slip-n-slide-safety',
+        match: /(미끄럼\s*매트|슬립\s*앤\s*슬라이드|slip\s*n\s*slide|물\s*미끄럼틀\s*마당|비닐\s*미끄럼)/,
+        title: '마당 물 미끄럼 매트는 충돌·척추 부상 위험이 있어 연령·감독·설치를 지키세요',
+        lead: '물 미끄럼 놀이는 머리·목·척추 부상이 보고된 바 있습니다. 제품 연령·체중을 지키고, 경사·장애물을 확인하며, 어른이 미끄러지며 아이와 충돌하지 않게 하세요. 브랜드 추천은 하지 않습니다.',
+        points: [
+            ['설치', '평평한 곳, 돌·뿌리 제거, 설명서'],
+            ['이용', '한 명씩, 머리 먼저 금지, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '제품 최소 연령과 설치 공간을 확인하세요.'],
+            ['하지 않을 일', '성인이 아이 위로 미끄러지지 마세요.'],
+            ['관련', '익사·낙상·물놀이 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC 물 미끄럼·놀이 안전', 'https://www.cpsc.gov/'],
+            ['AAP 놀이 안전 개요', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
         ]
     },
     {
@@ -7330,6 +7521,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'balance-bike-safety',
+        match: /(밸런스\s*바이크|balance\s*bike|러닝\s*바이크|페달\s*없는\s*자전거|스트라이더)/,
+        title: '밸런스 바이크는 헬멧을 쓰고, 평지·감독 아래에서 타게 하세요',
+        lead: '페달 없는 자전거도 넘어짐·충돌이 납니다. 헬멧, 닫힌 신발, 차도 금지가 기본입니다. 연령·키 제한은 제품 안내를 따르세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['장비', '헬멧, 적절한 안장 높이, 브레이크 유무 확인'],
+            ['환경', '평지, 차도 금지, 감독']
+        ],
+        blocks: [
+            ['지금 할 일', '헬멧이 눈썹 위 두 손가락 위치인지 확인하세요.'],
+            ['하지 않을 일', '내리막·차도에서 타게 두지 마세요.'],
+            ['관련', '헬멧·자전거 트레일러 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 자전거 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Bicycle-Safety-Making-Sure-Your-Child-is-Ready.aspx'],
+            ['CDC 자전거 안전', 'https://www.cdc.gov/transportationsafety/bicycle/']
+        ]
+    },
+    {
         id: 'bike-helmet-safety',
         match: /(헬멧|자전거\s*헬멧|킥보드\s*헬멧|스케이\s*헬멧|머리\s*보호구).*(아이|아기|어린이)?|(아이|아기).*(자전거|킥보드).*(헬멧|안전)/,
         title: '자전거·킥보드 등에서는 헬멧을 쓰고, 맞음새와 교체를 확인하세요',
@@ -8110,6 +8320,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 아동 청력', 'https://www.cdc.gov/hearing-loss-children/'],
             ['발달·K-DST 가이드', 'blog/development-kdst-guide.html#milestones']
+        ]
+    },
+    {
+        id: 'return-school-sick-boundary',
+        match: /(등원\s*언제\s*가능|등교\s*언제|언제\s*어린이집\s*가도|return\s*to\s*school\s*sick|열\s*떨어진\s*뒤\s*등원|전염\s*끝난\s*언제)/,
+        title: '등원·등교 재개는 시설 규정과 증상(열·설사·발진 등) 소실을 기준으로 하세요',
+        lead: '감염병마다 격리·등원 기준이 다릅니다. 열이 내린 뒤에도 시설 안내와 의료진 권고를 확인하세요. “하루만 쉬면 된다”고 단정하지 않습니다. 학교·어린이집 공지를 우선하세요.',
+        points: [
+            ['확인', '시설 보건 규정, 진단명, 증상 소실'],
+            ['일반', '발열·구토·설사 후 안정, 컨디션']
+        ],
+        blocks: [
+            ['지금 할 일', '어린이집·학교 아픈 아이 규정을 열어 보세요.'],
+            ['하지 않을 일', '해열제로 열만 내리고 억지로 보내지 마세요.'],
+            ['관련', '발열·등원·손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 학교·보육 건강 개요', 'https://www.cdc.gov/healthy-schools/'],
+            ['AAP 등원·감염 개요', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
         ]
     },
     {
