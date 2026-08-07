@@ -682,6 +682,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-10-b159',
+        match: /(접종\s*후\s*고열\s*지속\s*시\s*상담\s*159차경계\s*topic159\s*10\s*공식경계)/,
+        title: '접종 후 고열이 오래가거나 처지면 상담하세요',
+        lead: '해열제 용량은 표시·진료를 따르세요.',
+        points: [
+            ['지금', '관찰·상담'],
+            ['주의', '과한 활동']
+        ],
+        blocks: [
+            ['지금 할 일', '접종 부위를 확인하세요.'],
+            ['하지 않을 일', '무단으로 다음 접종을 빼지 마세요.'],
+            ['관련', '접종 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'vax-high-fever-prolonged-call-b149',
         match: /(접종\s*후\s*고열\s*지속\s*시\s*상담)/,
         title: '접종 후 고열이 오래가거나 처지면 상담하세요',
@@ -1121,6 +1140,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-00-b159',
+        match: /(열\s*측정\s*전\s*운동\s*직후\s*피하기\s*159차경계\s*topic159\s*00\s*공식경계)/,
+        title: '열 측정은 격한 놀이 직후를 피하고 시각을 기록하세요',
+        lead: '해열제 용량은 표시·진료를 따르세요.',
+        points: [
+            ['지금', '기록·관찰'],
+            ['주의', '직후 측정 혼란']
+        ],
+        blocks: [
+            ['지금 할 일', '처짐을 같이 보세요.'],
+            ['하지 않을 일', '차갑게 담그지 마세요.'],
+            ['관련', '열 안내를 참고하세요.']
+        ],
+        links: [
+            ['열 가이드', 'blog/baby-fever-cold-guide.html'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'fever-not-right-after-play-b149',
         match: /(열\s*측정\s*전\s*운동\s*직후\s*피하기)/,
         title: '열 측정은 격한 놀이 직후를 피하고 시각을 기록하세요',
@@ -1369,6 +1407,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic154-01-b154',
+        match: /(모유\s*냉장\s*보관\s*기한\s*확인\s*154차경계\s*topic154\s*01\s*공식경계)/,
+        title: '모유 냉장 보관 기한을 확인하고 날짜 라벨을 쓰세요',
+        lead: '해동 후 재냉동을 피하세요.',
+        points: [
+            ['지금', '날짜·기한'],
+            ['주의', '기한 무시']
+        ],
+        blocks: [
+            ['지금 할 일', '깨끗한 용기를 쓰세요.'],
+            ['하지 않을 일', '실온에 오래 두지 마세요.'],
+            ['관련', '모유 보관 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
         id: 'breastmilk-fridge-window-b144',
         match: /(모유\s*냉장\s*보관\s*기한\s*확인)/,
         title: '모유 냉장 보관 기한을 확인하고 날짜 라벨을 쓰세요',
@@ -1381,6 +1438,25 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '깨끗한 용기를 쓰세요.'],
             ['하지 않을 일', '실온에 오래 두지 마세요.'],
             ['관련', '모유 보관 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
+        id: 'topic154-00-b154',
+        match: /(분유\s*스쿱\s*평평하게\s*계량\s*154차경계\s*topic154\s*00\s*공식경계)/,
+        title: '분유 스쿱은 표시대로 평평하게 계량하세요',
+        lead: '눈대중 비율을 피하세요.',
+        points: [
+            ['지금', '표시 계량'],
+            ['주의', '눈대중']
+        ],
+        blocks: [
+            ['지금 할 일', '손을 씻고 조유하세요.'],
+            ['하지 않을 일', '남은 조유를 다시 데우지 마세요.'],
+            ['관련', '수유 안내를 참고하세요.']
         ],
         links: [
             ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
@@ -1926,6 +2002,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic153-05-b153',
+        match: /(밤중\s*기저귀\s*최소\s*조명\s*교체\s*153차경계\s*topic153\s*05\s*공식경계)/,
+        title: '밤중 기저귀 교체는 최소 조명으로 짧게 끝내세요',
+        lead: '밝은 화면은 깨움을 늘릴 수 있습니다.',
+        points: [
+            ['지금', '어둡게·짧게'],
+            ['주의', '밝은 티비']
+        ],
+        blocks: [
+            ['지금 할 일', '수유 후 등 재우기를 하세요.'],
+            ['하지 않을 일', '놀이상황으로 바꾸지 마세요.'],
+            ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'night-diaper-dim-light-b143',
         match: /(밤중\s*기저귀\s*최소\s*조명\s*교체)/,
         title: '밤중 기저귀 교체는 최소 조명으로 짧게 끝내세요',
@@ -2157,6 +2252,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'hotdog-lengthwise-then-dice-b144',
         match: /(핫도그\s*세로\s*자른\s*뒤\s*작게\s*then\s*dice\s*공식경계)/,
+        title: '핫도그는 세로로 자른 뒤 작게 나누어 제공하세요',
+        lead: '동전 모양 통 슬라이스는 피하세요.',
+        points: [
+            ['지금', '세로 절단'],
+            ['주의', '동전 슬라이스']
+        ],
+        blocks: [
+            ['지금 할 일', '앉아서 먹이세요.'],
+            ['하지 않을 일', '급하게 먹이지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic154-03-b154',
+        match: /(핫도그\s*세로\s*자른\s*뒤\s*작게\s*154차경계\s*topic154\s*03\s*공식경계)/,
         title: '핫도그는 세로로 자른 뒤 작게 나누어 제공하세요',
         lead: '동전 모양 통 슬라이스는 피하세요.',
         points: [
@@ -2522,6 +2636,25 @@ const COMMON_PARENT_ANSWERS = [
         lead: '질식 위험이 있습니다.',
         points: [
             ['지금', '즉시 치우기'],
+            ['주의', '머리 덮기 놀이']
+        ],
+        blocks: [
+            ['지금 할 일', '높은 곳에 두지 말고 버리세요.'],
+            ['하지 않을 일', '포장 비닐을 방치하지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'topic155-11-b155',
+        match: /(대형\s*비닐봉투\s*즉시\s*매듭\s*폐기\s*155차경계\s*topic155\s*11\s*공식경계)/,
+        title: '대형 비닐봉투는 매듭 지어 즉시 버리고 놀이 도구로 쓰지 마세요',
+        lead: '질식 위험이 있습니다.',
+        points: [
+            ['지금', '즉시 폐기'],
             ['주의', '머리 덮기 놀이']
         ],
         blocks: [
@@ -3297,6 +3430,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-03-b162',
+        match: /(식사\s*중\s*웃음\s*유도\s*급히\s*하지\s*않기\s*162차경계\s*topic162\s*03\s*공식경계)/,
+        title: '식사 중 급하게 웃기며 먹이지 말고 천천히 씹게 하세요',
+        lead: '원형 식품은 자르세요.',
+        points: [
+            ['지금', '천천히·좌식'],
+            ['주의', '급하게 먹이기']
+        ],
+        blocks: [
+            ['지금 할 일', '달리며 먹이지 마세요.'],
+            ['하지 않을 일', '통째로 주지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'no-rush-laugh-while-eating-b152',
         match: /(식사\s*중\s*웃음\s*유도\s*급히\s*하지\s*않기)/,
         title: '식사 중 급하게 웃기며 먹이지 말고 천천히 씹게 하세요',
@@ -3308,6 +3460,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '달리며 먹이지 마세요.'],
             ['하지 않을 일', '통째로 주지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic154-02-b154',
+        match: /(딱딱한\s*사탕\s*어린\s*유아\s*금지\s*154차경계\s*topic154\s*02\s*공식경계)/,
+        title: '어린 유아에게 딱딱한 사탕·젤리콩을 주지 마세요',
+        lead: '질식 위험이 큽니다.',
+        points: [
+            ['지금', '연령 적합'],
+            ['주의', '딱딱한 사탕']
+        ],
+        blocks: [
+            ['지금 할 일', '앉아서 먹이세요.'],
+            ['하지 않을 일', '달리며 먹이지 마세요.'],
             ['관련', '질식 안내를 참고하세요.']
         ],
         links: [
@@ -3498,6 +3669,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '낮 시간대를 검토하세요.'],
+            ['하지 않을 일', '여러 신식품을 한꺼번에 주지 마세요.'],
+            ['관련', '알레르기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic154-07-b154',
+        match: /(알레르기\s*식품\s*반응\s*사진\s*기록\s*금지\s*단정\s*154차경계\s*topic154\s*07\s*공식경계)/,
+        title: '알레르기 반응은 시각·증상을 기록하고 사진으로 병명을 단정하지 마세요',
+        lead: '호흡 곤란·부종이면 119를 우선하세요.',
+        points: [
+            ['지금', '기록·응급'],
+            ['주의', '사진 병명 단정']
+        ],
+        blocks: [
+            ['지금 할 일', '낮에 소량 시도하세요.'],
             ['하지 않을 일', '여러 신식품을 한꺼번에 주지 마세요.'],
             ['관련', '알레르기 안내를 참고하세요.']
         ],
@@ -3748,6 +3938,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '철분 섭취를 고려하세요.'],
             ['하지 않을 일', '임의로 희석하지 마세요.'],
+            ['관련', '영양 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic154-10-b154',
+        match: /(돌\s*전\s*두유를\s*임의\s*주식\s*금지\s*154차경계\s*topic154\s*10\s*공식경계)/,
+        title: '돌 전 일반 두유·대체유를 임의 주식으로 쓰지 말고 수유 안내를 따르세요',
+        lead: '특수 분유는 진료 안내를 따르세요.',
+        points: [
+            ['지금', '연령 적합'],
+            ['주의', '임의 대체 주식']
+        ],
+        blocks: [
+            ['지금 할 일', '철분 섭취를 고려하세요.'],
+            ['하지 않을 일', '돌 전 일반 우유를 주식으로 쓰지 마세요.'],
             ['관련', '영양 안내를 참고하세요.']
         ],
         links: [
@@ -4277,6 +4486,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'youtube-kids-mode-limits-b148',
         match: /(유아\s*유튜브\s*키즈\s*모드\s*제한\s*mode\s*limits\s*공식경계)/,
+        title: '유튜브는 키즈 모드·시청 시간을 제한하고 함께 보세요',
+        lead: '앱 순위는 하지 않습니다.',
+        points: [
+            ['지금', '시간·함께'],
+            ['주의', '자동재생 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '취침 전 화면을 끄세요.'],
+            ['하지 않을 일', '식사 중 화면을 끄세요.'],
+            ['관련', '미디어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-03-b158',
+        match: /(유아\s*유튜브\s*키즈\s*모드\s*제한\s*158차경계\s*topic158\s*03\s*공식경계)/,
         title: '유튜브는 키즈 모드·시청 시간을 제한하고 함께 보세요',
         lead: '앱 순위는 하지 않습니다.',
         points: [
@@ -4902,6 +5130,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic158-04-b158',
+        match: /(화상통화는\s*상호작용으로\s*짧게\s*158차경계\s*topic158\s*04\s*공식경계)/,
+        title: '화상통화는 상호작용을 중심으로 짧게 유지하세요',
+        lead: '수동 시청과 구분하세요.',
+        points: [
+            ['지금', '상호작용'],
+            ['주의', '종일 화면']
+        ],
+        blocks: [
+            ['지금 할 일', '취침 전 과다를 피하세요.'],
+            ['하지 않을 일', '혼자 방치 시청을 줄이세요.'],
+            ['관련', '미디어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'video-call-interactive-short-b148',
         match: /(화상통화는\s*상호작용으로\s*짧게)/,
         title: '화상통화는 상호작용을 중심으로 짧게 유지하세요',
@@ -5283,6 +5530,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-03-b159',
+        match: /(변비\s*변기\s*루틴\s*짧게\s*만들기\s*159차경계\s*topic159\s*03\s*공식경계)/,
+        title: '변비 때 짧은 변기 루틴과 수분·섬유를 검토하세요',
+        lead: '심한 통증·혈변은 진료하세요.',
+        points: [
+            ['지금', '루틴·수분'],
+            ['주의', '강제 관장 자가']
+        ],
+        blocks: [
+            ['지금 할 일', '배변 기록을 남기세요.'],
+            ['하지 않을 일', '손가락으로 빼내지 마세요.'],
+            ['관련', '건강 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'constip-short-toilet-routine-b149',
         match: /(변비\s*변기\s*루틴\s*짧게\s*만들기)/,
         title: '변비 때 짧은 변기 루틴과 수분·섬유를 검토하세요',
@@ -5550,6 +5816,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic158-06-b158',
+        match: /(보상은\s*행동\s*직후\s*짧게\s*연결\s*158차경계\s*topic158\s*06\s*공식경계)/,
+        title: '보상은 행동 직후 짧게 연결하고 남발하지 마세요',
+        lead: '과정을 말로 칭찬하세요.',
+        points: [
+            ['지금', '즉시·짧게'],
+            ['주의', '과도한 보상']
+        ],
+        blocks: [
+            ['지금 할 일', '실패를 처벌로 바꾸지 마세요.'],
+            ['하지 않을 일', '뇌물처럼 쓰지 마세요.'],
+            ['관련', '훈육 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'reward-right-after-behavior-b148',
         match: /(보상은\s*행동\s*직후\s*짧게\s*연결)/,
         title: '보상은 행동 직후 짧게 연결하고 남발하지 마세요',
@@ -5769,6 +6054,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '끝난 뒤 짧게 재연결하세요.'],
+            ['하지 않을 일', '어두운 곳에 가두지 마세요.'],
+            ['관련', '훈육 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-01-b158',
+        match: /(타임아웃\s*시계\s*보여\s*짧게\s*158차경계\s*topic158\s*01\s*공식경계)/,
+        title: '타임아웃은 짧게 시계를 보여 주며 일관된 장소에서 하세요',
+        lead: '긴 감금은 피하세요.',
+        points: [
+            ['지금', '짧고 일관'],
+            ['주의', '장시간 고립']
+        ],
+        blocks: [
+            ['지금 할 일', '끝난 뒤 재연결하세요.'],
             ['하지 않을 일', '어두운 곳에 가두지 마세요.'],
             ['관련', '훈육 안내를 참고하세요.']
         ],
@@ -6098,6 +6402,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
             ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic158-00-b158',
+        match: /(때리기\s*전에\s*말\s*가르치기\s*연습\s*158차경계\s*topic158\s*00\s*공식경계)/,
+        title: '화가 날 때 때리기 대신 말로 표현하는 연습을 짧게 도와 주세요',
+        lead: '체벌 대신 일관된 경계를 쓰세요.',
+        points: [
+            ['지금', '언어·중단'],
+            ['주의', '맞받아치기']
+        ],
+        blocks: [
+            ['지금 할 일', '안전하게 옮기세요.'],
+            ['하지 않을 일', '창피 주기 훈육을 하지 마세요.'],
+            ['관련', '훈육 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
         ]
     },
     {
@@ -6532,6 +6855,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '라벨을 확인하세요.'],
             ['하지 않을 일', '친구 간식을 임의로 주지 마세요.'],
+            ['관련', '알레르기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic159-05-b159',
+        match: /(에피펜\s*교육\s*후\s*보관\s*위치\s*공유\s*159차경계\s*topic159\s*05\s*공식경계)/,
+        title: '처방 응급약이 있으면 보관 위치와 사용 교육을 돌봄자와 공유하세요',
+        lead: '호흡 곤란·부종이면 119를 우선하세요. 용량은 처방·교육을 따르세요.',
+        points: [
+            ['지금', '교육·공유'],
+            ['주의', '숨기기']
+        ],
+        blocks: [
+            ['지금 할 일', '원인 식품을 치우세요.'],
+            ['하지 않을 일', '혼자 두지 마세요.'],
             ['관련', '알레르기 안내를 참고하세요.']
         ],
         links: [
@@ -7042,6 +7384,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-09-b159',
+        match: /(수족구\s*입안\s*통증\s*시\s*부드러운\s*음식\s*159차경계\s*topic159\s*09\s*공식경계)/,
+        title: '수족구로 입안이 아프면 부드러운 음식과 수분을 우선하세요',
+        lead: '등원 기준을 확인하세요. 사진으로 단정하지 않습니다.',
+        points: [
+            ['지금', '수분·연성'],
+            ['주의', '열 있어도 보냄']
+        ],
+        blocks: [
+            ['지금 할 일', '수포를 억지로 터뜨리지 마세요.'],
+            ['하지 않을 일', '탈수를 방치하지 마세요.'],
+            ['관련', '감염 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
         id: 'hfmd-soft-foods-mouth-pain-b149',
         match: /(수족구\s*입안\s*통증\s*시\s*부드러운\s*음식)/,
         title: '수족구로 입안이 아프면 부드러운 음식과 수분을 우선하세요',
@@ -7287,6 +7648,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
             ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'topic159-04-b159',
+        match: /(발진\s*부위\s*사진\s*대신\s*경과\s*기록\s*159차경계\s*topic159\s*04\s*공식경계)/,
+        title: '발진은 경과·동반 증상을 기록하고 사진으로 병명을 단정하지 마세요',
+        lead: '호흡 이상·부종이면 응급을 검토하세요.',
+        points: [
+            ['지금', '기록·상담'],
+            ['주의', '사진 진단']
+        ],
+        blocks: [
+            ['지금 할 일', '연고를 임의 남용하지 마세요.'],
+            ['하지 않을 일', '알레르기 병력을 알리세요.'],
+            ['관련', '발진 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['열 가이드', 'blog/baby-fever-cold-guide.html']
         ]
     },
     {
@@ -7732,6 +8112,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic154-05-b154',
+        match: /(돌\s*전\s*꿀\s*함유\s*시리얼\s*확인\s*154차경계\s*topic154\s*05\s*공식경계)/,
+        title: '돌 전 시리얼·스낵에 꿀이 들었는지 성분표를 확인하세요',
+        lead: '보툴리눔 위험이 있습니다.',
+        points: [
+            ['지금', '성분표'],
+            ['주의', '돌 전 꿀']
+        ],
+        blocks: [
+            ['지금 할 일', '애매하면 주지 마세요.'],
+            ['하지 않을 일', '천연 꿀이라며 주지 마세요.'],
+            ['관련', '영양 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'honey-cereal-under-one-b144',
         match: /(돌\s*전\s*꿀\s*함유\s*시리얼\s*확인)/,
         title: '돌 전 시리얼·스낵에 꿀이 들었는지 성분표를 확인하세요',
@@ -7848,6 +8247,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'microwave-food-temp-test-b144',
         match: /(전자레인지\s*데운\s*이유식\s*온도\s*테스트\s*temp\s*test\s*공식경계)/,
+        title: '전자레인지로 데운 이유식은 저어 온도를 테스트하세요',
+        lead: '부분 과열에 주의하세요.',
+        points: [
+            ['지금', '저어 확인'],
+            ['주의', '바로 입']
+        ],
+        blocks: [
+            ['지금 할 일', '병째 과열하지 마세요.'],
+            ['하지 않을 일', '손목 안쪽에 테스트하세요.'],
+            ['관련', '화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic154-11-b154',
+        match: /(전자레인지\s*데운\s*이유식\s*온도\s*테스트\s*154차경계\s*topic154\s*11\s*공식경계)/,
         title: '전자레인지로 데운 이유식은 저어 온도를 테스트하세요',
         lead: '부분 과열에 주의하세요.',
         points: [
@@ -8143,6 +8561,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '남기면 버리세요.'],
             ['하지 않을 일', '여러 번 데우지 마세요.'],
+            ['관련', '식품 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
+        id: 'topic154-06-b154',
+        match: /(더운\s*날\s*이유식\s*보냉\s*시간\s*엄수\s*154차경계\s*topic154\s*06\s*공식경계)/,
+        title: '더운 날 외출 시 이유식 보냉 시간을 더 엄격히 지키세요',
+        lead: '남기면 버리세요.',
+        points: [
+            ['지금', '보냉·시간'],
+            ['주의', '차 안 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '여러 번 데우지 마세요.'],
+            ['하지 않을 일', '실온에 오래 두지 마세요.'],
             ['관련', '식품 안전 안내를 참고하세요.']
         ],
         links: [
@@ -8799,6 +9236,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-08-b162',
+        match: /(육아\s*스트레스\s*신호\s*일찍\s*공유\s*162차경계\s*topic162\s*08\s*공식경계)/,
+        title: '육아 스트레스 신호를 일찍 공유하고 교대를 요청하세요',
+        lead: '위기면 응급 자원을 이용하세요.',
+        points: [
+            ['지금', '공유·교대'],
+            ['주의', '혼자 감내']
+        ],
+        blocks: [
+            ['지금 할 일', '믿을 사람에게 연락하세요.'],
+            ['하지 않을 일', '아이를 위험한 곳에 두고 떠나지 마세요.'],
+            ['관련', '부모 마음 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['부모 마음', '#home']
+        ]
+    },
+    {
         id: 'parent-stress-signal-share-early-b152',
         match: /(육아\s*스트레스\s*신호\s*일찍\s*공유)/,
         title: '육아 스트레스 신호를 일찍 공유하고 교대를 요청하세요',
@@ -8809,6 +9265,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '믿을 사람에게 연락하세요.'],
+            ['하지 않을 일', '아이를 위험한 곳에 두고 떠나지 마세요.'],
+            ['관련', '부모 마음 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['부모 마음', '#home']
+        ]
+    },
+    {
+        id: 'topic158-07-b158',
+        match: /(밤중\s*수유\s*교대\s*스케줄\s*짜기\s*158차경계\s*topic158\s*07\s*공식경계)/,
+        title: '밤중 수유·돌봄 교대 스케줄을 짜 보호자 휴식을 확보하세요',
+        lead: '위기면 응급 자원을 이용하세요.',
+        points: [
+            ['지금', '교대·휴식'],
+            ['주의', '혼자 감내']
+        ],
+        blocks: [
+            ['지금 할 일', '믿을 사람에게 말하세요.'],
             ['하지 않을 일', '아이를 위험한 곳에 두고 떠나지 마세요.'],
             ['관련', '부모 마음 안내를 참고하세요.']
         ],
@@ -9099,6 +9574,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '경구 수분 보충을 검토하세요.'],
             ['하지 않을 일', '처지면 지체하지 마세요.'],
+            ['관련', '탈수 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
+        id: 'topic159-02-b159',
+        match: /(설사\s*때\s*스포츠음료\s*과다\s*주의\s*159차경계\s*topic159\s*02\s*공식경계)/,
+        title: '설사 때 스포츠음료만 과다 주지 말고 수분 보충 안내를 따르세요',
+        lead: '소변·처짐을 관찰하세요.',
+        points: [
+            ['지금', '수분·관찰'],
+            ['주의', '단 음료만']
+        ],
+        blocks: [
+            ['지금 할 일', '지사제를 임의로 쓰지 마세요.'],
+            ['하지 않을 일', '수분 거부 시 지체하지 마세요.'],
             ['관련', '탈수 안내를 참고하세요.']
         ],
         links: [
@@ -9414,6 +9908,44 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic156-09-b156',
+        match: /(비행\s*중\s*코막힘\s*심하면\s*일정\s*검토\s*156차경계\s*topic156\s*09\s*공식경계)/,
+        title: '코막힘이 심하면 비행 일정을 진료와 검토하고 착륙 시 삼키기를 도우세요',
+        lead: '아플 때 진료를 검토하세요.',
+        points: [
+            ['지금', '삼키기·상담'],
+            ['주의', '코 막고 세게']
+        ],
+        blocks: [
+            ['지금 할 일', '물을 한 모금씩 주세요.'],
+            ['하지 않을 일', '무리한 일정을 강행하지 마세요.'],
+            ['관련', '여행 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic159-01-b159',
+        match: /(영아\s*코막힘\s*식염수\s*흡인\s*우선\s*159차경계\s*topic159\s*01\s*공식경계)/,
+        title: '영아 코막힘은 식염수·흡인을 우선 검토하고 감기약 연령을 지키세요',
+        lead: '성인약 소분을 하지 마세요.',
+        points: [
+            ['지금', '연령·흡인'],
+            ['주의', '성인약 소분']
+        ],
+        blocks: [
+            ['지금 할 일', '여러 약을 겹쳐 주지 마세요.'],
+            ['하지 않을 일', '임의 용량을 올리지 마세요.'],
+            ['관련', '감기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'cold-congestion',
         match: /(감기|코막힘|콧물|기침).*(병원|괜찮|심|밤|수유|숨|호흡|가빠)|코가\s*막|숨\s*(헐떡|가빠)|가래|코\s*막/,
         title: '감기 증상은 호흡·수분·월령을 함께 보고 병원을 정합니다',
@@ -9512,6 +10044,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'swaddle-not-too-tight-hips-b143',
         match: /(속싸개\s*엉덩이\s*너무\s*조이지\s*않기\s*tight\s*hips\s*공식경계)/,
+        title: '속싸개는 가슴은 안정되게 하되 엉덩이·다리는 움직일 여유를 두세요',
+        lead: '뒤집기 시작하면 팔을 자유로 전환하세요.',
+        points: [
+            ['지금', '엉덩이 여유'],
+            ['주의', '다리 꽉 묶기']
+        ],
+        blocks: [
+            ['지금 할 일', '전환 시점을 보세요.'],
+            ['하지 않을 일', '배 위에 올려 싸지 마세요.'],
+            ['관련', '속싸개 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic153-03-b153',
+        match: /(속싸개\s*엉덩이\s*너무\s*조이지\s*않기\s*153차경계\s*topic153\s*03\s*공식경계)/,
         title: '속싸개는 가슴은 안정되게 하되 엉덩이·다리는 움직일 여유를 두세요',
         lead: '뒤집기 시작하면 팔을 자유로 전환하세요.',
         points: [
@@ -9893,6 +10444,25 @@ const COMMON_PARENT_ANSWERS = [
         id: 'tummy-time-toy-gaze-b140',
         match: /(터미타임\s*장난감\s*시선\s*유도)/,
         title: '터미타임 때 장난감으로 시선을 유도하되 짧게 자주 하세요',
+        lead: '수면 중 엎드림과 다릅니다.',
+        points: [
+            ['지금', '짧게·감독'],
+            ['주의', '수면 엎드림']
+        ],
+        blocks: [
+            ['지금 할 일', '얼굴을 지켜보세요.'],
+            ['하지 않을 일', '배고플 때 억지로 하지 마세요.'],
+            ['관련', '발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'topic160-00-b160',
+        match: /(터미타임\s*보호자\s*얼굴\s*마주보기\s*160차경계\s*topic160\s*00\s*공식경계)/,
+        title: '터미타임 때 보호자 얼굴을 마주 보며 짧게 자주 하세요',
         lead: '수면 중 엎드림과 다릅니다.',
         points: [
             ['지금', '짧게·감독'],
@@ -10499,6 +11069,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '시트를 팽팽히 씌우세요.'],
             ['하지 않을 일', '리본 장식을 달지 마세요.'],
+            ['관련', 'CPSC·안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic153-09-b153',
+        match: /(아기침대\s*리본\s*장식\s*제거하기\s*153차경계\s*topic153\s*09\s*공식경계)/,
+        title: '아기침대 리본·장식 끈을 제거하고 수면 공간을 비우세요',
+        lead: '감김·끼임 위험이 있습니다.',
+        points: [
+            ['지금', '장식 제거'],
+            ['주의', '리본 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '시트를 팽팽히 씌우세요.'],
+            ['하지 않을 일', '인형을 넣고 재우지 마세요.'],
             ['관련', 'CPSC·안전수면 안내를 참고하세요.']
         ],
         links: [
@@ -11270,6 +11859,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-00-b162',
+        match: /(재울\s*때마다\s*침대\s*비우기\s*확인\s*162차경계\s*topic162\s*00\s*공식경계)/,
+        title: '재울 때마다 침대에 헐렁한 물건이 없는지 확인하세요',
+        lead: '등 재우기를 지키세요.',
+        points: [
+            ['지금', '빈 침대'],
+            ['주의', '연한 침구']
+        ],
+        blocks: [
+            ['지금 할 일', '소파에서 재우지 마세요.'],
+            ['하지 않을 일', '기울기 쿠션을 쓰지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'every-sleep-clear-crib-check-b152',
         match: /(재울\s*때마다\s*침대\s*비우기\s*확인)/,
         title: '재울 때마다 침대에 헐렁한 물건이 없는지 확인하세요',
@@ -11286,6 +11894,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'topic153-02-b153',
+        match: /(수유\s*쿠션\s*위에서\s*재우지\s*않기\s*153차경계\s*topic153\s*02\s*공식경계)/,
+        title: '수유 쿠션·수유 베개 위에서 재우지 말고 평평한 침대로 옮기세요',
+        lead: '기울어진 면은 피하세요.',
+        points: [
+            ['지금', '침대로 이동'],
+            ['주의', '쿠션 위 수면']
+        ],
+        blocks: [
+            ['지금 할 일', '등 재우기를 확인하세요.'],
+            ['하지 않을 일', '소파에 두지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
         ]
     },
     {
@@ -11308,6 +11935,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic153-01-b153',
+        match: /(수면\s*중\s*과열\s*땀\s*옷\s*줄이기\s*153차경계\s*topic153\s*01\s*공식경계)/,
+        title: '수면 중 땀·과열이 보이면 옷을 줄이고 실내 온도를 점검하세요',
+        lead: '모자는 실내에서 벗기는 편이 안전에 가깝습니다.',
+        points: [
+            ['지금', '옷 줄이기'],
+            ['주의', '두꺼운 이불']
+        ],
+        blocks: [
+            ['지금 할 일', '침대를 비우세요.'],
+            ['하지 않을 일', '이불을 얼굴에 덮지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'sleep-overheat-fewer-layers-b143',
         match: /(수면\s*중\s*과열\s*땀\s*옷\s*줄이기)/,
         title: '수면 중 땀·과열이 보이면 옷을 줄이고 실내 온도를 점검하세요',
@@ -11324,6 +11970,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
             ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'topic153-00-b153',
+        match: /(수면면\s*단단한지\s*손바닥\s*확인\s*153차경계\s*topic153\s*00\s*공식경계)/,
+        title: '수면면이 단단한지 손바닥으로 확인하고 푹신한 면을 피하세요',
+        lead: '빈 침대·등 재우기가 원칙에 가깝습니다. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '단단한 면'],
+            ['주의', '푹신한 토퍼']
+        ],
+        blocks: [
+            ['지금 할 일', '침대를 비우세요.'],
+            ['하지 않을 일', '쿠션을 넣고 재우지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
         ]
     },
     {
@@ -11578,6 +12243,25 @@ const COMMON_PARENT_ANSWERS = [
         match: /(상상\s*친구\s*탓으로\s*책임\s*전가\s*막기)/,
         title: '상상 친구에게 잘못을 떠넘기지 않게 실제 책임을 짧게 가르치세요',
         lead: '놀이를 비웃지 마세요.',
+        points: [
+            ['지금', '경청·규칙'],
+            ['주의', '무조건 금지']
+        ],
+        blocks: [
+            ['지금 할 일', '위험 행동을 막으세요.'],
+            ['하지 않을 일', '비밀 강요를 허용하지 마세요.'],
+            ['관련', '발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic160-10-b160',
+        match: /(상상\s*친구\s*대화\s*존중하되\s*규칙\s*160차경계\s*topic160\s*10\s*공식경계)/,
+        title: '상상 친구 대화를 존중하되 안전 규칙은 유지하세요',
+        lead: '비웃지 마세요.',
         points: [
             ['지금', '경청·규칙'],
             ['주의', '무조건 금지']
@@ -11903,6 +12587,25 @@ const COMMON_PARENT_ANSWERS = [
         lead: '몰래 사라지기보다 인사가 낫습니다.',
         points: [
             ['지금', '점진·인사'],
+            ['주의', '갑작스런 장기 분리']
+        ],
+        blocks: [
+            ['지금 할 일', '하원 시각을 알려 주세요.'],
+            ['하지 않을 일', '울음만으로 비난하지 마세요.'],
+            ['관련', '분리불안 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-05-b158',
+        match: /(등원\s*전\s*짧은\s*역할놀이\s*연습\s*158차경계\s*topic158\s*05\s*공식경계)/,
+        title: '등원 전 짧은 역할놀이로 인사 루틴을 연습해 보세요',
+        lead: '몰래 사라지기보다 인사가 낫습니다.',
+        points: [
+            ['지금', '연습·인사'],
             ['주의', '갑작스런 장기 분리']
         ],
         blocks: [
@@ -12773,6 +13476,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic154-08-b154',
+        match: /(주스를\s*보상\s*간식으로\s*남발\s*금지\s*154차경계\s*topic154\s*08\s*공식경계)/,
+        title: '주스를 보상 간식으로 남발하지 말고 물을 우선하세요',
+        lead: '젖병에 주스를 넣지 마세요.',
+        points: [
+            ['지금', '물 우선'],
+            ['주의', '종일 주스']
+        ],
+        blocks: [
+            ['지금 할 일', '컵으로 주세요.'],
+            ['하지 않을 일', '당류 과다를 피하세요.'],
+            ['관련', '영양 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'juice-not-reward-flood-b144',
         match: /(주스를\s*보상\s*간식으로\s*남발\s*금지)/,
         title: '주스를 보상 간식으로 남발하지 말고 물을 우선하세요',
@@ -12897,6 +13619,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '설명서를 따르세요.'],
+            ['하지 않을 일', '성인 이불을 덮지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic153-10-b153',
+        match: /(인베드\s*제품\s*연령\s*한계\s*준수\s*153차경계\s*topic153\s*10\s*공식경계)/,
+        title: '침대 속 아기 공간 제품은 연령·몸무게 한계를 지키세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '한계·설명서'],
+            ['주의', '한계 초과 사용']
+        ],
+        blocks: [
+            ['지금 할 일', '틈새를 점검하세요.'],
             ['하지 않을 일', '성인 이불을 덮지 마세요.'],
             ['관련', '안전수면 안내를 참고하세요.']
         ],
@@ -13070,6 +13811,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '실내 금연을 검토하세요.'],
             ['하지 않을 일', '소파에서 재우지 마세요.'],
+            ['관련', '안전수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
+        id: 'topic153-08-b153',
+        match: /(극도로\s*피곤할\s*때\s*소파\s*동침\s*피하기\s*153차경계\s*topic153\s*08\s*공식경계)/,
+        title: '극도로 피곤할 때는 소파·안락의자 동침을 피하고 별도 침대를 쓰세요',
+        lead: '음주 후에도 동침을 피하세요.',
+        points: [
+            ['지금', '별도 침대'],
+            ['주의', '소파 동침']
+        ],
+        blocks: [
+            ['지금 할 일', '아기를 안전한 침대로 옮기세요.'],
+            ['하지 않을 일', '쿠션 사이에 두지 마세요.'],
             ['관련', '안전수면 안내를 참고하세요.']
         ],
         links: [
@@ -13299,6 +14059,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '떨어진 쪽쪽이를 다시 꽂을 필요는 없습니다.'],
+            ['하지 않을 일', '긴 클립을 목에 걸지 마세요.'],
+            ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic153-04-b153',
+        match: /(쪽쪽이\s*수면\s*중\s*떨어진\s*뒤\s*안\s*꽂아도\s*됨\s*153차경계\s*topic153\s*04\s*공식경계)/,
+        title: '수면 중 쪽쪽이가 떨어져도 억지로 다시 꽂을 필요는 없습니다',
+        lead: '긴 줄은 쓰지 마세요.',
+        points: [
+            ['지금', '줄 없음'],
+            ['주의', '목걸이 쪽쪽이']
+        ],
+        blocks: [
+            ['지금 할 일', '감김을 확인하세요.'],
             ['하지 않을 일', '긴 클립을 목에 걸지 마세요.'],
             ['관련', '수면 안내를 참고하세요.']
         ],
@@ -13675,6 +14454,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'toddler-yogurt-sugar-label-b144',
         match: /(유아\s*요거트\s*당류\s*표시\s*확인\s*sugar\s*label\s*공식경계)/,
+        title: '유아 요거트·디저트는 당류 표시를 확인하세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '표시 확인'],
+            ['주의', '설탕 과다']
+        ],
+        blocks: [
+            ['지금 할 일', '물과 과일을 검토하세요.'],
+            ['하지 않을 일', '성인 단 음료를 주지 마세요.'],
+            ['관련', '영양 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic154-09-b154',
+        match: /(유아\s*요거트\s*당류\s*표시\s*확인\s*154차경계\s*topic154\s*09\s*공식경계)/,
         title: '유아 요거트·디저트는 당류 표시를 확인하세요',
         lead: '브랜드 순위는 하지 않습니다.',
         points: [
@@ -14305,6 +15103,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-08-b159',
+        match: /(영아\s*알에스브이\s*의심\s*수유\s*시간\s*기록\s*159차경계\s*topic159\s*08\s*공식경계)/,
+        title: '영아 RSV 의심 시 수유 시간과 호흡을 기록해 진료에 가져가세요',
+        lead: '숨이 가쁘면 응급을 검토하세요.',
+        points: [
+            ['지금', '수유·호흡'],
+            ['주의', '연기 노출']
+        ],
+        blocks: [
+            ['지금 할 일', '수분을 확인하세요.'],
+            ['하지 않을 일', '담배 연기를 피하세요.'],
+            ['관련', '호흡기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'rsv-breathing',
         match: /(rsv|RSV|호흡기세포|세기관지염|쌕쌕|숨이\s*가|호흡\s*곤란|늑간|코\s*벌렁)/,
         title: 'RSV·감기 비슷한 증상은 호흡·수분 섭취를 기준으로 진료합니다',
@@ -14508,6 +15325,25 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '발열을 확인하세요.'],
             ['하지 않을 일', '울음을 무조건 무시하지 마세요.'],
             ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic153-11-b153',
+        match: /(수면\s*교육\s*중\s*귀가\s*아플\s*때\s*중단\s*153차경계\s*topic153\s*11\s*공식경계)/,
+        title: '수면 교육 중 귀 통증·발열이 있으면 중단하고 돌봄·진료를 우선하세요',
+        lead: '방법 순위는 하지 않습니다.',
+        points: [
+            ['지금', '건강 우선'],
+            ['주의', '아픈데 강행']
+        ],
+        blocks: [
+            ['지금 할 일', '수분·휴식을 확인하세요.'],
+            ['하지 않을 일', '울음을 무조건 무시하지 마세요.'],
+            ['관련', '수면·건강 안내를 참고하세요.']
         ],
         links: [
             ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
@@ -15009,6 +15845,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic159-07-b159',
+        match: /(크룹\s*의심\s*밤중\s*응급\s*기준\s*숙지\s*159차경계\s*topic159\s*07\s*공식경계)/,
+        title: '크룹 의심 시 밤중 호흡 곤란 응급 기준을 미리 알아 두세요',
+        lead: '수증기만 믿지 마세요.',
+        points: [
+            ['지금', '호흡 관찰'],
+            ['주의', '무리한 외출']
+        ],
+        blocks: [
+            ['지금 할 일', '상체를 편하게 하세요.'],
+            ['하지 않을 일', '연기를 쐬게 하지 마세요.'],
+            ['관련', '호흡기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['열 가이드', 'blog/baby-fever-cold-guide.html']
+        ]
+    },
+    {
         id: 'croup-night-er-criteria-b149',
         match: /(크룹\s*의심\s*밤중\s*응급\s*기준\s*숙지)/,
         title: '크룹 의심 시 밤중 호흡 곤란 응급 기준을 미리 알아 두세요',
@@ -15182,6 +16037,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'ear-pain-before-flight-talk-b149',
         match: /(귀\s*통증\s*비행\s*전\s*진료\s*상담\s*flight\s*talk\s*공식경계)/,
+        title: '귀 통증이 있을 때 비행 전 진료 상담을 검토하세요',
+        lead: '항생제는 진료를 따르세요.',
+        points: [
+            ['지금', '상담·기록'],
+            ['주의', '면봉 깊게']
+        ],
+        blocks: [
+            ['지금 할 일', '발열을 확인하세요.'],
+            ['하지 않을 일', '귀약을 임의로 넣지 마세요.'],
+            ['관련', '귀 건강 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic159-06-b159',
+        match: /(귀\s*통증\s*비행\s*전\s*진료\s*상담\s*159차경계\s*topic159\s*06\s*공식경계)/,
         title: '귀 통증이 있을 때 비행 전 진료 상담을 검토하세요',
         lead: '항생제는 진료를 따르세요.',
         points: [
@@ -15580,6 +16454,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic154-04-b154',
+        match: /(아기주도이유\s*음식\s*쉽게\s*으깨지는지\s*확인\s*154차경계\s*topic154\s*04\s*공식경계)/,
+        title: 'BLW 음식은 잇몸으로 쉽게 으깨지는지 확인하세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '으깨짐·감독'],
+            ['주의', '단단한 원형']
+        ],
+        blocks: [
+            ['지금 할 일', '의자 벨트를 채우세요.'],
+            ['하지 않을 일', '혼자 방치하지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['AAP 영양', 'https://www.healthychildren.org/English/healthy-living/nutrition/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'blw-safety',
         match: /(blw|BLW|아기주도\s*이유|핑거\s*푸드|손\s*이유식|스스로\s*먹이)/,
         title: '스스로 먹는 이유식도 준비 신호·질식 예방·지켜보기가 먼저입니다',
@@ -15868,6 +16761,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic153-06-b153',
+        match: /(룸셰어\s*중\s*성인\s*침대\s*이불\s*분리\s*153차경계\s*topic153\s*06\s*공식경계)/,
+        title: '룸셰어 중에도 성인 이불이 아기 얼굴을 덮지 않게 분리하세요',
+        lead: '별도 수면면을 유지하세요.',
+        points: [
+            ['지금', '이불 분리'],
+            ['주의', '이불 공유']
+        ],
+        blocks: [
+            ['지금 할 일', '틈새를 확인하세요.'],
+            ['하지 않을 일', '소파에서 재우지 마세요.'],
+            ['관련', '룸셰어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['안전수면 가이드', 'blog/baby-safe-sleep-guide.html']
+        ]
+    },
+    {
         id: 'roomshare-adult-blanket-separate-b143',
         match: /(룸셰어\s*중\s*성인\s*침대\s*이불\s*분리)/,
         title: '룸셰어 중에도 성인 이불이 아기 얼굴을 덮지 않게 분리하세요',
@@ -16127,6 +17039,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '함께 씻어 보여 주세요.'],
             ['하지 않을 일', '물티슈만으로 끝내지 마세요.'],
+            ['관련', '손 씻기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic162-06-b162',
+        match: /(코\s*푼\s*휴지\s*바로\s*버리고\s*손\s*씻기\s*162차경계\s*topic162\s*06\s*공식경계)/,
+        title: '코 푼 휴지는 바로 버리고 손을 씻으세요',
+        lead: '비누로 구석구석 문지르세요.',
+        points: [
+            ['지금', '버리기·손 씻기'],
+            ['주의', '소매로만 닦기']
+        ],
+        blocks: [
+            ['지금 할 일', '함께 씻어 보여 주세요.'],
+            ['하지 않을 일', '물만 적시고 끝내지 마세요.'],
             ['관련', '손 씻기 안내를 참고하세요.']
         ],
         links: [
@@ -16543,6 +17474,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'backpack-weight-body-ratio-b150',
         match: /(책가방\s*무게\s*몸무게\s*비율\s*점검\s*body\s*ratio\s*공식경계)/,
+        title: '책가방 무게가 과도하지 않은지 점검하고 양 어깨 끈을 쓰세요',
+        lead: '한쪽으로만 메지 마세요.',
+        points: [
+            ['지금', '양 어깨·감량'],
+            ['주의', '한쪽 어깨']
+        ],
+        blocks: [
+            ['지금 할 일', '불필요 짐을 빼세요.'],
+            ['하지 않을 일', '질질 끌지 마세요.'],
+            ['관련', '학교 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'topic160-08-b160',
+        match: /(책가방\s*무게\s*몸무게\s*비율\s*점검\s*160차경계\s*topic160\s*08\s*공식경계)/,
         title: '책가방 무게가 과도하지 않은지 점검하고 양 어깨 끈을 쓰세요',
         lead: '한쪽으로만 메지 마세요.',
         points: [
@@ -17232,6 +18182,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic156-02-b156',
+        match: /(부스터\s*등받이\s*없이\s*어깨벨트\s*확인\s*156차경계\s*topic156\s*02\s*공식경계)/,
+        title: '등받이 없는 부스터도 어깨 벨트가 목을 스치지 않는지 확인하세요',
+        lead: '골반 벨트는 허벅지 위에 낮게 오세요.',
+        points: [
+            ['지금', '벨트 핏'],
+            ['주의', '성인 벨트 성급']
+        ],
+        blocks: [
+            ['지금 할 일', '자세를 바르게 하세요.'],
+            ['하지 않을 일', '벨트를 겨드랑이로 빼지 마세요.'],
+            ['관련', '부스터 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats']
+        ]
+    },
+    {
         id: 'backless-booster-shoulder-check-b146',
         match: /(부스터\s*등받이\s*없이\s*어깨벨트\s*확인)/,
         title: '등받이 없는 부스터도 어깨 벨트가 목을 스치지 않는지 확인하세요',
@@ -17529,6 +18498,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '설명서 표시를 보세요.'],
+            ['하지 않을 일', '법 최소만 보고 바로 바꾸지 마세요.'],
+            ['관련', '카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats']
+        ]
+    },
+    {
+        id: 'topic156-01-b156',
+        match: /(후향\s*한계\s*표기\s*스티커\s*확인\s*156차경계\s*topic156\s*01\s*공식경계)/,
+        title: '후향 키·몸무게 한계 스티커를 확인하고 한계까지 유지하세요',
+        lead: '다리가 닿아도 성급 전향을 피하세요.',
+        points: [
+            ['지금', '한계 확인'],
+            ['주의', '성급 전향']
+        ],
+        blocks: [
+            ['지금 할 일', '설명서를 따르세요.'],
             ['하지 않을 일', '법 최소만 보고 바로 바꾸지 마세요.'],
             ['관련', '카시트 안내를 참고하세요.']
         ],
@@ -17976,6 +18964,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-01-b162',
+        match: /(카시트\s*설명서\s*개정\s*버전\s*확인\s*162차경계\s*topic162\s*01\s*공식경계)/,
+        title: '카시트 설명서 버전과 설치 경로를 재확인하세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '설명서·흔들림'],
+            ['주의', '대충 설치']
+        ],
+        blocks: [
+            ['지금 할 일', '좌우 흔들림을 점검하세요.'],
+            ['하지 않을 일', '애프터마켓 패딩을 추가하지 마세요.'],
+            ['관련', '카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats']
+        ]
+    },
+    {
         id: 'carseat-manual-revision-check-b152',
         match: /(카시트\s*설명서\s*개정\s*버전\s*확인)/,
         title: '카시트 설명서 버전과 설치 경로를 재확인하세요',
@@ -17987,6 +18994,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '좌우 흔들림을 점검하세요.'],
             ['하지 않을 일', '애프터마켓 패딩을 추가하지 마세요.'],
+            ['관련', '카시트 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 카시트', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/equipment/car-seats-and-booster-seats']
+        ]
+    },
+    {
+        id: 'topic156-00-b156',
+        match: /(카시트\s*어깨끈\s*핀치\s*테스트\s*156차경계\s*topic156\s*00\s*공식경계)/,
+        title: '카시트 어깨끈은 핀치 테스트로 헐렁하지 않게 조이세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '조임·클립'],
+            ['주의', '헐렁한 끈']
+        ],
+        blocks: [
+            ['지금 할 일', '가슴 클립 높이를 맞추세요.'],
+            ['하지 않을 일', '두꺼운 외투를 입은 채 조이지 마세요.'],
             ['관련', '카시트 안내를 참고하세요.']
         ],
         links: [
@@ -18153,6 +19179,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'playground-bolt-damage-check-b147',
         match: /(놀이터\s*볼트\s*돌출\s*파손\s*확인\s*damage\s*check\s*공식경계)/,
+        title: '놀이터 볼트 돌출·파손·뜨거운 금속을 확인하세요',
+        lead: '연령 구역을 지키세요.',
+        points: [
+            ['지금', '파손·온도'],
+            ['주의', '맨발 미끄럼']
+        ],
+        blocks: [
+            ['지금 할 일', '목 끈 옷을 피하세요.'],
+            ['하지 않을 일', '높은 기구를 무리하게 태우지 마세요.'],
+            ['관련', '놀이 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic157-07-b157',
+        match: /(놀이터\s*볼트\s*돌출\s*파손\s*확인\s*157차경계\s*topic157\s*07\s*공식경계)/,
         title: '놀이터 볼트 돌출·파손·뜨거운 금속을 확인하세요',
         lead: '연령 구역을 지키세요.',
         points: [
@@ -18760,6 +19805,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-02-b155',
+        match: /(안전문\s*경첩\s*나사\s*헐거움\s*점검\s*155차경계\s*topic155\s*02\s*공식경계)/,
+        title: '계단 안전문 경첩·나사가 헐겁지 않은지 점검하세요',
+        lead: '위쪽 압력식 제한을 확인하세요.',
+        points: [
+            ['지금', '나사·잠금'],
+            ['주의', '열린 채 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '드나들 때마다 잠그세요.'],
+            ['하지 않을 일', '가구로 우회하지 않게 하세요.'],
+            ['관련', '낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'gate-hinge-screw-snug-b145',
         match: /(안전문\s*경첩\s*나사\s*헐거움\s*점검)/,
         title: '계단 안전문 경첩·나사가 헐겁지 않은지 점검하세요',
@@ -18970,6 +20034,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-03-b155',
+        match: /(콘센트\s*덮개\s*영아\s*손\s*닿는\s*곳\s*155차경계\s*topic155\s*03\s*공식경계)/,
+        title: '아이 손이 닿는 콘센트에 덮개를 하고 코드를 정리하세요',
+        lead: '물기 있는 손을 피하세요.',
+        points: [
+            ['지금', '덮개·정리'],
+            ['주의', '물 근처 노출']
+        ],
+        blocks: [
+            ['지금 할 일', '과부하를 피하세요.'],
+            ['하지 않을 일', '침대로 코드를 끌어오지 마세요.'],
+            ['관련', '감전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'outlet-cover-toddler-reach-b145',
         match: /(콘센트\s*덮개\s*영아\s*손\s*닿는\s*곳)/,
         title: '아이 손이 닿는 콘센트에 덮개를 하고 코드를 정리하세요',
@@ -19171,6 +20254,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '아이 손을 보세요.'],
+            ['하지 않을 일', '손가락을 문틈에 넣게 두지 마세요.'],
+            ['관련', '가정 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic155-04-b155',
+        match: /(방문\s*경첩\s*쪽\s*손가락\s*주의\s*155차경계\s*topic155\s*04\s*공식경계)/,
+        title: '문 경첩 쪽 손가락 끼임도 주의하고 가드를 검토하세요',
+        lead: '닫을 때 손을 확인하세요.',
+        points: [
+            ['지금', '가드·확인'],
+            ['주의', '세게 닫기']
+        ],
+        blocks: [
+            ['지금 할 일', '바람으로 닫히게 두지 마세요.'],
             ['하지 않을 일', '손가락을 문틈에 넣게 두지 마세요.'],
             ['관련', '가정 안전 안내를 참고하세요.']
         ],
@@ -19522,6 +20624,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic157-03-b157',
+        match: /(해변\s*파도\s*등\s*돌리고\s*서지\s*않기\s*157차경계\s*topic157\s*03\s*공식경계)/,
+        title: '해변에서 파도를 등지고 서지 말고 성인이 눈을 떼지 마세요',
+        lead: '깃발·안전 구역을 확인하세요.',
+        points: [
+            ['지금', '구역·감독'],
+            ['주의', '멀리 단독']
+        ],
+        blocks: [
+            ['지금 할 일', '이안류 시 평행 헤엄을 기억하세요.'],
+            ['하지 않을 일', '해질 녘 멀리 나가지 마세요.'],
+            ['관련', '물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
         id: 'beach-not-back-to-waves-b147',
         match: /(해변\s*파도\s*등\s*돌리고\s*서지\s*않기)/,
         title: '해변에서 파도를 등지고 서지 말고 성인이 눈을 떼지 마세요',
@@ -19693,6 +20814,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-05-b162',
+        match: /(세제\s*성분표\s*아이\s*손\s*닿지\s*않게\s*162차경계\s*topic162\s*05\s*공식경계)/,
+        title: '세제·세척제를 원용기에 잠금 보관하고 음료병에 옮기지 마세요',
+        lead: '섭취 시 중독 상담을 하세요.',
+        points: [
+            ['지금', '잠금·원용기'],
+            ['주의', '음료병 소분']
+        ],
+        blocks: [
+            ['지금 할 일', '분무 장난을 하지 마세요.'],
+            ['하지 않을 일', '표백제 혼합을 하지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'cleaner-label-out-of-reach-b152',
         match: /(세제\s*성분표\s*아이\s*손\s*닿지\s*않게)/,
         title: '세제·세척제를 원용기에 잠금 보관하고 음료병에 옮기지 마세요',
@@ -19704,6 +20844,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '분무 장난을 하지 마세요.'],
             ['하지 않을 일', '표백제 혼합을 하지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'topic161-11-b161',
+        match: /(성인\s*젤리약\s*아이\s*시야\s*밖\s*금고\s*161차경계\s*topic161\s*11\s*공식경계)/,
+        title: '성인 젤리형 약은 아이 시야 밖 잠금 공간에 두세요',
+        lead: '섭취 시 중독·응급을 검토하세요.',
+        points: [
+            ['지금', '잠금·분리'],
+            ['주의', '같은 그릇']
+        ],
+        blocks: [
+            ['지금 할 일', '손님 가방도 확인하세요.'],
+            ['하지 않을 일', '사탕처럼 보이게 두지 마세요.'],
             ['관련', '중독 안내를 참고하세요.']
         ],
         links: [
@@ -19731,6 +20890,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic161-10-b161',
+        match: /(에센셜\s*오일\s*아이\s*베개\s*떨어뜨리기\s*금지\s*161차경계\s*topic161\s*10\s*공식경계)/,
+        title: '에센셜 오일을 아이 베개·이불에 떨어뜨리지 마세요',
+        lead: '원액 피부 도포를 피하세요.',
+        points: [
+            ['지금', '보관·환기'],
+            ['주의', '원액 도포']
+        ],
+        blocks: [
+            ['지금 할 일', '코에 직접 넣지 마세요.'],
+            ['하지 않을 일', '가습기에 과다 넣지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'oil-not-on-child-pillow-b151',
         match: /(에센셜\s*오일\s*아이\s*베개\s*떨어뜨리기\s*금지)/,
         title: '에센셜 오일을 아이 베개·이불에 떨어뜨리지 마세요',
@@ -19750,6 +20928,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic161-09-b161',
+        match: /(슬라임\s*재료\s*아이\s*주방\s*보관\s*금지\s*161차경계\s*topic161\s*09\s*공식경계)/,
+        title: '슬라임 재료를 주방 식품 옆에 두지 말고 잠금 보관하세요',
+        lead: '섭취·눈 접촉을 막으세요.',
+        points: [
+            ['지금', '분리 보관'],
+            ['주의', '먹이기 놀이']
+        ],
+        blocks: [
+            ['지금 할 일', '손을 씻으세요.'],
+            ['하지 않을 일', '상처에 바르지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'slime-ingredients-not-kitchen-b151',
         match: /(슬라임\s*재료\s*아이\s*주방\s*보관\s*금지)/,
         title: '슬라임 재료를 주방 식품 옆에 두지 말고 잠금 보관하세요',
@@ -19762,6 +20959,25 @@ const COMMON_PARENT_ANSWERS = [
             ['지금 할 일', '손을 씻으세요.'],
             ['하지 않을 일', '상처에 바르지 마세요.'],
             ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic161-08-b161',
+        match: /(워터비즈\s*개수\s*세고\s*놀이\s*종료\s*161차경계\s*topic161\s*08\s*공식경계)/,
+        title: '워터비즈는 시작·종료 때 개수를 세어 분실을 확인하세요',
+        lead: '삼킴 의심 시 응급·중독 상담을 하세요.',
+        points: [
+            ['지금', '개수·수거'],
+            ['주의', '방치']
+        ],
+        blocks: [
+            ['지금 할 일', '영아 손에 두지 마세요.'],
+            ['하지 않을 일', '바닥에 남기지 마세요.'],
+            ['관련', '중독·질식 안내를 참고하세요.']
         ],
         links: [
             ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
@@ -19788,6 +21004,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic161-07-b161',
+        match: /(풍선\s*불기\s*아이\s*혼자\s*금지\s*161차경계\s*topic161\s*07\s*공식경계)/,
+        title: '풍선 불기를 아이 혼자 하게 두지 말고 조각을 치우세요',
+        lead: '라텍스 질식 위험이 큽니다.',
+        points: [
+            ['지금', '감독·치우기'],
+            ['주의', '조각 놀이']
+        ],
+        blocks: [
+            ['지금 할 일', '미사용 풍선도 치우세요.'],
+            ['하지 않을 일', '바닥에 방치하지 마세요.'],
+            ['관련', '질식 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'no-solo-balloon-blow-b151',
         match: /(풍선\s*불기\s*아이\s*혼자\s*금지)/,
         title: '풍선 불기를 아이 혼자 하게 두지 말고 조각을 치우세요',
@@ -19804,6 +21039,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 질식', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx'],
             ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic160-11-b160',
+        match: /(발달\s*상담\s*대기\s*중\s*가정\s*자극\s*160차경계\s*topic160\s*11\s*공식경계)/,
+        title: '발달 상담 대기 중에도 대화·놀이 자극을 가정에서 이어 가세요',
+        lead: '예약을 미루지 마세요.',
+        points: [
+            ['지금', '가정 자극·예약'],
+            ['주의', '화면만 증가']
+        ],
+        blocks: [
+            ['지금 할 일', '관찰 기록을 남기세요.'],
+            ['하지 않을 일', '비교 SNS에만 의존하지 마세요.'],
+            ['관련', '발달 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx']
         ]
     },
     {
@@ -19826,6 +21080,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic160-09-b160',
+        match: /(버스\s*타기\s*전\s*인도에서\s*대기\s*160차경계\s*topic160\s*09\s*공식경계)/,
+        title: '버스 타기 전 인도와 차체에서 떨어져 기다리세요',
+        lead: '차도로 뛰어들지 마세요.',
+        points: [
+            ['지금', '거리·대기'],
+            ['주의', '뛰어들기']
+        ],
+        blocks: [
+            ['지금 할 일', '손을 잡으세요.'],
+            ['하지 않을 일', '기사 신호가 있을 때 건너세요.'],
+            ['관련', '보행 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
         id: 'bus-wait-on-sidewalk-b150',
         match: /(버스\s*타기\s*전\s*인도에서\s*대기)/,
         title: '버스 타기 전 인도와 차체에서 떨어져 기다리세요',
@@ -19841,6 +21114,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         links: [
             ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'topic159-11-b159',
+        match: /(코피\s*후\s*코\s*풀기\s*세게\s*하지\s*않기\s*159차경계\s*topic159\s*11\s*공식경계)/,
+        title: '코피 후에는 코를 세게 풀지 말고 전방 압박을 유지하세요',
+        lead: '뒤로 젖히지 마세요.',
+        points: [
+            ['지금', '전방 압박'],
+            ['주의', '뒤로 젖히기']
+        ],
+        blocks: [
+            ['지금 할 일', '10분 정도 유지하세요.'],
+            ['하지 않을 일', '휴지를 깊이 쑤시지 마세요.'],
+            ['관련', '응급 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
             ['CDC 손상', 'https://www.cdc.gov/injury/']
         ]
     },
@@ -19864,6 +21156,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic158-11-b158',
+        match: /(옷\s*갈아입을\s*때\s*문\s*잠그기\s*연습\s*158차경계\s*topic158\s*11\s*공식경계)/,
+        title: '옷 갈아입을 때 문·커튼으로 사생활을 지키는 연습을 하세요',
+        lead: '수영복 영역 경계를 나이 맞게 설명하세요.',
+        points: [
+            ['지금', '사생활·동의'],
+            ['주의', '강제 접촉']
+        ],
+        blocks: [
+            ['지금 할 일', '믿을 사람을 알려 주세요.'],
+            ['하지 않을 일', '비밀 강요를 허용하지 마세요.'],
+            ['관련', '가족 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'dress-change-door-privacy-b148',
         match: /(옷\s*갈아입을\s*때\s*문\s*잠그기\s*연습)/,
         title: '옷 갈아입을 때 문·커튼으로 사생활을 지키는 연습을 하세요',
@@ -19880,6 +21191,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
             ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-10-b158',
+        match: /(불쾌한\s*메시지\s*즉시\s*부모에게\s*알리기\s*158차경계\s*topic158\s*10\s*공식경계)/,
+        title: '불쾌한 메시지는 즉시 부모·믿을 어른에게 알리라고 가르치세요',
+        lead: '증거를 저장하세요.',
+        points: [
+            ['지금', '경청·기록'],
+            ['주의', '몰수만']
+        ],
+        blocks: [
+            ['지금 할 일', '차단·신고를 검토하세요.'],
+            ['하지 않을 일', '공개 망신을 주지 마세요.'],
+            ['관련', '미디어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
         ]
     },
     {
@@ -19902,6 +21232,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic157-11-b157',
+        match: /(반려견\s*산책\s*후\s*진드기\s*아이\s*확인\s*157차경계\s*topic157\s*11\s*공식경계)/,
+        title: '반려견 산책 후 아이 옷·피부와 개 몸도 진드기를 확인하세요',
+        lead: '붙었으면 제거 후 관찰하세요.',
+        points: [
+            ['지금', '몸·옷 확인'],
+            ['주의', '무시']
+        ],
+        blocks: [
+            ['지금 할 일', '손으로 짜지 마세요.'],
+            ['하지 않을 일', '머리·겨드랑이를 보세요.'],
+            ['관련', '진드기 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'dog-walk-tick-check-child-b147',
         match: /(반려견\s*산책\s*후\s*진드기\s*아이\s*확인)/,
         title: '반려견 산책 후 아이 옷·피부와 개 몸도 진드기를 확인하세요',
@@ -19918,6 +21267,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['CDC 위생', 'https://www.cdc.gov/hygiene/'],
             ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic157-06-b157',
+        match: /(자외선\s*강한\s*날\s*그늘\s*이동\s*시간\s*157차경계\s*topic157\s*06\s*공식경계)/,
+        title: '자외선이 강한 날에는 그늘 이동 시간을 정해 두세요',
+        lead: '영아는 그늘·옷을 우선하세요.',
+        points: [
+            ['지금', '그늘·시간'],
+            ['주의', '정오 장시간']
+        ],
+        blocks: [
+            ['지금 할 일', '모자·물을 챙기세요.'],
+            ['하지 않을 일', '그늘 없는 모래밭에 오래 두지 마세요.'],
+            ['관련', '자외선 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CDC 폭염', 'https://www.cdc.gov/heat-health/']
         ]
     },
     {
@@ -20206,6 +21574,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic153-07-b153',
+        match: /(수면\s*소리\s*앱\s*최대\s*음량\s*금지\s*153차경계\s*topic153\s*07\s*공식경계)/,
+        title: '수면 소리 앱·기기는 최대 음량을 피하고 거리를 두세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '중간 음량·거리'],
+            ['주의', '귀 옆 최대']
+        ],
+        blocks: [
+            ['지금 할 일', '타이머를 검토하세요.'],
+            ['하지 않을 일', '매트리스 위에 두지 마세요.'],
+            ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'sleep-app-max-volume-ban-b143',
         match: /(수면\s*소리\s*앱\s*최대\s*음량\s*금지)/,
         title: '수면 소리 앱·기기는 최대 음량을 피하고 거리를 두세요',
@@ -20285,6 +21672,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'newborn-gift-role-for-sibling-b148',
         match: /(둘째\s*태어날\s*때\s*선물\s*역할\s*주기\s*for\s*sibling\s*공식경계)/,
+        title: '둘째가 태어날 때 첫째에게 작은 역할·관심을 나누세요',
+        lead: '비교 말은 줄이세요.',
+        points: [
+            ['지금', '역할·1:1'],
+            ['주의', '비교 잔소리']
+        ],
+        blocks: [
+            ['지금 할 일', '감정을 인정하세요.'],
+            ['하지 않을 일', '비밀로만 두지 마세요.'],
+            ['관련', '형제 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-02-b158',
+        match: /(둘째\s*태어날\s*때\s*선물\s*역할\s*주기\s*158차경계\s*topic158\s*02\s*공식경계)/,
         title: '둘째가 태어날 때 첫째에게 작은 역할·관심을 나누세요',
         lead: '비교 말은 줄이세요.',
         points: [
@@ -20527,6 +21933,25 @@ const COMMON_PARENT_ANSWERS = [
         links: [
             ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx'],
             ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic160-07-b160',
+        match: /(따돌림\s*후\s*수면\s*식욕\s*변화\s*관찰\s*160차경계\s*topic160\s*07\s*공식경계)/,
+        title: '따돌림 후 수면·식욕·등교 변화를 관찰하고 학교에 알리세요',
+        lead: '아이 탓으로만 돌리지 마세요.',
+        points: [
+            ['지금', '관찰·기록'],
+            ['주의', '참으라 강요']
+        ],
+        blocks: [
+            ['지금 할 일', '안전 계획을 논의하세요.'],
+            ['하지 않을 일', '공개 망신을 주지 마세요.'],
+            ['관련', '학교·가족 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx'],
+            ['AAP 훈육', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
         ]
     },
     {
@@ -21124,6 +22549,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-09-b162',
+        match: /(돌봄\s*인력도\s*영아\s*응급\s*교육\s*162차경계\s*topic162\s*09\s*공식경계)/,
+        title: '조부모·돌봄 인력도 영아 응급 교육을 검토하세요',
+        lead: '응급이면 119를 우선하세요.',
+        points: [
+            ['지금', '공인 교육'],
+            ['주의', '영상만 의존']
+        ],
+        blocks: [
+            ['지금 할 일', '지역 교육을 알아보세요.'],
+            ['하지 않을 일', '자격 없는 시범만 믿지 마세요.'],
+            ['관련', '응급 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['Red Cross', 'https://www.redcross.org/']
+        ]
+    },
+    {
         id: 'infant-emergency-class-boundary',
         match: /(영아\s*응급\s*교육|영아\s*응급\s*교육|infant\s*emergency\s*class)/,
         title: '영아 심폐소생·질식 응급 교육을 미리 받아 두세요',
@@ -21337,6 +22781,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'camping-lantern-hot-surface-b147',
         match: /(캠핑\s*랜턴\s*뜨거운\s*표면\s*주의\s*hot\s*surface\s*공식경계)/,
+        title: '캠핑 랜턴·스토브 뜨거운 표면에 아이가 닿지 않게 하세요',
+        lead: '거리를 유지하세요.',
+        points: [
+            ['지금', '거리·감독'],
+            ['주의', '불 위 장난']
+        ],
+        blocks: [
+            ['지금 할 일', '재를 식히세요.'],
+            ['하지 않을 일', '뛰어넘기를 시키지 마세요.'],
+            ['관련', '화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic157-09-b157',
+        match: /(캠핑\s*랜턴\s*뜨거운\s*표면\s*주의\s*157차경계\s*topic157\s*09\s*공식경계)/,
         title: '캠핑 랜턴·스토브 뜨거운 표면에 아이가 닿지 않게 하세요',
         lead: '거리를 유지하세요.',
         points: [
@@ -21772,6 +23235,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-04-b162',
+        match: /(커피\s*테이블\s*가장자리\s*뜨거운\s*컵\s*162차경계\s*topic162\s*04\s*공식경계)/,
+        title: '커피 테이블 가장자리에 뜨거운 컵을 두지 마세요',
+        lead: '당겨 화상 사고가 흔합니다.',
+        points: [
+            ['지금', '안쪽 배치'],
+            ['주의', '가장자리 컵']
+        ],
+        blocks: [
+            ['지금 할 일', '손잡이를 안쪽으로 돌리세요.'],
+            ['하지 않을 일', '안고 뜨거운 컵을 들지 마세요.'],
+            ['관련', '화상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 화상', 'https://www.cdc.gov/burn-prevention/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'coffee-table-edge-hot-cup-b152',
         match: /(커피\s*테이블\s*가장자리\s*뜨거운\s*컵)/,
         title: '커피 테이블 가장자리에 뜨거운 컵을 두지 마세요',
@@ -22058,6 +23540,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic157-02-b157',
+        match: /(구명조끼\s*사이즈\s*너무\s*크면\s*안\s*됨\s*157차경계\s*topic157\s*02\s*공식경계)/,
+        title: '구명조끼가 너무 크면 벗겨질 수 있어 체중·사이즈를 맞추세요',
+        lead: '튜브가 조끼를 대체하지 않습니다.',
+        points: [
+            ['지금', '체중 표시'],
+            ['주의', '성인 조끼']
+        ],
+        blocks: [
+            ['지금 할 일', '버클을 잠그세요.'],
+            ['하지 않을 일', '공기 주입 장난감을 조끼로 쓰지 마세요.'],
+            ['관련', '물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
         id: 'lifejacket-not-too-big-b147',
         match: /(구명조끼\s*사이즈\s*너무\s*크면\s*안\s*됨)/,
         title: '구명조끼가 너무 크면 벗겨질 수 있어 체중·사이즈를 맞추세요',
@@ -22333,6 +23834,25 @@ const COMMON_PARENT_ANSWERS = [
         lead: '구명조끼가 울타리를 대체하지 않습니다.',
         points: [
             ['지금', '자동닫힘·잠금'],
+            ['주의', '문 열림 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '장난감을 물 밖에 치우세요.'],
+            ['하지 않을 일', '가구로 넘어가지 않게 하세요.'],
+            ['관련', '물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
+        id: 'topic157-01-b157',
+        match: /(수영장\s*울타리\s*높이\s*간격\s*점검\s*157차경계\s*topic157\s*01\s*공식경계)/,
+        title: '수영장 울타리 높이·간격·문 잠금을 점검하세요',
+        lead: '구명조끼가 울타리를 대체하지 않습니다.',
+        points: [
+            ['지금', '울타리·잠금'],
             ['주의', '문 열림 방치']
         ],
         blocks: [
@@ -22917,6 +24437,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-02-b162',
+        match: /(물놀이\s*전\s*감독자\s*역할\s*공지\s*162차경계\s*topic162\s*02\s*공식경계)/,
+        title: '물놀이 전 감독자 역할을 가족에게 공지하고 교대하세요',
+        lead: '휴대폰을 내려놓으세요.',
+        points: [
+            ['지금', '지정 감독'],
+            ['주의', '스크롤 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '팔 닿는 거리를 유지하세요.'],
+            ['하지 않을 일', '형에게만 맡기지 마세요.'],
+            ['관련', '물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
         id: 'water-watcher-role-announce-b152',
         match: /(물놀이\s*전\s*감독자\s*역할\s*공지)/,
         title: '물놀이 전 감독자 역할을 가족에게 공지하고 교대하세요',
@@ -22927,6 +24466,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '팔 닿는 거리를 유지하세요.'],
+            ['하지 않을 일', '형에게만 맡기지 마세요.'],
+            ['관련', '물 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 물 안전', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Water-Safety-And-Young-Children.aspx'],
+            ['CDC 익사', 'https://www.cdc.gov/drowning/prevention/index.html']
+        ]
+    },
+    {
+        id: 'topic157-00-b157',
+        match: /(목욕\s*물받이\s*장난감\s*물\s*빼기\s*157차경계\s*topic157\s*00\s*공식경계)/,
+        title: '목욕 장난감 속 물도 빼고 욕조 물을 즉시 빼세요',
+        lead: '얕은 물도 위험합니다.',
+        points: [
+            ['지금', '즉시 배수'],
+            ['주의', '물 남김']
+        ],
+        blocks: [
+            ['지금 할 일', '성인이 자리를 비우지 마세요.'],
             ['하지 않을 일', '형에게만 맡기지 마세요.'],
             ['관련', '물 안전 안내를 참고하세요.']
         ],
@@ -23153,6 +24711,25 @@ const COMMON_PARENT_ANSWERS = [
         points: [
             ['지금', '개수·찾기'],
             ['주의', '분실 무시']
+        ],
+        blocks: [
+            ['지금 할 일', '연령 표시를 확인하세요.'],
+            ['하지 않을 일', '동생 손에 두지 마세요.'],
+            ['관련', '자석 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx']
+        ]
+    },
+    {
+        id: 'topic155-07-b155',
+        match: /(낚시\s*자석\s*장난\s*아이\s*손\s*금지\s*155차경계\s*topic155\s*07\s*공식경계)/,
+        title: '강한 낚시·실험 자석은 아이 손이 닿지 않게 치우세요',
+        lead: '여러 개 섭취는 응급입니다.',
+        points: [
+            ['지금', '치우기·개수'],
+            ['주의', '분실 방치']
         ],
         blocks: [
             ['지금 할 일', '연령 표시를 확인하세요.'],
@@ -23490,6 +25067,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-06-b155',
+        match: /(전자양초\s*코인전지\s*뚜껑\s*확인\s*155차경계\s*topic155\s*06\s*공식경계)/,
+        title: '전자양초·작은 장식의 코인전지 뚜껑을 확인하세요',
+        lead: '삼킴 시 응급을 검토하세요.',
+        points: [
+            ['지금', '나사 잠금'],
+            ['주의', '헐거운 뚜껑']
+        ],
+        blocks: [
+            ['지금 할 일', '여분을 높이 보관하세요.'],
+            ['하지 않을 일', '입으로 가져가게 두지 마세요.'],
+            ['관련', '배터리 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'flameless-candle-cell-check-b145',
         match: /(전자양초\s*코인전지\s*뚜껑\s*확인)/,
         title: '전자양초·작은 장식의 코인전지 뚜껑을 확인하세요',
@@ -23627,6 +25223,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'repellent-wash-hands-before-eat-b147',
         match: /(기피제\s*바르고\s*손\s*씻은\s*뒤\s*먹기\s*before\s*eat\s*공식경계)/,
+        title: '기피제를 손에 바른 뒤에는 먹기 전 손을 씻으세요',
+        lead: '눈·입에 직분사하지 마세요. 브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '손 씻기·표시'],
+            ['주의', '얼굴 직분사']
+        ],
+        blocks: [
+            ['지금 할 일', '연령 표시를 읽으세요.'],
+            ['하지 않을 일', '상처에 바르지 마세요.'],
+            ['관련', '모기 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/']
+        ]
+    },
+    {
+        id: 'topic157-05-b157',
+        match: /(기피제\s*바르고\s*손\s*씻은\s*뒤\s*먹기\s*157차경계\s*topic157\s*05\s*공식경계)/,
         title: '기피제를 손에 바른 뒤에는 먹기 전 손을 씻으세요',
         lead: '눈·입에 직분사하지 마세요. 브랜드 순위는 하지 않습니다.',
         points: [
@@ -24273,6 +25888,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic160-02-b160',
+        match: /(말\s*늦음\s*시\s*책\s*읽기\s*대화\s*늘리기\s*160차경계\s*topic160\s*02\s*공식경계)/,
+        title: '말이 늦을 때 책 읽기와 일상 대화를 늘리고 평가를 상담하세요',
+        lead: '화면만 늘리지 마세요.',
+        points: [
+            ['지금', '대화·평가'],
+            ['주의', '화면만 증가']
+        ],
+        blocks: [
+            ['지금 할 일', '이름을 자주 불러 주세요.'],
+            ['하지 않을 일', '비교 SNS에만 의존하지 마세요.'],
+            ['관련', '발달·미디어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 미디어', 'https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'speech-delay-read-talk-more-b150',
         match: /(말\s*늦음\s*시\s*책\s*읽기\s*대화\s*늘리기)/,
         title: '말이 늦을 때 책 읽기와 일상 대화를 늘리고 평가를 상담하세요',
@@ -24429,6 +26063,25 @@ const COMMON_PARENT_ANSWERS = [
         match: /(말\s*더듬\s*때\s*여유\s*있는\s*표정\s*유지)/,
         title: '말이 더듬을 때 서두르는 표정을 보이지 말고 경청하세요',
         lead: '놀리거나 다그치지 마세요.',
+        points: [
+            ['지금', '경청'],
+            ['주의', '대신 말하기']
+        ],
+        blocks: [
+            ['지금 할 일', '여유 있는 대화를 하세요.'],
+            ['하지 않을 일', '무대 발표를 강요하지 마세요.'],
+            ['관련', '언어 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic160-06-b160',
+        match: /(말\s*더듬\s*때\s*천천히\s*말하기\s*강요\s*금지\s*160차경계\s*topic160\s*06\s*공식경계)/,
+        title: '말이 더듬을 때 천천히 말하라고 다그치지 말고 경청하세요',
+        lead: '놀리지 마세요.',
         points: [
             ['지금', '경청'],
             ['주의', '대신 말하기']
@@ -24787,6 +26440,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic158-08-b158',
+        match: /(손전등\s*놀이로\s*어둠\s*익히기\s*158차경계\s*topic158\s*08\s*공식경계)/,
+        title: '낮에 손전등 놀이로 어둠을 익히고 취침 루틴을 지키세요',
+        lead: '약한 야간등을 검토하세요.',
+        points: [
+            ['지금', '루틴·놀이'],
+            ['주의', '공포 영상']
+        ],
+        blocks: [
+            ['지금 할 일', '안심 문장을 반복하세요.'],
+            ['하지 않을 일', '공포를 비웃지 마세요.'],
+            ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'flashlight-play-dark-comfort-b148',
         match: /(손전등\s*놀이로\s*어둠\s*익히기)/,
         title: '낮에 손전등 놀이로 어둠을 익히고 취침 루틴을 지키세요',
@@ -24912,6 +26584,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '주변 위험물을 치우세요.'],
             ['하지 않을 일', '억지로 깨우지 마세요.'],
+            ['관련', '수면 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 수면', 'https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic158-09-b158',
+        match: /(야경\s*빈도면\s*낮잠\s*과다\s*점검\s*158차경계\s*topic158\s*09\s*공식경계)/,
+        title: '야경이 잦으면 낮잠·수면 부족을 점검하고 안전을 지키세요',
+        lead: '억지로 깨우지 마세요. 반복 시 진료를 검토하세요.',
+        points: [
+            ['지금', '안전·일정'],
+            ['주의', '세게 흔들기']
+        ],
+        blocks: [
+            ['지금 할 일', '낮에 창피 주지 마세요.'],
+            ['하지 않을 일', '주변 위험물을 치우세요.'],
             ['관련', '수면 안내를 참고하세요.']
         ],
         links: [
@@ -25473,6 +27164,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic156-07-b156',
+        match: /(횡단보도\s*스마트폰\s*보지\s*않기\s*156차경계\s*topic156\s*07\s*공식경계)/,
+        title: '횡단보도에서는 스마트폰을 보지 말고 손을 잡고 좌우를 확인하세요',
+        lead: '뛰어 건너지 마세요.',
+        points: [
+            ['지금', '손잡기·확인'],
+            ['주의', '폰 보며 걷기']
+        ],
+        blocks: [
+            ['지금 할 일', '주차 차량 사이로 뛰지 마세요.'],
+            ['하지 않을 일', '초록불만 믿지 말고 확인하세요.'],
+            ['관련', '보행 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
         id: 'crosswalk-no-phone-walk-b146',
         match: /(횡단보도\s*스마트폰\s*보지\s*않기)/,
         title: '횡단보도에서는 스마트폰을 보지 말고 손을 잡고 좌우를 확인하세요',
@@ -25650,6 +27360,25 @@ const COMMON_PARENT_ANSWERS = [
         lead: '카메라만 믿지 마세요.',
         points: [
             ['지금', '육안 확인'],
+            ['주의', '차 뒤 놀이']
+        ],
+        blocks: [
+            ['지금 할 일', '아이를 인도로 옮기세요.'],
+            ['하지 않을 일', '차도에서 놀게 두지 마세요.'],
+            ['관련', '후진 사고 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 차량', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
+        id: 'topic156-04-b156',
+        match: /(후진\s*전\s*아이\s*이름\s*불러\s*위치\s*확인\s*156차경계\s*topic156\s*04\s*공식경계)/,
+        title: '후진 전 아이 이름을 불러 위치를 확인하고 육안으로 보세요',
+        lead: '카메라만 믿지 마세요.',
+        points: [
+            ['지금', '육안·호명'],
             ['주의', '차 뒤 놀이']
         ],
         blocks: [
@@ -26062,6 +27791,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-07-b162',
+        match: /(사무실\s*잠깐\s*들를\s*때도\s*동반\s*하차\s*162차경계\s*topic162\s*07\s*공식경계)/,
+        title: '사무실 잠깐 들를 때도 아이를 차에 두지 말고 함께 하세요',
+        lead: '도착 시 뒷좌석을 보세요.',
+        points: [
+            ['지금', '함께 하차'],
+            ['주의', '잠깐 혼자']
+        ],
+        blocks: [
+            ['지금 할 일', '가방을 뒷좌석에 두는 방법도 검토하세요.'],
+            ['하지 않을 일', '시동 켠 채 두지 마세요.'],
+            ['관련', '차 안 방치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 차량', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/']
+        ]
+    },
+    {
         id: 'office-quick-stop-take-child-b152',
         match: /(사무실\s*잠깐\s*들를\s*때도\s*동반\s*하차)/,
         title: '사무실 잠깐 들를 때도 아이를 차에 두지 말고 함께 하세요',
@@ -26073,6 +27821,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '가방을 뒷좌석에 두는 방법도 검토하세요.'],
             ['하지 않을 일', '시동 켠 채 두지 마세요.'],
+            ['관련', '차 안 방치 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 차량', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['NHTSA', 'https://www.nhtsa.gov/']
+        ]
+    },
+    {
+        id: 'topic156-03-b156',
+        match: /(은행\s*드라이브스루도\s*아이\s*동반\s*156차경계\s*topic156\s*03\s*공식경계)/,
+        title: '드라이브스루·짧은 볼일에도 아이를 차에 혼자 두지 마세요',
+        lead: '시동·에어컨도 안전하지 않습니다.',
+        points: [
+            ['지금', '함께 있기'],
+            ['주의', '잠깐 혼자']
+        ],
+        blocks: [
+            ['지금 할 일', '뒷좌석 확인 습관을 만드세요.'],
+            ['하지 않을 일', '원격 시동만 믿지 마세요.'],
             ['관련', '차 안 방치 안내를 참고하세요.']
         ],
         links: [
@@ -26462,6 +28229,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-00-b155',
+        match: /(책장\s*벽\s*고정\s*나사\s*점검\s*155차경계\s*topic155\s*00\s*공식경계)/,
+        title: '책장·선반은 벽 고정 나사를 점검하고 올라가지 못하게 하세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '앵커 점검'],
+            ['주의', '가장자리 적재']
+        ],
+        blocks: [
+            ['지금 할 일', '무거운 물건을 아래에 두세요.'],
+            ['하지 않을 일', '서랍을 여러 칸 열지 마세요.'],
+            ['관련', '전복 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'bookshelf-wall-screw-check-b145',
         match: /(책장\s*벽\s*고정\s*나사\s*점검)/,
         title: '책장·선반은 벽 고정 나사를 점검하고 올라가지 못하게 하세요',
@@ -26691,6 +28477,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic156-10-b156',
+        match: /(숙소\s*난간\s*틈새\s*아이\s*머리\s*주의\s*156차경계\s*topic156\s*10\s*공식경계)/,
+        title: '숙소 난간 틈새에 머리가 끼이지 않게 가구를 치우고 문을 잠그세요',
+        lead: '혼자 발코니에 두지 마세요.',
+        points: [
+            ['지금', '잠금·재배치'],
+            ['주의', '열린 채 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '난간에 기대 놀지 마세요.'],
+            ['하지 않을 일', '창가에 의자를 두지 마세요.'],
+            ['관련', '낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'hotel-rail-gap-head-b146',
         match: /(숙소\s*난간\s*틈새\s*아이\s*머리\s*주의)/,
         title: '숙소 난간 틈새에 머리가 끼이지 않게 가구를 치우고 문을 잠그세요',
@@ -26826,6 +28631,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'window-open-limit-10cm-b145',
         match: /(창문\s*열림\s*제한\s*10cm\s*검토\s*limit\s*10cm\s*공식경계)/,
+        title: '창문 열림을 제한하는 장치를 설치하고 창가 의자를 치우세요',
+        lead: '방충망만 믿지 마세요.',
+        points: [
+            ['지금', '열림 제한'],
+            ['주의', '방충망 기대기']
+        ],
+        blocks: [
+            ['지금 할 일', '창가 장애물을 치우세요.'],
+            ['하지 않을 일', '창문에 올라가 놀지 마세요.'],
+            ['관련', '낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic155-01-b155',
+        match: /(창문\s*열림\s*제한\s*10cm\s*검토\s*155차경계\s*topic155\s*01\s*공식경계)/,
         title: '창문 열림을 제한하는 장치를 설치하고 창가 의자를 치우세요',
         lead: '방충망만 믿지 마세요.',
         points: [
@@ -27139,6 +28963,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '비누로 씻으세요.'],
             ['하지 않을 일', '울타리 안에 손을 넣지 마세요.'],
+            ['관련', '위생 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 위생', 'https://www.cdc.gov/hygiene/'],
+            ['CDC 반려동물', 'https://www.cdc.gov/healthypets/']
+        ]
+    },
+    {
+        id: 'topic161-04-b161',
+        match: /(동물\s*배설물\s*묻은\s*신발\s*닦기\s*161차경계\s*topic161\s*04\s*공식경계)/,
+        title: '농장·동물 체험 후 신발·손을 닦고 음식을 만지세요',
+        lead: '울타리 안에 손을 넣지 마세요.',
+        points: [
+            ['지금', '손·신발'],
+            ['주의', '만진 손 입']
+        ],
+        blocks: [
+            ['지금 할 일', '비누로 씻으세요.'],
+            ['하지 않을 일', '무단 먹이를 주지 마세요.'],
             ['관련', '위생 안내를 참고하세요.']
         ],
         links: [
@@ -27508,6 +29351,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic161-03-b161',
+        match: /(모르는\s*개\s*만지려다\s*물림\s*주의\s*161차경계\s*topic161\s*03\s*공식경계)/,
+        title: '모르는 개를 만지려 하지 말고 거리를 두세요',
+        lead: '먹이를 주지 마세요.',
+        points: [
+            ['지금', '거리·보호'],
+            ['주의', '다가가기']
+        ],
+        blocks: [
+            ['지금 할 일', '아이를 뒤로 두세요.'],
+            ['하지 않을 일', '뛰며 소리 지르지 마세요.'],
+            ['관련', '물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx'],
+            ['CDC 반려동물', 'https://www.cdc.gov/healthypets/']
+        ]
+    },
+    {
         id: 'stray-touch-bite-risk-b151',
         match: /(모르는\s*개\s*만지려다\s*물림\s*주의)/,
         title: '모르는 개를 만지려 하지 말고 거리를 두세요',
@@ -27850,6 +29712,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic161-02-b161',
+        match: /(새\s*반려\s*아이\s*수면\s*중\s*접근\s*차단\s*161차경계\s*topic161\s*02\s*공식경계)/,
+        title: '아이가 자는 동안 새 반려 접근을 차단하세요',
+        lead: '첫 만남은 짧게 감독하세요.',
+        points: [
+            ['지금', '수면 분리'],
+            ['주의', '단독 방치']
+        ],
+        blocks: [
+            ['지금 할 일', '점진적으로 소개하세요.'],
+            ['하지 않을 일', '아기 침대에 동물을 올리지 마세요.'],
+            ['관련', '물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 반려동물', 'https://www.cdc.gov/healthypets/']
+        ]
+    },
+    {
         id: 'new-pet-block-sleep-access-b151',
         match: /(새\s*반려\s*아이\s*수면\s*중\s*접근\s*차단)/,
         title: '아이가 자는 동안 새 반려 접근을 차단하세요',
@@ -27993,6 +29874,25 @@ const COMMON_PARENT_ANSWERS = [
         ],
         blocks: [
             ['지금 할 일', '장난감으로 놀아 주세요.'],
+            ['하지 않을 일', '강제로 안지 마세요.'],
+            ['관련', '반려동물 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 반려동물', 'https://www.cdc.gov/healthypets/']
+        ]
+    },
+    {
+        id: 'topic161-01-b161',
+        match: /(고양이\s*발톱\s*손\s*싸움\s*놀이\s*금지\s*161차경계\s*topic161\s*01\s*공식경계)/,
+        title: '손으로 고양이 발톱과 싸우는 놀이를 하지 마세요',
+        lead: '할퀴면 비누로 씻으세요.',
+        points: [
+            ['지금', '장난감 놀이'],
+            ['주의', '손 자극']
+        ],
+        blocks: [
+            ['지금 할 일', '상처를 방치하지 마세요.'],
             ['하지 않을 일', '강제로 안지 마세요.'],
             ['관련', '반려동물 안내를 참고하세요.']
         ],
@@ -28203,6 +30103,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '식사 공간을 분리하세요.'],
             ['하지 않을 일', '얼굴을 가까이 대지 마세요.'],
+            ['관련', '물림 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CDC 반려동물', 'https://www.cdc.gov/healthypets/']
+        ]
+    },
+    {
+        id: 'topic161-00-b161',
+        match: /(개\s*입\s*주변\s*얼굴\s*비비기\s*금지\s*161차경계\s*topic161\s*00\s*공식경계)/,
+        title: '개 입 주변에 얼굴을 비비거나 가까이 대지 마세요',
+        lead: '물림 위험이 있습니다.',
+        points: [
+            ['지금', '거리·감독'],
+            ['주의', '얼굴 밀착']
+        ],
+        blocks: [
+            ['지금 할 일', '식사 공간을 분리하세요.'],
+            ['하지 않을 일', '장난감을 뺏지 마세요.'],
             ['관련', '물림 안내를 참고하세요.']
         ],
         links: [
@@ -28573,6 +30492,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic157-10-b157',
+        match: /(골프장\s*들판\s*번개\s*시\s*즉시\s*대피\s*157차경계\s*topic157\s*10\s*공식경계)/,
+        title: '골프장·넓은 들판에서 번개가 치면 즉시 실내로 대피하세요',
+        lead: '나무 아래는 안전하지 않습니다.',
+        points: [
+            ['지금', '실내 대피'],
+            ['주의', '열린 들판 대기']
+        ],
+        blocks: [
+            ['지금 할 일', '금속 클럽을 내려놓으세요.'],
+            ['하지 않을 일', '물가에 머물지 마세요.'],
+            ['관련', '야외 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CDC 손상', 'https://www.cdc.gov/injury/']
+        ]
+    },
+    {
         id: 'golf-field-lightning-exit-b147',
         match: /(골프장\s*들판\s*번개\s*시\s*즉시\s*대피)/,
         title: '골프장·넓은 들판에서 번개가 치면 즉시 실내로 대피하세요',
@@ -28766,6 +30704,25 @@ const COMMON_PARENT_ANSWERS = [
         id: 'heat-headache-move-shade-b137',
         match: /(더위\s*두통\s*어지럼\s*그늘\s*이동)/,
         title: '더위에 두통·어지럼이 있으면 그늘로 옮기고 물을 주세요',
+        lead: '열사병 의심 시 응급을 검토하세요.',
+        points: [
+            ['지금', '그늘·수분'],
+            ['주의', '한낮 강행']
+        ],
+        blocks: [
+            ['지금 할 일', '옷을 가볍게 하세요.'],
+            ['하지 않을 일', '차 안에 두지 마세요.'],
+            ['관련', '폭염 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 폭염', 'https://www.cdc.gov/heat-health/'],
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic157-04-b157',
+        match: /(야외\s*행사\s*그늘\s*텐트\s*물\s*준비\s*157차경계\s*topic157\s*04\s*공식경계)/,
+        title: '야외 행사에는 그늘·물·휴식 계획을 미리 세우세요',
         lead: '열사병 의심 시 응급을 검토하세요.',
         points: [
             ['지금', '그늘·수분'],
@@ -29220,6 +31177,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic157-08-b157',
+        match: /(트램폴린\s*안전망\s*찢어짐\s*점검\s*157차경계\s*topic157\s*08\s*공식경계)/,
+        title: '트램폴린 안전망 찢어짐·스프링 노출을 점검하세요',
+        lead: '한 명씩 뛰고 성인이 감독하세요.',
+        points: [
+            ['지금', '망·감독'],
+            ['주의', '여러 명 점프']
+        ],
+        blocks: [
+            ['지금 할 일', '공중제비를 시키지 마세요.'],
+            ['하지 않을 일', '어린 영아를 올리지 마세요.'],
+            ['관련', '놀이 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 놀이', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'trampoline-net-tear-check-b147',
         match: /(트램폴린\s*안전망\s*찢어짐\s*점검)/,
         title: '트램폴린 안전망 찢어짐·스프링 노출을 점검하세요',
@@ -29602,6 +31578,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'helmet-replace-after-crash-b146',
         match: /(헬멧\s*사고\s*후\s*교체\s*검토\s*after\s*crash\s*공식경계)/,
+        title: '헬멧이 충격을 받았으면 교체를 검토하고 턱끈을 잠그세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '교체·핏'],
+            ['주의', '금 간 헬멧 재사용']
+        ],
+        blocks: [
+            ['지금 할 일', '매번 쓰세요.'],
+            ['하지 않을 일', '뒤로 젖혀 쓰지 마세요.'],
+            ['관련', '자전거 안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 자전거', 'https://www.cdc.gov/transportationsafety/bicycle/'],
+            ['AAP 놀이', 'https://www.healthychildren.org/English/safety-prevention/at-play/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic156-08-b156',
+        match: /(헬멧\s*사고\s*후\s*교체\s*검토\s*156차경계\s*topic156\s*08\s*공식경계)/,
         title: '헬멧이 충격을 받았으면 교체를 검토하고 턱끈을 잠그세요',
         lead: '브랜드 순위는 하지 않습니다.',
         points: [
@@ -30247,6 +32242,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-09-b155',
+        match: /(비타민\s*젤리\s*약\s*잠금\s*보관\s*155차경계\s*topic155\s*09\s*공식경계)/,
+        title: '비타민 젤리·철분제도 약처럼 잠금 보관하세요',
+        lead: '용량은 표시·진료를 따르세요.',
+        points: [
+            ['지금', '잠금 보관'],
+            ['주의', '낮은 선반']
+        ],
+        blocks: [
+            ['지금 할 일', '뚜껑을 닫으세요.'],
+            ['하지 않을 일', '간식처럼 두지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'gummy-vitamin-lock-store-b145',
         match: /(비타민\s*젤리\s*약\s*잠금\s*보관)/,
         title: '비타민 젤리·철분제도 약처럼 잠금 보관하세요',
@@ -30685,6 +32699,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-11-b162',
+        match: /(중고\s*거래\s*전\s*모델\s*리콜\s*검색\s*162차경계\s*topic162\s*11\s*공식경계)/,
+        title: '중고 거래 전 모델명으로 리콜을 검색하세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '모델·리콜'],
+            ['주의', '리콜 무시']
+        ],
+        blocks: [
+            ['지금 할 일', '사고 이력이 불명확하면 피하세요.'],
+            ['하지 않을 일', '리콜 제품을 사용하지 마세요.'],
+            ['관련', '리콜 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'used-trade-model-recall-search-b152',
         match: /(중고\s*거래\s*전\s*모델\s*리콜\s*검색)/,
         title: '중고 거래 전 모델명으로 리콜을 검색하세요',
@@ -30696,6 +32729,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '사고 이력이 불명확하면 피하세요.'],
             ['하지 않을 일', '리콜 제품을 사용하지 마세요.'],
+            ['관련', '리콜 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic161-06-b161',
+        match: /(리콜\s*확인\s*후\s*사용\s*중지\s*스티커\s*161차경계\s*topic161\s*06\s*공식경계)/,
+        title: '리콜 확인 시 즉시 사용을 중지하고 표시를 남기세요',
+        lead: '브랜드 순위는 하지 않습니다.',
+        points: [
+            ['지금', '중지·모델'],
+            ['주의', '리콜 무시']
+        ],
+        blocks: [
+            ['지금 할 일', '제조사 안내를 따르세요.'],
+            ['하지 않을 일', '중고로 넘기지 마세요.'],
             ['관련', '리콜 안내를 참고하세요.']
         ],
         links: [
@@ -31001,6 +33053,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '뚜껑을 닫으세요.'],
             ['하지 않을 일', '사람 약과 섞어 두지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
+        id: 'topic161-05-b161',
+        match: /(펫\s*구충제\s*사람\s*약통\s*혼동\s*금지\s*161차경계\s*topic161\s*05\s*공식경계)/,
+        title: '펫 구충제·영양제를 사람 약통과 섞어 두지 마세요',
+        lead: '섭취 시 중독 상담을 검토하세요.',
+        points: [
+            ['지금', '분리·잠금'],
+            ['주의', '같은 서랍']
+        ],
+        blocks: [
+            ['지금 할 일', '뚜껑을 닫으세요.'],
+            ['하지 않을 일', '사탕처럼 보이게 두지 마세요.'],
             ['관련', '중독 안내를 참고하세요.']
         ],
         links: [
@@ -31750,6 +33821,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-08-b155',
+        match: /(세제\s*포드\s*투명용기\s*소분\s*금지\s*155차경계\s*topic155\s*08\s*공식경계)/,
+        title: '세제 포드를 투명 유리·사탕 용기에 옮기지 마세요',
+        lead: '섭취 시 중독 상담을 하세요.',
+        points: [
+            ['지금', '원용기·잠금'],
+            ['주의', '예쁜 병 소분']
+        ],
+        blocks: [
+            ['지금 할 일', '높은 곳에 두세요.'],
+            ['하지 않을 일', '사탕처럼 보이게 두지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 중독', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Poison-Prevention.aspx'],
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/']
+        ]
+    },
+    {
         id: 'pod-no-clear-jar-transfer-b145',
         match: /(세제\s*포드\s*투명용기\s*소분\s*금지)/,
         title: '세제 포드를 투명 유리·사탕 용기에 옮기지 마세요',
@@ -31979,6 +34069,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic160-05-b160',
+        match: /(두통\s*잦고\s*눈\s*찡그리면\s*시력\s*160차경계\s*topic160\s*05\s*공식경계)/,
+        title: '두통이 잦고 눈을 찡그리면 시력 상담을 검토하세요',
+        lead: '안경 브랜드는 순위하지 않습니다.',
+        points: [
+            ['지금', '상담·재검'],
+            ['주의', '괜찮겠지 미루기']
+        ],
+        blocks: [
+            ['지금 할 일', '학교 선별 결과를 보관하세요.'],
+            ['하지 않을 일', '책 거리를 관찰하세요.'],
+            ['관련', '시력 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'headache-squint-vision-b150',
         match: /(두통\s*잦고\s*눈\s*찡그리면\s*시력)/,
         title: '두통이 잦고 눈을 찡그리면 시력 상담을 검토하세요',
@@ -32123,6 +34232,25 @@ const COMMON_PARENT_ANSWERS = [
         blocks: [
             ['지금 할 일', '피부 자극을 살피세요.'],
             ['하지 않을 일', '안경을 장난으로 빼지 마세요.'],
+            ['관련', '시력 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic160-04-b160',
+        match: /(약시\s*치료\s*중단\s*전\s*의사와\s*상의\s*160차경계\s*topic160\s*04\s*공식경계)/,
+        title: '약시 안대·안경 치료를 임의 중단하지 말고 의사와 상의하세요',
+        lead: '처방 시간을 지키세요.',
+        points: [
+            ['지금', '처방 준수'],
+            ['주의', '임의 중단']
+        ],
+        blocks: [
+            ['지금 할 일', '피부 자극을 살피세요.'],
+            ['하지 않을 일', '안대를 장난으로 쓰지 마세요.'],
             ['관련', '시력 안내를 참고하세요.']
         ],
         links: [
@@ -32458,6 +34586,25 @@ const COMMON_PARENT_ANSWERS = [
         match: /(속삭임\s*반응\s*약하면\s*청력\s*상담)/,
         title: '속삭임·이름 부르기에 반응이 약하면 청력 상담을 검토하세요',
         lead: '중이염 후에도 확인하세요.',
+        points: [
+            ['지금', '반응·상담'],
+            ['주의', '큰 소리만 테스트']
+        ],
+        blocks: [
+            ['지금 할 일', '이비인후과를 상담하세요.'],
+            ['하지 않을 일', '방치하지 마세요.'],
+            ['관련', '청력 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['AAP 가족', 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic160-03-b160',
+        match: /(텔레비전\s*소리\s*유난히\s*키우면\s*청력\s*160차경계\s*topic160\s*03\s*공식경계)/,
+        title: '텔레비전 소리를 유난히 키우려 하면 청력 상담을 검토하세요',
+        lead: '이름 부르기 반응을 관찰하세요.',
         points: [
             ['지금', '반응·상담'],
             ['주의', '큰 소리만 테스트']
@@ -32970,6 +35117,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-05-b155',
+        match: /(커튼\s*줄\s*침대\s*멀리\s*배치\s*155차경계\s*topic155\s*05\s*공식경계)/,
+        title: '커튼·블라인드 줄을 침대에서 멀리 두거나 고정하세요',
+        lead: '무선 제품을 검토하세요.',
+        points: [
+            ['지금', '줄 정리'],
+            ['주의', '침대 옆 줄']
+        ],
+        blocks: [
+            ['지금 할 일', '루프를 없애세요.'],
+            ['하지 않을 일', '목에 감기지 않게 하세요.'],
+            ['관련', '감김 안내를 참고하세요.']
+        ],
+        links: [
+            ['CPSC', 'https://www.cpsc.gov/'],
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'curtain-cord-away-from-crib-b145',
         match: /(커튼\s*줄\s*침대\s*멀리\s*배치)/,
         title: '커튼·블라인드 줄을 침대에서 멀리 두거나 고정하세요',
@@ -33185,6 +35351,25 @@ const COMMON_PARENT_ANSWERS = [
         lead: '벨트 칸을 쓰세요.',
         points: [
             ['지금', '감독·벨트'],
+            ['주의', '손잡이 착석']
+        ],
+        blocks: [
+            ['지금 할 일', '카트를 뛰게 밀지 마세요.'],
+            ['하지 않을 일', '서서 타게 하지 마세요.'],
+            ['관련', '낙상 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 낙상', 'https://www.cdc.gov/heights-and-falls/prevention/index.html'],
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
+        id: 'topic156-06-b156',
+        match: /(카트\s*칸\s*밖\s*아이\s*앉히기\s*금지\s*156차경계\s*topic156\s*06\s*공식경계)/,
+        title: '카트 벨트 칸 밖·매대에 아이를 앉히지 마세요',
+        lead: '벨트를 채우세요.',
+        points: [
+            ['지금', '벨트 칸'],
             ['주의', '손잡이 착석']
         ],
         blocks: [
@@ -33598,6 +35783,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic156-11-b156',
+        match: /(지하철\s*문\s*닫힘\s*경고음\s*유모차\s*156차경계\s*topic156\s*11\s*공식경계)/,
+        title: '지하철 문 닫힘 경고 시 유모차를 무리하게 끼워 넣지 마세요',
+        lead: '틈을 보고 수평으로 옮기세요.',
+        points: [
+            ['지금', '틈 확인'],
+            ['주의', '급하게 밀기']
+        ],
+        blocks: [
+            ['지금 할 일', '브레이크를 확인하세요.'],
+            ['하지 않을 일', '문 사이에 끼이지 않게 하세요.'],
+            ['관련', '유모차·외출 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 유모차', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Stroller-Safety.aspx'],
+            ['AAP 외출', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/default.aspx']
+        ]
+    },
+    {
         id: 'subway-door-chime-stroller-b146',
         match: /(지하철\s*문\s*닫힘\s*경고음\s*유모차)/,
         title: '지하철 문 닫힘 경고 시 유모차를 무리하게 끼워 넣지 마세요',
@@ -33986,6 +36190,25 @@ const COMMON_PARENT_ANSWERS = [
         points: [
             ['지금', '브레이크·벨트'],
             ['주의', '손 놓고 밀기']
+        ],
+        blocks: [
+            ['지금 할 일', '접힘 잠금을 확인하세요.'],
+            ['하지 않을 일', '에스컬레이터에 올리지 마세요.'],
+            ['관련', '유모차 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 유모차', 'https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Stroller-Safety.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic156-05-b156',
+        match: /(유모차\s*손잡이\s*무게\s*매달기\s*금지\s*156차경계\s*topic156\s*05\s*공식경계)/,
+        title: '유모차 손잡이에 무거운 가방을 달아 전복되지 않게 하세요',
+        lead: '벨트·브레이크를 확인하세요.',
+        points: [
+            ['지금', '무게 균형'],
+            ['주의', '손잡이 과적']
         ],
         blocks: [
             ['지금 할 일', '접힘 잠금을 확인하세요.'],
@@ -34416,6 +36639,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic162-10-b162',
+        match: /(화재\s*대피\s*신발\s*손전등\s*위치\s*162차경계\s*topic162\s*10\s*공식경계)/,
+        title: '화재 대피용 손전등·신발 위치를 정해 두고 연습하세요',
+        lead: '엘리베이터를 쓰지 마세요.',
+        points: [
+            ['지금', '위치·연습'],
+            ['주의', '물건 챙기기']
+        ],
+        blocks: [
+            ['지금 할 일', '만날 장소를 정하세요.'],
+            ['하지 않을 일', '연기를 마시며 들어가지 마세요.'],
+            ['관련', '화재 대피 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 가정 안전', 'https://www.healthychildren.org/English/safety-prevention/at-home/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'fire-escape-shoes-flashlight-spot-b152',
         match: /(화재\s*대피\s*신발\s*손전등\s*위치)/,
         title: '화재 대피용 손전등·신발 위치를 정해 두고 연습하세요',
@@ -34664,6 +36906,25 @@ const COMMON_PARENT_ANSWERS = [
         ]
     },
     {
+        id: 'topic155-10-b155',
+        match: /(겨울\s*난로\s*환기\s*경보기\s*동시\s*확인\s*155차경계\s*topic155\s*10\s*공식경계)/,
+        title: '겨울 난로 사용 시 환기와 일산화탄소 경보를 함께 확인하세요',
+        lead: '차 공회전을 실내에서 하지 마세요.',
+        points: [
+            ['지금', '환기·경보'],
+            ['주의', '밀폐 연소']
+        ],
+        blocks: [
+            ['지금 할 일', '배터리를 점검하세요.'],
+            ['하지 않을 일', '숯을 실내에서 피우지 마세요.'],
+            ['관련', '중독 안내를 참고하세요.']
+        ],
+        links: [
+            ['CDC 중독', 'https://www.cdc.gov/poisonprevention/'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
         id: 'winter-heater-vent-alarm-b145',
         match: /(겨울\s*난로\s*환기\s*경보기\s*동시\s*확인)/,
         title: '겨울 난로 사용 시 환기와 일산화탄소 경보를 함께 확인하세요',
@@ -34761,6 +37022,25 @@ const COMMON_PARENT_ANSWERS = [
     {
         id: 'walker-not-long-use-b150',
         match: /(걸음마\s*보조기\s*장시간\s*금지\s*long\s*use\s*공식경계)/,
+        title: '보행 보조기·쏘서 장시간 사용을 피하고 바닥 놀이를 늘리세요',
+        lead: '브랜드 순위는 하지 않습니다. 일부 유형은 위험을 경고합니다.',
+        points: [
+            ['지금', '바닥 놀이'],
+            ['주의', '장시간 보조기']
+        ],
+        blocks: [
+            ['지금 할 일', '계단 안전을 확인하세요.'],
+            ['하지 않을 일', '억지로 세우지 마세요.'],
+            ['관련', '발달·안전 안내를 참고하세요.']
+        ],
+        links: [
+            ['AAP 건강', 'https://www.healthychildren.org/English/health-issues/conditions/Pages/default.aspx'],
+            ['CPSC', 'https://www.cpsc.gov/']
+        ]
+    },
+    {
+        id: 'topic160-01-b160',
+        match: /(걸음마\s*보조기\s*장시간\s*금지\s*160차경계\s*topic160\s*01\s*공식경계)/,
         title: '보행 보조기·쏘서 장시간 사용을 피하고 바닥 놀이를 늘리세요',
         lead: '브랜드 순위는 하지 않습니다. 일부 유형은 위험을 경고합니다.',
         points: [
