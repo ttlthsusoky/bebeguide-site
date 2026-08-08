@@ -4367,3 +4367,96 @@ input[type='radio'] {
     line-height: 1.35;
   }
 }
+
+
+/* Growth reassure panel (parent search official answer) */
+.growth-reassure-panel {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f0fdf9 0%, #f8fafc 100%);
+  border: 1px solid #a7f3d0;
+}
+.growth-reassure-why h4 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  color: #065f46;
+}
+.growth-reassure-why ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #334155;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.growth-reassure-why li { margin-bottom: 0.35rem; }
+.growth-reassure-curves { margin-top: 0.9rem; }
+.growth-reassure-curves-title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+.growth-reassure-curve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+@media (max-width: 720px) {
+  .growth-reassure-curve-grid { grid-template-columns: 1fr; }
+}
+.growth-reassure-curve-card {
+  margin: 0;
+  padding: 0.55rem 0.6rem 0.65rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+.growth-reassure-curve-card--ok { border-color: #6ee7b7; }
+.growth-reassure-curve-card--alert { border-color: #fca5a5; }
+.growth-reassure-curve-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.25rem;
+}
+.growth-reassure-curve-card figcaption strong {
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+.growth-reassure-curve-card figcaption span {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+.growth-reassure-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+.growth-reassure-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.growth-reassure-cta {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  box-shadow: 0 8px 18px rgba(5, 150, 105, 0.22);
+}
+.growth-reassure-cta:hover { filter: brightness(1.03); }
+.growth-reassure-cta-help {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.4;
+}
