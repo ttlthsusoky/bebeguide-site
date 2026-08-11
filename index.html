@@ -3,10 +3,10 @@
 
 <head>
 <!-- SEO & OG -->
-    <meta name="description" content="공식 자료를 우선해 정리한 0~36개월 육아 기준과 체크리스트. 출처·검토일·개인차를 함께 확인하세요.">
+    <meta name="description" content="공식 자료를 우선해 정리한 출생~71개월 육아 기준과 체크리스트. 출처·검토일·개인차를 함께 확인하세요.">
     <meta name="keywords" content="육아, 월령별 체크리스트, 신생아, 예방접종, 성장발달, 수유, 수면, 베베가이드, 임신준비, 육아팁">
     <meta name="author" content="베베가이드">
-    <title>베베가이드 | 근거부터 확인하는 0~36개월 육아 기준</title>
+    <title>베베가이드 | 근거부터 확인하는 출생~취학 전 육아 기준</title>
     <link rel="canonical" href="https://be-be-guide.com/">
 <!-- Google Search Console 인증 (실제 등록 후 교체 필요) -->
     <meta name="google-site-verification" content="EEZRPA-gaWni1YIo14bqtRLs8kf8OOsyWB3MsLk9Tvg" />
@@ -14,7 +14,7 @@
     <!-- 네이버 웹마스터 도구 인증 -->
     <meta name="naver-site-verification" content="54ca2b30ab3f0b4ca87dc0ebba828a1c05ed0164" />
 
-    <meta property="og:title" content="베베가이드 | 근거부터 확인하는 0~36개월 육아 기준">
+    <meta property="og:title" content="베베가이드 | 근거부터 확인하는 출생~취학 전 육아 기준">
     <meta property="og:description" content="기준은 분명하게, 아이는 자기 속도로. 공식 출처와 검토일을 함께 보여드려요.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://be-be-guide.com/">
@@ -24,7 +24,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="베베가이드 | 근거부터 확인하는 0~36개월 육아 기준">
+    <meta name="twitter:title" content="베베가이드 | 근거부터 확인하는 출생~취학 전 육아 기준">
     <meta name="twitter:description" content="공식 출처와 검토일을 함께 보는 육아 기준 · 기록 도구 · 안전 가이드">
     <meta name="twitter:image" content="https://be-be-guide.com/images/og-bebeguide.webp">
 
@@ -100,8 +100,8 @@
                             </label>
                             <label class="site-search-field site-search-age" for="siteSearchAge">
                                 <span>아이 몇 개월인가요? <small>선택</small></span>
-                                <input id="siteSearchAge" type="number" min="0" max="36" inputmode="numeric"
-                                    placeholder="예: 18" aria-label="아이의 개월 수, 0개월부터 36개월까지 선택 입력">
+                                <input id="siteSearchAge" type="number" min="0" max="71" inputmode="numeric"
+                                    placeholder="예: 48" aria-label="아이의 개월 수, 0개월부터 71개월까지 선택 입력">
                             </label>
                             <button class="site-search-submit" type="submit">
                                 <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
@@ -179,7 +179,12 @@
                             <option value="18">18~23개월</option>
                             <option value="24">24~29개월</option>
                             <option value="30">30~35개월</option>
-                            <option value="36">36개월</option>
+                            <option value="36">36~41개월</option>
+                            <option value="42">42~47개월</option>
+                            <option value="48">48~53개월</option>
+                            <option value="54">54~60개월</option>
+                            <option value="61">61~65개월</option>
+                            <option value="66">66~71개월 · 취학 전</option>
                         </select>
                     </label>
                 </div>
@@ -269,7 +274,12 @@
                     <option value="18">18~23개월</option>
                     <option value="24">24~29개월</option>
                     <option value="30">30~35개월</option>
-                    <option value="36">36개월</option>
+                    <option value="36">36~41개월</option>
+                    <option value="42">42~47개월</option>
+                    <option value="48">48~53개월</option>
+                    <option value="54">54~60개월</option>
+                    <option value="61">61~65개월</option>
+                    <option value="66">66~71개월 · 취학 전</option>
                 </select>
                 <button id="showChecklist" class="btn btn-primary" type="button">
                     <i class="fas fa-magnifying-glass"></i> 체크리스트 보기
@@ -387,7 +397,7 @@
             if (navigator.share) {
                 try {
                     await navigator.share({
-                        title: '베베가이드 - 근거부터 확인하는 0~36개월 육아 기준',
+                        title: '베베가이드 - 근거부터 확인하는 출생~취학 전 육아 기준',
                         text: '공식 출처와 검토일을 함께 보는 육아 기준을 확인해보세요.',
                         url: window.location.href
                     });
@@ -1703,13 +1713,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="js/privacy-consent.js?v=20260803-1"></script>
-    <script src="js/data.js"></script>
-    <script src="js/weekly-focus.js?v=20260803-1"></script>
+    <script src="js/data.js?v=20260811-1"></script>
+    <script src="js/weekly-focus.js?v=20260811-1"></script>
     <script src="js/device-data-manager.js"></script>
-    <script src="js/main.js?v=20260811-1"></script>
+    <script src="js/main.js?v=20260811-2"></script>
     <script src="js/affiliate-config.js"></script>
-    <script src="js/checklist.js?v=20260803-1"></script>
-    <script src="js/checklist-print.js"></script>
+    <script src="js/checklist.js?v=20260811-1"></script>
+    <script src="js/checklist-print.js?v=20260811-1"></script>
     <script src="js/chart.js"></script>
     <script src="js/diary.js"></script>
     <script src="js/timer.js?v=20260802-1"></script>
