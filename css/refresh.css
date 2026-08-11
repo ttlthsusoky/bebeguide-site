@@ -4525,6 +4525,10 @@ input[type='radio'] {
   font-size: 0.96rem;
 }
 
+.urgent-sequence {
+  padding: 0;
+}
+
 .urgent-action-sequence {
   display: grid;
   gap: 8px;
