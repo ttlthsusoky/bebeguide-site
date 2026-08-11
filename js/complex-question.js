@@ -8,6 +8,14 @@
         seizureNhs: ['NHS 열성경련 행동 순서', 'https://www.nhs.uk/conditions/febrile-seizures/'],
         choking: ['2025 AHA 소아 질식 지침', 'https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/pediatric-basic-life-support'],
         chokingNhs: ['NHS 영유아 질식 응급처치', 'https://www.nhs.uk/baby/first-aid-and-safety/first-aid/how-to-stop-a-child-from-choking/'],
+        drowning: ['AHA·AAP 익수 소생술 지침', 'https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-and-pediatric-special-circumstances-of-resuscitation'],
+        drowningAap: ['AAP 물에 빠진 뒤 심폐소생술 안내', 'https://www.healthychildren.org/English/news/Pages/cpr-for-drowning-updated-guidance.aspx'],
+        childCpr: ['NHS 영유아 심폐소생술', 'https://www.nhs.uk/baby/first-aid-and-safety/first-aid/how-to-resuscitate-a-child/'],
+        childAccident: ['NHS 영유아 사고 응급처치', 'https://www.nhs.uk/baby/first-aid-and-safety/first-aid/what-to-do-if-your-child-has-an-accident/'],
+        burns: ['NHS 화상·열탕화상', 'https://www.nhs.uk/conditions/burns-and-scalds/'],
+        eyeChemical: ['AAP 눈에 화학물질이 들어갔을 때', 'https://www.healthychildren.org/English/tips-tools/Symptom-Checker/IFrame/Pages/symptomviewer.aspx?symptom=Chemical+in+eye'],
+        infantFever: ['AAP 3개월 이하 아기 발열', 'https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx'],
+        buttonBattery: ['NHS 버튼형 건전지 안전', 'https://www.gosh.nhs.uk/conditions-and-treatments/conditions-we-treat/button-batteries-using-them-safely/'],
         poison: ['AAP 중독 예방·대처', 'https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Poison-Prevention.aspx'],
         head: ['AAP 영유아 머리 충격', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/concussions-in-babies-what-to-do-if-your-infant-or-toddler-hits-their-head.aspx'],
         allergy: ['NHS 영유아 식품 알레르기', 'https://www.nhs.uk/baby/weaning-and-feeding/food-allergies-in-babies-and-young-children/'],
@@ -64,6 +72,27 @@
             }, ageInfo);
         }
 
+        if (/(물에\s*빠|물속에\s*(잠|가라앉)|욕조.{0,12}(잠|빠|가라앉)|수영장.{0,12}(잠|빠|가라앉)|익수|물\s*먹고.{0,12}(기침|숨|처|파래))/.test(text)) {
+            return makeScenario({
+                id: 'drowning',
+                badge: '물에 빠졌을 때 행동 순서',
+                title: '물에서 안전하게 나온 뒤 반응과 정상 호흡을 확인하고 바로 119에 연결하세요',
+                lead: '물에 빠진 뒤에는 겉으로 깨어 보여도 호흡 문제가 이어질 수 있습니다. 구조자가 다시 위험해지지 않는 범위에서 물 밖으로 옮기고, 물을 빼려 하기보다 호흡을 먼저 봅니다.',
+                clues: ['물에 빠짐·물 흡입 표현', /(기침|숨|파래|처짐)/.test(text) ? '호흡·반응 변화 언급' : '현재 호흡 정보 없음'],
+                steps: [
+                    ['안전하게 물 밖으로', '구조자가 위험한 물에 직접 들어가지 말고 구조 장비나 주변 도움을 우선합니다. 물 밖으로 나온 아이를 단단하고 평평한 곳에 둡니다.'],
+                    ['반응·호흡 10초 이내 확인', '부르거나 발바닥을 가볍게 자극해 반응을 보고, 정상적으로 숨 쉬는지 10초를 넘기지 않고 확인합니다. 헐떡임은 정상 호흡이 아닙니다.'],
+                    ['119 지시에 따라 소생술', '반응이 없고 정상 호흡이 없으면 119를 스피커폰으로 연결해 즉시 심폐소생술을 시작합니다. 익수 심정지는 가능하면 인공호흡을 포함한 소생술이 중요합니다.']
+                ],
+                emergency: '반응 없음, 정상 호흡 없음·헐떡임, 파래짐, 심한 호흡곤란은 즉시 119입니다. 인공호흡이나 심폐소생술이 한 번이라도 필요했다면 회복해 보여도 병원 평가가 필요합니다.',
+                today: '계속되는 기침·빠른 숨·가슴 통증·구토·이상한 졸림 또는 행동 변화가 있으면 바로 응급실에서 확인받으세요.',
+                home: '아이를 거꾸로 들거나 배를 눌러 물을 빼려 하지 마세요. 정상 호흡이 있고 반응하면 옆으로 눕혀 호흡을 계속 확인하고 젖은 옷을 벗겨 따뜻하게 합니다.',
+                checks: [],
+                links: [SOURCES.drowning, SOURCES.drowningAap, SOURCES.childCpr, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
         if (/(질식|기도.{0,5}(막|폐쇄)|목에.{0,8}(걸|막)|음식.{0,8}(걸|막)|숨.{0,5}못.{0,3}쉬|울음.{0,5}소리.{0,5}(안|못))/.test(text)) {
             const underOne = Number.isInteger(ageInfo?.value) && ageInfo.value < 12;
             return makeScenario({
@@ -83,6 +112,70 @@
                 checks: [],
                 links: [SOURCES.choking, SOURCES.chokingNhs, SOURCES.emergency],
                 relatedHrefs: ['blog/complementary-feeding-allergy-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
+        if (/(감전|전기.{0,10}(닿|먹|통|찌릿)|콘센트.{0,12}(손|젓|만지|감전)|(전선|전기\s*코드|충전기).{0,12}(물|입|물어|감전)|번개.{0,8}(맞|감전))/.test(text)) {
+            return makeScenario({
+                id: 'electric-shock',
+                badge: '감전 행동 순서',
+                title: '전원을 끄기 전에는 아이를 직접 만지지 말고 안전이 확보된 뒤 호흡을 확인하세요',
+                lead: '전기는 겉에 작은 자국만 보여도 몸 안에 손상을 줄 수 있습니다. 먼저 구조자가 감전되지 않게 전원을 차단해야 합니다.',
+                clues: ['감전·전기 접촉 표현', /(화상|그을|탄|입|입술)/.test(text) ? '화상 가능성 언급' : '화상 정보 없음'],
+                steps: [
+                    ['전원부터 차단', '차단기·플러그로 전원을 끕니다. 전원이 확실히 끊기기 전에는 아이·전선·젖은 바닥을 손으로 만지지 않습니다.'],
+                    ['반응·호흡 확인', '안전해진 뒤 아이를 부르고 정상 호흡을 확인합니다. 반응이 없거나 정상적으로 숨 쉬지 않으면 119를 스피커폰으로 연결합니다.'],
+                    ['119 지시 따르기', '정상 호흡이 없으면 119 지시에 따라 심폐소생술을 시작하고, 보이는 화상은 마른 깨끗한 천으로 느슨하게 덮습니다.']
+                ],
+                emergency: '반응 없음·호흡 이상, 경련, 가슴 통증·두근거림, 고압 전기·번개, 얼굴·입안 화상 또는 큰 화상은 즉시 119입니다.',
+                today: '가정용 전기에 닿은 뒤에도 통증·저림·화상·힘 빠짐·평소와 다른 행동이 있으면 바로 의료진 평가를 받으세요.',
+                home: '전기가 연결된 아이를 맨손이나 젖은 물건으로 떼어내지 마세요. 화상에 얼음·연고·치약을 바르거나 입안 전기 화상 자국을 건드리지 마세요.',
+                checks: [],
+                links: [SOURCES.childAccident, SOURCES.childCpr, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
+        if (/(화상|데였|뜨거운.{0,12}(물|국|커피|차|냄비|기름).{0,8}(쏟|닿|엎)|불에.{0,8}(닿|탔)|열탕)/.test(text)) {
+            return makeScenario({
+                id: 'burn-scald',
+                badge: '화상·데임 행동 순서',
+                title: '옷을 벗기느라 늦추지 말고 화상 부위를 흐르는 시원한 물로 20분 식히세요',
+                lead: '처음 20분의 흐르는 물 냉각이 가장 중요합니다. 아이 전체가 차가워지지 않게 화상 부위만 식히고, 피부에 붙은 옷은 떼지 않습니다.',
+                clues: ['화상·뜨거운 물 접촉 표현', /(얼굴|목|손|발|성기|관절|넓|물집)/.test(text) ? '중요 부위·물집 가능성 언급' : '부위·크기 정보 없음'],
+                steps: [
+                    ['열원에서 벗어나기', '불·뜨거운 물·기름에서 안전하게 벗어나고, 피부에 붙지 않은 옷·기저귀·장신구는 조심히 제거합니다.'],
+                    ['흐르는 물 20분', '화상 부위를 흐르는 시원한 수돗물로 20분 식힙니다. 아이의 나머지 몸은 담요 등으로 따뜻하게 해 저체온을 막습니다.'],
+                    ['식힌 뒤 느슨하게 덮기', '깨끗하고 보풀이 없는 천이나 랩을 상처 위에 느슨하게 올립니다. 얼굴에는 랩을 사용하지 않고, 물집은 터뜨리지 않습니다.']
+                ],
+                emergency: '호흡곤란·연기 흡입, 전기·화학 화상, 희거나 검게 탄 깊은 화상, 넓은 화상, 얼굴·목·손·발·성기·큰 관절 화상은 119·응급실을 우선하세요.',
+                today: '아이 손바닥보다 크거나 물집이 생김, 통증이 심함, 부위·깊이를 판단하기 어려우면 냉각 후 당일 의료진에게 확인받으세요.',
+                home: '얼음·얼음물, 버터·치약·된장·연고·오일을 바르지 말고 붙은 옷을 떼거나 물집을 터뜨리지 마세요.',
+                checks: [],
+                links: [SOURCES.burns, SOURCES.childAccident, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
+        if (/(눈|눈동자|안구).{0,12}(세제|락스|표백제|세정제|샴푸|비누|화학|약품|스프레이|접착제).{0,12}(들어|튀|묻|닿)|(세제|락스|표백제|세정제|화학|약품).{0,12}(눈|안구).{0,8}(들어|튀|묻)/.test(text)) {
+            const mildEyeProduct = /(샴푸|비누)/.test(text) && !/(락스|표백제|세정제|화학|약품|접착제)/.test(text);
+            return makeScenario({
+                id: 'eye-chemical',
+                badge: '눈에 화학물질 행동 순서',
+                title: mildEyeProduct ? '샴푸·비누가 눈에 들어갔다면 미지근한 흐르는 물로 바로 충분히 씻으세요' : '무슨 제품인지 찾기 전에 눈을 미지근한 흐르는 물로 바로 씻기 시작하세요',
+                lead: mildEyeProduct ? '샴푸·비누는 대개 충분히 씻어내면 좋아지지만 통증·눈물·시야 이상이 남는지 확인해야 합니다.' : '강한 산·알칼리나 정체를 모르는 물질은 시력을 손상시킬 수 있어 즉시 세척이 우선입니다. 제품 확인 때문에 물로 씻는 일을 늦추지 않습니다.',
+                clues: ['눈에 세제·화학물질 노출 표현', '제품·통증·시야 확인 필요'],
+                steps: [
+                    ['즉시 물로 씻기', mildEyeProduct ? '눈꺼풀을 가능한 범위에서 벌리고 미지근한 흐르는 물로 몇 분간 충분히 씻습니다.' : '눈꺼풀을 가능한 범위에서 벌리고 미지근한 흐르는 물로 20분 충분히 씻습니다.'],
+                    ['다른 눈으로 흐르지 않게', '다친 눈을 아래쪽으로 향하게 하고 물이 코 쪽에서 바깥쪽으로 흐르게 합니다. 콘택트렌즈는 쉽게 빠질 때만 제거합니다.'],
+                    ['제품 들고 진료', '용기·성분표를 가져가되 세척을 중단하지 않습니다. 강한 세정제·배수관/오븐 세정제 또는 모르는 물질이면 세척 뒤 바로 응급실로 갑니다.']
+                ],
+                emergency: '시야 흐림·심한 통증, 눈을 뜨지 못함, 강한 산·알칼리·정체 불명 화학물질 노출은 씻으면서 119 안내를 받고 응급실로 가세요.',
+                today: '충분히 씻은 뒤에도 통증·눈물·깜박임·시야 이상이 남거나 붉음이 심하면 바로 의료진에게 확인받으세요.',
+                home: '눈을 비비거나 중화하려고 다른 액체를 넣지 마세요. 임의 안약·식염수 준비 때문에 수돗물 세척을 늦추지 마세요.',
+                checks: [],
+                links: [SOURCES.eyeChemical, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
             }, ageInfo);
         }
 
@@ -108,6 +201,54 @@
             }, ageInfo);
         }
 
+        if (/((코|콧구멍|귀|귓구멍).{0,14}(이물|이물질|뭔가|무언가|뭘|구슬|콩|장난감|휴지|건전지|배터리|자석).{0,8}(들어|넣|박|끼)|((이물|이물질|뭔가|무언가|구슬|콩|장난감|휴지|건전지|배터리|자석).{0,12}(코|콧구멍|귀|귓구멍).{0,8}(들어|넣|박|끼)))/.test(text)) {
+            const battery = /(건전지|배터리)/.test(text);
+            return makeScenario({
+                id: 'nose-ear-object',
+                badge: '코·귀 이물질 행동 순서',
+                title: battery ? '코나 귀에 건전지가 들어갔다면 증상이 없어도 바로 응급실로 가세요' : '코나 귀에 단단히 들어간 물건은 집에서 빼려 하지 말고 그대로 진료받으세요',
+                lead: '핀셋·면봉으로 잡으려 하면 더 깊이 밀리거나 손상될 수 있습니다. 특히 버튼형 건전지는 짧은 시간에도 화학 화상을 만들 수 있습니다.',
+                clues: [battery ? '건전지·배터리 가능성' : '코·귀 이물질 표현', '위치·물건·시각 확인 필요'],
+                steps: [
+                    ['더 밀지 않기', '보이는 물건을 핀셋·면봉·손가락으로 건드리거나 아이가 코를 세게 들이마시게 하지 않습니다.'],
+                    ['호흡과 출혈 확인', '코가 막혔다면 입으로 숨 쉬게 하고, 숨쉬기 어려움·심한 출혈·통증이 있는지 확인합니다.'],
+                    ['그대로 의료기관으로', '물건을 넣은 시각과 종류를 확인하고 가까운 응급실이나 진료기관에서 제거받습니다. 건전지는 포장이나 같은 제품을 가져갑니다.']
+                ],
+                emergency: battery ? '버튼형 건전지·배터리는 코나 귀에 있어도 즉시 응급실입니다. 호흡곤란·심한 출혈·의식 변화가 있으면 119를 부르세요.' : '호흡곤란, 물건이 기도로 넘어간 의심, 심한 출혈·극심한 통증은 즉시 119·응급실을 우선하세요.',
+                today: '단단히 끼었거나 보이지 않음, 통증·냄새 나는 분비물·출혈이 있으면 같은 날 의료진에게 제거받으세요.',
+                home: '물·기름·접착제를 넣거나 자석으로 빼려 하지 마세요. 성공할 것 같아도 여러 번 시도하지 말고 아이가 물건을 더 밀지 않게 지켜보세요.',
+                checks: [],
+                links: battery ? [SOURCES.childAccident, SOURCES.buttonBattery, SOURCES.emergency] : [SOURCES.childAccident, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
+        const dayAgeMatch = text.match(/(?:생후\s*)?(\d{1,3})\s*일\s*(?:된|째|아기|아이)?/);
+        const youngInfant = Number.isInteger(ageInfo?.value)
+            ? ageInfo.value < 3
+            : /(신생아|생후\s*(?:0|1|2)\s*개월|(?:0|1|2)\s*개월\s*(?:아기|아이))/.test(text)
+                || (dayAgeMatch && Number(dayAgeMatch[1]) < 90);
+        if (youngInfant && /(열|발열|고열|체온|뜨거워|뜨거운)/.test(text) && !isNegated(text, '열') && !isNegated(text, '체온')) {
+            return makeScenario({
+                id: 'young-infant-fever',
+                badge: '3개월 미만 발열 행동 순서',
+                title: '3개월 미만 아기가 38.0°C 이상이면 다른 증상이 없어도 바로 의료진 평가가 필요합니다',
+                lead: '어린 아기는 겉으로 괜찮아 보여도 심한 감염을 구분하기 어려울 수 있습니다. 손으로 만진 느낌보다 체온계로 잰 값과 현재 상태를 확인합니다.',
+                clues: ['3개월 미만', /38(?:\.0)?|38도/.test(text) ? '38°C 언급' : '정확한 체온 정보 없음'],
+                steps: [
+                    ['체온과 시각 기록', '체온계로 잰 값·측정 부위·측정 시각을 적고, 예방접종 시각과 복용한 약이 있다면 함께 확인합니다.'],
+                    ['호흡·반응·수유 확인', '숨쉬기, 입술색, 깨웠을 때 반응, 수유량·구토와 마지막 젖은 기저귀 시각을 봅니다.'],
+                    ['바로 의료진에게 연락', '38.0°C 이상이면 밤이나 다른 증상 유무와 관계없이 바로 소아 진료기관·응급실에 연락해 평가받습니다.']
+                ],
+                emergency: '숨쉬기 어려움·청색 변화, 깨우기 어려움·축 늘어짐, 경련, 눌러도 사라지지 않는 자주색 발진은 즉시 119입니다.',
+                today: '3개월 미만에서 체온 38.0°C 이상은 해열 뒤 기다리는 항목이 아니라 바로 의료진 평가를 받아야 하는 기준입니다.',
+                home: '찬물 목욕·알코올 마사지로 열을 내리지 마세요. 의료진과 상의하기 전 임의 해열제 용량을 정하거나 열이 내려가는지 보려고 진료를 미루지 마세요.',
+                checks: [],
+                links: [SOURCES.infantFever, SOURCES.seriousIllness, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-fever-cold-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
         if (/(머리|이마|뒤통수|정수리).{0,16}(부딪|찧|다치|충격|혹)|넘어.{0,14}(머리|이마|뒤통수)/.test(text)) {
             return makeScenario({
                 id: 'head-injury',
@@ -124,6 +265,28 @@
                 today: '영아가 달래지지 않게 계속 울거나 먹지 못함, 행동이 평소와 다름, 구토·두통이 심해지면 바로 의료진 평가를 받으세요.',
                 home: '억지로 계속 깨워 두거나 흔들지 마세요. 얼음은 천에 싸서 짧게 대고, 약은 의료진·약사에게 개월과 몸무게를 확인한 뒤 사용하세요.',
                 links: [SOURCES.head, SOURCES.emergency],
+                relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
+            }, ageInfo);
+        }
+
+        if (/(심한\s*출혈|피가.{0,12}(안\s*멈|멈추지|계속|많이|솟|분수)|상처.{0,12}(피|출혈).{0,10}(안\s*멈|멈추지|계속|많)|베였.{0,10}(피|출혈)|찢어졌.{0,10}(피|출혈)|유리.{0,10}(박|찔)|깊게.{0,8}(베|찢))/.test(text)) {
+            const embedded = /(유리|못|칼|가시|물체).{0,12}(박|찔|꽂)/.test(text);
+            return makeScenario({
+                id: 'severe-bleeding',
+                badge: '심한 출혈 행동 순서',
+                title: '깨끗한 천으로 상처를 계속 세게 눌러 지혈하면서 119 기준을 확인하세요',
+                lead: '피가 많이 날 때는 상처를 반복해서 들춰보지 말고 지속적인 압박이 우선입니다. 박힌 물체는 뽑으면 출혈이 더 심해질 수 있습니다.',
+                clues: ['계속되거나 많은 출혈 표현', embedded ? '박힌 물체 가능성' : '박힌 물체 정보 없음'],
+                steps: [
+                    ['눕히고 압박', embedded ? '아이를 안전하게 눕히고 박힌 물체를 누르지 않도록 주변을 깨끗한 천으로 단단히 압박합니다.' : '아이를 안전하게 눕히고 상처 위에 깨끗하고 보풀이 적은 천을 대어 손바닥으로 단단히 누릅니다.'],
+                    ['계속 누르기', '중간에 천을 들어 확인하지 말고 계속 압박합니다. 피가 배어나오면 기존 천을 떼지 말고 그 위에 새 천을 더 댑니다.'],
+                    ['119 연결', '피가 솟거나 빠르게 천을 적심, 계속 압박해도 멈추지 않음, 창백·식은땀·축 처짐이 있으면 119를 부릅니다.']
+                ],
+                emergency: '분수처럼 솟는 피, 빠르게 젖는 천, 절단, 목·가슴·배의 깊은 상처, 창백·차고 축축한 피부·반응 저하는 즉시 119입니다.',
+                today: '상처가 벌어짐·깊음, 얼굴·손·관절 부위, 유리 등 이물이 남음, 사람·동물에게 물림, 오염된 상처는 당일 진료와 파상풍 접종 확인이 필요합니다.',
+                home: '박힌 물체를 빼거나 상처 깊숙이 소독약을 붓지 마세요. 지혈대를 임의로 사용하지 말고 119 지시가 있다면 그대로 따르세요.',
+                checks: [],
+                links: [SOURCES.childAccident, SOURCES.emergency],
                 relatedHrefs: ['blog/baby-safety-guide.html', '#daily-tools']
             }, ageInfo);
         }
